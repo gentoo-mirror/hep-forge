@@ -14,3 +14,10 @@ KEYWORDS="~amd64 ~x86"
 DEPEND="pulseaudio"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+inherit autotools
+
+src_prepare() {
+   default
+   eautoreconf
+}
