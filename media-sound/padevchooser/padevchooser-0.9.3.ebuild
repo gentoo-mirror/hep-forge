@@ -11,7 +11,8 @@ LICENSE="GPLv2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-DEPEND="media-sound/pulseaudio"
+DEPEND="x11-libs/gtk+:2
+		media-sound/pulseaudio"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
