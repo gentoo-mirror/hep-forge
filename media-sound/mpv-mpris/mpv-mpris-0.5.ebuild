@@ -5,12 +5,20 @@ EAPI=7
 
 DESCRIPTION=""
 HOMEPAGE=""
-SRC_URI="https://github.com/hoyon/mpv-mpris/archive/${PV}.zip"
+SRC_URI="https://github.com/hoyon/${PN}/archive/${PV}.zip"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+S="${WORKDIR}/${PN}-${PV}"
 
-DEPEND="media-video/mpv[cplugins]"
+DEPEND="media-video/mpv[cplugins,libmpv]
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_install() {
+	make 
+	insinto /etc/mpv/scirpts
+	doins mpris.so
+}
