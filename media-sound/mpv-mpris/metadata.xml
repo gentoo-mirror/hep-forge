@@ -6,6 +6,6 @@
 		<name>APN-Pucky</name>
 	</maintainer>
 		<longdescription lang="en">
-			pulseaudio device chooser
-		</longdescription>
+mpv-mpris is a plugin for mpv which allows control of the player using standard media keys.
+</longdescription>
 </pkgmetadata>
