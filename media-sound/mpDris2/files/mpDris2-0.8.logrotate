@@ -1,0 +1,10 @@
+/var/lib/mpDris2.* {
+	missingok
+	rotate 4
+	weekly
+	compress
+	copytruncate
+	missingok
+	notifempty
+}
+
