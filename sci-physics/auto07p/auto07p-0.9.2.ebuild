@@ -13,21 +13,23 @@ EGIT_REPO_URI="https://github.com/auto-07p/auto-07p.git"
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="-doc"
+IUSE="-doc +GUI94 +plaut +plaut04 +soxt -soqt +omp +openmpi +python"
 if [[ "${PV}" != "9999" ]] ; then
    REFS="refs/tags/v${PV}"
    TAG="v${PV}"
 fi
 #S="${WORKDIR}/auto-07p-master"
 
-DEPEND="dev-python/matplotlib[tk]
-		dev-lang/python[tk]
-		dev-python/ipython
-		x11-terms/xterm
-		dev-python/numpy
-		x11-libs/motif
-		media-libs/coin
-		media-libs/SoXt
+DEPEND="python? ( dev-python/matplotlib[tk] )
+		python? (dev-lang/python[tk] )
+		python? (dev-python/ipython )
+		python? (dev-python/numpy )
+		plaut? ( x11-terms/xterm )
+		|| ( ( GUI94? ( x11-libs/motif ) ) ( plaut04? ( x11-libs/motif ) ) )
+		plaut04? ( media-libs/coin )
+		plaut04? ( || ( ( soxt? ( media-libs/SoXt ) ) ( soqt? ( media-libs/SoQt ) ) ) )
+		omp? ( sys-libs/libomp )
+		openmpi?  ( sys-cluster/openmpi )
 "
 # SoQt or SoXt + coin3d?
 RDEPEND="${DEPEND}"
