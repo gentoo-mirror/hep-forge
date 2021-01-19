@@ -21,9 +21,9 @@ fi
 #S="${WORKDIR}/auto-07p-master"
 
 DEPEND="python? ( dev-python/matplotlib[tk] )
-		python? (dev-lang/python[tk] )
-		python? (dev-python/ipython )
-		python? (dev-python/numpy )
+		python? ( dev-lang/python[tk] )
+		python? ( dev-python/ipython )
+		python? ( dev-python/numpy )
 		plaut? ( x11-terms/xterm )
 		|| ( ( GUI94? ( x11-libs/motif ) ) ( plaut04? ( x11-libs/motif ) ) )
 		plaut04? ( media-libs/coin )
