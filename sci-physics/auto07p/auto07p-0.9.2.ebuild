@@ -24,11 +24,12 @@ DEPEND="dev-python/matplotlib
 		dev-python/ipython
 		x11-terms/xterm
 		dev-python/numpy
-		x11-libs/motif 
+		x11-libs/motif
+		dev-lang/tk
 "
 # SoQt or SoXt + coin3d?
 RDEPEND="${DEPEND}"
-BDEPEND="doc? ( dev-tex/latexmk )"
+BDEPEND="doc? ( app-text/texlive dev-tex/latexmk )"
 
 src_unpack() {
    git-r3_fetch ${EGIT_REPO_URI} ${REFS} ${TAG}
@@ -50,11 +51,19 @@ src_compile() {
 }
 
 src_install() {
-	insinto /opt/auto-07p
+	local NAME=auto-07p
+	insinto /opt/${NAME}
 	doins -r .
+	fperms +x /opt/${NAME}/bin/*
+	fperms +x /opt/${NAME}/cmds/@*
+	for f in /opt/${NAME}/bin/* /opt/${NAME}/cdms/@*
+	do
+		local n=$(/usr/bin/basename $f)
+		dosym $f /usr/bin/${n}
+	done
 }
 
 pkg_postinst() {
-	ewarn "You need to set your path to include /opt/auto-07p/bin and /opt/auto-07p/cmds (eg. via .bashrc)"
+	#ewarn "You need to set your path to include /opt/auto-07p/bin and /opt/auto-07p/cmds (eg. via .bashrc)"
 }
 

@@ -25,10 +25,9 @@ DEPEND="dev-python/matplotlib
 		x11-terms/xterm
 		dev-python/numpy
 		x11-libs/motif
+		dev-lang/tk
 "
-# gfortran by default installed?!?!
 # SoQt or SoXt + coin3d?
-# tkinter depends
 RDEPEND="${DEPEND}"
 BDEPEND="doc? ( app-text/texlive dev-tex/latexmk )"
 
