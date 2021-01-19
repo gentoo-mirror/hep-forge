@@ -30,6 +30,9 @@ DEPEND="dev-python/matplotlib
 # SoQt or SoXt + coin3d?
 RDEPEND="${DEPEND}"
 BDEPEND="doc? ( app-text/texlive dev-tex/latexmk )"
+PATCHES=(
+	"${FILESDIR}/01_auto.patch"
+)
 
 src_unpack() {
    git-r3_fetch ${EGIT_REPO_URI} ${REFS} ${TAG}
@@ -52,21 +55,21 @@ src_compile() {
 
 src_install() {
 	local NAME=auto-07p
-	insinto /opt/${NAME}
+	insinto /usr/lib/${NAME}
 	doins -r .
-	Fs=/opt/${NAME}/bin/*
+	PFAD=/usr/lib/${NAME}
 	for f in bin/*
 	do
 		local n=$(/usr/bin/basename $f)
-		fperms +x /opt/$NAME/$f
-		dosym /opt/$NAME/$f /usr/bin/${n}
+		fperms +x $PFAD/$f
+		dosym $PFAD/$f /usr/bin/${n}
 	done
 
 	for f in cmds/@*
 	do
 		local m=$(/usr/bin/basename $f)
-		fperms +x /opt/$NAME/$f
-		dosym /opt/$NAME/$f /usr/bin/${m}
+		fperms +x $PFAD/$f
+		dosym $PFAD/$f /usr/bin/${m}
 	done
 }
 
