@@ -20,12 +20,12 @@ if [[ "${PV}" != "9999" ]] ; then
 fi
 #S="${WORKDIR}/auto-07p-master"
 
-DEPEND="dev-python/matplotlib
+DEPEND="dev-python/matplotlib[tk]
+		dev-lang/python[tk]
 		dev-python/ipython
 		x11-terms/xterm
 		dev-python/numpy
 		x11-libs/motif
-		dev-lang/tk
 "
 # SoQt or SoXt + coin3d?
 RDEPEND="${DEPEND}"
