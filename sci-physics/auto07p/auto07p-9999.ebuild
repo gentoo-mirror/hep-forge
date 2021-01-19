@@ -55,11 +55,17 @@ src_install() {
 	insinto /opt/${NAME}
 	doins -r .
 	fperms +x /opt/${NAME}/bin/*
-	fperms +x /opt/${NAME}/cmds/@*
-	for f in /opt/${NAME}/bin/* /opt/${NAME}/cmds/@*
+	for f in /opt/${NAME}/bin/*
 	do
 		local n=$(/usr/bin/basename $f)
 		dosym $f /usr/bin/${n}
+	done
+
+	fperms +x /opt/${NAME}/cmds/@*
+	for f in /opt/${NAME}/cmds/@*
+	do
+		local m=$(/usr/bin/basename $f)
+		dosym $f /usr/bin/${m}
 	done
 }
 
