@@ -54,18 +54,19 @@ src_install() {
 	local NAME=auto-07p
 	insinto /opt/${NAME}
 	doins -r .
-	fperms +x /opt/${NAME}/bin/*
-	for f in /opt/${NAME}/bin/*
+	Fs=/opt/${NAME}/bin/*
+	for f in bin/*
 	do
 		local n=$(/usr/bin/basename $f)
-		dosym $f /usr/bin/${n}
+		fperms +x /opt/$NAME/$f
+		dosym /opt/$NAME/$f /usr/bin/${n}
 	done
 
-	fperms +x /opt/${NAME}/cmds/@*
-	for f in /opt/${NAME}/cmds/@*
+	for f in cmds/@*
 	do
 		local m=$(/usr/bin/basename $f)
-		dosym $f /usr/bin/${m}
+		fperms +x /opt/$NAME/$f
+		dosym /opt/$NAME/$f /usr/bin/${m}
 	done
 }
 
