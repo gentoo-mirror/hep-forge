@@ -56,7 +56,7 @@ src_install() {
 	doins -r .
 	fperms +x /opt/${NAME}/bin/*
 	fperms +x /opt/${NAME}/cmds/@*
-	for f in /opt/${NAME}/bin/* /opt/${NAME}/cdms/@*
+	for f in /opt/${NAME}/bin/* /opt/${NAME}/cmds/@*
 	do
 		local n=$(/usr/bin/basename $f)
 		dosym $f /usr/bin/${n}
