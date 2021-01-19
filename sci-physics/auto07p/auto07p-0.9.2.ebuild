@@ -27,7 +27,7 @@ DEPEND="dev-python/matplotlib[tk]
 		dev-python/numpy
 		x11-libs/motif
 		media-libs/coin
-		media-libs/SoQt
+		media-libs/SoXt
 "
 # SoQt or SoXt + coin3d?
 RDEPEND="${DEPEND}"
