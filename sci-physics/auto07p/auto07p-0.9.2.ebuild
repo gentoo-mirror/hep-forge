@@ -63,7 +63,7 @@ src_install() {
 	done
 }
 
-pkg_postinst() {
-	#ewarn "You need to set your path to include /opt/auto-07p/bin and /opt/auto-07p/cmds (eg. via .bashrc)"
-}
+#pkg_postinst() {
+#	ewarn "You need to set your path to include /opt/auto-07p/bin and /opt/auto-07p/cmds (eg. via .bashrc)"
+#}
 
