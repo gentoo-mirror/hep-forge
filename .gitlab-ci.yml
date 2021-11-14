@@ -1,0 +1,15 @@
+image: apnpucky/gentoo
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - echo "[test]">>/etc/portage/repos.conf/test.conf
+    - echo "location = /var/db/repos/test" >>/etc/portage/repos.conf/test.conf
+    - echo "sync-type = git" >>/etc/portage/repos.conf/test.conf
+    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-hep-forge.git" >>/etc/portage/repos.conf/test.conf
+    - emaint -r test sync
+    - cd /var/db/repos/test
+    - repoman full -d
