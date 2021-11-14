@@ -12,4 +12,7 @@ test:
     - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-hep-forge.git" >>/etc/portage/repos.conf/test.conf
     - emaint -r test sync
     - cd /var/db/repos/test
+    - repoman fix -d
     - repoman full -d
+    - repoman -vx full
+
