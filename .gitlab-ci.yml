@@ -3,15 +3,18 @@ image: apnpucky/gentoo
 stages:
   - test
 
+variables:
+  NAME: "hep-forge"
+
+
 test:
   stage: test
   script:
-    - echo "[test]">>/etc/portage/repos.conf/test.conf
-    - echo "location = /var/db/repos/test" >>/etc/portage/repos.conf/test.conf
-    - echo "sync-type = git" >>/etc/portage/repos.conf/test.conf
-    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-hep-forge.git" >>/etc/portage/repos.conf/test.conf
-    - emaint -r test sync
-    - cd /var/db/repos/test
+    - echo "[${NAME}]">>/etc/portage/repos.conf/${NAME}.conf
+    - echo "location = /var/db/repos/${NAME}" >>/etc/portage/repos.conf/${NAME}.conf
+    - echo "sync-type = git" >>/etc/portage/repos.conf/${NAME}.conf
+    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-${NAME}.git" >>/etc/portage/repos.conf/${NAME}.conf
+    - emaint -r ${NAME} sync
+    - cd /var/db/repos/${NAME}
     - repoman full -d
     - repoman -vx full
-
