@@ -1,0 +1,35 @@
+--- a/CMakeLists.txt	2022-02-17 21:17:58.732762416 +0100
++++ b/CMakeLists.txt	2022-02-17 21:20:17.131750841 +0100
+@@ -21,10 +21,9 @@
+ include(ExternalProject)
+ 
+ ## compiles looptools 213 (configure script changed so that the folder is always calles lib)
+-ExternalProject_Add(lt
+-    SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/lib/LoopTools-2.13
+-    CONFIGURE_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/lib/LoopTools-2.13/configure --prefix=<INSTALL_DIR>
+-    BUILD_COMMAND ${MAKE})
++find_package(LoopTools REQUIRED)
++include_directories(${LOOPTOOLS_INCLUDE_DIRS})
++
+ 
+ # Boost headers
+ include(cmake/RequireBoostHeaders.cmake)
+--- a/src/CMakeLists.txt	2022-02-17 21:49:53.119602306 +0100
++++ b/src/CMakeLists.txt	2022-02-17 21:53:01.741586531 +0100
+@@ -36,14 +36,12 @@
+   integration_method.cc
+ )
+ 
+-## properties of LoopTools installation
+-ExternalProject_Get_Property(lt install_dir)
+-include_directories(${install_dir}/include)
+ 
+ add_executable(resummino ${resummino_SRCS})
+ add_dependencies(resummino lt)
+ 
+ ## changed the looptools configure script that the folder is always called lib
+-target_link_libraries(resummino ${GSL_LIBRARIES} ${LHAPDF_LIBRARIES} ${LHAPDF_LIBRARIES} ${install_dir}/lib/libooptools.a gfortran)
++target_link_libraries(resummino ${GSL_LIBRARIES} ${LHAPDF_LIBRARIES}
++	${LHAPDF_LIBRARIES} ${LOOPTOOLS_LIBRARIES} gfortran)
+ 
+ install(TARGETS resummino RUNTIME DESTINATION bin)

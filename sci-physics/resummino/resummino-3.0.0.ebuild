@@ -16,11 +16,13 @@ KEYWORDS="~amd64"
 
 IUSE=""
 DEPEND="virtual/fortran
-	>=sci-physics/lhapdf-6.3.0
-	>=sci-physics/looptools-2.15
-	>=sci-libs/gsl-2.7"
+	sci-physics/lhapdf
+	=sci-physics/looptools-2.15-r1
+	>=sci-libs/gsl-2.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+PATCHES=( "${FILESDIR}"/${P}-looptools.patch )
 
 src_compile() {
 	cmake .
@@ -28,6 +30,6 @@ src_compile() {
 }
 
 src_install() {
-	dobin build/bin/resummino
+	dobin bin/resummino
 }
 
