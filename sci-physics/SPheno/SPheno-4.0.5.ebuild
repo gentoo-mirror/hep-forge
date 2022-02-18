@@ -19,7 +19,6 @@ BDEPEND=""
 
 PATCHES=( "${FILESDIR}"/${PN}.patch )
 
-
 src_compile() {
 	make -j1 # single thread force needed
 }

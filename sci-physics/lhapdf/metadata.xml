@@ -5,7 +5,7 @@
 		<email>APN-Pucky@users.noreply.github.com</email>
 		<name>APN-Pucky</name>
 	</maintainer>
-		<longdescription lang="en">
+	<longdescription lang="en">
   Les Houches Parton Density Function (LHAPDF)
   provides a unified and easy to use interface to modern PDF
   sets. It is designed to work not only with individual PDF sets but
@@ -17,5 +17,5 @@
   data sets can be downloaded together or individually as desired. From
   version 4.1 onwards a configuration script facilitates the
   installation of LHAPDF.
-</longdescription>
+	</longdescription>
 </pkgmetadata>

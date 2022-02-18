@@ -31,4 +31,3 @@ src_install() {
 		doins  phi3 qed qcd *.sty *.dat
 	fi
 }
-

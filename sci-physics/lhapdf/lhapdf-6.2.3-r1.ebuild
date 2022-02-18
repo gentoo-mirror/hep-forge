@@ -79,4 +79,3 @@ pkg_postinst() {
 	elog "http://www.hepforge.org/archive/${PN}/pdfsets/$(ver_cut 1-2)"
 	elog "and untar them into ${EPREFIX}/usr/share/LHAPDF"
 }
-
