@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>APN-Pucky@users.noreply.github.com</email>
+		<name>APN-Pucky</name>
+	</maintainer>
+	<longdescription lang="en">
+	TOPDRAWER is a keyword-driven interface to the SLAC
+    Unified Graphics system, designed  specifically  to
+    generate  physics  graphs  with  minimal specifica-
+    tions.  Reasonable defaults are  assumed  for  axis
+    scales,  tic  locations,  label locations and size,
+    etc.
+
+    Topdrawer  originated  at  the  Stanford Linear Ac-
+    celerator Center.  The  manual  for  this  modified
+    version            is           online           in
+    TOPDRAWERROOT:[DOC]TOPDRAWER.DOC,  and  via   HELP,
+    both at the VMS level and within the Topdrawer pro-
+    gram.  The original SLAC document  number  is  CTGM
+    178.
+
+    Many  devices are supported, including Xwindows and
+    Tektronix displays,  and  Postscript,  QMS1200  and
+    EXCL printers.
+	</longdescription>
+</pkgmetadata>
