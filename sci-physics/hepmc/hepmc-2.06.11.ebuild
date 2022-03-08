@@ -9,7 +9,7 @@ MYP=HepMC-${PV}
 DESCRIPTION="Event Record for Monte Carlo Generators"
 HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
 SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/hepmc2.06.11.tgz"
-S="${WORKDIR}/hepmc2.06.11"
+S="${WORKDIR}/HepMC-2.06.11"
 
 LICENSE="GPL-2"
 SLOT="0"
