@@ -13,13 +13,13 @@ SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
 S="${WORKDIR}/${MYP}"
 
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="1"
 KEYWORDS="~amd64"
 IUSE="doc test example"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=" sci-pyhsics/pythia
+BDEPEND=" sci-physics/pythia
 	dev-lang/python
 	doc? (
 		app-doc/doxygen
