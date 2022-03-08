@@ -33,4 +33,3 @@ src_install() {
 		doins input/*
 	fi
 }
-
