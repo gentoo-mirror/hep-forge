@@ -13,7 +13,7 @@ SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
 S="${WORKDIR}/${MYP}"
 
 LICENSE="GPL-2"
-SLOT="1"
+SLOT="3"
 KEYWORDS="~amd64"
 IUSE="doc test example"
 
