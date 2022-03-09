@@ -8,18 +8,18 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{7..10} )
 
-
+F_PN="MG5aMC_LTS_"
 MY_PV=$(ver_rs 1-3 '_')
 MY_PN="MG5_aMC_v"
 MY_PF=${MY_PN}${MY_PV}
 
 DESCRIPTION="MadGraph5_aMC@NLO"
 HOMEPAGE="https://launchpad.net/mg5amcnlo"
-SRC_URI="https://launchpad.net/mg5amcnlo/3.0/3.3.x/+download/${MY_PN}${PV}.tar.gz"
+SRC_URI="https://launchpad.net/mg5amcnlo/3.0/3.3.x/+download/${F_PN}${PV}.tar.gz"
 S=${WORKDIR}/${MY_PF}
 
 LICENSE="Open Source License"
-SLOT="3"
+SLOT="2"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE=""
 REQUIRED_USE=""
@@ -37,7 +37,7 @@ BDEPEND="
 "
 
 src_unpack() {
-	tar xvzf ${DISTDIR}/${MY_PN}${PV}.tar.gz -C ${WORKDIR}
+	tar xvzf ${DISTDIR}/${F_PN}${PV}.tar.gz -C ${WORKDIR}
 }
 
 src_install() {
