@@ -24,6 +24,7 @@ REQUIRED_USE="hepmc3? ( !hepmc2 )"
 RDEPEND="
 	sci-physics/yoda
 	sci-physics/fastjet
+	sci-physics/fastjet-contrib
 	dev-python/cython
 	hepmc2? ( =sci-physics/hepmc-2* )
 	hepmc3? ( =sci-physics/hepmc-3* )
@@ -33,7 +34,7 @@ RDEPEND="
 	imagemagick? ( media-gfx/imagemagick )
 	tex? ( app-text/texlive-core )
 
-	dev-lang/python
+	<=dev-lang/python-3.9.9
 	sys-devel/gcc[fortran]
 	"
 DEPEND="${RDEPEND}"
