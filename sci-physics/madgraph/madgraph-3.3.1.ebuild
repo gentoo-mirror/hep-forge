@@ -37,14 +37,14 @@ BDEPEND="
 "
 
 src_unpack() {
-	tar xvzf ${DISTDIR}/${MY_PN}${PV}.tar.gz -C ${WORKDIR}
+	tar xvzf "${DISTDIR}"/${MY_PN}${PV}.tar.gz -C ${WORKDIR}
 }
 
 src_install() {
 	dodir /opt/${MY_PF}
 	insinto /opt/
-	doins -r ${S}
-	cd ${S}
+	doins -r "${S}"
+	cd "${S}"
 	for f in $(find * ! -type l); do
 		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
 	done

@@ -20,7 +20,8 @@ BDEPEND=""
 PATCHES=( "${FILESDIR}"/${PN}.patch )
 
 src_compile() {
-	emake -j1 # single thread force needed
+	export MAKEOPTS=-j1 # single thread force needed
+	emake 
 }
 
 src_install() {

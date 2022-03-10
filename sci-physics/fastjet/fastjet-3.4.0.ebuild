@@ -17,7 +17,6 @@ LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="cgal doc examples +plugins pyext +contrib"
-FEATURES='-sandbox -usersandbox'
 
 DEPEND="
 sys-devel/gcc[fortran]
