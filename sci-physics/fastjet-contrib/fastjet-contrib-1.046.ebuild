@@ -37,9 +37,13 @@ src_install() {
 	#into /usr/include/fastjet/
 	#dodir /usr/include/fastjet/contrib
 	emake install PREFIX=${D}/usr
-	emake fragile-shared-install PREFIX="${D}/usr/"
-	mv "${ED}/usr/lib" "${ED}/usr/$(get_libdir)" || die "mv failed"
+	cp libfastjetcontribfragile.so libfastjetcontribfragile.so.0
+
+	dolib.so libfastjetcontribfragile.so
+	dolib.so libfastjetcontribfragile.so.0
+
+	#emake fragile-shared-install PREFIX="${D}/usr/"
+	#mv "${ED}/usr/lib" "${ED}/usr/$(get_libdir)" || die "mv failed"
 	#into /usr/lib/
-	#dolib.so libfastjetcontribfragile.so
 
 }

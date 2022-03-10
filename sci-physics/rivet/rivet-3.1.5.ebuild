@@ -7,6 +7,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{7..9} )
+DISTUTILS_USE_SETUPTOOLS=no
 
 inherit bash-completion-r1 autotools distutils-r1
 
@@ -46,8 +47,8 @@ BDEPEND="
 "
 
 src_configure() {
-	use hepmc2 && econf --with-hepmc=/usr --with-bash-completion-dir="$(get_bashcompdir)" $(use_enable doc)
-	use hepmc3 && econf --with-hepmc3=/usr --with-bash-completion-dir="$(get_bashcompdir)" $(use_enable doc)
+	use hepmc2 && econf --with-hepmc=/usr
+	use hepmc3 && econf --with-hepmc3=/usr
 
 	if use python; then
 		cd "${S}"/pyext || die
@@ -60,19 +61,19 @@ src_compile() {
 
 	if use python; then
 		cd "${S}"/pyext || die
-		distutils-r1_src_prepare
+		distutils-r1_src_compile
 	fi
 
 }
 
 src_install() {
+	default
+	newbashcomp "${S}"/etc/bash_completion.d/${PN}-completion ${PN}
+
 	if use python; then
 		cd "${S}"/pyext || die
 		distutils-r1_src_install
 	fi
 
-	emake install
 
-
-	newbashcomp contrib/${PN}-completion ${PN}
 }
