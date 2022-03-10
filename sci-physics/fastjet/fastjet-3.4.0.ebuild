@@ -7,7 +7,6 @@ FORTRAN_NEEDED=plugins
 
 inherit autotools flag-o-matic fortran-2
 
-MY_PN=fastjet
 
 DESCRIPTION="A software package for jet finding in pp and e+e- collisions"
 HOMEPAGE="http://fastjet.fr/"
@@ -17,11 +16,13 @@ SRC_URI="http://fastjet.fr/repo/${P}.tar.gz"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cgal doc examples +plugins pyext"
+IUSE="cgal doc examples +plugins pyext +contrib"
+FEATURES='-sandbox -usersandbox'
 
 DEPEND="
 sys-devel/gcc[fortran]
 dev-lang/python
+contrib? ( sci-physics/fastjet-contrib )
 cgal? ( sci-mathematics/cgal:=[shared(+)] )
 plugins? ( sci-physics/siscone:= )
 "

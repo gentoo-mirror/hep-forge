@@ -1,0 +1,12 @@
+diff -Nur fjcontrib-1.046.orig/Makefile.in fjcontrib-1.046/Makefile.in
+--- fjcontrib-1.046.orig/Makefile.in	2022-03-10 13:29:43.548784801 +0100
++++ fjcontrib-1.046/Makefile.in	2022-03-10 13:30:01.670786890 +0100
+@@ -57,7 +57,7 @@
+ 	$(CXX) @DYNLIBOPT@ -fPIC -DPIC $(CXXFLAGS) `$(FASTJETCONFIG) --cxxflags --libs` $(fragile_SHARED_SRC_LIST) -o libfastjetcontribfragile.@DYNLIBEXT@
+
+ fragile-shared-install: fragile-shared
+-	utils/install-sh -c -m 755 libfastjetcontribfragile.@DYNLIBEXT@ $(PREFIX)/lib
++	utils/install-sh -c -m 755 -Wl -soname=fastjetcontribfragile libfastjetcontribfragile.@DYNLIBEXT@ $(PREFIX)/lib
+ 	@DYNLIBPOSTPROC@ $(PREFIX)/lib/libfastjetcontribfragile.@DYNLIBEXT@
+
+ fragile-shared-distclean:

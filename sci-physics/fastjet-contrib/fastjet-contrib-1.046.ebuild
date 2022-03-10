@@ -17,6 +17,8 @@ KEYWORDS="~amd64"
 DEPEND=">=sci-physics/fastjet-3.4.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+PATCHES=( "${FILESDIR}"/${P}-soname.patch )
+
 
 src_configure() {
 	./configure --prefix=/usr
@@ -27,5 +29,11 @@ src_compile() {
 }
 
 src_install() {
-	default
+	#into /usr/include/fastjet/
+	#dodir /usr/include/fastjet/contrib
+	emake install PREFIX=${D}/usr
+	emake fragile-shared-install PREFIX=${D}/usr
+	#into /usr/lib/
+	#dolib.so libfastjetcontribfragile.so
+
 }
