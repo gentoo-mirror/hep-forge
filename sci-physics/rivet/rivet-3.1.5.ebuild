@@ -46,9 +46,16 @@ DEPEND="${RDEPEND}"
 BDEPEND="
 "
 
+src_prepare() {
+	default
+	#use doc || sed -i -e 's#AC_CONFIG_FILES(doc/Makefile doc/doxygen/Doxyfile)##' "${S}"/configure.ac || die
+	#use doc || sed -i -e 's#SUBDIRS = src pyext data include bin analyses test doc#SUBDIRS = src pyext data include bin analyses test#' "${S}"/Makefile.am || die
+	eautoreconf
+}
+
 src_configure() {
-	use hepmc2 && econf --with-hepmc=/usr
-	use hepmc3 && econf --with-hepmc3=/usr
+	use hepmc2 && econf --with-hepmc=/usr CXXFLAGS="-std=c++17"
+	use hepmc3 && econf --with-hepmc3=/usr CXXFLAGS="-std=c++17"
 
 	if use python; then
 		cd "${S}"/pyext || die
@@ -67,13 +74,14 @@ src_compile() {
 }
 
 src_install() {
-	default
-	newbashcomp "${S}"/etc/bash_completion.d/${PN}-completion ${PN}
-
 	if use python; then
+		tp=$(pwd)
 		cd "${S}"/pyext || die
 		distutils-r1_src_install
+		cd $tp
 	fi
 
+	default
 
+	newbashcomp "${S}"/bin/${PN}-completion ${PN}
 }
