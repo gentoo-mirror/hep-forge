@@ -20,12 +20,13 @@ BDEPEND=""
 PATCHES=( "${FILESDIR}"/${PN}.patch )
 
 src_compile() {
-	make -j1 # single thread force needed
+	emake -j1 # single thread force needed
 }
 
 src_install() {
 	dobin bin/SPheno
 	dolib.a lib/libSPheno.a
+	doheader include/*
 
 	use doc && dodoc doc/*
 	if use examples; then

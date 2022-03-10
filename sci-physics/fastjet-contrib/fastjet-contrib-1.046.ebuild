@@ -3,6 +3,8 @@
 
 EAPI=8
 
+inherit multilib
+
 MY_PN=fjcontrib
 
 DESCRIPTION="3rd party extensions of FastJet."
@@ -17,7 +19,10 @@ KEYWORDS="~amd64"
 DEPEND=">=sci-physics/fastjet-3.4.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
-PATCHES=( "${FILESDIR}"/${P}-soname.patch  "${FILESDIR}"/${P}-libdir.patch )
+PATCHES=( 
+"${FILESDIR}"/${P}-soname.patch  
+#"${FILESDIR}"/${P}-libdir.patch 
+)
 
 
 src_configure() {
@@ -32,7 +37,8 @@ src_install() {
 	#into /usr/include/fastjet/
 	#dodir /usr/include/fastjet/contrib
 	emake install PREFIX=${D}/usr
-	emake fragile-shared-install PREFIX=${D}/usr
+	emake fragile-shared-install PREFIX="${D}/usr/"
+	mv "${ED}/usr/lib" "${ED}/usr/$(get_libdir)" || die "mv failed"
 	#into /usr/lib/
 	#dolib.so libfastjetcontribfragile.so
 
