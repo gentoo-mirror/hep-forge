@@ -19,7 +19,9 @@ IUSE="doc test example"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=" sci-physics/pythia
+BDEPEND=" 
+	sci-physics/root
+	sci-physics/pythia
 	dev-lang/python
 	doc? (
 		app-doc/doxygen
