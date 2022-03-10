@@ -14,12 +14,12 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND="sci-physics/fastjet"
+DEPEND=">=sci-physics/fastjet-3.4.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_configure() {
-	econf
+	./configure --prefix=/usr
 }
 src_compile() {
 	emake
