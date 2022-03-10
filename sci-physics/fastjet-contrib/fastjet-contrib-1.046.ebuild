@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 DEPEND=">=sci-physics/fastjet-3.4.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
-PATCHES=( "${FILESDIR}"/${P}-soname.patch )
+PATCHES=( "${FILESDIR}"/${P}-soname.patch  "${FILESDIR}"/${P}-libdir.patch )
 
 
 src_configure() {
