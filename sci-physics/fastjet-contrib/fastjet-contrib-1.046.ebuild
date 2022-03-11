@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit multilib 
+inherit multilib
 
 MY_PN=fjcontrib
 
@@ -42,12 +42,9 @@ src_install() {
 	#dodir /usr/include/fastjet/contrib
 	#emake fragile-shared-install PREFIX="${D}/usr"
 	emake install PREFIX=${D}/usr
-	cp libfastjetcontribfragile.so libfastjetcontribfragile.so.0
-	cp libfastjetcontribfragile.so fastjetcontribfragile.so.0
-
 	dolib.so libfastjetcontribfragile.so
-	dolib.so libfastjetcontribfragile.so.0
-	dolib.so fastjetcontribfragile.so.0
+	dosym libfastjetcontribfragile.so /usr/$(get_libdir)/libfastjetcontribfragile.so.0
+	dosym libfastjetcontribfragile.so /usr/$(get_libdir)/fastjetcontribfragile.so.0
 
 	#mv "${ED}/usr/lib" "${ED}/usr/$(get_libdir)" || die "mv failed"
 	#into /usr/lib/
