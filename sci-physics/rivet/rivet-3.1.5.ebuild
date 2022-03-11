@@ -45,6 +45,10 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="
 "
+PATCHES=(
+"${FILESDIR}"/${P}-doc.patch
+)
+
 
 src_prepare() {
 	default
