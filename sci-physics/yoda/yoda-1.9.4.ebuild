@@ -68,7 +68,7 @@ src_install() {
 		cd $tp
 	fi
 
-	newbashcomp "${ED}"/etc/bash_completion.d/yoda-completion yoda
-	rm "${ED}"/etc/bash_completion.d/yoda-completion || die
+	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion yoda
+	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
 }
 

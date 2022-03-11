@@ -92,5 +92,6 @@ src_install() {
 
 	default
 
-	newbashcomp "${S}"/bin/${PN}-completion ${PN}
+	newbashcomp "${ED}"/etc/bash-completion.d/${PN}-completion ${PN}
+	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
 }
