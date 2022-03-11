@@ -13,7 +13,7 @@ SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/hepmc2.06.11.tgz"
 S="${WORKDIR}/HepMC-2.06.11"
 
 LICENSE="GPL-2"
-SLOT="2"
+SLOT="0"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="cm doc examples gev test"
 RESTRICT="!test? ( test )"

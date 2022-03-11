@@ -26,12 +26,12 @@ IUSE="+hepmc3 hepmc2 -imagemagick -ghostscript -tex -doc +python"
 REQUIRED_USE="hepmc3? ( !hepmc2 ) python? ( ${PYTHON_REQUIRED_USE} )"
 
 RDEPEND="
-	>=sci-physics/yoda-1.8.0
-	sci-physics/fastjet
-	sci-physics/fastjet-contrib
-	dev-python/cython
-	hepmc2? ( =sci-physics/hepmc-2* )
-	hepmc3? ( =sci-physics/hepmc-3* )
+	=sci-physics/yoda-1.9.4
+	=sci-physics/fastjet-3.4.0
+	=sci-physics/fastjet-contrib-1.046
+	>=dev-python/cython-0.29.24
+	hepmc2? ( =sci-physics/hepmc-2.06.11 )
+	hepmc3? ( =sci-physics/hepmc-3.2.4 )
 
 	sci-libs/gsl
 	ghostscript? ( app-text/ghostscript-gpl )
@@ -58,8 +58,8 @@ src_prepare() {
 }
 
 src_configure() {
-	use hepmc2 && econf --with-hepmc=/usr CXXFLAGS="-std=c++17"
-	use hepmc3 && econf --with-hepmc3=/usr CXXFLAGS="-std=c++17"
+	use hepmc2 && econf --with-hepmc=/usr CXXFLAGS="-std=c++17" --with-yoda=/usr --with-fastjet=/usr
+	use hepmc3 && econf --with-hepmc3=/usr CXXFLAGS="-std=c++17" --with-yoda=/usr --with-fastjet=/usr
 
 	if use python; then
 		cd "${S}"/pyext || die
