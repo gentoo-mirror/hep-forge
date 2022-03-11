@@ -9,7 +9,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{8..9} )
 DISTUTILS_USE_SETUPTOOLS=no
 
-inherit bash-completion-r1 autotools distutils-r1 flag-o-matic
+inherit bash-completion-r1 autotools distutils-r1 flag-o-matic multilib
 
 MY_PN="Rivet-"
 MY_PF=${MY_PN}${PV}
@@ -63,8 +63,8 @@ src_prepare() {
 src_configure() {
 	append-cxxflags -std=c++17
 	# Rivet does not like econf for some reason
-	use hepmc2 && ./configure --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr
-	use hepmc3 && ./configure --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr
+	use hepmc2 && ./configure --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
+	use hepmc3 && ./configure --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
 
 	if use python; then
 		cd "${S}"/pyext || die
