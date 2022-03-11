@@ -10,6 +10,7 @@
 	</longdescription>
 	<use>
   <flag name="pyext"> Build python bindings</flag>
+  <flag name="python"> Build python bindings</flag>
   <flag name="contrib"> Build fastjet-contrib (fjcontrib)</flag>
   <flag name="plugins"> Build all standard and C++ plugins </flag>
   <flag name="cgal"> Use <pkg>sci-mathematics/cgal</pkg> instead of

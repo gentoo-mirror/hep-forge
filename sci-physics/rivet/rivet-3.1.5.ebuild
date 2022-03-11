@@ -6,10 +6,10 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7..9} )
+PYTHON_COMPAT=( python3_{8..9} )
 DISTUTILS_USE_SETUPTOOLS=no
 
-inherit bash-completion-r1 autotools distutils-r1
+inherit bash-completion-r1 autotools distutils-r1 flag-o-matic
 
 MY_PN="Rivet-"
 MY_PF=${MY_PN}${PV}
@@ -23,15 +23,18 @@ LICENSE="Open Source License"
 SLOT="3"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="+hepmc3 hepmc2 -imagemagick -ghostscript -tex -doc +python"
-REQUIRED_USE="hepmc3? ( !hepmc2 ) python? ( ${PYTHON_REQUIRED_USE} )"
+REQUIRED_USE="
+hepmc3? ( !hepmc2 ) 
+python? ( ${PYTHON_REQUIRED_USE} )
+"
 
 RDEPEND="
-	=sci-physics/yoda-1.9.4
-	=sci-physics/fastjet-3.4.0
-	=sci-physics/fastjet-contrib-1.046
+	>=sci-physics/yoda-1.9.4
+	>=sci-physics/fastjet-3.4.0[plugins]
+	>=sci-physics/fastjet-contrib-1.046
 	>=dev-python/cython-0.29.24
-	hepmc2? ( =sci-physics/hepmc-2.06.11 )
-	hepmc3? ( =sci-physics/hepmc-3.2.4 )
+	hepmc2? ( =sci-physics/hepmc-2.06.11[-cm,gev] )
+	hepmc3? ( =sci-physics/hepmc-3.2.4[-cm,gev] )
 
 	sci-libs/gsl
 	ghostscript? ( app-text/ghostscript-gpl )
@@ -58,8 +61,10 @@ src_prepare() {
 }
 
 src_configure() {
-	use hepmc2 && econf --with-hepmc=/usr CXXFLAGS="-std=c++17" --with-yoda=/usr --with-fastjet=/usr
-	use hepmc3 && econf --with-hepmc3=/usr CXXFLAGS="-std=c++17" --with-yoda=/usr --with-fastjet=/usr
+	append-cxxflags -std=c++17
+	# Rivet does not like econf for some reason
+	use hepmc2 && ./configure --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr
+	use hepmc3 && ./configure --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr
 
 	if use python; then
 		cd "${S}"/pyext || die

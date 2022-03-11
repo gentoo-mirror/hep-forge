@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit multilib
+inherit multilib 
 
 MY_PN=fjcontrib
 
@@ -19,14 +19,18 @@ KEYWORDS="~amd64"
 DEPEND=">=sci-physics/fastjet-3.4.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
 PATCHES=( 
 "${FILESDIR}"/${P}-soname.patch  
 #"${FILESDIR}"/${P}-libdir.patch 
 )
 
+src_prepare() {
+	default
+}
 
 src_configure() {
-	./configure --prefix=/usr
+	./configure --prefix=/usr --fastjet-config=/usr/bin/fastjet-config
 }
 src_compile() {
 	emake
