@@ -34,7 +34,7 @@ src_prepare() {
 }
 
 src_configure() {
-	econf --disable-static $(use_enable root)
+	econf --disable-static $(use_enable root) --disable-pyext
 
 	if use python; then
 		cd "${S}"/pyext || die

@@ -29,7 +29,7 @@ python? ( ${PYTHON_REQUIRED_USE} )
 "
 
 RDEPEND="
-	>=sci-physics/yoda-1.9.4
+	>=sci-physics/yoda-1.9.4[python]
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.046
 	>=dev-python/cython-0.29.24
