@@ -9,7 +9,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{8..9} )
 DISTUTILS_USE_SETUPTOOLS=no
 
-inherit bash-completion-r1 autotools distutils-r1 flag-o-matic multilib
+inherit bash-completion-r1 distutils-r1 flag-o-matic multilib
 
 MY_PN="Rivet-"
 MY_PF=${MY_PN}${PV}
@@ -48,23 +48,23 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="
 "
-PATCHES=(
-"${FILESDIR}"/${P}-doc.patch
-)
+#PATCHES=(
+#"${FILESDIR}"/${P}-doc.patch
+#)
 
 
 src_prepare() {
 	default
 	#use doc || sed -i -e 's#AC_CONFIG_FILES(doc/Makefile doc/doxygen/Doxyfile)##' "${S}"/configure.ac || die
 	#use doc || sed -i -e 's#SUBDIRS = src pyext data include bin analyses test doc#SUBDIRS = src pyext data include bin analyses test#' "${S}"/Makefile.am || die
-	eautoreconf
+	#eautoreconf
 }
 
 src_configure() {
-	append-cxxflags -std=c++17
+	#append-cxxflags -std=c++17
 	# Rivet does not like econf for some reason
-	use hepmc2 && ./configure --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
-	use hepmc3 && ./configure --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
+	use hepmc2 && ./configure --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir) --disable-pyext CXXFLAGS="-std=c++17"
+	use hepmc3 && ./configure --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir) --disable-pyext CXXFLAGS="-std=c++17"
 
 	if use python; then
 		cd "${S}"/pyext || die
@@ -73,7 +73,8 @@ src_configure() {
 }
 
 src_compile() {
-	default
+	#default
+	emake
 
 	if use python; then
 		cd "${S}"/pyext || die
@@ -83,6 +84,24 @@ src_compile() {
 }
 
 src_install() {
+	#default
+	make DESTDIR="${D}" install
+
+	# rivet does not install python bins without pyext
+	dobin bin/rivet
+	dobin bin/rivet-merge
+	dobin bin/rivet-mkhtml
+	dobin bin/rivet-mkvaldir
+	dobin bin/rivet-mkanalysis
+	dobin bin/rivet-diffhepdata
+	dobin bin/rivet-cmphistos
+	dobin bin/rivet-which
+	dobin bin/rivet-findid
+	dobin bin/make-plots-fast
+	dobin bin/make-pgfplots
+
+
+
 	if use python; then
 		tp=$(pwd)
 		cd "${S}"/pyext || die
@@ -90,8 +109,7 @@ src_install() {
 		cd $tp
 	fi
 
-	default
-
-	newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
-	rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
+	#newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
+	find "${ED}" -name '*.la' -delete || die
+	[ -f "${ED}"/usr/etc ] && rm "${ED}"/usr/etc -r
 }
