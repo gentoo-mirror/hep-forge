@@ -61,6 +61,26 @@ src_test() {
 src_install() {
 	default
 
+	# PY bins are not installed without pyext
+	dobin bin/yodacmp
+	dobin bin/yodacnv
+	dobin bin/yodadiff
+	dobin bin/yodahist
+	dobin bin/yodamerge
+	dobin bin/yodascale
+	dobin bin/yodastack
+	dobin bin/yodaplot
+	dobin bin/yodals
+
+	dobin bin/aida2flat
+	dobin bin/aida2yoda
+	dobin bin/flat2yoda
+	dobin bin/root2yoda
+	dobin bin/yoda2aida
+	dobin bin/yoda2flat
+	dobin bin/yoda2root
+	dobin bin/yoda2yoda
+
 	if use python; then
 		tp=$(pwd)
 		cd "${S}"/pyext || die
