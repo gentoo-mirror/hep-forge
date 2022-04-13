@@ -30,6 +30,7 @@ RDEPEND="
 	acct-user/madgraph
 	acct-group/madgraph
 	"
+PATCHES=( "${FILESDIR}"/cuttools.patch )
 DEPEND="${RDEPEND}"
 BDEPEND="
 	acct-user/madgraph
