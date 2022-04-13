@@ -57,4 +57,5 @@ src_install() {
 
 	ewarn "YOU MUST add your user to the madgraph group"
 	ewarn "eg. sudo usermod -a -G madgraph username"
+	ewarn "Running sessions must be restarted"
 }

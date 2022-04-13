@@ -33,7 +33,6 @@ src_install() {
 	default
 
 	dolib.so build/libooptools.so
-	dolib.so build/libooptools.so.2.15
 	rm "${ED}"/usr/$(get_libdir)/libooptools.a || die
 	use doc && dodoc manual/*.pdf
 }
