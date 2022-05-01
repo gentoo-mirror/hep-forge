@@ -24,13 +24,19 @@ DEPEND="${RDEPEND}"
 BDEPEND=""
 
 src_compile() {
-	./compile
+	export DEST=Linux-x86-64
+	./compile || echo "Fail?"
 }
 
 src_install() {
 	dodir /opt/${P}
 	insinto /opt/
 	doins -r "${S}"
+	cd "${S}"
+	# Copy executable, etc. permissions
+	for f in $(find * ! -type l); do
+		fperms --reference="${S}/$f" /opt/${P}/$f
+	done
 	dosym /opt/${P} /opt/${PN}
 	insinto /usr/share/Mathematica/Autoload/FormCalc/
 	doins ${FILESDIR}/init.m
