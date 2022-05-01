@@ -46,6 +46,7 @@ src_install() {
 	insinto /opt/
 	doins -r "${S}"
 	cd "${S}"
+	# Copy executable, etc. permissions
 	for f in $(find * ! -type l); do
 		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
 	done
