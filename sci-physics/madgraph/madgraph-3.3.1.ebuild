@@ -18,9 +18,9 @@ HOMEPAGE="https://launchpad.net/mg5amcnlo"
 SRC_URI="https://launchpad.net/mg5amcnlo/3.0/3.3.x/+download/${MY_PN}${PV}.tar.gz"
 S=${WORKDIR}/${MY_PF}
 
-LICENSE="Open Source License"
+LICENSE="UoI-NCSA"
 SLOT="3"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 IUSE=""
 REQUIRED_USE=""
 

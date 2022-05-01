@@ -10,9 +10,9 @@ DESCRIPTION="FormCalc"
 HOMEPAGE="http://feynarts.de/formcalc"
 SRC_URI="http://feynarts.de/formcalc/${P}.tar.gz"
 
-LICENSE="Open Source License"
+LICENSE="LGPL-3+"
 SLOT="0"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 IUSE="form"
 REQUIRED_USE=""
 
