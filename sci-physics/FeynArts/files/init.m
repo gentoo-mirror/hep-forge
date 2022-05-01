@@ -1,1 +1,1 @@
-$Path = Join[{"/opt/FeynArts-3.11/"}, $Path]
+$Path = Join[{"/opt/FeynArts/"}, $Path]

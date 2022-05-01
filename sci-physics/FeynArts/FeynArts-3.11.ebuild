@@ -26,6 +26,7 @@ src_install() {
 	dodir /opt/${P}
 	insinto /opt/
 	doins -r "${S}"
+	dosym /opt/${P} /opt/${PN}
 	insinto /usr/share/Mathematica/Autoload/FeynArts/
 	doins ${FILESDIR}/init.m
 }
