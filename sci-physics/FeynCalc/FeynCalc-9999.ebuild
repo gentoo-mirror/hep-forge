@@ -15,8 +15,8 @@ SLOT="0"
 SRC_URI="https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.tar.gz -> FeynCalc-${PV}.tar.gz"
 S="${WORKDIR}/feyncalc-hotfix-stable"
 
-LICENSE="Open Source License"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
+LICENSE="GPL-3+"
+KEYWORDS="~amd64"
 IUSE="+FCtraditionalFormOutput"
 REQUIRED_USE=""
 
