@@ -48,5 +48,4 @@ pkgcheck:
   dependencies:
     - install
   script:
-    - cd /var/db/repos/${NAME}
     - pkgcheck ci -r ${NAME} --exit 
