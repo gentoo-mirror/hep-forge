@@ -8,7 +8,6 @@ DISTUTILS_USE_SETUPTOOLS=no
 
 inherit bash-completion-r1 autotools distutils-r1
 
-
 DESCRIPTION="Yet more Objects for (High Energy Physics) Data Analysis"
 HOMEPAGE="https://yoda.hepforge.org/"
 SRC_URI="https://yoda.hepforge.org/downloads?f=${P^^}.tar.bz2 -> ${P^^}.tar.bz2"
@@ -91,4 +90,3 @@ src_install() {
 	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion yoda
 	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
 }
-

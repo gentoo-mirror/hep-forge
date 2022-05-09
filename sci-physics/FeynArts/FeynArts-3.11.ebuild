@@ -23,10 +23,10 @@ DEPEND="${RDEPEND}"
 BDEPEND=""
 
 src_install() {
-	dodir /opt/${P}
+	dodir "/opt/${P}"
 	insinto /opt/
 	doins -r "${S}"
-	dosym /opt/${P} /opt/${PN}
+	dosym "/opt/${P}" "/opt/${PN}"
 	insinto /usr/share/Mathematica/Autoload/FeynArts/
-	doins ${FILESDIR}/init.m
+	doins "${FILESDIR}/init.m"
 }

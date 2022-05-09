@@ -21,7 +21,7 @@ PATCHES=( "${FILESDIR}"/${PN}.patch )
 
 src_compile() {
 	export MAKEOPTS=-j1 # single thread force needed
-	emake 
+	emake
 }
 
 src_install() {

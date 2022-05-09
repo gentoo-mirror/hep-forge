@@ -19,7 +19,7 @@ IUSE="doc test example cm +gev -python -rootio"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
-BDEPEND=" 
+BDEPEND="
 	sci-physics/root
 	sci-physics/pythia
 	dev-lang/python

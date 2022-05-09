@@ -6,9 +6,7 @@ EAPI=8
 FORTRAN_NEEDED=plugins
 PYTHON_COMPAT=( python3_{8..9} )
 
-
 inherit autotools flag-o-matic fortran-2 python-any-r1
-
 
 DESCRIPTION="A software package for jet finding in pp and e+e- collisions"
 HOMEPAGE="http://fastjet.fr/"
@@ -19,7 +17,6 @@ LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="cgal doc examples +plugins -python +contrib"
-
 
 DEPEND="
 sys-devel/gcc[fortran]

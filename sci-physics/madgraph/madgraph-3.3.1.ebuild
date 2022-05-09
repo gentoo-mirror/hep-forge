@@ -8,7 +8,6 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{7..10} )
 
-
 MY_PV=$(ver_rs 1-3 '_')
 MY_PN="MG5_aMC_v"
 MY_PF=${MY_PN}${MY_PV}
@@ -38,7 +37,7 @@ BDEPEND="
 "
 
 src_unpack() {
-	tar xvzf "${DISTDIR}"/${MY_PN}${PV}.tar.gz -C ${WORKDIR}
+	tar xvzf "${DISTDIR}/${MY_PN}${PV}.tar.gz" -C "${WORKDIR}"
 }
 
 src_install() {

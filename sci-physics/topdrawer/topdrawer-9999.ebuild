@@ -5,7 +5,6 @@ EAPI=7
 
 inherit git-r3
 
-
 DESCRIPTION="TOPDRAWER"
 HOMEPAGE="https://gitlab.com/APN-Pucky/topdrawer3"
 EGIT_REPO_URI="https://gitlab.com/APN-Pucky/topdrawer3.git"

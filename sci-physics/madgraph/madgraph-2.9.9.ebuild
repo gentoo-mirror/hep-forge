@@ -38,7 +38,7 @@ BDEPEND="
 "
 
 src_unpack() {
-	tar xvzf "${DISTDIR}"/${F_PN}${PV}.tar.gz -C ${WORKDIR}
+	tar xvzf "${DISTDIR}/${F_PN}${PV}.tar.gz" -C "${WORKDIR}"
 }
 
 src_install() {

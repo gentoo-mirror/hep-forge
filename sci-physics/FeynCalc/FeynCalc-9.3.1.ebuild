@@ -8,7 +8,6 @@ EAPI=7
 
 MY_PV=$(ver_rs 1-3 '_')
 
-
 DESCRIPTION="FeynCalc"
 HOMEPAGE="https://feyncalc.github.io/"
 SLOT="0"
@@ -27,19 +26,19 @@ DEPEND="${RDEPEND}"
 BDEPEND=""
 
 src_configure() {
-	mv ${PN}/DocOutput ${PN}/Documentation
+	mv "${PN}/DocOutput" "${PN}/Documentation"
 	if use FCtraditionalFormOutput; then
-		cp ${FILESDIR}/FCConfig.m ${PN}/
+		cp "${FILESDIR}/FCConfig.m" "${PN}/"
 	fi
 }
 
 src_install() {
 	MMADIR=/usr/share/Mathematica/Applications
-	dodir $MMADIR/${PN}
-	insinto $MMADIR/
+	dodir "$MMADIR/${PN}"
+	insinto "$MMADIR/"
 	doins -r "${S}/${PN}"
 	# copy permissions 
-	for f in $(find ${PN}/* ! -type l); do
-		fperms --reference="${S}/$f" $MMADIR/$f
+	for f in $(find "${PN}/*" ! -type l); do
+		fperms --reference="${S}/$f" "$MMADIR/$f"
 	done
 }

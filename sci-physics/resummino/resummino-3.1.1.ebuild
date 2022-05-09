@@ -9,7 +9,6 @@ HOMEPAGE="https://resummino.hepforge.org/"
 SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip"
 S=${WORKDIR}/resummino-releases
 
-
 LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
 SLOT="0"
@@ -34,4 +33,3 @@ src_compile() {
 src_install() {
 	dobin bin/resummino
 }
-

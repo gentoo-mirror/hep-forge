@@ -20,8 +20,8 @@ DEPEND=">=sci-physics/fastjet-3.4.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-PATCHES=( 
-"${FILESDIR}"/${P}-soname.patch  
+PATCHES=(
+"${FILESDIR}"/${P}-soname.patch
 #"${FILESDIR}"/${P}-libdir.patch 
 )
 
@@ -41,7 +41,7 @@ src_install() {
 	#into /usr/include/fastjet/
 	#dodir /usr/include/fastjet/contrib
 	#emake fragile-shared-install PREFIX="${D}/usr"
-	emake install PREFIX=${D}/usr
+	emake install PREFIX="${D}/usr"
 	dolib.so libfastjetcontribfragile.so
 	dosym libfastjetcontribfragile.so /usr/$(get_libdir)/libfastjetcontribfragile.so.0
 	dosym libfastjetcontribfragile.so /usr/$(get_libdir)/fastjetcontribfragile.so.0

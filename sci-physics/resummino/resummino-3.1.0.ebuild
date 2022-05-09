@@ -33,4 +33,3 @@ src_compile() {
 src_install() {
 	dobin bin/resummino
 }
-
