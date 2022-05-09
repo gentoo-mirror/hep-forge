@@ -19,7 +19,7 @@ HOMEPAGE="https://gitlab.com/hepcedar/rivet"
 SRC_URI="http://www.hepforge.org/archive/rivet/Rivet-${PV}.tar.gz"
 S=${WORKDIR}/${MY_PF}
 
-LICENSE="Open Source License"
+LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="+hepmc3 hepmc2 -imagemagick -ghostscript -tex -doc +python"

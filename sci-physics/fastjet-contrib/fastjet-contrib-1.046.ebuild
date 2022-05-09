@@ -12,7 +12,7 @@ HOMEPAGE="http://fastjet.hepforge.org/contrib/"
 SRC_URI="http://fastjet.hepforge.org/contrib/downloads/${MY_PN}-${PV}.tar.gz"
 S=${WORKDIR}/${MY_PN}-${PV}
 
-LICENSE=""
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
