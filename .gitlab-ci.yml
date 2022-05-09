@@ -1,10 +1,11 @@
-image: apnpucky/gentoo
+image: apnpucky/gentoo-ebuild-ci
 
 stages:
   - test
 
 variables:
   NAME: "hep-forge"
+
 
 fetch:
   stage: test
@@ -29,7 +30,6 @@ repoman:
     - repoman full -d
     - repoman -vx full
 
-
 pkgcheck:
   stage: test
   dependencies:
@@ -37,4 +37,4 @@ pkgcheck:
   needs:
     - fetch
   script:
-    - pkgcheck ci -r hep-forge --exit 
+    - pkgcheck ci -r ${NAME} --exit 
