@@ -1,15 +1,14 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=compile install unpack
 DEPEND=virtual/fortran
-DESCRIPTION=TOPDRAWER
+DESCRIPTION=TOPDRAWER renders top files.
 EAPI=7
 HOMEPAGE=https://gitlab.com/APN-Pucky/topdrawer3
 INHERIT=git-r3
 IUSE=doc examples
-KEYWORDS=~amd64 ~x86
 LICENSE=all-rights-reserved
 PROPERTIES=live
 RDEPEND=virtual/fortran
 SLOT=0
 _eclasses_=git-r3	b9ac6f96d2a88edb5b351df634dc5e53
-_md5_=b66a38d3e4f08266bc2b8590f407f112
+_md5_=505da51be02c0d0461e0e5e3e1233848

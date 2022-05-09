@@ -15,7 +15,7 @@ S="${WORKDIR}/${MYP}"
 LICENSE="GPL-2"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="doc test example cm +gev -python -rootio"
+IUSE="doc test example cm +gev python rootio"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
