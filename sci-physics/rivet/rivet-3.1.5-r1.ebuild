@@ -41,9 +41,9 @@ RDEPEND="
 	imagemagick? ( media-gfx/imagemagick )
 	tex? ( app-text/texlive-core )
 
-	<dev-lang/python-3.9.9
+	<dev-lang/python-3.9.9:=
 	python? ( ${PYTHON_DEPS} )
-	sys-devel/gcc[fortran]
+	sys-devel/gcc:=[fortran]
 	"
 DEPEND="${RDEPEND}"
 BDEPEND="

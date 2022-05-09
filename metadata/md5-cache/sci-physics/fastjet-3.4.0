@@ -5,11 +5,11 @@ DESCRIPTION=A software package for jet finding in pp and e+e- collisions
 EAPI=8
 HOMEPAGE=http://fastjet.fr/
 INHERIT=autotools flag-o-matic fortran-2 python-any-r1
-IUSE=cgal doc examples +plugins -python +contrib
+IUSE=cgal doc examples python +plugins +contrib
 KEYWORDS=~amd64
 LICENSE=GPL-2+
 RDEPEND=sys-devel/gcc:=[fortran] contrib? ( sci-physics/fastjet-contrib ) cgal? ( sci-mathematics/cgal:=[shared(+)] ) plugins? ( sci-physics/siscone:= ) python? ( || ( >=dev-lang/python-3.9.9-r1:3.9 >=dev-lang/python-3.8.12_p1-r1:3.8 ) ) plugins? ( virtual/fortran )
 SLOT=0
 SRC_URI=http://fastjet.fr/repo/fastjet-3.4.0.tar.gz
 _eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	libtool	241a8f577b9781a42a7421e53448a44e	autotools	b46e8992a8126c894fbdc8084fc040c4	flag-o-matic	a500d7cc40da3de38c361e889153bdf7	fortran-2	72d28c6872beb1e7cb99684b0ae4715d	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	python-utils-r1	6d4bdf68f7dcd9a5491613be687ae665	python-any-r1	9006edf4b9c90f9ba1dc9ea9fee1b0bd
-_md5_=5bb36568a5f117d8189eb8c140a44cfc
+_md5_=79fd6ce92a4477214536391513d33d53
