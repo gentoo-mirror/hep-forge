@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>APN-Pucky@users.noreply.github.com</email>
+		<name>APN-Pucky</name>
+	</maintainer>
+	<longdescription lang="en">
+	MadGraph5_aMC@NLO group since madgraph changes files in its installation directory.
+	</longdescription>
+	<use>
+	</use>
+</pkgmetadata>
