@@ -6,7 +6,7 @@
 		<name>APN-Pucky</name>
 	</maintainer>
 	<longdescription lang="en">
-	FormCalc is a Mathematica package for the calculation of tree-level and one-loop Feynman diagrams.
+	FormCalc is a Mathematica package for the calculation of tree-level and one-loop Feynman diagrams. It makes extensive use of the form tool.
 	</longdescription>
 	<use>
 		<flag name="form">Use system Form instead of shipped Form version.</flag>
