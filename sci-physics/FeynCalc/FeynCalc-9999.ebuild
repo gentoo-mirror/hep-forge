@@ -18,6 +18,7 @@ LICENSE="GPL-3+"
 KEYWORDS="~amd64"
 IUSE="+FCtraditionalFormOutput"
 REQUIRED_USE=""
+PROPERTIES+=" live"
 
 RDEPEND="
 	sci-mathematics/mathematica
