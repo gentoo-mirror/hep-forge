@@ -1,7 +1,8 @@
 image: apnpucky/gentoo-ebuild-ci
 
 stages:
-  - test
+  - local
+  - install
 
 variables:
   NAME: "hep-forge"
@@ -15,26 +16,26 @@ default:
     - emaint -r ${NAME} sync
 
 local-repoman:
-  stage: test
+  stage: local
   before_script: []
   script:
     - repoman full -d
     - repoman -vx full
 
 local-pkgcheck:
-  stage: test
+  stage: local
   before_script: []
   script:
     - pkgcheck scan --exit 
 
 repoman:
-  stage: test
+  stage: install
   script:
     - cd /var/db/repos/${NAME}
     - repoman full -d
     - repoman -vx full
 
 pkgcheck:
-  stage: test
+  stage: install
   script:
     - pkgcheck ci -r ${NAME} --exit 
