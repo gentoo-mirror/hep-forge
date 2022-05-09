@@ -10,4 +10,4 @@ RDEPEND=virtual/fortran
 RESTRICT=bindist mirror
 SLOT=0
 SRC_URI=http://anonymous:anonymous@qgraf.tecnico.ulisboa.pt/v3.5/qgraf-3.5.0.tgz
-_md5_=47c2fcaa84570d1726ab6e96c8374e6a
+_md5_=64b0965ee751bd41633dc698f476037e

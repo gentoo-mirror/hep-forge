@@ -27,7 +27,7 @@ src_install() {
 
 	use doc && dodoc *.pdf
 	if use examples; then
-		insinto /usr/share/doc/${PF}/examples
-		doins phi3 qed qcd *.sty *.dat
+		docinto /usr/share/doc/${PF}/examples
+		dodoc phi3 qed qcd *.sty *.dat
 	fi
 }

@@ -3,11 +3,9 @@ DEPEND=>=sci-physics/fastjet-3.4.0
 DESCRIPTION=3rd party extensions of FastJet.
 EAPI=8
 HOMEPAGE=http://fastjet.hepforge.org/contrib/
-INHERIT=multilib
 KEYWORDS=~amd64
 LICENSE=GPL-2
 RDEPEND=>=sci-physics/fastjet-3.4.0
 SLOT=0
 SRC_URI=http://fastjet.hepforge.org/contrib/downloads/fjcontrib-1.046.tar.gz
-_eclasses_=multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	badd6e329e1f3e6bee99b35bf8763ce8
-_md5_=a7484f6d17348cc1f250d56805813997
+_md5_=d0836319c245710229c3c7949557410e

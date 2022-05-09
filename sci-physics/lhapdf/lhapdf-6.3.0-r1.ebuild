@@ -65,8 +65,8 @@ src_install() {
 	emake DESTDIR="${D}" install
 	use doc && dodoc -r doc/doxygen/*
 	if use examples; then
-		insinto /usr/share/doc/${PF}/examples
-		doins examples/*.cc
+		docinto /usr/share/doc/${PF}/examples
+		dodoc examples/*.cc
 	fi
 	if use python; then
 		cd "${S}/wrappers/python" && distutils-r1_src_install

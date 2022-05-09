@@ -7,6 +7,7 @@
 EAPI=7
 
 PYTHON_COMPAT=( python3_{7..10} )
+inherit python-r1
 
 F_PN="MG5aMC_LTS_"
 MY_PV=$(ver_rs 1-3 '_')
@@ -22,10 +23,10 @@ LICENSE="UoI-NCSA"
 SLOT="2"
 KEYWORDS="~amd64"
 IUSE=""
-REQUIRED_USE=""
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
-	dev-lang/python:*
+	${PYTHON_DEPS}
 	sys-devel/gcc:*[fortran]
 	acct-user/madgraph
 	acct-group/madgraph
@@ -42,6 +43,7 @@ src_unpack() {
 }
 
 src_install() {
+	dosym ${MY_PF}/bin/mg5_aMC /usr/bin/mg5_aMC2
 	dodir /opt/${MY_PF}
 	insinto /opt/
 	doins -r "${S}"
@@ -54,7 +56,6 @@ src_install() {
 
 	#fperms +x /opt/${MY_PF}/bin/mg5_aMC
 	fowners madgraph:madgraph -R /opt/${MY_PF}
-	dosym /opt/${MY_PF}/bin/mg5_aMC /usr/bin/mg5_aMC2
 
 	ewarn "YOU MUST add your user to the madgraph group"
 	ewarn "eg. sudo usermod -a -G madgraph username"

@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit multilib
-
 MY_PN=fjcontrib
 
 DESCRIPTION="3rd party extensions of FastJet."
@@ -22,7 +20,7 @@ BDEPEND=""
 
 PATCHES=(
 "${FILESDIR}"/${P}-soname.patch
-#"${FILESDIR}"/${P}-libdir.patch 
+#"${FILESDIR}"/${P}-libdir.patch
 )
 
 src_prepare() {

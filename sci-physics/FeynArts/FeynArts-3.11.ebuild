@@ -6,7 +6,7 @@
 
 EAPI=7
 
-DESCRIPTION="FeynArts"
+DESCRIPTION="FeynArts renders Feynman diagrams and generates their topologies."
 HOMEPAGE="http://feynarts.de"
 SRC_URI="http://feynarts.de/${P}.tar.gz"
 
@@ -23,10 +23,10 @@ DEPEND="${RDEPEND}"
 BDEPEND=""
 
 src_install() {
+	dosym "${P}" /opt/"${PN}"
 	dodir /opt/"${P}"
 	insinto /opt/
 	doins -r "${S}"
-	dosym /opt/"${P}" /opt/"${PN}"
 	insinto /usr/share/Mathematica/Autoload/FeynArts/
 	doins "${FILESDIR}/init.m"
 }

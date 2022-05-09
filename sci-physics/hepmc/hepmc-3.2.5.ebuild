@@ -3,7 +3,8 @@
 
 EAPI=8
 
-inherit cmake
+PYTHON_COMPAT=( python3_{8..9} )
+inherit cmake python-r1
 
 MYP=HepMC3-${PV}
 
@@ -16,13 +17,18 @@ LICENSE="GPL-2"
 SLOT="3"
 KEYWORDS="~amd64"
 IUSE="doc test example cm +gev python rootio"
+RESTRICT="!test? ( test )"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	${PYTHON_DEPS}
+"
 BDEPEND="
+	${PYTHON_DEPS}
 	sci-physics/root
 	sci-physics/pythia
-	dev-lang/python
 	doc? (
 		app-doc/doxygen
 		dev-texlive/texlive-latex

@@ -33,6 +33,7 @@ src_compile() {
 }
 
 src_install() {
+	dosym ${P} /opt/${PN}
 	dodir /opt/${P}
 	insinto /opt/
 	doins -r "${S}"
@@ -45,7 +46,6 @@ src_install() {
 	if use form; then
 		dosym `which form` /opt/${P}/Linux-x86-64/form
 	fi
-	dosym /opt/${P} /opt/${PN}
 	insinto /usr/share/Mathematica/Autoload/FormCalc/
 	doins "${FILESDIR}/init.m"
 }
