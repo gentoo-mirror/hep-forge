@@ -7,6 +7,8 @@ inherit cmake
 DESCRIPTION="Resummation for BSM particles"
 HOMEPAGE="https://resummino.hepforge.org/"
 SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip"
+S=${WORKDIR}/resummino-releases
+
 
 LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
