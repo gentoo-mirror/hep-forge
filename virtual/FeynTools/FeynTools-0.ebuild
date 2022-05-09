@@ -3,8 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="FeynTools"
-HOMEPAGE="http://www.feynarts.de/"
+DESCRIPTION="FeynTools is a collection of FeynArts, FormCalc and LoopTools."
 SLOT="0"
 KEYWORDS="~amd64"
 
