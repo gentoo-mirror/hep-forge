@@ -32,8 +32,7 @@ repoman:
   stage: install
   script:
     - cd /var/db/repos/${NAME}
-    - repoman full -d
-    - repoman -vx full
+    - repoman -vdx full
 
 pkgcheck:
   stage: install
