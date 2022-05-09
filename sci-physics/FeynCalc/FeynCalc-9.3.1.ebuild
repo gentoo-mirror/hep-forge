@@ -8,7 +8,7 @@ EAPI=7
 
 MY_PV=$(ver_rs 1-3 '_')
 
-DESCRIPTION="FeynCalc"
+DESCRIPTION="FeynCalc is a Mathematica package for computing Feynman diagrams."
 HOMEPAGE="https://feyncalc.github.io/"
 SLOT="0"
 SRC_URI="https://github.com/FeynCalc/feyncalc/archive/refs/tags/Release-${MY_PV}.tar.gz -> FeynCalc-${PV}.tar.gz"
@@ -37,7 +37,7 @@ src_install() {
 	dodir "$MMADIR/${PN}"
 	insinto "$MMADIR/"
 	doins -r "${S}/${PN}"
-	# copy permissions 
+	# copy permissions
 	for f in $(find "${PN}/*" ! -type l); do
 		fperms --reference="${S}/$f" "$MMADIR/$f"
 	done
