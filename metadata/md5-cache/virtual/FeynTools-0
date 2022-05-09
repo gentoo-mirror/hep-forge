@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=FeynTools is a collection of FeynArts, FormCalc and LoopTools.
+EAPI=8
+KEYWORDS=~amd64
+RDEPEND=sci-physics/FeynArts sci-physics/FormCalc sci-physics/looptools
+SLOT=0
+_md5_=62719b58b0d744366aeae4bf6e79b85f

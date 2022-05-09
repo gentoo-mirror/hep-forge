@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=sci-mathematics/mathematica
+DESCRIPTION=FeynArts
+EAPI=7
+HOMEPAGE=http://feynarts.de
+KEYWORDS=~amd64
+LICENSE=LGPL-3+
+RDEPEND=sci-mathematics/mathematica
+SLOT=0
+SRC_URI=http://feynarts.de/FeynArts-3.11.tar.gz
+_md5_=64f5acf788d5fa153667ddebdd406e85
