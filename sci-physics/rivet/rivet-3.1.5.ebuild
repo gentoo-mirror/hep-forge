@@ -33,17 +33,17 @@ RDEPEND="
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.046
 	>=dev-python/cython-0.29.24
-	hepmc2? ( =sci-physics/hepmc-2.06.11[-cm,gev] )
-	hepmc3? ( =sci-physics/hepmc-3.2.4[-cm,gev] )
+	hepmc2? ( ~sci-physics/hepmc-2.06.11[-cm,gev] )
+	hepmc3? ( ~sci-physics/hepmc-3.2.4[-cm,gev] )
 
 	sci-libs/gsl
 	ghostscript? ( app-text/ghostscript-gpl )
 	imagemagick? ( media-gfx/imagemagick )
 	tex? ( app-text/texlive-core )
 
-	<dev-lang/python-3.9.9
+	<dev-lang/python-3.9.9:=
 	python? ( ${PYTHON_DEPS} )
-	sys-devel/gcc[fortran]
+	sys-devel/gcc[fortran:=]
 	"
 DEPEND="${RDEPEND}"
 BDEPEND="

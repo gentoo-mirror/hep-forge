@@ -19,7 +19,7 @@ KEYWORDS="~amd64"
 IUSE="cgal doc examples +plugins -python +contrib"
 
 DEPEND="
-sys-devel/gcc[fortran]
+sys-devel/gcc[fortran:=]
 contrib? ( sci-physics/fastjet-contrib )
 cgal? ( sci-mathematics/cgal:=[shared(+)] )
 plugins? ( sci-physics/siscone:= )
