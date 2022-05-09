@@ -25,7 +25,7 @@ REQUIRED_USE=""
 
 RDEPEND="
 	dev-lang/python:*
-	sys-devel/gcc[fortran:*]
+	sys-devel/gcc:*[fortran]
 	acct-user/madgraph
 	acct-group/madgraph
 	"

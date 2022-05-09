@@ -43,7 +43,7 @@ RDEPEND="
 
 	<dev-lang/python-3.9.9:=
 	python? ( ${PYTHON_DEPS} )
-	sys-devel/gcc[fortran:=]
+	sys-devel/gcc:=[fortran]
 	"
 DEPEND="${RDEPEND}"
 BDEPEND="
