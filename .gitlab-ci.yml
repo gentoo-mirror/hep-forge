@@ -7,7 +7,7 @@ variables:
   NAME: "hep-forge"
 
 
-test:
+repoman:
   stage: test
   script:
     - echo "[${NAME}]">>/etc/portage/repos.conf/${NAME}.conf
@@ -18,3 +18,13 @@ test:
     - cd /var/db/repos/${NAME}
     - repoman full -d
     - repoman -vx full
+
+pkgcheck:
+  stage: test
+  script:
+    - echo "[${NAME}]">>/etc/portage/repos.conf/${NAME}.conf
+    - echo "location = /var/db/repos/${NAME}" >>/etc/portage/repos.conf/${NAME}.conf
+    - echo "sync-type = git" >>/etc/portage/repos.conf/${NAME}.conf
+    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-${NAME}.git" >>/etc/portage/repos.conf/${NAME}.conf
+    - emaint -r ${NAME} sync
+    - pkgcheck ci -r hep-forge --exit 
