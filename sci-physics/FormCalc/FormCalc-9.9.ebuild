@@ -6,7 +6,7 @@
 
 EAPI=7
 
-DESCRIPTION="FormCalc"
+DESCRIPTION="FormCalc can be used for automatic Feynman diagram computation."
 HOMEPAGE="http://feynarts.de/formcalc"
 SRC_URI="http://feynarts.de/formcalc/${P}.tar.gz"
 
