@@ -24,7 +24,7 @@ SLOT="3"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="+hepmc3 hepmc2 -imagemagick -ghostscript -tex -doc +python"
 REQUIRED_USE="
-hepmc3? ( !hepmc2 ) 
+hepmc3? ( !hepmc2 )
 python? ( ${PYTHON_REQUIRED_USE} )
 "
 
@@ -51,7 +51,6 @@ BDEPEND="
 PATCHES=(
 "${FILESDIR}"/${P}-doc.patch
 )
-
 
 src_prepare() {
 	default

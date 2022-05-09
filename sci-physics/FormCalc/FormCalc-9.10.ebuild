@@ -47,5 +47,5 @@ src_install() {
 	fi
 	dosym /opt/${P} /opt/${PN}
 	insinto /usr/share/Mathematica/Autoload/FormCalc/
-	doins ${FILESDIR}/init.m
+	doins "${FILESDIR}/init.m"
 }

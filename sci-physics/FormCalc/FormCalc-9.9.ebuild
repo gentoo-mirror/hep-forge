@@ -43,9 +43,9 @@ src_install() {
 	done
 	# switch to system form
 	if use form; then
-    	dosym `which form` /opt/${P}/Linux-x86-64/form
+		dosym `which form` /opt/${P}/Linux-x86-64/form
 	fi
 	dosym /opt/${P} /opt/${PN}
 	insinto /usr/share/Mathematica/Autoload/FormCalc/
-	doins ${FILESDIR}/init.m
+	doins "${FILESDIR}/init.m"
 }

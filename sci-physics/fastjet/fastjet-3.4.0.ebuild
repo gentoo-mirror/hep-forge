@@ -44,7 +44,6 @@ src_configure() {
 src_compile() {
 	default
 
-
 	if use doc; then
 		doxygen Doxyfile || die
 		HTML_DOCS=( html/. )
