@@ -9,6 +9,6 @@
 	FormCalc is a Mathematica package for the calculation of tree-level and one-loop Feynman diagrams.
 	</longdescription>
 	<use>
-	  <flag name="form">Use system Form instead of shipped Form version.</flag>
-</use>
+		 <flag name="form">Use system Form instead of shipped Form version.</flag>
+	</use>
 </pkgmetadata>
