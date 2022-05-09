@@ -9,7 +9,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{8..9} )
 DISTUTILS_USE_SETUPTOOLS=no
 
-inherit bash-completion-r1 distutils-r1 flag-o-matic multilib
+inherit distutils-r1 #flag-o-matic multilib bash-completion-r1
 
 MY_PN="Rivet-"
 MY_PF=${MY_PN}${PV}
@@ -21,8 +21,8 @@ S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3+"
 SLOT="3"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
-IUSE="+hepmc3 hepmc2 -imagemagick -ghostscript -tex -doc +python"
+KEYWORDS="~amd64"
+IUSE="+hepmc3 hepmc2 -tex -imagemagick -ghostscript -doc +python"
 REQUIRED_USE="
 hepmc3? ( !hepmc2 )
 python? ( ${PYTHON_REQUIRED_USE} )

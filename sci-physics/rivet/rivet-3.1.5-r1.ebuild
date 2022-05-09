@@ -9,7 +9,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{8..9} )
 DISTUTILS_USE_SETUPTOOLS=no
 
-inherit bash-completion-r1 autotools distutils-r1 flag-o-matic multilib
+inherit bash-completion-r1 autotools distutils-r1 flag-o-matic
 
 MY_PN="Rivet-"
 MY_PF=${MY_PN}${PV}
@@ -21,8 +21,8 @@ S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3+"
 SLOT="3"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
-IUSE="+hepmc3 hepmc2 -imagemagick -ghostscript -tex -doc +python"
+KEYWORDS="~amd64"
+IUSE="+hepmc3 hepmc2 -tex -imagemagick -ghostscript -doc +python"
 REQUIRED_USE="
 hepmc3? ( !hepmc2 )
 python? ( ${PYTHON_REQUIRED_USE} )
@@ -33,8 +33,8 @@ RDEPEND="
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.046
 	>=dev-python/cython-0.29.24
-	hepmc2? ( =sci-physics/hepmc-2.06.11[-cm,gev] )
-	hepmc3? ( =sci-physics/hepmc-3.2.4[-cm,gev] )
+	hepmc2? ( ~sci-physics/hepmc-2.06.11[-cm,gev] )
+	hepmc3? ( ~sci-physics/hepmc-3.2.4[-cm,gev] )
 
 	sci-libs/gsl
 	ghostscript? ( app-text/ghostscript-gpl )
