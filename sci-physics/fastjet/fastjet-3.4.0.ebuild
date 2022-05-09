@@ -16,7 +16,7 @@ SRC_URI="http://fastjet.fr/repo/${P}.tar.gz"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cgal doc examples +plugins -python +contrib"
+IUSE="cgal doc examples python +plugins +contrib"
 
 DEPEND="
 sys-devel/gcc:=[fortran]

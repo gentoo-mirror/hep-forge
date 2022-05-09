@@ -31,7 +31,7 @@ src_install() {
 
 	use doc && dodoc doc/*
 	if use examples; then
-		insinto /usr/share/doc/${PF}/examples
-		doins input/*
+		docinto /usr/share/doc/${PF}/examples
+		dodoc input/*
 	fi
 }

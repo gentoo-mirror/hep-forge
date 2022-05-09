@@ -5,6 +5,7 @@ EAPI=7
 
 inherit acct-user
 
+KEYWORDS="~amd64"
 DESCRIPTION="User for MadGraph"
 ACCT_USER_ID=703
 ACCT_USER_GROUPS=( ${PN} )

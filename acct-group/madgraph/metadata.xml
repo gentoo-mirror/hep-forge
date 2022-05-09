@@ -6,8 +6,6 @@
 		<name>APN-Pucky</name>
 	</maintainer>
 	<longdescription lang="en">
-	MadGraph5_aMC@NLO group since madgraph changes files in its installation directory.
+	MadGraph5_aMC@NLO group is needed since madgraph changes files in its installation directory.
 	</longdescription>
-	<use>
-	</use>
 </pkgmetadata>

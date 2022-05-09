@@ -22,7 +22,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+hepmc3 hepmc2 -tex -imagemagick -ghostscript -doc +python"
+IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc +python"
 REQUIRED_USE="
 hepmc3? ( !hepmc2 )
 python? ( ${PYTHON_REQUIRED_USE} )

@@ -5,5 +5,6 @@ EAPI=7
 
 inherit acct-group
 
+KEYWORDS="~amd64"
 DESCRIPTION="Group for MadGraph"
 ACCT_GROUP_ID=703
