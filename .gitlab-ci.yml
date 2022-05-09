@@ -22,6 +22,8 @@ repoman:
   stage: test
   dependencies:
     - fetch
+  needs:
+    - fetch
   script:
     - cd /var/db/repos/${NAME}
     - repoman full -d
@@ -31,6 +33,8 @@ repoman:
 pkgcheck:
   stage: test
   dependencies:
+    - fetch
+  needs:
     - fetch
   script:
     - pkgcheck ci -r hep-forge --exit 
