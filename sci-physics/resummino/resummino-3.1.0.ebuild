@@ -24,9 +24,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
-# No need for patches here
-#PATCHES=( "${FILESDIR}"/${P}-looptools.patch )
-
 src_compile() {
 	cmake .
 	make
