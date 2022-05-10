@@ -45,7 +45,7 @@ test:
   parallel:
     matrix:
       - NAME: [resummino]
-      - VERSION: [3.1.0, 3.1.1]
+        VERSION: [3.1.0, 3.1.1]
   script:
     - echo $NAME-$VERSION
 
@@ -56,7 +56,7 @@ resummino:
   parallel:
     matrix:
       - NAME: [resummino]
-      - VERSION: [3.1.0, 3.1.1]
+        VERSION: [3.1.0, 3.1.1]
   script:
     - emerge -qv =$NAME-$VERSION
   rules:
