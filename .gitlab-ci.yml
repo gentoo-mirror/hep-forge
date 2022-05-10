@@ -22,18 +22,18 @@ local-repoman:
     - repoman full -d
     - repoman -vx full
 
-local-pkgcheck:
-  stage: check
-  before_script: []
-  script:
-    - pkgcheck scan --exit 
-
 repoman:
   stage: check
   script:
     - cd /var/db/repos/${NAME}
     - repoman -vdx full
 
+local-pkgcheck:
+  stage: check
+  before_script: []
+  script:
+    - pkgcheck scan --exit 
+    
 pkgcheck:
   stage: check
   script:
