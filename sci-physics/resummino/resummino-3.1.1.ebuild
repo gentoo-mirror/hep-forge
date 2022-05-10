@@ -9,7 +9,7 @@ HOMEPAGE="https://resummino.hepforge.org/"
 SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip"
 S=${WORKDIR}/resummino-releases
 
-LICENSE="all-rights-reserved"
+LICENSE="EPL-2.0"
 RESTRICT="bindist mirror"
 SLOT="0"
 KEYWORDS="~amd64"
