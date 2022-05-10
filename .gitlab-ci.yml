@@ -39,17 +39,6 @@ pkgcheck:
   script:
     - pkgcheck ci -r ${NAME} --exit 
 
-test:
-  image: apnpucky/gentoo-hep-forge
-  stage: install
-  parallel:
-    matrix:
-      - NAME: [resummino]
-        VERSION: [3.1.0, 3.1.1]
-  script:
-    - echo $NAME-$VERSION
-
-
 resummino:
   image: apnpucky/gentoo-hep-forge
   stage: install
