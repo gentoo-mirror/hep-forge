@@ -10,7 +10,7 @@ SRC_URI="https://resummino.hepforge.org/downloads/?f=resummino3.0.zip"
 S=${WORKDIR}/${PN}3.0
 
 LICENSE="EPL-2.0"
-RESTRICT="bindist mirror"
+RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
 
