@@ -49,5 +49,6 @@ resummino:
   script:
     - emerge -qv =$NAME-$VERSION
   rules:
-    - changes:
+    - if: $CI_PIPELINE_SOURCE == "push"
+      changes:
       - sci-physics/$NAME/$NAME-$VERSION.ebuild
