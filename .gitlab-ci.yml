@@ -41,6 +41,8 @@ pkgcheck:
 
 resummino:
   image: apnpucky/gentoo-hep-forge
+  before_script:
+    - emaint -r ${REPO_NAME} sync
   stage: install
   parallel:
     matrix:
