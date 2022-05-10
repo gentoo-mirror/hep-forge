@@ -1,7 +1,7 @@
 image: apnpucky/gentoo-ebuild-ci
 
 stages:
-  - local
+  - check
   - install
 
 variables:
@@ -16,25 +16,38 @@ default:
     - emaint -r ${NAME} sync
 
 local-repoman:
-  stage: local
+  stage: check
   before_script: []
   script:
     - repoman full -d
     - repoman -vx full
 
 local-pkgcheck:
-  stage: local
+  stage: check
   before_script: []
   script:
     - pkgcheck scan --exit 
 
 repoman:
-  stage: install
+  stage: check
   script:
     - cd /var/db/repos/${NAME}
     - repoman -vdx full
 
 pkgcheck:
-  stage: install
+  stage: check
   script:
     - pkgcheck ci -r ${NAME} --exit 
+
+resummino:
+  image: apnpucky/gentoo-hep-forge
+  stage: install
+  parallel:
+    matrix:
+      - NAME: [resummino]
+      - VERSION: [3.1.0, 3.1.1]
+  script:
+    - emerge -qv =$NAME-$VERSION
+  rules:
+    - changes:
+      - sci-physics/$NAME/$NAME-$VERSION.ebuild
