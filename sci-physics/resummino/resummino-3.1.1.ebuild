@@ -4,7 +4,7 @@
 EAPI=8
 inherit cmake
 
-DESCRIPTION="Resummation for BSM particles"
+DESCRIPTION="Resummation for electroweak BSM particles"
 HOMEPAGE="https://resummino.hepforge.org/"
 SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip"
 S=${WORKDIR}/resummino-releases
