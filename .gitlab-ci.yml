@@ -54,3 +54,4 @@ resummino:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
       - sci-physics/$PKG/$PKG-$VERSION.ebuild
+      - sci-physics/$PKG/Manifest
