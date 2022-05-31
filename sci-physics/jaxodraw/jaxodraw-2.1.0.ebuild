@@ -10,7 +10,7 @@ MY_PV=$(ver_rs 2 '-')
 
 DESCRIPTION="Java program for drawing Feynman diagrams"
 HOMEPAGE="http://jaxodraw.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${PN}-${MY_PV}_src.tar.gz
+SRC_URI="mirror://sourceforge/${PN}/${PN}-${MY_PV}-src.tar.gz
 	http://downloads.sourceforge.net/jaxodraw/axodraw4j_2008_11_19.tar.gz"
 
 LICENSE="GPL-2"
