@@ -5,6 +5,7 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{8..9} )
 DISTUTILS_USE_SETUPTOOLS=no
+DISTUTILS_SINGLE_IMPL=1
 
 inherit bash-completion-r1 autotools distutils-r1
 
@@ -19,7 +20,7 @@ IUSE="root python"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 RDEPEND="
-	root? ( sci-physics/root:= )
+	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
 	python? ( ${PYTHON_DEPS} )
 "
 
