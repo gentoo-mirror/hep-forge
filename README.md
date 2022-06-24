@@ -1,28 +1,27 @@
 # Inofficial HEPForge mirror
 
-## Development
 
-### pkgdev
+## pkgdev
 
 ```bash
 git add 
 pkgdev commit
 ```
 
-### Ebuild
-#### How to create a new Ebuild
+## Ebuild
+### How to create a new Ebuild
 
 ```bash
 ebuild *.ebuild manifest clean unpack
 ```
 
-#### Test it
+### Test
 
 ```bash
 ebuild *.ebuild clean test install
 ```
 
-#### Install it
+### Install
 
 ```bash
 ebuild *.ebuild clean install merge
@@ -31,7 +30,7 @@ ebuild *.ebuild clean install merge
 TODO add Repoman info here
 
 
-## Patch it (https://forums.gentoo.org/viewtopic-t-1093700-start-0.html)
+## Patching (https://forums.gentoo.org/viewtopic-t-1093700-start-0.html)
 Usually I follow these steps (I use less package as example)
 
 * unpack package ebuild /usr/portage/sys-apps/less/less-531.ebuild unpack;
