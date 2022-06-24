@@ -1,4 +1,4 @@
-# HEPForge mirror
+# Inofficial HEPForge mirror
 
 ## How to create a new Ebuild
 
