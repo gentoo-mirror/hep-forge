@@ -1,18 +1,28 @@
 # Inofficial HEPForge mirror
 
-## How to create a new Ebuild
+## Development
+
+### pkgdev
+
+```bash
+git add 
+pkgdev commit
+```
+
+### Ebuild
+#### How to create a new Ebuild
 
 ```bash
 ebuild *.ebuild manifest clean unpack
 ```
 
-## Test it
+#### Test it
 
 ```bash
 ebuild *.ebuild clean test install
 ```
 
-## Install it
+#### Install it
 
 ```bash
 ebuild *.ebuild clean install merge
