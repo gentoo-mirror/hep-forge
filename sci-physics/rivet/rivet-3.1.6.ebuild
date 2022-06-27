@@ -48,6 +48,12 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="
 "
+PATCHES=(
+"${FILESDIR}"/${P}-binreloc.patch
+"${FILESDIR}"/${P}-std.patch
+)
+
+
 
 src_prepare() {
 	default
