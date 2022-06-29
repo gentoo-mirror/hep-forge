@@ -37,6 +37,9 @@ src_configure() {
 	econf --disable-static $(use_enable root) --disable-pyext
 
 	if use python; then
+		if use root; then
+			export BUILD_ROOTCOMPAT="yes"
+		fi
 		cd "${S}"/pyext || die
 		distutils-r1_src_prepare
 	fi
@@ -80,6 +83,7 @@ src_install() {
 	dobin bin/yoda2flat
 	dobin bin/yoda2root
 	dobin bin/yoda2yoda
+
 
 	if use python; then
 		tp=$(pwd)
