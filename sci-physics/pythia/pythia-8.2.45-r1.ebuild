@@ -25,9 +25,11 @@ SRC_URI="http://home.thep.lu.se/~torbjorn/${PN}${MV}/${MY_P}.tgz
 SLOT="8"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="doc examples fastjet +hepmc lhapdf root test zlib"
+IUSE="doc examples fastjet +hepmc2 hepmc3 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
-REQUIRED_USE="hepmc? ( ^^ ( hepmc2 hepmc3 ) ) hepmc2? ( hepmc ) hepmc3? ( hepmc )"
+REQUIRED_USE="
+	hepmc3? ( !hepmc2 )
+"
 
 RDEPEND="
 	fastjet? ( sci-physics/fastjet )
@@ -136,12 +138,16 @@ src_configure() {
 src_test() {
 	cd examples || die
 
+	local anyhepmc=0
+	use hepmc2 && anyhepmc=1
+	use hepmc3 && anyhepmc=1
+
 	local tests="$(echo main{{01..32},37,38,61,62,73,80}.out)"
-	use hepmc && tests+=" $(echo main{41,42,85,86}.out)"
-	use hepmc && use lhapdf && tests+=" $(echo main{43,{87..89}}.out)"
+	use anyhepmc && tests+=" $(echo main{41,42,85,86}.out)"
+	use anyhepmc && use lhapdf && tests+=" $(echo main{43,{87..89}}.out)"
 	use lhapdf && tests+=" $(echo main{51..54}.out)"
 	use fastjet && tests+=" $(echo main{71,72}.out)"
-	use fastjet && use hepmc && use lhapdf && tests+=" $(echo main{81..84}).out"
+	use fastjet && use anyhepmc && use lhapdf && tests+=" $(echo main{81..84}).out"
 	use root && tests+=" main91.out"
 	# Disabled tests:
 	# 33	needs PowHEG
