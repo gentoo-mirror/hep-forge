@@ -30,7 +30,8 @@ src_compile() {
 
 src_install() {
 	dobin bin/SPheno
-	dosym ${MY_P}/bin/SPheno /usr/bin/spheno
+	# convenience symlink since the package is lowercase but the default produced binary is upercase
+	dosym /usr/bin/SPheno /usr/bin/spheno
 	dolib.a lib/libSPheno.a
 	doheader include/*
 
