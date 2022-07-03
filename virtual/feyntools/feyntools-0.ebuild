@@ -8,7 +8,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-physics/FeynArts
-	sci-physics/FormCalc
+	sci-physics/feynarts
+	sci-physics/formcalc
 	sci-physics/looptools
 	"
