@@ -19,7 +19,7 @@ DEPEND="
 	app-arch/unzip
 	virtual/fortran
 	sci-physics/lhapdf
-	=sci-physics/looptools-2.15-r1
+	>=sci-physics/looptools-2.15-r1
 	>=sci-libs/gsl-2.0"
 RDEPEND="${DEPEND}"
 BDEPEND=""
