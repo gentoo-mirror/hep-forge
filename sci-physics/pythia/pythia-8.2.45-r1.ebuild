@@ -24,7 +24,7 @@ SRC_URI="http://home.thep.lu.se/~torbjorn/${PN}${MV}/${MY_P}.tgz
 
 SLOT="8"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 IUSE="doc examples fastjet +hepmc2 hepmc3 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="

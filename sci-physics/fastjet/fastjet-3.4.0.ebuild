@@ -4,7 +4,7 @@
 EAPI=8
 
 FORTRAN_NEEDED=plugins
-PYTHON_COMPAT=( python3_{8..9} )
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit autotools flag-o-matic fortran-2 python-r1
 

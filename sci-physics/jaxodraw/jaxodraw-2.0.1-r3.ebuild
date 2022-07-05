@@ -4,7 +4,7 @@
 EAPI=8
 JAVA_PKG_IUSE="doc source"
 
-inherit java-pkg-2 java-ant-2
+inherit java-pkg-2 java-ant-2 desktop
 
 MY_PV=$(ver_rs 2 '-')
 
