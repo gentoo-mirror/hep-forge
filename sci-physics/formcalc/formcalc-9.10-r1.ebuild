@@ -12,6 +12,7 @@ MY_P=${MY_PN}-${PV}
 DESCRIPTION="FormCalc can be used for automatic Feynman diagram computation."
 HOMEPAGE="http://feynarts.de/formcalc"
 SRC_URI="http://feynarts.de/formcalc/${MY_P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="LGPL-3+"
 SLOT="0"
