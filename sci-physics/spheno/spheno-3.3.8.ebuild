@@ -15,7 +15,7 @@ RESTRICT="bindist mirror"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="doc"
+IUSE="doc examples"
 DEPEND="virtual/fortran"
 RDEPEND="${DEPEND}"
 BDEPEND=""
@@ -38,4 +38,10 @@ src_install() {
 	doheader include/*
 
 	use doc && dodoc doc/*
+	if use examples; then
+		docinto examples
+		dodoc input/* 
+		docompress -x /usr/share/doc/${PF}/examples
+	fi
+
 }
