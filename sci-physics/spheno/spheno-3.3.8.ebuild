@@ -32,7 +32,7 @@ src_compile() {
 
 src_install() {
 	dobin bin/${MY_PN}
-	# convenience symlink since the package is lowercase but the default produced binary is upercase
+	# convenience symlink since the package is lowercase but the default produced binary is uppercase
 	dosym ${EPREFIX}/usr/bin/${MY_PN} /usr/bin/${PN}
 	dolib.a lib/lib${MY_PN}.a
 	doheader include/*
