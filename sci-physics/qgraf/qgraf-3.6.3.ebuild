@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="qgraf generates Feynman diagrams for various types of QFT models"
 HOMEPAGE="http://cfif.ist.utl.pt/~paulo/qgraf.html"
-SRC_URI="http://anonymous:anonymous@qgraf.tecnico.ulisboa.pt/v3.4/qgraf-${PV}.tgz"
+SRC_URI="http://anonymous:anonymous@qgraf.tecnico.ulisboa.pt/v3.6/qgraf-${PV}.tgz"
 S=${WORKDIR}
 
 LICENSE="all-rights-reserved"
@@ -14,12 +14,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 IUSE="doc examples"
-DEPEND="virtual/fortran" #gfortran
+DEPEND="virtual/fortran" 
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-	gfortran ${P}.f -o qgraf
+	gfortran ${P}.f08 -o qgraf
 }
 
 src_install() {
@@ -28,6 +28,6 @@ src_install() {
 	use doc && dodoc *.pdf
 	if use examples; then
 		docinto examples
-		dodoc phi3 qed qcd *.sty *.dat
+		dodoc  phi3 qed qcd *.sty *.dat
 	fi
 }
