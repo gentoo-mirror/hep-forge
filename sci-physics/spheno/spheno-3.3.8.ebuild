@@ -3,7 +3,8 @@
 
 EAPI=7
 
-MY_P=SPheno-${PV}
+MY_PN=SPheno
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="SPheno stands for S(upersymmetric) Pheno(menology)"
 HOMEPAGE="https://spheno.hepforge.org/"
@@ -24,15 +25,16 @@ PATCHES=( "${FILESDIR}"/${P}-gfortran.patch )
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-	export MAKEOPTS=-j1 # single thread force needed
+	# single thread force needed since fortan mods depend on each other
+	export MAKEOPTS=-j1
 	emake
 }
 
 src_install() {
-	dobin bin/SPheno
+	dobin bin/${MY_PN}
 	# convenience symlink since the package is lowercase but the default produced binary is upercase
-	dosym /usr/bin/SPheno /usr/bin/spheno
-	dolib.a lib/libSPheno.a
+	dosym ${EPREFIX}/usr/bin/${MY_PN} /usr/bin/${PN}
+	dolib.a lib/lib${MY_PN}.a
 	doheader include/*
 
 	use doc && dodoc doc/*
