@@ -13,12 +13,11 @@ SRC_URI="https://spheno.hepforge.org/downloads/?f=${MY_P}.tar.gz"
 LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 
-IUSE="doc"
+IUSE=""
 DEPEND="virtual/fortran"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 PATCHES=( "${FILESDIR}"/${P}-gfortran.patch )
 
@@ -33,9 +32,11 @@ src_compile() {
 src_install() {
 	dobin bin/${MY_PN}
 	# convenience symlink since the package is lowercase but the default produced binary is uppercase
-	dosym bin/${MY_PN} /usr/bin/${PN}
+	dosym ${MY_PN} /usr/bin/${PN}
 	dolib.a lib/lib${MY_PN}.a
 	doheader include/*
-
 	dodoc doc/*
+	docinto examples
+	dodoc input/*
+	docompress -x /usr/share/doc/${PF}/examples
 }
