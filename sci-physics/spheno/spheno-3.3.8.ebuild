@@ -1,7 +1,7 @@
 # Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 MY_PN=SPheno
 MY_P=${MY_PN}-${PV}
@@ -33,9 +33,9 @@ src_compile() {
 src_install() {
 	dobin bin/${MY_PN}
 	# convenience symlink since the package is lowercase but the default produced binary is uppercase
-	dosym ${EPREFIX}/usr/bin/${MY_PN} /usr/bin/${PN}
+	dosym bin/${MY_PN} /usr/bin/${PN}
 	dolib.a lib/lib${MY_PN}.a
 	doheader include/*
 
-	use doc && dodoc doc/*
+	dodoc doc/*
 }
