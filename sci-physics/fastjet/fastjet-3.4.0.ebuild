@@ -64,6 +64,5 @@ src_install() {
 		dodoc -r example/.
 		docompress -x /usr/share/doc/${PF}/examples
 	fi
-	# TODO maybe remove for contrib to compule
 	find "${ED}" -name '*.la' -delete || die
 }
