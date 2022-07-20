@@ -34,6 +34,10 @@ src_configure() {
 }
 
 src_install() {
+	# documentation are notebook(.nb) files
+	dodoc -r ${MY_PN}/Documentation/English/*
+	docompress -x /usr/share/doc/${PF}/
+
 	MMADIR=/usr/share/Mathematica/Applications
 	dodir "$MMADIR/${MY_PN}"
 	insinto "$MMADIR/"
@@ -42,7 +46,5 @@ src_install() {
 	for f in $(find "${MY_PN}/*" ! -type l); do
 		fperms --reference="${S}/$f" "$MMADIR/$f"
 	done
-	# documentation are notebook(.nb) files
-	dodoc Documentation/English/*
-	docompress -x /usr/share/doc/${PF}/
+
 }

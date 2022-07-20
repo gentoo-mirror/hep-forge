@@ -38,6 +38,6 @@ src_install() {
 		fperms --reference="${S}/$f" "$MMADIR/$f"
 	done
 	# documentation are notebook(.nb) files
-	dodoc Documentation/English/*
+	dodoc -r ${MY_PN}/Documentation/English/*
 	docompress -x /usr/share/doc/${PF}/
 }
