@@ -42,4 +42,7 @@ src_install() {
 	for f in $(find "${MY_PN}/*" ! -type l); do
 		fperms --reference="${S}/$f" "$MMADIR/$f"
 	done
+	# documentation are notebook(.nb) files
+	dodoc Documentation/English/*
+	docompress -x /usr/share/doc/${PF}/
 }
