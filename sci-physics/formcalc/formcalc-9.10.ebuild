@@ -1,7 +1,4 @@
-# Copyright 2020 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
-
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,10 +20,14 @@ RDEPEND="
 	sci-mathematics/form
 	"
 DEPEND="${RDEPEND}"
-BDEPEND=""
+BDEPEND="
+	sci-mathematics/mathematica
+	sci-mathematics/form
+	"
 PATCHES=( "${FILESDIR}"/${PN}-compile.patch )
 
 src_compile() {
+	# remove shipped binaries
 	rm bin/Linux-x86-64/*
 	rm bin/Linux-x86-64-kernel2.6/*
 	export DEST=Linux-x86-64
@@ -47,4 +48,6 @@ src_install() {
 	# switch to system form
 	dosym `which form` $MMADIR/${MY_P}/Linux-x86-64/form
 	dosym `which form` $MMADIR/${MY_P}/Linux-x86-64/tform
+
+	dodoc manual/*.pdf
 }
