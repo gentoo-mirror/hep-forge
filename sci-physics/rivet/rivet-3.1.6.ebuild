@@ -8,12 +8,12 @@ DISTUTILS_USE_SETUPTOOLS=no
 
 inherit bash-completion-r1 autotools distutils-r1 flag-o-matic
 
-MY_PN="Rivet-"
-MY_PF=${MY_PN}${PV}
+MY_PN="Rivet"
+MY_PF=${MY_PN}-${PV}
 
 DESCRIPTION="Rivet toolkit (Robust Independent Validation of Experiment and Theory)"
 HOMEPAGE="https://gitlab.com/hepcedar/rivet"
-SRC_URI="http://www.hepforge.org/archive/rivet/Rivet-${PV}.tar.gz"
+SRC_URI="http://www.hepforge.org/archive/rivet/${MY_PF}.tar.gz"
 S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3+"
