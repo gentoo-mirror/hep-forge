@@ -40,6 +40,7 @@ src_compile() {
 src_install() {
 	emake install PREFIX="${D}/usr"
 	dolib.so libfastjetcontribfragile.so
+	# The name used for requesting this library varies
 	dosym libfastjetcontribfragile.so /usr/$(get_libdir)/libfastjetcontribfragile.so.0
 	dosym libfastjetcontribfragile.so /usr/$(get_libdir)/fastjetcontribfragile.so.0
 }
