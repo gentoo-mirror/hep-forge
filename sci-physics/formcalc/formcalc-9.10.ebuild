@@ -24,7 +24,7 @@ RDEPEND="
 	"
 DEPEND="${RDEPEND}"
 BDEPEND=""
-PATCHES=( "${FILESDIR}"/${P}-compile.patch )
+PATCHES=( "${FILESDIR}"/${PN}-compile.patch )
 
 src_compile() {
 	rm bin/Linux-x86-64/*
