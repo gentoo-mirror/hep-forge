@@ -3,7 +3,6 @@
 
 EAPI=8
 
-
 MY_PN=fjcontrib
 MY_P=${MY_PN}-${PV}
 
