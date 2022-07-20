@@ -4,11 +4,12 @@
 EAPI=8
 
 MY_PN=fjcontrib
+MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="3rd party extensions of FastJet."
 HOMEPAGE="http://fastjet.hepforge.org/contrib/"
-SRC_URI="http://fastjet.hepforge.org/contrib/downloads/${MY_PN}-${PV}.tar.gz"
-S=${WORKDIR}/${MY_PN}-${PV}
+SRC_URI="http://fastjet.hepforge.org/contrib/downloads/${MY_P}.tar.gz"
+S=${WORKDIR}/${MY_P}
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,7 +20,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 PATCHES=(
-"${FILESDIR}"/${P}-soname.patch
+"${FILESDIR}"/${PN}-soname.patch
 #"${FILESDIR}"/${P}-libdir.patch
 )
 
@@ -28,7 +29,7 @@ src_prepare() {
 }
 
 src_configure() {
-	./configure --prefix=/usr --fastjet-config=/usr/bin/fastjet-config
+	./configure --prefix=/usr --fastjet-config=/usr/bin/fastjet-config CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" FFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS}"
 }
 src_compile() {
 	emake
@@ -36,15 +37,9 @@ src_compile() {
 }
 
 src_install() {
-	#into /usr/include/fastjet/
-	#dodir /usr/include/fastjet/contrib
-	#emake fragile-shared-install PREFIX="${D}/usr"
 	emake install PREFIX="${D}/usr"
 	dolib.so libfastjetcontribfragile.so
+	# The name used for requesting this library varies
 	dosym libfastjetcontribfragile.so /usr/$(get_libdir)/libfastjetcontribfragile.so.0
 	dosym libfastjetcontribfragile.so /usr/$(get_libdir)/fastjetcontribfragile.so.0
-
-	#mv "${ED}/usr/lib" "${ED}/usr/$(get_libdir)" || die "mv failed"
-	#into /usr/lib/
-
 }

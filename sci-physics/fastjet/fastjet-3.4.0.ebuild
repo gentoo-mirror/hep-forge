@@ -29,7 +29,10 @@ python? ( ${PYTHON_DEPS} )
 RDEPEND="${DEPEND}"
 BDEPEND="doc? ( app-doc/doxygen[dot] )"
 
-PATCHES=( "${FILESDIR}"/${P}-system-siscone.patch )
+PATCHES=( 
+	"${FILESDIR}"/${P}-system-siscone.patch 
+	"${FILESDIR}"/${P}-gfortran.patch 
+	)
 
 src_prepare() {
 	default
@@ -61,5 +64,6 @@ src_install() {
 		dodoc -r example/.
 		docompress -x /usr/share/doc/${PF}/examples
 	fi
-	#find "${ED}" -name '*.la' -delete || die
+	# TODO maybe remove for contrib to compule
+	find "${ED}" -name '*.la' -delete || die
 }
