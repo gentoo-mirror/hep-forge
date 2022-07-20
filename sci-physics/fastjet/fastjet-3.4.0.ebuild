@@ -29,9 +29,9 @@ python? ( ${PYTHON_DEPS} )
 RDEPEND="${DEPEND}"
 BDEPEND="doc? ( app-doc/doxygen[dot] )"
 
-PATCHES=( 
-	"${FILESDIR}"/${P}-system-siscone.patch 
-	"${FILESDIR}"/${P}-gfortran.patch 
+PATCHES=(
+	"${FILESDIR}"/${P}-system-siscone.patch
+	"${FILESDIR}"/${P}-gfortran.patch
 	)
 
 src_prepare() {
