@@ -1,10 +1,7 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-# Copyright 1999-2020 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
-
-EAPI=7
+EAPI=8
 
 MY_PV=$(ver_rs 1-3 '_')
 MY_PN=FeynCalc
@@ -18,18 +15,16 @@ S="${WORKDIR}/feyncalc-Release-${MY_PV}"
 LICENSE="GPL-3+"
 KEYWORDS="~amd64"
 IUSE="+FCtraditionalFormOutput"
-REQUIRED_USE=""
 
 RDEPEND="
 	sci-mathematics/mathematica
 	"
 DEPEND="${RDEPEND}"
-BDEPEND=""
 
 src_configure() {
 	mv "${MY_PN}/DocOutput" "${MY_PN}/Documentation"
 	if use FCtraditionalFormOutput; then
-		cp "${FILESDIR}/FCConfig.m" "${MY_PN}/"
+		echo '$FCTraditionalFormOutput=True;' > "${MY_PN}/FCConfig.m"
 	fi
 }
 

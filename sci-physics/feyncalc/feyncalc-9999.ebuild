@@ -29,7 +29,7 @@ BDEPEND=""
 src_configure() {
 	mv "${MY_PN}/DocOutput" "${MY_PN}/Documentation"
 	if use FCtraditionalFormOutput; then
-		cp "${FILESDIR}/FCConfig.m" "${MY_PN}/"
+		echo '$FCTraditionalFormOutput=True;' > "${MY_PN}/FCConfig.m"
 	fi
 }
 
