@@ -1,10 +1,7 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-# Copyright 1999-2020 Gentoo Authors
-# Distributed under the terms of the GNU General Public License v2
-
-EAPI=7
+EAPI=8
 
 MY_PN=FeynArts
 MY_P=${MY_PN}-${PV}
@@ -16,8 +13,6 @@ SRC_URI="http://feynarts.de/${MY_P}.tar.gz"
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
-REQUIRED_USE=""
 
 RDEPEND="
 	sci-mathematics/mathematica
@@ -28,10 +23,9 @@ BDEPEND=""
 S="${WORKDIR}/${MY_P}"
 
 src_install() {
-	dosym "${MY_P}" /opt/"${MY_PN}"
-	dodir /opt/"${MY_P}"
-	insinto /opt/
+	MMADIR=/usr/share/Mathematica/Applications
+	dosym "${MY_P}" $MMADIR/"${MY_PN}"
+	dodir $MMADIR/"${MY_P}"
+	insinto $MMADIR
 	doins -r "${S}"
-	insinto /usr/share/Mathematica/Autoload/FeynArts/
-	doins "${FILESDIR}/init.m"
 }
