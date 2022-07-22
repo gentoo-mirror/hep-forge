@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 PATCHES=(
-"${FILESDIR}"/${PN}-soname.patch
+"${FILESDIR}/${PN}-1.049-soname.patch"
 #"${FILESDIR}"/${P}-libdir.patch
 )
 
