@@ -1,15 +1,18 @@
 --- a/src/Makefile	2022-07-20 11:47:44.078639381 +0200
-+++ b/src/Makefile	2022-07-22 18:53:10.872614183 +0200
-@@ -22,9 +22,9 @@
- endif
++++ b/src/Makefile	2022-07-22 19:24:00.389938450 +0200
+@@ -9,10 +9,11 @@
+ # options for various compilers
+ #
  
- # gfortran
--ifeq (${F90},gfortran)
-- comp = -c -O -J${Mdir} -I${InDir}
-- LFlagsB = -O  
-+ifneq (,$(findstring gfortran,${F90}))
-+ comp = -c -O -J${Mdir} -I${InDir} ${FFLAGS} ${FCFLAGS} ${CFLAGS}
-+ LFlagsB = -O ${LDFLAGS}
- endif
+-# Intels ifort, default in optimized mode
+-F90 = ifort
+-comp = -c -O -module ${Mdir} -I${InDir} 
+-LFlagsB = -O  
++
++# gentoo toolchain
++F90 = ${F90}
++comp = -c -O -J${Mdir} -I${InDir}  ${FFLAGS} ${FCFLAGS} ${CFLAGS}
++LFlagsB = -O ${LDFLAGS}
  
- # g95 
+ # Intels ifort, debug modus
+ ifeq (${F90},ifortg)

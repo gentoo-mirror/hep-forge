@@ -3,6 +3,8 @@
 
 EAPI=8
 
+inherit toolchain-funcs
+
 MY_PN=SPheno
 MY_P=${MY_PN}-${PV}
 
@@ -24,7 +26,8 @@ PATCHES=( "${FILESDIR}"/${P}-gfortran.patch )
 src_compile() {
 	# single thread force needed since fortan mods depend on each other
 	export MAKEOPTS=-j1
-	emake
+	F90=`tc-getFC`
+	emake F90="${F90}"
 }
 
 src_install() {
