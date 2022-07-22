@@ -9,19 +9,17 @@ MY_P=${MY_PN}-${PV}
 DESCRIPTION="SPheno stands for S(upersymmetric) Pheno(menology)"
 HOMEPAGE="https://spheno.hepforge.org/"
 SRC_URI="https://spheno.hepforge.org/downloads/?f=${MY_P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE=""
 DEPEND="virtual/fortran"
 RDEPEND="${DEPEND}"
 
 PATCHES=( "${FILESDIR}"/${P}-gfortran.patch )
-
-S="${WORKDIR}/${MY_P}"
 
 src_compile() {
 	# single thread force needed since fortan mods depend on each other
