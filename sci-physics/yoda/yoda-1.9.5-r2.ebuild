@@ -12,6 +12,7 @@ inherit bash-completion-r1 autotools distutils-r1
 DESCRIPTION="Yet more Objects for (High Energy Physics) Data Analysis"
 HOMEPAGE="https://yoda.hepforge.org/"
 SRC_URI="https://yoda.hepforge.org/downloads?f=${P^^}.tar.bz2 -> ${P^^}.tar.bz2"
+S="${WORKDIR}/${P^^}"
 
 LICENSE="GPL-2"
 SLOT="0/${PV}"
@@ -26,7 +27,14 @@ RDEPEND="
 
 DEPEND="${RDEPEND}"
 
-S="${WORKDIR}/${P^^}"
+PATCHES=(
+	"${FILESDIR}/${P}-python3.10.patch"
+)
+
+src_prepare() {
+	default
+	eautoreconf
+}
 
 src_configure() {
 	econf --disable-static $(use_enable root) $(use_enable python pyext)

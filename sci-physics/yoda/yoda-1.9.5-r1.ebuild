@@ -1,9 +1,9 @@
 # Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{8..9} )
+PYTHON_COMPAT=( python3_{8..10} )
 DISTUTILS_USE_SETUPTOOLS=no
 DISTUTILS_SINGLE_IMPL=1
 
@@ -27,11 +27,6 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${P^^}"
-
-src_prepare() {
-	default
-	eautoreconf
-}
 
 src_configure() {
 	econf --disable-static $(use_enable root) --disable-pyext
