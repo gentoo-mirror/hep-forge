@@ -31,8 +31,6 @@ resummino:
 
 fastjet:
   image: apnpucky/gentoo-hep-forge
-  before_script:
-    - emaint -r ${REPO_NAME} sync
   stage: install
   parallel:
     matrix:
@@ -45,7 +43,7 @@ fastjet:
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p '=$CATEGORY/$PKG-$VERSION'
     - emerge -q =$CATEGORY/$PKG-$VERSION
-    - $PKG --help
+    - python -c "import fastjet"
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
