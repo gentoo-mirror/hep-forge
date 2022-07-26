@@ -52,7 +52,6 @@ local-repoman:
   script:
     - repoman full -d
     - repoman -vx full
-  rules: []
 
 repoman:
   stage: check
@@ -65,14 +64,12 @@ repoman:
   script:
     - cd /var/db/repos/${REPO_NAME}
     - repoman -vdx full
-  rules: []
 
 local-pkgcheck:
   stage: check
   before_script: []
   script:
     - pkgcheck scan --exit 
-  rules: []
     
 pkgcheck:
   stage: check
@@ -84,4 +81,3 @@ pkgcheck:
     - emaint -r ${REPO_NAME} sync
   script:
     - pkgcheck ci -r ${REPO_NAME} --exit 
-  rules: []
