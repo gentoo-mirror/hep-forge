@@ -36,6 +36,8 @@ fastjet:
     matrix:
       - PKG: [fastjet]
         VERSION: [3.4.0]
+      - PKG: [fastjet-contrib]
+        VERSION: [1.049]
   script:
     - emerge -qv =$PKG-$VERSION
     - $PKG --help
