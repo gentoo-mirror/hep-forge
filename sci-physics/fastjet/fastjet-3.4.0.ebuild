@@ -4,12 +4,15 @@
 EAPI=8
 
 FORTRAN_NEEDED=plugins
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{8..11} )
 DOCS_BUILDER="doxygen"
-# we depend on these similar to putting doxygen[dot] in BDEPEND
-DOCS_DEPEND="media-gfx/graphviz media-libs/freetype"
+DOCS_DEPEND="
+	media-gfx/graphviz
+	media-libs/freetype
+	virtual/latex-base
+"
 
-inherit autotools flag-o-matic fortran-2 python-r1 docs
+inherit autotools docs flag-o-matic fortran-2 python-single-r1
 
 DESCRIPTION="A software package for jet finding in pp and e+e- collisions"
 HOMEPAGE="https://fastjet.fr/"
@@ -18,20 +21,16 @@ SRC_URI="https://fastjet.fr/repo/${P}.tar.gz"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="cgal doc examples python +plugins +contrib"
+IUSE="cgal examples python +plugins"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-# For now, we depend on cgal[gmp(-)] and append -lgmp to libs, despite possible incompatibility with cgal-5.5
 DEPEND="
-	contrib? ( sci-physics/fastjet-contrib )
-	cgal? ( sci-mathematics/cgal:=[shared(+),gmp(-)] )
+	cgal? ( <sci-mathematics/cgal-5.3:=[shared(+)] )
 	plugins? ( sci-physics/siscone:= )
 	python? ( ${PYTHON_DEPS} )
 "
 RDEPEND="${DEPEND}"
-BDEPEND="
-	virtual/fortran
-"
+BDEPEND="virtual/fortran"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-system-siscone.patch
@@ -44,7 +43,9 @@ src_prepare() {
 }
 
 src_configure() {
-	use cgal && append-libs -lgmp
+	use cgal && \
+		has_version 'sci-mathematics/cgal[gmp]' && append-libs -lgmp
+
 	econf \
 		$(use_enable cgal) \
 		$(use_enable plugins allplugins) \
