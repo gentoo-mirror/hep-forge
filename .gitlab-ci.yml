@@ -41,10 +41,11 @@ fastjet:
         VERSION: ['1.049']
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
-    - python -c "import fastjet"
+    - python3.9 -c "import fastjet"
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
+      - .gitlab-ci.yml
       - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
