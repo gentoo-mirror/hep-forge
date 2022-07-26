@@ -49,8 +49,11 @@ src_compile() {
 
 src_test() {
 	# PYTESTS and SHTESTS both require python tools
-	#emake check PYTESTS= SHTESTS=
-	emake check
+	if use python; then
+		emake check
+	else
+		emake check PYTESTS= SHTESTS=
+	fi
 }
 
 src_install() {
