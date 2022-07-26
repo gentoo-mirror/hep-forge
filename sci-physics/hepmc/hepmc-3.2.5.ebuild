@@ -16,7 +16,7 @@ S="${WORKDIR}/${MYP}"
 LICENSE="GPL-2"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="doc test example cm +gev python rootio"
+IUSE="doc test example cm +gev python root pythia"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -27,8 +27,8 @@ RDEPEND="
 "
 BDEPEND="
 	${PYTHON_DEPS}
-	sci-physics/root
-	sci-physics/pythia
+	root? ( sci-physics/root )
+	pythia? ( sci-physics/pythia:8 )
 	doc? (
 		app-doc/doxygen
 		dev-texlive/texlive-latex
@@ -45,13 +45,13 @@ src_configure() {
 	local mycmakeargs=(
 		-Dlength=$(usex cm CM MM)
 		-Dmomentum=$(usex gev GEV MEV)
-		-DHEPMC3_ENABLE_ROOTIO=$(usex rootio ON OFF)
+		-DHEPMC3_ENABLE_ROOTIO=$(usex root ON OFF)
 		-DHEPMC3_ENABLE_PYTHON=$(usex python ON OFF)
 		-DHEPMC3_ENABLE_TEST=$(usex test ON OFF)
 		-DHEPMC3_BUILD_DOCS=$(usex doc ON OFF)
 		-DHEPMC3_BUILD_EXAMPLES=$(usex example ON OFF)
+		-DUSE_INTERFACE_FROM_PYTHIA8=$(usex pythia ON OFF)
 		#-DHEPMC3_INSTALL_INTERFACES=ON
-		#-DUSE_INTERFACE_FROM_PYTHIA8=ON
 	)
 	cmake_src_configure
 }
