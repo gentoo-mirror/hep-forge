@@ -42,6 +42,7 @@ fastjet:
         VERSION: ['1.049']
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - PYTHON_SINGLE_TARGET="python3_9" emerge -qv "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
     - python3.9 -c "import fastjet"
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
