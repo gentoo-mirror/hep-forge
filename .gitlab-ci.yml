@@ -6,14 +6,50 @@ stages:
 
 variables:
   REPO_NAME: "hep-forge"
-
 default:
   before_script:
-    - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "sync-type = git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-${REPO_NAME}.git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
     - emaint -r ${REPO_NAME} sync
+
+resummino:
+  image: apnpucky/gentoo-hep-forge
+  stage: install
+  parallel:
+    matrix:
+      - PKG: [resummino]
+        CATEGORY: ['sci-physics']
+        VERSION: [3.1.1, 3.1.0, 3.0.0]
+  script:
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p '=$CATEGORY/$PKG-$VERSION::${REPO_NAME}'
+    - emerge -q =$CATEGORY/$PKG-$VERSION::${REPO_NAME}
+    - $PKG --help
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+      changes:
+      - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
+      - "$CATEGORY/$PKG/Manifest"
+      - "$CATEGORY/$PKG/files/*"
+
+fastjet:
+  image: apnpucky/gentoo-hep-forge
+  stage: install
+  parallel:
+    matrix:
+      - PKG: [fastjet]
+        CATEGORY: ['sci-physics']
+        VERSION: [3.4.0, 3.0.6-r3]
+      - PKG: [fastjet-contrib]
+        CATEGORY: ['sci-physics']
+        VERSION: ['1.049']
+  script:
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p '=$CATEGORY/$PKG-$VERSION::${REPO_NAME}'
+    - emerge -q =$CATEGORY/$PKG-$VERSION::${REPO_NAME}
+    - python -c "import fastjet"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+      changes:
+      - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
+      - "$CATEGORY/$PKG/Manifest"
+      - "$CATEGORY/$PKG/files/*"
 
 local-repoman:
   stage: check
@@ -24,6 +60,12 @@ local-repoman:
 
 repoman:
   stage: check
+  before_script:
+    - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "sync-type = git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-${REPO_NAME}.git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - emaint -r ${REPO_NAME} sync
   script:
     - cd /var/db/repos/${REPO_NAME}
     - repoman -vdx full
@@ -36,24 +78,11 @@ local-pkgcheck:
     
 pkgcheck:
   stage: check
+  before_script:
+    - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "sync-type = git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-${REPO_NAME}.git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - emaint -r ${REPO_NAME} sync
   script:
     - pkgcheck ci -r ${REPO_NAME} --exit 
-
-resummino:
-  image: apnpucky/gentoo-hep-forge
-  before_script:
-    - emaint -r ${REPO_NAME} sync
-  stage: install
-  parallel:
-    matrix:
-      - PKG: [resummino]
-        VERSION: [3.1.1, 3.1.0, 3.0.0]
-  script:
-    - emerge -qv =$PKG-$VERSION
-    - $PKG --help
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-      changes:
-      - "sci-physics/$PKG/$PKG-$VERSION.ebuild"
-      - "sci-physics/$PKG/Manifest"
-      - "sci-physics/$PKG/files/*"
