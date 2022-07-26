@@ -7,18 +7,17 @@ stages:
 variables:
   REPO_NAME: "hep-forge"
 
-default:
-  before_script:
-    - emaint -r ${REPO_NAME} sync
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
-      changes:
-      - "sci-physics/$PKG/$PKG-$VERSION.ebuild"
-      - "sci-physics/$PKG/Manifest"
-      - "sci-physics/$PKG/files/*"
-  script:
-    - emerge -qv =$PKG-$VERSION
-    - $PKG --help
+before_script:
+  - emaint -r ${REPO_NAME} sync
+rules:
+  - if: $CI_PIPELINE_SOURCE == "push"
+    changes:
+    - "sci-physics/$PKG/$PKG-$VERSION.ebuild"
+    - "sci-physics/$PKG/Manifest"
+    - "sci-physics/$PKG/files/*"
+script:
+  - emerge -qv =$PKG-$VERSION
+  - $PKG --help
 
 resummino:
   image: apnpucky/gentoo-hep-forge
