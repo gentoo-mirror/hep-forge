@@ -41,8 +41,8 @@ fastjet:
         CATEGORY: ['sci-physics']
         VERSION: ['1.049']
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p '=$CATEGORY/$PKG-$VERSION::${REPO_NAME}'
-    - emerge -q =$CATEGORY/$PKG-$VERSION::${REPO_NAME}
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - emerge -q "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
     - python -c "import fastjet"
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
