@@ -16,16 +16,18 @@ resummino:
   parallel:
     matrix:
       - PKG: [resummino]
+        CATEGORY: ['sci-physics']
         VERSION: [3.1.1, 3.1.0, 3.0.0]
   script:
-    - emerge -qv =$PKG-$VERSION
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p '=$CATEGORY/$PKG-$VERSION'
+    - emerge -q =$CATEGORY/$PKG-$VERSION
     - $PKG --help
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
-      - "sci-physics/$PKG/$PKG-$VERSION.ebuild"
-      - "sci-physics/$PKG/Manifest"
-      - "sci-physics/$PKG/files/*"
+      - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
+      - "$CATEGORY/$PKG/Manifest"
+      - "$CATEGORY/$PKG/files/*"
 
 fastjet:
   image: apnpucky/gentoo-hep-forge
@@ -35,18 +37,21 @@ fastjet:
   parallel:
     matrix:
       - PKG: [fastjet]
+        CATEGORY: ['sci-physics']
         VERSION: [3.4.0, 3.0.6]
       - PKG: [fastjet-contrib]
+        CATEGORY: ['sci-physics']
         VERSION: ['1.049']
   script:
-    - emerge -qv =$PKG-$VERSION
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p '=$CATEGORY/$PKG-$VERSION'
+    - emerge -q =$CATEGORY/$PKG-$VERSION
     - $PKG --help
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
-      - "sci-physics/$PKG/$PKG-$VERSION.ebuild"
-      - "sci-physics/$PKG/Manifest"
-      - "sci-physics/$PKG/files/*"
+      - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
+      - "$CATEGORY/$PKG/Manifest"
+      - "$CATEGORY/$PKG/files/*"
 
 local-repoman:
   stage: check
