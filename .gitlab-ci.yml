@@ -6,18 +6,15 @@ stages:
 
 variables:
   REPO_NAME: "hep-forge"
-
-before_script:
-  - emaint -r ${REPO_NAME} sync
-rules:
-  - if: $CI_PIPELINE_SOURCE == "push"
-    changes:
-    - "sci-physics/$PKG/$PKG-$VERSION.ebuild"
-    - "sci-physics/$PKG/Manifest"
-    - "sci-physics/$PKG/files/*"
-script:
-  - emerge -qv =$PKG-$VERSION
-  - $PKG --help
+default:
+  before_script:
+    - emaint -r ${REPO_NAME} sync
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+      changes:
+      - "sci-physics/$PKG/$PKG-$VERSION.ebuild"
+      - "sci-physics/$PKG/Manifest"
+      - "sci-physics/$PKG/files/*"
 
 resummino:
   image: apnpucky/gentoo-hep-forge
@@ -26,6 +23,9 @@ resummino:
     matrix:
       - PKG: [resummino]
         VERSION: [3.1.1, 3.1.0, 3.0.0]
+  script:
+    - emerge -qv =$PKG-$VERSION
+    - $PKG --help
 
 fastjet:
   image: apnpucky/gentoo-hep-forge
@@ -36,6 +36,9 @@ fastjet:
     matrix:
       - PKG: [fastjet]
         VERSION: [3.4.0]
+  script:
+    - emerge -qv =$PKG-$VERSION
+    - $PKG --help
 
 local-repoman:
   stage: check
