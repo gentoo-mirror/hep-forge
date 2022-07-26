@@ -4,10 +4,8 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{8..10} )
-DISTUTILS_USE_SETUPTOOLS=no
-DISTUTILS_SINGLE_IMPL=1
 
-inherit bash-completion-r1 autotools distutils-r1
+inherit bash-completion-r1 autotools python-single-r1
 
 DESCRIPTION="Yet more Objects for (High Energy Physics) Data Analysis"
 HOMEPAGE="https://yoda.hepforge.org/"
@@ -38,21 +36,10 @@ src_prepare() {
 
 src_configure() {
 	econf --disable-static $(use_enable root) $(use_enable python pyext)
-
-	if use python; then
-		cd "${S}"/pyext || die
-		distutils-r1_src_prepare
-	fi
 }
 
 src_compile() {
 	default
-
-	if use python; then
-		cd "${S}"/pyext || die
-		distutils-r1_src_compile
-	fi
-
 }
 
 src_test() {
@@ -65,12 +52,10 @@ src_test() {
 }
 
 src_install() {
-	default
+	emake install DESTDIR="${ED}"
 
 	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion yoda
 	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
-	if use python; then
-		cd "${S}"/pyext || die
-		distutils-r1_src_install
-	fi
+
+	find "${ED}" -name '*.la' -delete || die
 }
