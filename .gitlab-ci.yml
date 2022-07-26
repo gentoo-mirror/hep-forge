@@ -45,6 +45,23 @@ yoda:
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
 
+hepmc:
+  image: apnpucky/gentoo-hep-forge
+  stage: install
+  parallel:
+    matrix:
+      - PKG: [hepmc]
+        CATEGORY: ['sci-physics']
+        VERSION: [2.06.11,3.2.5]
+  script:
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use '!root !pythia' -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+      changes:
+      - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
+      - "$CATEGORY/$PKG/Manifest"
+      - "$CATEGORY/$PKG/files/*"
+
 fastjet:
   image: apnpucky/gentoo-hep-forge
   stage: install
