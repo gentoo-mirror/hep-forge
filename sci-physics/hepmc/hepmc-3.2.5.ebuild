@@ -16,7 +16,7 @@ S="${WORKDIR}/${MYP}"
 LICENSE="GPL-2"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="doc test example cm +gev python root pythia"
+IUSE="doc test example cm gev python root pythia"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -28,13 +28,14 @@ RDEPEND="
 BDEPEND="
 	${PYTHON_DEPS}
 	root? ( sci-physics/root )
-	pythia? ( sci-physics/pythia:8 )
+	pythia? ( sci-physics/pythia:8= )
 	doc? (
 		app-doc/doxygen
 		dev-texlive/texlive-latex
 		dev-texlive/texlive-latexextra
 		dev-texlive/texlive-latexrecommended
-	)"
+	)
+"
 
 src_prepare() {
 	cmake_src_prepare
