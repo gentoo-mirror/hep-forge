@@ -35,7 +35,7 @@ fastjet:
   parallel:
     matrix:
       - PKG: [fastjet]
-        VERSION: [3.4.0]
+        VERSION: [3.4.0, 3.0.6]
       - PKG: [fastjet-contrib]
         VERSION: ['1.049']
   script:
