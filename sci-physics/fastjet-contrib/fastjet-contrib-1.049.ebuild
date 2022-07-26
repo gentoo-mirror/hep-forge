@@ -22,14 +22,12 @@ RDEPEND="${DEPEND}"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-soname.patch
-	"${FILESDIR}"/${P}-ar.patch
 )
 
 src_configure() {
-	tc-export CXX AR RANLIB
-	./configure --prefix=/usr --fastjet-config=/usr/bin/fastjet-config RANLIB="${RANLIB}" AR="${AR}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" FFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS}" || die
+	CXX=`tc-getCXX`
+	./configure --prefix=/usr --fastjet-config=/usr/bin/fastjet-config CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" FFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS}" || die
 }
-
 src_compile() {
 	emake
 	emake fragile-shared
