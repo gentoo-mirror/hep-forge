@@ -5,13 +5,15 @@ EAPI=8
 
 FORTRAN_NEEDED=plugins
 PYTHON_COMPAT=( python3_{8..10} )
+DOCS_BUILDER="doxygen"
+# we depend on these similar to putting doxygen[dot] in BDEPEND
+DOCS_DEPEND="media-gfx/graphviz media-libs/freetype"
 
-inherit autotools flag-o-matic fortran-2 python-r1
+inherit autotools flag-o-matic fortran-2 python-r1 docs
 
 DESCRIPTION="A software package for jet finding in pp and e+e- collisions"
-HOMEPAGE="http://fastjet.fr/"
-SRC_URI="http://fastjet.fr/repo/${P}.tar.gz"
-#S=${WORKDIR}/${MY_PN}-${PV}
+HOMEPAGE="https://fastjet.fr/"
+SRC_URI="https://fastjet.fr/repo/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
@@ -19,20 +21,22 @@ KEYWORDS="~amd64"
 IUSE="cgal doc examples python +plugins +contrib"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
+# For now, we depend on cgal[gmp(-)] and append -lgmp to libs, despite possible incompatibility with cgal-5.5
 DEPEND="
-sys-devel/gcc:=[fortran]
-contrib? ( sci-physics/fastjet-contrib )
-cgal? ( sci-mathematics/cgal:=[shared(+)] )
-plugins? ( sci-physics/siscone:= )
-python? ( ${PYTHON_DEPS} )
+	contrib? ( sci-physics/fastjet-contrib )
+	cgal? ( sci-mathematics/cgal:=[shared(+),gmp(-)] )
+	plugins? ( sci-physics/siscone:= )
+	python? ( ${PYTHON_DEPS} )
 "
 RDEPEND="${DEPEND}"
-BDEPEND="doc? ( app-doc/doxygen[dot] )"
+BDEPEND="
+	virtual/fortran
+"
 
 PATCHES=(
 	"${FILESDIR}"/${P}-system-siscone.patch
 	"${FILESDIR}"/${P}-gfortran.patch
-	)
+)
 
 src_prepare() {
 	default
@@ -40,18 +44,21 @@ src_prepare() {
 }
 
 src_configure() {
-	use cgal && has_version 'sci-mathematics/cgal[gmp]' && append-libs -lgmp
-	econf $(use_enable cgal) $(use_enable plugins allplugins) $(use_enable plugins allcxxplugins) --enable-shared --enable-static=no --disable-static --disable-auto-ptr  $(use_enable python pyext)
-
+	use cgal && append-libs -lgmp
+	econf \
+		$(use_enable cgal) \
+		$(use_enable plugins allplugins) \
+		$(use_enable plugins allcxxplugins) \
+		--enable-shared \
+		--enable-static=no \
+		--disable-static \
+		--disable-auto-ptr  \
+		$(use_enable python pyext)
 }
 
 src_compile() {
 	default
-
-	if use doc; then
-		doxygen Doxyfile || die
-		HTML_DOCS=( html/. )
-	fi
+	docs_compile
 }
 
 src_install() {
