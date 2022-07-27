@@ -44,7 +44,7 @@ RDEPEND="
 	<dev-lang/python-3.9.9:=
 	python? ( ${PYTHON_DEPS} )
 	sys-devel/gcc:=[fortran]
-	"
+"
 DEPEND="${RDEPEND}"
 BDEPEND="
 "
@@ -80,20 +80,18 @@ src_compile() {
 		cd "${S}"/pyext || die
 		distutils-r1_src_compile
 	fi
-
 }
 
 src_install() {
-	if use python; then
-		tp=$(pwd)
-		cd "${S}"/pyext || die
-		distutils-r1_src_install
-		cd $tp
-	fi
-
 	default
 
 	newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
 	rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
+	
+	if use python; then
+		cd "${S}"/pyext || die
+		distutils-r1_src_install
+	fi
+	
 	find "${ED}" -name '*.la' -delete || die
 }
