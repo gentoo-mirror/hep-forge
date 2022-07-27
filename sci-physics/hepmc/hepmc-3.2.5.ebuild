@@ -50,8 +50,6 @@ src_compile() {
 
 	if use doc; then
 		cd doc || die
-		./buildDoc.sh || die
-		./buildDoxygen.sh || die
 		HTML_DOCS=( doc/html/. )
 	fi
 }
@@ -59,5 +57,6 @@ src_compile() {
 src_install() {
 	cmake_src_install
 	use doc && dodoc doc/*.pdf
+	use examples && docompress -x /usr/share/doc/${PF}/examples
 	python_optimize
 }
