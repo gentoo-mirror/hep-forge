@@ -3,7 +3,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..11} )
+# python3_11 fails
+PYTHON_COMPAT=( python3_{8..10} )
 inherit cmake python-single-r1
 
 MYP=HepMC3-${PV}
@@ -48,6 +49,11 @@ src_configure() {
 		-DHEPMC3_BUILD_EXAMPLES=$(usex example ON OFF)
 	)
 	cmake_src_configure
+}
+
+src_install() {
+    cmake_src_install
+    python_optimize
 }
 
 src_compile() {
