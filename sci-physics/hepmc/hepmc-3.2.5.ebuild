@@ -3,6 +3,7 @@
 
 EAPI=8
 
+# python3_11 fails
 PYTHON_COMPAT=( python3_{8..10} )
 inherit cmake python-single-r1
 
@@ -44,8 +45,6 @@ src_configure() {
 		-DHEPMC3_ENABLE_TEST=$(usex test ON OFF)
 		-DHEPMC3_BUILD_DOCS=$(usex doc ON OFF)
 		-DHEPMC3_BUILD_EXAMPLES=$(usex example ON OFF)
-		#-DHEPMC3_INSTALL_INTERFACES=$(usex interfaces ON OFF)
-		#-DHEPMC3_USE_INTERFACE_FROM_PYTHIA8=$(usex pythia ON OFF)
 	)
 	cmake_src_configure
 }
@@ -64,4 +63,5 @@ src_compile() {
 src_install() {
 	cmake_src_install
 	use doc && dodoc doc/*.pdf
+    python_optimize
 }
