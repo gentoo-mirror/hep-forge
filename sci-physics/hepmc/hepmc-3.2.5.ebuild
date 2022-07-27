@@ -27,7 +27,7 @@ RDEPEND="
 "
 BDEPEND="
 	${PYTHON_DEPS}
-	root? ( sci-physics/root )
+	root? ( sci-physics/root:= )
 	pythia? ( sci-physics/pythia:8= )
 	doc? (
 		app-doc/doxygen
