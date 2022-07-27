@@ -39,10 +39,6 @@ src_configure() {
 	econf --disable-static $(use_enable root) $(use_enable python pyext)
 }
 
-src_compile() {
-	default
-}
-
 src_test() {
 	# PYTESTS and SHTESTS both require python tools
 	emake check PYTESTS= SHTESTS=
