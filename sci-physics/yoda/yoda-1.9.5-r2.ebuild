@@ -3,7 +3,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..11} )
+# python3_11 missing in sci-physics/root
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit bash-completion-r1 autotools python-single-r1
 
