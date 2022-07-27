@@ -2,6 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
+
+CMAKE_MAKEFILE_GENERATOR="emake"
+
 inherit cmake
 
 DESCRIPTION="Resummation for electroweak BSM particles."
