@@ -26,7 +26,6 @@
   <flag name="cm">Build with cm instead of default mm for length units</flag>
   <flag name="example">Build with example codes</flag>
   <flag name="root">Build with ROOTIO enabled</flag>
-  <flag name="pythia">Build with PYTHIA8 enabled</flag>
   <flag name="python">Build with PYTHON enabled</flag>
 </use>
 </pkgmetadata>
