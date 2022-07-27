@@ -14,7 +14,7 @@ HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
 SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
 S="${WORKDIR}/${MYP}"
 
-LICENSE="GPL-2"
+LICENSE="LGPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
 IUSE="doc test examples python root"
@@ -34,7 +34,6 @@ BDEPEND="
 "
 
 src_configure() {
-	# use MeV over GeV and mm over cm
 	local mycmakeargs=(
 		-DHEPMC3_ENABLE_ROOTIO=$(usex root ON OFF)
 		-DHEPMC3_ENABLE_PYTHON=$(usex python ON OFF)
