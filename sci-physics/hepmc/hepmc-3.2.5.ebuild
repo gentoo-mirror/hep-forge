@@ -16,7 +16,7 @@ S="${WORKDIR}/${MYP}"
 LICENSE="GPL-2"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="doc test example cm gev python root"
+IUSE="doc test example python root"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
@@ -39,8 +39,6 @@ src_prepare() {
 src_configure() {
 	# use MeV over GeV and mm over cm
 	local mycmakeargs=(
-		-Dlength=$(usex cm CM MM)
-		-Dmomentum=$(usex gev GEV MEV)
 		-DHEPMC3_ENABLE_ROOTIO=$(usex root ON OFF)
 		-DHEPMC3_ENABLE_PYTHON=$(usex python ON OFF)
 		-DHEPMC3_ENABLE_TEST=$(usex test ON OFF)
