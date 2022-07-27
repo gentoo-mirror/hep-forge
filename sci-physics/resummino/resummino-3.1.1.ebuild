@@ -24,12 +24,3 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
-
-src_compile() {
-	cmake .
-	make
-}
-
-src_install() {
-	dobin bin/resummino
-}
