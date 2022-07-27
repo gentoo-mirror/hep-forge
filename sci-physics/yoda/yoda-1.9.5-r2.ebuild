@@ -31,6 +31,7 @@ PATCHES=(
 
 src_prepare() {
 	default
+	# reconf due to python3_10 patch
 	eautoreconf
 }
 
@@ -38,19 +39,9 @@ src_configure() {
 	econf --disable-static $(use_enable root) $(use_enable python pyext)
 }
 
-src_compile() {
-	default
-}
-
 src_test() {
-	if use python; then
-		#export PATH=$PATH:../bin
-		export PYTHONPATH=$PYTHONPATH:../pyext/
-		emake check
-	else
-		# PYTESTS and SHTESTS both require python tools
-		emake check PYTESTS= SHTESTS=
-	fi
+	# PYTESTS and SHTESTS both require python tools
+	emake check PYTESTS= SHTESTS=
 }
 
 src_install() {

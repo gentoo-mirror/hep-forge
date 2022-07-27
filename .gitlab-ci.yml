@@ -37,7 +37,7 @@ yoda:
         CATEGORY: ['sci-physics']
         VERSION: [1.9.5-r2]
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use "!root ^^ ( python_single_target_python3_10 python_single_target_python3_8 python_single_target_python3_9 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
@@ -103,7 +103,7 @@ fastjet:
     matrix:
       - PKG: [fastjet]
         CATEGORY: ['sci-physics']
-        VERSION: [3.4.0, 3.0.6-r3]
+        VERSION: [3.4.0, 3.4.0-r1, 3.0.6-r3]
       - PKG: [fastjet-contrib]
         CATEGORY: ['sci-physics']
         VERSION: ['1.049']

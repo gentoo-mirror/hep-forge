@@ -27,7 +27,7 @@ RDEPEND="
 "
 BDEPEND="
 	${PYTHON_DEPS}
-	root? ( sci-physics/root )
+	root? ( sci-physics/root:= )
 	doc? (
 		app-doc/doxygen
 		dev-texlive/texlive-latex
