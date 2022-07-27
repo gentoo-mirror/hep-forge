@@ -17,7 +17,7 @@ S="${WORKDIR}/${MYP}"
 LICENSE="GPL-2"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="doc test example python root"
+IUSE="doc test examples python root"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
@@ -33,10 +33,6 @@ BDEPEND="
 	)
 "
 
-src_prepare() {
-	cmake_src_prepare
-}
-
 src_configure() {
 	# use MeV over GeV and mm over cm
 	local mycmakeargs=(
@@ -44,7 +40,7 @@ src_configure() {
 		-DHEPMC3_ENABLE_PYTHON=$(usex python ON OFF)
 		-DHEPMC3_ENABLE_TEST=$(usex test ON OFF)
 		-DHEPMC3_BUILD_DOCS=$(usex doc ON OFF)
-		-DHEPMC3_BUILD_EXAMPLES=$(usex example ON OFF)
+		-DHEPMC3_BUILD_EXAMPLES=$(usex examples ON OFF)
 	)
 	cmake_src_configure
 }
@@ -63,5 +59,5 @@ src_compile() {
 src_install() {
 	cmake_src_install
 	use doc && dodoc doc/*.pdf
-    python_optimize
+	python_optimize
 }
