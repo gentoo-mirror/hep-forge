@@ -19,7 +19,7 @@ SLOT="3"
 KEYWORDS="~amd64"
 IUSE="doc test examples python root"
 RESTRICT="!test? ( test )"
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="python? ( ${PYTHON_DEPS} )"
 DEPEND="${RDEPEND}"
@@ -45,18 +45,8 @@ src_configure() {
 	cmake_src_configure
 }
 
-src_compile() {
-	cmake_src_compile
-
-	if use doc; then
-		cd doc || die
-		HTML_DOCS=( doc/html/. )
-	fi
-}
-
 src_install() {
 	cmake_src_install
-	use doc && dodoc doc/*.pdf
 	use examples && docompress -x /usr/share/doc/${PF}/examples
 	python_optimize
 }
