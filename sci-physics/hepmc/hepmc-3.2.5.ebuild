@@ -51,11 +51,6 @@ src_configure() {
 	cmake_src_configure
 }
 
-src_install() {
-    cmake_src_install
-    python_optimize
-}
-
 src_compile() {
 	cmake_src_compile
 
@@ -70,4 +65,5 @@ src_compile() {
 src_install() {
 	cmake_src_install
 	use doc && dodoc doc/*.pdf
+    python_optimize
 }
