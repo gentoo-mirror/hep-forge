@@ -19,8 +19,13 @@ resummino:
         CATEGORY: ['sci-physics']
         VERSION: [3.1.1]
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - pkg-testing-tool -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --extra-env-file 'test.conf' --test-feature-scope once --report report.json
     - $PKG --help
+  artifacts:             
+      paths:                 
+           - "report.json" 
+      expire_in: 2 weeks
+
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
@@ -37,7 +42,11 @@ yoda:
         CATEGORY: ['sci-physics']
         VERSION: [1.9.5-r2]
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
+  artifacts:             
+      paths:                 
+           - "report.json" 
+      expire_in: 2 weeks
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
@@ -54,7 +63,11 @@ hepmc:
         CATEGORY: ['sci-physics']
         VERSION: [2.06.11,3.2.5]
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10 python_single_target_python3_9 python_single_target_python3_8 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10 python_single_target_python3_9 python_single_target_python3_8 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
+  artifacts:             
+      paths:                 
+           - "report.json" 
+      expire_in: 2 weeks
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
@@ -71,13 +84,17 @@ pythia:
         CATEGORY: ['sci-physics']
         VERSION: [8.2.45-r1]
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
       - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
+  artifacts:             
+      paths:                 
+           - "report.json" 
+      expire_in: 2 weeks
 
 rivet:
   image: apnpucky/gentoo-hep-forge
@@ -88,13 +105,17 @@ rivet:
         CATEGORY: ['sci-physics']
         VERSION: [3.1.5,3.1.6]
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
       - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
+  artifacts:             
+      paths:                 
+           - "report.json" 
+      expire_in: 2 weeks
 
 fastjet:
   image: apnpucky/gentoo-hep-forge
@@ -108,13 +129,17 @@ fastjet:
         CATEGORY: ['sci-physics']
         VERSION: ['1.049']
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
       - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
+  artifacts:             
+      paths:                 
+           - "report.json" 
+      expire_in: 2 weeks
 
 local-repoman:
   stage: check
