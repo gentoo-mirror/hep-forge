@@ -37,7 +37,7 @@ yoda:
         CATEGORY: ['sci-physics']
         VERSION: [1.9.5-r2]
   script:
-    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope once --append-required-use '!root'  --append-required-use "^^ ( python_single_target_python3_10 python_single_target_python3_8 python_single_target_python3_9 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}"
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
