@@ -95,4 +95,5 @@ src_install() {
 
 	newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
 	rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
+	find "${ED}" -name '*.la' -delete || die
 }
