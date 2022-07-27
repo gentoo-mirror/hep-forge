@@ -14,7 +14,7 @@ HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
 SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
 S="${WORKDIR}/${MYP}"
 
-LICENSE="LGPL-3+"
+LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
 IUSE="doc test examples python root"
