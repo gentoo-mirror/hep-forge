@@ -18,15 +18,11 @@ SLOT="3"
 KEYWORDS="~amd64"
 IUSE="doc test example cm gev python root"
 RESTRICT="!test? ( test )"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
-DEPEND=""
-RDEPEND="
-	${DEPEND}
-	${PYTHON_DEPS}
-"
+RDEPEND="python? ( ${PYTHON_DEPS} )"
+DEPEND="${RDEPEND}"
 BDEPEND="
-	${PYTHON_DEPS}
 	root? ( sci-physics/root:= )
 	doc? (
 		app-doc/doxygen
@@ -41,7 +37,7 @@ src_prepare() {
 }
 
 src_configure() {
-	# use geV over GeV and mm over cm
+	# use MeV over GeV and mm over cm
 	local mycmakeargs=(
 		-Dlength=$(usex cm CM MM)
 		-Dmomentum=$(usex gev GEV MEV)
