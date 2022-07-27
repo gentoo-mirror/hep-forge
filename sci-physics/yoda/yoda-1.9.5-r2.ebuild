@@ -16,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="root python"
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) test? ( python )"
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
@@ -43,10 +43,10 @@ src_compile() {
 }
 
 src_test() {
+	# PYTESTS and SHTESTS both require python tools
 	if use python; then
 		emake check
 	else
-		# PYTESTS and SHTESTS both require python tools
 		emake check PYTESTS= SHTESTS=
 	fi
 }
