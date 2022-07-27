@@ -103,7 +103,7 @@ fastjet:
     matrix:
       - PKG: [fastjet]
         CATEGORY: ['sci-physics']
-        VERSION: [3.4.0, 3.0.6-r3]
+        VERSION: [3.4.0, 3.4.0-r1, 3.0.6-r3]
       - PKG: [fastjet-contrib]
         CATEGORY: ['sci-physics']
         VERSION: ['1.049']
