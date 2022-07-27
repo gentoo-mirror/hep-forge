@@ -43,10 +43,12 @@ src_compile() {
 }
 
 src_test() {
-	# PYTESTS and SHTESTS both require python tools
 	if use python; then
+		#export PATH=$PATH:../bin
+		export PYTHONPATH=$PYTHONPATH:../pyext/
 		emake check
 	else
+		# PYTESTS and SHTESTS both require python tools
 		emake check PYTESTS= SHTESTS=
 	fi
 }
