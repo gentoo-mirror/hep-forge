@@ -19,14 +19,14 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc +python"
+IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc"
 REQUIRED_USE="
-hepmc3? ( !hepmc2 )
-python? ( ${PYTHON_REQUIRED_USE} )
+	^^ ( hepmc3 hepmc2 )
+	${PYTHON_REQUIRED_USE}
 "
 
 RDEPEND="
-	>=sci-physics/yoda-1.9.5
+	>=sci-physics/yoda-1.9.5[python]
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	>=dev-python/cython-0.29.24
@@ -38,13 +38,13 @@ RDEPEND="
 	imagemagick? ( media-gfx/imagemagick )
 	tex? ( app-text/texlive-core )
 
-	<dev-lang/python-3.9.9:=
-	python? ( ${PYTHON_DEPS} )
-	sys-devel/gcc:=[fortran]
+	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
+	virtual/fortran
 "
+
 PATCHES=(
 "${FILESDIR}"/${P}-binreloc.patch
 "${FILESDIR}"/${P}-std.patch
@@ -52,8 +52,6 @@ PATCHES=(
 
 src_prepare() {
 	default
-	#use doc || sed -i -e 's#AC_CONFIG_FILES(doc/Makefile doc/doxygen/Doxyfile)##' "${S}"/configure.ac || die
-	#use doc || sed -i -e 's#SUBDIRS = src pyext data include bin analyses test doc#SUBDIRS = src pyext data include bin analyses test#' "${S}"/Makefile.am || die
 	eautoreconf
 }
 
@@ -61,8 +59,8 @@ src_configure() {
 	append-cxxflags -std=c++17
 	append-cppflags -std=c++17
 	# Rivet does not like econf for some reason
-	use hepmc2 && econf --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
-	use hepmc3 && econf --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
+	use hepmc2 && ./configure --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
+	use hepmc3 && ./configure --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
 
 	if use python; then
 		cd "${S}"/pyext || die

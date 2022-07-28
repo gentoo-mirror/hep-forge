@@ -25,11 +25,11 @@ KEYWORDS="~amd64"
 IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc +python"
 REQUIRED_USE="
 hepmc3? ( !hepmc2 )
-python? ( ${PYTHON_REQUIRED_USE} )
+${PYTHON_REQUIRED_USE}
 "
 
 RDEPEND="
-	>=sci-physics/yoda-1.9.4
+	>=sci-physics/yoda-1.9.4[python]
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.046
 	>=dev-python/cython-0.29.24
@@ -41,12 +41,11 @@ RDEPEND="
 	imagemagick? ( media-gfx/imagemagick )
 	tex? ( app-text/texlive-core )
 
-	<dev-lang/python-3.9.9:=
-	python? ( ${PYTHON_DEPS} )
-	sys-devel/gcc:=[fortran]
+	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
+	virtual/fortran
 "
 PATCHES=(
 "${FILESDIR}"/${P}-doc.patch
