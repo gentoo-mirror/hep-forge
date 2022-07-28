@@ -43,6 +43,7 @@ all:
     - (! grep -A5 -B5 "QA Notice" out.log)
   artifacts:             
       paths:
+           - "/var/tmp/portage/$CATEGORY/$PKG-$VERSION/temp/build.log"
            - "out.log"          
            - "report.json" 
       expire_in: 2 weeks
