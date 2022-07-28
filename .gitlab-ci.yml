@@ -40,7 +40,7 @@ all:
         CATEGORY: ['sci-physics']
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json | tee out.log
-    - grep -A5 -B5 "QA Notice" out.log && exit 1
+    - ! grep -A5 -B5 "QA Notice" out.log
   artifacts:             
       paths:
            - "out.log"          
