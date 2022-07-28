@@ -6,8 +6,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..9} )
-DISTUTILS_USE_SETUPTOOLS=no
+DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{8..10} )
 
 inherit bash-completion-r1 autotools distutils-r1 flag-o-matic
 
@@ -44,7 +44,7 @@ RDEPEND="
 	<dev-lang/python-3.9.9:=
 	python? ( ${PYTHON_DEPS} )
 	sys-devel/gcc:=[fortran]
-	"
+"
 DEPEND="${RDEPEND}"
 BDEPEND="
 "
@@ -64,8 +64,8 @@ src_configure() {
 	append-cxxflags -std=c++17
 	append-cppflags -std=c++17
 	# Rivet does not like econf for some reason
-	use hepmc2 && ./configure --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
-	use hepmc3 && ./configure --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
+	use hepmc2 && econf --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
+	use hepmc3 && econf --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
 
 	if use python; then
 		cd "${S}"/pyext || die
@@ -80,19 +80,18 @@ src_compile() {
 		cd "${S}"/pyext || die
 		distutils-r1_src_compile
 	fi
-
 }
 
 src_install() {
-	if use python; then
-		tp=$(pwd)
-		cd "${S}"/pyext || die
-		distutils-r1_src_install
-		cd $tp
-	fi
-
 	default
 
 	newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
 	rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
+	
+	if use python; then
+		cd "${S}"/pyext || die
+		distutils-r1_src_install
+	fi
+	
+	find "${ED}" -name '*.la' -delete || die
 }
