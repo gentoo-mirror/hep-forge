@@ -21,11 +21,11 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-	$(tc-getFC) ${P}.f08 -o 
+	$(tc-getFC) ${P}.f08 -o ${PN} ${FFLAGS} ${CFLAGS} ${LDFLAGS}
 }
 
 src_install() {
-	dobin qgraf
+	dobin ${PN}
 
 	use doc && dodoc *.pdf
 	if use examples; then
