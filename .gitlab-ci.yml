@@ -8,7 +8,6 @@ variables:
   REPO_NAME: "hep-forge"
   
 default:
-  interruptible: true
   before_script:
     - emaint -r ${REPO_NAME} sync
 
