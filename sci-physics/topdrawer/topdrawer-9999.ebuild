@@ -18,7 +18,8 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-	make # single thread force needed
+    export MAKEOPTS=-j1
+	emake # single thread force needed
 }
 
 src_install() {
