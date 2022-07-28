@@ -11,4 +11,4 @@ RDEPEND="
 	sci-physics/feynarts
 	sci-physics/formcalc
 	sci-physics/looptools
-	"
+"
