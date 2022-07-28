@@ -48,7 +48,7 @@ all:
       paths:
            - "out.log"          
            - "report.json" 
-      expire_in: 2 weeks
+      expire_in: 1 week
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
