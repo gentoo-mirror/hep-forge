@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-	$(tc-getFC) ${P}.f -o ${PN} ${FFLAGS} ${CFLAGS} ${LDFLAGS}
+	$(tc-getFC) ${P}.f -o ${PN} ${FFLAGS} ${LDFLAGS}
 }
 
 src_install() {
