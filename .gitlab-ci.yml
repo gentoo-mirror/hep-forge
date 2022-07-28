@@ -55,6 +55,7 @@ all:
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
+      - "$CATEGORY/.ci-stamp-run-all"
       - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
