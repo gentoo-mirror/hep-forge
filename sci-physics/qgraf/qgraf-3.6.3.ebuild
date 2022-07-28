@@ -29,8 +29,8 @@ src_install() {
 
 	use doc && dodoc *.pdf
 	if use examples; then
-		docinto examples
-		dodoc  phi3 qed qcd *.sty *.dat
+        docinto examples
+        dodoc  phi3 qed qcd *.sty *.dat
         docompress -x /usr/share/doc/${PF}/examples
 	fi
 }
