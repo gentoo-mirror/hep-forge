@@ -55,7 +55,7 @@ all:
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
-      - ".ci-stamp-run-all"
+      - ".gitlab-ci.yml"
       - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
