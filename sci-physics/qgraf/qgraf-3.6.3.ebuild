@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc examples"
 
-DEPEND="virtual/fortran" 
+DEPEND="virtual/fortran"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
@@ -29,8 +29,8 @@ src_install() {
 
 	use doc && dodoc *.pdf
 	if use examples; then
-        docinto examples
-        dodoc phi3 qed qcd *.sty *.dat
-        docompress -x /usr/share/doc/${PF}/examples
+		docinto examples
+		dodoc phi3 qed qcd *.sty *.dat
+		docompress -x /usr/share/doc/${PF}/examples
 	fi
 }

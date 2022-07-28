@@ -20,7 +20,7 @@ BDEPEND=""
 src_compile() {
 	# single thread force needed
 	export MAKEOPTS=-j1
-	emake 
+	emake
 }
 
 src_install() {
