@@ -9,12 +9,12 @@ variables:
   REPO_NAME: "hep-forge"
   
 default:
-  stage: install
   image: apnpucky/gentoo-hep-forge
   before_script:
     - emaint -r ${REPO_NAME} sync
 
 resummino:
+  stage: install
   parallel:
     matrix:
       - PKG: [resummino]
@@ -35,6 +35,7 @@ resummino:
       - "$CATEGORY/$PKG/files/*"
 
 yoda:
+  stage: install
   parallel:
     matrix:
       - PKG: [yoda]
@@ -54,6 +55,7 @@ yoda:
       - "$CATEGORY/$PKG/files/*"
 
 hepmc:
+  stage: install
   parallel:
     matrix:
       - PKG: [hepmc]
@@ -73,6 +75,7 @@ hepmc:
       - "$CATEGORY/$PKG/files/*"
 
 pythia:
+  stage: install
   parallel:
     matrix:
       - PKG: [pythia]
@@ -92,6 +95,7 @@ pythia:
       expire_in: 2 weeks
 
 rivet:
+  stage: install
   parallel:
     matrix:
       - PKG: [rivet]
@@ -111,6 +115,7 @@ rivet:
       expire_in: 2 weeks
 
 fastjet:
+  stage: install
   parallel:
     matrix:
       - PKG: [fastjet]
