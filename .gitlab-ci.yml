@@ -27,7 +27,6 @@ resummino:
       paths:                 
            - "report.json" 
       expire_in: 2 weeks
-
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
