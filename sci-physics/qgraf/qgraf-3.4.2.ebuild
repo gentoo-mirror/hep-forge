@@ -14,8 +14,8 @@ LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
 SLOT="0"
 KEYWORDS="~amd64"
-
 IUSE="doc examples"
+
 DEPEND="virtual/fortran"
 RDEPEND="${DEPEND}"
 BDEPEND=""
