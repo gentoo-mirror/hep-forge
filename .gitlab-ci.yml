@@ -1,4 +1,5 @@
-image: apnpucky/gentoo-ebuild-ci
+
+image: apnpucky/gentoo-hep-forge
 
 stages:
   - check
@@ -8,18 +9,17 @@ variables:
   REPO_NAME: "hep-forge"
   
 default:
-  interruptible: true
+  stage: install
+  image: apnpucky/gentoo-hep-forge
   before_script:
     - emaint -r ${REPO_NAME} sync
 
 resummino:
-  image: apnpucky/gentoo-hep-forge
-  stage: install
   parallel:
     matrix:
       - PKG: [resummino]
-        CATEGORY: ['sci-physics']
         VERSION: [3.1.1]
+        CATEGORY: ['sci-physics']
   script:
     - pkg-testing-tool -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --extra-env-file 'test.conf' --test-feature-scope always --report report.json
     - $PKG --help
@@ -36,13 +36,11 @@ resummino:
       - "$CATEGORY/$PKG/files/*"
 
 yoda:
-  image: apnpucky/gentoo-hep-forge
-  stage: install
   parallel:
     matrix:
       - PKG: [yoda]
-        CATEGORY: ['sci-physics']
         VERSION: [1.9.5-r2]
+        CATEGORY: ['sci-physics']
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
   artifacts:             
@@ -57,13 +55,11 @@ yoda:
       - "$CATEGORY/$PKG/files/*"
 
 hepmc:
-  image: apnpucky/gentoo-hep-forge
-  stage: install
   parallel:
     matrix:
       - PKG: [hepmc]
-        CATEGORY: ['sci-physics']
         VERSION: [2.06.11, 3.2.5]
+        CATEGORY: ['sci-physics']
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10 python_single_target_python3_9 python_single_target_python3_8 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
   artifacts:             
@@ -78,13 +74,11 @@ hepmc:
       - "$CATEGORY/$PKG/files/*"
 
 pythia:
-  image: apnpucky/gentoo-hep-forge
-  stage: install
   parallel:
     matrix:
       - PKG: [pythia]
-        CATEGORY: ['sci-physics']
         VERSION: [8.2.45-r1]
+        CATEGORY: ['sci-physics']
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope always --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
   rules:
@@ -99,13 +93,11 @@ pythia:
       expire_in: 2 weeks
 
 rivet:
-  image: apnpucky/gentoo-hep-forge
-  stage: install
   parallel:
     matrix:
       - PKG: [rivet]
-        CATEGORY: ['sci-physics']
         VERSION: [3.1.5, 3.1.6]
+        CATEGORY: ['sci-physics']
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
   rules:
@@ -120,16 +112,14 @@ rivet:
       expire_in: 2 weeks
 
 fastjet:
-  image: apnpucky/gentoo-hep-forge
-  stage: install
   parallel:
     matrix:
       - PKG: [fastjet]
-        CATEGORY: ['sci-physics']
         VERSION: [3.4.0, 3.4.0-r1, 3.0.6-r3]
-      - PKG: [fastjet-contrib]
         CATEGORY: ['sci-physics']
+      - PKG: [fastjet-contrib]
         VERSION: ['1.049']
+        CATEGORY: ['sci-physics']
   script:
     - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
   rules:
@@ -144,6 +134,7 @@ fastjet:
       expire_in: 2 weeks
 
 local-repoman:
+  image: apnpucky/gentoo-ebuild-ci
   stage: check
   before_script: []
   script:
@@ -151,6 +142,7 @@ local-repoman:
     - repoman -vx full
 
 repoman:
+  image: apnpucky/gentoo-ebuild-ci
   stage: check
   before_script:
     - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
@@ -163,12 +155,14 @@ repoman:
     - repoman -vdx full
 
 local-pkgcheck:
+  image: apnpucky/gentoo-ebuild-ci
   stage: check
   before_script: []
   script:
     - pkgcheck scan --exit 
     
 pkgcheck:
+  image: apnpucky/gentoo-ebuild-ci
   stage: check
   before_script:
     - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
