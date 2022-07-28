@@ -16,12 +16,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 IUSE="doc examples"
-DEPEND="virtual/fortran" #gfortran
+DEPEND="virtual/fortran"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-	$(tc-getFC) ${P}.f -o qgraf
+	$(tc-getFC) ${P}.f -o qgraf ${FFLAGS} ${CFLAGS} ${LDFLAGS}
 }
 
 src_install() {
