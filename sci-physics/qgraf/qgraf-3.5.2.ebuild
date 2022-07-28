@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-	$(tc-getFC) ${P}.f08 -o ${PN}
+	$(tc-getFC) ${P}.f08 -o ${PN} ${FFLAGS} ${LDFLAGS}
 }
 
 src_install() {
@@ -30,7 +30,7 @@ src_install() {
 	use doc && dodoc *.pdf
 	if use examples; then
 		docinto examples
-		dodoc  phi3 qed qcd *.sty *.dat
+		dodoc phi3 qed qcd *.sty *.dat
 		docompress -x /usr/share/doc/${PF}/examples
 	fi
 }
