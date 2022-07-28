@@ -137,6 +137,26 @@ fastjet:
            - "report.json" 
       expire_in: 2 weeks
 
+qgraf:
+  stage: install
+  parallel:
+    matrix:
+      - PKG: [qgraf]
+        VERSION: [3.6.3, 3.5.2, 3.4.2]
+        CATEGORY: ['sci-physics']
+  script:
+    - pkg-testing-tool --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10 python_single_target_python3_9 python_single_target_python3_8 )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+      changes:
+      - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
+      - "$CATEGORY/$PKG/Manifest"
+      - "$CATEGORY/$PKG/files/*"
+  artifacts:             
+      paths:                 
+           - "report.json" 
+      expire_in: 2 weeks
+
 local-repoman:
   image: apnpucky/gentoo-ebuild-ci
   stage: check

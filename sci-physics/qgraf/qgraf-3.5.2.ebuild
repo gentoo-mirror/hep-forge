@@ -3,6 +3,8 @@
 
 EAPI=8
 
+inherit toolchain-funcs
+
 DESCRIPTION="qgraf generates Feynman diagrams for various types of QFT models"
 HOMEPAGE="http://cfif.ist.utl.pt/~paulo/qgraf.html"
 SRC_URI="http://anonymous:anonymous@qgraf.tecnico.ulisboa.pt/v3.5/qgraf-${PV}.tgz"
@@ -19,7 +21,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-	gfortran ${P}.f08 -o qgraf
+	$(tc-getFC) ${P}.f08 -o qgraf
 }
 
 src_install() {
