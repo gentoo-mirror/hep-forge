@@ -21,8 +21,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-	tc-export FFLAGS CXXFLAGS CFLAGS
-	$(tc-getFC) ${P}.f08 -o qgraf 
+	$(tc-getFC) ${P}.f08 -o qgraf ${FFLAGS} ${CFLAGS}
 }
 
 src_install() {
