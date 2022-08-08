@@ -59,8 +59,8 @@ src_configure() {
 	append-cxxflags -std=c++17
 	append-cppflags -std=c++17
 	# Rivet does not like econf for some reason
-	use hepmc2 && econf --prefix=/usr --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
-	use hepmc3 && econf --prefix=/usr --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr --libdir=/usr/$(get_libdir)
+	use hepmc2 && econf  --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr 
+	use hepmc3 && econf  --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr
 
 	if use python; then
 		cd "${S}"/pyext || die
