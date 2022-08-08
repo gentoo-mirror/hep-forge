@@ -79,7 +79,8 @@ src_compile() {
 
 src_install() {
 	default
-
+	
+	#TODO fix this
 	#newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
 	#rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
 
