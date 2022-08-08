@@ -13,9 +13,9 @@ LICENSE="all-rights-reserved"
 SLOT="0"
 
 #
-DEPEND="virtual/fortran"
-RDEPEND="${DEPEND}"
-BDEPEND=""
+BDEPEND="virtual/fortran"
+#
+#
 
 src_compile() {
 	# single thread force needed
