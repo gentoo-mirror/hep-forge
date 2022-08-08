@@ -19,14 +19,14 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc"
+IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
 	${PYTHON_REQUIRED_USE}
 "
 
 RDEPEND="
-	>=sci-physics/yoda-1.9.5[python]
+	>=sci-physics/yoda-1.9.5[python?]
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	>=dev-python/cython-0.29.24
@@ -80,8 +80,8 @@ src_compile() {
 src_install() {
 	default
 
-	newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
-	rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
+	#newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
+	#rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
 
 	if use python; then
 		cd "${S}"/pyext || die
