@@ -79,15 +79,16 @@ src_compile() {
 }
 
 src_install() {
+	default
 
-	newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
-	rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
+	#newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
+	#rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
 
 	if use python; then
 		cd "${S}"/pyext || die
 		distutils-r1_src_install
 	fi
-	default
+#
 
 	find "${ED}" -name '*.la' -delete || die
 }
