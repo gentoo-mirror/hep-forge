@@ -24,7 +24,7 @@ SLOT="3"
 KEYWORDS="~amd64"
 IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc +python"
 REQUIRED_USE="
-	^^ (hepmc3 hepmc2)
+	^^ ( hepmc3 hepmc2 )
 	${PYTHON_REQUIRED_USE}
 "
 
