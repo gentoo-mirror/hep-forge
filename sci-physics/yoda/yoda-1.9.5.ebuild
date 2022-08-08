@@ -48,7 +48,7 @@ src_test() {
 src_install() {
 	emake install DESTDIR="${ED}"
 
-	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion yoda
+	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}
 	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
 	python_optimize
 	find "${ED}" -name '*.la' -delete || die
