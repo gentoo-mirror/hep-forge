@@ -1,5 +1,3 @@
-diff --git a/configure.ac b/configure.ac
-index 3f31cc8d718dd18a8b08e9e21c6f04578c30e062..768efd66e1f8eb60875ed5c48f3488fb75eb332e 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -137,7 +137,7 @@ if test x$enable_pyext == xyes; then
