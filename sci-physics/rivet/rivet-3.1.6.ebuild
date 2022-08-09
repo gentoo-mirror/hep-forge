@@ -35,7 +35,7 @@ RDEPEND="
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 
 	sci-libs/gsl
-	# dependencies used for plotting in rivet
+	
 	app-text/ghostscript-gpl 
 	media-gfx/imagemagick
 	virtual/latex-base
