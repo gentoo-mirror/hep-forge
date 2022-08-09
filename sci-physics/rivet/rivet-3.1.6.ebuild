@@ -3,10 +3,9 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{8..10} )
 
-inherit bash-completion-r1 autotools distutils-r1 flag-o-matic
+inherit bash-completion-r1 autotools python-single-r1 flag-o-matic
 
 MY_PN="Rivet"
 MY_PF=${MY_PN}-${PV}
@@ -22,7 +21,7 @@ KEYWORDS="~amd64"
 IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
-	${PYTHON_REQUIRED_USE}
+	python? ( ${PYTHON_REQUIRED_USE} )
 "
 
 RDEPEND="
@@ -38,7 +37,7 @@ RDEPEND="
 	imagemagick? ( media-gfx/imagemagick )
 	tex? ( app-text/texlive-core )
 
-	${PYTHON_DEPS}
+	python ( ${PYTHON_DEPS} )
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
@@ -62,24 +61,11 @@ src_configure() {
 	PREFIX_FJ=$(fastjet-config --prefix) || die
 	# Rivet does not like econf for some reason
 	econf \
-		$(usex hepmc2 "--with-hepmc=/usr" "")\
-		$(usex hepmc3 "--with-hepmc3=/usr" "")\
-		--with-yoda=$PREFIX_YODA\
+		$(use_enable python pyext) \
+		$(usex hepmc2 "--with-hepmc=/usr" "") \
+		$(usex hepmc3 "--with-hepmc3=/usr" "") \
+		--with-yoda=$PREFIX_YODA \
 		--with-fastjet=$PREFIX_FJ
-
-	if use python; then
-		cd "${S}"/pyext || die
-		distutils-r1_src_prepare
-	fi
-}
-
-src_compile() {
-	default
-
-	if use python; then
-		cd "${S}"/pyext || die
-		distutils-r1_src_compile
-	fi
 }
 
 src_install() {
@@ -88,11 +74,6 @@ src_install() {
 	#rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
 
 	default
-
-	if use python; then
-		cd "${S}"/pyext || die
-		distutils-r1_src_install
-	fi
 
 	find "${ED}" -name '*.la' -delete || die
 }
