@@ -11,7 +11,7 @@
 	<use>
 		<flag name="hepmc3">Build with HepMC3</flag>
 		<flag name="hepmc2">Build with HepMC2</flag>
-		<flag name="ghostscript">Install ghostscript</flag>
-		<flag name="tex">Install tex</flag>
+
+
 	</use>
 </pkgmetadata>
