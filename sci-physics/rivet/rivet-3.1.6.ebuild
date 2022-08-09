@@ -27,7 +27,7 @@ REQUIRED_USE="
 RDEPEND="
 	!python? ( >=sci-physics/yoda-1.9.5 )
 	python? ( >=sci-physics/yoda-1.9.5[${PYTHON_SINGLE_USEDEP}] )
-	
+
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	>=dev-python/cython-0.29.24
@@ -35,8 +35,8 @@ RDEPEND="
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 
 	sci-libs/gsl
-	
-	app-text/ghostscript-gpl 
+
+	app-text/ghostscript-gpl
 	media-gfx/imagemagick
 	virtual/latex-base
 
@@ -49,21 +49,23 @@ BDEPEND="
 
 PATCHES=(
 "${FILESDIR}"/${P}-binreloc.patch
-"${FILESDIR}"/${P}-std.patch
 )
+#"${FILESDIR}"/${P}-std.patch
 
 src_prepare() {
 	default
-	eautoreconf
+	#eautoreconf
 }
 
 src_configure() {
-	append-cxxflags -std=c++17
-	append-cppflags -std=c++17
+	#append-cxxflags -std=c++17
+	#append-cppflags -std=c++17
 	PREFIX_YODA=$(yoda-config --prefix) || die
 	PREFIX_FJ=$(fastjet-config --prefix) || die
 	# Rivet does not like econf for some reason
-	econf \
+	./configure \
+		--prefix=/usr \
+		--libdir=/usr/$(get_libdir) \
 		$(use_enable python pyext) \
 		$(usex hepmc2 "--with-hepmc=/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=/usr" "") \
