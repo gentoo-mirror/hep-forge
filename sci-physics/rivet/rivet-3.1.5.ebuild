@@ -59,9 +59,14 @@ src_prepare() {
 src_configure() {
 	append-cxxflags -std=c++17
 	append-cppflags -std=c++17
+	PREFIX_YODA=$(yoda-config --prefix) || die
+	PREFIX_FJ=$(fastjet-config --prefix) || die
 	# Rivet does not like econf for some reason
-	use hepmc2 && econf --with-hepmc=/usr --with-yoda=/usr --with-fastjet=/usr
-	use hepmc3 && econf --with-hepmc3=/usr --with-yoda=/usr --with-fastjet=/usr
+	econf \
+		$(use_with hepmc2 hepmc /usr)\
+		$(use_with hepmc3 hepmc3 /usr)\
+		--with-yoda=$PREFIX_YODA
+		--with-fastjet=$PREFIX_FJ
 
 	if use python; then
 		cd "${S}"/pyext || die
