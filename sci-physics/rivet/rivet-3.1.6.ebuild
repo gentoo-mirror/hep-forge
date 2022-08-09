@@ -25,7 +25,9 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	>=sci-physics/yoda-1.9.5[python?]
+	!python? ( >=sci-physics/yoda-1.9.5 )
+	python? ( >=sci-physics/yoda-1.9.5[${PYTHON_SINGLE_USEDEP}] )
+	
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	>=dev-python/cython-0.29.24
@@ -37,7 +39,7 @@ RDEPEND="
 	imagemagick? ( media-gfx/imagemagick )
 	tex? ( app-text/texlive-core )
 
-	python ( ${PYTHON_DEPS} )
+	python? ( ${PYTHON_DEPS} )
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
