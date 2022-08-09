@@ -34,6 +34,8 @@ RDEPEND="
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 
 	sci-libs/gsl
+
+	# plotting dependencies
 	app-text/ghostscript-gpl 
 	media-gfx/imagemagick 
 	app-text/texlive-core 
