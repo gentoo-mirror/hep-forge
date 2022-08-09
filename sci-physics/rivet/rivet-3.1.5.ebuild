@@ -19,7 +19,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc +python"
+IUSE="+hepmc3 hepmc2 +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
 	${PYTHON_REQUIRED_USE}
@@ -34,9 +34,9 @@ RDEPEND="
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 
 	sci-libs/gsl
-	ghostscript? ( app-text/ghostscript-gpl )
-	imagemagick? ( media-gfx/imagemagick )
-	tex? ( app-text/texlive-core )
+	app-text/ghostscript-gpl 
+	media-gfx/imagemagick 
+	app-text/texlive-core 
 
 	${PYTHON_DEPS}
 "
