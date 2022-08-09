@@ -18,7 +18,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+hepmc3 hepmc2 tex imagemagick ghostscript doc +python"
+IUSE="+hepmc3 hepmc2 +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
 	python? ( ${PYTHON_REQUIRED_USE} )
@@ -35,9 +35,10 @@ RDEPEND="
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 
 	sci-libs/gsl
-	ghostscript? ( app-text/ghostscript-gpl )
-	imagemagick? ( media-gfx/imagemagick )
-	tex? ( app-text/texlive-core )
+	# dependencies used for plotting in rivet
+	app-text/ghostscript-gpl 
+	media-gfx/imagemagick
+	virtual/latex-base
 
 	python? ( ${PYTHON_DEPS} )
 "
