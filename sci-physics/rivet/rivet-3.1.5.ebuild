@@ -35,7 +35,6 @@ RDEPEND="
 
 	sci-libs/gsl
 
-	# plotting dependencies
 	app-text/ghostscript-gpl 
 	media-gfx/imagemagick 
 	app-text/texlive-core 
