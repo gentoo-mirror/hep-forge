@@ -51,8 +51,6 @@ PATCHES=(
 
 src_prepare() {
 	default
-	#use doc || sed -i -e 's#AC_CONFIG_FILES(doc/Makefile doc/doxygen/Doxyfile)##' "${S}"/configure.ac || die
-	#use doc || sed -i -e 's#SUBDIRS = src pyext data include bin analyses test doc#SUBDIRS = src pyext data include bin analyses test#' "${S}"/Makefile.am || die
 	eautoreconf
 }
 
@@ -63,9 +61,9 @@ src_configure() {
 	PREFIX_FJ=$(fastjet-config --prefix) || die
 	# Rivet does not like econf for some reason
 	econf \
-		$(use_with hepmc2 hepmc /usr)\
-		$(use_with hepmc3 hepmc3 /usr)\
-		--with-yoda=$PREFIX_YODA
+		$(usex hepmc2 "--with-hepmc=/usr" "")\
+		$(usex hepmc3 "--with-hepmc3=/usr" "")\
+		--with-yoda=$PREFIX_YODA\
 		--with-fastjet=$PREFIX_FJ
 
 	if use python; then

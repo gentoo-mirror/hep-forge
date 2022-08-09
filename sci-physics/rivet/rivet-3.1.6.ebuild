@@ -62,8 +62,8 @@ src_configure() {
 	PREFIX_FJ=$(fastjet-config --prefix) || die
 	# Rivet does not like econf for some reason
 	econf \
-		$(use_with hepmc2 hepmc /usr)\
-		$(use_with hepmc3 hepmc3 /usr)\
+		$(usex hepmc2 "--with-hepmc=/usr" "")\
+		$(usex hepmc3 "--with-hepmc3=/usr" "")\
 		--with-yoda=$PREFIX_YODA\
 		--with-fastjet=$PREFIX_FJ
 
