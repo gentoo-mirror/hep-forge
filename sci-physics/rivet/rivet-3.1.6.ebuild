@@ -26,13 +26,11 @@ REQUIRED_USE="
 
 RDEPEND="
 	!python? ( >=sci-physics/yoda-1.9.5 )
-	python? ( >=sci-physics/yoda-1.9.5[python, ${PYTHON_SINGLE_USEDEP}] )
-
+	python? ( >=sci-physics/yoda-1.9.5[python(-),${PYTHON_SINGLE_USEDEP}] )
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
-	>=dev-python/cython-0.29.24
-	hepmc2? ( sci-physics/hepmc:0=[-cm(-), gev(+)] )
-	hepmc3? ( sci-physics/hepmc:3=[-cm(-), gev(+)] )
+	hepmc2? ( sci-physics/hepmc:0=[-cm(-),gev(+)] )
+	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 
 	sci-libs/gsl
 
@@ -40,6 +38,7 @@ RDEPEND="
 	media-gfx/imagemagick
 	virtual/latex-base
 
+	>=dev-python/cython-0.29.24
 	python? ( ${PYTHON_DEPS} )
 "
 DEPEND="${RDEPEND}"
@@ -50,29 +49,19 @@ BDEPEND="
 PATCHES=(
 "${FILESDIR}"/${P}-binreloc.patch
 )
-#"${FILESDIR}"/${P}-std.patch
-
-src_prepare() {
-	default
-	#eautoreconf
-}
 
 src_configure() {
-	#append-cxxflags -std=c++17
-	#append-cppflags -std=c++17
+	#TODO does this affect more cpus?
+	replace-cpu-flags znver1 x86-64
 	PREFIX_YODA=$(yoda-config --prefix) || die
 	PREFIX_FJ=$(fastjet-config --prefix) || die
-	# Rivet does not like econf for some reason
-	./configure \
-		--prefix=/usr \
-		--libdir=/usr/$(get_libdir) \
+	econf \
 		$(use_enable python pyext) \
 		$(usex hepmc2 "--with-hepmc=/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=/usr" "") \
 		--with-yoda=$PREFIX_YODA \
 		--with-fastjet=$PREFIX_FJ
 }
-
 src_install() {
 	# Needed before for default configure instead of econf
 	#newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
