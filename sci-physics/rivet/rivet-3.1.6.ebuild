@@ -26,13 +26,13 @@ REQUIRED_USE="
 
 RDEPEND="
 	!python? ( >=sci-physics/yoda-1.9.5 )
-	python? ( >=sci-physics/yoda-1.9.5[${PYTHON_SINGLE_USEDEP}] )
+	python? ( >=sci-physics/yoda-1.9.5[python, ${PYTHON_SINGLE_USEDEP}] )
 
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	>=dev-python/cython-0.29.24
-	hepmc2? ( sci-physics/hepmc:0=[-cm(-),gev(+)] )
-	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
+	hepmc2? ( sci-physics/hepmc:0=[-cm(-), gev(+)] )
+	hepmc3? ( sci-physics/hepmc:3=[-cm(-), gev(+)] )
 
 	sci-libs/gsl
 
