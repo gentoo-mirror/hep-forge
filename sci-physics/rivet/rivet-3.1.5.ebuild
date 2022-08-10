@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{8..10} )
 
-inherit bash-completion-r1 autotools python-single-r1 flag-o-matic
+inherit python-single-r1 flag-o-matic
 
 MY_PN="Rivet"
 MY_PF=${MY_PN}-${PV}
@@ -58,11 +58,8 @@ src_configure() {
 		--with-yoda=$PREFIX_YODA \
 		--with-fastjet=$PREFIX_FJ
 }
-src_install() {
-	# Needed before for default configure instead of econf
-	#newbashcomp "${ED}"/usr/etc/bash_completion.d/${PN}-completion ${PN}
-	#rm "${ED}"/usr/etc/bash_completion.d/${PN}-completion || die
 
+src_install() {
 	default
 
 	find "${ED}" -name '*.la' -delete || die

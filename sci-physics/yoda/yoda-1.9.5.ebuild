@@ -20,7 +20,7 @@ IUSE="root +python"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 
 RDEPEND="
-	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
+	root? ( sci-physics/root:=[python,${PYTHON_SINGLE_USEDEP}] )
 	python? ( ${PYTHON_DEPS} )
 "
 
