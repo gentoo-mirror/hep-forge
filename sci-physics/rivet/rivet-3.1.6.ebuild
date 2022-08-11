@@ -62,6 +62,7 @@ src_configure() {
 		--with-yoda=$PREFIX_YODA \
 		--with-fastjet=$PREFIX_FJ
 }
+
 src_install() {
 	default
 
