@@ -11,5 +11,6 @@
 	<use>
 		<flag name="hepmc3">Build with HepMC3</flag>
 		<flag name="hepmc2">Build with HepMC2</flag>
+		<flag name="plot">Setup with plotting dependencies</flag>
 	</use>
 </pkgmetadata>
