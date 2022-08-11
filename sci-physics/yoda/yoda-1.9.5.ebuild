@@ -1,43 +1,29 @@
-# Copyright 2022 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-# python3_11 missing in sci-physics/root
-PYTHON_COMPAT=( python3_{8..10} )
-
-inherit bash-completion-r1 autotools python-single-r1
+inherit bash-completion-r1
 
 DESCRIPTION="Yet more Objects for (High Energy Physics) Data Analysis"
 HOMEPAGE="https://yoda.hepforge.org/"
 SRC_URI="https://yoda.hepforge.org/downloads?f=${P^^}.tar.bz2 -> ${P^^}.tar.bz2"
-S="${WORKDIR}/${P^^}"
 
-LICENSE="GPL-3"
+LICENSE="GPL-2"
 SLOT="0/${PV}"
-KEYWORDS="~amd64"
-IUSE="root +python"
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+IUSE="root"
 
-RDEPEND="
-	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
-	python? ( ${PYTHON_DEPS} )
-"
-
+RDEPEND="root? ( sci-physics/root:= )"
 DEPEND="${RDEPEND}"
 
-PATCHES=(
-	"${FILESDIR}/${P}-python3.10.patch"
-)
-
-src_prepare() {
-	default
-	# reconf due to python3_10 patch
-	eautoreconf
-}
+S="${WORKDIR}/${P^^}"
 
 src_configure() {
-	econf --disable-static $(use_enable root) $(use_enable python pyext)
+	econf \
+		--disable-pyext \
+		--disable-static \
+		$(use_enable root)
 }
 
 src_test() {
@@ -46,10 +32,8 @@ src_test() {
 }
 
 src_install() {
-	emake install DESTDIR="${ED}"
-
-	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}
-	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
-	python_optimize
+	default
 	find "${ED}" -name '*.la' -delete || die
+	newbashcomp "${ED}"/etc/bash_completion.d/yoda-completion yoda
+	rm "${ED}"/etc/bash_completion.d/yoda-completion || die
 }

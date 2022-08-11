@@ -25,8 +25,8 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	!python? ( >=sci-physics/yoda-1.9.5 )
-	python? ( >=sci-physics/yoda-1.9.5[${PYTHON_SINGLE_USEDEP}] )
+	!python? ( >=sci-physics/yoda-1.9.5-r1 )
+	python? ( >=sci-physics/yoda-1.9.5-r1[${PYTHON_SINGLE_USEDEP}] )
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:0=[-cm(-),gev(+)] )
