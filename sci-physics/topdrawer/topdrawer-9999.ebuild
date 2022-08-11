@@ -18,7 +18,7 @@ BDEPEND="virtual/fortran"
 src_compile() {
 	# single thread force needed
 	export MAKEOPTS=-j1
-	emake
+	emake FFLAGS="$FFLAGS" FCLDFLAGS="$LDFLAGS"
 }
 
 src_install() {
