@@ -50,6 +50,7 @@ BDEPEND="
 
 PATCHES=(
 "${FILESDIR}"/${P}-binreloc.patch
+"${FILESDIR}"/${PN}-3.1.5-test.patch
 )
 
 src_configure() {

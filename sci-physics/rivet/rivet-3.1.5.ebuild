@@ -39,7 +39,7 @@ RDEPEND="
 		media-gfx/imagemagick
 		app-text/texlive-core
 	)
-	
+
 	>=dev-python/cython-0.29.24
 	python? ( ${PYTHON_DEPS} )
 "
@@ -47,6 +47,10 @@ DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/fortran
 "
+
+PATCHES=(
+"${FILESDIR}"/${P}-test.patch
+)
 
 src_configure() {
 	# TODO does this affect more cpus?
