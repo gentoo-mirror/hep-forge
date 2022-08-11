@@ -17,7 +17,7 @@ LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
 IUSE="root +python"
-REQUIRED_USE=""
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
@@ -37,7 +37,7 @@ src_prepare() {
 }
 
 src_configure() {
-	econf --disable-static --disable-root --disable-pyext
+	econf --disable-static $(use_enable root) $(use_enable python pyext)
 }
 
 src_test() {
