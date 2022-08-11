@@ -28,7 +28,7 @@ KEYWORDS="~amd64"
 IUSE="doc examples fastjet +hepmc2 hepmc3 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="
-	hepmc3? ( !hepmc2 )
+	^^ ( hepmc3 hepmc2 )
 "
 
 RDEPEND="
@@ -138,16 +138,16 @@ src_configure() {
 src_test() {
 	cd examples || die
 
-	local anyhepmc=0
-	use hepmc2 && anyhepmc=1
-	use hepmc3 && anyhepmc=1
+	ANYHEPMC=0
+	use hepmc2 && ANYHEPMC=1
+	use hepmc3 && ANYHEPMC=1
 
 	local tests="$(echo main{{01..32},37,38,61,62,73,80}.out)"
-	use anyhepmc && tests+=" $(echo main{41,42,85,86}.out)"
-	use anyhepmc && use lhapdf && tests+=" $(echo main{43,{87..89}}.out)"
+	$ANYHEPMC && tests+=" $(echo main{41,42,85,86}.out)"
+	$ANYHEPMC && use lhapdf && tests+=" $(echo main{43,{87..89}}.out)"
 	use lhapdf && tests+=" $(echo main{51..54}.out)"
 	use fastjet && tests+=" $(echo main{71,72}.out)"
-	use fastjet && use anyhepmc && use lhapdf && tests+=" $(echo main{81..84}).out"
+	use fastjet && $ANYHEPMC && use lhapdf && tests+=" $(echo main{81..84}).out"
 	use root && tests+=" main91.out"
 	# Disabled tests:
 	# 33	needs PowHEG
