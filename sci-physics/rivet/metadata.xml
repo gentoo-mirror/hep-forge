@@ -6,11 +6,11 @@
 		<name>APN-Pucky</name>
 	</maintainer>
 	<longdescription lang="en">
-	Rivet is a system for preservation of particle-collider analysis logic, analysis reinterpretation via MC simulations, and the validation and improvement of Monte Carlo event generator codes. It covers all aspects of collider physics, from unfolded precision measurements to reconstruction-level searches, and physics from the Standard Model to BSM theories, and from perturbative jet, boson and top-quarks to hadron decays, inclusive QCD, and Heavy Ion physics.
+	Rivet is a system for preservation of particle-collider analysis logic, analysis reinterpretation via MC simulations, and the validation and improvement of Monte Carlo event generator codes. 
+	It covers all aspects of collider physics, from unfolded precision measurements to reconstruction-level searches, and physics from the Standard Model to BSM theories, and from perturbative jet, boson and top-quarks to hadron decays, inclusive QCD, and Heavy Ion physics.
 	</longdescription>
 	<use>
 		<flag name="hepmc3">Build with HepMC3</flag>
 		<flag name="hepmc2">Build with HepMC2</flag>
-		<flag name="plot">Setup with plotting dependencies</flag>
 	</use>
 </pkgmetadata>
