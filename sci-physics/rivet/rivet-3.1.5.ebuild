@@ -36,7 +36,7 @@ RDEPEND="
 
 	app-text/ghostscript-gpl
 	media-gfx/imagemagick
-	app-text/texlive-core
+	virtual/latex-base
 
 	>=dev-python/cython-0.29.24
 	python? ( ${PYTHON_DEPS} )
