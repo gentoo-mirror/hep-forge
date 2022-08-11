@@ -12,7 +12,7 @@ MY_PF=${MY_PN}-${PV}
 
 DESCRIPTION="Rivet toolkit (Robust Independent Validation of Experiment and Theory)"
 HOMEPAGE="https://gitlab.com/hepcedar/rivet"
-SRC_URI="http://www.hepforge.org/archive/rivet/${MY_PF}.tar.gz"
+SRC_URI="https://www.hepforge.org/archive/rivet/${MY_PF}.tar.gz"
 S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3+"
@@ -26,7 +26,7 @@ REQUIRED_USE="
 
 RDEPEND="
 	!python? ( >=sci-physics/yoda-1.9.5 )
-	python? ( >=sci-physics/yoda-1.9.5[python(-),${PYTHON_SINGLE_USEDEP}] )
+	python? ( >=sci-physics/yoda-1.9.5[${PYTHON_SINGLE_USEDEP}] )
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:0=[-cm(-),gev(+)] )
@@ -62,6 +62,7 @@ src_configure() {
 		--with-yoda=$PREFIX_YODA \
 		--with-fastjet=$PREFIX_FJ
 }
+
 src_install() {
 	default
 
