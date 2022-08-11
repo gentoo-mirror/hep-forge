@@ -59,6 +59,7 @@ all:
     - if: $CI_PIPELINE_SOURCE == "push"
       changes:
       - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
+      - "$CATEGORY/$PKG/metadata.xml"
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
 
