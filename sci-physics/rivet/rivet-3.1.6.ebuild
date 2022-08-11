@@ -18,7 +18,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+hepmc3 hepmc2 +plot +python"
+IUSE="+hepmc3 hepmc2 +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
 	python? ( ${PYTHON_REQUIRED_USE} )
@@ -34,11 +34,9 @@ RDEPEND="
 
 	sci-libs/gsl
 
-	plot? (
-		app-text/ghostscript-gpl
-		media-gfx/imagemagick
-		virtual/latex-base
-	)
+	app-text/ghostscript-gpl
+	media-gfx/imagemagick
+	virtual/latex-base
 
 	>=dev-python/cython-0.29.24
 	python? ( ${PYTHON_DEPS} )
