@@ -46,6 +46,7 @@ BDEPEND="
 "
 
 PATCHES=(
+	"${FILESDIR}"/${P}-doc.patch
 	"${FILESDIR}"/${P}-test.patch
 )
 
