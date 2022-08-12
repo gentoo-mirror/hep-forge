@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{8..10} )
 
-inherit python-single-r1 flag-o-matic
+inherit python-single-r1 flag-o-matic autotools
 
 MY_PN="Rivet"
 MY_PF=${MY_PN}-${PV}
@@ -49,6 +49,11 @@ BDEPEND="
 PATCHES=(
 "${FILESDIR}"/${P}-test.patch
 )
+
+src_prepare() {
+	default
+	eautoreconf
+}
 
 src_configure() {
 	# TODO does this affect more cpus?
