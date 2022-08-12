@@ -1,5 +1,5 @@
---- a/Rivet-3.1.5/doc/Makefile.am
-+++ b/Rivet-3.1.5/doc/Makefile.am
+--- a/doc/Makefile.am
++++ b/doc/Makefile.am
 @@ -11,7 +11,7 @@
  	$(mkdir_p) analists && cd analists && \
      LD_LIBRARY_PATH=$(abs_top_builddir)/src/.libs:$(FASTJETLIBPATH):$(FJCONTRIBLIBPATH):$(HEPMCLIBPATH):$(HEPMC3LIBPATH):$(YODALIBPATH):$(LD_LIBRARY_PATH) \
