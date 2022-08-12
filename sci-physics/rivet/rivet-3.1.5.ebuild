@@ -46,7 +46,7 @@ BDEPEND="
 "
 
 PATCHES=(
-"${FILESDIR}"/${P}-test.patch
+	"${FILESDIR}"/${P}-test.patch
 )
 
 src_prepare() {
