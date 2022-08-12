@@ -68,5 +68,6 @@ src_configure() {
 
 src_install() {
 	default
+	python_optimize
 	find "${ED}" -name '*.la' -delete || die
 }
