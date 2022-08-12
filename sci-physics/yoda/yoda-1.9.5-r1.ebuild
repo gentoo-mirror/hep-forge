@@ -56,6 +56,5 @@ src_install() {
 	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
 	
 	python_optimize
-
 	find "${ED}" -name '*.la' -delete || die
 }
