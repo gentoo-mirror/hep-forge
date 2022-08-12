@@ -33,16 +33,16 @@ RDEPEND="
 
 	sci-libs/gsl
 
-	app-text/ghostscript-gpl
-	media-gfx/imagemagick
 	virtual/latex-base
+	media-gfx/imagemagick
+	app-text/ghostscript-gpl
 
-	>=dev-python/cython-0.29.24
 	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/fortran
+	>=dev-python/cython-0.29.24
 "
 
 PATCHES=(
