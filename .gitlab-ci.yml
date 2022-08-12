@@ -48,7 +48,7 @@ all:
         VERSION: ['6.5.1']
         CATEGORY: ['sci-physics']
   script:
-    - if [ $(grep -Fxq "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION.ebuild) ]; 
+    - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION.ebuild; 
       then
         inherit() { sleep 0; } &&
         source $CATEGORY/$PKG-$VERSION.ebuild && 
