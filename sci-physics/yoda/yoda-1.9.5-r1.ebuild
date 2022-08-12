@@ -23,7 +23,7 @@ RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
 	python? (
 		dev-python/matplotlib[latex(-)]
-		${PYTHON_DEPS} 
+		${PYTHON_DEPS}
 	)
 "
 
