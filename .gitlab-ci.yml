@@ -49,12 +49,21 @@ all:
         VERSION: ['6.5.1']
         CATEGORY: ['sci-physics']
   script:
-    - PYTHON_SINGLE_TARGET="$PYTHON_SINGLE_TARGET" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "!root ^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 ) $EXTRA_USE" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json | tee out.log
+    - if grep "python-single-r1" $CATEGORY/$PKG-$VERSION.ebuild \
+      then\
+        inherit() { sleep 0; } &&\
+        source $CATEGORY/$PKG-$VERSION.ebuild && \
+        for PY in ${PYTHON_COMPAT[@]}; do\
+          PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "!root python_single_target_$PY )" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report-$PY.json | tee -a out.log \
+        done\
+      else\
+        pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "!root" -p "=$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report report.json | tee out.log \
+      fi
     - (! grep -A5 -B5 "QA Notice" out.log)
   artifacts:             
       paths:
            - "out.log"          
-           - "report.json" 
+           - "report*.json" 
       expire_in: 1 week
   rules:
     - if: $CI_PIPELINE_SOURCE == "push"
