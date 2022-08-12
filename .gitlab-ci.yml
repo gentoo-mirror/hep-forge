@@ -29,7 +29,6 @@ all:
       - PKG: [rivet]
         VERSION: [3.1.5, 3.1.6]
         CATEGORY: ['sci-physics']
-        PYTHON_SINGLE_TARGET: ['python3_10',  'python3_9', 'python3_8']
       - PKG: [fastjet]
         VERSION: [3.4.0, 3.4.0-r1, 3.0.6-r3]
         CATEGORY: ['sci-physics']
