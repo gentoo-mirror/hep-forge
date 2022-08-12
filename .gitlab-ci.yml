@@ -20,6 +20,7 @@ all:
       - PKG: [yoda]
         VERSION: [1.9.5-r1]
         CATEGORY: ['sci-physics']
+        EXTRA_USE: ['python_single_target_python3_10',  'python_single_target_python3_9', 'python_single_target_python3_8']
       - PKG: [hepmc]
         VERSION: [2.06.11, 3.2.5]
         CATEGORY: ['sci-physics']
