@@ -16,7 +16,7 @@ S="${WORKDIR}/${P^^}"
 LICENSE="GPL-3"
 SLOT="0/${PV}"
 KEYWORDS="~amd64"
-IUSE="root +python"
+IUSE="root python"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 
 RDEPEND="
