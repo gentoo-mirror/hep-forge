@@ -21,7 +21,10 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
-	python? ( ${PYTHON_DEPS} )
+	python? (
+		dev-python/matplotlib[latex(-)]
+		${PYTHON_DEPS} 
+	)
 "
 
 DEPEND="${RDEPEND}"
