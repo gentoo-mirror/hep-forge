@@ -11,7 +11,7 @@ default:
     - emaint -r ${REPO_NAME} sync
 
 all:
-  stage: check
+  stage: install
   parallel:
     matrix:
       - PKG: [resummino]
