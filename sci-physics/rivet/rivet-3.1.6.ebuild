@@ -21,12 +21,11 @@ KEYWORDS="~amd64"
 IUSE="+hepmc3 hepmc2 +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
-	python? ( ${PYTHON_REQUIRED_USE} )
+	${PYTHON_REQUIRED_USE}
 "
 
 RDEPEND="
-	!python? ( >=sci-physics/yoda-1.9.5 )
-	python? ( >=sci-physics/yoda-1.9.5[${PYTHON_SINGLE_USEDEP}] )
+	>=sci-physics/yoda-1.9.5[${PYTHON_SINGLE_USEDEP}]
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:0=[-cm(-),gev(+)] )
@@ -39,7 +38,7 @@ RDEPEND="
 	virtual/latex-base
 
 	>=dev-python/cython-0.29.24
-	python? ( ${PYTHON_DEPS} )
+	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
@@ -62,7 +61,6 @@ src_configure() {
 	PREFIX_YODA=$(yoda-config --prefix) || die
 	PREFIX_FJ=$(fastjet-config --prefix) || die
 	econf \
-		$(use_enable python pyext) \
 		$(usex hepmc2 "--with-hepmc=/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=/usr" "") \
 		--with-yoda=$PREFIX_YODA \
