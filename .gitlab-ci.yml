@@ -74,6 +74,8 @@ all:
       - "$CATEGORY/$PKG/metadata.xml"
       - "$CATEGORY/$PKG/Manifest"
       - "$CATEGORY/$PKG/files/*"
+      - "$CATEGORY/$PKG/.build"
+      - ".build"
 
 local-repoman:
   image: apnpucky/gentoo-ebuild-ci
