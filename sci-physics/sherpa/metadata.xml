@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>APN-Pucky@users.noreply.github.com</email>
+		<name>APN-Pucky</name>
+	</maintainer>
+	<longdescription lang="en">
+	Sherpa is a Monte Carlo event generator for the Simulation of High-Energy Reactions of PArticles in lepton-lepton, lepton-photon, photon-photon, lepton-hadron and hadron-hadron collisions. Simulation programs - also dubbed event generators - like Sherpa are indispensable work horses for current particle physics phenomenology and are (at) the interface between theory and experiment.
+	</longdescription>
+	<use>
+		<flag name="hepmc2">Build with HepMC2</flag>
+		<flag name="fastjet">Build with FastJet</flag>
+		<flag name="lhapdf">Build with LHAPDF</flag>
+		<flag name="pythia">Build with Pythia</flag>
+		<flag name="rivet">Build with Rivet</flag>
+	</use>
+
+</pkgmetadata>

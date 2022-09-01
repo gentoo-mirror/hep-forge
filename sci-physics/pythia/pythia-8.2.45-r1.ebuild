@@ -33,7 +33,7 @@ REQUIRED_USE="
 
 RDEPEND="
 	fastjet? ( sci-physics/fastjet )
-	hepmc2? ( sci-physics/hepmc:0= )
+	hepmc2? ( sci-physics/hepmc:2= )
 	hepmc3? ( sci-physics/hepmc:3= )
 	lhapdf? ( sci-physics/lhapdf:= )
 	zlib? ( sys-libs/zlib )"
