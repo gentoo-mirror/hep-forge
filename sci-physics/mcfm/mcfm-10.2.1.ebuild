@@ -12,6 +12,7 @@ MY_P=${MY_PN}-${PV}
 DESCRIPTION="Monte Carlo for FeMtobarn processes"
 HOMEPAGE="https://mcfm.fnal.gov"
 SRC_URI="https://mcfm.fnal.gov/downloads/${MY_P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-3+"
 SLOT="0"
