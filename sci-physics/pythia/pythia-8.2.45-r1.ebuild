@@ -10,7 +10,7 @@ MY_P="${PN}${PV//./}"
 LHA_VER="6.1"
 
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
-HOMEPAGE="http://pythia8.hepforge.org/"
+HOMEPAGE="http://pythia.org/"
 SRC_URI="http://home.thep.lu.se/~torbjorn/${PN}${MV}/${MY_P}.tgz
 	test? ( lhapdf? (
 		https://www.hepforge.org/archive/lhapdf/pdfsets/${LHA_VER}/CT10.tar.gz
