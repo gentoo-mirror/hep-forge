@@ -138,16 +138,12 @@ src_configure() {
 src_test() {
 	cd examples || die
 
-	ANYHEPMC=0
-	use hepmc2 && ANYHEPMC=1
-	use hepmc3 && ANYHEPMC=1
-
 	local tests="$(echo main{{01..32},37,38,61,62,73,80}.out)"
-	[ $ANYHEPMC -eq 1 ] && tests+=" $(echo main{41,42,85,86}.out)"
-	[ $ANYHEPMC -eq 1 ] && use lhapdf && tests+=" $(echo main{43,{87..89}}.out)"
+	use hepmc2 && tests+=" $(echo main{41,42,85,86}.out)"
+	use hepmc2 && use lhapdf && tests+=" $(echo main{43,{87..89}}.out)"
 	use lhapdf && tests+=" $(echo main{51..54}.out)"
 	use fastjet && tests+=" $(echo main{71,72}.out)"
-	use fastjet && [ $ANYHEPMC -eq 1 ] && use lhapdf && tests+=" $(echo main{81..84}).out"
+	use fastjet && use hepmc2 && use lhapdf && tests+=" $(echo main{81..84}).out"
 	use root && tests+=" main91.out"
 	# Disabled tests:
 	# 33	needs PowHEG
