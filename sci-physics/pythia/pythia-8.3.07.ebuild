@@ -114,8 +114,8 @@ src_configure() {
 		--prefix-share="${EPYTHIADIR}" \
 		$(usex fastjet "--with-fastjet3" "") \
 		$(usex zlib "--with-gzip" "") \
-		$(usex hepmc3 "--with-hepmc3" "") \
-		$(usex hepmc2 "--with-hepmc2" "") \
+		$(use_with hepmc3) \
+		$(use_with hepmc2) \
 		$(usex lhapdf "--with-lhapdf6
 			--with-lhapdf6-plugin=LHAPDF6.h
 			--with-lhapdf6-lib=${EPREFIX}/usr/$(get_libdir)" "") \
