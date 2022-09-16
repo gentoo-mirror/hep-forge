@@ -3,6 +3,8 @@
 
 EAPI=8
 
+CMAKE_MAKEFILE_GENERATOR="emake"
+
 inherit cmake
 
 MY_PN=MCFM
@@ -22,6 +24,7 @@ KEYWORDS="~amd64"
 # MCFM has been tested against lhapdf-6.2.0 which ::gentoo already dropped
 DEPEND="
 	>sci-physics/lhapdf-6.3.0
+	>=sci-libs/qd-2.3.22
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -29,9 +32,15 @@ BDEPEND="
 "
 
 src_configure() {
-		local mycmakeargs=(
-			-Duse_external_lhapdf=ON
-			-Duse_internal_lhapdf=OFF
-		)
-		cmake_src_configure
+	local mycmakeargs=(
+		-Duse_external_lhapdf=ON
+		-Duse_internal_lhapdf=OFF
+	)
+	cmake_src_configure
+}
+
+src_compile() {
+	# single thread force needed since fortan mods depend on each other
+	export MAKEOPTS=-j1
+	default
 }
