@@ -20,20 +20,21 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-PATCHES=( 	
-	"${FILESDIR}"/${P}-qd.patch 
-)
 
 # Manual states multithreading bug in lhapdf-6.3.0 ?!
 # MCFM has been tested against lhapdf-6.2.0 which ::gentoo already dropped
 DEPEND="
 	>sci-physics/lhapdf-6.3.0
-	>=sci-libs/qd-2.3.22
+	#>=sci-libs/qd-2.3.22
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
 	virtual/fortran
 "
+
+PATCHES=( 	
+	#"${FILESDIR}"/${P}-qd.patch 
+)
 
 src_configure() {
 	local mycmakeargs=(
