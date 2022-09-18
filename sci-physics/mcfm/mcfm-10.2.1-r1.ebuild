@@ -24,7 +24,7 @@ KEYWORDS="~amd64"
 # MCFM has been tested against lhapdf-6.2.0 which ::gentoo already dropped
 DEPEND="
 	>sci-physics/lhapdf-6.3.0
-	>=sci-libs/qd-2.3.22
+	#>=sci-libs/qd-2.3.22
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -32,7 +32,7 @@ BDEPEND="
 "
 
 PATCHES=( 	
-	"${FILESDIR}"/${P}-qd.patch 
+	#"${FILESDIR}"/${P}-qd.patch 
 )
 
 src_configure() {
