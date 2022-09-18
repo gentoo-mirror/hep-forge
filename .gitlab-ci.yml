@@ -68,7 +68,7 @@ all:
            - "report*.json" 
       expire_in: 1 week
   rules:
-    - if: $CI_PIPELINE_SOURCE == "push"
+    - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1"
       changes:
       - "$CATEGORY/$PKG/$PKG-$VERSION.ebuild"
       - "$CATEGORY/$PKG/metadata.xml"
