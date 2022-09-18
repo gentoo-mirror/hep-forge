@@ -56,6 +56,9 @@ all:
       - PKG: [lhapdf]
         VERSION: ['6.5.1']
         CATEGORY: ['sci-physics']
+      - PKG: [madgraph]
+        VERSION: ['3.3.1']
+        CATEGORY: ['sci-physics']
   script:
     - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION.ebuild; 
       then
