@@ -10,7 +10,6 @@ inherit cmake
 MY_PN=MCFM
 MY_P=${MY_PN}-${PV}
 
-
 DESCRIPTION="Monte Carlo for FeMtobarn processes"
 HOMEPAGE="https://mcfm.fnal.gov"
 SRC_URI="https://mcfm.fnal.gov/downloads/${MY_P}.tar.gz"
