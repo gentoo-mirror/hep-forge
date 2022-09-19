@@ -31,11 +31,16 @@ src_prepare() {
 	sed -i \
 		-e '/DESTINATION/s/lib/lib${LIB_SUFFIX}/g' \
 		CMakeLists.txt || die
+
+	#sed -i \
+	#	-e '/qcdloop/s/SHARED/STATIC/g' \
+	#	CMakeLists.txt || die
 }
 
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX=/usr
+		-DENABLE_FORTRAN_WRAPPER=ON
 	)
 	cmake_src_configure
 }
