@@ -24,6 +24,11 @@ BDEPEND="
 	virtual/fortran
 "
 
+PATCHES=(
+    "${FILESDIR}"/${P}-cxx.patch
+)
+
+
 src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_INSTALL_PREFIX=/usr/$(get_libdir)
