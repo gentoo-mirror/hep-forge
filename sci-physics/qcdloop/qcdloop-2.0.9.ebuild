@@ -24,6 +24,10 @@ BDEPEND="
 	virtual/fortran
 "
 
+PATCHES=(
+    "${FILESDIR}"/${P}-cxx.patch
+)
+
 src_prepare() {
 	cmake_src_prepare
 
