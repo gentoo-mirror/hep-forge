@@ -25,6 +25,9 @@ KEYWORDS="~amd64"
 DEPEND="
 	>sci-physics/lhapdf-6.3.0
 	>=sci-libs/qd-2.3.22
+	>=sci-physics/qcdloop-2.0.5
+	>=sci-physics/oneloop-2020.07.31
+	>=sci-libs/handyg-0.1.5
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -32,7 +35,7 @@ BDEPEND="
 "
 
 PATCHES=( 	
-	"${FILESDIR}"/${P}-qd.patch 
+	"${FILESDIR}"/${P}-rest.patch 
 )
 
 src_configure() {
@@ -40,13 +43,13 @@ src_configure() {
 		-Duse_external_lhapdf=ON
 		-Duse_internal_lhapdf=OFF
 		-Dlhapdf_include_path=ON
-		#-Dwith_vvamp=OFF
+		-Dwith_vvamp=OFF
 	)
 	cmake_src_configure
 }
 
 src_compile() {
 	# single thread force needed since fortan mods depend on each other
-	export MAKEOPTS=-j1
+	#export MAKEOPTS=-j1
 	default
 }
