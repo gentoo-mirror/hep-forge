@@ -33,7 +33,9 @@ src_compile() {
 }
 
 src_install() {
-	dolib.a libhandyg.a
+	# confiugure only creates static with --static
+	mv libhandyg.a libhandyg.so
+	dolib.so libhandyg.so
 	doheader handyg.mod
 	dobin geval
 	# TODO pkgconfig ?
