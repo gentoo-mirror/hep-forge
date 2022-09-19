@@ -37,6 +37,10 @@ BDEPEND="
 PATCHES=( 	
 	"${FILESDIR}"/${P}-rest.patch 
 )
+src_prepare() {
+	sed -i -e 's/\(name=".*\)"/\1_"/g' src/Mods/mod_qcdloop_c.f || die
+	cmake_src_prepare
+}
 
 src_configure() {
 	local mycmakeargs=(
@@ -44,6 +48,7 @@ src_configure() {
 		-Duse_internal_lhapdf=OFF
 		-Dlhapdf_include_path=ON
 		-DCMAKE_INSTALL_PREFIX=${ED}/usr/
+		-Dwith_library=ON
 		-Dwith_vvamp=OFF
 	)
 	cmake_src_configure
@@ -52,5 +57,11 @@ src_configure() {
 src_compile() {
 	# single thread force needed since fortan mods depend on each other
 	#export MAKEOPTS=-j1
-	default
+	cmake_src_compile
+}
+
+src_install() {
+	#cmake_src_install
+	dobin ${BUILD_DIR}/mcfm
+	dolib.so ${BUILD_DIR}/libmcfm.so
 }

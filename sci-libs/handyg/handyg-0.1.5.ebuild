@@ -22,10 +22,13 @@ BDEPEND="
 	virtual/fortran
 "
 
+PATCHES=(
+    "${FILESDIR}"/${P}-so.patch
+)
+
 src_configure() {
 	tc-export CC CXX FC AR
-	./configure --prefix=/usr CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
-		FC="${FC}" FFLAGS="${FFLAGS}" AR="${AR}" LD="${FC}"
+	CC="${CC}" CFLAGS="${CFLAGS} -fPIC" CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC" FC="${FC}" FFLAGS="${FFLAGS} -fPIC" AR="${AR}" LD="${FC}" ./configure --prefix=/usr
 }
 
 src_compile() {
@@ -33,8 +36,8 @@ src_compile() {
 }
 
 src_install() {
-	# confiugure only creates static with --static
-	mv libhandyg.a libhandyg.so
+	## confiugure only creates static with --static
+	dolib.a libhandyg.a
 	dolib.so libhandyg.so
 	doheader handyg.mod
 	dobin geval

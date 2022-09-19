@@ -1,5 +1,5 @@
 --- a/CMakeLists.txt	2022-09-19 02:30:49.215050000 +0200
-+++ b/CMakeLists.txt	2022-09-19 09:22:40.950666049 +0200
++++ b/CMakeLists.txt	2022-09-19 21:03:05.409746266 +0200
 @@ -41,48 +41,48 @@
  
  include(ExternalProject)
@@ -117,13 +117,14 @@
  set_target_properties(objlib PROPERTIES
      CXX_STANDARD 11
      Fortran_MODULE_DIRECTORY "${CMAKE_BINARY_DIR}/include"
-@@ -222,48 +221,49 @@
+@@ -222,48 +221,51 @@
      target_link_libraries(mcfm ${OpenMP_Fortran_LIBRARIES})
  endif()
  
 -add_library(oneloop STATIC IMPORTED)
 -set_property(TARGET oneloop PROPERTY IMPORTED_LOCATION "${CMAKE_BINARY_DIR}/lib/oneloop/liboneloop.a")
--
++find_library(qcdloop qcdloop)
+ 
 -add_library(qcdloop_lib_static STATIC IMPORTED)
 -set_property(TARGET qcdloop_lib_static PROPERTY IMPORTED_LOCATION "${CMAKE_BINARY_DIR}/local/lib/libqcdloop.a")
 -set_property(TARGET qcdloop_lib_static PROPERTY IMPORTED_NO_SONAME TRUE)
@@ -209,7 +210,7 @@
  
  if(use_internal_lhapdf)
      ExternalProject_Add(lhapdf
-@@ -285,13 +285,15 @@
+@@ -285,13 +287,15 @@
  
      add_dependencies(lhapdf_lib_static lhapdf)
      target_link_libraries(mcfm lhapdf_lib_static)
@@ -227,7 +228,7 @@
      endif()
  endif()
  
-@@ -299,9 +301,9 @@
+@@ -299,9 +303,9 @@
  
  if(${with_library})
      if(use_internal_lhapdf)
@@ -239,7 +240,7 @@
      endif()
      if (DEFINED OLDIR)
        target_link_libraries(oltest libmcfm ${openloops_lib})
-@@ -320,7 +322,7 @@
+@@ -320,7 +324,7 @@
      endif()
  endif()
  
