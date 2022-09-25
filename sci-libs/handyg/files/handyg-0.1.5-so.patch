@@ -15,7 +15,7 @@
  
 +libhandyg.so:\$(objects)
 +		@echo "\$(FC) \$@"
-+		\$(FC) -shared -o \$@ \$^
++		\$(FC) -Wl,-soname,libhandyg.so -shared -o \$@ \$^
 +
 +
  handyg.mod: build/handyg.mod
