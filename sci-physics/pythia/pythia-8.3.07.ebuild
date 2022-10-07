@@ -160,6 +160,7 @@ src_install() {
 	dobin bin/pythia8-config
 	doheader -r include/*
 	dolib.so lib/libpythia8.so
+	use lhapdf && dolib.so lib/libpythia8lhapdf6.so
 	insinto "${PYTHIADIR}"
 	doins -r share/Pythia8/xmldoc examples/Makefile.inc
 
