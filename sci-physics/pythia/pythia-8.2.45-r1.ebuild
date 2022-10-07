@@ -25,16 +25,13 @@ SRC_URI="http://home.thep.lu.se/~torbjorn/${PN}${MV}/${MY_P}.tgz
 SLOT="8"
 LICENSE="GPL-2"
 KEYWORDS="~amd64"
-IUSE="doc examples fastjet +hepmc2 hepmc3 lhapdf root test zlib"
+IUSE="doc examples fastjet +hepmc2 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
-REQUIRED_USE="
-	^^ ( hepmc3 hepmc2 )
-"
+REQUIRED_USE=""
 
 RDEPEND="
 	fastjet? ( sci-physics/fastjet )
 	hepmc2? ( sci-physics/hepmc:2= )
-	hepmc3? ( sci-physics/hepmc:3= )
 	lhapdf? ( sci-physics/lhapdf:= )
 	zlib? ( sys-libs/zlib )"
 # ROOT is used only when building related tests
@@ -119,7 +116,6 @@ src_configure() {
 		$(usex fastjet "--with-fastjet3" "") \
 		$(usex zlib "--with-gzip" "") \
 		$(usex hepmc2 "--with-hepmc2" "") \
-		$(usex hepmc3 "--with-hepmc3" "") \
 		$(usex lhapdf "--with-lhapdf6
 			--with-lhapdf6-plugin=LHAPDF6.h
 			--with-lhapdf6-lib=${EPREFIX}/usr/$(get_libdir)" "") \
