@@ -37,8 +37,10 @@ src_configure() {
 }
 
 src_compile() {
+	tc-export FC
 	./create.py || die
-	./create.py dynamic || die
+	#./create.py dynamic || die
+	${FC} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so avh_olo.o
 }
 
 src_install() {
