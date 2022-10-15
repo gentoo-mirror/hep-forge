@@ -66,7 +66,7 @@ all:
     - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
       then
         inherit() { sleep 0; } &&
-        source $CATEGORY/$PKG/$PKG-$VERSION.ebuild && 
+        source $CATEGORY/$PKG/$PKG-$VERSION*.ebuild && 
         for PY in ${PYTHON_COMPAT[@]}; do
           PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 ) -root python_single_target_$PY" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report report-$PY.json | tee -a out.log ;
         done;
