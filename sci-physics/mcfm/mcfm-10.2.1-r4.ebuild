@@ -52,7 +52,7 @@ src_configure() {
 		-Dwith_vvamp=OFF
 	)
 	cmake_src_configure
-	sed -i "s/process\.DAT/${EPREFIX}\/usr\/share\/${MY_PN}\/process\.DAT/g" src/Procdep/chooser.f
+	sed -i "s/process\.DAT/${EPREFIX}\/usr\/share\/${MY_PN}\/process\.DAT/g" src/Procdep/chooser.f || die
 }
 
 src_compile() {
