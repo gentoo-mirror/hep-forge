@@ -31,8 +31,8 @@ PATCHES=(
 
 src_configure() {
 	tc-export FC
-	sed -i '/FC = /s/gfortran/${FC}/g' Config || die
-	sed -i '/FFLAGS = /s/ -O/${FFLAGS}/g' Config || die
+	sed -i "/FC = /s/gfortran/${FC}/g" Config || die
+	sed -i "/FFLAGS = /s/ -O/${FFLAGS}/g" Config || die
 	emake -f make_cuttools
 }
 
