@@ -46,8 +46,6 @@ src_configure() {
 
 src_install() {
 	cmake_src_install
-	# remvoe examples src from doc
-	use examples || rm -r /usr/share/doc/${PF}/examples
-	use examples && docompress -x /usr/share/doc/${PF}/examples
+	docompress -x /usr/share/doc/${PF}/examples
 	python_optimize
 }
