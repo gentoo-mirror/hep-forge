@@ -31,7 +31,7 @@ PATCHES=(
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_INSTALL_PREFIX=/usr/$(get_libdir)
+		-DCMAKE_INSTALL_PREFIX=${ESYSROOT}/usr/$(get_libdir)
 	)
 	cmake_src_configure
 }
