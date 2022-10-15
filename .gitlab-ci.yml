@@ -74,7 +74,8 @@ all:
         pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report report.json | tee out.log; 
       fi
     - (! grep -A5 -B5 "QA Notice" out.log)
-  artifacts:             
+  artifacts:     
+      when: always        
       paths:
            - "out.log"          
            - "report*.json" 
