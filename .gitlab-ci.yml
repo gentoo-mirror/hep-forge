@@ -89,27 +89,6 @@ all:
       - "$CATEGORY/$PKG/.build"
       - ".build"
 
-local-repoman:
-  image: apnpucky/gentoo-ebuild-ci
-  stage: check
-  before_script: []
-  script:
-    - repoman full -d
-    - repoman -vx full
-
-repoman:
-  image: apnpucky/gentoo-ebuild-ci
-  stage: check
-  before_script:
-    - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "sync-type = git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-${REPO_NAME}.git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - emaint -r ${REPO_NAME} sync
-  script:
-    - cd /var/db/repos/${REPO_NAME}
-    - repoman -vdx full
-
 local-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
   stage: check
