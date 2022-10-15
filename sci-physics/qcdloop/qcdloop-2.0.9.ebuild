@@ -35,6 +35,9 @@ src_prepare() {
 	sed -i \
 		-e '/DESTINATION/s/lib/lib${LIB_SUFFIX}/g' \
 		CMakeLists.txt || die
+	sed -i \
+		-e '/libdir.*/s/lib/lib${LIB_SUFFIX}/g' \
+		CMakeLists.txt || die
 
 	#sed -i \
 	#	-e '/qcdloop/s/SHARED/STATIC/g' \
