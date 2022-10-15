@@ -15,8 +15,6 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# Manual states multithreading bug in lhapdf-6.3.0 ?!
-# MCFM has been tested against lhapdf-6.2.0 which ::gentoo already dropped
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -46,7 +44,7 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_INSTALL_PREFIX=/usr
+		-DCMAKE_INSTALL_PREFIX=${ESYSROOT}/usr
 		-DENABLE_FORTRAN_WRAPPER=ON
 	)
 	cmake_src_configure
