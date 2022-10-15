@@ -15,8 +15,6 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# Manual states multithreading bug in lhapdf-6.3.0 ?!
-# MCFM has been tested against lhapdf-6.2.0 which ::gentoo already dropped
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -27,7 +25,6 @@ BDEPEND="
 PATCHES=(
     "${FILESDIR}"/${P}-cxx.patch
 )
-
 
 src_configure() {
 	local mycmakeargs=(
