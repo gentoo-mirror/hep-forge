@@ -1,6 +1,7 @@
 stages:
   - check
   - install
+  - qa
 
 variables:
   REPO_NAME: "hep-forge"
@@ -9,6 +10,14 @@ default:
   image: apnpucky/gentoo-hep-forge
   before_script:
     - emaint -r ${REPO_NAME} sync
+
+qa:
+  stage: qa
+  dependencies:
+    - "*"
+  script:
+    - (! grep -A5 -B5 "QA Notice" out_*.log)
+
 
 all:
   stage: install
@@ -71,13 +80,12 @@ all:
           PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 ) -root python_single_target_$PY" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report report-$PY.json | tee -a out.log ;
         done;
       else
-        pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report report.json | tee out.log; 
+        pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report report.json | tee "out_$CATEGORY/$PKG-$VERSION.log"; 
       fi
-    - (! grep -A5 -B5 "QA Notice" out.log)
   artifacts:     
       when: always        
       paths:
-           - "out.log"          
+           - "out_$CATEGORY/$PKG-$VERSION.log"          
            - "report*.json" 
       expire_in: 1 week
   rules:
