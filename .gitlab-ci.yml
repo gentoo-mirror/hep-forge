@@ -7,7 +7,7 @@ variables:
   REPO_NAME: "hep-forge"
 
 default:
-  image: apnpucky/gentoo-hep-forge
+  image: apnpucky/gentoo-hep-forge:20221013181717
   before_script:
     - emaint -r ${REPO_NAME} sync
 
@@ -72,6 +72,24 @@ default:
       - "$CATEGORY/$PKG/.build"
       - ".build"
 
+local-pkgcheck:
+  image: apnpucky/gentoo-ebuild-ci
+  stage: check
+  before_script: []
+  script:
+    - pkgcheck scan --exit 
+    
+pkgcheck:
+  image: apnpucky/gentoo-ebuild-ci
+  stage: check
+  before_script:
+    - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "sync-type = git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-${REPO_NAME}.git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
+    - emaint -r ${REPO_NAME} sync
+  script:
+    - pkgcheck ci -r ${REPO_NAME} --exit 
 
 all:
   stage: install
@@ -102,21 +120,4 @@ qa:
     - ls *.log
     - (! grep -A5 -B5 "QA Notice" out_$CATEGORY_$PKG-$VERSION*.log)
 
-local-pkgcheck:
-  image: apnpucky/gentoo-ebuild-ci
-  stage: check
-  before_script: []
-  script:
-    - pkgcheck scan --exit 
-    
-pkgcheck:
-  image: apnpucky/gentoo-ebuild-ci
-  stage: check
-  before_script:
-    - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "sync-type = git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - echo "sync-uri = https://gitlab.com/APN-Pucky/gentoo-${REPO_NAME}.git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
-    - emaint -r ${REPO_NAME} sync
-  script:
-    - pkgcheck ci -r ${REPO_NAME} --exit 
+
