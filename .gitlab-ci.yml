@@ -1,6 +1,7 @@
 stages:
   - check
-  - install
+  - build
+  - test
   - qa
 
 variables:
@@ -91,9 +92,22 @@ pkgcheck:
   script:
     - pkgcheck ci -r ${REPO_NAME} --exit 
 
-all:
-  stage: install
+build:
+  stage: build
   needs: []
+  extends: .config
+  script:
+    - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" | tee "build_$CATEGORY_$PKG-$VERSION.log"; 
+  artifacts:     
+      when: always        
+      paths:
+           - "build_*.log"
+      expire_in: 1 week
+
+
+test:
+  stage: test
+  needs: [build]
   extends: .config
   script:
     - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
@@ -101,16 +115,16 @@ all:
         inherit() { sleep 0; } &&
         source $CATEGORY/$PKG/$PKG-$VERSION*.ebuild && 
         for PY in ${PYTHON_COMPAT[@]}; do
-          PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 ) -root python_single_target_$PY" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report report_$CATEGORY_$PKG-$VERSION-$PY.json | tee -a out_$CATEGORY_$PKG-$VERSION-$PY.log ;
+          PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 ) python_single_target_$PY" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$PY.json | tee -a test_$CATEGORY_$PKG-$VERSION-$PY.log ;
         done;
       else
-        pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use '!root' -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report report_$CATEGORY_$PKG-$VERSION.json | tee "out_$CATEGORY_$PKG-$VERSION.log"; 
+        pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION.json | tee "test_$CATEGORY_$PKG-$VERSION.log"; 
       fi
   artifacts:     
       when: always        
       paths:
-           - "out_*.log"          
-           - "report*.json" 
+           - "test_*.log"          
+           - "test*.json" 
       expire_in: 1 week
 
 qa:
@@ -118,6 +132,6 @@ qa:
   extends: .config
   script:
     - ls *.log
-    - (! grep -A5 -B5 "QA Notice" out_$CATEGORY_$PKG-$VERSION*.log)
+    - (! grep -A5 -B5 "QA Notice" test_$CATEGORY_$PKG-$VERSION*.log)
 
 
