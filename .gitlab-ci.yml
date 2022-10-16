@@ -5,25 +5,17 @@ stages:
 
 variables:
   REPO_NAME: "hep-forge"
-  
+
+
+
 default:
   image: apnpucky/gentoo-hep-forge
   before_script:
     - emaint -r ${REPO_NAME} sync
 
-qa:
-  stage: qa
-  script:
-    - ls *.log
-    - (! grep -A5 -B5 "QA Notice" out_*.log)
 
 
-
-
-all:
-  stage: install
-  include:
-    - local: 'gitlab-matrix.yml'
+.config:
   parallel:
     matrix:
       - PKG: [resummino]
@@ -74,6 +66,20 @@ all:
       - PKG: [madgraph]
         VERSION: ['3.3.1']
         CATEGORY: ['sci-physics']
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1"
+      changes:
+      - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
+      - "$CATEGORY/$PKG/metadata.xml"
+      - "$CATEGORY/$PKG/Manifest"
+      - "$CATEGORY/$PKG/files/*"
+      - "$CATEGORY/$PKG/.build"
+      - ".build"
+
+
+all:
+  stage: install
+  parallel: !reference [.config,parallel]
   script:
     - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
       then
@@ -91,15 +97,15 @@ all:
            - "out_*.log"          
            - "report*.json" 
       expire_in: 1 week
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1"
-      changes:
-      - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
-      - "$CATEGORY/$PKG/metadata.xml"
-      - "$CATEGORY/$PKG/Manifest"
-      - "$CATEGORY/$PKG/files/*"
-      - "$CATEGORY/$PKG/.build"
-      - ".build"
+  rules: !reference [.config,rules]
+
+qa:
+  stage: qa
+  script:
+    - ls *.log
+    - (! grep -A5 -B5 "QA Notice" out_$CATEGORY_$PKG-$VERSION*.log)
+  parallel: !reference [.config,parallel]
+  rules: !reference [.config,rules]
 
 local-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
