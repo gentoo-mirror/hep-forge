@@ -1,9 +1,9 @@
 # Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{7..9} )
+PYTHON_COMPAT=( python3_{7..11} )
 
 inherit distutils-r1
 
@@ -16,7 +16,7 @@ SRC_URI="http://www.hepforge.org/archive/lhapdf/${MY_PF}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 IUSE="doc examples python"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
