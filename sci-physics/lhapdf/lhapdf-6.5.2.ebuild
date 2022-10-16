@@ -33,7 +33,7 @@ RDEPEND="
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
 PATCHES=(
-	"${FILESDIR}"/${P}-py.patch 
+	"${FILESDIR}"/${P}-py.patch
 )
 src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
