@@ -34,6 +34,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_configure() {
+	CONFIG_SHELL="${EPREFIX}/bin/bash" \
 	econf \
 		--enable-python
 }
@@ -50,6 +51,8 @@ src_install() {
 	emake DESTDIR="${D}" install
 	use doc && dodoc -r doc/doxygen/.
 	use examples && dodoc examples/*.cc
+
+	python_optimize
 
 	find "${ED}" -name '*.la' -delete || die
 }
