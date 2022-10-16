@@ -7,7 +7,7 @@ variables:
   REPO_NAME: "hep-forge"
 
 default:
-  image: apnpucky/gentoo-hep-forge
+  image: apnpucky/gentoo-hep-forge:20221013181717
   before_script:
     - emaint -r ${REPO_NAME} sync
 
