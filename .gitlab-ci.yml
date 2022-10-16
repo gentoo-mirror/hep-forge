@@ -57,7 +57,7 @@ all:
         VERSION: ['2.16', '2.15']
         CATEGORY: ['sci-physics']
       - PKG: [lhapdf]
-        VERSION: [6.5.3, 6.3.0, 6.2.3]
+        VERSION: [6.5.3, 6.3.0, 6.2.3-r1]
         CATEGORY: ['sci-physics']
       - PKG: [madgraph]
         VERSION: ['3.3.1']
