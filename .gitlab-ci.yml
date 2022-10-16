@@ -75,6 +75,7 @@ default:
 
 all:
   stage: install
+  needs: []
   extends: .config
   script:
     - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
