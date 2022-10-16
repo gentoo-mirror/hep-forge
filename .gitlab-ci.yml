@@ -6,14 +6,10 @@ stages:
 variables:
   REPO_NAME: "hep-forge"
 
-
-
 default:
   image: apnpucky/gentoo-hep-forge
   before_script:
     - emaint -r ${REPO_NAME} sync
-
-
 
 .config:
   parallel:
