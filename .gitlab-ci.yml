@@ -14,6 +14,7 @@ default:
 qa:
   stage: qa
   script:
+    - ls out_*.log
     - (! grep -A5 -B5 "QA Notice" out_*.log)
 
 
