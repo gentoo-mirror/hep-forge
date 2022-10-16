@@ -22,6 +22,8 @@ qa:
 
 all:
   stage: install
+  include:
+    - local: 'gitlab-matrix.yml'
   parallel:
     matrix:
       - PKG: [resummino]
