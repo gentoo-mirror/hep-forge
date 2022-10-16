@@ -24,18 +24,23 @@ S="${WORKDIR}/${MY_PF}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 IUSE="examples"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
-	dev-libs/boost:0=
+	dev-libs/boost:=
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-6.5.2-py.patch
+)
 
 src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
 	econf \
+		--disable-static \
 		--enable-python
 }
 
@@ -48,7 +53,6 @@ src_test() {
 }
 
 src_install() {
-	#emake DESTDIR="${D}" install
 	default
 	use doc && dodoc -r doc/doxygen/.
 	use examples && dodoc examples/*.cc
