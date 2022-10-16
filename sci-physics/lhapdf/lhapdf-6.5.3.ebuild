@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{8..11} )
 DOCS_BUILDER="doxygen"
 DOCS_DEPEND="
 	dev-texlive/texlive-bibtexextra
@@ -34,9 +34,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 src_configure() {
-	CONFIG_SHELL="${EPREFIX}/bin/bash" \
 	econf \
-		--disable-static \
 		--enable-python
 }
 
@@ -49,11 +47,9 @@ src_test() {
 }
 
 src_install() {
-	default
+	emake DESTDIR="${D}" install
 	use doc && dodoc -r doc/doxygen/.
 	use examples && dodoc examples/*.cc
-
-	python_optimize
 
 	find "${ED}" -name '*.la' -delete || die
 }
