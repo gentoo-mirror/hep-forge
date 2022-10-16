@@ -48,7 +48,8 @@ src_test() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	#emake DESTDIR="${D}" install
+	default
 	use doc && dodoc -r doc/doxygen/.
 	use examples && dodoc examples/*.cc
 
