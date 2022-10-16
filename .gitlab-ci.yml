@@ -15,9 +15,9 @@ qa:
   stage: qa
   script:
     - (! grep -A5 -B5 "QA Notice" out_*.log)
-  rules:
-    - exists:
-      -  "out_*.log"    
+  needs:
+    job: all
+
 
 
 
