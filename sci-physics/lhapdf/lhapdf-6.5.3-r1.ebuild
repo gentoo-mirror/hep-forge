@@ -40,6 +40,7 @@ PATCHES=(
 src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
 	econf \
+		--disable-static \
 		--enable-python
 }
 
