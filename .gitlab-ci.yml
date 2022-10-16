@@ -60,7 +60,7 @@ default:
         VERSION: [6.5.3, 6.5.2, 6.3.0, 6.2.3-r1]
         CATEGORY: ['sci-physics']
       - PKG: [madgraph]
-        VERSION: [3.3.1, 2.9.9]
+        VERSION: [3.3.2, 2.9.9]
         CATEGORY: ['sci-physics']
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1"
