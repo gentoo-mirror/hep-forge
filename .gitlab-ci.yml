@@ -13,7 +13,8 @@ default:
 
 qa:
   stage: qa
-  needs: all
+  needs: 
+    - all
   script:
     - (! grep -A5 -B5 "QA Notice" out_*.log)
 
