@@ -79,7 +79,7 @@ default:
 
 all:
   stage: install
-  parallel: !reference [.config,parallel]
+  extends: .config
   script:
     - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
       then
@@ -97,15 +97,13 @@ all:
            - "out_*.log"          
            - "report*.json" 
       expire_in: 1 week
-  rules: !reference [.config,rules]
 
 qa:
   stage: qa
+  extends: .config
   script:
     - ls *.log
     - (! grep -A5 -B5 "QA Notice" out_$CATEGORY_$PKG-$VERSION*.log)
-  parallel: !reference [.config,parallel]
-  rules: !reference [.config,rules]
 
 local-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
