@@ -3,8 +3,6 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=no
-DISTUTILS_SINGLE_IMPL=1
 PYTHON_COMPAT=( python3_{8..11} )
 DOCS_BUILDER="doxygen"
 DOCS_DEPEND="
@@ -14,7 +12,7 @@ DOCS_DEPEND="
 	dev-texlive/texlive-latex
 	dev-texlive/texlive-latexextra
 "
-inherit distutils-r1 docs
+inherit python-single-r1 docs
 
 MY_PV=$(ver_cut 1-3)
 MY_PF=LHAPDF-${MY_PV}
@@ -26,7 +24,7 @@ S="${WORKDIR}/${MY_PF}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 IUSE="examples"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -34,6 +32,10 @@ RDEPEND="
 	dev-libs/boost:0=
 	${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
+
+PATCHES=(
+	"${FILESDIR}"/${P}-py.patch
+)
 
 src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
@@ -50,7 +52,6 @@ src_test() {
 }
 
 src_install() {
-	#emake DESTDIR="${D}" install
 	default
 	use doc && dodoc -r doc/doxygen/.
 	use examples && dodoc examples/*.cc
