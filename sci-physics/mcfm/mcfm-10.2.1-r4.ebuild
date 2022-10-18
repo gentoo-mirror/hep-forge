@@ -23,7 +23,7 @@ KEYWORDS="~amd64"
 # Manual states multithreading bug in lhapdf-6.3.0 ?!
 # MCFM has been tested against lhapdf-6.2.0 which ::gentoo already dropped
 DEPEND="
-	>sci-physics/lhapdf-6.3.0
+	sci-physics/lhapdf
 	>=sci-libs/qd-2.3.22
 	>=sci-physics/qcdloop-2.0.5
 	>=sci-physics/oneloop-2020.07.31
