@@ -11,11 +11,5 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-	dev-libs/openssl
-	sys-cluster/lmod
-	=sys-cluster/easybuild-framework-${PV}
-	=sys-cluster/easybuild-easyblocks-${PV}
-	=sys-cluster/easybuild-easyconfigs-${PV}
-"
+RDEPEND=""
 BDEPEND="${RDEPEND}"

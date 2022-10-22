@@ -3,6 +3,9 @@ EAPI=8
 PYTHON_COMPAT=( python3_{8..10} )
 inherit distutils-r1
 
+SUB_P=$(ver_cut 1)
+SUB_PP=$(ver_cut 2)
+
 DESCRIPTION="EasyBuild is a software build and installation framework."
 HOMEPAGE="https://easybuild.io/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
@@ -12,10 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-libs/openssl
-	sys-cluster/lmod
-	=sys-cluster/easybuild-framework-${PV}
-	=sys-cluster/easybuild-easyblocks-${PV}
-	=sys-cluster/easybuild-easyconfigs-${PV}
+	>=sys-cluster/easybuild-framework-${SUB_P}
+	>=sys-cluster/easybuild-easyblocks-${SUB_P}.${SUB_PP}
 "
 BDEPEND="${RDEPEND}"
