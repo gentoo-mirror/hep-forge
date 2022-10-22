@@ -63,6 +63,9 @@ default:
       - PKG: [madgraph]
         VERSION: [3.3.2, 2.9.9]
         CATEGORY: ['sci-physics']
+      - PKG: [easybuild]
+        VERSION: [4.6.2]
+        CATEGORY: ['sys-cluster']
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1"
       changes:
