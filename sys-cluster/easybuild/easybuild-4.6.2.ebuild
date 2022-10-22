@@ -14,8 +14,8 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-libs/openssl
 	sys-cluster/lmod
-	=sys-cluster/easybuild-framework-${PV}
-	=sys-cluster/easybuild-easyblocks-${PV}
-	=sys-cluster/easybuild-easyconfigs-${PV}
+	=sys-cluster/easybuild-framework-${PV}[${PYTHON_USEDEP}]
+	=sys-cluster/easybuild-easyblocks-${PV}[${PYTHON_USEDEP}]
+	=sys-cluster/easybuild-easyconfigs-${PV}[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"

@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sys-cluster/easybuild-framework-${SUB_P}
+	>=sys-cluster/easybuild-framework-${SUB_P}[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
 
