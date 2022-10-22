@@ -15,7 +15,11 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=sys-cluster/easybuild-framework-${SUB_P}
-	dev-libs/openssl
-	sys-cluster/lmod
 "
 BDEPEND="${RDEPEND}"
+
+src_prepare() {
+	# already there from easybuild_framework
+	rm easybuild/__init__.py
+	default
+}

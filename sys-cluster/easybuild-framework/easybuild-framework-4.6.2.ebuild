@@ -11,5 +11,19 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
+RDEPEND="
+dev-python/flake8[${PYTHON_USEDEP}]
+dev-python/keyring[${PYTHON_USEDEP}]
+dev-python/keyrings-alt[${PYTHON_USEDEP}]
+dev-python/GitPython[${PYTHON_USEDEP}]
+dev-python/pyyaml[${PYTHON_USEDEP}]
+dev-python/autopep8[${PYTHON_USEDEP}]
+dev-python/requests[${PYTHON_USEDEP}]
+dev-python/cryptography[${PYTHON_USEDEP}]
+dev-python/rich[${PYTHON_USEDEP}]
+"
 BDEPEND="${RDEPEND}"
+
+PATCHES=(
+	"${FILESDIR}"/${P}-test.patch
+)
