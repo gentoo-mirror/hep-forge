@@ -45,9 +45,7 @@ BDEPEND="
 	>=dev-python/cython-0.29.24
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-3.1.5-test.patch
-)
+PATCHES=()
 
 src_prepare() {
 	default
