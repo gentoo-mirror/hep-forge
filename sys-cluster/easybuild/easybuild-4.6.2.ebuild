@@ -18,8 +18,8 @@ RDEPEND="
 	dev-tcltk/tclx
 	lmod? ( >=sys-cluster/lmod-6.5.1 )
 	modules? ( >=sys-cluster/modules-3.2.10 )
-	=sys-cluster/easybuild-framework-${PV}[${PYTHON_USEDEP}]
-	=sys-cluster/easybuild-easyblocks-${PV}[${PYTHON_USEDEP}]
-	=sys-cluster/easybuild-easyconfigs-${PV}[${PYTHON_USEDEP}]
+	~sys-cluster/easybuild-framework-${PV}[${PYTHON_USEDEP}]
+	~sys-cluster/easybuild-easyblocks-${PV}[${PYTHON_USEDEP}]
+	~sys-cluster/easybuild-easyconfigs-${PV}[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
