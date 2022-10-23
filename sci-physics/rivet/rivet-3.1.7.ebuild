@@ -45,7 +45,9 @@ BDEPEND="
 	>=dev-python/cython-0.29.24
 "
 
-PATCHES=()
+PATCHES=(
+	"${FILESDIR}"/${P}-ldflags.patch
+)
 
 src_prepare() {
 	default
