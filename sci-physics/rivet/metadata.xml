@@ -17,5 +17,6 @@
 	<use>
 		<flag name="hepmc3">Build with HepMC3</flag>
 		<flag name="hepmc2">Build with HepMC2</flag>
+		<flag name="analyses">Build with standard analyses</flag>
 	</use>
 </pkgmetadata>
