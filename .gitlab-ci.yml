@@ -124,7 +124,16 @@ test:
           PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 ) python_single_target_$PY" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$PY.json | tee -a test_$CATEGORY_$PKG-$VERSION-$PY.log ;
         done;
       else
-        pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION.json | tee "test_$CATEGORY_$PKG-$VERSION.log"; 
+        if grep -q "lua-single" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
+        then
+          inherit() { sleep 0; } &&
+          source $CATEGORY/$PKG/$PKG-$VERSION*.ebuild && 
+          for LUA in ${LUA_COMPAT[@]}; do
+            LUA_SINGLE_TARGET="$LUA" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( lua_single_target_lua5-1 lua_single_target_lua5-2 lua_single_target_lua5-3 ) lua_single_target_$LUA" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$LUA.json | tee -a test_$CATEGORY_$PKG-$VERSION-$LUA.log ;
+          done;
+        else
+          pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION.json | tee "test_$CATEGORY_$PKG-$VERSION.log"; 
+        fi
       fi
   artifacts:     
       when: always        
