@@ -18,9 +18,10 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+hepmc3 hepmc2"
+IUSE="+hepmc3 hepmc2 +analyses"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
+	test? ( analyses )
 	${PYTHON_REQUIRED_USE}
 "
 
@@ -64,6 +65,7 @@ src_configure() {
 	econf \
 		$(usex hepmc2 "--with-hepmc=${SYSROOT}/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=${SYSROOT}/usr" "") \
+		$(use_enable analyses) \
 		--with-yoda=$PREFIX_YODA \
 		--with-fastjet=$PREFIX_FJ
 }
