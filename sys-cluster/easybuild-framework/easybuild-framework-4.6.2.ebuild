@@ -14,7 +14,6 @@ KEYWORDS="~amd64"
 RDEPEND="
 dev-python/flake8[${PYTHON_USEDEP}]
 dev-python/keyring[${PYTHON_USEDEP}]
-#dev-python/keyrings-alt[${PYTHON_USEDEP}]
 dev-python/GitPython[${PYTHON_USEDEP}]
 dev-python/pyyaml[${PYTHON_USEDEP}]
 dev-python/autopep8[${PYTHON_USEDEP}]
