@@ -11,6 +11,7 @@ default:
   image: apnpucky/gentoo-hep-forge:20221013181717
   before_script:
     - emaint -r ${REPO_NAME} sync
+    - echo 'dev-python/jaraco-classes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/keyrings-alt ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
 
 .config:
