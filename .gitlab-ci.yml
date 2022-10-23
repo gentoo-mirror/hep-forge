@@ -66,6 +66,9 @@ default:
       - PKG: [easybuild]
         VERSION: [4.6.2]
         CATEGORY: ['sys-cluster']
+      - PKG: [lmod]
+        VERSION: [8.6.14-r1]
+        CATEGORY: ['sys-cluster']
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1"
       changes:
