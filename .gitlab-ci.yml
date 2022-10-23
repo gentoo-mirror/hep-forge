@@ -11,6 +11,7 @@ default:
   image: apnpucky/gentoo-hep-forge:latest
   before_script:
     - emaint -r ${REPO_NAME} sync
+    - RUN echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
 
 .config:
   parallel:
