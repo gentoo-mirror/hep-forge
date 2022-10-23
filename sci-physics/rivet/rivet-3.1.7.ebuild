@@ -46,7 +46,7 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-3.1.5-test.patch
+	"${FILESDIR}"/${P}-ldflags.patch
 )
 
 src_prepare() {
