@@ -46,7 +46,6 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-3.1.5-test.patch
 	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
 	"${FILESDIR}"/${P}-ldflags.patch
 )
