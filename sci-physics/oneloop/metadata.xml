@@ -10,6 +10,6 @@
 		<name>Gentoo Physics Project</name>
 	</maintainer>
 	<longdescription lang="en">
-	QCDLoop is a library of one-loop scalar Feynman integrals, evaluated close to four dimensions. First documented in arXiv:0712.1851 and recently in arXiv:1605.03181.
+		Library of one-loop scalar functions by Andreas van Hameren.
 	</longdescription>
 </pkgmetadata>
