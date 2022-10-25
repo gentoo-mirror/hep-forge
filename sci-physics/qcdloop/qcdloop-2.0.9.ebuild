@@ -43,7 +43,7 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_INSTALL_PREFIX=${ESYSROOT}/usr
+		-DCMAKE_INSTALL_PREFIX="${ESYSROOT}"/usr
 		-DENABLE_FORTRAN_WRAPPER=ON
 	)
 	cmake_src_configure
