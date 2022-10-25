@@ -6,7 +6,7 @@ EAPI=8
 inherit toolchain-funcs
 MY_P=${PN}-v${PV}
 
-DESCRIPTION="rapid numerical evaluation of generalised polylogarithms"
+DESCRIPTION="Rapid numerical evaluation of generalised polylogarithms"
 HOMEPAGE="https://gitlab.com/mule-tools/handyg"
 SRC_URI="https://gitlab.com/mule-tools/${PN}/-/archive/v${PV}/${MY_P}.tar.gz"
 S="${WORKDIR}/${MY_P}"
