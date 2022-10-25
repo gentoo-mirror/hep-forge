@@ -43,5 +43,4 @@ src_install() {
 	dolib.so libhandyg.so
 	doheader handyg.mod
 	dobin geval
-	# TODO pkgconfig ?
 }
