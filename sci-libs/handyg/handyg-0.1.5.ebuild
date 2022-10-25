@@ -3,8 +3,7 @@
 
 EAPI=8
 
-inherit toolchain-funcs flag-o-matic
-
+inherit toolchain-funcs
 MY_P=${PN}-v${PV}
 
 DESCRIPTION="rapid numerical evaluation of generalised polylogarithms"
