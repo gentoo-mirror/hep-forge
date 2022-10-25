@@ -22,7 +22,7 @@ BDEPEND="
 "
 
 PATCHES=(
-    "${FILESDIR}"/${P}-cxx.patch
+	"${FILESDIR}"/${P}-cxx.patch
 )
 
 src_configure() {
