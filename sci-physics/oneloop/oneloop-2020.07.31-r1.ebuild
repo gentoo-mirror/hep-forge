@@ -3,7 +3,9 @@
 
 EAPI=8
 
-inherit toolchain-funcs flag-o-matic
+# python only needed for create.py to get binaries
+PYTHON_COMPAT=( python3_{8..11} )
+inherit toolchain-funcs python-any-r1
 
 DESCRIPTION="Library of one-loop scalar functions"
 HOMEPAGE="https://bitbucket.org/hameren/oneloop"
@@ -14,14 +16,12 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# Manual states multithreading bug in lhapdf-6.3.0 ?!
-# MCFM has been tested against lhapdf-6.2.0 which ::gentoo already dropped
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
+	${PYTHON_DEPS}
 	app-arch/unzip
 	virtual/fortran
-	dev-lang/python
 "
 
 PATCHES=(
