@@ -27,8 +27,6 @@ ebuild *.ebuild clean test install
 ebuild *.ebuild clean install merge
 ```
 
-TODO add Repoman info here
-
 
 ## Patching (https://forums.gentoo.org/viewtopic-t-1093700-start-0.html)
 Usually I follow these steps (I use less package as example)
