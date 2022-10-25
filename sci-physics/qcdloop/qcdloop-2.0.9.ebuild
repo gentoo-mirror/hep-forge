@@ -9,7 +9,7 @@ inherit cmake
 
 DESCRIPTION="An object-oriented one-loop scalar Feynman integrals framework"
 HOMEPAGE="https://qcdloop.web.cern.ch/qcdloop/"
-SRC_URI="https://github.com/scarrazza/${PN}/archive/refs/tags/${PV}.zip -> ${P}.zip"
+SRC_URI="https://github.com/scarrazza/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 SLOT="0"
@@ -18,7 +18,6 @@ KEYWORDS="~amd64"
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
-	app-arch/unzip
 	virtual/fortran
 "
 
