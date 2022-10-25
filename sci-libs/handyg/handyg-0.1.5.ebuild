@@ -32,11 +32,13 @@ src_configure() {
 }
 
 src_compile() {
+	# single thread force needed since fortan mods depend on each other 	
+	export MAKEOPTS=-j1
 	emake all
 }
 
 src_install() {
-	## confiugure only creates static with --static
+	## confiugure only creates static with --static ?
 	dolib.a libhandyg.a
 	dolib.so libhandyg.so
 	doheader handyg.mod
