@@ -27,7 +27,7 @@ PATCHES=(
 
 src_configure() {
 	tc-export CC CXX FC AR
-	FFLAGS="${FFLAGS} -fPIC" LD="${FC}" ./configure --prefix=/usr LDFLAGS="${LDFLAGS}"
+	FFLAGS="${FFLAGS} -fPIC" LD="${FC}" ./configure --prefix=${EPREFIX}/usr LDFLAGS="${LDFLAGS}"
 }
 
 src_compile() {
