@@ -5,12 +5,12 @@ EAPI=8
 
 inherit cmake
 
-MYP=HepMC-${PV}
+MY_P=HepMC-${PV}
 
 DESCRIPTION="Event Record for Monte Carlo Generators"
 HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
-SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/hepmc2.06.11.tgz"
-S="${WORKDIR}/HepMC-2.06.11"
+SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/hepmc${PV}.tgz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-2"
 SLOT="2"
