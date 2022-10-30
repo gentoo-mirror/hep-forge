@@ -87,7 +87,7 @@ local-pkgcheck:
   script:
     - pkgcheck scan --exit 
     
-pkgcheck:
+global-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
   stage: check
   before_script:
@@ -98,6 +98,18 @@ pkgcheck:
     - emaint -r ${REPO_NAME} sync
   script:
     - pkgcheck ci -r ${REPO_NAME} --exit 
+
+single-pkgcheck:
+  image: apnpucky/gentoo-ebuild-ci
+  extends: .config
+  stage: check
+  before_script: []
+  script:
+    - pkgcheck scan $CATEGORY/$PKG --exit 
+    - pkgcheck scan $CATEGORY/$PKG --exit warning || exit 137
+  allow_failure:
+    exit_codes: 137
+
 
 build:
   stage: build
