@@ -50,7 +50,7 @@ default:
         VERSION: ['1.049']
         CATEGORY: ['sci-physics']
       - PKG: [qgraf]
-        VERSION: [3.6.3, 3.5.2, 3.4.2]
+        VERSION: [3.6.5, 3.5.2, 3.4.2]
         CATEGORY: ['sci-physics']
       - PKG: [topdrawer]
         VERSION: ['9999']
