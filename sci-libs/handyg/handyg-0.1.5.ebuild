@@ -27,11 +27,11 @@ PATCHES=(
 
 src_configure() {
 	tc-export CC CXX FC AR
-	CC="${CC}" CFLAGS="${CFLAGS} -fPIC" CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC" FC="${FC}" FFLAGS="${FFLAGS} -fPIC" AR="${AR}" LD="${FC}" ./configure --prefix=/usr LDFLAGS="${LDFLAGS}"
+	FFLAGS="${FFLAGS} -fPIC" LD="${FC}" ./configure --prefix="${EPREFIX}"/usr LDFLAGS="${LDFLAGS}"
 }
 
 src_compile() {
-	# single thread force needed since fortan mods depend on each other 	
+	# single thread force needed since fortan mods depend on each other
 	export MAKEOPTS=-j1
 	emake all
 }
