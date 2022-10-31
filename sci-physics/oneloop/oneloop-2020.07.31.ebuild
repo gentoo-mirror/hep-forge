@@ -32,12 +32,12 @@ src_configure() {
 	tc-export FC
 	sed -i "/FC = /s/gfortran/${FC}/g" Config || die
 	sed -i "/FFLAGS = /s/ -O/${FFLAGS} -fPIC/g" Config || die
-	emake -f make_cuttools
 }
 
 src_compile() {
 	tc-export FC
-	./create.py || die
+	emake -f make_cuttools
+	${EPYTHON} ./create.py || die "Failed to compile"
 	#./create.py dynamic || die
 	${FC} ${LDFLAGS} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so avh_olo.o
 }
