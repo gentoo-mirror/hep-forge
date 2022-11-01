@@ -19,11 +19,10 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-
 # Manual states multithreading bug in lhapdf-6.3.0 ?!
 # MCFM has been tested against lhapdf-6.2.0 which ::gentoo already dropped
 DEPEND="
-	>sci-physics/lhapdf-6.3.0
+	sci-physics/lhapdf
 	>=sci-libs/qd-2.3.22
 	>=sci-physics/qcdloop-2.0.5
 	>=sci-physics/oneloop-2020.07.31
@@ -34,8 +33,8 @@ BDEPEND="
 	virtual/fortran
 "
 
-PATCHES=( 	
-	"${FILESDIR}"/${P}-rest.patch 
+PATCHES=(
+	"${FILESDIR}"/${P}-rest.patch
 )
 src_prepare() {
 	sed -i -e 's/\(name=".*\)"/\1_"/g' src/Mods/mod_qcdloop_c.f || die
@@ -47,21 +46,23 @@ src_configure() {
 		-Duse_external_lhapdf=ON
 		-Duse_internal_lhapdf=OFF
 		-Dlhapdf_include_path=ON
-		-DCMAKE_INSTALL_PREFIX=${ED}/usr/
 		-Dwith_library=ON
 		-Dwith_vvamp=OFF
 	)
 	cmake_src_configure
+	# Fix relative path in working dir to something absolute
+	sed -i "s/process\.DAT/${EPREFIX}\/usr\/share\/${MY_PN}\/process\.DAT/g" src/Procdep/chooser.f || die
 }
 
 src_compile() {
-	# single thread force needed since fortan mods depend on each other
-	#export MAKEOPTS=-j1
 	cmake_src_compile
 }
 
 src_install() {
+	# this did not work
 	#cmake_src_install
-	dobin ${BUILD_DIR}/mcfm
-	dolib.so ${BUILD_DIR}/libmcfm.so
+	dobin "${BUILD_DIR}"/mcfm
+	dolib.so "${BUILD_DIR}"/libmcfm.so
+	insinto "/usr/share/${MY_PN}/"
+	doins "Bin/process.DAT"
 }
