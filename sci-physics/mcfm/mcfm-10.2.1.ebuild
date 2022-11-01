@@ -46,6 +46,7 @@ src_configure() {
 		-Duse_external_lhapdf=ON
 		-Duse_internal_lhapdf=OFF
 		-Dlhapdf_include_path=ON
+		-DCMAKE_INSTALL_PREFIX="${ED}"/usr/
 		-Dwith_library=ON
 		-Dwith_vvamp=OFF
 	)
