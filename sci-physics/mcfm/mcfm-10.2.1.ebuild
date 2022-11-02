@@ -56,7 +56,7 @@ src_configure() {
 
 src_compile() {
 	# Single thread force needed since fortan mods depend on each other
-	# This problem only happend very rarely 
+	# This problem only happend very rarely
 	export MAKEOPTS=-j1
 	cmake_src_compile
 }
