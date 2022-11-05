@@ -29,4 +29,3 @@ pkg_postinst() {
 	elog "ml use \$installpath/modules/all"
 	elog "where --installpath is passed to eb"
 }
-
