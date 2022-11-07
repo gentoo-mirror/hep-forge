@@ -23,4 +23,7 @@
 	<use>
 		<flag name="root">Adds support for <pkg>sci-physics/root</pkg></flag>
 	</use>
+	<upstream>
+		<remote-id type="gitlab">hepcedar/yoda</remote-id>
+	</upstream>
 </pkgmetadata>
