@@ -38,7 +38,7 @@ default:
         VERSION: [9999, 3.2.5, 2.06.11]
         CATEGORY: ['sci-physics']
       - PKG: [pythia]
-        VERSION: [8.3.07, 8.2.45]
+        VERSION: [9999, 8.3.07, 8.2.45]
         CATEGORY: ['sci-physics']
       - PKG: [rivet]
         VERSION: [9999, 3.1.7, 3.1.6, 3.1.5]
