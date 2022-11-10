@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+  <maintainer type="person" proxied="yes">
+    <email>alexander@neuwirth-informatik.de</email>
+    <name>Alexander Puck Neuwirth</name>
+  </maintainer>
   <maintainer type="project">
-    <email>APN-Pucky@noreply.github.com</email>
-    <name>APN-Pucky</name>
+    <email>sci-physics@gentoo.org</email>
+    <name>Gentoo Physics Project</name>
   </maintainer>
   <longdescription lang="en">
   PYTHIA is a program for the generation of high-energy physics
