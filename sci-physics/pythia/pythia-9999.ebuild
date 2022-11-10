@@ -15,7 +15,6 @@ HOMEPAGE="https://pythia.org/"
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://gitlab.com/Pythia8/releases"
-    # Can we include them also in the git live version?
 	SRC_URI="
         test? ( lhapdf? (
             https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
