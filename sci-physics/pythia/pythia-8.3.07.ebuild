@@ -31,7 +31,6 @@ REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
 "
 
-
 RDEPEND="
 	fastjet? ( sci-physics/fastjet )
 	hepmc3? ( sci-physics/hepmc:3= )
