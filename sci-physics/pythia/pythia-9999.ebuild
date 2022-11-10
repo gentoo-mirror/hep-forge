@@ -16,16 +16,16 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://gitlab.com/Pythia8/releases"
     # Can we include them also in the git live version?
-	#SRC_URI="
-    #    test? ( lhapdf? (
-    #        https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
-    #        https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2007lomod.tar.gz
-    #        https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nlo_as_0119_qed_mc.tar.gz
-    #        https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nnlo_as_0119_qed_mc.tar.gz
-    #        https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq66.tar.gz
-    #        https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq6l1.tar.gz
-    #        https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
-    #   ) )"
+	SRC_URI="
+        test? ( lhapdf? (
+            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
+            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2007lomod.tar.gz
+           https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nlo_as_0119_qed_mc.tar.gz
+            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nnlo_as_0119_qed_mc.tar.gz
+            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq66.tar.gz
+            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq6l1.tar.gz
+            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
+       ) )"
 else
     SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
         test? ( lhapdf? (
@@ -39,7 +39,7 @@ else
         ) )"
     KEYWORDS="~amd64"
     S="${WORKDIR}/${MY_P}"
-endif
+fi
 
 SLOT="8"
 LICENSE="GPL-2"
