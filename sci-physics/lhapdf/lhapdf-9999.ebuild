@@ -41,6 +41,12 @@ DEPEND="${RDEPEND}"
 
 PATCHES=( )
 
+src_prepare() {
+	default
+	# reconf due to python3_10 patch
+	eautoreconf
+}
+
 src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
 	econf \
