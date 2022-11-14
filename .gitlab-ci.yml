@@ -12,7 +12,6 @@ default:
   before_script:
     - emaint -r ${REPO_NAME} sync
     - echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
-    - echo '*/*::hep-forge **' > /etc/portage/package.accept_keywords/hepforge
 
 .config:
   parallel:
@@ -71,6 +70,8 @@ default:
       - PKG: [lmod]
         VERSION: [8.6.14-r1]
         CATEGORY: ['sys-cluster']
+  before_script:
+    - echo "=$CATEGORY/$PKG-$VERSION*::hep-forge **" >> /etc/portage/package.accept_keywords/hepforge
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1"
       changes:
