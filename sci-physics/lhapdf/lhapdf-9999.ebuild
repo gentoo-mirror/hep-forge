@@ -12,7 +12,7 @@ DOCS_DEPEND="
 	dev-texlive/texlive-latex
 	dev-texlive/texlive-latexextra
 "
-inherit python-single-r1 docs
+inherit python-single-r1 docs autotools
 
 MY_PV=$(ver_cut 1-3)
 MY_PF=LHAPDF-${MY_PV}
@@ -24,9 +24,9 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://gitlab.com/hepcedar/lhapdf"
 else
-    SRC_URI="https://www.hepforge.org/downloads/lhapdf/${MY_PF}.tar.gz"
-    S="${WORKDIR}/${MY_PF}"
-    KEYWORDS="~amd64"
+	SRC_URI="https://www.hepforge.org/downloads/lhapdf/${MY_PF}.tar.gz"
+	S="${WORKDIR}/${MY_PF}"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="GPL-2"
@@ -71,4 +71,3 @@ src_install() {
 
 	find "${ED}" -name '*.la' -delete || die
 }
-
