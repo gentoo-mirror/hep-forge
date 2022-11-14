@@ -33,7 +33,7 @@ default:
         VERSION: ['10.2.1']
         CATEGORY: ['sci-physics']
       - PKG: [yoda]
-        VERSION: [9999, 1.9.5]
+        VERSION: [9999, 1.9.7, 1.9.5]
         CATEGORY: ['sci-physics']
       - PKG: [hepmc]
         VERSION: [9999, 3.2.5, 2.06.11]
