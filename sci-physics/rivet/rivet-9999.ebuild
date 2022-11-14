@@ -53,7 +53,7 @@ BDEPEND="
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
-	"${FILESDIR}"/${P}-ldflags.patch
+	"${FILESDIR}"/${PN}-3.1.7-ldflags.patch
 )
 
 src_prepare() {
