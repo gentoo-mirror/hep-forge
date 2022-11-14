@@ -15,8 +15,8 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://gitlab.com/hepcedar/yoda"
 else
-    SRC_URI="https://yoda.hepforge.org/downloads?f=${P^^}.tar.bz2 -> ${P^^}.tar.bz2"
-    S="${WORKDIR}/${P^^}"
+	SRC_URI="https://yoda.hepforge.org/downloads?f=${P^^}.tar.bz2 -> ${P^^}.tar.bz2"
+	S="${WORKDIR}/${P^^}"
 	KEYWORDS="~amd64"
 fi
 
