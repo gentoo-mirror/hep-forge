@@ -3,7 +3,7 @@
 
 EAPI=7
 
-LUA_COMPAT=( lua5-{1..3} )
+LUA_COMPAT=( lua5-1 lua5-3 )
 inherit autotools lua-single prefix
 
 DESCRIPTION="Environment Module System based on Lua"
