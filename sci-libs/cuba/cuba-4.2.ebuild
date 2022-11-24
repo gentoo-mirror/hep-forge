@@ -14,7 +14,7 @@ SRC_URI="http://www.feynarts.de/cuba/${MY_P}.tar.gz"
 LICENSE="LGPL-3"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="" # Keyword masked since cubatest crashes
 IUSE="doc"
 
 S="${WORKDIR}/${MY_P}"

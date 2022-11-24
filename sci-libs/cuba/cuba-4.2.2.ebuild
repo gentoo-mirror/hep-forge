@@ -14,7 +14,7 @@ SRC_URI="http://www.feynarts.de/cuba/${MY_P}.tar.gz"
 LICENSE="LGPL-3"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="" # Keyword masked since cubatest crashes
 IUSE="doc"
 
 S="${WORKDIR}/${MY_P}"
@@ -32,8 +32,8 @@ src_prepare() {
 
 src_compile() {
 	tc-export CC CXX FC AR
-	sed 's/CFLAGS =/CFLAGS = -fPIC/g' --in-place makefile || die
-	sed 's/FFLAGS =/FFLAGS = -fPIC/g' --in-place makefile || die
+	#sed 's/CFLAGS =/CFLAGS = -fPIC/g' --in-place makefile || die
+	#sed 's/FFLAGS =/FFLAGS = -fPIC/g' --in-place makefile || die
 	emake lib -j1
 	# make shared lib
 	FILES=$(${AR} xv libcuba.a |sed 's/x - //g' || die)

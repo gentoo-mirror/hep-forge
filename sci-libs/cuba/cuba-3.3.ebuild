@@ -34,18 +34,11 @@ src_compile() {
 	tc-export CC CXX FC AR
 	sed 's/CFLAGS =/CFLAGS = -fPIC/g' --in-place makefile || die
 	sed 's/FFLAGS =/FFLAGS = -fPIC/g' --in-place makefile || die
-	emake lib -j1
-	# make shared lib
-	FILES=$(${AR} xv libcuba.a |sed 's/x - //g' || die)
-	# unquoted FILES since newlines should be replaces by spaces
-	${CC} -shared -Wall $FILES -lm -o libcuba.so
+	emake lib
 }
 
 src_install() {
 	default
 
-	# already in default
-	#dolib.a libcuba.a
-	dolib.so libcuba.so
 	use doc && dodoc cuba.pdf
 }
