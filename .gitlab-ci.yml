@@ -13,6 +13,9 @@ default:
 .config:
   parallel:
     matrix:
+      - PKG: [cuba]
+        VERSION: ['4.2']
+        CATEGORY: ['sci-libs']
       - PKG: [resummino]
         VERSION: [3.1.1]
         CATEGORY: ['sci-physics']
