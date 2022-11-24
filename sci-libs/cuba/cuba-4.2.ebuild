@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit fortran-2
+inherit autotools fortran-2 toolchain-funcs
 
 MY_P=Cuba-${PV}
 
@@ -17,30 +17,35 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="doc"
 
-#PATCHES=( "${FILESDIR}"/${P}-makefile.patch )
-
 S="${WORKDIR}/${MY_P}"
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+BDEPEND="
+	virtual/fortran
+"
 
 src_prepare() {
 	default
-
-
-	#export VER="${PV}"
-	# necessary fix for prefix
-	#sed -i "s/lib\$(LIBDIRSUFFIX)/$(get_libdir)/" makefile.in || die
+	eautoreconf
 }
-src_compile() {
-	emake lib
-	# make shared lib
-	FILES=$(ar xv libcuba.a |sed 's/x - //g')
-	gcc -shared -Wall $FILES -lm -o libcuba.so
 
+src_compile() {
+	tc-export CC CXX FC AR
+	sed 's/CFLAGS =/CFLAGS = -fPIC/g' --in-place makefile || die
+	sed 's/FFLAGS =/FFLAGS = -fPIC/g' --in-place makefile || die
+	emake lib -j1
+	# make shared lib
+	FILES=$(${AR} xv libcuba.a |sed 's/x - //g' || die)
+	# unquoted FILES since newlines should be replaces by spaces
+	${CC} -shared -Wall $FILES -lm -o libcuba.so
 }
 
 src_install() {
 	default
 
-	dolib.a libcuba.a
+	# already in default
+	#dolib.a libcuba.a
 	dolib.so libcuba.so
 	use doc && dodoc cuba.pdf
 }
