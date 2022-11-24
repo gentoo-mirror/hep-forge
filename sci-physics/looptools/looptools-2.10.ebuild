@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit fortran-2
+inherit fortran-2 toolchain-funcs
 
 MY_P=LoopTools-${PV}
 
@@ -14,7 +14,7 @@ SRC_URI="http://www.feynarts.de/looptools/${MY_P}.tar.gz"
 LICENSE="LGPL-3"
 
 SLOT="0/${PV}"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64"
 IUSE="doc"
 
 PATCHES=( "${FILESDIR}"/${P}-makefile.patch )
@@ -28,11 +28,13 @@ src_prepare() {
 	# necessary fix for prefix
 	sed -i "s/lib\$(LIBDIRSUFFIX)/$(get_libdir)/" makefile.in || die
 }
+src_compile() {
+	tc-export CC CXX FC AR
+	emake CC="${CC}" CXX="${CXX}"
+}
 
 src_install() {
 	default
 
-	dolib.so build/libooptools.so
-	rm "${ED}"/usr/$(get_libdir)/libooptools.a || die
 	use doc && dodoc manual/*.pdf
 }
