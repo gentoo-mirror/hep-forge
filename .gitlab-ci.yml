@@ -14,7 +14,7 @@ default:
   parallel:
     matrix:
       - PKG: [cuba]
-        VERSION: ['4.2.2','4.2']
+        VERSION: ['4.2.2','4.2','3.3']
         CATEGORY: ['sci-libs']
       - PKG: [resummino]
         VERSION: [3.1.1]
