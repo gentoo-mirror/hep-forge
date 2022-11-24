@@ -27,13 +27,13 @@ BDEPEND="
 
 src_prepare() {
 	default
-	#eautoreconf
+	eautoreconf
 }
 
 src_compile() {
 	tc-export CC CXX FC AR
-	#sed 's/CFLAGS =/CFLAGS = -fPIC/g' --in-place makefile || die
-	#sed 's/FFLAGS =/FFLAGS = -fPIC/g' --in-place makefile || die
+	sed 's/CFLAGS =/CFLAGS = -fPIC/g' --in-place makefile || die
+	sed 's/FFLAGS =/FFLAGS = -fPIC/g' --in-place makefile || die
 	emake lib -j1
 	# make shared lib
 	FILES=$(${AR} xv libcuba.a |sed 's/x - //g' || die)
