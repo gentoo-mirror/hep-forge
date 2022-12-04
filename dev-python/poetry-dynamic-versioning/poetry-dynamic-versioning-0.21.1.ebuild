@@ -29,7 +29,7 @@ RDEPEND="
 	>=dev-python/dunamai-1.14.0
 	>=dev-python/tomlkit-0.4
 	>=dev-python/jinja-2.11.1
-	plugin? (>=dev-python/poetry-core-1.2.0)
+	plugin? ( >=dev-python/poetry-core-1.2.0 )
 "
 BDEPEND="${BDEPEND}"
 
