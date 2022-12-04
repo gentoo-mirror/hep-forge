@@ -71,7 +71,7 @@ default:
         VERSION: [8.6.14-r1]
         CATEGORY: ['sys-cluster']
       - PKG: [poetry-dynamic-versioning]
-        VERSION: [0.21.1]
+        VERSION: [9999,0.21.1]
         CATEGORY: ['dev-python']
   before_script:
     - emaint -r ${REPO_NAME} sync
