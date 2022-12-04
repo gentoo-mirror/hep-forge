@@ -19,6 +19,8 @@ SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
 # https://github.com/mtkennerly/${PN}/releases/download/v${PV}/${P}.tar.gz
 S="${WORKDIR}/${MY_P}"
 
+IUSE="+plugin"
+
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -27,7 +29,7 @@ RDEPEND="
 	>=dev-python/dunamai-1.14.0
 	>=dev-python/tomlkit-0.4
 	>=dev-python/jinja-2.11.1
-	>=dev-python/poetry-core-1.2.0
+	plugin? (>=dev-python/poetry-core-1.2.0)
 "
 BDEPEND="${BDEPEND}"
 
