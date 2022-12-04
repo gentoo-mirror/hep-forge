@@ -9,8 +9,8 @@ inherit distutils-r1
 
 DESCRIPTION="Library and command line tool for producing version strings"
 HOMEPAGE="
-	https://pypi.org/project/dunamai/
 	https://github.com/mtkennerly/dunamai
+	https://pypi.org/project/dunamai/
 "
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
