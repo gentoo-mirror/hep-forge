@@ -11,4 +11,7 @@
 	<use>
   		<flag name="plugin">Include poetry dependency for plugin</flag>
 	</use>
+	<upstream>
+		<remote-id type="github">mtkennerly/poetry-dynamic-versioning</remote-id>
+	</upstream>
 </pkgmetadata>
