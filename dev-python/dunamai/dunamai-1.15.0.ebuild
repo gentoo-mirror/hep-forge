@@ -24,4 +24,5 @@ RDEPEND="
 "
 BDEPEND="${RDEPEND}"
 
-distutils_enable_tests pytest
+#TODO enable test
+#distutils_enable_tests pytest
