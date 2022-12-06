@@ -35,5 +35,6 @@ RDEPEND="
 "
 BDEPEND="${RDEPEND}"
 
-distutils_enable_tests pytest
+# TODO needs test deps
+#distutils_enable_tests pytest
 

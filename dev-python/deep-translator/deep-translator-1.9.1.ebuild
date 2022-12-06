@@ -30,5 +30,5 @@ RDEPEND="
 	>=dev-python/requests-2.23.0
 "
 BDEPEND="${RDEPEND}"
-
-distutils_enable_tests pytest
+# TODO needs test deps
+#distutils_enable_tests pytest
