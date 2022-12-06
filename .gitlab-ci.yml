@@ -76,6 +76,9 @@ default:
       - PKG: [smpl]
         VERSION: [9999,1.0.2]
         CATEGORY: ['dev-python']
+      - PKG: [deep-translator]
+        VERSION: [9999,1.9.1]
+        CATEGORY: ['dev-python']
   before_script:
     - emaint -r ${REPO_NAME} sync
     - echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
