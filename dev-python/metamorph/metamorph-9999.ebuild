@@ -34,6 +34,7 @@ RDEPEND="
 BDEPEND="${RDEPEND}"
 
 src_prepare() {
+    default
 	# Don't use dynamic versioning 	
 	sed -i "s/version.*=.*/version = \"${PV}\"/" pyproject.toml 	
 	sed -i "s/requires.*=.*/requires = [\"poetry-core>=1.0.0\"]/" pyproject.toml 	
