@@ -9,7 +9,7 @@ inherit distutils-r1
 
 REPO=APN-Pucky
 
-DESCRIPTION="Library and command line tool for producing version strings"
+DESCRIPTION="Simplified plotting and fitting in python."
 HOMEPAGE="
 	https://github.com/${REPO}/${PN}
 	https://pypi.org/project/${PN}/

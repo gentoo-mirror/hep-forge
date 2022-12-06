@@ -73,6 +73,9 @@ default:
       - PKG: [poetry-dynamic-versioning]
         VERSION: [9999,0.21.1]
         CATEGORY: ['dev-python']
+      - PKG: [smpl]
+        VERSION: [9999,1.0.2]
+        CATEGORY: ['dev-python']
   before_script:
     - emaint -r ${REPO_NAME} sync
     - echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept

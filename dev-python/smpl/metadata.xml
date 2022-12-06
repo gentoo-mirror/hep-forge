@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>APN-Pucky@users.noreply.github.com</email>
+		<name>APN-Pucky</name>
+	</maintainer>
+	<longdescription lang="en">
+	Simplified plotting and fitting in python.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">APN-Pucky/smpl</remote-id>
+	</upstream>
+</pkgmetadata>
