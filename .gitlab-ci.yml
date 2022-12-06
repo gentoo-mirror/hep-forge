@@ -80,7 +80,7 @@ default:
         VERSION: [9999,1.9.1]
         CATEGORY: ['dev-python']
       - PKG: [metamorph]
-        VERSION: [9999,0.0.12]
+        VERSION: [9999,0.0.13]
         CATEGORY: ['dev-python']
   before_script:
     - emaint -r ${REPO_NAME} sync
