@@ -32,6 +32,13 @@ RDEPEND="
 	dev-python/pyyaml
 "
 BDEPEND="${RDEPEND}"
+
+src_configure() {
+	sed -i "s/version.*=.*/version = \"${PV}\"/" pyproject.toml
+	sed -i "s/requires.*=.*/requires = [\"poetry-core>=1.0.0\"]/" pyproject.toml
+	sed -i 's/poetry_dynamic_versioning.backend/poetry.core.masonry.api/g' pyproject.toml
+}
+
 # TODO needs test deps
 #distutils_enable_tests pytest
 
