@@ -34,6 +34,7 @@ RDEPEND="
 BDEPEND="${RDEPEND}"
 
 src_configure() {
+	# Don't use dynamic versioning
 	sed -i "s/version.*=.*/version = \"${PV}\"/" pyproject.toml
 	sed -i "s/requires.*=.*/requires = [\"poetry-core>=1.0.0\"]/" pyproject.toml
 	sed -i 's/poetry_dynamic_versioning.backend/poetry.core.masonry.api/g' pyproject.toml
