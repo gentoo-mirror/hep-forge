@@ -83,7 +83,7 @@ default:
         VERSION: [9999,0.0.13]
         CATEGORY: ['dev-python']
       - PKG: [xsdata]
-        VERSION: [22.11]
+        VERSION: ['22.11']
         CATEGORY: ['dev-python']
   before_script:
     - emaint -r ${REPO_NAME} sync
