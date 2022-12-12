@@ -82,6 +82,9 @@ default:
       - PKG: [metamorph]
         VERSION: [9999,0.0.13]
         CATEGORY: ['dev-python']
+      - PKG: [xsdata]
+        VERSION: [22.11]
+        CATEGORY: ['dev-python']
   before_script:
     - emaint -r ${REPO_NAME} sync
     - echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
