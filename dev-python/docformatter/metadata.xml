@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>APN-Pucky@users.noreply.github.com</email>
+		<name>APN-Pucky</name>
+	</maintainer>
+	<longdescription lang="en">
+	docformatter automatically formats docstrings to follow a subset of the PEP 257 conventions. Below are the relevant items quoted from PEP 257.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">PyCQA/docformatter</remote-id>
+	</upstream>
+</pkgmetadata>
