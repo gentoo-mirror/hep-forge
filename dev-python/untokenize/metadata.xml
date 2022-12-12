@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>APN-Pucky@users.noreply.github.com</email>
+		<name>APN-Pucky</name>
+	</maintainer>
+	<longdescription lang="en">
+	untokenize transforms tokens into source code. Unlike the standard library's tokenize.untokenize(), it preserves the original whitespace between tokens.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">myint/untokenize</remote-id>
+	</upstream>
+</pkgmetadata>
