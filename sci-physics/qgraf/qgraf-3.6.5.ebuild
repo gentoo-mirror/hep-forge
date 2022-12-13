@@ -7,7 +7,7 @@ inherit toolchain-funcs
 
 DESCRIPTION="qgraf generates Feynman diagrams for various types of QFT models"
 HOMEPAGE="http://cfif.ist.utl.pt/~paulo/qgraf.html"
-SRC_URI="http://anonymous:anonymous@qgraf.tecnico.ulisboa.pt/v3.6/qgraf-${PV}.tgz"
+SRC_URI="http://anonymous:anonymous@qgraf.tecnico.ulisboa.pt/v$(ver_cut 1-2)/qgraf-${PV}.tgz"
 S="${WORKDIR}"
 
 LICENSE="all-rights-reserved"
