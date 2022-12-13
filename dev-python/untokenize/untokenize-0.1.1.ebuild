@@ -22,8 +22,6 @@ else
 	KEYWORDS="~amd64"
 fi
 
-IUSE="cli lxml soap"
-
 LICENSE="MIT"
 SLOT="0"
 

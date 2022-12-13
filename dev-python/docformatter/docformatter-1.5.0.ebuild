@@ -29,8 +29,8 @@ SLOT="0"
 
 RDEPEND="
 	>=dev-python/charset_normalizer-2.0.0
-	>=dev-python/tomli>=2.0.0
-	>=dev-python/untokenize>=0.1.1
+	>=dev-python/tomli-2.0.0
+	>=dev-python/untokenize-0.1.1
 "
 BDEPEND="${RDEPEND}"
 

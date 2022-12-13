@@ -11,4 +11,8 @@
 	<upstream>
 		<remote-id type="github">tefra/xsdata</remote-id>
 	</upstream>
+	<use>
+		<flag name="cli"> cli tools </flag>
+		<flag name="lxml"> use lxml </flag>
+	</use>
 </pkgmetadata>

@@ -32,9 +32,9 @@ RDEPEND="
     cli? (
         >=dev-python/click-5
         >=dev-python/click-default-group-1.2
-        >=dev-python/docformatter
-        >=dev-python/jinja>=2.10
-        >=dev-python/toposort>=1.5
+        >=dev-python/jinja-2.10
+        >=dev-python/toposort-1.5
+        dev-python/docformatter
     )
     soap? ( dev-python/requests )
 "
