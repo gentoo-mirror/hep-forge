@@ -93,7 +93,7 @@ default:
     - echo '*/*::hep-forge ~amd64' > /etc/portage/package.accept_keywords/hepforge
     - echo "=$CATEGORY/$PKG-$VERSION*::hep-forge **" >> /etc/portage/package.accept_keywords/hepforge
   rules:
-    - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1" || '$(($RANDOM*100/32767)) < $PROBABILITY'
+    - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1" || '$((RANDOM%101)) < $PROBABILITY'
       changes:
       - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
       - "$CATEGORY/$PKG/metadata.xml"
