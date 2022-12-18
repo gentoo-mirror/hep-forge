@@ -93,7 +93,7 @@ default:
     - echo '*/*::hep-forge ~amd64' > /etc/portage/package.accept_keywords/hepforge
     - echo "=$CATEGORY/$PKG-$VERSION*::hep-forge **" >> /etc/portage/package.accept_keywords/hepforge
   rules:
-    - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1" || '$((CI_JOB_ID % 101)) < $PROBABILITY'
+    - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1"
       changes:
       - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
       - "$CATEGORY/$PKG/metadata.xml"
@@ -131,6 +131,7 @@ pkgcheck:
   stage: check
   before_script: []
   script:
+    - if [[ $(( RANDOM % 101 )) -lt $PROBABILITY ]] ; then exit 137 ; fi
     - pkgcheck scan $CATEGORY/$PKG --exit 
     - pkgcheck scan $CATEGORY/$PKG --exit warning || exit 137
   allow_failure:
@@ -142,18 +143,22 @@ build:
   needs: []
   extends: .config
   script:
+    - if [[ $(( RANDOM % 101 )) -lt $PROBABILITY ]] ; then exit 137 ; fi
     - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" | tee "build_$CATEGORY_$PKG-$VERSION.log"; 
   artifacts:     
       when: always        
       paths:
            - "build_*.log"
       expire_in: 1 week
+  allow_failure:
+    exit_codes: 137
 
 
 test:
   stage: test
   extends: .config
   script:
+    - if [[ $(( RANDOM % 101 )) -lt $PROBABILITY ]] ; then exit 137 ; fi
     - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
       then
         inherit() { sleep 0; } &&
@@ -179,6 +184,8 @@ test:
            - "test_*.log"          
            - "test*.json" 
       expire_in: 1 week
+  allow_failure:
+    exit_codes: 137
 
 qa:
   stage: qa
