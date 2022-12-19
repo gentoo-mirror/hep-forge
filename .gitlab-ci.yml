@@ -131,7 +131,7 @@ pkgcheck:
   stage: check
   before_script: []
   script:
-    - if [[ $(( RANDOM % 101 )) -lt $PROBABILITY ]] ; then exit 137 ; fi
+    - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
     - pkgcheck scan $CATEGORY/$PKG --exit 
     - pkgcheck scan $CATEGORY/$PKG --exit warning || exit 137
   allow_failure:
@@ -143,7 +143,7 @@ build:
   needs: []
   extends: .config
   script:
-    - if [[ $(( RANDOM % 101 )) -lt $PROBABILITY ]] ; then exit 137 ; fi
+    - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
     - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" | tee "build_$CATEGORY_$PKG-$VERSION.log"; 
   artifacts:     
       when: always        
@@ -158,7 +158,7 @@ test:
   stage: test
   extends: .config
   script:
-    - if [[ $(( RANDOM % 101 )) -lt $PROBABILITY ]] ; then exit 137 ; fi
+    - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
     - if grep -q "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
       then
         inherit() { sleep 0; } &&
