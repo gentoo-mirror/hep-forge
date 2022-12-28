@@ -17,5 +17,4 @@
 		<remote-id type="github">easybuilders/easybuild-easyblocks</remote-id>
 		<bugs-to>https://github.com/easybuilders/easybuild-easyblocks/issues</bugs-to>
 	</upstream>
-
 </pkgmetadata>
