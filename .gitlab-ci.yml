@@ -85,6 +85,9 @@ default:
       - PKG: [xsdata]
         VERSION: ['22.11']
         CATEGORY: ['dev-python']
+      - PKG: [archspec]
+        VERSION: ['0.1.4']
+        CATEGORY: ['dev-python']
   before_script:
     - emaint -r ${REPO_NAME} sync
     - echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
