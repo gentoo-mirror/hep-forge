@@ -130,10 +130,7 @@ pkgcheck:
   stage: check
   before_script: []
   script:
-    - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
     - pkgcheck scan $CATEGORY/$PKG --exit 
-  allow_failure:
-    exit_codes: 137
 
 pkgwarn:
   image: apnpucky/gentoo-ebuild-ci
@@ -141,7 +138,6 @@ pkgwarn:
   stage: check
   before_script: []
   script:
-    - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
     - pkgcheck scan $CATEGORY/$PKG --exit warning || exit 137
   allow_failure:
     exit_codes: 137
@@ -151,15 +147,12 @@ build:
   needs: []
   extends: .config
   script:
-    - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
     - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" | tee "build_$CATEGORY_$PKG-$VERSION.log"; 
   artifacts:     
       when: always        
       paths:
            - "build_*.log"
       expire_in: 1 week
-  allow_failure:
-    exit_codes: 137
 
 
 test:
