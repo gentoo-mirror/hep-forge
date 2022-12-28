@@ -12,4 +12,9 @@
 	<longdescription lang="en">
 	Archspec aims at providing a standard set of human-understandable labels for various aspects of a system architecture like CPU, network fabrics, etc. and APIs to detect, query and compare them.
 	</longdescription>
+	<upstream>
+		<remote-id type="pypi">archspec</remote-id>
+		<remote-id type="github">archspec/archspec</remote-id>
+		<bugs-to>https://github.com/archspec/archspec/issues</bugs-to>
+	</upstream>
 </pkgmetadata>
