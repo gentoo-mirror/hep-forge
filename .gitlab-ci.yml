@@ -129,10 +129,19 @@ pkgcheck:
   script:
     - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
     - pkgcheck scan $CATEGORY/$PKG --exit 
-    - pkgcheck scan $CATEGORY/$PKG --exit warning || exit 137
   allow_failure:
     exit_codes: 137
 
+pkgwarn:
+  image: apnpucky/gentoo-ebuild-ci
+  extends: .config
+  stage: check
+  before_script: []
+  script:
+    - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
+    - pkgcheck scan $CATEGORY/$PKG --exit warning || exit 137
+  allow_failure:
+    exit_codes: 137
 
 build:
   stage: build
