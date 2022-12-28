@@ -39,6 +39,7 @@ Usually I follow these steps (I use less package as example)
 
 ## Similar (HEP) Science collections:
 
+* <http://davidchall.github.io/homebrew-hep/formula/ >
 * <https://github.com/JP-Ellis/PKGBUILD>
 * <https://github.com/funtoo/science-kit>
 * <https://hepsoftwarefoundation.org/projects.html>
