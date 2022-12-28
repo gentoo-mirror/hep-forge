@@ -21,5 +21,4 @@
 		<remote-id type="github">easybuilders/easybuild</remote-id>
 		<bugs-to>https://github.com/easybuilders/easybuild/issues</bugs-to>
 	</upstream>
-
 </pkgmetadata>
