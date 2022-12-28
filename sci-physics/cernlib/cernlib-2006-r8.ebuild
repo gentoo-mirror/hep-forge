@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit eutils fortran-2 multilib toolchain-funcs
+inherit fortran-2 toolchain-funcs
 
 DEB_PN=cernlib
 DEB_PV=20061220+dfsg3
@@ -34,7 +34,7 @@ S="${WORKDIR}/${DEB_PN}-${DEB_PV}"
 
 src_prepare() {
 	mv ../debian . || die
-	epatch "${FILESDIR}"/${P}-nogfortran.patch
+	eapply "${FILESDIR}"/${P}-nogfortran.patch
 	# set some default paths
 	sed -i \
 		-e "s:/usr/local:${EROOT}/usr:g" \
@@ -58,8 +58,8 @@ src_prepare() {
 	einfo "Applying Debian patches"
 	emake -j1 patch
 
-	epatch "${FILESDIR}"/${P}-fgets.patch
-	epatch "${FILESDIR}"/${P}-ypatchy-short-name.patch
+	eapply "${FILESDIR}"/${P}-fgets.patch
+	eapply "${FILESDIR}"/${P}-ypatchy-short-name.patch
 	# since we depend on cfortran, do not use the one from cernlib
 	rm src/include/cfortran/cfortran.h || die
 
