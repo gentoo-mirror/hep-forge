@@ -36,3 +36,10 @@ Usually I follow these steps (I use less package as example)
 * go in to source directory cd /var/tmp/portage/sys-apps/less-531/work/less-531/ and change necessary files
 * go in work directory cd /var/tmp/portage/sys-apps/less-531/work/
 * and finally create patch diff -Naru less-531.orig less-531 > your_patch_files.patch
+
+Similar (HEP) Science collections:
+
+* <https://github.com/JP-Ellis/PKGBUILD>
+* <https://github.com/funtoo/science-kit>
+* <https://hepsoftwarefoundation.org/projects.html>
+* <http://cfif.ist.utl.pt/~paulo/l.html#l>
