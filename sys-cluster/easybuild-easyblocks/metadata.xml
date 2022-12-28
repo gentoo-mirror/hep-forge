@@ -12,4 +12,10 @@
 	<longdescription lang="en">
 	The easybuild-easyblocks package provides a collection of easyblocks for EasyBuild. Easyblocks are Python modules that implement the install procedure for a (group of) software package(s). Together with the EasyBuild framework, they allow to easily build and install supported software packages.
 	</longdescription>
+	<upstream>
+		<remote-id type="pypi">easybuild-easyblocks</remote-id>
+		<remote-id type="github">easybuilders/easybuild-easyblocks</remote-id>
+		<bugs-to>https://github.com/easybuilders/easybuild-easyblocks/issues</bugs-to>
+	</upstream>
+
 </pkgmetadata>
