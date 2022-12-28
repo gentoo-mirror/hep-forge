@@ -5,8 +5,11 @@ inherit distutils-r1
 
 SUB_P=$(ver_cut 1)
 
-DESCRIPTION="EasyBuild is a software build and installation framework."
-HOMEPAGE="https://easybuild.io/"
+DESCRIPTION="Provides a collection of easyblocks for EasyBuild."
+HOMEPAGE="
+	https://easybuild.io/
+	https://github.com/easybuilders/easybuild-easyblocks
+"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
