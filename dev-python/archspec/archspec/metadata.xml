@@ -10,11 +10,11 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-	The easybuild-framework package is the core of EasyBuild. It supports the implementation and use of so-called easyblocks which implement the software install procedure for a particular (group of) software package(s).
+	Archspec aims at providing a standard set of human-understandable labels for various aspects of a system architecture like CPU, network fabrics, etc. and APIs to detect, query and compare them.
 	</longdescription>
 	<upstream>
-		<remote-id type="pypi">easybuild-framework</remote-id>
-		<remote-id type="github">easybuilders/easybuild-framework</remote-id>
-		<bugs-to>https://github.com/easybuilders/easybuild-framework/issues</bugs-to>
+		<remote-id type="pypi">archspec</remote-id>
+		<remote-id type="github">archspec/archspec</remote-id>
+		<bugs-to>https://github.com/archspec/archspec/issues</bugs-to>
 	</upstream>
 </pkgmetadata>

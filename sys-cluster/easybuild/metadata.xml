@@ -16,5 +16,9 @@
 		<flag name="lmod">enable lmod</flag>
 		<flag name="modules">enable modules</flag>
 	</use>
-
+	<upstream>
+		<remote-id type="pypi">easybuild</remote-id>
+		<remote-id type="github">easybuilders/easybuild</remote-id>
+		<bugs-to>https://github.com/easybuilders/easybuild/issues</bugs-to>
+	</upstream>
 </pkgmetadata>
