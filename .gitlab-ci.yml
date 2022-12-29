@@ -94,7 +94,6 @@ default:
         <<: *images
 
 .matrix2: &matrix2
-  extends: .check
   parallel:
     matrix:
       - PKG: [cuba]
