@@ -114,6 +114,7 @@ local-pkgcheck:
   before_script: []
   script:
     - pkgcheck scan --exit
+  allow-failure: True
     
 global-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
@@ -126,6 +127,7 @@ global-pkgcheck:
     - emaint -r ${REPO_NAME} sync
   script:
     - pkgcheck ci -r ${REPO_NAME} --exit
+  allow-failure: True
 
 pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
