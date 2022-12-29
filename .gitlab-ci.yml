@@ -1,5 +1,6 @@
 stages:
-  - check
+  - checkall
+  - checksingle
   - build
   - test
   - qa
@@ -110,7 +111,7 @@ default:
 
 local-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
-  stage: check
+  stage: checkall
   before_script: []
   script:
     - pkgcheck scan --exit
@@ -118,7 +119,7 @@ local-pkgcheck:
     
 global-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
-  stage: check
+  stage: checkall
   before_script:
     - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
     - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
@@ -132,7 +133,7 @@ global-pkgcheck:
 pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
   extends: .config
-  stage: check
+  stage: checksingle
   before_script: []
   script:
     - pkgcheck scan $CATEGORY/$PKG --exit 
@@ -140,7 +141,7 @@ pkgcheck:
 pkgwarn:
   image: apnpucky/gentoo-ebuild-ci
   extends: .config
-  stage: check
+  stage: checksingle
   before_script: []
   script:
     - pkgcheck scan $CATEGORY/$PKG --exit warning || exit 137
