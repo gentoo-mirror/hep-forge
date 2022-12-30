@@ -26,7 +26,7 @@ DEPEND="
 "
 RDEPEND="
 	${DEPEND}
-	!sys-clusters/lmod
+	!sys-cluster/lmod
 "
 # lmod is strong blocked since both want to install a module binary
 BDEPEND="
