@@ -3,7 +3,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..11} )
+PYTHON_COMPAT=( python3_{7..11} )
+
 inherit autotools python-single-r1
 
 DESCRIPTION="Dynamic modification of a user's environment via modulefiles"
@@ -23,12 +24,11 @@ DEPEND="
 	dev-tcltk/tclx
 	compat? ( x11-libs/libX11 )
 "
-# lmod is strong blocked since both want to install a module binary
 RDEPEND="
 	${DEPEND}
-	!!sys-cluster/lmod
-
-
+	!sys-clusters/lmod
+"
+# lmod is strong blocked since both want to install a module binary
 BDEPEND="
 	test? ( dev-util/dejagnu )
 "
