@@ -108,7 +108,7 @@ default:
         VERSION: [8.6.14-r1]
         CATEGORY: ['sys-cluster']
         <<: *images
-      - PKG: [lmod]
+      - PKG: [modules]
         VERSION: [4.6.0-r1]
         CATEGORY: ['sys-cluster']
         <<: *images
