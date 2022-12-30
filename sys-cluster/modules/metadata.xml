@@ -17,13 +17,10 @@
 		aliases over a variety of shells.
 	</longdescription>
 	<upstream>
-		<remote-id type="sourceforge">modules</remote-id>
+		<remote-id type="github">cea-hpc/modules</remote-id>
+		<bugs-to>https://github.com/cea-hpc/modules/issues</bugs-to>
 	</upstream>
 	<use>
 		<flag name="compat">Build Modules version 3 compat support</flag>
 	</use>
-	<upstream>
-		<remote-id type="github">cea-hpc/modules</remote-id>
-		<bugs-to>https://github.com/cea-hpc/modules/issues</bugs-to>
-	</upstream>
 </pkgmetadata>
