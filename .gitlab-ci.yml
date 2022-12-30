@@ -109,7 +109,7 @@ default:
         CATEGORY: ['sys-cluster']
         <<: *images
       - PKG: [modules]
-        VERSION: [4.6.0-r1, '4.6.0']
+        VERSION: [4.6.0-r1]
         CATEGORY: ['sys-cluster']
         <<: *images
       - PKG: [poetry-dynamic-versioning]
