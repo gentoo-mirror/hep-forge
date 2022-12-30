@@ -26,5 +26,4 @@
 		<remote-id type="github">cea-hpc/modules</remote-id>
 		<bugs-to>https://github.com/cea-hpc/modules/issues</bugs-to>
 	</upstream>
-
 </pkgmetadata>
