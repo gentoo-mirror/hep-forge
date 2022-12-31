@@ -219,7 +219,7 @@ global-pkgcheck:
         inherit() { sleep 0; } &&
         source $CATEGORY/$PKG/$PKG-$VERSION*.ebuild && 
         for PY in ${PYTHON_COMPAT[@]}; do
-          PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 ) python_single_target_$PY -root" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$PY.json | tee -a test_$CATEGORY_$PKG-$VERSION-$PY.log ;
+          PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( python_single_target_python3_11 python_single_target_python3_10  python_single_target_python3_9 python_single_target_python3_8 ) python_single_target_$PY -root" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$PY.json | tee -a test_$CATEGORY_$PKG-$VERSION-$PY.log
         done;
       else
         if grep -q "lua-single" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild; 
@@ -227,7 +227,9 @@ global-pkgcheck:
           inherit() { sleep 0; } &&
           source $CATEGORY/$PKG/$PKG-$VERSION*.ebuild && 
           for LUA in ${LUA_COMPAT[@]}; do
-            LUA_SINGLE_TARGET="$LUA" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( lua_single_target_lua5-1 lua_single_target_lua5-2 lua_single_target_lua5-3 ) lua_single_target_$LUA -root" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$LUA.json | tee -a test_$CATEGORY_$PKG-$VERSION-$LUA.log ;
+            if [ "$LUA" != "lua5-2" ]; then
+              LUA_SINGLE_TARGET="$LUA" pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 ) lua_single_target_$LUA -root" -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$LUA.json | tee -a test_$CATEGORY_$PKG-$VERSION-$LUA.log
+            fi
           done;
         else
           pkg-testing-tool --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --append-required-use "!root" --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION.json | tee "test_$CATEGORY_$PKG-$VERSION.log"; 
