@@ -34,7 +34,7 @@ PATCHES=(
 )
 
 src_install() {
+	python_optimize "easybuild/tools/"
 	default
-	python_optimize
 }
 
