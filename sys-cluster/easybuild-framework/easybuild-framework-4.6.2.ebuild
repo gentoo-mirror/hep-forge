@@ -32,3 +32,9 @@ BDEPEND="${RDEPEND}"
 PATCHES=(
 	"${FILESDIR}"/${P}-test.patch
 )
+
+src_install() {
+	default
+	python_optimize
+}
+
