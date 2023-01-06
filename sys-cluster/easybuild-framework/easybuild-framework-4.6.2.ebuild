@@ -32,9 +32,3 @@ BDEPEND="${RDEPEND}"
 PATCHES=(
 	"${FILESDIR}"/${P}-test.patch
 )
-
-src_install() {
-	python_optimize "easybuild/tools/"
-	default
-}
-
