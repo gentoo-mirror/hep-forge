@@ -156,6 +156,10 @@ default:
         VERSION: [0.3.1]
         CATEGORY: ['dev-python']
         <<: *images
+      - PKG: [pathos]
+        VERSION: [0.3.0]
+        CATEGORY: ['dev-python']
+        <<: *images
       - PKG: [pyslha]
         VERSION: [3.2.6]
         CATEGORY: ['sci-physics']

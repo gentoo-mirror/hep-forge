@@ -10,6 +10,6 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-	Lightweight renderer of LaTeX to a variety of graphics formats
+	parallel graph management and execution in heterogeneous computing
 	</longdescription>
 </pkgmetadata>
