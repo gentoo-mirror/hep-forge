@@ -100,6 +100,10 @@ default:
         VERSION: [1.1.0]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [samurai]
+        VERSION: [2.1.1]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .matrix2: &matrix2
   parallel:
