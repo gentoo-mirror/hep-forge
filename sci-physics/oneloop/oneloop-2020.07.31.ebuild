@@ -8,7 +8,10 @@ PYTHON_COMPAT=( python3_{8..11} )
 inherit toolchain-funcs python-any-r1
 
 DESCRIPTION="Library of one-loop scalar functions"
-HOMEPAGE="https://bitbucket.org/hameren/oneloop"
+HOMEPAGE="
+	https://helac-phegas.web.cern.ch/OneLOop.html
+	https://bitbucket.org/hameren/oneloop
+"
 SRC_URI="https://bitbucket.org/hameren/oneloop/get/3762b8bad6ad.zip -> ${P}.zip"
 S="${WORKDIR}/hameren-oneloop-3762b8bad6ad"
 
