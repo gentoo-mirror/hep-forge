@@ -52,6 +52,10 @@ default:
         VERSION: [9999, 3.2.5, 2.06.11]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [delphes]
+        VERSION: [9999, 3.5.0]
+        CATEGORY: ['sci-physics']
+        <<: *images
         
 .matrix3: &matrix3
   parallel:
