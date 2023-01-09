@@ -29,34 +29,18 @@ LICENSE="GPL"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-python/numpy
-    dev-python/scipy
-    dev-python/pandas
-    dev-python/configobj
-    dev-python/matplotlib
-    dev-python/tqdm
-    dev-python/pytest
-    dev-python/pyyaml
-    dev-python/pyslha
-    dev-python/click
-    dev-python/scikit-learn
-    dev-python/pathos
+	dev-python/numpy[${PYTHON_USEDEP}]
+    dev-python/scipy[${PYTHON_USEDEP}]
+    dev-python/pandas[${PYTHON_USEDEP}]
+    dev-python/configobj[${PYTHON_USEDEP}]
+    dev-python/matplotlib[${PYTHON_USEDEP}]
+    dev-python/tqdm[${PYTHON_USEDEP}]
+    dev-python/pytest[${PYTHON_USEDEP}]
+    dev-python/pyyaml[${PYTHON_USEDEP}]
+    dev-python/click[${PYTHON_USEDEP}]
+    dev-python/pathos[${PYTHON_USEDEP}]
+    sci-libs/scikit-learn[${PYTHON_USEDEP}]
+    sci-physics/pyslha[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
-BDEPEND="
-	virtual/fortran
-"
 
-src_prepare() {
-	default
-	eautoreconf
-}
-
-src_configure() {
-	default
-}
-
-src_install() {
-	default
-	find "${ED}" -name '*.la' -delete || die
-}
