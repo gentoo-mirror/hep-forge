@@ -33,7 +33,7 @@ default:
         CATEGORY: ['sci-libs']
         <<: *images
       - PKG: [oneloop]
-        VERSION: [2020.07.31]
+        VERSION: [2020.07.31,'3.6']
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [qcdloop]
