@@ -151,6 +151,7 @@ default:
     - echo 'dev-python/toposort ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'sci-physics/root ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo '*/*::hep-forge ~amd64' > /etc/portage/package.accept_keywords/hepforge
+    - echo '>=media-libs/libafterimage-1.20-r6 png gif tiff jpeg' > /etc/portage/package.use/root
     - echo "=$CATEGORY/$PKG-$VERSION*::hep-forge **" >> /etc/portage/package.accept_keywords/hepforge
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1" || $PROBABILITY
