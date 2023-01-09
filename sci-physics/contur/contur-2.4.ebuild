@@ -41,6 +41,8 @@ RDEPEND="
     dev-python/pathos[${PYTHON_USEDEP}]
     sci-libs/scikit-learn[${PYTHON_USEDEP}]
     sci-physics/pyslha[${PYTHON_USEDEP}]
+    sci-physics/rivet[${PYTHON_USEDEP}]
+    sci-physics/yoda[${PYTHON_USEDEP}]
 "
 DEPEND="${RDEPEND}"
 
