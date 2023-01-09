@@ -10,7 +10,6 @@ HOMEPAGE="https://ninja.hepforge.org/"
 SRC_URI="http://www.hepforge.org/archive/ninja/${P}.tar.gz"
 
 LICENSE="GPL-3+"
-SLOT="3"
 KEYWORDS="~amd64"
 
 RDEPEND="

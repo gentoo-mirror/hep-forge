@@ -56,7 +56,51 @@ default:
         VERSION: [9999, 3.5.0]
         CATEGORY: ['sci-physics']
         <<: *images
-        
+
+.matrix2: &matrix2
+  parallel:
+    matrix:
+      - PKG: [cuba]
+        VERSION: ['4.2.2','4.2','3.3']
+        CATEGORY: ['sci-libs']
+        <<: *images
+      - PKG: [easybuild]
+        VERSION: [4.6.2]
+        CATEGORY: ['sys-cluster']
+        <<: *images
+      - PKG: [lmod]
+        VERSION: [8.6.14-r1]
+        CATEGORY: ['sys-cluster']
+        <<: *images
+      - PKG: [modules]
+        VERSION: [4.6.0-r1]
+        CATEGORY: ['sys-cluster']
+        <<: *images
+      - PKG: [poetry-dynamic-versioning]
+        VERSION: [9999,0.21.1]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [smpl]
+        VERSION: [9999,1.0.2]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [deep-translator]
+        VERSION: [9999,1.9.1]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [metamorph]
+        VERSION: [9999,0.0.13]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [xsdata]
+        VERSION: ['22.11']
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [archspec]
+        VERSION: ['0.1.4']
+        CATEGORY: ['dev-python']
+        <<: *images
+
 .matrix3: &matrix3
   parallel:
     matrix:
@@ -105,48 +149,16 @@ default:
         CATEGORY: ['sci-physics']
         <<: *images
 
-.matrix2: &matrix2
+.matrix4: &matrix4
   parallel:
     matrix:
-      - PKG: [cuba]
-        VERSION: ['4.2.2','4.2','3.3']
-        CATEGORY: ['sci-libs']
-        <<: *images
-      - PKG: [easybuild]
-        VERSION: [4.6.2]
-        CATEGORY: ['sys-cluster']
-        <<: *images
-      - PKG: [lmod]
-        VERSION: [8.6.14-r1]
-        CATEGORY: ['sys-cluster']
-        <<: *images
-      - PKG: [modules]
-        VERSION: [4.6.0-r1]
-        CATEGORY: ['sys-cluster']
-        <<: *images
-      - PKG: [poetry-dynamic-versioning]
-        VERSION: [9999,0.21.1]
+      - PKG: [tex2pix]
+        VERSION: [0.3.1]
         CATEGORY: ['dev-python']
         <<: *images
-      - PKG: [smpl]
-        VERSION: [9999,1.0.2]
-        CATEGORY: ['dev-python']
-        <<: *images
-      - PKG: [deep-translator]
-        VERSION: [9999,1.9.1]
-        CATEGORY: ['dev-python']
-        <<: *images
-      - PKG: [metamorph]
-        VERSION: [9999,0.0.13]
-        CATEGORY: ['dev-python']
-        <<: *images
-      - PKG: [xsdata]
-        VERSION: ['22.11']
-        CATEGORY: ['dev-python']
-        <<: *images
-      - PKG: [archspec]
-        VERSION: ['0.1.4']
-        CATEGORY: ['dev-python']
+      - PKG: [pyslha]
+        VERSION: [3.2.6]
+        CATEGORY: ['sci-physics']
         <<: *images
 
 
@@ -326,3 +338,25 @@ test3:
 qa3:
   extends: .qa
   <<: *matrix3
+
+
+
+check4:
+  extends: .check
+  <<: *matrix4
+
+warn4:
+  extends: .warn
+  <<: *matrix4
+
+build4:
+  extends: .build
+  <<: *matrix4
+
+test4:
+  extends: .test
+  <<: *matrix4
+
+qa4:
+  extends: .qa
+  <<: *matrix4
