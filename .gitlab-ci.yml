@@ -96,6 +96,10 @@ default:
         VERSION: [3.3.2, 2.9.9]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [ninja]
+        VERSION: [1.1.0]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .matrix2: &matrix2
   parallel:
