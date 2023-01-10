@@ -12,7 +12,7 @@ HOMEPAGE="
 	https://helac-phegas.web.cern.ch/OneLOop.html
 	https://bitbucket.org/hameren/oneloop
 "
-SRC_URI="http://helac-phegas.web.cern.ch/helac-phegas/tar-files/OneLOop-${PV}.tgz
+SRC_URI="http://helac-phegas.web.cern.ch/helac-phegas/tar-files/OneLOop-${PV}.tgz"
 S="${WORKDIR}"
 
 LICENSE="GPL-3+"
