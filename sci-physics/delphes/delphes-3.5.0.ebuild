@@ -19,7 +19,7 @@ if [[ ${PV} == 9999 ]]; then
 	EGIT_REPO_URI="https://github.com/delphes/delphes"
 else
 	SRC_URI="http://cp3.irmp.ucl.ac.be/downloads/${MY_P}.tar.gz"
-    S="${WORKDIR}/${MY_P}"
+	S="${WORKDIR}/${MY_P}"
 	# Alternatively https://github.com/delphes/delphes/archive/refs/tags/3.5.0.tar.gz
 	KEYWORDS="~amd64"
 fi
