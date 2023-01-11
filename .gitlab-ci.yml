@@ -28,10 +28,6 @@ default:
         VERSION: [3.1.1]
         CATEGORY: ['sci-physics']
         <<: *images
-      - PKG: [handyg]
-        VERSION: [0.1.5]
-        CATEGORY: ['sci-libs']
-        <<: *images
       - PKG: [oneloop]
         VERSION: [2020.07.31,'3.6']
         CATEGORY: ['sci-physics']
@@ -56,32 +52,13 @@ default:
         VERSION: [9999, 3.5.0]
         CATEGORY: ['sci-physics']
         <<: *images
-
-.matrix2: &matrix2
-  parallel:
-    matrix:
       - PKG: [pyslha]
         VERSION: [3.2.6]
         CATEGORY: ['sci-physics']
         <<: *images
-      - PKG: [cuba]
-        VERSION: ['4.2.2','4.2','3.3']
-        CATEGORY: ['sci-libs']
-        <<: *images
-      - PKG: [easybuild]
-        VERSION: [4.6.2]
-        CATEGORY: ['sys-cluster']
-        <<: *images
-      - PKG: [lmod]
-        VERSION: [8.6.14-r1]
-        CATEGORY: ['sys-cluster']
-        <<: *images
-      - PKG: [modules]
-        VERSION: [4.6.0-r1]
-        CATEGORY: ['sys-cluster']
-        <<: *images
 
-.matrix3: &matrix3
+
+.matrix2: &matrix2
   parallel:
     matrix:
       - PKG: [pythia]
@@ -127,6 +104,31 @@ default:
       - PKG: [samurai]
         VERSION: [2.1.1]
         CATEGORY: ['sci-physics']
+        <<: *images
+
+
+.matrix3: &matrix3
+  parallel:
+    matrix:
+      - PKG: [handyg]
+        VERSION: [0.1.5]
+        CATEGORY: ['sci-libs']
+        <<: *images
+      - PKG: [cuba]
+        VERSION: ['4.2.2','4.2','3.3']
+        CATEGORY: ['sci-libs']
+        <<: *images
+      - PKG: [easybuild]
+        VERSION: [4.6.2]
+        CATEGORY: ['sys-cluster']
+        <<: *images
+      - PKG: [lmod]
+        VERSION: [8.6.14-r1]
+        CATEGORY: ['sys-cluster']
+        <<: *images
+      - PKG: [modules]
+        VERSION: [4.6.0-r1]
+        CATEGORY: ['sys-cluster']
         <<: *images
 
 .matrix4: &matrix4
