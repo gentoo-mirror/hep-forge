@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+	The pyina package provides several basic tools to make MPI-based parallel computing more accessable to the end user. The goal of pyina is to allow the user to extend their own code to MPI-based parallel computing with minimal refactoring.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pyina</remote-id>
+		<remote-id type="github">uqfoundation/pyina</remote-id>
+	</upstream>
+</pkgmetadata>
