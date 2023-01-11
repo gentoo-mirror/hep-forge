@@ -9,6 +9,7 @@ DESCRIPTION="Integrand Reduction via Laurent Expansion method for the computatio
 HOMEPAGE="https://ninja.hepforge.org/"
 SRC_URI="http://www.hepforge.org/archive/ninja/${P}.tar.gz"
 
+SLOT="0"
 LICENSE="GPL-3+"
 KEYWORDS="~amd64"
 
