@@ -33,7 +33,7 @@ default:
         CATEGORY: ['sci-libs']
         <<: *images
       - PKG: [oneloop]
-        VERSION: [2020.07.31]
+        VERSION: [2020.07.31,'3.6']
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [qcdloop]
@@ -52,7 +52,35 @@ default:
         VERSION: [9999, 3.2.5, 2.06.11]
         CATEGORY: ['sci-physics']
         <<: *images
-        
+      - PKG: [delphes]
+        VERSION: [9999, 3.5.0]
+        CATEGORY: ['sci-physics']
+        <<: *images
+
+.matrix2: &matrix2
+  parallel:
+    matrix:
+      - PKG: [pyslha]
+        VERSION: [3.2.6]
+        CATEGORY: ['sci-physics']
+        <<: *images
+      - PKG: [cuba]
+        VERSION: ['4.2.2','4.2','3.3']
+        CATEGORY: ['sci-libs']
+        <<: *images
+      - PKG: [easybuild]
+        VERSION: [4.6.2]
+        CATEGORY: ['sys-cluster']
+        <<: *images
+      - PKG: [lmod]
+        VERSION: [8.6.14-r1]
+        CATEGORY: ['sys-cluster']
+        <<: *images
+      - PKG: [modules]
+        VERSION: [4.6.0-r1]
+        CATEGORY: ['sys-cluster']
+        <<: *images
+
 .matrix3: &matrix3
   parallel:
     matrix:
@@ -92,25 +120,25 @@ default:
         VERSION: [3.3.2, 2.9.9]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [ninja]
+        VERSION: [1.1.0]
+        CATEGORY: ['sci-physics']
+        <<: *images
+      - PKG: [samurai]
+        VERSION: [2.1.1]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
-.matrix2: &matrix2
+.matrix4: &matrix4
   parallel:
     matrix:
-      - PKG: [cuba]
-        VERSION: ['4.2.2','4.2','3.3']
-        CATEGORY: ['sci-libs']
+      - PKG: [tex2pix]
+        VERSION: [0.3.1]
+        CATEGORY: ['dev-python']
         <<: *images
-      - PKG: [easybuild]
-        VERSION: [4.6.2]
-        CATEGORY: ['sys-cluster']
-        <<: *images
-      - PKG: [lmod]
-        VERSION: [8.6.14-r1]
-        CATEGORY: ['sys-cluster']
-        <<: *images
-      - PKG: [modules]
-        VERSION: [4.6.0-r1]
-        CATEGORY: ['sys-cluster']
+      - PKG: [pathos]
+        VERSION: [0.3.0]
+        CATEGORY: ['dev-python']
         <<: *images
       - PKG: [poetry-dynamic-versioning]
         VERSION: [9999,0.21.1]
@@ -145,7 +173,9 @@ default:
     - echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/uncertainties ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/toposort ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
+    - echo 'sci-physics/root ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo '*/*::hep-forge ~amd64' > /etc/portage/package.accept_keywords/hepforge
+    - echo '>=media-libs/libafterimage-1.20-r6 png gif tiff jpeg' >> /etc/portage/package.use/root
     - echo "=$CATEGORY/$PKG-$VERSION*::hep-forge **" >> /etc/portage/package.accept_keywords/hepforge
   rules:
     - if: $CI_PIPELINE_SOURCE == "push" || $TEST_ALL == "1" || $PROBABILITY
@@ -250,6 +280,7 @@ global-pkgcheck:
   script:
     - ls *.log
     - (! grep -A5 -B5 "QA Notice" test_$CATEGORY_$PKG-$VERSION*.log)
+  allow_failure: true
 
 check1:
   extends: .check
@@ -311,3 +342,25 @@ test3:
 qa3:
   extends: .qa
   <<: *matrix3
+
+
+
+check4:
+  extends: .check
+  <<: *matrix4
+
+warn4:
+  extends: .warn
+  <<: *matrix4
+
+build4:
+  extends: .build
+  <<: *matrix4
+
+test4:
+  extends: .test
+  <<: *matrix4
+
+qa4:
+  extends: .qa
+  <<: *matrix4

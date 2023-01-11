@@ -11,7 +11,10 @@ MY_PN="Rivet"
 MY_PF=${MY_PN}-${PV}
 
 DESCRIPTION="Rivet toolkit (Robust Independent Validation of Experiment and Theory)"
-HOMEPAGE="https://gitlab.com/hepcedar/rivet"
+HOMEPAGE="
+	https://rivet.hepforge.org/
+	https://gitlab.com/hepcedar/rivet
+"
 
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3

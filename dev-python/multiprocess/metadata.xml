@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+	multiprocess is a fork of multiprocessing. multiprocess extends multiprocessing to provide enhanced serialization, using dill. multiprocess leverages multiprocessing to support the spawning of processes using the API of the python standard library's threading module. multiprocessing has been distributed as part of the standard library since python 2.6.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">multiprocess</remote-id>
+		<remote-id type="github">uqfoundation/multiprocess</remote-id>
+	</upstream>
+</pkgmetadata>

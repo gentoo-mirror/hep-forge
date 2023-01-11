@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+	klepto extends python's lru_cache to utilize different keymaps and alternate caching algorithms, such as lfu_cache and mru_cache. While caching is meant for fast access to saved results, klepto also has archiving capabilities, for longer-term storage. klepto uses a simple dictionary-sytle interface for all caches and archives, and all caches can be applied to any python function as a decorator. Keymaps are algorithms for converting a function's input signature to a unique dictionary, where the function's results are the dictionary value. Thus for y = f(x), y will be stored in cache[x] (e.g. {x:y}).
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">klepto</remote-id>
+		<remote-id type="github">uqfoundation/klepto</remote-id>
+	</upstream>
+</pkgmetadata>

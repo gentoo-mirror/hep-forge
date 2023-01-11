@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+	pathos is a framework for heterogeneous computing. It provides a consistent high-level interface for configuring and launching parallel computations across heterogeneous resources. pathos provides configurable launchers for parallel and distributed computing, where each launcher contains the syntactic logic to configure and launch jobs in an execution environment. Examples of launchers that plug into pathos are: a queue-less MPI-based launcher (in pyina), a ssh-based launcher (in pathos), and a multi-process launcher (in multiprocess).
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pathos</remote-id>
+		<remote-id type="github">uqfoundation/pathos</remote-id>
+	</upstream>
+</pkgmetadata>
