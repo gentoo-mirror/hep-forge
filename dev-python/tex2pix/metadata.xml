@@ -12,4 +12,7 @@
 	<longdescription lang="en">
 	Lightweight renderer of LaTeX to a variety of graphics formats
 	</longdescription>
+	<upstream>
+		<remote-id type="pypi">archspec</remote-id>
+	</upstream>
 </pkgmetadata>
