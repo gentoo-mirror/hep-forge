@@ -10,10 +10,10 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-	pox provides a collection of utilities for navigating and manipulating filesystems. This module is designed to facilitate some of the low level operating system interactions that are useful when exploring a filesystem on a remote host, where queries such as “what is the root of the filesystem?”, “what is the user’s name?”, and “what login shell is preferred?” become essential in allowing a remote user to function as if they were logged in locally. While pox is in the same vein of both the os and shutil builtin modules, the majority of its functionality is unique and compliments these two modules.
+	ppft is a friendly fork of Parallel Python (pp). ppft extends Parallel Python to provide packaging and distribution with pip and setuptools, support for python 3, and enhanced serialization using dill.source. ppft uses Parallel Python to provide mechanisms for the parallel execution of python code on SMP (systems with multiple processors or cores) and clusters (computers connected via network).
 	</longdescription>
 	<upstream>
-		<remote-id type="pypi">pox</remote-id>
-		<remote-id type="github">uqfoundation/pox</remote-id>
+		<remote-id type="pypi">ppft</remote-id>
+		<remote-id type="github">uqfoundation/ppft</remote-id>
 	</upstream>
 </pkgmetadata>
