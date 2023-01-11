@@ -8,7 +8,7 @@ DESCRIPTION="highly-constrained non-convex optimization and uncertainty quantifi
 HOMEPAGE="https://github.com/uqfoundation/mystic"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
-LICENSE="GPL"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
