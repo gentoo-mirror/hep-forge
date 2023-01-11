@@ -14,5 +14,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="pypi">pathos</remote-id>
+		<remote-id type="github">uqfoundation/pathos</remote-id>
 	</upstream>
 </pkgmetadata>
