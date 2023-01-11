@@ -14,9 +14,9 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/dill-0.3.6[${PYTHON_USEDEP}]
-    >=dev-python/numpy-1.0[${PYTHON_USEDEP}]
-    >=dev-python/sympy-0.6.7[${PYTHON_USEDEP}]
-    >=dev-python/mpmath-0.19[${PYTHON_USEDEP}]
-    >=dev-python/klepto-0.2.4[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.0[${PYTHON_USEDEP}]
+	>=dev-python/sympy-0.6.7[${PYTHON_USEDEP}]
+	>=dev-python/mpmath-0.19[${PYTHON_USEDEP}]
+	>=dev-python/klepto-0.2.3[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"

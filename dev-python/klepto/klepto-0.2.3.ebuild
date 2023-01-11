@@ -14,6 +14,6 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/dill-0.3.6[${PYTHON_USEDEP}]
-    >=dev-python/pox-0.3.2[${PYTHON_USEDEP}]
+	>=dev-python/pox-0.3.2[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"

@@ -9,12 +9,13 @@ DESCRIPTION="Scattering AMplitudes from Unitarity-based Reduction Algorithm at t
 HOMEPAGE="https://samurai.hepforge.org/"
 SRC_URI="http://www.hepforge.org/archive/samurai/${P}.tar.gz"
 
+SLOT="0"
 LICENSE="GPL-3+"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-physics/qcdloop
-	>=sci-physics/oneloop
+	sci-physics/qcdloop
+	sci-physics/oneloop
 "
 DEPEND="${RDEPEND}"
 BDEPEND="

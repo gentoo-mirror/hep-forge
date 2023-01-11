@@ -14,8 +14,8 @@ LICENSE="GPL-3+"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=sci-physics/oneloop
-	>=sci-physics/looptools
+	sci-physics/oneloop
+	sci-physics/looptools
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
