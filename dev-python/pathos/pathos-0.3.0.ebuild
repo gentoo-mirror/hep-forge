@@ -13,10 +13,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/ppft-1.7.6.6[${PYTHON_USEDEP}]
 	>=dev-python/dill-0.3.6[${PYTHON_USEDEP}]
-	>=dev-python/pox-0.3.2[${PYTHON_USEDEP}]
 	>=dev-python/multiprocess-0.70.14[${PYTHON_USEDEP}]
+	>=dev-python/ppft-1.7.6.6[${PYTHON_USEDEP}]
+	>=dev-python/pox-0.3.2[${PYTHON_USEDEP}]
 	>=dev-python/pyina-0.2.7[${PYTHON_USEDEP}]
 	>=dev-python/mystic-0.4.0[${PYTHON_USEDEP}]
 "

@@ -12,4 +12,7 @@
 	<longdescription lang="en">
 	parallel graph management and execution in heterogeneous computing
 	</longdescription>
+	<upstream>
+		<remote-id type="pypi">pathos</remote-id>
+	</upstream>
 </pkgmetadata>
