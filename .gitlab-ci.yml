@@ -105,6 +105,14 @@ default:
         VERSION: [2.1.1]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [pyhepmc]
+        VERSION: [2.1.1]
+        CATEGORY: ['sci-physics']
+        <<: *images
+      - PKG: [hepi]
+        VERSION: [2.1.1]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 
 .matrix3: &matrix3
@@ -163,6 +171,10 @@ default:
         CATEGORY: ['dev-python']
         <<: *images
       - PKG: [archspec]
+        VERSION: ['0.1.4']
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [jacobi]
         VERSION: ['0.1.4']
         CATEGORY: ['dev-python']
         <<: *images
