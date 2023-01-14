@@ -9,7 +9,7 @@
 	Simplified plotting and fitting in python.
 	</longdescription>
 	<upstream>
-		<remote-id type="github">APN-Pucky/smpl</remote-id>
-		<remote-id type="pypi">smpl</remote-id>
+		<remote-id type="github">APN-Pucky/HEPi</remote-id>
+		<remote-id type="pypi">hepi</remote-id>
 	</upstream>
 </pkgmetadata>

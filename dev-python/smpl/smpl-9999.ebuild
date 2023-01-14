@@ -26,6 +26,7 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="
+	dev-python/numpy
 	dev-python/matplotlib
 	>=dev-python/scipy-1.7.0
     dev-python/sympy

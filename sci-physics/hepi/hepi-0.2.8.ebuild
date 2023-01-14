@@ -5,11 +5,11 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
 PYTHON_COMPAT=( python3_{8..10} )
-inherit distutils-r1
+inherit distutils-r1 optfeature
 
 REPO=APN-Pucky
 
-DESCRIPTION="Simplified plotting and fitting in python."
+DESCRIPTION="Python interface for gluing together several HEP programs"
 HOMEPAGE="
 	https://github.com/${REPO}/${PN}
 	https://pypi.org/project/${PN}/
@@ -26,13 +26,16 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="
+    dev-python/uncertainties
 	dev-python/numpy
 	dev-python/matplotlib
 	>=dev-python/scipy-1.7.0
     dev-python/sympy
-    dev-python/tqdm
+    dev-python/pqdm
+	>=dev-python/smpl-0.0.152
     >=dev-python/pandas-1.0.0
-    dev-python/uncertainties
+	sci-physics/particle
+	sci-physics/pyslha
 "
 BDEPEND="${RDEPEND}"
 src_prepare() {
@@ -45,3 +48,11 @@ src_prepare() {
 # TODO needs test deps
 #distutils_enable_tests pytest
 
+pkg_postinst() {
+        optfeature "resummino support" sci-physics/resummino
+        optfeature "madgraph support" sci-physics/madgraph
+        optfeature "spheno support" sci-physics/spheno
+		# TODO
+        #optfeature "nllfast support" sci-physics/nllfast
+        #optfeature "prospino2 support" sci-physics/prospino2
+}
