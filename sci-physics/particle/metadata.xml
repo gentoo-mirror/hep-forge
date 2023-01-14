@@ -13,7 +13,7 @@
 	Particle provides a pythonic interface to the Particle Data Group (PDG) particle data tables and particle identification codes, with extended particle information and extra goodies.
 	</longdescription>
 	<upstream>
-		<remote-id type="pypi">mystic</remote-id>
-		<remote-id type="github">uqfoundation/mystic</remote-id>
+		<remote-id type="pypi">particle</remote-id>
+		<remote-id type="github">scikit-hep/particle</remote-id>
 	</upstream>
 </pkgmetadata>
