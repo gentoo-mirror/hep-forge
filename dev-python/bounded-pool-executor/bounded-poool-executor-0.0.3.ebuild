@@ -12,9 +12,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-	dev-python/tqdm[${PYTHON_USEDEP}]
-	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	dev-python/bounded-pool-executor[${PYTHON_USEDEP}]
-"
+RDEPEND=""
 BDEPEND="${RDEPEND}"
