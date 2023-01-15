@@ -111,11 +111,11 @@ default:
   parallel:
     matrix:
       - PKG: [pyhepmc]
-        VERSION: [2.1.1]
+        VERSION: [2.10.0]
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [hepi]
-        VERSION: [2.1.1]
+        VERSION: [0.2.8]
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [handyg]
@@ -175,7 +175,7 @@ default:
         CATEGORY: ['dev-python']
         <<: *images
       - PKG: [jacobi]
-        VERSION: ['0.1.4']
+        VERSION: ['0.8.1']
         CATEGORY: ['dev-python']
         <<: *images
 
