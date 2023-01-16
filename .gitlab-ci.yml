@@ -90,7 +90,7 @@ default:
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [lhapdf]
-        VERSION: [9999, 6.5.3, 6.5.2, 6.3.0, 6.2.3-r1]
+        VERSION: [9999, 6.5.3, 6.5.2, 6.4.0, 6.3.0, 6.2.3-r1]
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [madgraph]
