@@ -22,7 +22,8 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 RDEPEND="
 	dev-libs/boost:=
-	python? ( ${PYTHON_DEPS} )"
+	python? ( ${PYTHON_DEPS} )
+"
 DEPEND="${RDEPEND}"
 BDEPEND="
 	doc? (
