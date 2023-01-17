@@ -27,10 +27,11 @@ S="${WORKDIR}/${MY_PF}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples"
+IUSE="examples python"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 BDEPEND="
+	dev-libs/boost:=
 	python? ( >=dev-python/cython-0.19 )
 "
 RDEPEND="${PYTHON_DEPS}"
