@@ -27,12 +27,12 @@ S="${WORKDIR}/${MY_PF}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="examples python"
+IUSE="examples"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 BDEPEND="
 	dev-libs/boost:=
-	python? ( >=dev-python/cython-0.19 )
+	>=dev-python/cython-0.19
 "
 RDEPEND="${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
@@ -46,21 +46,17 @@ src_prepare() {
 src_configure() {
 	econf \
 		--disable-static \
-		$(use_enable python)
+		--enable-python
 
-	if use python; then
-		cd "${S}"/wrappers/python || die
-		distutils-r1_src_prepare
-	fi
+	cd "${S}"/wrappers/python || die
+	distutils-r1_src_prepare
 }
 
 src_compile() {
 	emake all $(use doc && echo doxy)
 
-	if use python; then
-		cd "${S}"/wrappers/python || die
-		distutils-r1_src_compile
-	fi
+	cd "${S}"/wrappers/python || die
+	distutils-r1_src_compile
 }
 
 src_test() {
@@ -72,11 +68,9 @@ src_install() {
 	use doc && dodoc -r doc/doxygen/.
 	use examples && dodoc examples/*.cc
 
-	if use python; then
-		cd "${S}"/wrappers/python || die
-		distutils-r1_src_install
-		python_optimize
-	fi
+	cd "${S}"/wrappers/python || die
+	distutils-r1_src_install
+	python_optimize
 
 	find "${ED}" -name '*.la' -delete || die
 }
