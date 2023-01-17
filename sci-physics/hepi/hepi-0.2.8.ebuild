@@ -26,16 +26,17 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="
+    sci-physics/lhapdf[python(+)]
     dev-python/uncertainties
-	dev-python/numpy
-	dev-python/matplotlib
-	>=dev-python/scipy-1.7.0
+    dev-python/numpy
+    dev-python/matplotlib
+    >=dev-python/scipy-1.7.0
     dev-python/sympy
     dev-python/pqdm
-	>=dev-python/smpl-0.0.152
+    >=dev-python/smpl-0.0.152
     >=dev-python/pandas-1.0.0
-	sci-physics/particle
-	sci-physics/pyslha
+    sci-physics/particle
+    sci-physics/pyslha
 "
 BDEPEND="${RDEPEND}"
 src_prepare() {
