@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{9..11} )
 DOCS_BUILDER="doxygen"
 DOCS_DEPEND="
 	dev-texlive/texlive-bibtexextra
@@ -31,8 +31,9 @@ IUSE="examples"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 BDEPEND="
-	dev-libs/boost:=
-	>=dev-python/cython-0.19
+	$(python_gen_cond_dep '
+	     >=dev-python/cython-0.19[${PYTHON_USEDEP}]
+	')
 "
 RDEPEND="${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
