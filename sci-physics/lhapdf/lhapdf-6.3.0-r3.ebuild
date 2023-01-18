@@ -71,7 +71,6 @@ src_install() {
 
 	cd "${S}"/wrappers/python || die
 	distutils-r1_src_install
-	python_optimize
 
 	find "${ED}" -name '*.la' -delete || die
 }
