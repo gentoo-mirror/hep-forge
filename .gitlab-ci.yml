@@ -122,6 +122,10 @@ default:
         VERSION: [0.1.5]
         CATEGORY: ['sci-libs']
         <<: *images
+      - PKG: [einspline]
+        VERSION: [0.9.2]
+        CATEGORY: ['sci-libs']
+        <<: *images
       - PKG: [cuba]
         VERSION: ['4.2.2','4.2','3.3']
         CATEGORY: ['sci-libs']
