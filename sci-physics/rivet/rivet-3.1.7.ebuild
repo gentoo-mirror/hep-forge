@@ -67,8 +67,8 @@ src_configure() {
 	econf \
 		$(usex hepmc2 "--with-hepmc=${SYSROOT}/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=${SYSROOT}/usr" "") \
-		--with-yoda=$PREFIX_YODA \
-		--with-fastjet=$PREFIX_FJ
+		--with-yoda="$PREFIX_YODA" \
+		--with-fastjet="$PREFIX_FJ"
 }
 
 src_install() {
