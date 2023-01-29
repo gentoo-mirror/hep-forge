@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>APN-Pucky@users.noreply.github.com</email>
-		<name>APN-Pucky</name>
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
 Resummino computes predictions for selected Beyond the Standard Model (BSM) processes at hadron colliders. In the framework of the Minimal Supersymmetric Standard Model (MSSM) predictions at approximate NNLO+NNLL are available for slepton-pair and electroweakino-pair production (these processes are also available with a collinear improved version of threshold resummation for NLO+NLL); predictions at LO are available for gaugino-squark production.
