@@ -1,8 +1,8 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_10 )
 
-inherit python-single-r1 
+inherit python-single-r1
 
 MY_PN="Herwig"
 MY_PF=${MY_PN}-${PV}
@@ -22,14 +22,17 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-    dev-libs/boost
+	dev-libs/boost
 	sci-libs/gsl
-	>=sci-physics/rivet[python(-),${PYTHON_SINGLE_USEDEP}]
-	>=sci-physics/fastjet[plugins]
-    sci-physics/lhapdf
-    sci-physics/thepeg
+
+	sci-physics/fastjet[plugins]
+	sci-physics/lhapdf
 	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
+	sci-physics/thepeg[lhapdf,fastjet,hepmc]
+
+	sci-physics/rivet[python(+),${PYTHON_SINGLE_USEDEP}]
+
 	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
@@ -41,11 +44,9 @@ BDEPEND="
 # https://herwig.hepforge.org/tutorials/installation/manual.html
 src_configure() {
 	PREFIX_FJ=$(fastjet-config --prefix) || die
-    econf \
-        --with-thepeg="${SYSROOT}/usr" \
-        --with-fastjet="$PREFIX_FJ" \
-        --with-gsl="${SYSROOT}/usr" \
-        --with-boost="${SYSROOT}/usr"
+	econf \
+		--with-fastjet="$PREFIX_FJ" \
+		--with-thepeg="${SYSROOT}/usr"
 }
 
 #--prefix=$INSTALL_LOC --with-thepeg=$INSTALL_LOC \
