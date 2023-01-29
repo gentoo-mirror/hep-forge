@@ -4,7 +4,7 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{7..10} )
 inherit python-r1
@@ -43,7 +43,8 @@ src_unpack() {
 }
 
 src_install() {
-	dosym ${MY_PF}/bin/mg5_aMC /usr/bin/mg5_aMC2
+	# symlink entrypoint
+	dosym ../../opt/${MY_PF}/bin/mg5_aMC /usr/bin/mg5_aMC2
 	dodir /opt/${MY_PF}
 	insinto /opt/
 	doins -r "${S}"

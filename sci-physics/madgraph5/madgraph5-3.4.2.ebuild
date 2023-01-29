@@ -42,6 +42,7 @@ src_unpack() {
 }
 
 src_install() {
+	# symlink entrypoint
 	dosym ../../opt/${MY_PF}/bin/mg5_aMC /usr/bin/mg5_aMC3
 	dodir /opt/${MY_PF}
 	insinto /opt/
