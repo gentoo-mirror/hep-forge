@@ -109,6 +109,10 @@ default:
         VERSION: [1.2.7]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [contur]
+        VERSION: [2.4.0]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 
 .matrix3: &matrix3
