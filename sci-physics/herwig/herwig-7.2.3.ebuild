@@ -15,7 +15,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE=""
 SLOT="7"
 KEYWORDS="~amd64"
-IUSE="evtgen pythia vbfnlo openloops njet gosam madgraph"
+IUSE="pythia vbfnlo openloops njet gosam madgraph"
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
 "
@@ -46,16 +46,15 @@ src_configure() {
 		--with-evtgen="${EROOT}"/usr \
 		--with-fastjet="${EROOT}"/usr \
 		--with-thepeg="${EROOT}"/usr \
-		$(use_with evtgen evtgen "${EROOT}"/usr) \
 		$(use_with pythia pythia "${EROOT}"/usr)
 
 }
 
 src_install() {
 	# Herwig needs
-	lhapdf update || die
-	lhapdf install CT14lo || die
-	lhapdf install CT14nlo || die
+	#lhapdf update || die
+	#lhapdf install CT14lo || die
+	#lhapdf install CT14nlo || die
 	default
 }
 
