@@ -61,7 +61,7 @@ src_install() {
 
 	if use doc; then
 		dodoc documentation/doxy_documentation/html/*
-		dodoc documentation/latex_documentation/Tauola_interface_design.pdf
+		dodoc documentation/latex_documentation/*.pdf
 	fi
 
 	if use examples; then
