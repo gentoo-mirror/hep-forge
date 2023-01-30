@@ -21,19 +21,18 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig"
+IUSE="+hepmc +lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig autoupdate"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
 	${PYTHON_DEPS}
-	sys-libs/zlib
 	sys-devel/gcc:*[fortran]
 	acct-user/madgraph
 	acct-group/madgraph
 	lhapdf? ( sci-physics/lhapdf[python(+)] )
 	fastjet? ( sci-physics/lhapdf[python(+)] )
 	pythia? ( sci-physics/pythia )
-	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3)
+	hepmc? ( sci-physics/hepmc )
 	"
 PATCHES=( "${FILESDIR}"/cuttools.patch )
 DEPEND="${RDEPEND}"
@@ -49,9 +48,9 @@ src_unpack() {
 src_configure() {
 	use lhapdf && echo "lhapdf_py3 = lhapdf-config" >> input/mg5_configuration.txt
 	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
-	use pythia && echo "pythia8_path = ${EROOT}" >> input/mg5_configuration.txt
+	use pythia && echo "pythia8_path = ${EROOT}/usr" >> input/mg5_configuration.txt
 	#use hepmc && echo ""
-	use noupdate && echo "auto_update = 0" >> input/mg5_configuration.txt
+	! use autoupdate && echo "autoupdate = 0" >> input/mg5_configuration.txt
 }
 
 src_install() {

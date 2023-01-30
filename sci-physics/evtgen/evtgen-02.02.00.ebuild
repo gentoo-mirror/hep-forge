@@ -11,15 +11,16 @@ DESCRIPTION=""
 SRC_URI="https://evtgen.hepforge.org/downloads?f=${MY_P}.tar.gz"
 HOMEPAGE="https://evtgen.hepforge.org/"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_PN}/R$(ver_rs 1-2 '-')"
 LICENSE=""
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="pythia photos tauola"
 
 RDEPEND="
+	sci-physics/hepmc:2=
 	sci-physics/hepmc:3=
-	pythia? ( >=sci-physics/pythia-8.201 )
+	pythia? ( >=sci-physics/pythia-8.2.01 )
 	photos? ( >=sci-physics/photos-3.64 )
 	tauola? ( >=sci-physics/tauola-1.1.8 )
 "
@@ -30,7 +31,7 @@ BDEPEND="
 
 src_configure() {
 	local mycmakeargs=(
-		-DEVTGEN_HEPMC3=
+		-DEVTGEN_HEPMC3=ON
 		-DEVTGEN_PYTHIA=$(usex pythia ON OFF)
 		-DEVTGEN_PHOTOS=$(usex photos ON OFF)
 		-DEVTGEN_TAUOLA=$(usex tauola ON OFF)
