@@ -119,7 +119,7 @@ default:
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [tauola]
-        VERSION: [1.1.8]
+        VERSION: [1.1.8-r1]
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [photos]
