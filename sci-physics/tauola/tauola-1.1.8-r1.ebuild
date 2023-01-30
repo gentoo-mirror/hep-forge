@@ -31,9 +31,9 @@ DEPEND="${RDEPEND}
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-1.1.3-tau-spinner-makefile.patch
-)
+#PATCHES=(
+#	"${FILESDIR}"/${PN}-1.1.3-tau-spinner-makefile.patch
+#)
 
 src_configure() {
 	econf \
@@ -47,7 +47,7 @@ src_configure() {
 
 src_compile() {
 	emake -j1
-	
+
 	if use doc; then
 		cd "${S}/documentation/doxy_documentation" || die
 		default
