@@ -19,6 +19,7 @@ IUSE="doc examples pythia hepmc hepmc3 tau-spinner"
 
 RDEPEND="
 	hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
+	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 	pythia? ( sci-physics/pythia:8= )
 	tau-spinner? ( sci-physics/lhapdf )
 "
@@ -46,6 +47,7 @@ src_configure() {
 
 src_compile() {
 	emake -j1
+	
 	if use doc; then
 		cd "${S}/documentation/doxy_documentation" || die
 		default
