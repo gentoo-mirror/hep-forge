@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 <maintainer type="person">
-<email>APN-Pucky@noreply.github.com</email>
-<name>APN-Pucky</name>
+<email>alexander@neuwirth-informatik.de</email>
+<name>Alexander Puck Neuwirth</name>
 </maintainer>
 <longdescription lang="en">
   The HepMC package is an object oriented event record written in C++

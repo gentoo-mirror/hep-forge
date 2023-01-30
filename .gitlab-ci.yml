@@ -118,6 +118,14 @@ default:
         VERSION: [3.4.2, 2.9.9]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [tauola]
+        VERSION: [1.1.8]
+        CATEGORY: ['sci-physics']
+        <<: *images
+      - PKG: [photos]
+        VERSION: ['3.64']
+        CATEGORY: ['sci-physics']
+        <<: *images
       - PKG: [herwig]
         VERSION: [7.2.3]
         CATEGORY: ['sci-physics']
