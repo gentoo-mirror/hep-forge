@@ -1,15 +1,12 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
-inherit autotools fortran-2 versionator
+inherit autotools fortran-2
 
-PV1=$(get_version_component_range 1 ${PV})
-PV2=$(get_version_component_range 2 ${PV})
-PV3=$(get_version_component_range 3 ${PV})
-MY_P=${PN}${PV1}${PV2}${PV3}
-MY_PINC="${PN^^}${PV1}${PV2}.INC"
+MY_P=$(ver_rs 1- '')
+MY_PINC="${PN^^}$(ver_rs 1-2 '').INC"
 
 DESCRIPTION="High Energy Physics Event Generator"
 HOMEPAGE="https://www.hep.phy.cam.ac.uk/theory/webber/Herwig/"
