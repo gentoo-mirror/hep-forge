@@ -5,8 +5,8 @@ EAPI=8
 
 inherit autotools fortran-2
 
-MY_P=$(ver_rs 1- '')
-MY_PINC="${PN^^}$(ver_rs 1-2 '').INC"
+MY_P=${PN}$(ver_rs 1- '')
+MY_PINC="${PN^^}$(ver_cut 1)$(ver_cut 2).INC"
 
 DESCRIPTION="High Energy Physics Event Generator"
 HOMEPAGE="https://www.hep.phy.cam.ac.uk/theory/webber/Herwig/"
@@ -23,7 +23,6 @@ SLOT="0"
 KEYWORDS="amd64 x86 ~amd64-linux ~x86-linux"
 IUSE="doc static-libs"
 
-RDEPEND="!sci-physics/cernlib-montecarlo[herwig]"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}"
