@@ -2,7 +2,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_10 )
 
-inherit python-single-r1
+inherit python-single-r1 autotools
 
 MY_PN="Herwig"
 MY_PF=${MY_PN}-${PV}
@@ -15,44 +15,56 @@ S=${WORKDIR}/${MY_PF}
 LICENSE=""
 SLOT="7"
 KEYWORDS="~amd64"
-IUSE="+hepmc3 hepmc2"
+IUSE="" # pythia vbfnlo openloops njet gosam madgraph
 REQUIRED_USE="
-	^^ ( hepmc3 hepmc2 )
 	${PYTHON_REQUIRED_USE}
 "
 
 RDEPEND="
-	dev-libs/boost
-	sci-libs/gsl
-
-	sci-physics/fastjet[plugins]
-	sci-physics/lhapdf
-	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
-	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
-	sci-physics/thepeg[lhapdf,fastjet,hepmc]
-
-	sci-physics/rivet[python(+),${PYTHON_SINGLE_USEDEP}]
-
+	>=dev-libs/boost-1.62
+	>=sci-libs/gsl-2.2.1
+	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
+	>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc,rivet]
+	sci-physics/evtgen[pythia]
 	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/fortran
-	>=dev-python/cython-0.29.24
 "
 
+src_prepare() {
+	default
+	eautoreconf
+}
+
+
 # https://herwig.hepforge.org/tutorials/installation/manual.html
+# Minimal installation for now
 src_configure() {
-	PREFIX_FJ=$(fastjet-config --prefix) || die
 	econf \
-		--with-fastjet="$PREFIX_FJ" \
-		--with-thepeg="${SYSROOT}/usr"
+		--with-evtgen="${EROOT}"/usr \
+		--with-fastjet="${EROOT}"/usr \
+		--with-thepeg="${EROOT}"/usr \
+		$(use_with pythia pythia "${EROOT}"/usr)
+
+}
+
+src_install() {
+	# Herwig needs
+	#lhapdf update || die
+	#lhapdf install CT14lo || die
+	#lhapdf install CT14nlo || die
+	default
 }
 
 #--prefix=$INSTALL_LOC --with-thepeg=$INSTALL_LOC \
-#            --with-fastjet=$INSTALL_LOC --with-gsl=$INSTALL_LOC \
-#            --with-vbfnlo=$INSTALL_LOC   --with-njet=$INSTALL_LOC \
-#            --with-gosam=$INSTALL_LOC  --with-openloops=/where/openloops/was/installed \
+#            --with-fastjet=$INSTALL_LOC 
+#            --with-gsl=$INSTALL_LOC \
+#            --with-vbfnlo=$INSTALL_LOC   
+#            --with-njet=$INSTALL_LOC \
+#            --with-gosam=$INSTALL_LOC  
+#            --with-openloops=/where/openloops/was/installed \
 #            --with-madgraph=/where/madgraph/was/installed  \
 #            --with-boost=$INSTALL_LOC \
 #            --with-evtgen=$INSTALL_LOC --with-pythia=$INSTALL_LOC
