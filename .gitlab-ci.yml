@@ -119,7 +119,7 @@ default:
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [herwig]
-        VERSION: [7.2.3]
+        VERSION: [7.2.3, 6.5.21-r1]
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [pyhepmc]
