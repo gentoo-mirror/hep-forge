@@ -161,7 +161,7 @@ src_install() {
 	dolib.so lib/libpythia8.so
 	use lhapdf && dolib.so lib/libpythia8lhapdf6.so
 	insinto "${PYTHIADIR}"
-	doins -r share/Pythia8/xmldoc examples/Makefile.inc
+	doins -r share/Pythia8/xmldoc share/Pythia8/pdfdata examples/Makefile.inc
 
 	newenvd - 99pythia8 <<- _EOF_
 		PYTHIA8DATA=${EPYTHIADIR}/xmldoc
