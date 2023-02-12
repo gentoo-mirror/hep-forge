@@ -125,7 +125,7 @@ src_configure() {
 
 	# fix pythia config script
 	sed -i \
-		-e 's|pythia8/examples/Makefile.inc|pythia8/Makefile.inc|' \
+		-e 's|Pythia8/examples/Makefile.inc|Pythia8/Makefile.inc|' \
 		-e 's|LINE%=|LINE%%=|' \
 		bin/pythia8-config || die
 }
