@@ -2,7 +2,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{8..11} )
 DISTUTILS_USE_PEP517=setuptools
-inherit distutils-r1
+inherit distutils-r1 optfeature
 
 DESCRIPTION="EasyBuild is a software build and installation framework."
 HOMEPAGE="
@@ -29,4 +29,6 @@ pkg_postinst() {
 	elog "Remember to set the module install path"
 	elog "ml use \$installpath/modules/all"
 	elog "where --installpath is passed to eb"
+
+	optfeature "GitHub PR integration" dev-python/keyring dev-python/GitPython
 }
