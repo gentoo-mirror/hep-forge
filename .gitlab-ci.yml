@@ -151,7 +151,7 @@ default:
         CATEGORY: ['sci-libs']
         <<: *images
       - PKG: [easybuild]
-        VERSION: [4.6.2]
+        VERSION: [4.6.2-r1]
         CATEGORY: ['sys-cluster']
         <<: *images
       - PKG: [lmod]
