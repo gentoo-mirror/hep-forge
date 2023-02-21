@@ -118,6 +118,10 @@ default:
         VERSION: [3.4.2, 2.9.9]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [recola2]
+        VERSION: [2.2.4]
+        CATEGORY: ['sci-physics']
+        <<: *images
       - PKG: [tauola]
         VERSION: [1.1.8-r1]
         CATEGORY: ['sci-physics']
@@ -150,6 +154,10 @@ default:
         VERSION: ['4.2.2','4.2','3.3']
         CATEGORY: ['sci-libs']
         <<: *images
+
+.matrix4: &matrix4
+  parallel:
+    matrix:
       - PKG: [easybuild]
         VERSION: [4.6.2-r1]
         CATEGORY: ['sys-cluster']
@@ -162,10 +170,6 @@ default:
         VERSION: [4.6.0-r1]
         CATEGORY: ['sys-cluster']
         <<: *images
-
-.matrix4: &matrix4
-  parallel:
-    matrix:
       - PKG: [tex2pix]
         VERSION: [0.3.1]
         CATEGORY: ['dev-python']
