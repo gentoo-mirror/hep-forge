@@ -7,9 +7,12 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 inherit cmake
 
+MY_P=COLLIER-${PV}
+
 DESCRIPTION="A Complex One-Loop LIbrary with Extended Regularizations"
 HOMEPAGE="https://collier.hepforge.org/index.html"
 SRC_URI="https://collier.hepforge.org/downloads/?f=${P}.tar.gz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-3"
 RESTRICT=""
@@ -22,3 +25,10 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	virtual/fortran
 "
+
+src_configure() {
+	local mycmakeargs=(
+		-DLIB_INSTALL_DIR=lib64
+	)
+	cmake_src_configure
+}
