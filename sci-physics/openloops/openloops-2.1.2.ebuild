@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_{9,10} )
 
 inherit python-single-r1 scons-utils
 
-MY_P=OpenLoops-${P}
+MY_P=OpenLoops-${PV}
 
 DESCRIPTION="Evaluation of tree and one-loop matrix elements for any Standard Model."
 HOMEPAGE="https://openloops.hepforge.org/index.html"
@@ -18,14 +18,29 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DEPEND=""
+DEPEND="
+	sci-physics/qcdloop
+	sci-physics/oneloop
+	sci-physics/collier
+"
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+src_prepare() {
+	default
+	mv openloops.cfg.tmpl openloops.cfg
+	sed -i 's/#compile_libraries.*/compile_libraries = rambo cuttools trred/' openloops.cfg || die
+}
+
 src_compile() {
-	escons CC="$(tc-getCC)"
+	escons
 }
 
 src_install() {
-	escons LIBDIR=/usr/$(get_libdir) INSTALL_ROOT="${ED}" install
+	dobin openloops
+	cd include
+	doheader openloops.h
+	# TODO use managed cuttools
+	cd ../lib
+	dolib.so libcuttools.so libopenloops.so librambo.so libtrred.so
 }
