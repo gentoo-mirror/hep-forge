@@ -10,8 +10,8 @@ inherit cmake python-single-r1
 
 DESCRIPTION="Recursive Computation of 1-Loop Amplitudes."
 HOMEPAGE="https://recola.gitlab.io/recola2/index.html"
-SRC_URI="https://recola.hepforge.org/downloads/?f=${PN}-collier-${PV}.tar.gz"
-S=${WORKDIR}/${PN}-collier-${PV}
+SRC_URI="https://recola.hepforge.org/downloads/?f=${P}.tar.gz"
+#S=${WORKDIR}/${PN}-collier-${PV}
 
 LICENSE="GPL-3+"
 RESTRICT=""
@@ -23,7 +23,8 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="
 	sci-physics/collier
-    ${PYTHON_DEPS}
+	SM? ( =ci-physics/recola2-SM )
+	${PYTHON_DEPS}
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -32,13 +33,12 @@ BDEPEND="
 "
 src_configure() {
 	local mycmakeargs=(
-		-Dmodel=$(usev SM)$(usev SM_BFM)$(usev HS)
-        -Dwith_python3
+		-Dwith_python3=ON
 	)
 	cmake_src_configure
 }
 
 src_install() {
-    cmake_src_install
-    python_optimize
+	cmake_src_install
+	python_optimize
 }
