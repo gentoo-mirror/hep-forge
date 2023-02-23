@@ -10,6 +10,6 @@
     <name>Gentoo Physics Project</name>
   </maintainer>
 	<longdescription lang="en">
-	RECOLA is a Fortran95 computer program for the automated generation and numerical computation of tree and one-loop amplitudes at next-to-leading order (EW, QCD) in the Standard Model (SM) and Beyond the SM (BSM).
+	RECOLA2 Standard Model (SM).
 	</longdescription>
 </pkgmetadata>
