@@ -11,7 +11,6 @@ inherit cmake python-single-r1
 DESCRIPTION="Recursive Computation of 1-Loop Amplitudes."
 HOMEPAGE="https://recola.gitlab.io/recola2/index.html"
 SRC_URI="https://recola.hepforge.org/downloads/?f=${P}.tar.gz"
-#S=${WORKDIR}/${PN}-collier-${PV}
 
 LICENSE="GPL-3+"
 RESTRICT=""
@@ -34,6 +33,7 @@ BDEPEND="
 "
 
 src_prepare() {
+	# CMAKE should look in system install for required libs
 	sed -i 's/NO_DEFAULT_PATH//g' src/CMakeLists.txt
 	cmake_src_prepare
 }

@@ -9,7 +9,7 @@ inherit cmake
 
 MY_P=SM_${PV}
 
-DESCRIPTION="Recursive Computation of 1-Loop Amplitudes."
+DESCRIPTION="RECOLA2 Standard Model"
 HOMEPAGE="https://recola.gitlab.io/recola2/index.html"
 SRC_URI="https://recola.hepforge.org/downloads/?f=${MY_P}.tar.gz"
 S=${WORKDIR}/${MY_P}
