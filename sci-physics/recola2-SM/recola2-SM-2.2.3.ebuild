@@ -7,7 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 inherit cmake
 
-MY_P=SM-${PV}
+MY_P=SM_${PV}
 
 DESCRIPTION="Recursive Computation of 1-Loop Amplitudes."
 HOMEPAGE="https://recola.gitlab.io/recola2/index.html"
