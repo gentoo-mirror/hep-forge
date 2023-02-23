@@ -28,13 +28,11 @@ BDEPEND="
 	virtual/fortran
 "
 
-src_prepare() {
-	sed -i "s/unset(COLLIER_LIBRARY_DIR CACHE)/set(COLLIER_LIBRARY_DIR ${ESYSROOT}/usr/$(get_libdir)/" src/CMakeFiles.txt
-	sed -i "s/unset(COLLIER_INCLUDE_DIR CACHE)/set(COLLIER_INCLUDE_DIR ${ESYSROOT}/usr/include)/" src/CMakeFiles.txt
-}
-
 src_configure() {
 	local mycmakeargs=(
+		-DLIB_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)
+		-DSYSCONFIG_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)/cmake
+		-DCMAKE_PREFIX_PATH=/usr/$(get_libdir)
 	)
 	cmake_src_configure
 }

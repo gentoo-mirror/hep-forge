@@ -29,10 +29,7 @@ BDEPEND="
 src_configure() {
 	local mycmakeargs=(
 		-DLIB_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)
+		-DSYSCONFIG_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)/cmake
 	)
 	cmake_src_configure
-}
-
-src_install() {
-	cmake_src_install
 }

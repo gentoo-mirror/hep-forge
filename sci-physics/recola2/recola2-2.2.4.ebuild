@@ -22,8 +22,9 @@ IUSE="+SM SM_BFM HS HS_BFM THDM THDM_BFM SMWZP HT HEFT HEFT_BFM SM_ATGC SMSP"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="
+	sci-mathematics/otter
 	sci-physics/collier
-	SM? ( =ci-physics/recola2-SM )
+	SM? ( sci-physics/recola2-SM )
 	${PYTHON_DEPS}
 "
 RDEPEND="${DEPEND}"
@@ -31,8 +32,17 @@ BDEPEND="
 	app-arch/unzip
 	virtual/fortran
 "
+
+src_prepare() {
+	sed -i 's/NO_DEFAULT_PATH//g' src/CMakeLists.txt
+	cmake_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
+		-DLIB_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)
+		-DSYSCONFIG_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)/cmake
+		-DCMAKE_PREFIX_PATH=/usr/$(get_libdir)/
 		-Dwith_python3=ON
 	)
 	cmake_src_configure
