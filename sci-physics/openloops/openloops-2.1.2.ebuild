@@ -3,9 +3,11 @@
 
 EAPI=8
 
-MY_P=OpenLoops-${P}
+PYTHON_COMPAT=( python3_{9,10} )
 
-inherit scons-utils
+inherit python-single-r1 scons-utils
+
+MY_P=OpenLoops-${P}
 
 DESCRIPTION="Evaluation of tree and one-loop matrix elements for any Standard Model."
 HOMEPAGE="https://openloops.hepforge.org/index.html"
