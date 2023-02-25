@@ -47,7 +47,10 @@ src_install() {
 	dolib.so libolcommon.so libopenloops.so librambo.so libtrred.so
 	cd ../lib_src/olcommon/mod
 	doheader *.mod
-	cd ../openloops/mod
+	cd ../../openloops/mod
 	doheader *.mod
-
+	cd ../../rambo/mod
+	doheader *.mod
+	cd ../../trred/mod
+	doheader *.mod
 }
