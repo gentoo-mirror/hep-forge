@@ -11,7 +11,7 @@ MY_P=OpenLoops-${PV}
 
 DESCRIPTION="Evaluation of tree and one-loop matrix elements for any Standard Model."
 HOMEPAGE="https://openloops.hepforge.org/index.html"
-SRC_URI="https://openloops.hepforge.org/downloads?f=${MY_P}.tar.gz"
+SRC_URI="https://openloops.hepforge.org/downloads?f=${MY_P}.tar.gz -> ${MY_P}.tar.gz"
 S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-3+"
