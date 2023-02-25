@@ -12,4 +12,8 @@
 	<longdescription lang="en">
 		Library of one-loop scalar functions by Andreas van Hameren.
 	</longdescription>
+	<use>
+    <flag name="dpkind">double precision</flag>
+    <flag name="qpkind">quad precision</flag>
+  </use>
 </pkgmetadata>

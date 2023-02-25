@@ -18,6 +18,7 @@ S="${WORKDIR}/hameren-oneloop-3762b8bad6ad"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="+dpkind qpkind tlevel cppintf"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
@@ -35,6 +36,26 @@ src_configure() {
 	tc-export FC
 	sed -i "/FC = /s/gfortran/${FC}/g" Config || die
 	sed -i "/FFLAGS = /s/ -O/${FFLAGS} -fPIC/g" Config || die
+	if use dpkind ; then
+		sed -i "s/^.*DPKIND.*$/DPKIND = kind(1d0)/g" Config || die
+	else
+		sed -i "s/^.*DPKIND.*$/#DPKIND = kind(1d0)/g" Config || die
+	fi
+	if use qpkind ; then
+		sed -i "s/^.*QPKIND.*$/QPKIND = kind(1d0)/" Config || die
+	else
+		sed -i "s/^.*QPKIND.*$/#QPKIND = kind(1d0)/" Config || die
+	fi
+	if use tlevel; then
+		sed -i "s/^.*TLEVEL.*$/TLEVEL = yes/" Config || die
+	else
+		sed -i "s/^.*TLEVEL.*$/TLEVEL = no/" Config || die
+	fi
+	if use cppintf; then
+		sed -i "s/^.*CPPINTF.*$/CPPINTF = yes/" Config || die
+	else
+		sed -i "s/^.*CPPINTF.*$/CPPINTF = no/" Config || die
+	fi
 }
 
 src_compile() {
