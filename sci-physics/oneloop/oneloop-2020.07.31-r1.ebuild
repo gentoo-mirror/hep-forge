@@ -18,7 +18,7 @@ S="${WORKDIR}/hameren-oneloop-3762b8bad6ad"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf"
+IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf kindtypes"
 REQUIRED_USE="
 	?? ( dpkind dpkind16 ddcpp )
 	?? ( qpkind qpkind16 qdcpp )
@@ -52,6 +52,8 @@ src_configure() {
 	use dpkind16 && echo "DPKIND = 16" >> Config
 	use qpkind16 && echo "QPKIND = 16" >> Config
 
+	use kindtypes &&  echo "KINDMOD = kind_types"
+
 	use qdcpp && echo "QDTYPE = qdcpp" >> Config
 	use ddcpp && echo "DDTYPE = qdcpp" >> Config
 
@@ -83,4 +85,6 @@ src_install() {
 	dolib.a libavh_olo.a
 	dolib.so libavh_olo.so
 	doheader *.mod
+	dosym ${EPREFIX}/usr/$(get_libdir)/libavh_olo.so ${EPREFIX}/usr/$(get_libdir)/liboneloop.so
+	dosym ${EPREFIX}/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
 }
