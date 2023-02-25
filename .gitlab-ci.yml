@@ -154,6 +154,10 @@ default:
         VERSION: ['4.2.2','4.2','3.3']
         CATEGORY: ['sci-libs']
         <<: *images
+      - PKG: [mpfun90]
+        VERSION: ['2023.02.26']
+        CATEGORY: ['sci-libs']
+        <<: *images
 
 .matrix4: &matrix4
   parallel:
