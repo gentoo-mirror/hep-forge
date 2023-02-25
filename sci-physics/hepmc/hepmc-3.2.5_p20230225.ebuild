@@ -6,7 +6,8 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..11} )
 inherit cmake python-single-r1
 
-MYP=HepMC3-${PV}
+MYPN=HepMC3
+MYP=${MYPN}-${PV}
 
 DESCRIPTION="Event Record for Monte Carlo Generators"
 HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
@@ -14,14 +15,10 @@ HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
 if [[ ${PV} == 9999 ]]; then
     inherit git-r3
     EGIT_REPO_URI="https://gitlab.cern.ch/hepmc/HepMC3"
-elif [[ ${PV} == 3.2.5_p20230225 ]]; then
-    inherit git-r3
-    EGIT_REPO_URI="https://gitlab.cern.ch/hepmc/HepMC3"
-	EGIT_COMMIT=e05d32eb
-    KEYWORDS="~amd64 ~x86"
 else
-    SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
-    S="${WORKDIR}/${MYP}"
+	COMMIT="e05d32ebac8705c0097e9e7d00ce815a205110db"
+    SRC_URI="https://gitlab.cern.ch/${PN}/${MYPN}/-/archive/${COMMIT}/${MYPN}-${COMMIT}.tar.gz"
+    S="${WORKDIR}/${MYPN}-${COMMIT}"
     KEYWORDS="~amd64 ~x86"
 fi
 
