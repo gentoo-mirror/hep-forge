@@ -33,6 +33,7 @@ src_prepare() {
 	mv openloops.cfg.tmpl openloops.cfg
 	sed -i "s|#gfortran_f_flags.*|gfortran_f_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools|" openloops.cfg || die
 	sed -i 's/#compile_libraries.*/compile_libraries = rambo trred/' openloops.cfg || die
+	sed -i "s|scons -Q|scons -Q -C /opt/${MY_P}/|g" openloops || die
 }
 
 src_compile() {
@@ -53,4 +54,11 @@ src_install() {
 	doheader *.mod
 	cd ../../trred/mod
 	doheader *.mod
+
+	cd "${S}"
+	dodir /opt/${MY_P}
+	insinto /opt/${MY_P}
+	doins openloops.cfg SConstruct
+	doins -r pyol
+
 }
