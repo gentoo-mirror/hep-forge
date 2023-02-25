@@ -22,7 +22,7 @@ KEYWORDS="~amd64"
 DEPEND="
 	sci-physics/collier
 	sci-physics/qcdloop
-	sci-physics/oneloop
+	sci-physics/oneloop[dpkind,qpkind16,-qpkind,kindtypes,-cppintf]
 	sci-physics/cuttools
 "
 RDEPEND="${DEPEND}"
@@ -44,5 +44,10 @@ src_install() {
 	cd include
 	doheader openloops.h
 	cd ../lib
-	dolib.so libopenloops.so librambo.so libtrred.so
+	dolib.so libolcommon.so libopenloops.so librambo.so libtrred.so
+	cd ../lib_src/olcommon/mod
+	doheader *.mod
+	cd ../openloops/mod
+	doheader *.mod
+
 }
