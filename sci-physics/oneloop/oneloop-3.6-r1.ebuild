@@ -38,10 +38,6 @@ BDEPEND="
 	virtual/fortran
 "
 
-PATCHES=(
-	"${FILESDIR}"/${P}-config.patch
-)
-
 src_configure() {
 	tc-export FC
 	# set fortran

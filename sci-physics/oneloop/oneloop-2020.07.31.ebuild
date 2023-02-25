@@ -47,36 +47,11 @@ src_configure() {
 	# set fortran
 	sed -i "/FC = /s/gfortran/${FC}/g" Config || die
 	sed -i "/FFLAGS = /s/ -O/${FFLAGS} -fPIC/g" Config || die
-	# Clear config
-	sed -i "s/^DPKIND.*$//g" Config || die
-	sed -i "s/^QPKIND.*$//g" Config || die
-
-	use dpkind && echo "DPKIND = kind(1d0)" >> Config
-	use qpkind && echo "QPKIND = kind(1d0)" >> Config
-	use dpkind16 && echo "DPKIND = 16" >> Config
-	use qpkind16 && echo "QPKIND = 16" >> Config
-
-	use qdcpp && echo "QDTYPE = qdcpp" >> Config
-	use ddcpp && echo "DDTYPE = qdcpp" >> Config
-
-	use mpfun90 && echo "MPTYPE = mpfun90" >> Config
-	use arprec && echo "MPTYPE = arprec" >> Config
-
-	if use tlevel ; then
-		sed -i "s/^.*TLEVEL.*$/TLEVEL = yes/" Config || die
-	else
-		sed -i "s/^.*TLEVEL.*$/TLEVEL = no/" Config || die
-	fi
-	if use cppintf ; then
-		sed -i "s/^.*CPPINTF.*$/CPPINTF = yes/" Config || die
-	else
-		sed -i "s/^.*CPPINTF.*$/CPPINTF = no/" Config || die
-	fi
 }
 
 src_compile() {
 	tc-export FC
-	#emake -f make_cuttools
+	emake -f make_cuttools
 	${EPYTHON} ./create.py || die "Failed to compile"
 	# create.py does not use soname, so we do it ourself
 	#./create.py dynamic || die
