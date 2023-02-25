@@ -18,7 +18,13 @@ S="${WORKDIR}/hameren-oneloop-3762b8bad6ad"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+dpkind qpkind tlevel cppintf"
+IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf"
+REQUIRED_USE="
+	?? ( dpkind dpkind16 ddcpp )
+	?? ( qpkind qpkind16 qdcpp )
+	?? ( arprec mpfun90 )
+	|| ( dpkind dpkind16 ddcpp qpkind qpkind16 qdcpp )
+"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
@@ -34,24 +40,30 @@ PATCHES=(
 
 src_configure() {
 	tc-export FC
+	# set fortran
 	sed -i "/FC = /s/gfortran/${FC}/g" Config || die
 	sed -i "/FFLAGS = /s/ -O/${FFLAGS} -fPIC/g" Config || die
-	if use dpkind ; then
-		sed -i "s/^.*DPKIND.*$/DPKIND = kind(1d0)/g" Config || die
-	else
-		sed -i "s/^.*DPKIND.*$/#DPKIND = kind(1d0)/g" Config || die
-	fi
-	if use qpkind ; then
-		sed -i "s/^.*QPKIND.*$/QPKIND = kind(1d0)/" Config || die
-	else
-		sed -i "s/^.*QPKIND.*$/#QPKIND = kind(1d0)/" Config || die
-	fi
-	if use tlevel; then
+	# Clear config
+	sed -i "s/^DPKIND.*$//g" Config || die
+	sed -i "s/^QPKIND.*$//g" Config || die
+
+	use dpkind && echo "DPKIND = kind(1d0)" >> Config
+	use qpkind && echo "QPKIND = kind(1d0)" >> Config
+	use dpkind16 && echo "DPKIND = 16" >> Config
+	use qpkind16 && echo "QPKIND = 16" >> Config
+
+	use qdcpp && echo "QDTYPE = qdcpp" >> Config
+	use ddcpp && echo "DDTYPE = qdcpp" >> Config
+
+	use mpfun90 && echo "MPTYPE = mpfun90" >> Config
+	use arprec && echo "MPTYPE = arprec" >> Config
+
+	if use tlevel ; then
 		sed -i "s/^.*TLEVEL.*$/TLEVEL = yes/" Config || die
 	else
 		sed -i "s/^.*TLEVEL.*$/TLEVEL = no/" Config || die
 	fi
-	if use cppintf; then
+	if use cppintf ; then
 		sed -i "s/^.*CPPINTF.*$/CPPINTF = yes/" Config || die
 	else
 		sed -i "s/^.*CPPINTF.*$/CPPINTF = no/" Config || die
@@ -60,8 +72,9 @@ src_configure() {
 
 src_compile() {
 	tc-export FC
-	emake -f make_cuttools
+	#emake -f make_cuttools
 	${EPYTHON} ./create.py || die "Failed to compile"
+	# create.py does not use soname, so we do it ourself
 	#./create.py dynamic || die
 	${FC} ${LDFLAGS} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so avh_olo.o
 }
@@ -69,5 +82,5 @@ src_compile() {
 src_install() {
 	dolib.a libavh_olo.a
 	dolib.so libavh_olo.so
-	doheader avh_olo.mod
+	doheader *.mod
 }
