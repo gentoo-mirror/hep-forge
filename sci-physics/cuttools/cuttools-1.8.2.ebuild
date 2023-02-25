@@ -26,11 +26,11 @@ BDEPEND="
 "
 src_prepare() {
 	default
-	sed -i 's/^ALL=.*$/ALL = $(CTS)/' src/makefile ||  die
+	sed -i 's/^ALL =.*$/ALL = $(CTS)/' src/makefile ||  die
 }
 
 src_compile() {
-	emake -j1 FFLAGS="${FFLAGS} -fPIC -std=legacy"
+	emake -j1 FFLAGS="${FFLAGS} -I${ESYSROOT}/usr/include -fPIC -std=legacy"
 	tc-export AR CXX
 	cd includects
 	${AR} -x libcts.a
