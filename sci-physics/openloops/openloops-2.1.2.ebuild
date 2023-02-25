@@ -18,10 +18,12 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
+# TODO use managed cuttools,qcdloop,oneloop
 DEPEND="
+	sci-physics/collier
 	sci-physics/qcdloop
 	sci-physics/oneloop
-	sci-physics/collier
+	sci-physics/cuttools
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
@@ -29,7 +31,8 @@ BDEPEND=""
 src_prepare() {
 	default
 	mv openloops.cfg.tmpl openloops.cfg
-	sed -i 's/#compile_libraries.*/compile_libraries = rambo cuttools trred/' openloops.cfg || die
+	sed -i "s|#gfortran_f_flags.*|gfortran_f_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools|" openloops.cfg || die
+	sed -i 's/#compile_libraries.*/compile_libraries = rambo trred/' openloops.cfg || die
 }
 
 src_compile() {
@@ -40,7 +43,6 @@ src_install() {
 	dobin openloops
 	cd include
 	doheader openloops.h
-	# TODO use managed cuttools
 	cd ../lib
-	dolib.so libcuttools.so libopenloops.so librambo.so libtrred.so
+	dolib.so libopenloops.so librambo.so libtrred.so
 }
