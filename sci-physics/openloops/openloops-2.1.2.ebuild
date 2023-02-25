@@ -60,5 +60,10 @@ src_install() {
 	insinto /opt/${MY_P}
 	doins openloops.cfg SConstruct
 	doins -r pyol
-
 }
+
+pkg_postinst() {
+	elog "Install processes with ./openloops libinstall."
+	elog "They are installed in /opt/${MY_P}/proclib."
+}
+
