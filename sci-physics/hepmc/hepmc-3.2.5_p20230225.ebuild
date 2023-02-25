@@ -18,6 +18,7 @@ elif [[ ${PV} == 3.2.5_p20230225 ]]; then
     inherit git-r3
     EGIT_REPO_URI="https://gitlab.cern.ch/hepmc/HepMC3"
 	EGIT_COMMIT=e05d32eb
+    KEYWORDS="~amd64 ~x86"
 else
     SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
     S="${WORKDIR}/${MYP}"
