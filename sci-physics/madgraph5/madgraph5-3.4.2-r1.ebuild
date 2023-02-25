@@ -70,7 +70,11 @@ src_install() {
 	#fperms +x /opt/${MY_PF}/bin/mg5_aMC
 	fowners madgraph:madgraph -R /opt/${MY_PF}
 
-	ewarn "YOU MUST add your user to the madgraph group"
-	ewarn "eg. sudo usermod -a -G madgraph username"
-	ewarn "Running sessions must be restarted"
 }
+
+pkg_postinst() {
+	elog "YOU MUST add your user to the madgraph group"
+	elog "eg. sudo usermod -a -G madgraph username"
+	elog "Running sessions must be restarted"
+}
+
