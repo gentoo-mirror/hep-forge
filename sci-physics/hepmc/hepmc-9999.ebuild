@@ -12,12 +12,12 @@ DESCRIPTION="Event Record for Monte Carlo Generators"
 HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
 
 if [[ ${PV} == 9999 ]]; then
-    inherit git-r3
-    EGIT_REPO_URI="https://gitlab.cern.ch/hepmc/HepMC3"
+	inherit git-r3
+	EGIT_REPO_URI="https://gitlab.cern.ch/hepmc/HepMC3"
 else
-    SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
-    S="${WORKDIR}/${MYP}"
-    KEYWORDS="~amd64 ~x86"
+	SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
+	S="${WORKDIR}/${MYP}"
+	KEYWORDS="~amd64 ~x86"
 fi
 
 LICENSE="GPL-3+"
