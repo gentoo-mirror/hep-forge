@@ -33,6 +33,8 @@ BDEPEND="
 	)
 "
 
+PATCHES=( "${FILESDIR}/${P}-python3_11.patch" )
+
 src_configure() {
 	local mycmakeargs=(
 		-DHEPMC3_ENABLE_ROOTIO=$(usex root ON OFF)
