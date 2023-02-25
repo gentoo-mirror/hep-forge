@@ -207,6 +207,17 @@ default:
         CATEGORY: ['dev-python']
         <<: *images
 
+.matrix5: &matrix5
+  parallel:
+    matrix:
+      - PKG: [cuttools]
+        VERSION: [1.8.2]
+        CATEGORY: ['sci-physics']
+        <<: *images
+      - PKG: [openloops]
+        VERSION: [2.1.2]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .config:
     
@@ -404,3 +415,25 @@ test4:
 qa4:
   extends: .qa
   <<: *matrix4
+
+
+
+check5:
+  extends: .check
+  <<: *matrix5
+
+warn5:
+  extends: .warn
+  <<: *matrix5
+
+build5:
+  extends: .build
+  <<: *matrix5
+
+test5:
+  extends: .test
+  <<: *matrix5
+
+qa5:
+  extends: .qa
+  <<: *matrix5
