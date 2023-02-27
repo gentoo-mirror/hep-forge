@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=High-Precision Software
+EAPI=8
+HOMEPAGE=https://www.davidhbailey.com/dhbsoftware/ https://github.com/APN-Pucky/mpfun90
+INHERIT=toolchain-funcs
+KEYWORDS=~amd64
+SLOT=0
+SRC_URI=https://github.com/APN-Pucky/mpfun90/archive/refs/tags/2023-02-26.tar.gz
+_eclasses_=toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157
+_md5_=8a5fc50127bf4221fa6a1a9cd32855e0

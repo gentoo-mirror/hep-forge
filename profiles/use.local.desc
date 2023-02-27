@@ -1,0 +1,51 @@
+# This file is deprecated as per GLEP 56 in favor of metadata.xml.
+# Please add your descriptions to your package's metadata.xml ONLY.
+# * generated automatically using pmaint *
+
+dev-python/poetry-dynamic-versioning:plugin - Include poetry dependency for plugin
+dev-python/xsdata:cli - cli tools
+dev-python/xsdata:lxml - use lxml
+sci-mathematics/cgal:mpfi - Enable support for multiple recision interval arithmetic via sci-libs/mpfi
+sci-mathematics/cgal:ntl - Enable support for dev-libs/ntl
+sci-mathematics/cgal:shared - Build shared library
+sci-physics/fastjet:cgal - Use sci-mathematics/cgal instead of bundled algorithms
+sci-physics/fastjet:plugins - Build all standard and C++ plugins
+sci-physics/feyncalc:FCtraditionalFormOutput - Use TraditionalForm typesetting.
+sci-physics/hepmc:cm - Build with cm instead of default mm for length units
+sci-physics/hepmc:example - Build with example codes
+sci-physics/hepmc:gev - Build with GeV instead of default MeV for momentum units
+sci-physics/hepmc:python - Build with PYTHON enabled
+sci-physics/hepmc:root - Build with ROOTIO enabled
+sci-physics/herwig:hepmc2 - Build with HepMC2
+sci-physics/herwig:hepmc3 - Build with HepMC3
+sci-physics/madgraph5:collier - USE system collier
+sci-physics/madgraph5:fastjet - USE system FASTJET
+sci-physics/madgraph5:lhapdf - USE system LHAPDF
+sci-physics/madgraph5:ninja - USE system ninja
+sci-physics/madgraph5:pineappl - USE system pineappl
+sci-physics/madgraph5:pythia - USE system PYTHIA
+sci-physics/madgraph5:samurai - USE system samurai
+sci-physics/oneloop:dpkind - double precision
+sci-physics/oneloop:qpkind - quad precision
+sci-physics/pythia:fastjet - Build jets using the sci-physics/fastjet package
+sci-physics/pythia:hepmc2 - Adds support for High Energy Physics Monte Carlo Generators 2 sci-physics/hepmc
+sci-physics/pythia:hepmc3 - Adds support for High Energy Physics Monte Carlo Generators 3 sci-physics/hepmc
+sci-physics/pythia:lhapdf - Support the use of external PDF sets via sci-physics/lhapdf
+sci-physics/pythia:root - Use sci-physics/root trees and histograms (in examples only)
+sci-physics/rivet:analyses - Build with standard analyses
+sci-physics/rivet:hepmc2 - Build with HepMC2
+sci-physics/rivet:hepmc3 - Build with HepMC3
+sci-physics/sherpa:fastjet - Build with FastJet
+sci-physics/sherpa:hepmc2 - Build with HepMC2
+sci-physics/sherpa:lhapdf - Build with LHAPDF
+sci-physics/sherpa:pythia - Build with Pythia
+sci-physics/sherpa:rivet - Build with Rivet
+sci-physics/thepeg:fastjet - Adds support for sci-physics/fastjet
+sci-physics/thepeg:hepmc - Adds support for High Energy Physics Monte Carlo Generators sci-physics/hepmc
+sci-physics/thepeg:lhapdf - Adds support for sci-physics/lhapdf
+sci-physics/thepeg:rivet - Adds support for sci-physics/rivet
+sci-physics/yoda:root - Adds support for sci-physics/root
+sys-cluster/lmod:auto-swap - enable auto swapping of compiler
+sys-cluster/lmod:cache - enable caching of modules
+sys-cluster/lmod:duplicate-paths - allow duplicate entries in path
+sys-cluster/modules:compat - Build Modules version 3 compat support

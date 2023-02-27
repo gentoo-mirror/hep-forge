@@ -1,0 +1,14 @@
+BDEPEND=virtual/fortran
+DEFINED_PHASES=compile install prepare setup test
+DEPEND=x11-libs/motif:0 virtual/lapack dev-lang/cfortran net-libs/libnsl x11-misc/imake x11-misc/makedepend virtual/pkgconfig virtual/fortran
+DESCRIPTION=CERN program library for High Energy Physics
+EAPI=7
+HOMEPAGE=https://cernlib.web.cern.ch/cernlib/
+INHERIT=fortran-2 toolchain-funcs
+KEYWORDS=~amd64 ~hppa ~sparc ~x86 ~amd64-linux ~x86-linux
+LICENSE=GPL-2 LGPL-2 BSD
+RDEPEND=x11-libs/motif:0 virtual/lapack dev-lang/cfortran net-libs/libnsl virtual/fortran
+SLOT=0
+SRC_URI=mirror://debian/pool/main/c/cernlib/cernlib_20061220+dfsg3.orig.tar.gz mirror://debian/pool/main/c/cernlib/cernlib_20061220+dfsg3-4.3.debian.tar.xz
+_eclasses_=toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	fortran-2	72d28c6872beb1e7cb99684b0ae4715d
+_md5_=4c232503823825403dffbcf09fff3136

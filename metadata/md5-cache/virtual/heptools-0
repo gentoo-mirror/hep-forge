@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=HEPTools is a collection of LHAPDF, HEPMC and PYTHIA.
+EAPI=8
+KEYWORDS=~amd64
+RDEPEND=sci-physics/lhapdf sci-physics/hepmc sci-physics/pythia
+SLOT=0
+_md5_=206babf26641de44eadeaf298bd6bcfe
