@@ -14,6 +14,5 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/attrs-19.2[${PYTHON_USEDEP}]
-	>=sci-physics/hepunits-2.0.0[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
