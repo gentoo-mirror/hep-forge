@@ -15,18 +15,12 @@ HOMEPAGE="
 	https://rivet.hepforge.org/
 	https://gitlab.com/hepcedar/rivet
 "
-
-if [[ ${PV} == 9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://gitlab.com/hepcedar/rivet"
-else
-    SRC_URI="https://www.hepforge.org/archive/rivet/${MY_PF}.tar.gz"
-    S=${WORKDIR}/${MY_PF}
-    KEYWORDS="~amd64"
-fi
+SRC_URI="https://www.hepforge.org/archive/rivet/${MY_PF}.tar.gz"
+S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3+"
 SLOT="3"
+KEYWORDS="~amd64"
 IUSE="+hepmc3 hepmc2"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
@@ -52,7 +46,7 @@ BDEPEND="
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
-	"${FILESDIR}"/${PN}-3.1.7-ldflags.patch
+	"${FILESDIR}"/${P}-ldflags.patch
 )
 
 src_prepare() {
@@ -64,13 +58,11 @@ src_configure() {
 	# Eigen complains about alignment (see https://gitlab.com/libeigen/eigen/-/issues/2523).
 	# does this affect more cpus?
 	replace-cpu-flags znver1 x86-64
-	PREFIX_YODA=$(yoda-config --prefix) || die
-	PREFIX_FJ=$(fastjet-config --prefix) || die
 	econf \
-		$(usex hepmc2 "--with-hepmc=${SYSROOT}/usr" "") \
-		$(usex hepmc3 "--with-hepmc3=${SYSROOT}/usr" "") \
-		--with-yoda=$PREFIX_YODA \
-		--with-fastjet=$PREFIX_FJ
+		$(usex hepmc2 "--with-hepmc=${EROOT}/usr" "") \
+		$(usex hepmc3 "--with-hepmc3=${EROOT}/usr" "") \
+		--with-yoda="${EROOT}/usr" \
+		--with-fastjet="${EROOT}/usr"
 }
 
 src_install() {

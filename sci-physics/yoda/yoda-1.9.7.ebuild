@@ -31,6 +31,8 @@ RDEPEND="
 		${PYTHON_DEPS}
 	)
 	sys-libs/zlib
+	virtual/latex-base
+	dev-python/matplotlib
 "
 DEPEND="${RDEPEND}"
 
@@ -62,5 +64,5 @@ src_install() {
 }
 
 pkg_postinst() {
-        optfeature "plotting support" virtual/latex-base dev-python/matplotlib
+        optfeature "plotting support" 
 }
