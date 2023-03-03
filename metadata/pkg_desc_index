@@ -60,14 +60,14 @@ sci-physics/qgraf 3.4.2 3.5.2 3.6.5: qgraf generates Feynman diagrams for variou
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
 sci-physics/resummino 3.1.1: Resummation for electroweak BSM particles.
-sci-physics/rivet 3.1.5 3.1.5-r1 3.1.6 3.1.6-r1 3.1.6-r2 3.1.7 3.1.7-r1 3.1.7-r2 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
+sci-physics/rivet 3.1.5 3.1.5-r1 3.1.6 3.1.6-r1 3.1.6-r2 3.1.7 3.1.7-r1 3.1.7-r2 3.1.7-r3 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 sci-physics/sherpa 2.2.12: Simulation of High-Energy Reactions of PArticles
 sci-physics/spheno 3.3.8 3.3.8-r1: SPheno stands for S(upersymmetric) Pheno(menology)
 sci-physics/tauola 1.1.8-r1: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 9999: TOPDRAWER renders top files.
-sci-physics/yoda 1.9.4 1.9.5 1.9.5-r1 1.9.7 9999: Yet more Objects for (High Energy Physics) Data Analysis
+sci-physics/yoda 1.9.4 1.9.5 1.9.5-r1 1.9.7 1.9.7-r1 9999: Yet more Objects for (High Energy Physics) Data Analysis
 sys-cluster/easybuild 4.6.2-r1: EasyBuild is a software build and installation framework.
 sys-cluster/easybuild-easyblocks 4.6.2: Provides a collection of easyblocks for EasyBuild.
 sys-cluster/easybuild-easyconfigs 4.6.2: Provides a collection of well-tested easyconfig files for EasyBuild.
