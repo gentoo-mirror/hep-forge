@@ -22,17 +22,15 @@ fi
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
-IUSE="root +python"
+IUSE="root +python +zlib"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
 	python? (
-		dev-python/matplotlib
-		virtual/latex-base
 		${PYTHON_DEPS}
 	)
-	sys-libs/zlib
+	zlib? ( sys-libs/zlib )
 "
 
 DEPEND="${RDEPEND}"
@@ -46,7 +44,7 @@ src_prepare() {
 }
 
 src_configure() {
-	econf --disable-static $(use_enable root) $(use_enable python pyext)
+	econf --disable-static $(use_enable root) $(use_enable python pyext)  $(use_with zlib zlib $ESYSROOT/usr)
 }
 
 src_test() {
