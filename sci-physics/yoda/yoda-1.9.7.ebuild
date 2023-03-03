@@ -30,8 +30,8 @@ RDEPEND="
 	python? (
 		${PYTHON_DEPS}
 	)
+	sys-libs/zlib
 "
-
 DEPEND="${RDEPEND}"
 
 PATCHES=()
