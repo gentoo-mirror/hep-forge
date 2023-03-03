@@ -36,9 +36,6 @@ RDEPEND="
 
 	sci-libs/gsl
 
-	virtual/latex-base
-	media-gfx/imagemagick
-	app-text/ghostscript-gpl
 
 	${PYTHON_DEPS}
 "
@@ -75,4 +72,8 @@ src_install() {
 	default
 	python_optimize
 	find "${ED}" -name '*.la' -delete || die
+}
+
+pkg_postinstall() {
+	optfeature "plotting support" 	virtual/latex-base	media-gfx/imagemagick	app-text/ghostscript-gpl
 }
