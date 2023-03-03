@@ -28,12 +28,10 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
 	python? (
-		dev-python/matplotlib
-		virtual/latex-base
 		${PYTHON_DEPS}
 	)
+	sys-libs/zlib
 "
-
 DEPEND="${RDEPEND}"
 
 PATCHES=()
@@ -61,4 +59,8 @@ src_install() {
 
 	python_optimize
 	find "${ED}" -name '*.la' -delete || die
+}
+
+pkg_postinst() {
+        optfeature "plotting support" virtual/latex-base dev-python/matplotlib
 }
