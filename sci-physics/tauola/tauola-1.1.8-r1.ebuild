@@ -11,8 +11,7 @@ HOMEPAGE="http://tauolapp.web.cern.ch/tauolapp/"
 SRC_URI="http://tauolapp.web.cern.ch/tauolapp/resources/${MY_P}/${MY_P}-LHC.tar.gz"
 S=${WORKDIR}/${MY_PN}
 
-#HepMC interface is licensed under GPL, other code under CPC
-LICENSE="CPC GPL-2+"
+LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples pythia hepmc hepmc3 tau-spinner"
