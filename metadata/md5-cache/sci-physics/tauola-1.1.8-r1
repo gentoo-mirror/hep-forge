@@ -1,12 +1,13 @@
 DEFINED_PHASES=compile configure install
-DEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] ) pythia? ( sci-physics/pythia:8= ) tau-spinner? ( sci-physics/lhapdf ) doc? ( app-doc/doxygen[dot] app-text/ghostscript-gpl app-text/texlive )
+DEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] ) pythia? ( sci-physics/pythia:8= ) sci-physics/lhapdf doc? ( app-doc/doxygen[dot] app-text/ghostscript-gpl app-text/texlive )
 DESCRIPTION=Tau decay Monte Carlo generator
 EAPI=8
 HOMEPAGE=http://tauolapp.web.cern.ch/tauolapp/
-IUSE=doc examples pythia hepmc hepmc3 tau-spinner
+IUSE=doc examples pythia hepmc +hepmc3
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3+
-RDEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] ) pythia? ( sci-physics/pythia:8= ) tau-spinner? ( sci-physics/lhapdf )
+RDEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] ) pythia? ( sci-physics/pythia:8= ) sci-physics/lhapdf
+REQUIRED_USE=|| ( hepmc hepmc3 )
 SLOT=0
 SRC_URI=http://tauolapp.web.cern.ch/tauolapp/resources/TAUOLA.1.1.8/TAUOLA.1.1.8-LHC.tar.gz
-_md5_=dea4e52abae75895226e383ddf7c7c2e
+_md5_=ebd31cdd74deb925ac3054e35d6afdfe

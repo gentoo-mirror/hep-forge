@@ -25,8 +25,7 @@ sci-physics/hepmc:example - Build with example codes
 sci-physics/hepmc:gev - Build with GeV instead of default MeV for momentum units
 sci-physics/hepmc:python - Build with PYTHON enabled
 sci-physics/hepmc:root - Build with ROOTIO enabled
-sci-physics/herwig:hepmc2 - Build with HepMC2
-sci-physics/herwig:hepmc3 - Build with HepMC3
+sci-physics/herwig:pythia - Build with pythia support
 sci-physics/madgraph5:collier - USE system collier
 sci-physics/madgraph5:fastjet - USE system FASTJET
 sci-physics/madgraph5:hepmc - USE system hepmc
@@ -69,7 +68,6 @@ sci-physics/sherpa:rivet - Build with Rivet
 sci-physics/tauola:hepmc - hepmc version 2
 sci-physics/tauola:hepmc3 - hepmc version 3
 sci-physics/tauola:pythia - build with pythia connection
-sci-physics/tauola:tau-spinner - enable tau-spinner
 sci-physics/thepeg:fastjet - Adds support for sci-physics/fastjet
 sci-physics/thepeg:hepmc - Adds support for High Energy Physics Monte Carlo Generators sci-physics/hepmc
 sci-physics/thepeg:lhapdf - Adds support for sci-physics/lhapdf
