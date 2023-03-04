@@ -20,7 +20,7 @@ SRC_URI="https://www.hepforge.org/archive/thepeg/${MY_P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0/30"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="emacs fastjet hepmc java lhapdf static-libs test zlib rivet"
 RESTRICT="!test? ( test )"
 
