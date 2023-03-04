@@ -25,7 +25,7 @@ RDEPEND="
 	hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
 	sci-physics/hepmc:3=[-cm(-),gev(+)]
 	pythia? ( sci-physics/pythia:8= )
-    tauola? ( sci-physics/tauola[hepmc?,hepmc3?,pythia?] )
+    tauola? ( sci-physics/tauola[hepmc?,hepmc3,pythia?] )
 "
 DEPEND="${RDEPEND}
 	doc? (
