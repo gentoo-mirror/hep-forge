@@ -7,7 +7,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{9..10} )
-inherit python-r1
+inherit python-single-r1
 
 MY_PV=$(ver_rs 1-3 '_')
 MY_PN="MG5_aMC_v"
