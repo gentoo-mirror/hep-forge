@@ -14,13 +14,14 @@ S=${WORKDIR}/${MY_PN}
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples pythia hepmc hepmc3 tau-spinner"
+IUSE="doc examples pythia hepmc +hepmc3"
+REQUIRED_USE=" || ( hepmc hepmc3 )"
 
 RDEPEND="
 	hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 	pythia? ( sci-physics/pythia:8= )
-	tau-spinner? ( sci-physics/lhapdf )
+	sci-physics/lhapdf
 "
 DEPEND="${RDEPEND}
 	doc? (
@@ -37,11 +38,10 @@ DEPEND="${RDEPEND}
 src_configure() {
 	econf \
 		--without-mc-tester \
+		--with-lhapdf \
 		$(use_with pythia pythia8 "${EPREFIX}/usr") \
 		$(use_with hepmc hepmc "${EPREFIX}/usr") \
-		$(use_with hepmc3 hepmc3 "${EPREFIX}/usr") \
-		$(use_with tau-spinner) \
-		$(use_with tau-spinner lhapdf "${EPREFIX}/usr")
+		$(use_with hepmc3 hepmc3 "${EPREFIX}/usr") 
 }
 
 src_compile() {
