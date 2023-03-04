@@ -33,7 +33,7 @@ RDEPEND="
 	lhapdf? ( sci-physics/lhapdf[python(+)] )
 	fastjet? ( sci-physics/fastjet[python(+)] )
 	pythia? ( sci-physics/pythia )
-	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3)
+	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
 	"
 PATCHES=( "${FILESDIR}"/cuttools.patch )
 DEPEND="${RDEPEND}"
