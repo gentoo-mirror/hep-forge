@@ -14,7 +14,6 @@
 	Herwig provides significantly improved and extended physics capabilities when compared to both its predecessors, HERWIG 6 and Herwig++ 2, while keeping the key model motivations such as coherent parton showers (including angular-ordered and dipole-based evolution), the cluster hadronization model, an eikonal multiple-interaction model, highly flexible BSM capabilities and improved perturbative input using next-to-leading order QCD.
 	</longdescription>
 	<use>
-		<flag name="hepmc3">Build with HepMC3</flag>
-		<flag name="hepmc2">Build with HepMC2</flag>
+		<flag name="pythia">Build with pythia support </flag>
 	</use>
 </pkgmetadata>

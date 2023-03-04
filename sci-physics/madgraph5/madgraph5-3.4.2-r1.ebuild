@@ -21,7 +21,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig"
+IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig +hepmc"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
@@ -33,7 +33,7 @@ RDEPEND="
 	lhapdf? ( sci-physics/lhapdf[python(+)] )
 	fastjet? ( sci-physics/fastjet[python(+)] )
 	pythia? ( sci-physics/pythia )
-	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3)
+	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
 	"
 PATCHES=( "${FILESDIR}"/cuttools.patch )
 DEPEND="${RDEPEND}"
