@@ -21,7 +21,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig"
+IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig +hepmc"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
