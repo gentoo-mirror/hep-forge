@@ -31,7 +31,7 @@ RDEPEND="
 	acct-user/madgraph
 	acct-group/madgraph
 	lhapdf? ( sci-physics/lhapdf[python(+)] )
-	fastjet? ( sci-physics/lhapdf[python(+)] )
+	fastjet? ( sci-physics/fastjet[python(+)] )
 	pythia? ( sci-physics/pythia )
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3)
 	"
@@ -51,7 +51,7 @@ src_configure() {
 	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
 	use pythia && echo "pythia8_path = ${EROOT}" >> input/mg5_configuration.txt
 	#use hepmc && echo ""
-	use noupdate && echo "auto_update = 0" >> input/mg5_configuration.txt
+	echo "auto_update = 0" >> input/mg5_configuration.txt
 }
 
 src_install() {
@@ -76,5 +76,8 @@ pkg_postinst() {
 	elog "YOU MUST add your user to the madgraph group"
 	elog "eg. sudo usermod -a -G madgraph username"
 	elog "Running sessions must be restarted"
+	elog ""
+	elog "Automatic updates disabled, modified in: "
+	elog "/opt/${MY_PF}/input/mg5_configuration.txt"
 }
 

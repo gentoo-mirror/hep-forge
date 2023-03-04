@@ -21,7 +21,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+hepmc +lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig autoupdate"
+IUSE="+hepmc +lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
@@ -30,7 +30,7 @@ RDEPEND="
 	acct-user/madgraph
 	acct-group/madgraph
 	lhapdf? ( sci-physics/lhapdf[python(+)] )
-	fastjet? ( sci-physics/lhapdf[python(+)] )
+	fastjet? ( sci-physics/fastjet[python(+)] )
 	pythia? ( sci-physics/pythia )
 	hepmc? ( sci-physics/hepmc )
 	"
@@ -50,7 +50,6 @@ src_configure() {
 	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
 	use pythia && echo "pythia8_path = ${EROOT}/usr" >> input/mg5_configuration.txt
 	#use hepmc && echo ""
-	! use autoupdate && echo "autoupdate = 0" >> input/mg5_configuration.txt
 }
 
 src_install() {
