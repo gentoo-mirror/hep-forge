@@ -17,7 +17,7 @@ RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="+SM"
+IUSE="+SM" # TODO add more models here and below
 REQUIRED_USE="${PYTHON_REQUIRED_USE} || ( SM )"
 
 DEPEND="
