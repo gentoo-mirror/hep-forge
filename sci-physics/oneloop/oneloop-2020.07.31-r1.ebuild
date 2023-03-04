@@ -30,6 +30,7 @@ DEPEND="
 	qpkind? ( sci-libs/qd )
 	qpkind16? ( sci-libs/qd )
 	arprec? ( sci-libs/arprec )
+	mpfun90? ( sci-libs/mpfun90 )
 "
 RDEPEND="${DEPEND}"
 BDEPEND="

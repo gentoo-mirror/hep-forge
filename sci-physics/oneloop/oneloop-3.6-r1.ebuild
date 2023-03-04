@@ -18,7 +18,7 @@ S="${WORKDIR}"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf"
+IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf kindtypes"
 REQUIRED_USE="
 	?? ( dpkind dpkind16 ddcpp )
 	?? ( qpkind qpkind16 qdcpp )
@@ -30,6 +30,7 @@ DEPEND="
 	qpkind? ( sci-libs/qd )
 	qpkind16? ( sci-libs/qd )
 	arprec? ( sci-libs/arprec )
+	mpfun90? ( sci-libs/mpfun90 )
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -51,6 +52,8 @@ src_configure() {
 	use qpkind && echo "QPKIND = kind(1d0)" >> Config
 	use dpkind16 && echo "DPKIND = 16" >> Config
 	use qpkind16 && echo "QPKIND = 16" >> Config
+
+	use kindtypes &&  echo "KINDMOD = kind_types"
 
 	use qdcpp && echo "QDTYPE = qdcpp" >> Config
 	use ddcpp && echo "DDTYPE = qdcpp" >> Config
