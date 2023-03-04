@@ -1,6 +1,6 @@
 BDEPEND=acct-user/madgraph acct-group/madgraph
 DEFINED_PHASES=configure install postinst unpack
-DEPEND=python_targets_python3_9? ( >=dev-lang/python-3.9.16-r1:3.9 ) python_targets_python3_10? ( >=dev-lang/python-3.10.9-r1:3.10 ) sys-libs/zlib sys-devel/gcc:*[fortran] acct-user/madgraph acct-group/madgraph lhapdf? ( python_targets_python3_9? ( ) python_targets_python3_10? ( ) ) fastjet? ( python_targets_python3_9? ( ) python_targets_python3_10? ( ) ) pythia? ( sci-physics/pythia ) hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
+DEPEND=python_targets_python3_9? ( >=dev-lang/python-3.9.16-r1:3.9 ) python_targets_python3_10? ( >=dev-lang/python-3.10.9-r1:3.10 ) sys-libs/zlib sys-devel/gcc:*[fortran] acct-user/madgraph acct-group/madgraph lhapdf? ( python_targets_python3_9? ( sci-physics/lhapdf[python_targets_python3_9(-)?,python_targets_python3_10(-)?] ) python_targets_python3_10? ( sci-physics/lhapdf[python_targets_python3_9(-)?,python_targets_python3_10(-)?] ) ) fastjet? ( python_targets_python3_9? ( sci-physics/fastjet[python_targets_python3_9(-)?,python_targets_python3_10(-)?] ) python_targets_python3_10? ( sci-physics/fastjet[python_targets_python3_9(-)?,python_targets_python3_10(-)?] ) ) pythia? ( sci-physics/pythia ) hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
 DESCRIPTION=MadGraph5_aMC@NLO
 EAPI=8
 HOMEPAGE=https://launchpad.net/mg5amcnlo
@@ -8,9 +8,9 @@ INHERIT=python-r1
 IUSE=+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig +hepmc python_targets_python3_9 python_targets_python3_10
 KEYWORDS=~amd64
 LICENSE=UoI-NCSA
-RDEPEND=python_targets_python3_9? ( >=dev-lang/python-3.9.16-r1:3.9 ) python_targets_python3_10? ( >=dev-lang/python-3.10.9-r1:3.10 ) sys-libs/zlib sys-devel/gcc:*[fortran] acct-user/madgraph acct-group/madgraph lhapdf? ( python_targets_python3_9? ( ) python_targets_python3_10? ( ) ) fastjet? ( python_targets_python3_9? ( ) python_targets_python3_10? ( ) ) pythia? ( sci-physics/pythia ) hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
+RDEPEND=python_targets_python3_9? ( >=dev-lang/python-3.9.16-r1:3.9 ) python_targets_python3_10? ( >=dev-lang/python-3.10.9-r1:3.10 ) sys-libs/zlib sys-devel/gcc:*[fortran] acct-user/madgraph acct-group/madgraph lhapdf? ( python_targets_python3_9? ( sci-physics/lhapdf[python_targets_python3_9(-)?,python_targets_python3_10(-)?] ) python_targets_python3_10? ( sci-physics/lhapdf[python_targets_python3_9(-)?,python_targets_python3_10(-)?] ) ) fastjet? ( python_targets_python3_9? ( sci-physics/fastjet[python_targets_python3_9(-)?,python_targets_python3_10(-)?] ) python_targets_python3_10? ( sci-physics/fastjet[python_targets_python3_9(-)?,python_targets_python3_10(-)?] ) ) pythia? ( sci-physics/pythia ) hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
 REQUIRED_USE=|| ( python_targets_python3_9 python_targets_python3_10 )
 SLOT=3
 SRC_URI=https://launchpad.net/mg5amcnlo/3.0/3.4.x/+download/MG5_aMC_v3.4.2.tar.gz
 _eclasses_=out-of-source-utils	1a9007554652a6e627edbccb3c25a439	multibuild	bddcb51b74f4a76724ff7cf8e7388869	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	python-utils-r1	429bfd4e8d8e39db5385ba5744f30788	python-r1	666be58f658d6b32affe30f80e39a49e
-_md5_=e6311d730f119cc5f06661a88a6ddabb
+_md5_=ff23f248dab2b0fe708df104768eaa3d
