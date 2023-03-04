@@ -65,6 +65,6 @@ src_install() {
 
 	if use examples; then
 		dodoc -r examples
-		use tau-spinner && docinto tau-spinner && dodoc -r TauSpinner/examples
+		docinto tau-spinner && dodoc -r TauSpinner/examples
 	fi
 }
