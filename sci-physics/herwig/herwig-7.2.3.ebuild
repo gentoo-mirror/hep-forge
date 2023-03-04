@@ -26,7 +26,7 @@ RDEPEND="
 	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
 	>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc,rivet]
 	sci-physics/evtgen[pythia]
-	pythia? ( sci-physics/pythia-8 )
+	pythia? ( >=sci-physics/pythia-8.0.0 )
 	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
