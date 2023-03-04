@@ -29,13 +29,25 @@ sci-physics/herwig:hepmc2 - Build with HepMC2
 sci-physics/herwig:hepmc3 - Build with HepMC3
 sci-physics/madgraph5:collier - USE system collier
 sci-physics/madgraph5:fastjet - USE system FASTJET
+sci-physics/madgraph5:hepmc - USE system hepmc
+sci-physics/madgraph5:herwig - USE system herwig
 sci-physics/madgraph5:lhapdf - USE system LHAPDF
 sci-physics/madgraph5:ninja - USE system ninja
 sci-physics/madgraph5:pineappl - USE system pineappl
 sci-physics/madgraph5:pythia - USE system PYTHIA
 sci-physics/madgraph5:samurai - USE system samurai
+sci-physics/madgraph5:thepeg - USE system thepeg
+sci-physics/oneloop:arprec - use sci-libs/arprec
+sci-physics/oneloop:cppintf - enable cppintf
+sci-physics/oneloop:ddcpp - double use sci-libs/qd
 sci-physics/oneloop:dpkind - double precision
+sci-physics/oneloop:dpkind16 - double16 precision
+sci-physics/oneloop:kindtypes - use KINDMOD = kindtypes
+sci-physics/oneloop:mpfun90 - use sci-libs/mpfun90
+sci-physics/oneloop:qdcpp - quad use sci-libs/qd
 sci-physics/oneloop:qpkind - quad precision
+sci-physics/oneloop:qpkind16 - quad16 precision
+sci-physics/oneloop:tlevel - enable tlevel
 sci-physics/photos:hepmc - Build with hepmc 2
 sci-physics/photos:hepmc3 - Build with hepmc 3
 sci-physics/photos:pythia - Build with pythia
@@ -45,6 +57,7 @@ sci-physics/pythia:hepmc2 - Adds support for High Energy Physics Monte Carlo Gen
 sci-physics/pythia:hepmc3 - Adds support for High Energy Physics Monte Carlo Generators 3 sci-physics/hepmc
 sci-physics/pythia:lhapdf - Support the use of external PDF sets via sci-physics/lhapdf
 sci-physics/pythia:root - Use sci-physics/root trees and histograms (in examples only)
+sci-physics/recola2:SM - Use SM model
 sci-physics/rivet:analyses - Build with standard analyses
 sci-physics/rivet:hepmc2 - Build with HepMC2
 sci-physics/rivet:hepmc3 - Build with HepMC3
