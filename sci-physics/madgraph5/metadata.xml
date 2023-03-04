@@ -18,6 +18,7 @@
 		<flag name="pineappl">USE system pineappl</flag>
 		<flag name="herwig">USE system herwig</flag>
 		<flag name="hepmc">USE system hepmc</flag>
+		<flag name="thepeg">USE system thepeg</flag>
 	</use>
 	<upstream>
 		<remote-id type="launchpad">mg5amcnlo</remote-id>
