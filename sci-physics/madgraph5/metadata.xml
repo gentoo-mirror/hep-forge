@@ -16,6 +16,8 @@
 		<flag name="samurai">USE system samurai</flag>
 		<flag name="collier">USE system collier</flag>
 		<flag name="pineappl">USE system pineappl</flag>
+		<flag name="herwig">USE system herwig</flag>
+		<flag name="hepmc">USE system hepmc</flag>
 	</use>
 	<upstream>
 		<remote-id type="launchpad">mg5amcnlo</remote-id>
