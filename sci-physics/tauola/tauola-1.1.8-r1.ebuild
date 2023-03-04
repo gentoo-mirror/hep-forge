@@ -31,9 +31,9 @@ DEPEND="${RDEPEND}
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-1.1.3-tau-spinner-makefile.patch
-)
+#PATCHES=(
+#	"${FILESDIR}"/${PN}-1.1.3-tau-spinner-makefile.patch
+#)
 
 src_configure() {
 	econf \
