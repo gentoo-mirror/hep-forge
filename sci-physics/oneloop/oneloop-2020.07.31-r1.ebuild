@@ -86,6 +86,6 @@ src_install() {
 	dolib.a libavh_olo.a
 	dolib.so libavh_olo.so
 	doheader *.mod
-	dosym ${EPREFIX}/usr/$(get_libdir)/libavh_olo.so ${EPREFIX}/usr/$(get_libdir)/liboneloop.so
-	dosym ${EPREFIX}/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
+	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.so ${EPREFIX}/usr/$(get_libdir)/liboneloop.so
+	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
 }

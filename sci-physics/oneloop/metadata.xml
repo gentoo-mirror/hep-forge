@@ -11,6 +11,7 @@
 	</maintainer>
 	<longdescription lang="en">
 		Library of one-loop scalar functions by Andreas van Hameren.
+		Commonly named avh_olo and used by/for cuttools.
 	</longdescription>
 	<use>
 		<flag name="dpkind">double precision</flag>
