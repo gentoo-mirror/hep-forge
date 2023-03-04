@@ -12,7 +12,7 @@ SRC_URI="https://evtgen.hepforge.org/downloads?f=${MY_P}.tar.gz"
 HOMEPAGE="https://evtgen.hepforge.org/"
 
 S="${WORKDIR}/${MY_PN}/R$(ver_rs 1-2 '-')"
-LICENSE=""
+LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="pythia photos tauola"
