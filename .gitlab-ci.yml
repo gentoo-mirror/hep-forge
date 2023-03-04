@@ -286,7 +286,7 @@ global-pkgcheck:
   needs: []
   extends: .config
   script:
-    - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" | tee "build_$CATEGORY_$PKG-$VERSION.log"; 
+    - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y | tee "build_$CATEGORY_$PKG-$VERSION.log"; 
   artifacts:     
       when: always        
       paths:

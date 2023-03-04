@@ -13,4 +13,10 @@
 	<longdescription lang="en">
 	TAUOLA
     </longdescription>
+	<use>
+		<flag name="hepmc"> hepmc version 2 </flag>
+		<flag name="hepmc3"> hepmc version 3 </flag>
+		<flag name="tau-spinner"> enable tau-spinner </flag>
+		<flag name="pythia"> build with pythia connection </flag>
+	</use>
 </pkgmetadata>

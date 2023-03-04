@@ -13,7 +13,8 @@ HOMEPAGE="
 SRC_URI="https://github.com/APN-Pucky/mpfun90/archive/refs/tags/2023-02-26.tar.gz"
 S="${WORKDIR}/mpfun90-2023-02-26"
 
-LICENSE=""
+LICENSE="all-rights-reserved"
+RESTRICT="bindist mirror"
 SLOT="0"
 KEYWORDS="~amd64"
 
