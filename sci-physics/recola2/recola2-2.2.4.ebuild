@@ -4,7 +4,7 @@
 EAPI=8
 
 CMAKE_MAKEFILE_GENERATOR="emake"
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{8..11} )
 
 inherit cmake python-single-r1
 
