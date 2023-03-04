@@ -6,7 +6,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7..10} )
+PYTHON_COMPAT=( python3_{9..10} )
 inherit python-r1
 
 MY_PV=$(ver_rs 1-3 '_')
@@ -34,7 +34,7 @@ RDEPEND="
 	  $(python_gen_cond_dep 'sci-physics/lhapdf[${PYTHON_USEDEP}]' ) 
 	)
 	fastjet? ( 
-		$(python_gen_cond_dep 'sci-physics/fastjet[${PYTHON_USEDEP}]' ) 
+		$(python_gen_cond_dep 'sci-physics/fastjet[${PYTHON_USEDEP}] ) 
 	)
 	pythia? ( sci-physics/pythia )
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
