@@ -40,6 +40,10 @@ sci-physics/sherpa:hepmc2 - Build with HepMC2
 sci-physics/sherpa:lhapdf - Build with LHAPDF
 sci-physics/sherpa:pythia - Build with Pythia
 sci-physics/sherpa:rivet - Build with Rivet
+sci-physics/tauola:hepmc - hepmc version 2
+sci-physics/tauola:hepmc3 - hepmc version 3
+sci-physics/tauola:pythia - build with pythia connection
+sci-physics/tauola:tau-spinner - enable tau-spinner
 sci-physics/thepeg:fastjet - Adds support for sci-physics/fastjet
 sci-physics/thepeg:hepmc - Adds support for High Energy Physics Monte Carlo Generators sci-physics/hepmc
 sci-physics/thepeg:lhapdf - Adds support for sci-physics/lhapdf
