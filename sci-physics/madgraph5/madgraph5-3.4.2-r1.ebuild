@@ -30,8 +30,8 @@ RDEPEND="
 	sys-devel/gcc:*[fortran]
 	acct-user/madgraph
 	acct-group/madgraph
-	lhapdf? ( sci-physics/lhapdf[${PYTHON_SINGLE_USE}] )
-	fastjet? ( sci-physics/fastjet[${PYTHON_SINGLE_USE}] )
+	lhapdf? ( sci-physics/lhapdf[${PYTHON_SINGLE_USEDEP}] )
+	fastjet? ( sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}] )
 	pythia? ( sci-physics/pythia )
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
 	"
