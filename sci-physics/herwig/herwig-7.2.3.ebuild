@@ -12,7 +12,7 @@ SRC_URI="https://herwig.hepforge.org/downloads?f=${MY_PF}.tar.bz2"
 HOMEPAGE="https://herwig.hepforge.org/"
 
 S=${WORKDIR}/${MY_PF}
-LICENSE=""
+LICENSE="GPL-3+"
 SLOT="7"
 KEYWORDS="~amd64"
 IUSE="" # pythia vbfnlo openloops njet gosam madgraph
