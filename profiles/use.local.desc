@@ -5,9 +5,18 @@
 dev-python/poetry-dynamic-versioning:plugin - Include poetry dependency for plugin
 dev-python/xsdata:cli - cli tools
 dev-python/xsdata:lxml - use lxml
+sci-libs/einspline:altivec - Build with altivec
+sci-libs/einspline:blips - Build with blips
+sci-libs/einspline:cuda - Build with cuda
+sci-libs/einspline:double - Build with double
+sci-libs/einspline:fortran - Build with fortran
+sci-libs/einspline:sse - Build with sse
 sci-mathematics/cgal:mpfi - Enable support for multiple recision interval arithmetic via sci-libs/mpfi
 sci-mathematics/cgal:ntl - Enable support for dev-libs/ntl
 sci-mathematics/cgal:shared - Build shared library
+sci-physics/evtgen:photos - Build with photos
+sci-physics/evtgen:pythia - Build with pythia
+sci-physics/evtgen:tauola - Build with tauola
 sci-physics/fastjet:cgal - Use sci-mathematics/cgal instead of bundled algorithms
 sci-physics/fastjet:plugins - Build all standard and C++ plugins
 sci-physics/feyncalc:FCtraditionalFormOutput - Use TraditionalForm typesetting.
@@ -27,6 +36,10 @@ sci-physics/madgraph5:pythia - USE system PYTHIA
 sci-physics/madgraph5:samurai - USE system samurai
 sci-physics/oneloop:dpkind - double precision
 sci-physics/oneloop:qpkind - quad precision
+sci-physics/photos:hepmc - Build with hepmc 2
+sci-physics/photos:hepmc3 - Build with hepmc 3
+sci-physics/photos:pythia - Build with pythia
+sci-physics/photos:tauola - Build with tauola
 sci-physics/pythia:fastjet - Build jets using the sci-physics/fastjet package
 sci-physics/pythia:hepmc2 - Adds support for High Energy Physics Monte Carlo Generators 2 sci-physics/hepmc
 sci-physics/pythia:hepmc3 - Adds support for High Energy Physics Monte Carlo Generators 3 sci-physics/hepmc
