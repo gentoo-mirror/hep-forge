@@ -3,6 +3,8 @@
 
 EAPI=8
 
+MY_P=OneLOop-${PV}
+
 # python only needed for create.py to get binaries
 PYTHON_COMPAT=( python3_{8..11} )
 inherit toolchain-funcs python-any-r1
@@ -12,8 +14,8 @@ HOMEPAGE="
 	https://helac-phegas.web.cern.ch/OneLOop.html
 	https://bitbucket.org/hameren/oneloop
 "
-SRC_URI="http://helac-phegas.web.cern.ch/helac-phegas/tar-files/OneLOop-${PV}.tgz"
-S="${WORKDIR}"
+SRC_URI="http://helac-phegas.web.cern.ch/helac-phegas/tar-files/${MY_P}.tgz"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-3+"
 SLOT="0"
