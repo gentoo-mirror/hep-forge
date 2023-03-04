@@ -43,7 +43,7 @@ src_prepare() {
 src_configure() {
 	econf \
 		--without-mc-tester \
-		--with-hepmc3 "${EPREFIX}/usr") \
+		--with-hepmc3="${EPREFIX}/usr" \
 		$(use_with hepmc hepmc "${EPREFIX}/usr") \
 		$(use_with pythia pythia8 "${EPREFIX}/usr") \
 		$(use_with tauola tauola "${EPREFIX}/usr") 
