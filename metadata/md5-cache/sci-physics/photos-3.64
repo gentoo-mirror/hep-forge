@@ -1,16 +1,15 @@
 BDEPEND=sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71-r5 >=sys-devel/libtool-2.4.7
 DEFINED_PHASES=compile configure install prepare
-DEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] ) pythia? ( sci-physics/pythia:8= ) tauola? ( sci-physics/tauola[hepmc?,hepmc3?,pythia?] ) doc? ( app-doc/doxygen[dot] app-text/ghostscript-gpl app-text/texlive )
+DEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) sci-physics/hepmc:3=[-cm(-),gev(+)] pythia? ( sci-physics/pythia:8= ) tauola? ( sci-physics/tauola[hepmc?,hepmc3?,pythia?] ) doc? ( app-doc/doxygen[dot] app-text/ghostscript-gpl app-text/texlive )
 DESCRIPTION=PHOTOS
 EAPI=8
 HOMEPAGE=https://gitlab.cern.ch/photospp/photospp http://photospp.web.cern.ch/photospp/
 INHERIT=autotools
-IUSE=doc examples hepmc +hepmc3 pythia tauola
+IUSE=doc examples hepmc pythia tauola
 KEYWORDS=~amd64
 LICENSE=MIT
-RDEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] ) pythia? ( sci-physics/pythia:8= ) tauola? ( sci-physics/tauola[hepmc?,hepmc3?,pythia?] )
-REQUIRED_USE=|| ( hepmc hepmc3 )
+RDEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) sci-physics/hepmc:3=[-cm(-),gev(+)] pythia? ( sci-physics/pythia:8= ) tauola? ( sci-physics/tauola[hepmc?,hepmc3?,pythia?] )
 SLOT=0
 SRC_URI=http://photospp.web.cern.ch/photospp/resources/PHOTOS.3.64/PHOTOS.3.64.tar.gz
 _eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	libtool	241a8f577b9781a42a7421e53448a44e	autotools	6dcd6b6a486e79928e1243ff9ba41fcc
-_md5_=a02769f051c88032bae7f8808d79cbb4
+_md5_=a03b6bd6b3a8ad6e7ed3d3382029da76

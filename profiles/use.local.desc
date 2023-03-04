@@ -48,7 +48,6 @@ sci-physics/oneloop:qpkind - quad precision
 sci-physics/oneloop:qpkind16 - quad16 precision
 sci-physics/oneloop:tlevel - enable tlevel
 sci-physics/photos:hepmc - Build with hepmc 2
-sci-physics/photos:hepmc3 - Build with hepmc 3
 sci-physics/photos:pythia - Build with pythia
 sci-physics/photos:tauola - Build with tauola
 sci-physics/pythia:fastjet - Build jets using the sci-physics/fastjet package
