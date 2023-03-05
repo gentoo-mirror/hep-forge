@@ -17,7 +17,6 @@
 	<use>
 		<flag name="pythia">Build with pythia</flag>
 		<flag name="hepmc">Build with hepmc 2</flag>
-		<flag name="hepmc3">Build with hepmc 3</flag>
 		<flag name="tauola">Build with tauola</flag>
 	</use>
 </pkgmetadata>

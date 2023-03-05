@@ -19,13 +19,13 @@ S=${WORKDIR}/${MY_PN}
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="doc examples hepmc hepmc3 pythia tauola"
+IUSE="doc examples hepmc pythia tauola"
 
 RDEPEND="
 	hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
-	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
+	sci-physics/hepmc:3=[-cm(-),gev(+)]
 	pythia? ( sci-physics/pythia:8= )
-    tauola? ( sci-physics/tauola[hepmc?,hepmc3?,pythia?] )
+    tauola? ( sci-physics/tauola[hepmc?,hepmc3,pythia?] )
 "
 DEPEND="${RDEPEND}
 	doc? (
@@ -43,8 +43,8 @@ src_prepare() {
 src_configure() {
 	econf \
 		--without-mc-tester \
+		--with-hepmc3="${EPREFIX}/usr" \
 		$(use_with hepmc hepmc "${EPREFIX}/usr") \
-		$(use_with hepmc3 hepmc3 "${EPREFIX}/usr") \
 		$(use_with pythia pythia8 "${EPREFIX}/usr") \
 		$(use_with tauola tauola "${EPREFIX}/usr") 
 }

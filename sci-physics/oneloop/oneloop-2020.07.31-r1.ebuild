@@ -4,7 +4,7 @@
 EAPI=8
 
 # python only needed for create.py to get binaries
-PYTHON_COMPAT=( python3_{8..11} )
+PYTHON_COMPAT=( python3_{9..11} )
 inherit toolchain-funcs python-any-r1
 
 DESCRIPTION="Library of one-loop scalar functions"
@@ -79,6 +79,7 @@ src_compile() {
 	${EPYTHON} ./create.py || die "Failed to compile"
 	# create.py does not use soname, so we do it ourself
 	#./create.py dynamic || die
+	${FC} -O -fPIC -c avh_olo.f90 -o avh_olo.o
 	${FC} ${LDFLAGS} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so avh_olo.o
 }
 
@@ -86,6 +87,6 @@ src_install() {
 	dolib.a libavh_olo.a
 	dolib.so libavh_olo.so
 	doheader *.mod
-	dosym ${EPREFIX}/usr/$(get_libdir)/libavh_olo.so ${EPREFIX}/usr/$(get_libdir)/liboneloop.so
-	dosym ${EPREFIX}/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
+	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.so ${EPREFIX}/usr/$(get_libdir)/liboneloop.so
+	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
 }
