@@ -6,8 +6,8 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{7..10} )
-inherit python-r1
+PYTHON_COMPAT=( python3_{9..10} )
+inherit python-single-r1
 
 MY_PV=$(ver_rs 1-3 '_')
 MY_PN="MG5_aMC_v"
@@ -30,12 +30,8 @@ RDEPEND="
 	sys-devel/gcc:*[fortran]
 	acct-user/madgraph
 	acct-group/madgraph
-	lhapdf? ( 
-	  $(python_gen_cond_dep 'sci-physics/lhapdf[${PYTHON_USEDEP}]' ) 
-	)
-	fastjet? ( 
-		$(python_gen_cond_dep 'sci-physics/fastjet[${PYTHON_USEDEP}]' ) 
-	)
+	lhapdf? ( sci-physics/lhapdf[${PYTHON_SINGLE_USEDEP}] )
+	fastjet? ( sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}] )
 	pythia? ( sci-physics/pythia )
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
 	"
