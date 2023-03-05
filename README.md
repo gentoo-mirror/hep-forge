@@ -1,5 +1,7 @@
 # Inofficial HEPForge mirror
 
+Most ebuilds here are experimental and will move to ::science if they are stable and relevant.
+
 
 ## pkgdev
 
