@@ -21,9 +21,9 @@ DEPEND=">=sci-physics/fastjet-3.4.0"
 RDEPEND="${DEPEND}"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-soname.patch
-	"${FILESDIR}"/${P}-ar.patch
-	"${FILESDIR}"/${P}-musl.patch
+	"${FILESDIR}"/${PN}-1.049-soname.patch
+	"${FILESDIR}"/${PN}-1.049-ar.patch
+	"${FILESDIR}"/${PN}-1.049-musl.patch
 )
 
 src_configure() {
