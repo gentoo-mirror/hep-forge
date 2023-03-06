@@ -74,7 +74,7 @@ default:
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [fastjet-contrib]
-        VERSION: ['1.049']
+        VERSION: ['1.051','1.049']
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [qgraf]
