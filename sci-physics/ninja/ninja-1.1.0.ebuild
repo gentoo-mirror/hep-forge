@@ -31,6 +31,12 @@ src_configure() {
 	default
 }
 
+src_compile() {
+	# single thread force needed since fortan mods depend on each other
+	export MAKEOPTS=-j1
+	default
+}
+
 src_install() {
 	default
 	find "${ED}" -name '*.la' -delete || die
