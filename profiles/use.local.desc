@@ -20,6 +20,7 @@ sci-physics/evtgen:tauola - Build with tauola
 sci-physics/fastjet:cgal - Use sci-mathematics/cgal instead of bundled algorithms
 sci-physics/fastjet:plugins - Build all standard and C++ plugins
 sci-physics/feyncalc:FCtraditionalFormOutput - Use TraditionalForm typesetting.
+sci-physics/golem95:looptools - use looptools
 sci-physics/hepmc:cm - Build with cm instead of default mm for length units
 sci-physics/hepmc:example - Build with example codes
 sci-physics/hepmc:gev - Build with GeV instead of default MeV for momentum units
@@ -41,7 +42,7 @@ sci-physics/oneloop:cppintf - enable cppintf
 sci-physics/oneloop:ddcpp - double use sci-libs/qd
 sci-physics/oneloop:dpkind - double precision
 sci-physics/oneloop:dpkind16 - double16 precision
-sci-physics/oneloop:kindtypes - use KINDMOD = kindtypes
+sci-physics/oneloop:kind_types - use KINDMOD = kind_types
 sci-physics/oneloop:mpfun90 - use sci-libs/mpfun90
 sci-physics/oneloop:qdcpp - quad use sci-libs/qd
 sci-physics/oneloop:qpkind - quad precision
