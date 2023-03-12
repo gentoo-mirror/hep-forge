@@ -37,6 +37,6 @@ src_prepare() {
 	default
 	cmake_src_prepare
 	sed -i "s#DESTINATION cards#DESTINATION share/delphes/cards#g" cards/CMakeLists.txt || die
-	sed -i "s#DESTINATION examples#DESTINATION share/delphes/examples#g" cards/CMakeLists.txt || die
-	sed -i "s#DESTINATION lib#DESTINATION $(get_libdir)#g" cards/CMakeLists.txt || die	
+	sed -i "s#DESTINATION examples#DESTINATION share/delphes/examples#g" examples/CMakeLists.txt || die
+	sed -i "s#DESTINATION lib#DESTINATION $(get_libdir)#g" CMakeLists.txt || die	
 }
