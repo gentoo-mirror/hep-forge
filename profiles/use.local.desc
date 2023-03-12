@@ -59,6 +59,8 @@ sci-physics/recola2:SM - Use SM model
 sci-physics/rivet:analyses - Build with standard analyses
 sci-physics/rivet:hepmc2 - Build with HepMC2
 sci-physics/rivet:hepmc3 - Build with HepMC3
+sci-physics/samurai:looptools - use looptools
+sci-physics/samurai:qcdloop - use qcdloop
 sci-physics/sherpa:fastjet - Build with FastJet
 sci-physics/sherpa:hepmc2 - Build with HepMC2
 sci-physics/sherpa:lhapdf - Build with LHAPDF
