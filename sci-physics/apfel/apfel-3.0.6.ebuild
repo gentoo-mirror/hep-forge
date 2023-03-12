@@ -1,6 +1,8 @@
 EAPI=8
 
-inherit autotools
+PYTHON_COMPAT=( python3_{9..10} )
+
+inherit autotools python-single-r1
 
 DESCRIPTION="A PDF Evolution Library"
 HOMEPAGE="
