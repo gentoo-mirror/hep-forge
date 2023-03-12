@@ -26,10 +26,17 @@ fi
 
 LICENSE="GPL-3+"
 SLOT="0"
-
 DEPEND="
 	sci-physics/root:=[opengl]
 	sci-physics/pythia:=
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+src_prepare() {
+	default
+	cmake_src_prepare
+	sed -i "s#DESTINATION cards#DESTINATION share/delphes/cards#g" cards/CMakeLists.txt || die
+	sed -i "s#DESTINATION examples#DESTINATION share/delphes/examples#g" examples/CMakeLists.txt || die
+	sed -i "s#DESTINATION lib#DESTINATION $(get_libdir)#g" CMakeLists.txt || die	
+}
