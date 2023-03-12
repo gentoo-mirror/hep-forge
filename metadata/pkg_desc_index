@@ -27,6 +27,8 @@ sci-libs/handyg 0.1.5: Rapid numerical evaluation of generalised polylogarithms
 sci-libs/mpfun90 2023.02.26: High-Precision Software
 sci-mathematics/cgal 5.2-r2 5.4.1: C++ library for geometric algorithms and data structures
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
+sci-physics/apfel 3.0.6: A PDF Evolution Library
+sci-physics/apfelxx 4.7.0: Object oriented rewriting of the APFEL evolution code
 sci-physics/cernlib 2006-r8: CERN program library for High Energy Physics
 sci-physics/collier 1.2.5 1.2.7: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.

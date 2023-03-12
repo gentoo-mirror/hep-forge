@@ -1,0 +1,12 @@
+BDEPEND=sys-devel/make >=dev-util/cmake-3.20.5
+DEFINED_PHASES=compile configure install prepare test
+DESCRIPTION=Object oriented rewriting of the APFEL evolution code
+EAPI=8
+HOMEPAGE=https://github.com/vbertone/apfelxx
+INHERIT=cmake
+KEYWORDS=~amd64
+LICENSE=GPL-3.0
+SLOT=0
+SRC_URI=https://github.com/vbertone/apfelxx/archive/4.7.0.tar.gz
+_eclasses_=toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	69394e25812406faa1f90edaf4969395	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	38c85b725d0467e51954ea921b6c104b	xdg-utils	ac0e315a3688929e34ac75b139e7349a	cmake	b2e109b7341cd993b8bdfcc60652a14d
+_md5_=99b5e694ae20fb0174ea0952712b20ba
