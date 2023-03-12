@@ -1,6 +1,6 @@
 BDEPEND=virtual/fortran sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71-r5 >=sys-devel/libtool-2.4.7
 DEFINED_PHASES=compile configure install prepare
-DEPEND=sci-physics/oneloop qcdloop? ( sci-physics/qcdloop ) looptools? ( sci-physics/looptools )
+DEPEND=sci-physics/oneloop[dpkind,qpkind16,-qpkind] qcdloop? ( sci-physics/qcdloop ) looptools? ( sci-physics/looptools )
 DESCRIPTION=Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 EAPI=8
 HOMEPAGE=https://samurai.hepforge.org/
@@ -8,8 +8,8 @@ INHERIT=autotools
 IUSE=+qcdloop +looptools
 KEYWORDS=~amd64
 LICENSE=GPL-3+
-RDEPEND=sci-physics/oneloop qcdloop? ( sci-physics/qcdloop ) looptools? ( sci-physics/looptools )
+RDEPEND=sci-physics/oneloop[dpkind,qpkind16,-qpkind] qcdloop? ( sci-physics/qcdloop ) looptools? ( sci-physics/looptools )
 SLOT=0
 SRC_URI=http://www.hepforge.org/archive/samurai/samurai-2.1.1.tar.gz
 _eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	libtool	241a8f577b9781a42a7421e53448a44e	autotools	6dcd6b6a486e79928e1243ff9ba41fcc
-_md5_=c54d198c353f5cf5eb6629aad4864587
+_md5_=24637d3e66628cb1141efd6f2bc314fc
