@@ -8,7 +8,6 @@ inherit autotools
 DESCRIPTION="performs the reduction to a certain set of basis integrals numerically"
 HOMEPAGE="https://golem.hepforge.org/"
 SRC_URI="https://golem.hepforge.org/downloads?f=${P}.tar.gz"
-S="${WORKDIR}"
 
 LICENSE="GPL-3"
 RESTRICT=""
