@@ -18,7 +18,7 @@ S="${WORKDIR}/hameren-oneloop-3762b8bad6ad"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf kind_types avh_olo_xkinds"
+IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf kind_types"
 REQUIRED_USE="
 	?? ( dpkind dpkind16 ddcpp )
 	?? ( qpkind qpkind16 qdcpp )
@@ -53,7 +53,7 @@ src_configure() {
 	use dpkind16 && echo "DPKIND = 16" >> Config
 	use qpkind16 && echo "QPKIND = 16" >> Config
 
-	use kindtypes &&  echo "KINDMOD = kind_types"
+	use kindtypes &&  echo "KINDMOD = kind_types" >> Config
 
 	use qdcpp && echo "QDTYPE = qdcpp" >> Config
 	use ddcpp && echo "DDTYPE = qdcpp" >> Config
@@ -76,11 +76,15 @@ src_configure() {
 src_compile() {
 	tc-export FC
 	#emake -f make_cuttools
+	if use kind_types ; then 
+		cp "${FILESDIR}"/kind_types.f90 .
+		${FC} -O -fPIC -c kind_types.f90
+	fi
 	${EPYTHON} ./create.py || die "Failed to compile"
 	# create.py does not use soname, so we do it ourself
 	#./create.py dynamic || die
 	${FC} -O -fPIC -c avh_olo.f90 -o avh_olo.o
-	${FC} ${LDFLAGS} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so avh_olo.o
+	${FC} ${LDFLAGS} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so *.o
 }
 
 src_install() {
