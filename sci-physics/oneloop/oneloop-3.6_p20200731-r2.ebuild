@@ -76,7 +76,6 @@ src_configure() {
 src_compile() {
 	tc-export FC
 	#emake -f make_cuttools
-
 	${EPYTHON} ./create.py source || die "Failed to compile"
 	# create.py does not use soname, so we do it ourself
 	#./create.py dynamic || die
@@ -92,5 +91,5 @@ src_install() {
 	dolib.so libavh_olo.so
 	doheader *.mod
 	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.so ${EPREFIX}/usr/$(get_libdir)/liboneloop.so
-	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
+	#dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
 }
