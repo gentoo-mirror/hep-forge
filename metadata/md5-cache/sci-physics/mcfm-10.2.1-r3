@@ -1,14 +1,14 @@
 BDEPEND=virtual/fortran sys-devel/make >=dev-util/cmake-3.20.5
 DEFINED_PHASES=compile configure install prepare test
-DEPEND=sci-physics/lhapdf >=sci-libs/qd-2.3.22 >=sci-physics/qcdloop-2.0.5 >=sci-physics/oneloop-2020.07.31[dpkind,-qpkind,-qpkind16] >=sci-libs/handyg-0.1.5
+DEPEND=sci-physics/lhapdf >=sci-libs/qd-2.3.22 >=sci-physics/qcdloop-2.0.5 >=sci-physics/oneloop-3.6_p20200731[dpkind,-qpkind,-qpkind16] >=sci-libs/handyg-0.1.5
 DESCRIPTION=Monte Carlo for FeMtobarn processes
 EAPI=8
 HOMEPAGE=https://mcfm.fnal.gov
 INHERIT=cmake
 KEYWORDS=~amd64
 LICENSE=GPL-3+
-RDEPEND=sci-physics/lhapdf >=sci-libs/qd-2.3.22 >=sci-physics/qcdloop-2.0.5 >=sci-physics/oneloop-2020.07.31[dpkind,-qpkind,-qpkind16] >=sci-libs/handyg-0.1.5
+RDEPEND=sci-physics/lhapdf >=sci-libs/qd-2.3.22 >=sci-physics/qcdloop-2.0.5 >=sci-physics/oneloop-3.6_p20200731[dpkind,-qpkind,-qpkind16] >=sci-libs/handyg-0.1.5
 SLOT=0
 SRC_URI=https://mcfm.fnal.gov/downloads/MCFM-10.2.1.tar.gz
 _eclasses_=toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	69394e25812406faa1f90edaf4969395	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	38c85b725d0467e51954ea921b6c104b	xdg-utils	ac0e315a3688929e34ac75b139e7349a	cmake	b2e109b7341cd993b8bdfcc60652a14d
-_md5_=3de1d185f781e0b2690783a4fecd5e27
+_md5_=914f5ef932176b0e65c4bef70308c7ad

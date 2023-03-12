@@ -1,16 +1,16 @@
 BDEPEND=|| ( >=dev-lang/python-3.11.1-r1:3.11 >=dev-lang/python-3.10.9-r1:3.10 >=dev-lang/python-3.9.16-r1:3.9 ) app-arch/unzip virtual/fortran
 DEFINED_PHASES=compile configure install setup
-DEPEND=qpkind? ( sci-libs/qd ) qpkind16? ( sci-libs/qd ) arprec? ( sci-libs/arprec )
+DEPEND=qpkind? ( sci-libs/qd ) qpkind16? ( sci-libs/qd ) arprec? ( sci-libs/arprec ) mpfun90? ( sci-libs/mpfun90 )
 DESCRIPTION=Library of one-loop scalar functions
 EAPI=8
 HOMEPAGE=https://helac-phegas.web.cern.ch/OneLOop.html https://bitbucket.org/hameren/oneloop
 INHERIT=toolchain-funcs python-any-r1
-IUSE=+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf
+IUSE=+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf kindtypes
 KEYWORDS=~amd64
 LICENSE=GPL-3+
-RDEPEND=qpkind? ( sci-libs/qd ) qpkind16? ( sci-libs/qd ) arprec? ( sci-libs/arprec )
+RDEPEND=qpkind? ( sci-libs/qd ) qpkind16? ( sci-libs/qd ) arprec? ( sci-libs/arprec ) mpfun90? ( sci-libs/mpfun90 )
 REQUIRED_USE=?? ( dpkind dpkind16 ddcpp ) ?? ( qpkind qpkind16 qdcpp ) ?? ( arprec mpfun90 ) || ( dpkind dpkind16 ddcpp qpkind qpkind16 qdcpp )
 SLOT=0
-SRC_URI=https://bitbucket.org/hameren/oneloop/get/3762b8bad6ad.zip -> oneloop-2020.07.31.zip
+SRC_URI=https://bitbucket.org/hameren/oneloop/get/3762b8bad6ad.zip -> oneloop-3.6_p20200731.zip
 _eclasses_=toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	python-utils-r1	429bfd4e8d8e39db5385ba5744f30788	python-any-r1	d2955aaac8daaaa69fcc6dc93ed19f29
-_md5_=035e7556562b64f12bb39f3bcd235409
+_md5_=009269c708ddba5404cc3382e2313971
