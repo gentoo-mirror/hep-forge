@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 IUSE="+qcdloop +looptools"
 
 RDEPEND="
-	sci-physics/oneloop
+	sci-physics/oneloop[dpkind,qpkind16,-qpkind]
 	qcdloop? ( sci-physics/qcdloop )
 	looptools? ( sci-physics/looptools )
 "
