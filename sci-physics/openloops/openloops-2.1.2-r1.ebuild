@@ -18,7 +18,6 @@ LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# TODO use managed cuttools,qcdloop,oneloop
 DEPEND="
 	sci-physics/collier
 	sci-physics/qcdloop
