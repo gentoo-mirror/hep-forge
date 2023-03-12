@@ -12,7 +12,7 @@ DESCRIPTION="Object oriented rewriting of the APFEL evolution code"
 HOMEPAGE="https://github.com/vbertone/apfelxx"
 SRC_URI="https://github.com/vbertone/apfelxx/archive/${PV}.tar.gz"
 
-LICENSE="GPL-3.0"
+LICENSE="GPL-3+"
 RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
