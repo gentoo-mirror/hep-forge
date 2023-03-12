@@ -12,7 +12,7 @@ SRC_URI="http://www.hepforge.org/archive/samurai/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-3+"
 KEYWORDS="~amd64"
-IUSE="+qcdloop +looptools"
+IUSE="+qcdloop looptools"
 
 RDEPEND="
 	sci-physics/oneloop[dpkind,qpkind16,-qpkind]
