@@ -1,5 +1,5 @@
 BDEPEND=virtual/fortran sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71-r5 >=sys-devel/libtool-2.4.7
-DEFINED_PHASES=compile configure install prepare
+DEFINED_PHASES=compile configure install
 DESCRIPTION=Higher Order Perturbative Parton Evolution Toolkit
 EAPI=8
 HOMEPAGE=https://hoppet.hepforge.org/ https://github.com/gavinsalam/hoppet
@@ -9,4 +9,4 @@ LICENSE=GPL-3+
 SLOT=0
 SRC_URI=https://hoppet.hepforge.org/downloads/hoppet-1.2.0.tgz
 _eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	libtool	241a8f577b9781a42a7421e53448a44e	autotools	6dcd6b6a486e79928e1243ff9ba41fcc
-_md5_=1b5209b7b2fe70033aa9d2e98c82937c
+_md5_=408084b1e01123dfb7712dd06891c04d
