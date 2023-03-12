@@ -7,8 +7,8 @@ inherit autotools
 
 DESCRIPTION="Higher Order Perturbative Parton Evolution Toolkit"
 HOMEPAGE="
-    https://hoppet.hepforge.org/
-    https://github.com/gavinsalam/hoppet
+	https://hoppet.hepforge.org/
+	https://github.com/gavinsalam/hoppet
 "
 SRC_URI="https://hoppet.hepforge.org/downloads/${P}.tgz"
 
@@ -23,16 +23,13 @@ BDEPEND="
 	virtual/fortran
 "
 
-src_prepare() {
-	default
-	eautoreconf
-}
-
 src_configure() {
 	default
-	econf FCFLAGS="${FCFLAGS} -std=legacy -fPIC -I${ESYSROOT}/usr/include"
-	# fix old vs new oneloop parameters
-	sed -i 's/avh_olo_kinds/avh_olo_dp_kinds/g' samurai/madds.f90 || die
+	# own custom configure
+	./configure --prefix="${EPREFIX}"/usr FFLAGS="${FFLAGS} -fPIC"
+	sed -i "s#scripts/install-sh hoppet-config#\##g" Makefile || die
+	sed -i "s#/usr/lib/libhoppet#${ED}/usr/$(get_libdir)/libhoppet#g" src/Makefile || die
+	sed -i "s#/usr/include/hoppet#${ED}/usr/include/hoppet#g" src/Makefile || die
 }
 
 src_compile() {
@@ -41,6 +38,7 @@ src_compile() {
 
 src_install() {
 	emake install
-    emake install-mod
+	emake install-mod
+	dobin hoppet-config
 	find "${ED}" -name '*.la' -delete || die
 }
