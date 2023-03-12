@@ -230,6 +230,15 @@ default:
         VERSION: [1.2.0]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [apfel]
+        VERSION: [3.0.6]
+        CATEGORY: ['sci-physics']
+        <<: *images
+      - PKG: [apfelxx]
+        VERSION: [4.7.0]
+        CATEGORY: ['sci-physics']
+        <<: *images
+
 
 .config:
     
