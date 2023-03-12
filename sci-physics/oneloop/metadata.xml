@@ -24,6 +24,6 @@
 		<flag name="mpfun90"> use sci-libs/mpfun90</flag>
 		<flag name="tlevel"> enable tlevel</flag>
 		<flag name="cppintf"> enable cppintf</flag>
-		<flag name="kindtypes"> use KINDMOD = kindtypes</flag>
+		<flag name="kind_types"> use KINDMOD = kind_types</flag>
 	</use>
 </pkgmetadata>

@@ -53,7 +53,7 @@ src_configure() {
 	use dpkind16 && echo "DPKIND = 16" >> Config
 	use qpkind16 && echo "QPKIND = 16" >> Config
 
-	use kindtypes &&  echo "KINDMOD = kind_types" >> Config
+	use kind_types &&  echo "KINDMOD = kind_types" >> Config
 
 	use qdcpp && echo "QDTYPE = qdcpp" >> Config
 	use ddcpp && echo "DDTYPE = qdcpp" >> Config
@@ -76,19 +76,19 @@ src_configure() {
 src_compile() {
 	tc-export FC
 	#emake -f make_cuttools
-	if use kind_types ; then 
-		cp "${FILESDIR}"/kind_types.f90 .
-		${FC} -O -fPIC -c kind_types.f90
-	fi
-	${EPYTHON} ./create.py || die "Failed to compile"
+
+	${EPYTHON} ./create.py source || die "Failed to compile"
 	# create.py does not use soname, so we do it ourself
 	#./create.py dynamic || die
+	if use kind_types ; then 
+		cat "${FILESDIR}"/kind_types.f90 | cat - avh_olo.f90 > avh_olo.f90
+	fi
 	${FC} -O -fPIC -c avh_olo.f90 -o avh_olo.o
 	${FC} ${LDFLAGS} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so *.o
 }
 
 src_install() {
-	dolib.a libavh_olo.a
+	#dolib.a libavh_olo.a
 	dolib.so libavh_olo.so
 	doheader *.mod
 	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.so ${EPREFIX}/usr/$(get_libdir)/liboneloop.so
