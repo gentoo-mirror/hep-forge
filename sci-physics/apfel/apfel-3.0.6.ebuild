@@ -15,7 +15,9 @@ LICENSE="GPL-3+"
 KEYWORDS="~amd64"
 IUSE=""
 
-RDEPEND=""
+RDEPEND="
+	sci-physics/lhapdf
+"
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/fortran
