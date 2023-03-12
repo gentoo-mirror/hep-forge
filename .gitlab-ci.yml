@@ -226,6 +226,10 @@ default:
         VERSION: [2.1.2]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [hoppet]
+        VERSION: [1.2.0]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .config:
     
