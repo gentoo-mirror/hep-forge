@@ -49,7 +49,7 @@ sci-physics/looptools 2.10 2.15 2.15-r1 2.16: Tools for evaluation of scalar and
 sci-physics/madgraph5 2.9.9 3.4.1-r1 3.4.2 3.4.2-r1 3.4.2-r2: MadGraph5_aMC@NLO
 sci-physics/mcfm 10.2.1 10.2.1-r1 10.2.1-r2 10.2.1-r3: Monte Carlo for FeMtobarn processes
 sci-physics/ninja 1.1.0: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
-sci-physics/oneloop 3.6 3.6-r1 2020.07.31 2020.07.31-r1: Library of one-loop scalar functions
+sci-physics/oneloop 3.6 3.6-r1 2020.07.31 2020.07.31-r1 2020.07.31-r2: Library of one-loop scalar functions
 sci-physics/openloops 2.1.2: Evaluation of tree and one-loop matrix elements for any Standard Model.
 sci-physics/particle 0.21.1: PDG particle data and identification codes
 sci-physics/photos 3.64: PHOTOS
