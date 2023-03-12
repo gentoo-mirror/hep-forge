@@ -4,7 +4,7 @@
 EAPI=8
 
 CMAKE_MAKEFILE_GENERATOR="emake"
-PYTHON_COMPAT=( python3_{8..11} )
+PYTHON_COMPAT=( python3_{9..10} )
 
 inherit cmake python-single-r1
 
@@ -12,7 +12,7 @@ DESCRIPTION="Object oriented rewriting of the APFEL evolution code"
 HOMEPAGE="https://github.com/vbertone/apfelxx"
 SRC_URI="https://github.com/vbertone/apfelxx/archive/${PV}.tar.gz"
 
-LICENSE="GPL-3.0"
+LICENSE="GPL-3+"
 RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
