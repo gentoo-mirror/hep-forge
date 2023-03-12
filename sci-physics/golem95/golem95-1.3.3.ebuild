@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 
 IUSE="+looptools"
 RDEPEND="
-	sci-physics/oneloop[dpkind,qpkind16,-qpkind,tlevel]
+	sci-physics/oneloop[dpkind,qpkind16,-qpkind]
 	looptools? ( sci-physics/looptools )
 "
 DEPEND="${REPEND}"
