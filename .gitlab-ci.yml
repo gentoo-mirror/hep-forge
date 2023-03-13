@@ -238,6 +238,10 @@ default:
         VERSION: [4.7.0]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [applgrid]
+        VERSION: [1.6.32]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 
 .config:
