@@ -12,4 +12,8 @@
 	<longdescription lang="en">
 	The APPLgrid project provides a fast and flexible way to reproduce the results of full NLO calculations with any input parton distribution set in only a few milliseconds rather than the weeks normally required to gain adequate statistics.
 	</longdescription>
+	<use>
+		<flag name="root">use root</flag>
+	</use>
+
 </pkgmetadata>
