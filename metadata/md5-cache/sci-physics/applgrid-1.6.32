@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure postinst
+DEPEND=root? ( sci-physics/root )
+DESCRIPTION=Quickly reproduce NLO calculations with any input PDFs
+EAPI=8
+HOMEPAGE=https://applgrid.hepforge.org/
+IUSE=root
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=root? ( sci-physics/root )
+SLOT=0
+SRC_URI=https://applgrid.hepforge.org/downloads?f=applgrid-1.6.32.tgz
+_md5_=45f728ac7ce818d101061921f9800e11

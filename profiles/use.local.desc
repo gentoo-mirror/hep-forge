@@ -14,6 +14,7 @@ sci-libs/einspline:sse - Build with sse
 sci-mathematics/cgal:mpfi - Enable support for multiple recision interval arithmetic via sci-libs/mpfi
 sci-mathematics/cgal:ntl - Enable support for dev-libs/ntl
 sci-mathematics/cgal:shared - Build shared library
+sci-physics/applgrid:root - use root
 sci-physics/evtgen:photos - Build with photos
 sci-physics/evtgen:pythia - Build with pythia
 sci-physics/evtgen:tauola - Build with tauola
