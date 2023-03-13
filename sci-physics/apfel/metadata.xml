@@ -5,11 +5,12 @@
 		<email>alexander@neuwirth-informatik.de</email>
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
-  <maintainer type="project">
-    <email>sci-physics@gentoo.org</email>
-    <name>Gentoo Physics Project</name>
-  </maintainer>
+	<maintainer type="project">
+		<email>sci-physics@gentoo.org</email>
+		<name>Gentoo Physics Project</name>
+	</maintainer>
 	<longdescription lang="en">
 	APFEL is a library able to perform DGLAP evolution up to NNLO in QCD and to NLO in QED, both with pole and MSbar masses. The coupled DGLAP QCD+QED evolution equations are solved in x-space by means of higher order interpolations and Runge-Kutta techniques.
 	</longdescription>
+	<remote-id type="github">scarrazza/apfel</remote-id> 
 </pkgmetadata>
