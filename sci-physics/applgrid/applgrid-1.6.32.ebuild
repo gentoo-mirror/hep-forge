@@ -3,11 +3,13 @@
 
 EAPI=8
 
+inherit optfeature
+
 DESCRIPTION="Quickly reproduce NLO calculations with any input PDFs"
 HOMEPAGE="
 	https://applgrid.hepforge.org/
 "
-SRC_URI="https://applgrid.hepforge.org/downloads?f=${P}.tgz"
+SRC_URI="https://applgrid.hepforge.org/downloads?f=${P}.tgz -> ${P}.tgz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,7 +21,6 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
-
 
 PATCHES=(
 	"${FILESDIR}"/${P}-iterator.patch
