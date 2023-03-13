@@ -1,0 +1,11 @@
+diff -Naru applgrid-1.6.32.orig/src/combine.cxx applgrid-1.6.32/src/combine.cxx
+--- applgrid-1.6.32.orig/src/combine.cxx	2023-03-13 09:12:45.260543743 +0100
++++ applgrid-1.6.32/src/combine.cxx	2023-03-13 09:12:57.184710138 +0100
+@@ -15,6 +15,7 @@
+ 
+ 
+ #include <iostream>
++#include <iterator>
+ #include <sstream>
+ #include <fstream>
+ #include <algorithm>

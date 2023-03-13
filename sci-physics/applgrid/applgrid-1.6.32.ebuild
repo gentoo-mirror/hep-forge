@@ -20,6 +20,11 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+
+PATCHES=(
+	"${FILESDIR}"/${P}-iterator.patch
+)
+
 src_configure() {
 	default
 	econf --prefix="${EPREFIX}"/usr $(use_with root)
