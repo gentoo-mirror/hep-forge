@@ -3,6 +3,8 @@
 
 EAPI=8
 
+inherit optfeature
+
 DESCRIPTION="Quickly reproduce NLO calculations with any input PDFs"
 HOMEPAGE="
 	https://applgrid.hepforge.org/
@@ -19,6 +21,10 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+PATCHES=(
+	"${FILESDIR}"/${P}-iterator.patch
+)
 
 src_configure() {
 	default
