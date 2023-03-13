@@ -10,16 +10,17 @@ inherit cmake python-single-r1
 
 DESCRIPTION="Object oriented rewriting of the APFEL evolution code"
 HOMEPAGE="https://github.com/vbertone/apfelxx"
-SRC_URI="https://github.com/vbertone/apfelxx/archive/${PV}.tar.gz"
+SRC_URI="https://github.com/vbertone/apfelxx/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+"
 RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
 
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 IUSE=""
 DEPEND=""
-RDEPEND="${DEPEND}"
+RDEPEND="${PYTHON_DEPS} ${DEPEND}"
 BDEPEND=""
 
 src_prepare() {
