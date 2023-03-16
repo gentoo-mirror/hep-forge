@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{8..10} )
 
-inherit python-single-r1 flag-o-matic autotools
+inherit python-single-r1 flag-o-matic autotools optfeature
 
 MY_PN="Rivet"
 MY_PF=${MY_PN}-${PV}

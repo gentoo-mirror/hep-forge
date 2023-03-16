@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 IUSE=""
 DEPEND="
 	sci-physics/qcdloop
-	sci-physics/oneloop[dpkind,qpkind16,-qpkind]
+	sci-physics/oneloop[dpkind,qpkind16,-qpkind,-tlevel]
 "
 RDEPEND="${DEPEND}"
 BDEPEND="

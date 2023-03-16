@@ -3,8 +3,6 @@
 
 EAPI=8
 
-MY_P=OneLOop-${PV}
-
 # python only needed for create.py to get binaries
 PYTHON_COMPAT=( python3_{9..11} )
 inherit toolchain-funcs python-any-r1
@@ -14,13 +12,13 @@ HOMEPAGE="
 	https://helac-phegas.web.cern.ch/OneLOop.html
 	https://bitbucket.org/hameren/oneloop
 "
-SRC_URI="http://helac-phegas.web.cern.ch/helac-phegas/tar-files/${MY_P}.tgz"
-S="${WORKDIR}/${MY_P}"
+SRC_URI="https://bitbucket.org/hameren/oneloop/get/3762b8bad6ad.zip -> ${P}.zip"
+S="${WORKDIR}/hameren-oneloop-3762b8bad6ad"
 
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf kindtypes"
+IUSE="+dpkind +qpkind qpkind16 dpkind16 qdcpp ddcpp mpfun90 arprec tlevel cppintf kind_types"
 REQUIRED_USE="
 	?? ( dpkind dpkind16 ddcpp )
 	?? ( qpkind qpkind16 qdcpp )
@@ -55,7 +53,7 @@ src_configure() {
 	use dpkind16 && echo "DPKIND = 16" >> Config
 	use qpkind16 && echo "QPKIND = 16" >> Config
 
-	use kindtypes &&  echo "KINDMOD = kind_types"
+	use kind_types &&  echo "KINDMOD = kind_types" >> Config
 
 	use qdcpp && echo "QDTYPE = qdcpp" >> Config
 	use ddcpp && echo "DDTYPE = qdcpp" >> Config
@@ -78,16 +76,20 @@ src_configure() {
 src_compile() {
 	tc-export FC
 	#emake -f make_cuttools
-	${EPYTHON} ./create.py || die "Failed to compile"
+	${EPYTHON} ./create.py source || die "Failed to compile"
 	# create.py does not use soname, so we do it ourself
 	#./create.py dynamic || die
-	${FC} ${LDFLAGS} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so avh_olo.o
+	if use kind_types ; then 
+		cat "${FILESDIR}"/kind_types.f90 | cat - avh_olo.f90 > avh_olo.f90
+	fi
+	${FC} -O -fPIC -c avh_olo.f90 -o avh_olo.o
+	${FC} ${LDFLAGS} -Wl,-soname,libavh_olo.so -shared -o libavh_olo.so *.o
 }
 
 src_install() {
-	dolib.a libavh_olo.a
+	#dolib.a libavh_olo.a
 	dolib.so libavh_olo.so
 	doheader *.mod
 	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.so ${EPREFIX}/usr/$(get_libdir)/liboneloop.so
-	dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
+	#dosym "${EPREFIX}"/usr/$(get_libdir)/libavh_olo.a ${EPREFIX}/usr/$(get_libdir)/liboneloop.a
 }

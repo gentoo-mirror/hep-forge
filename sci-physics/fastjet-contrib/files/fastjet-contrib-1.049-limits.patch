@@ -1,0 +1,12 @@
+diff -Naru fjcontrib-1.049.orig/LundPlane/EEHelpers.hh fjcontrib-1.049/LundPlane/EEHelpers.hh
+--- a/LundPlane/EEHelpers.hh	2023-03-06 18:25:01.053736049 +0100
++++ b/LundPlane/EEHelpers.hh	2023-03-06 18:25:17.498793437 +0100
+@@ -24,6 +24,7 @@
+ 
+ #include "fastjet/PseudoJet.hh"
+ #include <array>
++#include <limits>
+ 
+ FASTJET_BEGIN_NAMESPACE
+ 
+

@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=poetry
+DISTUTILS_USE_PEP517=setuptools
 PYTHON_COMPAT=( python3_{8..10} )
 inherit distutils-r1 optfeature
 
@@ -39,13 +39,6 @@ RDEPEND="
     sci-physics/pyslha
 "
 BDEPEND="${RDEPEND}"
-src_prepare() {
-    default
-	# Don't use dynamic versioning 	
-	sed -i "s/version.*=.*\"0\.0\.0\"/version = \"${PV}\"/" pyproject.toml 	
-	sed -i "s/requires.*=.*/requires = [\"poetry-core>=1.0.0\"]/" pyproject.toml 	
-	sed -i 's/poetry_dynamic_versioning.backend/poetry.core.masonry.api/g' pyproject.toml
-}
 # TODO needs test deps
 #distutils_enable_tests pytest
 
