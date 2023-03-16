@@ -4,7 +4,7 @@
 EAPI=8
 
 # python3_11 fails
-PYTHON_COMPAT=( python3_{8..10} )
+PYTHON_COMPAT=( python3_{9..10} )
 inherit cmake python-single-r1
 
 MYP=HepMC3-${PV}
