@@ -13,4 +13,4 @@ REQUIRED_USE=^^ ( python_single_target_python3_9 python_single_target_python3_10
 SLOT=0
 SRC_URI=https://www.hepforge.org/downloads/lhapdf/LHAPDF-6.5.3.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	python-utils-r1	429bfd4e8d8e39db5385ba5744f30788	python-single-r1	75118e916668a74c660a13b0ecb22562	docs	314e509c51630fb75f120d62a77d008c
-_md5_=cda5c343cb4e4250ac1d6a49897fb7e7
+_md5_=e42f8c8a25962a39d97db579d857cfb0
