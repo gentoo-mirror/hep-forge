@@ -73,7 +73,7 @@ sci-physics/spheno 3.3.8 3.3.8-r1: SPheno stands for S(upersymmetric) Pheno(meno
 sci-physics/tauola 1.1.8-r1: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 9999: TOPDRAWER renders top files.
-sci-physics/yoda 1.9.4 1.9.5 1.9.5-r1 1.9.7 1.9.7-r1 9999: Yet more Objects for (High Energy Physics) Data Analysis
+sci-physics/yoda 1.9.5 1.9.5-r1 1.9.7 1.9.7-r1 9999: Yet more Objects for (High Energy Physics) Data Analysis
 sys-cluster/easybuild 4.6.2-r1: EasyBuild is a software build and installation framework.
 sys-cluster/easybuild-easyblocks 4.6.2: Provides a collection of easyblocks for EasyBuild.
 sys-cluster/easybuild-easyconfigs 4.6.2: Provides a collection of well-tested easyconfig files for EasyBuild.
