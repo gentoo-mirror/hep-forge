@@ -10,5 +10,5 @@ LICENSE=GPL-2 LGPL-2 BSD
 RDEPEND=x11-libs/motif:0 virtual/lapack dev-lang/cfortran net-libs/libnsl virtual/fortran
 SLOT=0
 SRC_URI=mirror://debian/pool/main/c/cernlib/cernlib_20061220+dfsg3.orig.tar.gz mirror://debian/pool/main/c/cernlib/cernlib_20061220+dfsg3-4.3.debian.tar.xz
-_eclasses_=toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	fortran-2	72d28c6872beb1e7cb99684b0ae4715d
+_eclasses_=toolchain-funcs	6001248ef162a5fa2a21ce132a212f6b	multilib	5ca4e49abed8e3a2f7b56920eadee157	fortran-2	7eb0cd2524143c5f3298ba4bcc95391b
 _md5_=4c232503823825403dffbcf09fff3136

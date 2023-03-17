@@ -10,5 +10,5 @@ LICENSE=GPL-3
 RDEPEND=root? ( sci-physics/root )
 SLOT=0
 SRC_URI=https://applgrid.hepforge.org/downloads?f=applgrid-1.6.32.tgz -> applgrid-1.6.32.tgz
-_eclasses_=optfeature	1a2157392a869265b2afcb63a26c12ac
+_eclasses_=optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54
 _md5_=313b2d4759453cc248135e9d9ab00e95
