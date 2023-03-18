@@ -34,7 +34,7 @@ sci-physics/cernlib 2006-r8: CERN program library for High Energy Physics
 sci-physics/collier 1.2.5 1.2.7: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2: Computing 1-loop amplitudes at the integrand level
-sci-physics/delphes 3.5.0: Delphes performs a fast multipurpose detector response simulation.
+sci-physics/delphes 3.5.0 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/evtgen 02.02.00: 
 sci-physics/fastjet 3.0.6 3.0.6-r3 3.4.0 3.4.0-r1: A software package for jet finding in pp and e+e- collisions
 sci-physics/fastjet-contrib 1.049-r1 1.049-r2 1.049-r3 1.049-r4 1.051: 3rd party extensions of FastJet.
