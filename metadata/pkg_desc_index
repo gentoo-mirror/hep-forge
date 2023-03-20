@@ -59,6 +59,7 @@ sci-physics/particle 0.21.1: PDG particle data and identification codes
 sci-physics/photos 3.64: PHOTOS
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyhepmc 2.10.0: A Pythonic wrapper for the HepMC3 C++ library.
+sci-physics/pyhf 0.7.0: pure-python fitting/limit-setting/interval estimation HistFactory-style
 sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houches Accord data
 sci-physics/pythia 8.2.45 8.2.45-r1 8.3.07 8.3.07-r1 8.3.07-r2 8.3.07-r4 9999: Lund Monte Carlo high-energy physics event generator
 sci-physics/qcdloop 2.0.5 2.0.9: An object-oriented one-loop scalar Feynman integrals framework
