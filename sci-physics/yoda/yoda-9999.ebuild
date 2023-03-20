@@ -44,7 +44,7 @@ src_prepare() {
 }
 
 src_configure() {
-	econf --disable-static $(use_enable root) $(use_enable python pyext)  $(use_with zlib zlib $ESYSROOT/usr)
+	econf --disable-static $(use_enable root) $(use_enable python pyext) $(use_with zlib zlib $ESYSROOT/usr)
 }
 
 src_test() {
