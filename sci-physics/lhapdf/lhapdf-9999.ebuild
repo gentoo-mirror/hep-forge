@@ -12,7 +12,7 @@ DOCS_DEPEND="
 	dev-texlive/texlive-latex
 	dev-texlive/texlive-latexextra
 "
-inherit python-single-r1 docs
+inherit python-single-r1 docs autotools
 
 MY_PV=$(ver_cut 1-3)
 MY_PF=LHAPDF-${MY_PV}
@@ -36,6 +36,12 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
+
+src_prepare() {
+	default
+	# reconf due to python3_10 patch
+	eautoreconf
+}
 
 src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
