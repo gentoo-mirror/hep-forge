@@ -34,18 +34,8 @@ SLOT="0"
 IUSE="examples"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-RDEPEND="
-	dev-libs/boost:=
-	${PYTHON_DEPS}"
+RDEPEND="${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
-
-PATCHES=( )
-
-src_prepare() {
-	default
-	# reconf due to python3_10 patch
-	eautoreconf
-}
 
 src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
