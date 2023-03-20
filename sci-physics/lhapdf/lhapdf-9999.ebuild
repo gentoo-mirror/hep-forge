@@ -34,16 +34,12 @@ SLOT="0"
 IUSE="examples"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-RDEPEND="
-	dev-libs/boost:=
-	${PYTHON_DEPS}"
+RDEPEND="${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
-
-PATCHES=( )
 
 src_prepare() {
 	default
-	# reconf due to python3_10 patch
+	# live git does not have a configure script
 	eautoreconf
 }
 
