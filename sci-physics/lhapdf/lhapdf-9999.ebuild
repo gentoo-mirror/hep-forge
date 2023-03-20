@@ -39,7 +39,7 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	default
-	# reconf due to python3_10 patch
+	# live git does not have a configure script
 	eautoreconf
 }
 
