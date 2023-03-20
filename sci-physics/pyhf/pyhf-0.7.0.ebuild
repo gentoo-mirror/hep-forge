@@ -4,7 +4,7 @@ PYTHON_COMPAT=( python3_{9..10} )
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1
 
-DESCRIPTION="PDG particle data and identification codes"
+DESCRIPTION="pure-python fitting/limit-setting/interval estimation HistFactory-style"
 HOMEPAGE="https://github.com/scikit-hep/pyhf"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
