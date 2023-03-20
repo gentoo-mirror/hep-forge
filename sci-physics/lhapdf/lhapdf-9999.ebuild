@@ -12,7 +12,7 @@ DOCS_DEPEND="
 	dev-texlive/texlive-latex
 	dev-texlive/texlive-latexextra
 "
-inherit python-single-r1 docs autotools
+inherit python-single-r1 docs
 
 MY_PV=$(ver_cut 1-3)
 MY_PF=LHAPDF-${MY_PV}
