@@ -12,7 +12,7 @@ dev-python/metamorph 0.0.13 9999: Metamorph generates new text by repeated trans
 dev-python/multiprocess 0.70.14: better multiprocessing and multithreading in python
 dev-python/mystic 0.4.0: highly-constrained non-convex optimization and uncertainty quantification
 dev-python/pathos 0.3.0: parallel graph management and execution in heterogeneous computing
-dev-python/poetry-dynamic-versioning 0.21.1 9999: Plugin for Poetry to enable dynamic versioning based on VCS tags
+dev-python/poetry-dynamic-versioning 0.21.1 0.21.4 9999: Plugin for Poetry to enable dynamic versioning based on VCS tags
 dev-python/pox 0.3.2: utilities for filesystem exploration and automated builds
 dev-python/ppft 1.7.6.6: distributed and parallel python
 dev-python/pqdm 0.2.0: Parallel TQDM
