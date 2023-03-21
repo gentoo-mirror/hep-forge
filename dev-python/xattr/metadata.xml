@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>alexander@neuwirth-informatik.de</email>
+    <name>Alexander Puck Neuwirth</name>
+  </maintainer>
+  <upstream>
+    <bugs-to>https://github.com/xattr/xattr/issues</bugs-to>
+    <remote-id type="pypi">xattr</remote-id>
+    <remote-id type="github">xattr/xattr</remote-id>
+  </upstream>
+</pkgmetadata>
