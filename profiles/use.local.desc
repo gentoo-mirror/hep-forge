@@ -2,7 +2,6 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-dev-python/poetry-dynamic-versioning:plugin - Include poetry dependency for plugin
 dev-python/xsdata:cli - cli tools
 dev-python/xsdata:lxml - use lxml
 sci-libs/einspline:altivec - Build with altivec
