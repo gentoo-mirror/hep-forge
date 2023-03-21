@@ -1,0 +1,79 @@
+diff --git a/tests/console/commands/cache/conftest.py b/tests/console/commands/cache/conftest.py
+index c3d89ba0..949e3928 100644
+--- a/tests/console/commands/cache/conftest.py
++++ b/tests/console/commands/cache/conftest.py
+@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING
+ 
+ import pytest
+ 
+-from cachy import CacheManager
+ 
+ 
+ if TYPE_CHECKING:
+@@ -42,6 +41,7 @@ def mock_caches(
+     (repository_cache_dir / repository_two).mkdir(parents=True)
+ 
+ 
++@pytest.mark.skip(reason="Gentoo patch: cachy dependency is unavailable")
+ @pytest.fixture
+ def cache(
+     repository_cache_dir: Path,
+diff --git a/tests/console/commands/cache/test_clear.py b/tests/console/commands/cache/test_clear.py
+index fb8900d8..da796347 100644
+--- a/tests/console/commands/cache/test_clear.py
++++ b/tests/console/commands/cache/test_clear.py
+@@ -23,6 +23,7 @@ def tester() -> ApplicationTester:
+     return tester
+ 
+ 
++@pytest.mark.skip(reason="Gentoo patch: cachy dependency is unavailable")
+ def test_cache_clear_all(
+     tester: ApplicationTester,
+     repository_one: str,
+@@ -40,6 +41,7 @@ def test_cache_clear_all(
+     assert not cache.has("cleo:0.2")
+ 
+ 
++@pytest.mark.skip(reason="Gentoo patch: cachy dependency is unavailable")
+ def test_cache_clear_all_no(
+     tester: ApplicationTester,
+     repository_one: str,
+@@ -56,6 +58,7 @@ def test_cache_clear_all_no(
+     assert cache.has("cleo:0.2")
+ 
+ 
++@pytest.mark.skip(reason="Gentoo patch: cachy dependency is unavailable")
+ @pytest.mark.parametrize("package_name", ["cachy", "Cachy"])
+ def test_cache_clear_pkg(
+     tester: ApplicationTester,
+@@ -73,6 +76,7 @@ def test_cache_clear_pkg(
+     assert cache.has("cleo:0.2")
+ 
+ 
++@pytest.mark.skip(reason="Gentoo patch: cachy dependency is unavailable")
+ def test_cache_clear_pkg_no(
+     tester: ApplicationTester,
+     repository_one: str,
+diff --git a/tests/utils/test_cache.py b/tests/utils/test_cache.py
+index c1bbae50..280d332b 100644
+--- a/tests/utils/test_cache.py
++++ b/tests/utils/test_cache.py
+@@ -8,7 +8,8 @@ from unittest.mock import Mock
+ 
+ import pytest
+ 
+-from cachy import CacheManager
++# Gentoo patch: cachy dependency is unavailable
++CacheManager = pytest.importorskip('cachy')
+ 
+ from poetry.utils.cache import FileCache
+ 
+@@ -23,7 +24,7 @@ if TYPE_CHECKING:
+     from tests.conftest import Config
+ 
+ 
+-FILE_CACHE = Union[FileCache, CacheManager]
++FILE_CACHE = Union[FileCache]
+ T = TypeVar("T")
+ 
+ 
