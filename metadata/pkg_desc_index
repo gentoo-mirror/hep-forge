@@ -4,11 +4,15 @@ app-portage/pkg-testing-tools 0.1.0 0.1.2: Packages testing tools for Gentoo
 dev-python/archspec 0.1.4: labels for various aspects of a system architecture like CPU, etc.
 dev-python/bounded_pool_executor 0.0.3: Bounded Process&Thread Pool Executor
 dev-python/deep-translator 1.9.1 9999: Translation for humans
+dev-python/deepdiff 6.2.3: A library for comparing dictionaries, iterables, strings and other objects
 dev-python/docformatter 1.5.0: Formats docstrings to follow PEP 257.
 dev-python/dunamai 1.15.0 9999: Library and command line tool for producing version strings
+dev-python/factory-boy 3.2.1: A test fixtures replacement for Python
+dev-python/flatdict 4.0.0: Python module for interacting with nested dicts
 dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbitrary round-off error and error propagation.
 dev-python/klepto 0.2.3: persistent caching to memory, disk, or database
 dev-python/metamorph 0.0.13 9999: Metamorph generates new text by repeated translating.
+dev-python/monoengine 0.25.0: A Python Object-Document-Mapper for working with MongoDB
 dev-python/multiprocess 0.70.14: better multiprocessing and multithreading in python
 dev-python/mystic 0.4.0: highly-constrained non-convex optimization and uncertainty quantification
 dev-python/pathos 0.3.0: parallel graph management and execution in heterogeneous computing
