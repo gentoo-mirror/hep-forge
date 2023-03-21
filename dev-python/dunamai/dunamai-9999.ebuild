@@ -26,8 +26,8 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="
-	>=dev-python/packaging-20.9
-	>=dev-python/importlib_metadata-1.6.0
+	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
+	>=dev-python/importlib_metadata-1.6.0[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
 
