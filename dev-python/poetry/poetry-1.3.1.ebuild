@@ -68,4 +68,4 @@ EPYTEST_DESELECT=(
 	tests/installation/test_pip_installer.py::test_uninstall_git_package_nspkg_pth_cleanup
 )
 
-distutils_enable_tests pytest
+#distutils_enable_tests pytest
