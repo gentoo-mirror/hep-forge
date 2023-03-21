@@ -6,7 +6,7 @@
 		<name>Python</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="pypi">flatdict</remote-id>
-		<remote-id type="github">gmr/flatdict</remote-id>
+		<remote-id type="pypi">shellingham</remote-id>
+		<remote-id type="github">sarugaku/shellingham</remote-id>
 	</upstream>
 </pkgmetadata>

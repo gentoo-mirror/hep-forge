@@ -8,13 +8,20 @@ PYTHON_COMPAT=( python3_{9..11} )
 
 inherit distutils-r1
 
-DESCRIPTION="Python module for interacting with nested dicts"
-HOMEPAGE="https://github.com/gmr/flatdict"
+DESCRIPTION="A Python Object-Document-Mapper for working with MongoDB"
+HOMEPAGE="
+	https://github.com/MongoEngine/mongoengine
+	http://mongoengine.org/
+"
 SRC_URI="mirror://pypi/${P:0:1}/${PN}/${P}.tar.gz"
 
-LICENSE="BSD"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="test"
 
-distutils_enable_tests unittest
+RDEPEND="
+	dev-db/mongodb
+	dev-python/pymongo[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest
