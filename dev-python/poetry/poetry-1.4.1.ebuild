@@ -60,10 +60,10 @@ PATCHES=(
 	# Dependency on abandoned package cachy has been removed from poetry https://github.com/python-poetry/poetry/pull/5868
 	# and remains in tests only for time being, so we can skip them.
 	# removal of tests upstream https://github.com/python-poetry/poetry/pull/7437
-	"${FILESDIR}"/${P}-remove_cachy_dependent_tests.patch
+	#"${FILESDIR}"/${PN}-1.3.1-remove_cachy_dependent_tests.patch
 	# Dependency on flatdict is only due to tests and is planned for removal in poetry-1.4
 	# https://github.com/python-poetry/poetry/pull/7369
-	"${FILESDIR}"/${P}-skip_flatdict_dependent_tests.patch
+	#"${FILESDIR}"/${PN}-1.3.1-skip_flatdict_dependent_tests.patch
 )
 
 EPYTEST_DESELECT=(
