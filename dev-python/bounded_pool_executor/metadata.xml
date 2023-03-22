@@ -10,7 +10,7 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-	BoundedSemaphore for ProcessPoolExecutor & ThreadPoolExecutor from concurrent.futures
+	BoundedSemaphore for ProcessPoolExecutor and ThreadPoolExecutor from concurrent.futures
 	</longdescription>
 	<upstream>
 		<remote-id type="pypi">bounded-pool-executor</remote-id>
