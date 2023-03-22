@@ -10,5 +10,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="github">APN-Pucky/metamorph</remote-id>
+		<remote-id type="pypi">metamorph</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -10,5 +10,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="github">PyCQA/docformatter</remote-id>
+		<remote-id type="pypi">docformatter</remote-id>
 	</upstream>
 </pkgmetadata>
