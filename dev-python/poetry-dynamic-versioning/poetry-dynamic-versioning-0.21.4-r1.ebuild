@@ -27,8 +27,6 @@ else
 	KEYWORDS="~amd64"
 fi
 
-IUSE="+plugin"
-
 LICENSE="MIT"
 SLOT="0"
 
