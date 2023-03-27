@@ -14,7 +14,6 @@ dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbit
 dev-python/klepto 0.2.3: persistent caching to memory, disk, or database
 dev-python/metamorph 0.0.13 9999: Metamorph generates new text by repeated translating.
 dev-python/mongoengine 0.25.0: A Python Object-Document-Mapper for working with MongoDB
-dev-python/monoengine 0.25.0: A Python Object-Document-Mapper for working with MongoDB
 dev-python/multiprocess 0.70.14: better multiprocessing and multithreading in python
 dev-python/mystic 0.4.0: highly-constrained non-convex optimization and uncertainty quantification
 dev-python/orjson 3.8.4: Fast, correct Python JSON library supporting dataclasses, datetimes, and numpy
