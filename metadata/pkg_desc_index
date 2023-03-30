@@ -82,6 +82,7 @@ sci-physics/resummino 3.1.1: Resummation for electroweak BSM particles.
 sci-physics/rivet 3.1.5 3.1.5-r1 3.1.6 3.1.6-r1 3.1.6-r2 3.1.7 3.1.7-r1 3.1.7-r2 3.1.7-r3 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 sci-physics/sherpa 2.2.12: Simulation of High-Energy Reactions of PArticles
+sci-physics/smodels 2.2.1: A tool for interpreting simplified-model results from the LHC.
 sci-physics/spheno 3.3.8 3.3.8-r1: SPheno stands for S(upersymmetric) Pheno(menology)
 sci-physics/tauola 1.1.8-r1: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
