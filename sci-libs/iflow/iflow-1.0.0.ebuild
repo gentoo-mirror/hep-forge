@@ -1,6 +1,6 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_10 )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
@@ -14,7 +14,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
-	>=sci-libs/tensorflow-2.0[${PYTHON_USEDEP}]
-	>=sci-libs/tensorflow_probability-0.8.0[${PYTHON_USEDEP}]
+	>=sci-libs/tensorflow-2.0.0[${PYTHON_USEDEP}]
+	>=sci-libs/tensorflow-probability-0.8.0[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
