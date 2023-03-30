@@ -263,7 +263,7 @@ default:
 .config:
     
   before_script:
-    - emaint sync
+    - emerge --sync
     - emaint -r ${REPO_NAME} sync
     - ACCEPT_KEYWORDS="~amd64" emerge -q '>=app-portage/pkg-testing-tools-0.1.2' 
     - echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
