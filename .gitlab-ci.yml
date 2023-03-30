@@ -258,6 +258,10 @@ default:
         VERSION: [0.7.0]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [iflow]
+        VERSION: [1.0.1]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 
 .config:
