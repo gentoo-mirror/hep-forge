@@ -1,0 +1,28 @@
+EAPI=8
+
+PYTHON_COMPAT=( python3_{9..10} )
+DISTUTILS_USE_PEP517=setuptools
+inherit distutils-r1
+
+DESCRIPTION="A tool for interpreting simplified-model results from the LHC."
+HOMEPAGE="https://github.com/SModelS/smodels"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+
+LICENSE="MIT"
+SLOT="0"
+KEYWORDS="~amd64"
+
+# TODO add NLL-fast
+RDEPEND="
+    >=sci-physics/pythia-8.3.0
+    >=dev-python/docutils-0.3[${PYTHON_USEDEP}]
+    >=dev-python/numpy-1.13.0[${PYTHON_USEDEP}]
+    >=dev-python/scipy-1.0.0[${PYTHON_USEDEP}]
+    >=dev-python/unum-4.0.0[${PYTHON_USEDEP}]
+    >=dev-python/requests-2.0.0[${PYTHON_USEDEP}]
+    >=dev-python/pyslha-3.1.0[${PYTHON_USEDEP}]
+    >=dev-python/pyhf-0.6.1[${PYTHON_USEDEP}]
+    >=dev-python/jsonpatch-1.25[${PYTHON_USEDEP}]
+    >=dev-python/jsonschema-3.2.0[${PYTHON_USEDEP}]
+"
+BDEPEND="${RDEPEND}"
