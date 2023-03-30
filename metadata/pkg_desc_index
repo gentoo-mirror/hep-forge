@@ -36,6 +36,7 @@ sci-libs/cuba 3.3 4.2 4.2.2: The Cuba library for multidimensional numerical int
 sci-libs/einspline 0.9.2: C library for creating and evaluating B-splines
 sci-libs/handyg 0.1.5: Rapid numerical evaluation of generalised polylogarithms
 sci-libs/mpfun90 2023.02.26: High-Precision Software
+sci-libs/tensorflow-probability 0.19.0: Probabilistic reasoning and statistical analysis in TensorFlow
 sci-mathematics/cgal 5.2-r2 5.4.1: C++ library for geometric algorithms and data structures
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
 sci-physics/apfel 3.0.6: A PDF Evolution Library
@@ -59,6 +60,7 @@ sci-physics/hepmc 2.06.11 3.2.4 3.2.5 3.2.5-r1 3.2.5-r2 3.2.5_p20230225 9999: Ev
 sci-physics/hepunits 2.3.1: units and constants in the HEP system of units
 sci-physics/herwig 6.5.21-r2 7.2.3: Herwig is a multi-purpose particle physics event generator.
 sci-physics/hoppet 1.2.0: Higher Order Perturbative Parton Evolution Toolkit
+sci-physics/iflow 1.0.1: multi-dimensional integration and sampling
 sci-physics/jaxodraw 2.0.1-r3: Java program for drawing Feynman diagrams
 sci-physics/lhapdf 6.2.3-r1 6.3.0-r3 6.4.0 6.5.2 6.5.3 6.5.3-r1 6.5.4 9999: Les Houches Parton Density Function unified library
 sci-physics/looptools 2.10 2.15 2.15-r1 2.16: Tools for evaluation of scalar and tensor one-loop integrals
@@ -73,7 +75,7 @@ sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyhepmc 2.10.0: A Pythonic wrapper for the HepMC3 C++ library.
 sci-physics/pyhf 0.7.0: pure-python fitting/limit-setting/interval estimation HistFactory-style
 sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houches Accord data
-sci-physics/pythia 8.2.45 8.2.45-r1 8.3.07 8.3.07-r1 8.3.07-r2 8.3.07-r4 9999: Lund Monte Carlo high-energy physics event generator
+sci-physics/pythia 8.2.45 8.2.45-r1 8.3.06 8.3.07 8.3.07-r1 8.3.07-r2 8.3.07-r4 9999: Lund Monte Carlo high-energy physics event generator
 sci-physics/qcdloop 2.0.5 2.0.9: An object-oriented one-loop scalar Feynman integrals framework
 sci-physics/qgraf 3.4.2 3.5.2 3.6.5: qgraf generates Feynman diagrams for various types of QFT models
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
