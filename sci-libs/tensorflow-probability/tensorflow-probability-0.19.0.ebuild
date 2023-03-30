@@ -13,12 +13,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	dev-python/absl-py
-	>=dev-python/six-1.10.0
-	>=dev-python/numpy-1.13.3
-	dev-python/decorator
-	>=dev-python/cloudpickle-1.3
-	>=dev-python/gast-0.3.2
-	dev-python/dm-tree
+	dev-python/absl-py[${PYTHON_USEDEP}]
+	>=dev-python/six-1.10.0[${PYTHON_USEDEP}]
+	>=dev-python/numpy-1.13.3[${PYTHON_USEDEP}]
+	dev-python/decorator[${PYTHON_USEDEP}]
+	>=dev-python/cloudpickle-1.3[${PYTHON_USEDEP}]
+	>=dev-python/gast-0.3.2[${PYTHON_USEDEP}]
+	dev-python/dm-tree[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
