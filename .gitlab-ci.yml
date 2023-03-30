@@ -259,8 +259,8 @@ default:
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [iflow]
-        VERSION: [1.0.1]
-        CATEGORY: ['sci-physics']
+        VERSION: [1.0.0]
+        CATEGORY: ['sci-libs']
         <<: *images
       - PKG: [smodels]
         VERSION: [2.2.1]
