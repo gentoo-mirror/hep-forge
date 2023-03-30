@@ -4,8 +4,8 @@ PYTHON_COMPAT=( python3_{9..10} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
-DESCRIPTION="A tool for interpreting simplified-model results from the LHC."
-HOMEPAGE="https://github.com/SModelS/smodels"
+DESCRIPTION="multi-dimensional integration and sampling"
+HOMEPAGE="https://gitlab.com/i-flow/i-flow/-/tree/master/"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"

@@ -4,8 +4,8 @@ PYTHON_COMPAT=( python3_{9..10} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1
 
-DESCRIPTION="A tool for interpreting simplified-model results from the LHC."
-HOMEPAGE="https://github.com/SModelS/smodels"
+DESCRIPTION="Probabilistic reasoning and statistical analysis in TensorFlow"
+HOMEPAGE="https://github.com/tensorflow/probability"
 SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
