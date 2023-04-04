@@ -15,5 +15,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="github">sdispater/cachy</remote-id>
+		<remote-id type="pypi">cachy</remote-id>
 	</upstream>
 </pkgmetadata>
