@@ -1,0 +1,10 @@
+--- setup.py.orig	2023-04-04 09:11:08.344439579 +0200
++++ setup.py	2023-04-04 09:11:17.751576412 +0200
+@@ -31,7 +31,6 @@
+                   'unum.units.custom',
+                   'unum.units.others',
+                   'unum.units.si',
+-                  'tests',
+                  ),
+       python_requires='>=2.4, <4',
+ )
