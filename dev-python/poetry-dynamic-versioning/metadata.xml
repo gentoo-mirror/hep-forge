@@ -10,5 +10,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="github">mtkennerly/poetry-dynamic-versioning</remote-id>
+		<remote-id type="pypi">poetry-dynamic-versioning</remote-id> 
 	</upstream>
 </pkgmetadata>
