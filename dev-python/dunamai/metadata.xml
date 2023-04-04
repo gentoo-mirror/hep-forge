@@ -10,5 +10,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="github">mtkennerly/dunamai</remote-id>
+		<remote-id type="pypi">dunamai</remote-id> 
 	</upstream>
 </pkgmetadata>
