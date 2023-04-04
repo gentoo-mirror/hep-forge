@@ -14,6 +14,6 @@ tree is a library for working with nested data structures. In a way, tree genera
      </longdescription>
 	<upstream>
 		<remote-id type="pypi">dm-tree</remote-id>
-		<remote-id type="gitlab">deepmind/tree</remote-id>
+		<remote-id type="github">deepmind/tree</remote-id>
 	</upstream>
 </pkgmetadata>

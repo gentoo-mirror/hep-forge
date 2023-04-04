@@ -10,6 +10,7 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="github">tefra/xsdata</remote-id>
+		<remote-id type="pypi">xsdata</remote-id> 
 	</upstream>
 	<use>
 		<flag name="cli"> cli tools </flag>

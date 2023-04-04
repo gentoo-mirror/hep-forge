@@ -10,5 +10,6 @@
 	</longdescription>
 	<upstream>
 		<remote-id type="github">nidhaloff/deep-translator</remote-id>
+		<remote-id type="pypi">deep-translator</remote-id>
 	</upstream>
 </pkgmetadata>
