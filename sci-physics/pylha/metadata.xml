@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+    A Python package to convert data files in SLHA and similar formats to Python objects, JSON, or YAML.
+    </longdescription>
+	<upstream>
+		<remote-id type="pypi">pylha</remote-id>
+		<remote-id type="github">DavidMStraub/pylha</remote-id>
+	</upstream>
+</pkgmetadata>
