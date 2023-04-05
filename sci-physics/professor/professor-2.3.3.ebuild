@@ -44,7 +44,7 @@ BDEPEND="
 "
 
 PATCHES=(
-    "${FILESDIR}/${P}-no-contrib-jupyter.patch"
+	"${FILESDIR}/${P}-no-contrib-jupyter.patch"
 )
 
 src_prepare() {
@@ -58,6 +58,6 @@ src_compile() {
 }
 
 src_install() {
-    make install PREFIX="${ED}/usr"
-    python_optimize
+	make install PREFIX="${ED}/usr"
+	python_optimize
 }
