@@ -34,34 +34,34 @@ RDEPEND="
 	fastjet? ( sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}] )
 	pythia? ( sci-physics/pythia )
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
-    collier? ( sci-physics/collier )
-    td? ( sci-physics/topdrawer )
-    thepeg? ( sci-physics/thepeg[hepmc?,fastjet?,lhapdf?,rivet?] )
-    ninja? ( sci-physics/ninja )
-    samurai? ( dev-util/samurai )
-    golem95? ( sci-physics/golem95 )
-	"
+	collier? ( sci-physics/collier )
+	td? ( sci-physics/topdrawer )
+	thepeg? ( sci-physics/thepeg[hepmc?,fastjet?,lhapdf?] )
+	ninja? ( sci-physics/ninja )
+	samurai? ( dev-util/samurai )
+	golem95? ( sci-physics/golem95 )
+"
 PATCHES=( "${FILESDIR}"/cuttools.patch )
 DEPEND="${RDEPEND}"
 BDEPEND=""
 
-src_unpack() {
-	tar xvzf "${DISTDIR}/${MY_PN}${PV}.tar.gz" -C "${WORKDIR}"
-}
+#src_unpack() {
+#	tar xvzf "${DISTDIR}/${MY_PN}${PV}.tar.gz" -C "${WORKDIR}"
+#}
 
 src_configure() {
 	use lhapdf && echo "lhapdf_py3 = lhapdf-config" >> input/mg5_configuration.txt
 	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
 	use pythia && echo "pythia8_path = ${EPREFIX}/" >> input/mg5_configuration.txt
 	use hepmc && echo "hepmc_path = ${EPREFIX}/" >> input/mg5_configuration.txt
-    # MG does not like recent collier nor ninja yet
-    # use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-    #use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-    use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-    use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-    use td && echo "td_path = ${EPREFIX}/usr/bin/td" >> input/mg5_configuration.txt
-    use thepeg && echo "thepeg_path = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-    use madanalysis5 && echo "madanalysis5_path = ${EPREFIX}/opt/MadAnalysis5/" >> input/mg5_configuration.txt
+	# MG does not like recent collier yet
+	# use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	use td && echo "td_path = ${EPREFIX}/usr/bin/td" >> input/mg5_configuration.txt
+	use thepeg && echo "thepeg_path = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	use madanalysis5 && echo "madanalysis5_path = ${EPREFIX}/opt/MadAnalysis5/" >> input/mg5_configuration.txt
 	#use hepmc && echo ""
 	echo "auto_update = 0" >> input/mg5_configuration.txt
 }
@@ -73,10 +73,14 @@ src_install() {
 	dodir /opt/${MY_PF}
 	insinto /opt/
 	doins -r "${S}"
+	# Fix for missing empty directories, check keepdir install function explanation
+	for f in $(find . -type d -empty); do
+		keepdir /opt/${MY_PF}/$f
+	done
 	cd "${S}"
 	# Copy executable, etc. permissions
 	for f in $(find * ! -type l); do
 		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
 	done
-	#perms -R a=u /opt/${MY_PF}
+	fperms -R a=u /opt/${MY_PF}
 }
