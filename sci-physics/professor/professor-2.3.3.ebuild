@@ -27,14 +27,19 @@ DEPEND="
 	$(python_gen_cond_dep '
 	    dev-python/numpy[${PYTHON_USEDEP}]
 	    dev-python/matplotlib[${PYTHON_USEDEP}]
-	    dev-python/sympy
-	    dev-python/iminuit
+	    dev-python/sympy[${PYTHON_USEDEP}]
+	    dev-python/iminuit[${PYTHON_USEDEP}]
 	')
 	dev-cpp/eigen:3
 "
-RDEPEND="${DEPEND}"
+RDEPEND="
+    ${PYTHON_DEPS}
+    ${DEPEND}
+"
 BDEPEND="
-	dev-python/cython
+	$(python_gen_cond_dep '
+	    dev-python/cython[${PYTHON_USEDEP}]
+    ')
 "
 
 src_compile() {
