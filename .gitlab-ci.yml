@@ -5,6 +5,10 @@ stages:
   - qa
   - checkall
 
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" || ($CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH=="master") || $TEST_ALL == "1" || $PROBABILITY
+
 variables:
   REPO_NAME: "hep-forge"
 
