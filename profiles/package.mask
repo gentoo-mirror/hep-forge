@@ -1,3 +1,6 @@
 # Alexander Puck Neuwirth <alexander@neuwirth-informatik.de> (2023-04-04)
 # Madgraph does never need a user
 acct-user/madgraph
+# Alexander Puck Neuwirth <alexander@neuwirth-informatik.de> (2023-04-04)
+# Madgraph does no longer need a group
+acct-group/madgraph

@@ -41,8 +41,8 @@ BDEPEND=""
 
 src_configure() {
 	default 
-	sed -i "|self.delphes_includes\s*= |s|None|\"${EPREFIX}/usr/include\"|" madanalysis/system/user_info.py
-	sed -i -e "|self.delphes_libs\s*= |s|None|\"${EPREFIX}/usr/$(get_libdir)\"|" madanalysis/system/user_info.py
+	sed -i -e "|.*self.delphes_includes\s*= |s|None.*|\"${EPREFIX}/usr/include\"|" madanalysis/system/user_info.py || die
+	sed -i -e "|.*self.delphes_libs\s*= |s|None.*|\"${EPREFIX}/usr/$(get_libdir)\"|" madanalysis/system/user_info.py || die
 }
 
 src_install() {
