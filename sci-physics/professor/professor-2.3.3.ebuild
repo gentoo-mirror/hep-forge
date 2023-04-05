@@ -52,3 +52,8 @@ src_prepare() {
 src_compile() {
 	emake CPPFLAGS="${CPPFLAGS} -I${SYSROOT}/usr/include/eigen3"
 }
+
+src_install() {
+    make install PREFIX="${ED}/usr"
+    python_optimize
+}
