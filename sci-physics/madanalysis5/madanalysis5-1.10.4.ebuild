@@ -37,9 +37,7 @@ RDEPEND="
 	')
 	"
 DEPEND="${RDEPEND}"
-BDEPEND="
-	acct-group/madanalysis
-"
+BDEPEND=""
 
 src_configure() {
 	default 
@@ -56,10 +54,10 @@ src_install() {
 	for f in $(find * ! -type l); do
 		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
 	done
-	fperms -R g=u /opt/${MY_PF}
+	fperms -R a=u /opt/${MY_PF}
 
-	#fperms +x /opt/${MY_PF}/bin/mg5_aMC
-	fowners :madgraph -R /opt/${MY_PF}
+	#fperms +w -R /opt/${MY_PF}/bin/mg5_aMC
+	#fowners :madgraph -R /opt/${MY_PF}
 }
 
 pkg_postinst() {
