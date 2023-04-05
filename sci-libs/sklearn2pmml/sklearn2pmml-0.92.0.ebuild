@@ -12,10 +12,12 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-	>=virtual/jdk-1.8:*
+DEPEND="
 	>=dev-python/joblib-0.13.0[${PYTHON_USEDEP}]
 	>=sci-libs/scikit-learn-0.18.0[${PYTHON_USEDEP}]
 	>=sci-libs/sklearn-pandas-0.0.10[${PYTHON_USEDEP}]
 "
-BDEPEND="${RDEPEND}"
+RDEPEND="
+	>=virtual/jdk-1.8:*
+    ${DEPEND}
+"
