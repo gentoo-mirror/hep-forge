@@ -4,7 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{9..10} )
-inherit python-single-r1
+inherit python-single-r1 optfeature
 
 MY_PN="MadAnalysis5"
 MY_PF=madanalysis5-${PV}
@@ -30,7 +30,7 @@ RDEPEND="
 	sci-physics/delphes
 
 	$(python_gen_cond_dep '
-		=sci-physics/pyhf-0.7.0[${PYTHON_USEDEP}]
+		~sci-physics/pyhf-0.7.0[${PYTHON_USEDEP}]
 		>=dev-python/numpy-1.19.5[${PYTHON_USEDEP}]
 		>=dev-python/scipy-1.7.1[${PYTHON_USEDEP}]
 		>=dev-python/matplotlib-3.4.2[${PYTHON_USEDEP}]
@@ -61,10 +61,10 @@ src_install() {
 	dodir /opt/${MY_PF}
 	insinto /opt/
 	doins -r "${S}"
-    # Fix for missing empty directories, check keepdir install function explanation
-    for f in $(find . -type d -empty); do
-        keepdir /opt/${MY_PF}/$f
-    done
+	# Fix for missing empty directories, check keepdir install function explanation
+	for f in $(find . -type d -empty); do
+		keepdir /opt/${MY_PF}/$f
+	done
 	cd "${S}"
 	# Copy executable, etc. permissions
 	for f in $(find * ! -type l); do
