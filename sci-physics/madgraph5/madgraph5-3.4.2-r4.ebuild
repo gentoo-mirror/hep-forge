@@ -37,7 +37,7 @@ RDEPEND="
     collier? ( sci-physics/collier )
     td? ( sci-physics/topdrawer )
     thepeg? ( sci-physics/thepeg[hepmc?,fastjet?,lhapdf?] )
-    ninja? ( dev-util/ninja )
+    ninja? ( sci-physics/ninja )
     samurai? ( dev-util/samurai )
     golem95? ( sci-physics/golem95 )
 	"
@@ -54,7 +54,8 @@ src_configure() {
 	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
 	use pythia && echo "pythia8_path = ${EPREFIX}/" >> input/mg5_configuration.txt
 	use hepmc && echo "hepmc_path = ${EPREFIX}/" >> input/mg5_configuration.txt
-    use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+    # MG does not like recent collier yet
+    # use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
