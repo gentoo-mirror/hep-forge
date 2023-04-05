@@ -45,7 +45,7 @@ src_configure() {
 	sed -i -e "s|self.delphes_includes\s*=\s*None|self.delphes_includes=\"${EPREFIX}/usr/include\"|" madanalysis/system/user_info.py || die
 	sed -i -e "s|self.delphes_libs\s*=\s*None|self.delphes_libs=\"${EPREFIX}/usr/$(get_libdir)\"|" madanalysis/system/user_info.py || die
 	# Fix include path
-	sed -i 's|#include "external/ExRootAnalysis"|#include "/ExRootAnalysis' tools/SampleAnalyzer/Interfaces/delphes/*.cpp || die
+	sed -i 's|#include "external/ExRootAnalysis|#include "ExRootAnalysis|' tools/SampleAnalyzer/Interfaces/delphes/*.cpp || die
 }
 
 src_install() {
@@ -64,4 +64,5 @@ src_install() {
 
 pkg_postinstall() {
 	optfeature "latex support" virtual/latex-base	
+	optfeature "gnuplot support" sci-visualization/gnuplot
 }
