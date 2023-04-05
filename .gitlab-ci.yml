@@ -5,6 +5,10 @@ stages:
   - qa
   - checkall
 
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" || ($CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH=="master") || $TEST_ALL == "1" || $PROBABILITY
+
 variables:
   REPO_NAME: "hep-forge"
 
@@ -252,6 +256,10 @@ default:
       - PKG: [applgrid]
         VERSION: [1.6.32]
         CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [vegas]
+        VERSION: ['5.4']
+        CATEGORY: ["sci-libs"]
         <<: *images
 
 .matrix6: &matrix6
