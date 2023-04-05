@@ -1,9 +1,0 @@
-DEFINED_PHASES=install postinst preinst prerm pretend
-DESCRIPTION=User for MadGraph
-EAPI=7
-INHERIT=acct-user
-KEYWORDS=~amd64
-RDEPEND=acct-group/madgraph
-SLOT=0
-_eclasses_=user-info	83547b4df3e1ba5a6bf91a0837eaa664	acct-user	e0a8307fcba2b1c2ec2914c064c50a7f
-_md5_=38820349131ee6421db35555a5100d9e
