@@ -78,5 +78,5 @@ src_install() {
 	for f in $(find * ! -type l); do
 		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
 	done
-	#fperms -R a=u /opt/${MY_PF}
+	#perms -R a=u /opt/${MY_PF}
 }
