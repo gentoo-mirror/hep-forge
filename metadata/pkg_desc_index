@@ -50,6 +50,7 @@ sci-physics/apfel 3.0.6: A PDF Evolution Library
 sci-physics/apfelxx 4.7.0: Object oriented rewriting of the APFEL evolution code
 sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input PDFs
 sci-physics/cernlib 2006-r8: CERN program library for High Energy Physics
+sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
 sci-physics/collier 1.2.5 1.2.7: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2: Computing 1-loop amplitudes at the integrand level
@@ -60,11 +61,12 @@ sci-physics/fastjet 3.0.6 3.0.6-r3 3.4.0 3.4.0-r1: A software package for jet fi
 sci-physics/fastjet-contrib 1.049-r1 1.049-r2 1.049-r3 1.049-r4 1.051: 3rd party extensions of FastJet.
 sci-physics/feynarts 3.11: FeynArts renders Feynman diagrams and generates their topologies.
 sci-physics/feyncalc 9.3.1 9999: FeynCalc is a Mathematica package for computing Feynman diagrams.
+sci-physics/flavio 2.4.0: flavour phenomenology in the Standard model and beyond
 sci-physics/formcalc 9.9 9.10: FormCalc can be used for automatic Feynman diagram computation.
 sci-physics/golem95 1.3.3: performs the reduction to a certain set of basis integrals numerically
 sci-physics/hepi 0.2.8 9999: Python interface for gluing together several HEP programs
 sci-physics/hepmc 2.06.11 3.2.4 3.2.5 3.2.5-r1 3.2.5-r2 3.2.5-r3 3.2.5_p20230225 3.2.5_p20230225-r1 9999: Event Record for Monte Carlo Generators
-sci-physics/hepunits 2.3.1: units and constants in the HEP system of units
+sci-physics/hepunits 2.3.1 2.3.1-r1 2.3.2: units and constants in the HEP system of units
 sci-physics/herwig 6.5.21-r2 7.2.3: Herwig is a multi-purpose particle physics event generator.
 sci-physics/hoppet 1.2.0: Higher Order Perturbative Parton Evolution Toolkit
 sci-physics/jaxodraw 2.0.1-r3: Java program for drawing Feynman diagrams
@@ -75,11 +77,13 @@ sci-physics/mcfm 10.2.1 10.2.1-r1 10.2.1-r2 10.2.1-r3: Monte Carlo for FeMtobarn
 sci-physics/ninja 1.1.0: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731 3.6_p20200731-r2: Library of one-loop scalar functions
 sci-physics/openloops 2.1.2 2.1.2-r1: Evaluation of tree and one-loop matrix elements for any Standard Model.
-sci-physics/particle 0.21.1: PDG particle data and identification codes
+sci-physics/particle 0.21.1 0.21.1-r1 0.22.0: PDG particle data and identification codes
+sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64: PHOTOS
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyhepmc 2.10.0: A Pythonic wrapper for the HepMC3 C++ library.
-sci-physics/pyhf 0.7.0: pure-python fitting/limit-setting/interval estimation HistFactory-style
+sci-physics/pyhf 0.7.0 0.7.0-r1: pure-python fitting/limit-setting/interval estimation HistFactory-style
+sci-physics/pylha 0.4: Deal with SLHA files
 sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houches Accord data
 sci-physics/pythia 8.2.45 8.2.45-r1 8.3.06 8.3.07 8.3.07-r1 8.3.07-r2 8.3.07-r4 9999: Lund Monte Carlo high-energy physics event generator
 sci-physics/qcdloop 2.0.5 2.0.9: An object-oriented one-loop scalar Feynman integrals framework
@@ -88,13 +92,16 @@ sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
 sci-physics/resummino 3.1.1: Resummation for electroweak BSM particles.
 sci-physics/rivet 3.1.5 3.1.5-r1 3.1.6 3.1.6-r1 3.1.6-r2 3.1.7 3.1.7-r1 3.1.7-r2 3.1.7-r3 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
+sci-physics/rundec 0.5: running and decoupling of the strong coupling constant and quark masses
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 sci-physics/sherpa 2.2.12: Simulation of High-Energy Reactions of PArticles
+sci-physics/smelli 2.3.2: running and matching beyond the Standard Model
 sci-physics/smodels 2.2.1: A tool for interpreting simplified-model results from the LHC.
 sci-physics/spheno 3.3.8 3.3.8-r1: SPheno stands for S(upersymmetric) Pheno(menology)
 sci-physics/tauola 1.1.8-r1: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 9999: TOPDRAWER renders top files.
+sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
 sci-physics/yoda 1.9.5 1.9.5-r1 1.9.7 1.9.7-r1 9999: Yet more Objects for (High Energy Physics) Data Analysis
 sys-cluster/easybuild 4.6.2-r1: EasyBuild is a software build and installation framework.
 sys-cluster/easybuild-easyblocks 4.6.2: Provides a collection of easyblocks for EasyBuild.
