@@ -1,8 +1,9 @@
-# Copyright 2022-2023 Gentoo Authors
+# Copyright 2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
+# python3_11 fails
 PYTHON_COMPAT=( python3_{9..11} )
 inherit cmake python-single-r1
 
@@ -10,18 +11,12 @@ MYP=HepMC3-${PV}
 
 DESCRIPTION="Event Record for Monte Carlo Generators"
 HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
-
-if [[ ${PV} == 9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://gitlab.cern.ch/hepmc/HepMC3"
-else
-	SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
-	S="${WORKDIR}/${MYP}"
-	KEYWORDS="~amd64 ~x86"
-fi
+SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
+S="${WORKDIR}/${MYP}"
 
 LICENSE="GPL-3+"
 SLOT="3"
+KEYWORDS="~amd64"
 IUSE="doc test examples python root"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
@@ -45,6 +40,8 @@ BDEPEND="
 	)
 "
 
+PATCHES=( "${FILESDIR}/${P}-python3_11.patch" )
+
 src_configure() {
 	local mycmakeargs=(
 		-DHEPMC3_ENABLE_ROOTIO=$(usex root ON OFF)
@@ -58,6 +55,6 @@ src_configure() {
 
 src_install() {
 	cmake_src_install
-	use examples && docompress -x /usr/share/doc/${PF}/examples
+	docompress -x /usr/share/doc/${PF}/examples
 	python_optimize
 }
