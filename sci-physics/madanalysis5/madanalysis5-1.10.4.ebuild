@@ -41,8 +41,11 @@ BDEPEND=""
 
 src_configure() {
 	default 
+	# Won't find system installed delphes otherwise
 	sed -i -e "s|self.delphes_includes\s*=\s*None|self.delphes_includes=\"${EPREFIX}/usr/include\"|" madanalysis/system/user_info.py || die
 	sed -i -e "s|self.delphes_libs\s*=\s*None|self.delphes_libs=\"${EPREFIX}/usr/$(get_libdir)\"|" madanalysis/system/user_info.py || die
+	# Fix include path
+	sed -i 's|#include "external/ExRootAnalysis"|#include "/ExRootAnalysis' tools/SampleAnalyzer/Interfaces/delphes/*.cpp || die
 }
 
 src_install() {
@@ -57,4 +60,8 @@ src_install() {
 		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
 	done
 	fperms -R a=u /opt/${MY_PF}
+}
+
+pkg_postinstall() {
+	optfeature "latex support" virtual/latex-base	
 }
