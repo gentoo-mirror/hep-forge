@@ -27,16 +27,20 @@ RDEPEND="
 	sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}]
 	sci-physics/root[${PYTHON_SINGLE_USEDEP}]
     sci-physics/delphes
+
+	$(python_gen_cond_dep '
+		=sci-physics/pyhf-0.7.0[${PYTHON_USEDEP}]
+		>=dev-python/numpy-1.19.5[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.7.1[${PYTHON_USEDEP}]
+		>=dev-python/matplotlib-3.4.2[${PYTHON_USEDEP}]
+		>=dev-python/lxml-4.6.2[${PYTHON_USEDEP}]
+	')
 	"
 DEPEND="${RDEPEND}"
 BDEPEND=""
 
 src_configure() {
-	use lhapdf && echo "lhapdf_py3 = lhapdf-config" >> input/mg5_configuration.txt
-	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
-	use pythia && echo "pythia8_path = ${EROOT}" >> input/mg5_configuration.txt
-	#use hepmc && echo ""
-	echo "auto_update = 0" >> input/mg5_configuration.txt
+	default 
 }
 
 src_install() {
@@ -54,7 +58,6 @@ src_install() {
 
 	#fperms +x /opt/${MY_PF}/bin/mg5_aMC
 	fowners :madgraph -R /opt/${MY_PF}
-
 }
 
 pkg_postinst() {
