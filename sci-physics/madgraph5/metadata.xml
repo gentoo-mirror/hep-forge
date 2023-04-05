@@ -22,6 +22,7 @@
 		<flag name="madanalysis5">USE system madanalysis5</flag>
 		<flag name="golem95">USE system golem95</flag>
 		<flag name="td">USE system topdrawer</flag>
+		<flag name="rivet">USE system rivet</flag>
 	</use>
 	<upstream>
 		<remote-id type="launchpad">mg5amcnlo</remote-id>

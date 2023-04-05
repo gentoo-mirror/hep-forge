@@ -23,7 +23,7 @@ LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
 # TODO add pineapple, herwig, syscalc, pjfry
-IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +golem95 +thepeg +herwig +hepmc +madanalysis5 td"
+IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +golem95 +thepeg +rivet +herwig +hepmc +madanalysis5 td"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
@@ -36,7 +36,7 @@ RDEPEND="
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
     collier? ( sci-physics/collier )
     td? ( sci-physics/topdrawer )
-    thepeg? ( sci-physics/thepeg[hepmc?,fastjet?,lhapdf?] )
+    thepeg? ( sci-physics/thepeg[hepmc?,fastjet?,lhapdf?,rivet?] )
     ninja? ( sci-physics/ninja )
     samurai? ( dev-util/samurai )
     golem95? ( sci-physics/golem95 )
@@ -54,9 +54,9 @@ src_configure() {
 	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
 	use pythia && echo "pythia8_path = ${EPREFIX}/" >> input/mg5_configuration.txt
 	use hepmc && echo "hepmc_path = ${EPREFIX}/" >> input/mg5_configuration.txt
-    # MG does not like recent collier yet
+    # MG does not like recent collier nor ninja yet
     # use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-    use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+    #use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use td && echo "td_path = ${EPREFIX}/usr/bin/td" >> input/mg5_configuration.txt
@@ -72,7 +72,6 @@ src_install() {
 	dosym  ../opt/${MY_PF} /opt/"${MY_P}"
 	dodir /opt/${MY_PF}
 	insinto /opt/
-    #dosym "${MY_P}" "${MY_PF}"
 	doins -r "${S}"
 	cd "${S}"
 	# Copy executable, etc. permissions
