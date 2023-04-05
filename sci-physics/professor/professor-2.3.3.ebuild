@@ -58,6 +58,6 @@ src_compile() {
 }
 
 src_install() {
-	make install PREFIX="${ED}/usr"
+	make install PREFIX="${ED}/usr" LIBDIR=$(get_libdir)
 	python_optimize
 }
