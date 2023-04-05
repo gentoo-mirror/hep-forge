@@ -11,8 +11,8 @@ MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="A tuning tool for Monte Carlo event generators"
 HOMEPAGE="
-    https://professor.hepforge.org/
-    https://gitlab.com/hepcedar/professor
+	https://professor.hepforge.org/
+	https://gitlab.com/hepcedar/professor
 "
 SRC_URI="https://professor.hepforge.org/downloads/?f=${MY_P}.tar.gz"
 S="${WORKDIR}/${MY_P}"
@@ -21,6 +21,7 @@ LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
 SLOT="0"
 KEYWORDS="~amd64"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 DEPEND="
 	sci-physics/yoda[python(-),${PYTHON_SINGLE_USEDEP}]
@@ -33,8 +34,8 @@ DEPEND="
 	dev-cpp/eigen:3
 "
 RDEPEND="
-    ${PYTHON_DEPS}
-    ${DEPEND}
+	${PYTHON_DEPS}
+	${DEPEND}
 "
 BDEPEND="
 	$(python_gen_cond_dep '
