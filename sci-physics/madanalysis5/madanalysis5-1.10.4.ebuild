@@ -63,5 +63,6 @@ src_install() {
 }
 
 pkg_postinstall() {
-	optfeature "latex support" virtual/latex-base	
+	optfeature "latex support" virtual/latex-base
+	optfeature "gnuplot support" sci-visualization/gnuplot
 }
