@@ -37,7 +37,9 @@ RDEPEND="
 	')
 	"
 DEPEND="${RDEPEND}"
-BDEPEND=""
+BDEPEND="
+	acct-group/madanalysis
+"
 
 src_configure() {
 	default 
