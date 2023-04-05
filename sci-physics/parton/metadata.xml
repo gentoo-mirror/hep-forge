@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+    parton is a Python package providing parton distribution functions and parton luminosities. It uses the PDF data files provided by the LHAPDF project. Its API is partially compatible to LHAPDF's Python API, even though only a subset of its features are implemented.
+    </longdescription>
+	<upstream>
+		<remote-id type="pypi">parton</remote-id>
+		<remote-id type="github">DavidMStraub/parton</remote-id>
+	</upstream>
+</pkgmetadata>

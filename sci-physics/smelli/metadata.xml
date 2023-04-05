@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+    CRunDec is "a C++ program for the running and decoupling of the strong coupling constant and quark masses", developed by Florian Herren and Matthias Steinhauser. Relevant references:
+
+    "Version 3 of RunDec and CRunDec", Florian Herren, Matthias Steinhauser arXiv:1703.03751
+    "CRunDec: a C++ package for running and decoupling of the strong coupling and quark masses", Barbara Schmidt, Matthias Steinhauser arXiv:1201.6149
+    "RunDec: A Mathematica package for running and decoupling of the strong coupling and quark masses", K.G. Chetyrkin, Johann H. Kühn, M. Steinhauser arXiv:hep-ph/0004189
+
+    </longdescription>
+	<upstream>
+		<remote-id type="pypi">rundec</remote-id>
+		<remote-id type="github">DavidMStraub/rundec-python</remote-id>
+	</upstream>
+</pkgmetadata>
