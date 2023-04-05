@@ -1,0 +1,13 @@
+--- a/Makefile	2023-04-05 12:43:31.549497321 +0200
++++ b/Makefile	2023-04-05 12:44:32.077439100 +0200
+@@ -156,8 +156,8 @@
+ install: all
+ 	mkdir -p $(PREFIX)/bin && cp bin/* $(PREFIX)/bin/
+ 	mkdir -p $(PREFIX)/contrib && cp contrib/* $(PREFIX)/contrib/
+-	mkdir -p $(PREFIX)/jupyter && cp jupyter/* $(PREFIX)/jupyter/
+-	mkdir -p $(PREFIX)/include && cp -r include/Professor $(PREFIX)/include/
++	#mkdir -p $(PREFIX)/jupyter && cp jupyter/* $(PREFIX)/jupyter/
++	#mkdir -p $(PREFIX)/include && cp -r include/Professor $(PREFIX)/include/
+ 	test -d lib   && mkdir -p $(PREFIX)/lib   && cp -r lib/* $(PREFIX)/lib/ || true
+ 	test -d lib64 && mkdir -p $(PREFIX)/lib64 && cp -r lib64/* $(PREFIX)/lib64/ || true
+ #	cp setup.sh $(PREFIX)

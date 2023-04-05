@@ -43,6 +43,10 @@ BDEPEND="
 	')
 "
 
+PATCHES=(
+    "${FILESDIR}/${P}-no-contrib-jupyter.patch"
+)
+
 src_prepare() {
 	default
 	# Set version in setup.py
