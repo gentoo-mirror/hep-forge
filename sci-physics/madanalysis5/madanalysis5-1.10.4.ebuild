@@ -6,14 +6,14 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..10} )
 inherit python-single-r1
 
-MY_P="MadAnalysis5"
+MY_PN="MadAnalysis5"
 MY_PF=madanalysis5-${PV}
 
 DESCRIPTION="A package for event file analysis and recasting of LHC results"
 HOMEPAGE="
 	https://github.com/MadAnalysis/madanalysis5
 "
-SRC_URI="https://github.com/MadAnalysis/madanalysis5/archive/refs/tags/v${PV}.tar.gz"
+SRC_URI="https://github.com/MadAnalysis/madanalysis5/archive/refs/tags/v${PV}.tar.gz -> ${MY_PN}-${PV}.tar.gz"
 S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3"
@@ -40,6 +40,11 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND=""
 
+# Perserve permissions
+src_unpack() {
+	tar xvzf "${DISTDIR}/${MY_PN}-${PV}.tar.gz" -C "${WORKDIR}"
+}
+
 src_configure() {
 	default
 	# Won't find system installed delphes otherwise
@@ -52,7 +57,7 @@ src_configure() {
 src_install() {
 	# symlink entrypoint
 	dosym ../../opt/${MY_PF}/bin/ma5 /usr/bin/ma5
-	dosym  ../opt/${MY_PF} /opt/"${MY_P}"
+	dosym  ../opt/${MY_PF} /opt/"${MY_PN}"
 	dodir /opt/${MY_PF}
 	insinto /opt/
 	doins -r "${S}"

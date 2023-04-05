@@ -9,14 +9,14 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..10} )
 inherit python-single-r1
 
-MY_P="MadGraph5"
+MY_PNN="MadGraph5"
 MY_PV=$(ver_rs 1-3 '_')
 MY_PN="MG5_aMC_v"
 MY_PF=${MY_PN}${MY_PV}
 
 DESCRIPTION="MadGraph5_aMC@NLO"
 HOMEPAGE="https://launchpad.net/mg5amcnlo"
-SRC_URI="https://launchpad.net/mg5amcnlo/$(ver_cut 1).0/$(ver_cut 1-2).x/+download/${MY_PN}${PV}.tar.gz"
+SRC_URI="https://launchpad.net/mg5amcnlo/$(ver_cut 1).0/$(ver_cut 1-2).x/+download/${MY_PN}${PV}.tar.gz -> ${MY_PNN}-${PV}.tar.gz"
 S=${WORKDIR}/${MY_PF}
 
 LICENSE="UoI-NCSA"
@@ -30,6 +30,9 @@ RDEPEND="
 	${PYTHON_DEPS}
 	sys-libs/zlib
 	sys-devel/gcc:*[fortran]
+    $(python_gen_cond_dep '
+        dev-python/numpy[${PYTHON_USEDEP}]
+    ')
 	lhapdf? ( sci-physics/lhapdf[${PYTHON_SINGLE_USEDEP}] )
 	fastjet? ( sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}] )
 	pythia? ( sci-physics/pythia )
@@ -45,8 +48,9 @@ PATCHES=( "${FILESDIR}"/cuttools.patch )
 DEPEND="${RDEPEND}"
 BDEPEND=""
 
+# Perserve permissions
 src_unpack() {
-	tar xvzf "${DISTDIR}/${MY_PN}${PV}.tar.gz" -C "${WORKDIR}"
+	tar xvzf "${DISTDIR}/${MY_PNN}-${PV}.tar.gz" -C "${WORKDIR}"
 }
 
 src_configure() {
@@ -54,11 +58,11 @@ src_configure() {
 	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
 	use pythia && echo "pythia8_path = ${EPREFIX}/" >> input/mg5_configuration.txt
 	use hepmc && echo "hepmc_path = ${EPREFIX}/" >> input/mg5_configuration.txt
-	# MG does not like recent collier yet
+	# MG does not like recent collier nor ninja yet
 	# use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-	use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-	use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-	use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	# use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	#use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	#use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
 	use td && echo "td_path = ${EPREFIX}/usr/bin/td" >> input/mg5_configuration.txt
 	use thepeg && echo "thepeg_path = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
 	use madanalysis5 && echo "madanalysis5_path = ${EPREFIX}/opt/MadAnalysis5/" >> input/mg5_configuration.txt
@@ -69,7 +73,7 @@ src_configure() {
 src_install() {
 	# symlink entrypoint
 	dosym ../../opt/${MY_PF}/bin/mg5_aMC /usr/bin/mg5_aMC3
-	dosym  ../opt/${MY_PF} /opt/"${MY_P}"
+	dosym  ../opt/${MY_PF} /opt/"${MY_PNN}"
 	dodir /opt/${MY_PF}
 	insinto /opt/
 	doins -r "${S}"
