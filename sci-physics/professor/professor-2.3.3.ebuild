@@ -2,14 +2,18 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-
+PYTHON_COMPAT=( python3_{9..11} )
+inherit python-single-r1
 # TODO needs python module
 
 MY_PN=Professor
 MY_P=${MY_PN}-${PV}
 
 DESCRIPTION="A tuning tool for Monte Carlo event generators"
-HOMEPAGE="https://professor.hepforge.org/"
+HOMEPAGE="
+    https://professor.hepforge.org/
+    https://gitlab.com/hepcedar/professor
+"
 SRC_URI="https://professor.hepforge.org/downloads/?f=${MY_P}.tar.gz"
 S="${WORKDIR}/${MY_P}"
 
@@ -19,10 +23,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
-	sci-physics/yoda
-	dev-python/numpy
-	dev-python/matplotlib
-	dev-python/iminuit
+	sci-physics/yoda[python(-),${PYTHON_SINGLE_USEDEP}]
+	$(python_gen_cond_dep '
+	    dev-python/numpy[${PYTHON_USEDEP}]
+	    dev-python/matplotlib[${PYTHON_USEDEP}]
+	    dev-python/sympy
+	    dev-python/iminuit
+	')
 	dev-cpp/eigen:3
 "
 RDEPEND="${DEPEND}"

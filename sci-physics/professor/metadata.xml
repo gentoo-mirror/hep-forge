@@ -8,4 +8,7 @@
 	<longdescription lang="en">
 	Fundamentally, the idea of Professor is to reduce the exponentially expensive process of brute-force tuning to a scaling closer to a power law in the number of parameters, while allowing for massive parallelisation and systematically improving the scan results by use of a deterministic parameterisation of the generator's response to changes in the steering parameters.
 	</longdescription>
+	<upstream>
+		<remote-id type="gitlab">hepcedar/professor</remote-id>
+	</upstream>
 </pkgmetadata>
