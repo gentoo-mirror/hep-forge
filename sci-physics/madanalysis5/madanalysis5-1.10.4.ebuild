@@ -6,14 +6,14 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..10} )
 inherit python-single-r1
 
-MY_PF="MadAnalysis5-"-${PV}
+MY_PF=madanalysis5-${PV}
 
 DESCRIPTION="A package for event file analysis and recasting of LHC results"
 HOMEPAGE="
     https://github.com/MadAnalysis/madanalysis5
 "
 SRC_URI="https://github.com/MadAnalysis/madanalysis5/archive/refs/tags/v${PV}.tar.gz"
-S=${WORKDIR}/madanalysis5-${PV}
+S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -47,8 +47,8 @@ src_install() {
 	# symlink entrypoint
 	dosym ../../opt/${MY_PF}/bin/ma5 /usr/bin/ma5
 	dodir /opt/${MY_PF}
-	insinto /opt/${MY_PF}
-	doins -r "${S}/*"
+	insinto /opt/
+	doins -r "${S}"
 	cd "${S}"
 	# Copy executable, etc. permissions
 	for f in $(find * ! -type l); do
