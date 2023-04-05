@@ -39,8 +39,8 @@ RDEPEND="
 "
 BDEPEND="
 	$(python_gen_cond_dep '
-	    dev-python/cython[${PYTHON_USEDEP}]
-    ')
+		dev-python/cython[${PYTHON_USEDEP}]
+	')
 "
 
 src_compile() {
