@@ -253,6 +253,10 @@ default:
         VERSION: [1.6.32]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [vegas]
+        VERSION: ['5.4']
+        CATEGORY: ["sci-libs"]
+        <<: *images
 
 .matrix6: &matrix6
   parallel:
