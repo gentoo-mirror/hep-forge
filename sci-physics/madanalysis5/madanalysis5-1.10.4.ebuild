@@ -6,6 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..10} )
 inherit python-single-r1
 
+MY_P="MadAnalysis5"
 MY_PF=madanalysis5-${PV}
 
 DESCRIPTION="A package for event file analysis and recasting of LHC results"
@@ -53,6 +54,7 @@ src_install() {
 	dosym ../../opt/${MY_PF}/bin/ma5 /usr/bin/ma5
 	dodir /opt/${MY_PF}
 	insinto /opt/
+	dosym "${MY_P}" "${MY_PF}"
 	doins -r "${S}"
 	cd "${S}"
 	# Copy executable, etc. permissions

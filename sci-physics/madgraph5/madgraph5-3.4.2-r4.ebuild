@@ -9,7 +9,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..10} )
 inherit python-single-r1
 
-MY_P="MG5_aMC"
+MY_P="MadGraph5"
 MY_PV=$(ver_rs 1-3 '_')
 MY_PN="MG5_aMC_v"
 MY_PF=${MY_PN}${MY_PV}
@@ -22,7 +22,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
-# TODO add pineapple, herwig
+# TODO add pineapple, herwig, syscalc, pjfry
 IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +golem95 +thepeg +herwig +hepmc +madanalysis5 td"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
@@ -36,7 +36,7 @@ RDEPEND="
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
     collier? ( sci-physics/collier )
     td? ( sci-physics/topdrawer )
-    thepeg? ( sci-physics/thepeg )
+    thepeg? ( sci-physics/thepeg[hepmc?,fastjet?,lhapdf?] )
     ninja? ( dev-util/ninja )
     samurai? ( dev-util/samurai )
     golem95? ( sci-physics/golem95 )
@@ -70,7 +70,7 @@ src_install() {
 	dosym ../../opt/${MY_PF}/bin/mg5_aMC /usr/bin/mg5_aMC3
 	dodir /opt/${MY_PF}
 	insinto /opt/
-    dosym "${MY_P}" "${MY_PF}"
+    #dosym "${MY_P}" "${MY_PF}"
 	doins -r "${S}"
 	cd "${S}"
 	# Copy executable, etc. permissions
