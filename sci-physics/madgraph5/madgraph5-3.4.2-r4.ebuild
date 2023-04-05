@@ -68,6 +68,7 @@ src_configure() {
 src_install() {
 	# symlink entrypoint
 	dosym ../../opt/${MY_PF}/bin/mg5_aMC /usr/bin/mg5_aMC3
+	dosym  ../opt/${MY_PF} /opt/"${MY_P}"
 	dodir /opt/${MY_PF}
 	insinto /opt/
     #dosym "${MY_P}" "${MY_PF}"
