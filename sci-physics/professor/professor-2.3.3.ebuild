@@ -3,9 +3,7 @@
 
 EAPI=8
 PYTHON_COMPAT=( python3_{9..11} )
-DISTUTILS_USE_PEP517=setuptools
-DISTUTILS_SINGLE_IMPL=1
-inherit distutils-r1
+inherit python-single-r1
 
 MY_PN=Professor
 MY_P=${MY_PN}-${PV}
@@ -33,7 +31,7 @@ DEPEND="
 	    dev-python/iminuit[${PYTHON_USEDEP}]
 	')
 	dev-cpp/eigen:3
-    sci-physics/root:=[${PYTHON_SINGLE_USEDEP}]
+	sci-physics/root:=[${PYTHON_SINGLE_USEDEP}]
 "
 RDEPEND="
 	${PYTHON_DEPS}
@@ -49,27 +47,19 @@ PATCHES=(
 	"${FILESDIR}/${P}-no-contrib-jupyter.patch"
 )
 
-src_configure() {
-    default
-	cd "${S}"/pyext || die
-	distutils-r1_src_prepare
-}
-
 src_prepare() {
 	default
 	# Set version in setup.py
 	sed -i "s/X\.Y\.Z/${PV}/" pyext/setup.py || die
+	cd "${S}"/pyext || die
 }
 
 src_compile() {
 	emake CPPFLAGS="${CPPFLAGS} -I${SYSROOT}/usr/include/eigen3" all
-	cd "${S}"/pyext || die
-	distutils-r1_src_compile
 }
 
 src_install() {
-	make install PREFIX="${ED}/usr" LIBDIR=$(get_libdir)
-
-	cd "${S}"/pyext || die
-	distutils-r1_src_install
+	emake install PREFIX="${ED}/usr" LIBDIR=$(get_libdir)
+	cd pyext || die
+	python_domodule professor2
 }
