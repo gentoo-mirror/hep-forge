@@ -10,7 +10,7 @@ MY_PF=madanalysis5-${PV}
 
 DESCRIPTION="A package for event file analysis and recasting of LHC results"
 HOMEPAGE="
-    https://github.com/MadAnalysis/madanalysis5
+	https://github.com/MadAnalysis/madanalysis5
 "
 SRC_URI="https://github.com/MadAnalysis/madanalysis5/archive/refs/tags/v${PV}.tar.gz"
 S=${WORKDIR}/${MY_PF}
@@ -26,7 +26,7 @@ RDEPEND="
 	sys-libs/zlib
 	sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}]
 	sci-physics/root[${PYTHON_SINGLE_USEDEP}]
-    sci-physics/delphes
+	sci-physics/delphes
 
 	$(python_gen_cond_dep '
 		=sci-physics/pyhf-0.7.0[${PYTHON_USEDEP}]
@@ -40,12 +40,12 @@ DEPEND="${RDEPEND}"
 BDEPEND=""
 
 src_configure() {
-	default 
+	default
 	# Won't find system installed delphes otherwise
 	sed -i -e "s|self.delphes_includes\s*=\s*None|self.delphes_includes=\"${EPREFIX}/usr/include\"|" madanalysis/system/user_info.py || die
 	sed -i -e "s|self.delphes_libs\s*=\s*None|self.delphes_libs=\"${EPREFIX}/usr/$(get_libdir)\"|" madanalysis/system/user_info.py || die
 	# Fix include path
-	sed -i 's|#include "external/ExRootAnalysis"|#include "/ExRootAnalysis' tools/SampleAnalyzer/Interfaces/delphes/*.cpp || die
+	sed -i 's|#include "external/ExRootAnalysis|#include "ExRootAnalysis|g' tools/SampleAnalyzer/Interfaces/delphes/*.cpp || die
 }
 
 src_install() {
