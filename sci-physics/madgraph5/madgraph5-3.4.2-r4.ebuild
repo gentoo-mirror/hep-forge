@@ -22,7 +22,8 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
-IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +thepeg +herwig +hepmc td"
+# TODO add pineapple, herwig
+IUSE="+lhapdf +fastjet +pythia +ninja +samurai +collier +pineappl +golem95 +thepeg +herwig +hepmc +madanalysis5 td"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
@@ -35,6 +36,10 @@ RDEPEND="
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
     collier? ( sci-physics/collier )
     td? ( sci-physics/topdrawer )
+    thepeg? ( sci-physics/thepeg )
+    ninja? ( dev-util/ninja )
+    samurai? ( dev-util/samurai )
+    golem95? ( sci-physics/golem95 )
 	"
 PATCHES=( "${FILESDIR}"/cuttools.patch )
 DEPEND="${RDEPEND}"
@@ -52,8 +57,10 @@ src_configure() {
     use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-    use golem && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+    use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
     use td && echo "td_path = ${EPREFIX}/usr/bin/td" >> input/mg5_configuration.txt
+    use thepeg && echo "thepeg_path = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+    use madanalysis5 && echo "madanalysis5_path = ${EPREFIX}/opt/MadAnalysis5/" >> input/mg5_configuration.txt
 	#use hepmc && echo ""
 	echo "auto_update = 0" >> input/mg5_configuration.txt
 }
