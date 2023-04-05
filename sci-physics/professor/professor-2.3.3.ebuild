@@ -43,6 +43,11 @@ BDEPEND="
 	')
 "
 
+src_prepare() {
+	default
+	sed -i "s/X\.Y\.Z/${PV}/" pyext/setup.py || die
+}
+
 src_compile() {
 	emake CPPFLAGS="${CPPFLAGS} -I${SYSROOT}/usr/include/eigen3"
 }
