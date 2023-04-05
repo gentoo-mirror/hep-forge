@@ -277,6 +277,10 @@ default:
         VERSION: [2.2.1]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [professor]
+        VERSION: [2.3.3]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 .config:
   before_script:
