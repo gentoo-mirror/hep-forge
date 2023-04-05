@@ -45,9 +45,9 @@ PATCHES=( "${FILESDIR}"/cuttools.patch )
 DEPEND="${RDEPEND}"
 BDEPEND=""
 
-#src_unpack() {
-#	tar xvzf "${DISTDIR}/${MY_PN}${PV}.tar.gz" -C "${WORKDIR}"
-#}
+src_unpack() {
+	tar xvzf "${DISTDIR}/${MY_PN}${PV}.tar.gz" -C "${WORKDIR}"
+}
 
 src_configure() {
 	use lhapdf && echo "lhapdf_py3 = lhapdf-config" >> input/mg5_configuration.txt
