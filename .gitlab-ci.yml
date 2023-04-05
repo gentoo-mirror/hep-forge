@@ -262,7 +262,7 @@ default:
   parallel:
     matrix:
       - PKG: [particle]
-        VERSION: [0.21.1]
+        VERSION: [0.22.0, 0.21.1]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [decaylanguage]
@@ -281,6 +281,11 @@ default:
         VERSION: [2.2.1]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [flavio]
+        VERSION: ['2.4.0']
+        CATEGORY: ["sci-physics"]
+        <<: *images
+
 
 .config:
   before_script:
