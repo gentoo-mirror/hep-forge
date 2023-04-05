@@ -6,7 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..10} )
 inherit python-single-r1
 
-MY_PF="MadAnalysis5"
+MY_PF="MadAnalysis5-"-${PV}
 
 DESCRIPTION="A package for event file analysis and recasting of LHC results"
 HOMEPAGE="
@@ -47,25 +47,12 @@ src_install() {
 	# symlink entrypoint
 	dosym ../../opt/${MY_PF}/bin/ma5 /usr/bin/ma5
 	dodir /opt/${MY_PF}
-	insinto /opt/
-	doins -r "${S}"
+	insinto /opt/${MY_PF}
+	doins -r "${S}/*"
 	cd "${S}"
 	# Copy executable, etc. permissions
 	for f in $(find * ! -type l); do
 		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
 	done
 	fperms -R a=u /opt/${MY_PF}
-
-	#fperms +w -R /opt/${MY_PF}/bin/mg5_aMC
-	#fowners :madgraph -R /opt/${MY_PF}
 }
-
-pkg_postinst() {
-	elog "YOU MUST add your user to the madgraph group"
-	elog "eg. sudo usermod -a -G madgraph username"
-	elog "Running sessions must be restarted"
-	elog ""
-	elog "Automatic updates disabled, modified in: "
-	elog "/opt/${MY_PF}/input/mg5_configuration.txt"
-}
-

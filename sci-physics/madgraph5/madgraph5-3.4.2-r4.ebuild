@@ -17,6 +17,7 @@ DESCRIPTION="MadGraph5_aMC@NLO"
 HOMEPAGE="https://launchpad.net/mg5amcnlo"
 SRC_URI="https://launchpad.net/mg5amcnlo/$(ver_cut 1).0/$(ver_cut 1-2).x/+download/${MY_PN}${PV}.tar.gz"
 S=${WORKDIR}/${MY_PF}
+MY_PF="MadGraph5-${MY_PV}"
 
 LICENSE="UoI-NCSA"
 SLOT="3"
@@ -62,18 +63,4 @@ src_install() {
 		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
 	done
 	fperms -R a=u /opt/${MY_PF}
-
-	#fperms +w -R /opt/${MY_PF}/bin/mg5_aMC
-	#fowners :madgraph -R /opt/${MY_PF}
-
 }
-
-pkg_postinst() {
-	elog "YOU MUST add your user to the madgraph group"
-	elog "eg. sudo usermod -a -G madgraph username"
-	elog "Running sessions must be restarted"
-	elog ""
-	elog "Automatic updates disabled, modified in: "
-	elog "/opt/${MY_PF}/input/mg5_configuration.txt"
-}
-
