@@ -72,11 +72,11 @@ src_install() {
 	dosym  ../opt/${MY_PF} /opt/"${MY_P}"
 	dodir /opt/${MY_PF}
 	insinto /opt/
+	doins -r "${S}"
 	# Fix for missing empty directories, check keepdir install function explanation
 	for f in $(find . -type d -empty); do
-		keepdir $f
+		keepdir /opt/${MY_PF}/$f
 	done
-	doins -r "${S}"
 	cd "${S}"
 	# Copy executable, etc. permissions
 	for f in $(find * ! -type l); do
