@@ -45,6 +45,7 @@ BDEPEND="
 
 src_prepare() {
 	default
+	# Set version in setup.py
 	sed -i "s/X\.Y\.Z/${PV}/" pyext/setup.py || die
 }
 
