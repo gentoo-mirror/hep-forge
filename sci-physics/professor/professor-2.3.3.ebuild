@@ -43,6 +43,7 @@ BDEPEND="
 	')
 "
 
+# Disables also pytest since it is very broken
 PATCHES=(
 	"${FILESDIR}/${P}-no-contrib-jupyter.patch"
 )
