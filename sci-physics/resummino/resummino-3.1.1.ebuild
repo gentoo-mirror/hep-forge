@@ -22,6 +22,7 @@ DEPEND="
 	sci-physics/lhapdf
 	>=sci-physics/looptools-2.15-r1
 	>=sci-libs/gsl-2.0
+	dev-libs/boost:0=
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
