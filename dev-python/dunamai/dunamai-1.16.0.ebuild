@@ -27,7 +27,7 @@ SLOT="0"
 
 RDEPEND="
 	>=dev-python/packaging-20.9[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '>=dev-python/importlib_metadata-1.6.0[${PYTHON_USEDEP}]' python3_{7.8})
+	$(python_gen_cond_dep '>=dev-python/importlib_metadata-1.6.0[${PYTHON_USEDEP}]' python3_{7,8})
 "
 BDEPEND="${RDEPEND}"
 
