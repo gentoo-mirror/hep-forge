@@ -7,7 +7,7 @@ dev-python/deep-translator 1.9.1 9999: Translation for humans
 dev-python/deepdiff 6.2.3: A library for comparing dictionaries, iterables, strings and other objects
 dev-python/dm-tree 0.1.8: tree is a library for working with nested data structures.
 dev-python/docformatter 1.5.0: Formats docstrings to follow PEP 257.
-dev-python/dunamai 1.15.0 9999: Library and command line tool for producing version strings
+dev-python/dunamai 1.15.0 1.16.0 9999: Library and command line tool for producing version strings
 dev-python/factory-boy 3.2.1: A test fixtures replacement for Python
 dev-python/flatdict 4.0.0: Python module for interacting with nested dicts
 dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbitrary round-off error and error propagation.
