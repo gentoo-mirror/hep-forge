@@ -78,7 +78,7 @@ sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731 3.6_p20200731-r2: Library of one-lo
 sci-physics/openloops 2.1.2 2.1.2-r1: Evaluation of tree and one-loop matrix elements for any Standard Model.
 sci-physics/particle 0.21.1 0.21.1-r1 0.22.0: PDG particle data and identification codes
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
-sci-physics/photos 3.64: PHOTOS
+sci-physics/photos 3.64 3.64-r1: PHOTOS
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyhepmc 2.10.0: A Pythonic wrapper for the HepMC3 C++ library.
 sci-physics/pyhf 0.7.0 0.7.0-r1: pure-python fitting/limit-setting/interval estimation HistFactory-style
@@ -90,18 +90,18 @@ sci-physics/qgraf 3.4.2 3.5.2 3.6.5: qgraf generates Feynman diagrams for variou
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
 sci-physics/resummino 3.1.1 3.1.2: Resummation for electroweak BSM particles.
-sci-physics/rivet 3.1.5 3.1.5-r1 3.1.6 3.1.6-r1 3.1.6-r2 3.1.7 3.1.7-r1 3.1.7-r2 3.1.7-r3 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
+sci-physics/rivet 3.1.5 3.1.5-r1 3.1.6 3.1.6-r1 3.1.6-r2 3.1.7 3.1.7-r1 3.1.7-r2 3.1.7-r3 3.1.7-r4 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
 sci-physics/rundec 0.5: running and decoupling of the strong coupling constant and quark masses
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 sci-physics/sherpa 2.2.12: Simulation of High-Energy Reactions of PArticles
 sci-physics/smelli 2.3.2: running and matching beyond the Standard Model
 sci-physics/smodels 2.2.1: A tool for interpreting simplified-model results from the LHC.
 sci-physics/spheno 3.3.8 3.3.8-r1: SPheno stands for S(upersymmetric) Pheno(menology)
-sci-physics/tauola 1.1.8-r1: Tau decay Monte Carlo generator
+sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 9999: TOPDRAWER renders top files.
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
-sci-physics/yoda 1.9.5 1.9.5-r1 1.9.7 1.9.7-r1 9999: Yet more Objects for (High Energy Physics) Data Analysis
+sci-physics/yoda 1.9.5 1.9.5-r1 1.9.5-r2 1.9.7 1.9.7-r1 1.9.7-r2 9999: Yet more Objects for (High Energy Physics) Data Analysis
 sys-cluster/easybuild 4.6.2-r1: EasyBuild is a software build and installation framework.
 sys-cluster/easybuild-easyblocks 4.6.2: Provides a collection of easyblocks for EasyBuild.
 sys-cluster/easybuild-easyconfigs 4.6.2: Provides a collection of well-tested easyconfig files for EasyBuild.
