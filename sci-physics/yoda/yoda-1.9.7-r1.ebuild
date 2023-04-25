@@ -52,7 +52,7 @@ src_test() {
 }
 
 src_install() {
-	emake install DESTDIR="${ED}"
+	emake install DESTDIR="${D}"
 
 	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}
 	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
