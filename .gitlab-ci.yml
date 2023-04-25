@@ -30,7 +30,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [resummino]
-        VERSION: [3.1.1]
+        VERSION: [3.1.2,3.1.1]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [oneloop]
