@@ -35,8 +35,6 @@ RDEPEND="
 
 DEPEND="${RDEPEND}"
 
-PATCHES=()
-
 src_prepare() {
 	default
 	# reconf due to python3_10 patch
