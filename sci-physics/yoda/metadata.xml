@@ -21,6 +21,7 @@
 		in Rivet.
 	</longdescription>
 	<use>
+		<flag name="zlib">Build with zlib</flag>
 		<flag name="root">Adds support for <pkg>sci-physics/root</pkg></flag>
 	</use>
 	<upstream>
