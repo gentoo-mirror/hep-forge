@@ -45,7 +45,7 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${P}-rest.patch
+	"${FILESDIR}"/${PN}-10.2.1-rest.patch
 )
 src_prepare() {
 	sed -i -e 's/\(name=".*\)"/\1_"/g' src/Mods/mod_qcdloop_c.f || die
