@@ -27,7 +27,7 @@ fi
 
 LICENSE="GPL-3+"
 SLOT="3"
-IUSE="+hepmc3 hepmc2"
+IUSE="+hepmc3 hepmc2 +zlib"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
 	${PYTHON_REQUIRED_USE}
@@ -41,6 +41,7 @@ RDEPEND="
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 
 	sci-libs/gsl
+	zlib? ( sys-libs/zlib )
 
 	${PYTHON_DEPS}
 "
@@ -67,6 +68,7 @@ src_configure() {
 	PREFIX_YODA=$(yoda-config --prefix) || die
 	PREFIX_FJ=$(fastjet-config --prefix) || die
 	econf \
+		$(use_with zlib zlib $ESYSROOT/usr) \
 		$(usex hepmc2 "--with-hepmc=${SYSROOT}/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=${SYSROOT}/usr" "") \
 		--with-yoda=$PREFIX_YODA \
