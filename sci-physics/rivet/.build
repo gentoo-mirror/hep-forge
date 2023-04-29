@@ -1,12 +1,2 @@
 # This file triggers a build of all packages in the folder
-random_build
-random_build
-random_build
-random_build
-random_build
-random_build
-random_build
-a
-g
-h
-random_build
+clean
