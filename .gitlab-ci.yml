@@ -342,7 +342,7 @@ global-pkgcheck:
   stage: checksingle
   before_script: []
   script:
-    - pkgcheck scan $CATEGORY/$PKG --exit
+    - pkgcheck scan "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --exit
 
 .warn:
   image: apnpucky/gentoo-ebuild-ci
@@ -350,7 +350,7 @@ global-pkgcheck:
   stage: checksingle
   before_script: []
   script:
-    - pkgcheck scan $CATEGORY/$PKG --exit warning || exit 137
+    - pkgcheck scan "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --exit warning || exit 137
   allow_failure:
     exit_codes: 137
 
