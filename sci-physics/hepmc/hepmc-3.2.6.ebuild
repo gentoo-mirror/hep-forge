@@ -16,9 +16,9 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://gitlab.cern.ch/hepmc/HepMC3"
 else
-    SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
-    S="${WORKDIR}/${MYP}"
-    KEYWORDS="~amd64"
+	SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
+	S="${WORKDIR}/${MYP}"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="GPL-3+"
@@ -28,12 +28,12 @@ RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
-    python? ( 
-        ${PYTHON_DEPS} 
-        $(python_gen_cond_dep '
-            dev-python/numpy[${PYTHON_USEDEP}]
-	    ') 
-    )
+	python? (
+		${PYTHON_DEPS}
+		$(python_gen_cond_dep '
+			dev-python/numpy[${PYTHON_USEDEP}]
+		')
+	)
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
