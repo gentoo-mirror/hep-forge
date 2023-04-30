@@ -30,7 +30,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [resummino]
-        VERSION: [3.1.2,3.1.1]
+        VERSION: [3.1.2, 3.1.1]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [oneloop]
@@ -50,7 +50,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [hepmc]
-        VERSION: [9999, 3.2.5, 2.06.11]
+        VERSION: [9999, 3.2.6, 3.2.5, 2.06.11]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [delphes]
@@ -258,7 +258,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [vegas]
-        VERSION: ['5.4']
+        VERSION: ["5.4"]
         CATEGORY: ["sci-libs"]
         <<: *images
 
@@ -290,7 +290,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [flavio]
-        VERSION: ['2.4.0']
+        VERSION: ["2.4.0"]
         CATEGORY: ["sci-physics"]
         <<: *images
 

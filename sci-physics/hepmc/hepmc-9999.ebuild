@@ -4,7 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{9..11} )
-inherit cmake python-single-r1
+inherit fortran-2 cmake python-single-r1
 
 MYP=HepMC3-${PV}
 
@@ -59,5 +59,5 @@ src_configure() {
 src_install() {
 	cmake_src_install
 	use examples && docompress -x /usr/share/doc/${PF}/examples
-	python_optimize
+	use python && python_optimize
 }
