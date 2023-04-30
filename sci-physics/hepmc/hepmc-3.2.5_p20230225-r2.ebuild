@@ -4,7 +4,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{9..11} )
-inherit cmake python-single-r1 fortran-2
+inherit fortran-2 cmake python-single-r1
 
 MYPN=HepMC3
 MYP=${MYPN}-${PV}
