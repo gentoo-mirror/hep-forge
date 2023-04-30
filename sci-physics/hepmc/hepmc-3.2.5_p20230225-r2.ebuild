@@ -61,5 +61,5 @@ src_configure() {
 src_install() {
 	cmake_src_install
 	use examples && docompress -x /usr/share/doc/${PF}/examples
-	python_optimize
+	use python && python_optimize
 }
