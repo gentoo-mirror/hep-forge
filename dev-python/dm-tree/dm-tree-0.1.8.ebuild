@@ -13,4 +13,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND=""
-BDEPEND="${RDEPEND}"
+BDEPEND="
+	dev-util/cmake
+	${RDEPEND}
+"
