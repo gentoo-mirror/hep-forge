@@ -50,7 +50,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [hepmc]
-        VERSION: [9999, 3.2.6, 3.2.5, 2.06.11]
+        VERSION: [9999, 3.2.6, 3.2.5, 2.06.11, 2.06.09]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [delphes]
