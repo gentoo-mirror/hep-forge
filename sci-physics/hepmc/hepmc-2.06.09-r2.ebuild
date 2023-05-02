@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-MYP=HepMC-${PV}
+MYP=hepmc${PV}
 
 DESCRIPTION="Event Record for Monte Carlo Generators"
 HOMEPAGE="https://hepmc.web.cern.ch/hepmc/"
