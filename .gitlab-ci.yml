@@ -293,6 +293,10 @@ default:
         VERSION: ["2.4.0"]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [feynhiggs]
+        VERSION: ["2.18.1"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 .config:
   before_script:
