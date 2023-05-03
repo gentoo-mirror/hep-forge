@@ -59,6 +59,7 @@ sci-physics/fastjet 3.0.6 3.0.6-r3 3.4.0 3.4.0-r1: A software package for jet fi
 sci-physics/fastjet-contrib 1.049-r1 1.049-r2 1.049-r3 1.049-r4 1.051: 3rd party extensions of FastJet.
 sci-physics/feynarts 3.11: FeynArts renders Feynman diagrams and generates their topologies.
 sci-physics/feyncalc 9.3.1 9999: FeynCalc is a Mathematica package for computing Feynman diagrams.
+sci-physics/feynhiggs 2.18.1: Calculation of the masses, mixings and much more of the Higgs bosons in the MSSM
 sci-physics/flavio 2.4.0: flavour phenomenology in the Standard model and beyond
 sci-physics/formcalc 9.9 9.10: FormCalc can be used for automatic Feynman diagram computation.
 sci-physics/golem95 1.3.3: performs the reduction to a certain set of basis integrals numerically
@@ -96,6 +97,7 @@ sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction 
 sci-physics/sherpa 2.2.12: Simulation of High-Energy Reactions of PArticles
 sci-physics/smelli 2.3.2: running and matching beyond the Standard Model
 sci-physics/smodels 2.2.1: A tool for interpreting simplified-model results from the LHC.
+sci-physics/softsusy 4.1.13: Calculates supersymmetric particle spectra
 sci-physics/spheno 3.3.8 3.3.8-r1 3.3.8-r2: SPheno stands for S(upersymmetric) Pheno(menology)
 sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
