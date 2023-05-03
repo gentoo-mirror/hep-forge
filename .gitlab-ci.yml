@@ -297,6 +297,10 @@ default:
         VERSION: ["2.18.1"]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [softsusy]
+        VERSION: ["4.1.13"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 .config:
   before_script:
