@@ -98,7 +98,7 @@ sci-physics/sherpa 2.2.12: Simulation of High-Energy Reactions of PArticles
 sci-physics/smelli 2.3.2: running and matching beyond the Standard Model
 sci-physics/smodels 2.2.1: A tool for interpreting simplified-model results from the LHC.
 sci-physics/softsusy 4.1.13: Calculates supersymmetric particle spectra
-sci-physics/spheno 3.3.8 3.3.8-r1 3.3.8-r2: SPheno stands for S(upersymmetric) Pheno(menology)
+sci-physics/spheno 3.3.8 3.3.8-r1 3.3.8-r2 4.0.5: SPheno stands for S(upersymmetric) Pheno(menology)
 sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 9999: TOPDRAWER renders top files.
