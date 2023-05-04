@@ -301,6 +301,10 @@ default:
         VERSION: ["4.1.13"]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [spheno]
+        VERSION: ["4.0.5","3.3.8"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 .config:
   before_script:
