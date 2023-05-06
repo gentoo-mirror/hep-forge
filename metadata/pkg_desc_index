@@ -51,7 +51,7 @@ sci-physics/cernlib 2006-r8: CERN program library for High Energy Physics
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
 sci-physics/collier 1.2.5 1.2.7: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
-sci-physics/cuttools 1.8.2: Computing 1-loop amplitudes at the integrand level
+sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2: DecayLanguage: describe, manipulate and convert particle decays
 sci-physics/delphes 3.5.0 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/evtgen 02.02.00: 
@@ -76,7 +76,7 @@ sci-physics/madgraph5 3.4.2-r4: MadGraph5_aMC@NLO
 sci-physics/mcfm 10.2.1 10.2.1-r1 10.2.1-r2 10.2.1-r3 9999: Monte Carlo for FeMtobarn processes
 sci-physics/ninja 1.1.0: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731 3.6_p20200731-r2: Library of one-loop scalar functions
-sci-physics/openloops 2.1.2 2.1.2-r1: Evaluation of tree and one-loop matrix elements for any Standard Model.
+sci-physics/openloops 2.1.2 2.1.2-r1 2.1.2-r2: Evaluation of tree and one-loop matrix elements for any Standard Model.
 sci-physics/particle 0.21.1 0.21.1-r1 0.22.0: PDG particle data and identification codes
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64 3.64-r1: PHOTOS
