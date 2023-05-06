@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 DEPEND="
 	sci-physics/collier
 	sci-physics/qcdloop
-	sci-physics/oneloop[dpkind,-qpkind16,-qpkind,-cppintf,-kind_types]
+	sci-physics/oneloop[dpkind,qpkind16,-qpkind,-cppintf,-kind_types]
 	sci-physics/cuttools
 "
 RDEPEND="${DEPEND}"
