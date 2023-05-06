@@ -1,16 +1,16 @@
-BDEPEND=python_targets_python3_10? ( >=dev-lang/python-3.10.9-r1:3.10 ) >=dev-python/gpep517-13[python_targets_python3_10(-)?] >=dev-python/setuptools-67.2.0[python_targets_python3_10(-)?] >=dev-python/wheel-0.38.4[python_targets_python3_10(-)?]
+BDEPEND=python_targets_python3_10? ( >=dev-lang/python-3.10.9-r1:3.10 ) python_targets_python3_11? ( >=dev-lang/python-3.11.1-r1:3.11 ) >=dev-python/gpep517-13[python_targets_python3_10(-)?,python_targets_python3_11(-)?] >=dev-python/setuptools-67.2.0[python_targets_python3_10(-)?,python_targets_python3_11(-)?] >=dev-python/wheel-0.38.4[python_targets_python3_10(-)?,python_targets_python3_11(-)?]
 DEFINED_PHASES=compile configure install prepare test
 DEPEND=sci-physics/rivet sci-physics/yoda
 DESCRIPTION=Exploring the sensitivity of unfolded collider measurements to BSM models.
 EAPI=8
 HOMEPAGE=https://gitlab.com/hepcedar/contur/
 INHERIT=distutils-r1
-IUSE=python_targets_python3_10
+IUSE=python_targets_python3_10 python_targets_python3_11
 KEYWORDS=~amd64
 LICENSE=GPL-3
-RDEPEND=sci-physics/rivet sci-physics/yoda python_targets_python3_10? ( >=dev-lang/python-3.10.9-r1:3.10 )
-REQUIRED_USE=|| ( python_targets_python3_10 )
+RDEPEND=sci-physics/rivet sci-physics/yoda python_targets_python3_10? ( >=dev-lang/python-3.10.9-r1:3.10 ) python_targets_python3_11? ( >=dev-lang/python-3.11.1-r1:3.11 )
+REQUIRED_USE=|| ( python_targets_python3_10 python_targets_python3_11 )
 SLOT=0
 SRC_URI=https://gitlab.com/hepcedar/contur/-/archive/contur-2.4.0/contur-contur-2.4.0.tar.gz
 _eclasses_=out-of-source-utils	1a9007554652a6e627edbccb3c25a439	multibuild	bddcb51b74f4a76724ff7cf8e7388869	multilib	d1408425c7c4a7669b9b17735404b693	toolchain-funcs	14a8ae365191b518fad51caad7a08f3e	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	76050953ad5b70d7e09a6ca55558db92	python-utils-r1	4544ab96b58e177dc52d75e42f5ee307	python-r1	3c6cd0f418ba702c186a9865b85e704d	distutils-r1	87ebb7e1e8d4ac49be0a91406b443060
-_md5_=f9cc1bbb6781ea2a317ca8ac1daf5469
+_md5_=8d8af6e34cf61bafe99ed7778443ef1c
