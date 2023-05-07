@@ -38,6 +38,10 @@ Usually I follow these steps (I use less package as example)
 * go in work directory cd /var/tmp/portage/sys-apps/less-531/work/
 * and finally create patch diff -Naru less-531.orig less-531 > your_patch_files.patch
 
+## Random build
+
+Is a chaos monkey approach to keep checking the relevant packages.
+
 ## Similar (HEP) Science collections:
 
 * <http://davidchall.github.io/homebrew-hep/formula/>
