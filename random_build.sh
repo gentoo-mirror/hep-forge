@@ -4,7 +4,7 @@ cd $D
 git pull
 A=($(find . -name ".build"))
 echo "random_build" >> ${A[$(($RANDOM % ${#A[@]}))]}
-echo "random_build" >> ${A[$(($RANDOM % ${#A[@]}))]}
+#echo "random_build" >> ${A[$(($RANDOM % ${#A[@]}))]}
 git commit -am "random_build"
 git push
 
