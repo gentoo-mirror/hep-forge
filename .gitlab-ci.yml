@@ -333,7 +333,7 @@ local-pkgcheck:
   stage: checkall
   before_script: []
   script:
-    - pkgcheck scan --exit
+    - pkgcheck scan --exit --quiet
 
 global-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
@@ -346,7 +346,7 @@ global-pkgcheck:
     - emaint -r ${REPO_NAME} sync
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
   script:
-    - pkgcheck ci -r ${REPO_NAME} --exit
+    - pkgcheck ci -r ${REPO_NAME} --exit --quiet
 
 .check:
   image: apnpucky/gentoo-ebuild-ci
