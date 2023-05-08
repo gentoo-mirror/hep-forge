@@ -1,0 +1,15 @@
+BDEPEND=virtual/fortran
+DEFINED_PHASES=compile install prepare
+DEPEND=sci-physics/qcdloop sci-physics/oneloop[dpkind,qpkind16,-qpkind,-tlevel]
+DESCRIPTION=Computing 1-loop amplitudes at the integrand level
+EAPI=8
+HOMEPAGE=https://www.ugr.es/~pittau/CutTools/
+INHERIT=toolchain-funcs
+IUSE=+dummy
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=sci-physics/qcdloop sci-physics/oneloop[dpkind,qpkind16,-qpkind,-tlevel]
+SLOT=0
+SRC_URI=http://www.ugr.es/~pittau/CutTools/cuttools_v1.8.2.tar.gz
+_eclasses_=toolchain-funcs	14a8ae365191b518fad51caad7a08f3e	multilib	d1408425c7c4a7669b9b17735404b693
+_md5_=b7e6fb52f0cc9651511248142e00aa1d
