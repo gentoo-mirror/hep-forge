@@ -11,7 +11,7 @@ MY_P=COLLIER-${PV}
 
 DESCRIPTION="A Complex One-Loop LIbrary with Extended Regularizations"
 HOMEPAGE="https://collier.hepforge.org/index.html"
-SRC_URI="https://collier.hepforge.org/downloads/?f=${P}.tar.gz"
+SRC_URI="https://collier.hepforge.org/downloads/?f=${P}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-3"
