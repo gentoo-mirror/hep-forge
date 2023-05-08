@@ -36,7 +36,6 @@ src_prepare() {
 	sed -i "s|#link_flags.*|link_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools -lcollier|" openloops.cfg || die
 	sed -i 's/#compile_libraries.*/compile_libraries = rambo trred/' openloops.cfg || die
 	sed -i "s|scons -Q|scons -Q -C /opt/${MY_P}/|g" openloops || die
-	# patch collier
 	echo "link_libraries = $(usev collier) $(usev cuttools)" >> openloops.cfg || die
 }
 
