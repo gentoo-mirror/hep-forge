@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{9..11} )
 
-inherit python-single-r1 scons-utils
+inherit fortran-2 python-single-r1 scons-utils
 
 MY_P=OpenLoops-${PV}
 
@@ -33,8 +33,6 @@ src_prepare() {
 	sed -i "s|#gfortran_f_flags.*|gfortran_f_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools|" openloops.cfg || die
 	sed -i 's/#compile_libraries.*/compile_libraries = rambo trred/' openloops.cfg || die
 	sed -i "s|scons -Q|scons -Q -C /opt/${MY_P}/|g" openloops || die
-	touch .stamp_proclib || die
-	touch .stamp_process_src || die
 }
 
 src_compile() {
