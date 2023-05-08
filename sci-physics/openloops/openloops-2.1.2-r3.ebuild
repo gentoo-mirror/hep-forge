@@ -23,7 +23,7 @@ DEPEND="
 	sci-physics/qcdloop
 	sci-physics/oneloop[dpkind,qpkind16,-qpkind,-cppintf,-kind_types]
 	collier? ( sci-physics/collier )
-	cuttools? ( sci-physics/cuttools )
+	cuttools? ( sci-physics/cuttools[dummy] )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
