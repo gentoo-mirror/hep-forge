@@ -17,12 +17,13 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="+collier +cuttools +rambo +trred +extra"
 
 DEPEND="
-	sci-physics/collier
 	sci-physics/qcdloop
 	sci-physics/oneloop[dpkind,qpkind16,-qpkind,-cppintf,-kind_types]
-	sci-physics/cuttools
+	collier? ( sci-physics/collier )
+	cuttools? ( sci-physics/cuttools )
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
@@ -30,9 +31,13 @@ BDEPEND=""
 src_prepare() {
 	default
 	mv openloops.cfg.tmpl openloops.cfg
-	sed -i "s|#gfortran_f_flags.*|gfortran_f_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools|" openloops.cfg || die
+	sed -i "s|#gfortran_f_flags.*|gfortran_f_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools -lcollier|" openloops.cfg || die
+	use extra && sed -i "s|#compile_extra.*|compile_extra = 1|" openloops.cfg || die
+	sed -i "s|#link_flags.*|link_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools -lcollier|" openloops.cfg || die
 	sed -i 's/#compile_libraries.*/compile_libraries = rambo trred/' openloops.cfg || die
 	sed -i "s|scons -Q|scons -Q -C /opt/${MY_P}/|g" openloops || die
+	# patch collier
+	echo "link_libraries = $(usev collier) $(usev cuttools)" >> openloops.cfg || die
 }
 
 src_compile() {
@@ -66,7 +71,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Install processes with ./openloops libinstall."
+	elog "Install processes with openloops libinstall."
 	elog "They are installed in /opt/${MY_P}/proclib."
 }
 
