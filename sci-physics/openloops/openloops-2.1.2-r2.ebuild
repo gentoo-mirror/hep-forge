@@ -29,8 +29,6 @@ BDEPEND=""
 
 src_prepare() {
 	default
-	# kind_types already installed with oneloop
-	sed -i "s/'kind_types.F90',//g" SConstruct || die 
 	mv openloops.cfg.tmpl openloops.cfg
 	sed -i "s|#gfortran_f_flags.*|gfortran_f_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools|" openloops.cfg || die
 	sed -i 's/#compile_libraries.*/compile_libraries = rambo trred/' openloops.cfg || die
