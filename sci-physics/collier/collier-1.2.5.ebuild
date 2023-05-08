@@ -5,7 +5,7 @@ EAPI=8
 
 CMAKE_MAKEFILE_GENERATOR="emake"
 
-inherit cmake
+inherit fortran-2 cmake
 
 MY_P=COLLIER-${PV}
 
