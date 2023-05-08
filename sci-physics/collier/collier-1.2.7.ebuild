@@ -25,9 +25,11 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	virtual/fortran
 "
+PATCHES=( "${FILESDIR}/${P}-mod.patch")
 
 src_configure() {
 	local mycmakeargs=(
+		-Dstatic=OFF
 		-DLIB_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)
 		-DSYSCONFIG_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)/cmake
 	)
