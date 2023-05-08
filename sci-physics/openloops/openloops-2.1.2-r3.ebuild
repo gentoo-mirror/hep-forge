@@ -37,6 +37,9 @@ src_prepare() {
 	sed -i 's/#compile_libraries.*/compile_libraries = rambo trred/' openloops.cfg || die
 	sed -i "s|scons -Q|scons -Q -C /opt/${MY_P}/|g" openloops || die
 	echo "link_libraries = $(usev collier) $(usev cuttools)" >> openloops.cfg || die
+	echo "process_src_dir = /opt/${MY_P}/process_src/" >> openloops.cfg || die
+	echo "process_obj_dir = /opt/${MY_P}/process_obj/" >> openloops.cfg || die
+	echo "process_lib_dir = /opt/${MY_P}/proclib/" >> openloops.cfg || die
 }
 
 src_compile() {
