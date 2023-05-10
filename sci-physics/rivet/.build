@@ -1,3 +1,4 @@
 # This file triggers a build of all packages in the folder
 clean
 check
+random_build
