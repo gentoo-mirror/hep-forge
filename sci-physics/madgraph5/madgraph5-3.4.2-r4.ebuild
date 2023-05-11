@@ -27,9 +27,9 @@ RDEPEND="
 	${PYTHON_DEPS}
 	sys-libs/zlib
 	sys-devel/gcc:*[fortran]
-    $(python_gen_cond_dep '
-        dev-python/numpy[${PYTHON_USEDEP}]
-    ')
+	$(python_gen_cond_dep '
+		dev-python/numpy[${PYTHON_USEDEP}]
+	')
 	lhapdf? ( sci-physics/lhapdf[${PYTHON_SINGLE_USEDEP}] )
 	fastjet? ( sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}] )
 	pythia? ( sci-physics/pythia )
