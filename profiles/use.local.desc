@@ -14,6 +14,7 @@ sci-mathematics/cgal:mpfi - Enable support for multiple recision interval arithm
 sci-mathematics/cgal:ntl - Enable support for dev-libs/ntl
 sci-mathematics/cgal:shared - Build shared library
 sci-physics/applgrid:root - use root
+sci-physics/cuttools:dummy - Add dummy module for OpenLoops
 sci-physics/evtgen:photos - Build with photos
 sci-physics/evtgen:pythia - Build with pythia
 sci-physics/evtgen:tauola - Build with tauola
@@ -52,6 +53,9 @@ sci-physics/oneloop:qdcpp - quad use sci-libs/qd
 sci-physics/oneloop:qpkind - quad precision
 sci-physics/oneloop:qpkind16 - quad16 precision
 sci-physics/oneloop:tlevel - enable tlevel
+sci-physics/openloops:collier - Build with collier
+sci-physics/openloops:cuttools - Build with cuttools
+sci-physics/openloops:extra - Build libs with extra
 sci-physics/photos:hepmc - Build with hepmc 2
 sci-physics/photos:pythia - Build with pythia
 sci-physics/photos:tauola - Build with tauola
