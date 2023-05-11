@@ -12,4 +12,9 @@
 	<longdescription lang="en">
 	The OpenLoops 2 program is a fully automated implementation of the Open Loops algorithm combined with on-the-fly reduction methods, which allows for the fast and stable numerical evaluation of tree and one-loop matrix elements for any Standard Model process at NLO QCD and NLO EW.
 	</longdescription>
+	<use>
+		<flag name="collier">Build with collier</flag>
+		<flag name="extra">Build libs with extra</flag>
+		<flag name="cuttools">Build with cuttools</flag>
+	</use>
 </pkgmetadata>

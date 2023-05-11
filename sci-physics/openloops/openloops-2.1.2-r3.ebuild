@@ -17,7 +17,7 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+collier +cuttools +rambo +trred +extra"
+IUSE="+collier +cuttools +extra"
 
 DEPEND="
 	sci-physics/qcdloop

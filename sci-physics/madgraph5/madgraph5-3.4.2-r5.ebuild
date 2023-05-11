@@ -20,7 +20,7 @@ LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
 # TODO add pineapple, herwig, syscalc, pjfry
-IUSE="+lhapdf +fastjet +pythia -ninja -samurai -collier +pineappl -golem95 +thepeg +rivet +herwig +hepmc +madanalysis5 td"
+IUSE="+lhapdf +fastjet +pythia ninja samurai collier +pineappl golem95 +thepeg +rivet +herwig +hepmc +madanalysis5 td"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
@@ -28,8 +28,8 @@ RDEPEND="
 	sys-libs/zlib
 	sys-devel/gcc:*[fortran]
 	$(python_gen_cond_dep '
-        dev-python/numpy[${PYTHON_USEDEP}]
-    ')
+		dev-python/numpy[${PYTHON_USEDEP}]
+	')
 	lhapdf? ( sci-physics/lhapdf[${PYTHON_SINGLE_USEDEP}] )
 	fastjet? ( sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}] )
 	pythia? ( sci-physics/pythia )
