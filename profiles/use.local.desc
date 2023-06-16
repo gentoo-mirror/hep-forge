@@ -43,6 +43,7 @@ sci-physics/madgraph5:rivet - USE system rivet
 sci-physics/madgraph5:samurai - USE system samurai
 sci-physics/madgraph5:td - USE system topdrawer
 sci-physics/madgraph5:thepeg - USE system thepeg
+sci-physics/ninja:static - Build static library
 sci-physics/oneloop:arprec - use sci-libs/arprec
 sci-physics/oneloop:cppintf - enable cppintf
 sci-physics/oneloop:ddcpp - double use sci-libs/qd
