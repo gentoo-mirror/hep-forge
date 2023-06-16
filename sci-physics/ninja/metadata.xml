@@ -13,4 +13,8 @@
 	<longdescription lang="en">
 	Ninja is a public C++ library which implements the Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 	</longdescription>
+	<use>
+    	<flag name="static">Build static library</flag>
+    </use>
+
 </pkgmetadata>
