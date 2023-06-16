@@ -14,6 +14,7 @@ sci-mathematics/cgal:mpfi - Enable support for multiple recision interval arithm
 sci-mathematics/cgal:ntl - Enable support for dev-libs/ntl
 sci-mathematics/cgal:shared - Build shared library
 sci-physics/applgrid:root - use root
+sci-physics/collier:static - Build static library
 sci-physics/cuttools:dummy - Add dummy module for OpenLoops
 sci-physics/evtgen:photos - Build with photos
 sci-physics/evtgen:pythia - Build with pythia

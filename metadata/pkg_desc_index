@@ -49,7 +49,7 @@ sci-physics/apfelxx 4.7.0: Object oriented rewriting of the APFEL evolution code
 sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input PDFs
 sci-physics/cernlib 2006-r8: CERN program library for High Energy Physics
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
-sci-physics/collier 1.2.5 1.2.7: A Complex One-Loop LIbrary with Extended Regularizations
+sci-physics/collier 1.2.5 1.2.7 1.2.7-r1: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2: DecayLanguage: describe, manipulate and convert particle decays
