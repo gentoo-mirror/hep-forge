@@ -37,7 +37,7 @@ RDEPEND="
 	collier? ( sci-physics/collier[static-libs] )
 	td? ( sci-physics/topdrawer )
 	thepeg? ( sci-physics/thepeg[hepmc?,fastjet?,lhapdf?] )
-	ninja? ( sci-physics/ninja )
+	ninja? ( sci-physics/ninja[static-libs] )
 	samurai? ( dev-util/samurai )
 	golem95? ( sci-physics/golem95 )
 "
@@ -57,9 +57,8 @@ src_configure() {
 	use hepmc && echo "hepmc_path = ${EPREFIX}/" >> input/mg5_configuration.txt
 	use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
 	use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-	# MG does not like recent collier nor ninja yet
-	#use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
-	#use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
+	use golem95 && echo "golem = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
 	use td && echo "td_path = ${EPREFIX}/usr/bin/td" >> input/mg5_configuration.txt
 	use thepeg && echo "thepeg_path = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
 	use madanalysis5 && echo "madanalysis5_path = ${EPREFIX}/opt/MadAnalysis5/" >> input/mg5_configuration.txt
