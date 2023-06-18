@@ -270,7 +270,7 @@ default:
         CATEGORY: ["sci-libs"]
         <<: *images
       - PKG: [smodels]
-        VERSION: [2.2.1]
+        VERSION: ["2.3.0",2.2.1]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [professor]
