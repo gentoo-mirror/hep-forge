@@ -10,8 +10,9 @@ HOMEPAGE="
 	https://www.davidhbailey.com/dhbsoftware/
 	https://github.com/APN-Pucky/mpfun90
 "
-SRC_URI="https://github.com/APN-Pucky/mpfun90/archive/refs/tags/2023-02-26.tar.gz"
-S="${WORKDIR}/mpfun90-2023-02-26"
+MY_PV=$(ver_rs 1- '-')
+SRC_URI="https://github.com/APN-Pucky/mpfun90/archive/refs/tags/${MY_PV}.tar.gz"
+S="${WORKDIR}/mpfun90-${MY_PV}"
 
 LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
