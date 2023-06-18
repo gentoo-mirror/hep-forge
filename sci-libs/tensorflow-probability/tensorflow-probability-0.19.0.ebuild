@@ -6,7 +6,7 @@ inherit distutils-r1
 
 DESCRIPTION="Probabilistic reasoning and statistical analysis in TensorFlow"
 HOMEPAGE="https://github.com/tensorflow/probability"
-SRC_URI="https://github.com/tensorflow/probability/archive/refs/tags/v0.19.0.zip"
+SRC_URI="https://github.com/tensorflow/probability/archive/refs/tags/v${PV}.zip"
 
 LICENSE="MIT"
 SLOT="0"
