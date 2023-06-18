@@ -218,7 +218,7 @@ default:
         CATEGORY: ["dev-python"]
         <<: *images
       - PKG: [archspec]
-        VERSION: ["0.1.4"]
+        VERSION: ["0.2.0","0.1.4"]
         CATEGORY: ["dev-python"]
         <<: *images
       - PKG: [jacobi]
