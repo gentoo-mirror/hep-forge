@@ -193,24 +193,8 @@ default:
         VERSION: [0.3.0]
         CATEGORY: ["dev-python"]
         <<: *images
-      - PKG: [poetry]
-        VERSION: [1.4.1, 1.3.1]
-        CATEGORY: ["dev-python"]
-        <<: *images
-      - PKG: [poetry-dynamic-versioning]
-        VERSION: [9999, 0.21.1]
-        CATEGORY: ["dev-python"]
-        <<: *images
       - PKG: [smpl]
         VERSION: [9999, 1.0.2]
-        CATEGORY: ["dev-python"]
-        <<: *images
-      - PKG: [deep-translator]
-        VERSION: [9999, 1.9.1]
-        CATEGORY: ["dev-python"]
-        <<: *images
-      - PKG: [metamorph]
-        VERSION: [9999, 0.0.13]
         CATEGORY: ["dev-python"]
         <<: *images
       - PKG: [xsdata]
