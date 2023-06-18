@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/poetry-core-1.4.0[${PYTHON_USEDEP}]
+	~dev-python/poetry-core-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/poetry-plugin-export-1.2.0[${PYTHON_USEDEP}]
 	>=dev-python/cleo-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/crashtest-0.4.1[${PYTHON_USEDEP}]
