@@ -6,19 +6,18 @@ EAPI=8
 DISTUTILS_USE_PEP517=poetry
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit distutils-r1
+inherit distutils-r1 pypi
 
 DESCRIPTION="A frontend for poetry - a python dependency management and packaging tool"
 HOMEPAGE="https://python-poetry.org/"
-SRC_URI="mirror://pypi/${P:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	=dev-python/poetry-core-1.5.2[${PYTHON_USEDEP}]
-	>=dev-python/poetry-plugin-export-1.3.0[${PYTHON_USEDEP}]
+	=dev-python/poetry-core-1.6.1[${PYTHON_USEDEP}]
+	>=dev-python/poetry-plugin-export-1.4.0[${PYTHON_USEDEP}]
 	>=dev-python/build-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/cachecontrol-0.12.9[${PYTHON_USEDEP}]
 	>=dev-python/cleo-2.0.0[${PYTHON_USEDEP}]
@@ -26,20 +25,22 @@ RDEPEND="
 	>=dev-python/dulwich-0.21.2[${PYTHON_USEDEP}]
 	>=dev-python/filelock-3.8.0[${PYTHON_USEDEP}]
 	>=dev-python/html5lib-1.0[${PYTHON_USEDEP}]
+	>=dev-python/installer-0.7.0[${PYTHON_USEDEP}]
 	>=dev-python/jsonschema-4.10.0[${PYTHON_USEDEP}]
 	>=dev-python/keyring-23.9.0[${PYTHON_USEDEP}]
 	>=dev-python/lockfile-0.12.2[${PYTHON_USEDEP}]
 	>=dev-python/packaging-20.4[${PYTHON_USEDEP}]
 	>=dev-python/pexpect-4.7.0[${PYTHON_USEDEP}]
 	>=dev-python/pkginfo-1.9.4[${PYTHON_USEDEP}]
-	>=dev-python/platformdirs-2.5.2[${PYTHON_USEDEP}]
+	>=dev-python/platformdirs-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/pyproject-hooks-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/requests-2.18[${PYTHON_USEDEP}]
-	<dev-python/requests-toolbelt-0.11.0[${PYTHON_USEDEP}]
+	<dev-python/requests-toolbelt-2.0.0[${PYTHON_USEDEP}]
 	>=dev-python/shellingham-1.5.0[${PYTHON_USEDEP}]
 	>=dev-python/tomli-2.0.1[${PYTHON_USEDEP}]
-	>=dev-python/tomlkit-0.11.6[${PYTHON_USEDEP}]
+	<dev-python/tomlkit-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/trove-classifiers-2022.5.19[${PYTHON_USEDEP}]
-	>=dev-python/virtualenv-20.4.7[${PYTHON_USEDEP}]
+	>=dev-python/virtualenv-20.22.0[${PYTHON_USEDEP}]
 	>=dev-python/xattr-0.10.0[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.26.0[${PYTHON_USEDEP}]
 "
@@ -47,12 +48,12 @@ RDEPEND="
 DEPEND="
 	test? (
 			>=dev-python/cachy-0.3.0[${PYTHON_USEDEP}]
-			>=dev-python/deepdiff-6.2[${PYTHON_USEDEP}]
+			>=dev-python/deepdiff-6.3[${PYTHON_USEDEP}]
 			>=dev-python/httpretty-1.0[${PYTHON_USEDEP}]
+			>=dev-python/pytest-cov-4.0[${PYTHON_USEDEP}]
 			>=dev-python/pytest-mock-3.9[${PYTHON_USEDEP}]
 			>=dev-python/pytest-randomly-3.12[${PYTHON_USEDEP}]
 			>=dev-python/pytest-xdist-3.1[${PYTHON_USEDEP}]
-			>=dev-python/pytest-cov-4.0[${PYTHON_USEDEP}]
 	)
 "
 

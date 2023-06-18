@@ -5,6 +5,7 @@ EAPI=8
 
 DISTUTILS_USE_PEP517=poetry
 PYTHON_COMPAT=( python3_{9..11} )
+PYPI_NO_NORMALIZE=1
 inherit distutils-r1
 
 REPO=nidhaloff
@@ -18,7 +19,7 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3 		
 	EGIT_REPO_URI="https://github.com/${REPO}/${PN}" 
 else
-	SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
+	inherit pypi
 	KEYWORDS="~amd64"
 fi
 
