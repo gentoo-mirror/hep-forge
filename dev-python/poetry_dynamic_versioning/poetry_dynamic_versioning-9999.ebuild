@@ -21,9 +21,9 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3 	
 	EGIT_REPO_URI="https://github.com/${REPO}/${PN}" 
 else
-	SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${MY_P}.tar.gz"
+	inherit pypi
 	# https://github.com/mtkennerly/${PN}/releases/download/v${PV}/${P}.tar.gz
-	S="${WORKDIR}/${MY_P}"
+	#S="${WORKDIR}/${MY_P}"
 	KEYWORDS="~amd64"
 fi
 
