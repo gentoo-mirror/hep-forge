@@ -1,6 +1,6 @@
 app-portage/pkg-testing-tools 0.1.0 0.1.2: Packages testing tools for Gentoo
 dev-python/Unum 4.2.1: units in python
-dev-python/archspec 0.1.4: labels for various aspects of a system architecture like CPU, etc.
+dev-python/archspec 0.1.4 0.2.0: labels for various aspects of a system architecture like CPU, etc.
 dev-python/bounded_pool_executor 0.0.3: Bounded Process and Thread Pool Executor
 dev-python/cachy 0.3.0: Cachy provides a simple yet effective caching library.
 dev-python/deep-translator 1.9.1 1.11.1 9999: Translation for humans
