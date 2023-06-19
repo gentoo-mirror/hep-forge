@@ -68,7 +68,7 @@ sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64 3.64-r1: PHOTOS
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyhepmc 2.10.0 2.11.0: A Pythonic wrapper for the HepMC3 C++ library.
-sci-physics/pyhf 0.7.0 0.7.0-r1: pure-python fitting/limit-setting/interval estimation HistFactory-style
+sci-physics/pyhf 0.7.0 0.7.0-r1 0.7.1: pure-python fitting/limit-setting/interval estimation HistFactory-style
 sci-physics/pylha 0.4: Deal with SLHA files
 sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houches Accord data
 sci-physics/pythia 8.2.45 8.2.45-r1 8.3.06 8.3.07 8.3.07-r1 8.3.07-r2 8.3.07-r4 9999: Lund Monte Carlo high-energy physics event generator
