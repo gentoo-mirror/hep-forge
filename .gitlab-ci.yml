@@ -262,7 +262,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [pyhf]
-        VERSION: [0.7.0]
+        VERSION: ["0.7.1",0.7.0]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [iflow]
