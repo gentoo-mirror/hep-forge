@@ -70,7 +70,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [rivet]
-        VERSION: [9999, 3.1.7, 3.1.6, 3.1.5]
+        VERSION: [9999, 3.1.7]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [fastjet]
