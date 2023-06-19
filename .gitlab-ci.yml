@@ -214,7 +214,7 @@ default:
   parallel:
     matrix:
       - PKG: [sklearn2pmml]
-        VERSION: ["0.92.0"]
+        VERSION: ["0.92.1","0.92.0"]
         CATEGORY: ["sci-libs"]
         <<: *images
       - PKG: [cuttools]
