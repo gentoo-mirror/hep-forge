@@ -82,7 +82,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [qgraf]
-        VERSION: [3.6.5, 3.5.2, 3.4.2]
+        VERSION: ["3.6.6",3.6.5, 3.5.2, 3.4.2]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [topdrawer]
