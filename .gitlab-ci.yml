@@ -146,7 +146,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [pyhepmc]
-        VERSION: [2.10.0]
+        VERSION: ["2.11.0",2.10.0]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [hepi]
@@ -262,7 +262,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [pyhf]
-        VERSION: [0.7.0]
+        VERSION: ["0.7.1",0.7.0]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [iflow]
@@ -270,7 +270,7 @@ default:
         CATEGORY: ["sci-libs"]
         <<: *images
       - PKG: [smodels]
-        VERSION: [2.2.1]
+        VERSION: ["2.3.0",2.2.1]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [professor]
@@ -278,7 +278,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [flavio]
-        VERSION: ["2.4.0"]
+        VERSION: ["2.5.0","2.4.0"]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [feynhiggs]
