@@ -258,7 +258,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [decaylanguage]
-        VERSION: [0.15.2]
+        VERSION: ["0.15.3",0.15.2]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [pyhf]
