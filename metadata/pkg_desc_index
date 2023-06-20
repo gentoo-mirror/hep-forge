@@ -1,19 +1,24 @@
 app-portage/pkg-testing-tools 0.1.0 0.1.2: Packages testing tools for Gentoo
 dev-python/Unum 4.2.1: units in python
 dev-python/archspec 0.1.4 0.2.0: labels for various aspects of a system architecture like CPU, etc.
+dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
 dev-python/bounded_pool_executor 0.0.3: Bounded Process and Thread Pool Executor
 dev-python/dm-tree 0.1.8: tree is a library for working with nested data structures.
 dev-python/docformatter 1.5.0: Formats docstrings to follow PEP 257.
 dev-python/flatdict 4.0.0 4.0.1: Python module for interacting with nested dicts
+dev-python/hunter 3.6.0: Hunter is a flexible code tracing toolkit
 dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbitrary round-off error and error propagation.
 dev-python/klepto 0.2.3: persistent caching to memory, disk, or database
+dev-python/manhole 1.8.0-r1: Debugging manhole for python application
 dev-python/multiprocess 0.70.14: better multiprocessing and multithreading in python
 dev-python/mystic 0.4.0: Highly-constrained non-convex optimization and uncertainty quantification
 dev-python/pathos 0.3.0: parallel graph management and execution in heterogeneous computing
 dev-python/pox 0.3.2: utilities for filesystem exploration and automated builds
 dev-python/ppft 1.7.6.6: distributed and parallel python
 dev-python/pqdm 0.2.0: Parallel TQDM
+dev-python/pygaljs 1.0.2-r1: Python package providing assets from https://github.com/Kozea/pygal.js
 dev-python/pyina 0.2.7: MPI parallel map and cluster scheduling
+dev-python/pytest-benchmark 4.0.0: py.test fixture for benchmarking code
 dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
 dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics formats
 dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
