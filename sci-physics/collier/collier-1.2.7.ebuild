@@ -19,7 +19,7 @@ RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE=""
+IUSE="static"
 DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -29,7 +29,7 @@ PATCHES=( "${FILESDIR}/${P}-mod.patch")
 
 src_configure() {
 	local mycmakeargs=(
-		-Dstatic=OFF
+		-Dstatic=$(usex static ON OFF)
 		-DLIB_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)
 		-DSYSCONFIG_INSTALL_DIR="${EPREFIX}"/usr/$(get_libdir)/cmake
 	)

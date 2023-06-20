@@ -5,27 +5,15 @@ Most ebuilds here are experimental and will move to ::science if they are stable
 ## pkgdev
 
 ```bash
-git add 
-pkgdev commit
+$ git add 
+$ pkgdev commit
 ```
 
 ## Ebuild
-### How to create a new Ebuild
+### How to create the manifest
 
 ```bash
-ebuild *.ebuild manifest clean unpack
-```
-
-### Test
-
-```bash
-ebuild *.ebuild clean test install
-```
-
-### Install
-
-```bash
-ebuild *.ebuild clean install merge
+$ pkgdev manifest
 ```
 
 
