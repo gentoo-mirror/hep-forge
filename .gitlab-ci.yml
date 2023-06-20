@@ -70,7 +70,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [rivet]
-        VERSION: ["3.1.8",9999, 3.1.7, 3.1.6, 3.1.5]
+        VERSION: ["3.1.8", 9999, 3.1.7]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [fastjet]
@@ -82,7 +82,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [qgraf]
-        VERSION: [3.6.5, 3.5.2, 3.4.2]
+        VERSION: ["3.6.6",3.6.5, 3.5.2, 3.4.2]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [topdrawer]
@@ -214,7 +214,7 @@ default:
   parallel:
     matrix:
       - PKG: [sklearn2pmml]
-        VERSION: ["0.92.0"]
+        VERSION: ["0.93.0","0.92.1","0.92.0"]
         CATEGORY: ["sci-libs"]
         <<: *images
       - PKG: [cuttools]
@@ -258,7 +258,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [decaylanguage]
-        VERSION: [0.15.2]
+        VERSION: ["0.15.3",0.15.2]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [pyhf]
