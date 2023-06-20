@@ -14,7 +14,6 @@ dev-python/pox 0.3.2: utilities for filesystem exploration and automated builds
 dev-python/ppft 1.7.6.6: distributed and parallel python
 dev-python/pqdm 0.2.0: Parallel TQDM
 dev-python/pyina 0.2.7: MPI parallel map and cluster scheduling
-dev-python/pytest-benchmark 4.0.0: py.test fixture for benchmarking code
 dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
 dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics formats
 dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
