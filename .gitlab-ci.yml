@@ -408,7 +408,7 @@ global-pkgcheck:
   extends: .config
   script:
     - ls *.log
-    - (! grep -A5 -B5 "QA Notice" test_$CATEGORY_$PKG-$VERSION*.log)
+    - (! grep -A10 -B10 "QA Notice" test_$CATEGORY_$PKG-$VERSION*.log)
   allow_failure: true
 
 check1:
