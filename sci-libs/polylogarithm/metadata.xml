@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+	The Polylogarithm package provides C, C++ and Fortran implementations of various polylogarithms, including the real and complex dilogarithm, trilogarithm, and (Standard and Glaisher) Clausen functions. The implementations have been fully tested against the literature and many other implementations and are highly optimized for fast numerical evaluation.
+    </longdescription>
+	<upstream>
+		<remote-id type="github">Expander/polylogarithm</remote-id>
+	</upstream>
+</pkgmetadata>
