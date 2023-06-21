@@ -22,3 +22,6 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	virtual/fortran
 "
+PATCHES=(
+    "${FILESDIR}"/${P}-install.patch
+)
