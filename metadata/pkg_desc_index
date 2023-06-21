@@ -29,6 +29,7 @@ sci-libs/gvar 11.11.2 11.11.3: Gaussian random variables.
 sci-libs/handyg 0.1.5: Rapid numerical evaluation of generalised polylogarithms
 sci-libs/iflow 1.0: multi-dimensional integration and sampling
 sci-libs/mpfun90 2023.02.26: High-Precision Software
+sci-libs/polylogarithm 6.14.0: Implementation of polylogarithms in C/C++/Fortran.
 sci-libs/sklearn-pandas 2.2.0: Pandas integration with sklearn
 sci-libs/sklearn2pmml 0.92.0 0.92.1 0.93.0: Python library for converting Scikit-Learn pipelines to PMML
 sci-libs/tensorflow-probability 0.19.0: Probabilistic reasoning and statistical analysis in TensorFlow
