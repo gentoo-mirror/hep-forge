@@ -249,6 +249,14 @@ default:
         VERSION: ["2023-02-26"]
         CATEGORY: ["sci-libs"]
         <<: *images
+      - PKG: [iflow]
+        VERSION: [1.0.0]
+        CATEGORY: ["sci-libs"]
+        <<: *images
+      - PKG: [polylogarithm]
+        VERSION: [6.14.0]
+        CATEGORY: ["sci-libs"]
+        <<: *images
 
 .matrix6: &matrix6
   parallel:
@@ -264,10 +272,6 @@ default:
       - PKG: [pyhf]
         VERSION: ["0.7.1",0.7.0]
         CATEGORY: ["sci-physics"]
-        <<: *images
-      - PKG: [iflow]
-        VERSION: [1.0.0]
-        CATEGORY: ["sci-libs"]
         <<: *images
       - PKG: [smodels]
         VERSION: ["2.3.0",2.2.1]
