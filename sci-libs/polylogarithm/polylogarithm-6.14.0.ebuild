@@ -25,3 +25,10 @@ BDEPEND="
 PATCHES=(
     "${FILESDIR}"/${P}-install.patch
 )
+
+src_configure() {
+	local mycmakeargs=(
+		-DCMAKE_INSTALL_INCLUDEDIR="${EPREFIX}"/usr/include/${PN}/
+	)
+	cmake_src_configure
+}
