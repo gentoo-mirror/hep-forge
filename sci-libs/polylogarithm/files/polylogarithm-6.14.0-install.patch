@@ -1,16 +1,15 @@
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index cea52c2..11fecd4 100644
+index cea52c2..13ef38c 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -16,3 +16,10 @@ target_link_libraries(polylog
+@@ -16,3 +16,9 @@ target_link_libraries(polylog
      polylog_cpp
      polylog_fortran
  )
 +FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 +target_sources(polylog PUBLIC FILE_SET HEADERS FILES ${HEADERS})
-+install(TARGETS polylog_c polylog_cpp polylog_fortran
++install(TARGETS polylog polylog_c polylog_cpp polylog_fortran
 +	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-+	INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/polylog
 +        FILE_SET HEADERS
 +)
 \ No newline at end of file
