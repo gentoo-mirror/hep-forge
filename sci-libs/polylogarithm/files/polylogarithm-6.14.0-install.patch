@@ -4,7 +4,7 @@
      polylog_cpp
      polylog_fortran
  )
-+install(TARGETS polylog
-+	LIBRARY DESTINATION lib
++install(TARGETS polylog_c polylog_cpp polylog_fortran 
++	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 +	INCLUDES DESTINATION include
 +)
