@@ -1,10 +1,51 @@
---- a/src/CMakeLists.txt	2023-06-21 14:42:00.532715947 +0200
-+++ b/src/CMakeLists.txt	2023-06-21 14:42:44.851315117 +0200
-@@ -16,3 +16,7 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index cea52c2..11fecd4 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -16,3 +16,10 @@ target_link_libraries(polylog
      polylog_cpp
      polylog_fortran
  )
-+install(TARGETS polylog_c polylog_cpp polylog_fortran 
++FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
++target_sources(polylog PUBLIC FILE_SET HEADERS FILES ${HEADERS})
++install(TARGETS polylog_c polylog_cpp polylog_fortran
 +	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-+	INCLUDES DESTINATION include
++	INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/polylog
++        FILE_SET HEADERS
 +)
+\ No newline at end of file
+diff --git a/src/c/CMakeLists.txt b/src/c/CMakeLists.txt
+index c72cc73..3480859 100644
+--- a/src/c/CMakeLists.txt
++++ b/src/c/CMakeLists.txt
+@@ -13,3 +13,5 @@ add_library(polylog_c
+ )
+ 
+ target_include_directories(polylog_c PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
++FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp)
++target_sources(polylog_c PUBLIC FILE_SET HEADERS FILES ${HEADERS})
+\ No newline at end of file
+diff --git a/src/cpp/CMakeLists.txt b/src/cpp/CMakeLists.txt
+index 5e46f80..e999c13 100644
+--- a/src/cpp/CMakeLists.txt
++++ b/src/cpp/CMakeLists.txt
+@@ -19,3 +19,5 @@ add_library(polylog_cpp
+   zeta.cpp
+   )
+ target_include_directories(polylog_cpp PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
++FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp)
++target_sources(polylog_cpp PUBLIC FILE_SET HEADERS FILES ${HEADERS})
+\ No newline at end of file
+diff --git a/src/fortran/CMakeLists.txt b/src/fortran/CMakeLists.txt
+index 2db55c0..5ce5ebc 100644
+--- a/src/fortran/CMakeLists.txt
++++ b/src/fortran/CMakeLists.txt
+@@ -14,6 +14,8 @@ if(CMAKE_Fortran_COMPILER)
+     Li6.f90
+     )
+   target_include_directories(polylog_fortran PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
++  FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp)
++  target_sources(polylog_fortran PUBLIC FILE_SET HEADERS FILES ${HEADERS})
+ else()
+   add_library(polylog_fortran INTERFACE)
+ endif()
