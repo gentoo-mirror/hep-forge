@@ -4,7 +4,7 @@
 EAPI=8
 
 FORTRAN_NEEDED=plugins
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..11} )
 DOCS_BUILDER="doxygen"
 DOCS_DEPEND="
 	media-gfx/graphviz
@@ -20,12 +20,14 @@ SRC_URI="https://fastjet.fr/repo/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="cgal examples python +plugins"
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
+# cgal is header-only in version 5.4 and up. We need to use the
+# special --enable-cgal-header-only argument to use these versions.
 DEPEND="
-	cgal? ( <sci-mathematics/cgal-5.3:=[shared(+)] )
+	cgal? ( >=sci-mathematics/cgal-5.4:=[shared(+)] )
 	plugins? ( sci-physics/siscone:= )
 	python? ( ${PYTHON_DEPS} )
 "
@@ -33,8 +35,8 @@ RDEPEND="${DEPEND}"
 BDEPEND="virtual/fortran"
 
 PATCHES=(
-	"${FILESDIR}"/${P}-system-siscone.patch
-	"${FILESDIR}"/${P}-gfortran.patch
+	"${FILESDIR}"/${PN}-3.4.0-system-siscone.patch
+	"${FILESDIR}"/${PN}-3.4.0-gfortran.patch
 )
 
 src_prepare() {
@@ -47,7 +49,7 @@ src_configure() {
 		has_version 'sci-mathematics/cgal[gmp]' && append-libs -lgmp
 
 	econf \
-		$(use_enable cgal) \
+		$(use_enable cgal cgal-header-only) \
 		$(use_enable plugins allplugins) \
 		$(use_enable plugins allcxxplugins) \
 		--enable-shared \
