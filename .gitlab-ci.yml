@@ -93,6 +93,10 @@ default:
         VERSION: ["2.16", "2.15"]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [slhalib]
+        VERSION: ["2.2"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 .matrix2_1: &matrix2_1
   parallel:
