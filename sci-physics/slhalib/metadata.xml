@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+  <maintainer type="project">
+    <email>sci-physics@gentoo.org</email>
+    <name>Gentoo Physics Project</name>
+  </maintainer>
+  <longdescription>
+  The SUSY Les Houches Accord (SLHA) has standardized and significantly simplified the exchange of input and output parameters of SUSY models between such disparate applications as spectrum calculators and event generators. 
+  </longdescription>
+</pkgmetadata>
