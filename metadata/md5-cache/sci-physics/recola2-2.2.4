@@ -1,6 +1,6 @@
 BDEPEND=app-arch/unzip virtual/fortran sys-devel/make >=dev-util/cmake-3.20.5
 DEFINED_PHASES=compile configure install prepare setup test
-DEPEND=sci-mathematics/otter sci-physics/collier SM? ( sci-physics/recola2-SM ) python_single_target_python3_10? ( >=dev-lang/python-3.10.11:3.10 ) python_single_target_python3_11? ( >=dev-lang/python-3.11.3:3.11 )
+DEPEND=sci-mathematics/otter sci-physics/collier SM? ( sci-physics/recola2-SM ) python_single_target_python3_10? ( >=dev-lang/python-3.10.12:3.10 ) python_single_target_python3_11? ( >=dev-lang/python-3.11.4:3.11 )
 DESCRIPTION=Recursive Computation of 1-Loop Amplitudes.
 EAPI=8
 HOMEPAGE=https://recola.gitlab.io/recola2/index.html
@@ -8,9 +8,9 @@ INHERIT=cmake python-single-r1
 IUSE=+SM python_single_target_python3_10 python_single_target_python3_11
 KEYWORDS=~amd64
 LICENSE=GPL-3+
-RDEPEND=sci-mathematics/otter sci-physics/collier SM? ( sci-physics/recola2-SM ) python_single_target_python3_10? ( >=dev-lang/python-3.10.11:3.10 ) python_single_target_python3_11? ( >=dev-lang/python-3.11.3:3.11 )
+RDEPEND=sci-mathematics/otter sci-physics/collier SM? ( sci-physics/recola2-SM ) python_single_target_python3_10? ( >=dev-lang/python-3.10.12:3.10 ) python_single_target_python3_11? ( >=dev-lang/python-3.11.4:3.11 )
 REQUIRED_USE=^^ ( python_single_target_python3_10 python_single_target_python3_11 ) || ( SM )
 SLOT=0
 SRC_URI=https://recola.hepforge.org/downloads/?f=recola2-2.2.4.tar.gz
-_eclasses_=toolchain-funcs	513c31b3346458ed1f3878b57da6d61c	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	ad475baa777c9978fa035216c8264a10	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	76050953ad5b70d7e09a6ca55558db92	xdg-utils	baea6080dd821f5562d715887954c9d3	cmake	6c921d868d090cc18e142a396f66f74a	python-utils-r1	a34d5f83235297b76d71eaf8deb53768	python-single-r1	75118e916668a74c660a13b0ecb22562
+_eclasses_=toolchain-funcs	513c31b3346458ed1f3878b57da6d61c	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	ad475baa777c9978fa035216c8264a10	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	76050953ad5b70d7e09a6ca55558db92	xdg-utils	baea6080dd821f5562d715887954c9d3	cmake	6c921d868d090cc18e142a396f66f74a	python-utils-r1	a013e16d5d896b3d8be68dd2a0e846ea	python-single-r1	75118e916668a74c660a13b0ecb22562
 _md5_=12c9170cc095f8bec468f4003c751a35
