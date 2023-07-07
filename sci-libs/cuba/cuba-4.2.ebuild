@@ -42,10 +42,10 @@ src_compile() {
 }
 
 src_install() {
-	default
+	#default # broken...
 
-	# already in default
-	#dolib.a libcuba.a
+	doheader cuba.h
+	dolib.a libcuba.a
 	dolib.so libcuba.so
 	use doc && dodoc cuba.pdf
 }
