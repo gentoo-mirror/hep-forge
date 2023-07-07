@@ -14,7 +14,7 @@ SRC_URI="http://www.feynarts.de/cuba/${MY_P}.tar.gz"
 LICENSE="LGPL-3"
 
 SLOT="0"
-KEYWORDS="" # Keyword masked since cubatest crashes
+KEYWORDS="~amd64" # Keyword masked since cubatest crashes
 IUSE="doc"
 
 S="${WORKDIR}/${MY_P}"
@@ -42,10 +42,10 @@ src_compile() {
 }
 
 src_install() {
-	default
+	#default # broken...
 
-	# already in default
-	#dolib.a libcuba.a
+	doheader cuba.h
+	dolib.a libcuba.a
 	dolib.so libcuba.so
 	use doc && dodoc cuba.pdf
 }
