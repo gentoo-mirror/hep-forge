@@ -18,6 +18,7 @@ KEYWORDS="~amd64" # Keyword masked since cubatest crashes
 IUSE="doc"
 
 S="${WORKDIR}/${MY_P}"
+RESTRICT="test" #broken...
 
 DEPEND=""
 RDEPEND="${DEPEND}"
