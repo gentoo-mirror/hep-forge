@@ -46,7 +46,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [yoda]
-        VERSION: [9999, 1.9.7, 1.9.5]
+        VERSION: [9999, 1.9.8, 1.9.7, 1.9.5]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [hepmc]
