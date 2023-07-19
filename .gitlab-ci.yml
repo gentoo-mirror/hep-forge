@@ -311,7 +311,7 @@ default:
     - echo 'dev-python/uncertainties ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/toposort ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'sci-physics/root ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
-    - echo '*/*::${REPO_NAME} ~amd64' > /etc/portage/package.accept_keywords/${REPO_NAME}
+    - echo "*/*::${REPO_NAME} ~amd64" > /etc/portage/package.accept_keywords/${REPO_NAME}
     - echo '>=media-libs/libafterimage-1.20-r6 png gif tiff jpeg' >> /etc/portage/package.use/root
     - echo "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME} **" >> /etc/portage/package.accept_keywords/${REPO_NAME}
   rules:
