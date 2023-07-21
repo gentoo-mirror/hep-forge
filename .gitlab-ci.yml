@@ -261,6 +261,10 @@ default:
         VERSION: [6.14.0]
         CATEGORY: ["sci-libs"]
         <<: *images
+      - PKG: [sherpa]
+        VERSION: [2.2.15, 2.2.12]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 .matrix6: &matrix6
   parallel:
