@@ -302,6 +302,39 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
 
+
+.matrix7: &matrix7
+  parallel:
+    matrix:
+      - PKG: [powheg-box-v2-hvq]
+        VERSION: [9999, 4027]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [powheg-box-v2-directphoton]
+        VERSION: [9999, 4027]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [powheg-box-v2-dijet]
+        VERSION: [9999, 4027]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [powheg-box-v2-trijet]
+        VERSION: [9999, 4027]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [powheg-box-v2-Z]
+        VERSION: [9999, 4027]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [powheg-box-v2-Zj]
+        VERSION: [9999, 4027]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [powheg-box-v2-W]
+        VERSION: [9999, 4027]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+
 .config:
   before_script:
     - emerge --sync || emaint -r ${REPO_NAME} sync
@@ -558,3 +591,24 @@ test6:
 qa6:
   extends: .qa
   <<: *matrix6
+
+check7:
+  extends: .check
+  <<: *matrix7
+
+warn7:
+  extends: .warn
+  <<: *matrix7
+
+build7:
+  extends: .build
+  <<: *matrix7
+
+test7:
+  extends: .test
+  <<: *matrix7
+
+qa7:
+  extends: .qa
+  <<: *matrix7
+
