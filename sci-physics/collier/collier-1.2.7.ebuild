@@ -25,7 +25,9 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	virtual/fortran
 "
-PATCHES=( "${FILESDIR}/${P}-mod.patch")
+PATCHES=(
+    "${FILESDIR}/${P}-mod.patch"
+)
 
 src_configure() {
 	local mycmakeargs=(
