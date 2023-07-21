@@ -1,0 +1,11 @@
+--- a/pwhg_analysis.f        2023-07-07 22:57:36.278251808 +0200
++++ b/pwhg_analysis.f     2023-07-07 22:57:44.533361639 +0200
+@@ -8,7 +8,7 @@
+       subroutine init_hist
+       implicit none
+       include  'LesHouches.h'
+-      include '../pwhg_book.h'
++      include 'pwhg_book.h'
+       integer diag
+       real * 8 binsize(100)
+       common/pwhghistcommon/binsize
