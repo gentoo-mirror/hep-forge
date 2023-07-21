@@ -72,6 +72,13 @@ sci-physics/openloops 2.1.2 2.1.2-r1 2.1.2-r2 2.1.2-r3: Evaluation of tree and o
 sci-physics/particle 0.21.1 0.21.1-r1 0.22.0 0.22.1: PDG particle data and identification codes
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64 3.64-r1: PHOTOS
+sci-physics/powheg-box-v2-W 4027 9999: POWHEG BOX V2 W process
+sci-physics/powheg-box-v2-Z 4027 9999: POWHEG BOX V2 Z process
+sci-physics/powheg-box-v2-Zj 4027 9999: POWHEG BOX V2 Zj process
+sci-physics/powheg-box-v2-dijet 4027 9999: POWHEG BOX V2 dijet process
+sci-physics/powheg-box-v2-directphoton 4027 9999: POWHEG BOX V2 direct photon process
+sci-physics/powheg-box-v2-hvq 4027 9999: POWHEG BOX V2 hvq process
+sci-physics/powheg-box-v2-trijet 4027 9999: POWHEG BOX V2 trijet process
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyhepmc 2.10.0 2.11.0: A Pythonic wrapper for the HepMC3 C++ library.
 sci-physics/pyhf 0.7.0 0.7.0-r1 0.7.1: pure-python fitting/limit-setting/interval estimation HistFactory-style
@@ -105,3 +112,4 @@ sys-cluster/lmod 8.6.14-r1: Environment Module System based on Lua
 sys-cluster/modules 4.6.0-r1: Dynamic modification of a user's environment via modulefiles
 virtual/feyntools 0: FeynTools is a collection of FeynArts, FormCalc and LoopTools.
 virtual/heptools 0: HEPTools is a collection of LHAPDF, HEPMC and PYTHIA.
+virtual/powheg-box-v2 4027 9999: POWHEG BOX is a general computer framework for implementing NLO calculations in shower Monte Carlo programs according to the POWHEG method

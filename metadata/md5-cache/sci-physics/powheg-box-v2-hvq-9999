@@ -1,0 +1,13 @@
+BDEPEND=dev-vcs/subversion[http(+)] net-misc/rsync virtual/fortran
+DEFINED_PHASES=compile install preinst setup unpack
+DEPEND=virtual/fortran
+DESCRIPTION=POWHEG BOX V2 hvq process
+EAPI=8
+INHERIT=subversion fortran-2
+IUSE=doc examples
+LICENSE=GPL-3+
+PROPERTIES=live
+RDEPEND=sci-physics/lhapdf virtual/fortran
+SLOT=0
+_eclasses_=estack	c61c368a76fdf3a82fdf8dbaebea3804	subversion	44c6a1cae0381c100a526e3b348622cd	toolchain-funcs	513c31b3346458ed1f3878b57da6d61c	multilib	c19072c3cd7ac5cb21de013f7e9832e0	fortran-2	40c4450f1c4ecb2ee694d96e1958d4ea
+_md5_=89715e152db9c2083e4331b52c15f7a5
