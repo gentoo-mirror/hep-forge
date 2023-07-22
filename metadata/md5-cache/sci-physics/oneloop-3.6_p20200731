@@ -12,5 +12,5 @@ RDEPEND=qpkind? ( sci-libs/qd ) qpkind16? ( sci-libs/qd ) arprec? ( sci-libs/arp
 REQUIRED_USE=?? ( dpkind dpkind16 ddcpp ) ?? ( qpkind qpkind16 qdcpp ) ?? ( arprec mpfun90 ) || ( dpkind dpkind16 ddcpp qpkind qpkind16 qdcpp )
 SLOT=0
 SRC_URI=https://bitbucket.org/hameren/oneloop/get/3762b8bad6ad.zip -> oneloop-3.6_p20200731.zip
-_eclasses_=toolchain-funcs	fc2af1957597c539ae6e48f82bd43125	multilib	c19072c3cd7ac5cb21de013f7e9832e0	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	python-utils-r1	7661dc585f75dd1f81eccefe37bef093	python-any-r1	845fed6b6dfc35679a4fea289272ddc0
+_eclasses_=toolchain-funcs	8e3fb781f3258ae2757d1dfc2c7c170e	multilib	c19072c3cd7ac5cb21de013f7e9832e0	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	python-utils-r1	7661dc585f75dd1f81eccefe37bef093	python-any-r1	845fed6b6dfc35679a4fea289272ddc0
 _md5_=262419f1d172e650546dbd6860f1e98f
