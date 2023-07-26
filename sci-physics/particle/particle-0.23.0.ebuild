@@ -30,10 +30,3 @@ RDEPEND="
 "
 BDEPEND="${RDEPEND}"
 distutils_enable_tests pytest
-
-src_prepare() {
-	distutils-r1_src_prepare
-	sed -e '/pytest-benchmark/d' -e 's/--benchmark[^ ]*//' \
-		-e '/pytest-instafail/d' -e 's/--instafail//' \
-		-i pytest.ini || die
-}
