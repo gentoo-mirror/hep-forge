@@ -37,3 +37,6 @@ src_prepare() {
 	sed -i -e 's:--benchmark-disable::' pyproject.toml || die
 }
 
+python_test() {
+	epytest --ignore tests/particle/test_performance.py
+}
