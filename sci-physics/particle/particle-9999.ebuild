@@ -25,10 +25,18 @@ RDEPEND="
 	test? (
 		>=dev-python/pytest-6.0.0[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/tabulate[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${RDEPEND}"
 distutils_enable_tests pytest
+
+src_prepare() {
+	default
+
+	sed -i -e 's:--benchmark-disable::' pyproject.toml || die
+}
+
+python_test() {
+	epytest --ignore tests/particle/test_performance.py
+}
