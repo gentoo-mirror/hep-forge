@@ -12,32 +12,25 @@ LHA_VER="6.2.1"
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
 HOMEPAGE="https://pythia.org/"
 
+# just data
+SRC_URI="test? ( lhapdf? (
+		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
+		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2007lomod.tar.gz
+		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nlo_as_0119_qed_mc.tar.gz
+		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nnlo_as_0119_qed_mc.tar.gz
+		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq66.tar.gz
+		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq6l1.tar.gz
+		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
+		) )"
+
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://gitlab.com/Pythia8/releases"
-	SRC_URI="
-        test? ( lhapdf? (
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2007lomod.tar.gz
-           https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nlo_as_0119_qed_mc.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nnlo_as_0119_qed_mc.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq66.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq6l1.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
-       ) )"
 else
-    SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
-        test? ( lhapdf? (
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2007lomod.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nlo_as_0119_qed_mc.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nnlo_as_0119_qed_mc.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq66.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq6l1.tar.gz
-            https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
-        ) )"
-    KEYWORDS="~amd64"
-    S="${WORKDIR}/${MY_P}"
+	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
+	$SRC_URI"
+	KEYWORDS="~amd64"
+	S="${WORKDIR}/${MY_P}"
 fi
 
 SLOT="8"
@@ -74,7 +67,7 @@ pkg_pretend() {
 }
 
 src_prepare() {
-	PYTHIADIR="/usr/share/pythia8"
+	PYTHIADIR="/usr/share/Pythia8"
 	EPYTHIADIR="${EPREFIX}${PYTHIADIR}"
 
 	default
@@ -142,7 +135,7 @@ src_configure() {
 
 	# fix pythia config script
 	sed -i \
-		-e 's|pythia8/examples/Makefile.inc|pythia8/Makefile.inc|' \
+		-e 's|Pythia8/examples/Makefile.inc|Pythia8/Makefile.inc|' \
 		-e 's|LINE%=|LINE%%=|' \
 		bin/pythia8-config || die
 }
@@ -178,7 +171,7 @@ src_install() {
 	dolib.so lib/libpythia8.so
 	use lhapdf && dolib.so lib/libpythia8lhapdf6.so
 	insinto "${PYTHIADIR}"
-	doins -r share/Pythia8/xmldoc examples/Makefile.inc
+	doins -r share/Pythia8/xmldoc share/Pythia8/pdfdata examples/Makefile.inc
 
 	newenvd - 99pythia8 <<- _EOF_
 		PYTHIA8DATA=${EPYTHIADIR}/xmldoc
