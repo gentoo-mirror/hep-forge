@@ -25,10 +25,15 @@ RDEPEND="
 	test? (
 		>=dev-python/pytest-6.0.0[${PYTHON_USEDEP}]
 		dev-python/pandas[${PYTHON_USEDEP}]
-		dev-python/pytest-benchmark[${PYTHON_USEDEP}]
-		dev-python/pytest-cov[${PYTHON_USEDEP}]
 		dev-python/tabulate[${PYTHON_USEDEP}]
 	)
 "
 BDEPEND="${RDEPEND}"
 distutils_enable_tests pytest
+
+src_prepare() {
+	distutils-r1_src_prepare
+	sed -e '/pytest-benchmark/d' -e 's/--benchmark[^ ]*//' \
+		-e '/pytest-instafail/d' -e 's/--instafail//' \
+		-i pytest.ini || die
+}
