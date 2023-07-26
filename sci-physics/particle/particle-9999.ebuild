@@ -30,3 +30,9 @@ RDEPEND="
 "
 BDEPEND="${RDEPEND}"
 distutils_enable_tests pytest
+
+src_prepare() {
+	default
+
+	sed -i -e 's:--benchmark-disable::' pyproject.toml || die
+}
