@@ -14,13 +14,13 @@ HOMEPAGE="https://pythia.org/"
 
 # just data
 SRC_URI="test? ( lhapdf? (
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2007lomod.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nlo_as_0119_qed_mc.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nnlo_as_0119_qed_mc.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq66.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq6l1.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
+		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
+		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2007lomod.tar.gz
+		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nlo_as_0119_qed_mc.tar.gz
+		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nnlo_as_0119_qed_mc.tar.gz
+		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq66.tar.gz
+		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq6l1.tar.gz
+		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
 		) )"
 
 if [[ ${PV} == 9999 ]]; then
@@ -29,7 +29,7 @@ if [[ ${PV} == 9999 ]]; then
 else
 	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
 	$SRC_URI"
-	KEYWORDS="~amd64"
+	KEYWORDS="~amd64 ~x86"
 	S="${WORKDIR}/${MY_P}"
 fi
 
@@ -38,9 +38,8 @@ LICENSE="GPL-2"
 IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="
-	^^ ( hepmc3 hepmc2 )
+	?? ( hepmc3 hepmc2 )
 "
-
 
 RDEPEND="
 	fastjet? ( sci-physics/fastjet )
@@ -57,7 +56,6 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${PN}8209-root-noninteractive.patch
 )
-
 
 pkg_pretend() {
 	if use root && ! use test; then
@@ -196,4 +194,3 @@ src_install() {
 	# cleanup
 	unset PYTHIADIR EPYTHIADIR
 }
-
