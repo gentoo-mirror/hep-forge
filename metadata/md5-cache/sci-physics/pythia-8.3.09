@@ -5,12 +5,12 @@ EAPI=8
 HOMEPAGE=https://pythia.org/
 INHERIT=toolchain-funcs
 IUSE=doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib
-KEYWORDS=~amd64
+KEYWORDS=~amd64 ~x86
 LICENSE=GPL-2
 RDEPEND=fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib )
-REQUIRED_USE=^^ ( hepmc3 hepmc2 )
+REQUIRED_USE=?? ( hepmc3 hepmc2 )
 RESTRICT=!test? ( test )
 SLOT=8
-SRC_URI=https://pythia.org/download/pythia83/pythia8309.tgz test? ( lhapdf? ( https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/6.2.1/CT10.tar.gz https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/6.2.1/MRST2007lomod.tar.gz https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/6.2.1/NNPDF23_nlo_as_0119_qed_mc.tar.gz https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/6.2.1/NNPDF23_nnlo_as_0119_qed_mc.tar.gz https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/6.2.1/cteq66.tar.gz https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/6.2.1/cteq6l1.tar.gz https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/6.2.1/unvalidated/MRST2004qed.tar.gz ) )
+SRC_URI=https://pythia.org/download/pythia83/pythia8309.tgz test? ( lhapdf? ( https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/6.2.1/CT10.tar.gz https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/6.2.1/MRST2007lomod.tar.gz https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/6.2.1/NNPDF23_nlo_as_0119_qed_mc.tar.gz https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/6.2.1/NNPDF23_nnlo_as_0119_qed_mc.tar.gz https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/6.2.1/cteq66.tar.gz https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/6.2.1/cteq6l1.tar.gz https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/6.2.1/unvalidated/MRST2004qed.tar.gz ) )
 _eclasses_=toolchain-funcs	8e3fb781f3258ae2757d1dfc2c7c170e	multilib	c19072c3cd7ac5cb21de013f7e9832e0
-_md5_=e29f14b554996b7c17eeddf9ce06b083
+_md5_=805c5e303d3ee1fc13fabdb29330a71f

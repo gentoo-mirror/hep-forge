@@ -84,7 +84,7 @@ sci-physics/pyhepmc 2.10.0 2.11.0: A Pythonic wrapper for the HepMC3 C++ library
 sci-physics/pyhf 0.7.0 0.7.0-r1 0.7.1: pure-python fitting/limit-setting/interval estimation HistFactory-style
 sci-physics/pylha 0.4: Deal with SLHA files
 sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houches Accord data
-sci-physics/pythia 8.2.45 8.2.45-r1 8.3.06 8.3.07 8.3.07-r1 8.3.07-r2 8.3.07-r4 8.3.09 9999: Lund Monte Carlo high-energy physics event generator
+sci-physics/pythia 6.4.28-r2 8.2.45 8.2.45-r1 8.2.45-r2 8.3.06 8.3.07 8.3.07-r1 8.3.07-r2 8.3.07-r4 8.3.09 9999: Lund Monte Carlo high-energy physics event generator
 sci-physics/qcdloop 2.0.5 2.0.9: An object-oriented one-loop scalar Feynman integrals framework
 sci-physics/qgraf 3.4.2 3.5.2 3.6.5 3.6.6: qgraf generates Feynman diagrams for various types of QFT models
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
