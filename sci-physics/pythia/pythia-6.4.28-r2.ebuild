@@ -27,7 +27,6 @@ SRC_URI="
 	doc? ( https://pythia.org/download/pythia6/lutp${DOC_PV}man2.pdf )
 	examples? ( mirror://gentoo/${PN}-${EX_PV}-examples.tar.bz2 )"
 
-#S="${WORKDIR}/pythia6"
 SLOT="6"
 LICENSE="public-domain"
 KEYWORDS="amd64 ~x86 ~amd64-linux ~x86-linux"
@@ -35,8 +34,8 @@ IUSE="doc examples"
 
 PATCHES=( "${FILESDIR}"/${P}-fno-common.patch )
 
+# workaround to official pythia-split not having a pythia subdir
 src_unpack() {
-	# work around to official pythia split not having a pythia subdir 
 	mkdir -p "${S}"
 	cd "${S}"
 	unpack pythia${MY_PV}-split.tgz
