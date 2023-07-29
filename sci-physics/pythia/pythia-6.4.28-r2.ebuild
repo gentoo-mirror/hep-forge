@@ -19,18 +19,30 @@ HOMEPAGE="http://pythia6.hepforge.org/"
 # To produce a split version, replace the 6.4.x by the current version:
 # svn export http://svn.hepforge.org/pythia6/tags/v_6_4_x/ pythia-6.4.x
 # tar cJf pythia-6.4.x.tar.xz
+
+
 SRC_URI="
 	https://pythia.org/download/pythia6/pythia${MY_PV}-split.tgz
 	https://root.cern.ch/download/pythia6.tar.gz -> ${PYR_P}.tar.gz
 	doc? ( https://pythia.org/download/pythia6/lutp${DOC_PV}man2.pdf )
 	examples? ( mirror://gentoo/${PN}-${EX_PV}-examples.tar.bz2 )"
 
+#S="${WORKDIR}/pythia6"
 SLOT="6"
 LICENSE="public-domain"
 KEYWORDS="amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="doc examples"
 
 PATCHES=( "${FILESDIR}"/${P}-fno-common.patch )
+
+src_unpack() {
+	# work around to official pythia split not having a pythia subdir 
+	mkdir -p "${S}"
+	cd "${S}"
+	unpack pythia${MY_PV}-split.tgz
+	cd "${WORKDIR}"
+	default
+}
 
 src_prepare() {
 	cp ../pythia6/tpythia6_called_from_cc.F .
