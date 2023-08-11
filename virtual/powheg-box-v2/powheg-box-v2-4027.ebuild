@@ -3,16 +3,16 @@
 
 EAPI=8
 
-DESCRIPTION="POWHEG BOX is a general computer framework for implementing NLO calculations in shower Monte Carlo programs according to the POWHEG method"
+DESCRIPTION="NLO calculations in shower Monte Carlo programs according to the POWHEG method"
 SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	=sci-physics/powheg-box-v2-hvq-${PV}
-	=sci-physics/powheg-box-v2-directphoton-${PV}
-	=sci-physics/powheg-box-v2-dijet-${PV}
-	=sci-physics/powheg-box-v2-trijet-${PV}
-	=sci-physics/powheg-box-v2-Z-${PV}
-	=sci-physics/powheg-box-v2-Zj-${PV}
-	=sci-physics/powheg-box-v2-W-${PV}
+	~sci-physics/powheg-box-v2-hvq-${PV}
+	~sci-physics/powheg-box-v2-directphoton-${PV}
+	~sci-physics/powheg-box-v2-dijet-${PV}
+	~sci-physics/powheg-box-v2-trijet-${PV}
+	~sci-physics/powheg-box-v2-Z-${PV}
+	~sci-physics/powheg-box-v2-Zj-${PV}
+	~sci-physics/powheg-box-v2-W-${PV}
 "

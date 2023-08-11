@@ -12,7 +12,7 @@
 
 	<longdescription lang="en">
 	TAUOLA
-    </longdescription>
+	</longdescription>
 	<use>
 		<flag name="hepmc"> hepmc version 2 </flag>
 		<flag name="hepmc3"> hepmc version 3 </flag>

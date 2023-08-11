@@ -41,7 +41,7 @@ src_configure() {
 		--with-lhapdf \
 		$(use_with pythia pythia8 "${EPREFIX}/usr") \
 		$(use_with hepmc hepmc "${EPREFIX}/usr") \
-		$(use_with hepmc3 hepmc3 "${EPREFIX}/usr") 
+		$(use_with hepmc3 hepmc3 "${EPREFIX}/usr")
 }
 
 src_compile() {
