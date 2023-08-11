@@ -8,9 +8,9 @@ inherit autotools
 MY_PN="PHOTOS"
 MY_P=${MY_PN}.${PV}
 
-DESCRIPTION="PHOTOS"
+DESCRIPTION="Monte Carlo for bremsstrahlung in the decay of particles and resonances"
 HOMEPAGE="
-    https://gitlab.cern.ch/photospp/photospp
+	https://gitlab.cern.ch/photospp/photospp
 	http://photospp.web.cern.ch/photospp/
 "
 SRC_URI="http://photospp.web.cern.ch/photospp/resources/${MY_P}/${MY_P}.tar.gz"
@@ -25,7 +25,7 @@ RDEPEND="
 	hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
 	sci-physics/hepmc:3=[-cm(-),gev(+)]
 	pythia? ( sci-physics/pythia:8= )
-    tauola? ( sci-physics/tauola[hepmc?,hepmc3,pythia?] )
+	tauola? ( sci-physics/tauola[hepmc?,hepmc3,pythia?] )
 "
 DEPEND="${RDEPEND}
 	doc? (
@@ -46,9 +46,8 @@ src_configure() {
 		--with-hepmc3="${EPREFIX}/usr" \
 		$(use_with hepmc hepmc "${EPREFIX}/usr") \
 		$(use_with pythia pythia8 "${EPREFIX}/usr") \
-		$(use_with tauola tauola "${EPREFIX}/usr") 
+		$(use_with tauola tauola "${EPREFIX}/usr")
 }
-
 
 src_compile() {
 	emake -j1
