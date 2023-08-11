@@ -100,7 +100,7 @@ sci-physics/softsusy 4.1.13: Calculates supersymmetric particle spectra
 sci-physics/spheno 3.3.8-r2 4.0.5: SPheno stands for S(upersymmetric) Pheno(menology)
 sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
-sci-physics/topdrawer 9999: TOPDRAWER renders top files.
+sci-physics/topdrawer 1.0.0 9999: TOPDRAWER renders top files.
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
 sci-physics/yoda 1.9.7 1.9.7-r1 1.9.7-r2 1.9.7-r3 1.9.8 9999: Yet more Objects for (High Energy Physics) Data Analysis
 sys-cluster/easybuild 4.6.2-r1 4.7.0 4.7.2: EasyBuild is a software build and installation framework.
