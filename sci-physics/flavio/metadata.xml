@@ -10,8 +10,8 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-    flavio is a Python package to compute observables in flavour physics, electroweak precision tests, Higgs physics, and other precision tests of the Standard Model, both in the Standard Model and in the presence of new physics encoded in Wilson coefficients of dimension-6 operators.
-    </longdescription>
+	flavio is a Python package to compute observables in flavour physics, electroweak precision tests, Higgs physics, and other precision tests of the Standard Model, both in the Standard Model and in the presence of new physics encoded in Wilson coefficients of dimension-6 operators.
+	</longdescription>
 	<upstream>
 		<remote-id type="pypi">ckmutil</remote-id>
 		<remote-id type="github">DavidMStraub/ckmutil</remote-id>
