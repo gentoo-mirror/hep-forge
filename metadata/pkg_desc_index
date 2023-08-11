@@ -68,7 +68,7 @@ sci-physics/mcfm 10.2.1 10.2.1-r1 10.2.1-r2 10.2.1-r3 9999: Monte Carlo for FeMt
 sci-physics/ninja 1.1.0 1.1.0-r1: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731 3.6_p20200731-r2: Library of one-loop scalar functions
 sci-physics/openloops 2.1.2 2.1.2-r1 2.1.2-r2 2.1.2-r3: Evaluation of tree and one-loop matrix elements for any Standard Model.
-sci-physics/particle 0.21.1 0.21.1-r1 0.22.0 0.22.1 0.23.0 9999: PDG particle data and identification codes
+sci-physics/particle 0.23.0 9999: PDG particle data and identification codes
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64 3.64-r1: PHOTOS
 sci-physics/powheg-box-v2-W 4027 9999: POWHEG BOX V2 W process
