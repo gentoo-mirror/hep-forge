@@ -10,4 +10,4 @@ RDEPEND=>=sci-physics/fastjet-3.4.0
 SLOT=0
 SRC_URI=https://fastjet.hepforge.org/contrib/downloads/fjcontrib-1.049.tar.gz
 _eclasses_=toolchain-funcs	0c8a0b0d318eb5d5180d114bd3f6592b	multilib	c19072c3cd7ac5cb21de013f7e9832e0
-_md5_=b52fe617a90e2139a80902fb56466aeb
+_md5_=29a44473af8e4e1b8421f533cae32bfa

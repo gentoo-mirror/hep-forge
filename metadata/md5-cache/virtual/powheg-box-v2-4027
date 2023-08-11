@@ -1,7 +1,8 @@
 DEFINED_PHASES=-
 DESCRIPTION=NLO calculations in shower Monte Carlo programs according to the POWHEG method
 EAPI=8
+HOMEPAGE=http://powhegbox.mib.infn.it/
 KEYWORDS=~amd64
 RDEPEND=~sci-physics/powheg-box-v2-hvq-4027 ~sci-physics/powheg-box-v2-directphoton-4027 ~sci-physics/powheg-box-v2-dijet-4027 ~sci-physics/powheg-box-v2-trijet-4027 ~sci-physics/powheg-box-v2-Z-4027 ~sci-physics/powheg-box-v2-Zj-4027 ~sci-physics/powheg-box-v2-W-4027
 SLOT=0
-_md5_=9a97c2935de7537d475c9f3fc6a021d9
+_md5_=2255fac1c22f3c72269927a7466d5971
