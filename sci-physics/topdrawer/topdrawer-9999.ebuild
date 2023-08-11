@@ -12,7 +12,7 @@ EGIT_REPO_URI="https://gitlab.com/APN-Pucky/topdrawer3.git"
 LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
 
 BDEPEND="virtual/fortran"
 

@@ -14,11 +14,11 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/numpy-1.16.5[${PYTHON_USEDEP}]
 	>=dev-python/scipy-1.0.0[${PYTHON_USEDEP}]
-    dev-python/pandas[${PYTHON_USEDEP}]
-    >=sci-physics/pylha-0.2[${PYTHON_USEDEP}]
-    dev-python/pyyaml[${PYTHON_USEDEP}]
-    >=sci-physics/ckmutil-0.3.2[${PYTHON_USEDEP}]
-    >=sci-physics/rundec-0.5[${PYTHON_USEDEP}]
-    dev-python/voluptuous[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	>=sci-physics/pylha-0.2[${PYTHON_USEDEP}]
+	dev-python/pyyaml[${PYTHON_USEDEP}]
+	>=sci-physics/ckmutil-0.3.2[${PYTHON_USEDEP}]
+	>=sci-physics/rundec-0.5[${PYTHON_USEDEP}]
+	dev-python/voluptuous[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"

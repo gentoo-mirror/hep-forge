@@ -32,8 +32,8 @@ src_prepare() {
 src_install() {
 	#default
 
-    doheader src/*.h
-    doheader build/*.h
+	doheader src/*.h
+	doheader build/*.h
 	dolib.a build/libSLHA.a
 	#rm "${ED}"/usr/$(get_libdir)/libSLHA.a || die
 	use doc && dodoc *.pdf

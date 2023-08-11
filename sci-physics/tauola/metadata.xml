@@ -11,7 +11,7 @@
 	</maintainer>
 
 	<longdescription lang="en">
-	TAUOLA
+	TAUOLA is a program that simulates the decays of polarized tau leptons, which are elementary particles that belong to the lepton family. Tau leptons are heavier than electrons and muons, and they can decay into various final states, such as hadrons, leptons, and neutrinos. TAUOLA can generate Monte Carlo events for tau lepton decays, taking into account the polarization, spin correlations, and radiative corrections. TAUOLA can also model anomalous and lepton flavor violating decays, which are beyond the standard model of particle physics. 
 	</longdescription>
 	<use>
 		<flag name="hepmc"> hepmc version 2 </flag>
