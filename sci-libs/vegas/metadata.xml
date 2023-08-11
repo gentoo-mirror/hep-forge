@@ -10,8 +10,8 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-    The vegas package is for evaluating multidimensional integrals using an improved version of the adaptive Monte Carlo vegas algorithm (G. P. Lepage, J. Comput. Phys. 27(1978) 192). 
-    </longdescription>
+	The vegas package is for evaluating multidimensional integrals using an improved version of the adaptive Monte Carlo vegas algorithm (G. P. Lepage, J. Comput. Phys. 27(1978) 192). 
+	</longdescription>
 	<upstream>
 		<remote-id type="pypi">vegas</remote-id>
 		<remote-id type="github">gplepage/vegas</remote-id>

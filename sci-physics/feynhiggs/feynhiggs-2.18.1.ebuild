@@ -5,8 +5,7 @@ EAPI=8
 FETCHCOMMAND="/usr/bin/wget --no-check-certificate \${URI} -P \${DISTFILES}"
 RESUMECOMMAND="/usr/bin/wget -c --no-check-certificate \${URI} -P \${DISTFILES}"
 
-inherit fortran-2
-# flag-o-matic 
+inherit fortran-2 # flag-o-matic
 
 MY_PN="FeynHiggs"
 MY_P=${MY_PN}-${PV}
@@ -27,7 +26,7 @@ BDEPEND="
 "
 
 src_configure() {
-	econf --prefix=${ESYSROOT}/usr
+	econf --prefix="${ESYSROOT}/usr"
 }
 
 src_install() {

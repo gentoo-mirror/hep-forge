@@ -10,8 +10,8 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-    If you make scientific or engineering calculations it is a best practice to always include units when you define variables if they are relevant. For example, if you define velocity to be 100, and time to be 0.5, Python cannot perform unit checking or unit balancing when you calculate the distance. It is a better practice to define the velocity as 100 km/h and the time as 30 min. It can also prevent errors later on. There are few ‘Famous Unit Conversion Errors’ that occurred because of unit calculation issue.
-    </longdescription>
+	If you make scientific or engineering calculations it is a best practice to always include units when you define variables if they are relevant. For example, if you define velocity to be 100, and time to be 0.5, Python cannot perform unit checking or unit balancing when you calculate the distance. It is a better practice to define the velocity as 100 km/h and the time as 30 min. It can also prevent errors later on. There are few ‘Famous Unit Conversion Errors’ that occurred because of unit calculation issue.
+	</longdescription>
 	<upstream>
 		<remote-id type="pypi">unum</remote-id>
 		<remote-id type="bitbucket">lukaszlaba/unum</remote-id>

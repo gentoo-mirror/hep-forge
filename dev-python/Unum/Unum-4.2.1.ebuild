@@ -8,12 +8,12 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="units in python"
 HOMEPAGE="
-    https://bitbucket.org/lukaszlaba/unum
-    https://unum.readthedocs.io/en/latest/
+	https://bitbucket.org/lukaszlaba/unum
+	https://unum.readthedocs.io/en/latest/
 "
 
 PATCHES=(
-    "${FILESDIR}/${P}-no-install-test.patch"
+	"${FILESDIR}/${P}-no-install-test.patch"
 )
 
 LICENSE="GPL-3"
