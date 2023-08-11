@@ -14,6 +14,6 @@ KEYWORDS="~amd64"
 RDEPEND="
 	dev-python/tqdm[${PYTHON_USEDEP}]
 	dev-python/typing-extensions[${PYTHON_USEDEP}]
-	dev-python/bounded_pool_executor[${PYTHON_USEDEP}]
+	dev-python/bounded-pool-executor[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
