@@ -6,7 +6,7 @@ EAPI=8
 # python3_11 missing in sci-physics/root
 PYTHON_COMPAT=( python3_{10..11} )
 
-inherit bash-completion-r1 autotools python-single-r1
+inherit bash-completion-r1 autotools python-single-r1 optfeature
 
 DESCRIPTION="Yet more Objects for (High Energy Physics) Data Analysis"
 HOMEPAGE="https://yoda.hepforge.org/"
@@ -62,5 +62,5 @@ src_install() {
 }
 
 pkg_postinst() {
-        optfeature "plotting support" virtual/latex-base dev-python/matplotlib
+	optfeature "plotting support" virtual/latex-base dev-python/matplotlib
 }
