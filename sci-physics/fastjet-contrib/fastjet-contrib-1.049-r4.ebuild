@@ -29,7 +29,16 @@ PATCHES=(
 
 src_configure() {
 	tc-export CXX AR RANLIB
-	./configure --prefix=${ESYSROOT}/usr --fastjet-config=${ESYSROOT}/usr/bin/fastjet-config RANLIB="${RANLIB}" AR="${AR}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" FFLAGS="${FFLAGS}" LDFLAGS="${LDFLAGS}" || die
+	./configure \
+		--prefix="${ESYSROOT}/usr" \
+		--fastjet-config="${ESYSROOT}/usr/bin/fastjet-config" \
+		RANLIB="${RANLIB}" \
+		AR="${AR}" \
+		CXX="${CXX}" \
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}" \
+		FFLAGS="${FFLAGS}" \
+		LDFLAGS="${LDFLAGS}" || die
 }
 
 src_compile() {
