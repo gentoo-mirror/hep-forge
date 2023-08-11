@@ -11,8 +11,8 @@
 	</maintainer>
 
 	<longdescription lang="en">
-	PHOTOS
-    </longdescription>
+	The main application of PHOTOS is the generation of QED radiative corrections in decays of any resonances, simulated by a "host" Monte Carlo generator
+	</longdescription>
 
 	<use>
 		<flag name="pythia">Build with pythia</flag>

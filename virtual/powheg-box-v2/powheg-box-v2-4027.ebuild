@@ -4,6 +4,7 @@
 EAPI=8
 
 DESCRIPTION="NLO calculations in shower Monte Carlo programs according to the POWHEG method"
+HOMEPAGE="http://powhegbox.mib.infn.it/"
 SLOT="0"
 KEYWORDS="~amd64"
 
