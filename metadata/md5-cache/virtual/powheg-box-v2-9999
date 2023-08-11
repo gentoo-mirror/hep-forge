@@ -1,7 +1,7 @@
 DEFINED_PHASES=-
-DESCRIPTION=POWHEG BOX is a general computer framework for implementing NLO calculations in shower Monte Carlo programs according to the POWHEG method
+DESCRIPTION=NLO calculations in shower Monte Carlo programs according to the POWHEG method
 EAPI=8
 IUSE=doc examples
-RDEPEND==sci-physics/powheg-box-v2-hvq-9999[doc?,examples?] =sci-physics/powheg-box-v2-directphoton-9999[doc?,examples?] =sci-physics/powheg-box-v2-dijet-9999[doc?,examples?] =sci-physics/powheg-box-v2-trijet-9999[doc?,examples?] =sci-physics/powheg-box-v2-Z-9999[doc?,examples?] =sci-physics/powheg-box-v2-Zj-9999[doc?,examples?] =sci-physics/powheg-box-v2-W-9999[doc?,examples?]
+RDEPEND=~sci-physics/powheg-box-v2-hvq-9999[doc?,examples?] ~sci-physics/powheg-box-v2-directphoton-9999[doc?,examples?] ~sci-physics/powheg-box-v2-dijet-9999[doc?,examples?] ~sci-physics/powheg-box-v2-trijet-9999[doc?,examples?] ~sci-physics/powheg-box-v2-Z-9999[doc?,examples?] ~sci-physics/powheg-box-v2-Zj-9999[doc?,examples?] ~sci-physics/powheg-box-v2-W-9999[doc?,examples?]
 SLOT=0
-_md5_=69ad09edc181d8ad9563046599002e57
+_md5_=494239948e3693187c13a2853cf2d647
