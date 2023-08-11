@@ -13,9 +13,9 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/numpy-1.16.5[${PYTHON_USEDEP}]
-    >=sci-physics/flavio-2.3.1[${PYTHON_USEDEP}]
-    sci-physics/wilson[${PYTHON_USEDEP}]
-    dev-python/pandas[${PYTHON_USEDEP}]
-    dev-python/multipledispatch[${PYTHON_USEDEP}]
+	>=sci-physics/flavio-2.3.1[${PYTHON_USEDEP}]
+	sci-physics/wilson[${PYTHON_USEDEP}]
+	dev-python/pandas[${PYTHON_USEDEP}]
+	dev-python/multipledispatch[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
