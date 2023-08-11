@@ -8,11 +8,11 @@ SLOT="0"
 IUSE="doc examples"
 
 RDEPEND="
-	=sci-physics/powheg-box-v2-hvq-${PV}[doc?,examples?]
-	=sci-physics/powheg-box-v2-directphoton-${PV}[doc?,examples?]
-	=sci-physics/powheg-box-v2-dijet-${PV}[doc?,examples?]
-	=sci-physics/powheg-box-v2-trijet-${PV}[doc?,examples?]
-	=sci-physics/powheg-box-v2-Z-${PV}[doc?,examples?]
-	=sci-physics/powheg-box-v2-Zj-${PV}[doc?,examples?]
-	=sci-physics/powheg-box-v2-W-${PV}[doc?,examples?]
+	~sci-physics/powheg-box-v2-hvq-${PV}[doc?,examples?]
+	~sci-physics/powheg-box-v2-directphoton-${PV}[doc?,examples?]
+	~sci-physics/powheg-box-v2-dijet-${PV}[doc?,examples?]
+	~sci-physics/powheg-box-v2-trijet-${PV}[doc?,examples?]
+	~sci-physics/powheg-box-v2-Z-${PV}[doc?,examples?]
+	~sci-physics/powheg-box-v2-Zj-${PV}[doc?,examples?]
+	~sci-physics/powheg-box-v2-W-${PV}[doc?,examples?]
 "
