@@ -5,10 +5,10 @@
 		<email>alexander@neuwirth-informatik.de</email>
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
-  <maintainer type="project">
-    <email>sci-physics@gentoo.org</email>
-    <name>Gentoo Physics Project</name>
-  </maintainer>
+	<maintainer type="project">
+		<email>sci-physics@gentoo.org</email>
+		<name>Gentoo Physics Project</name>
+	</maintainer>
 	<longdescription lang="en">
 	RECOLA2 Standard Model (SM).
 	</longdescription>
