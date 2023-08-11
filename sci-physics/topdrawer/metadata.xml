@@ -25,4 +25,7 @@
 	Tektronix displays,  and  Postscript,  QMS1200  and
 	EXCL printers.
 	</longdescription>
+	<upstream>
+		<remote-id type="gitlab">APN-Pucky/topdrawer3</remote-id>
+	</upstream>
 </pkgmetadata>
