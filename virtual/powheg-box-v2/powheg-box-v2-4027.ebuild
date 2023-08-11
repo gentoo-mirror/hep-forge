@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="POWHEG BOX is a general computer framework for implementing NLO calculations in shower Monte Carlo programs according to the POWHEG method"
+DESCRIPTION="NLO calculations in shower Monte Carlo programs according to the POWHEG method"
 SLOT="0"
 KEYWORDS="~amd64"
 
