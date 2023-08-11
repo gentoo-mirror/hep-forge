@@ -20,7 +20,6 @@ HOMEPAGE="http://pythia6.hepforge.org/"
 # svn export http://svn.hepforge.org/pythia6/tags/v_6_4_x/ pythia-6.4.x
 # tar cJf pythia-6.4.x.tar.xz
 
-
 SRC_URI="
 	https://pythia.org/download/pythia6/pythia${MY_PV}-split.tgz
 	https://root.cern.ch/download/pythia6.tar.gz -> ${PYR_P}.tar.gz
