@@ -10,10 +10,10 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-    Robustly compute the generalised Jacobi matrix for an arbitrary real analytic mapping ℝⁿ → ℝⁱ¹ × ... × ℝⁱⁿ
-    Returns error estimates for derivatives
-    Perform statistical error propagation based on numerically computed jacobian
-    </longdescription>
+	Robustly compute the generalised Jacobi matrix for an arbitrary real analytic mapping ℝⁿ → ℝⁱ¹ × ... × ℝⁱⁿ
+	Returns error estimates for derivatives
+	Perform statistical error propagation based on numerically computed jacobian
+	</longdescription>
 	<upstream>
 		<remote-id type="pypi">jacobi</remote-id>
 		<remote-id type="github">HDembinski/jacobi</remote-id>

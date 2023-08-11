@@ -4,7 +4,7 @@ PYTHON_COMPAT=( python3_{9..11} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
-DESCRIPTION="Numerical derivatives for analytic functions with arbitrary round-off error and error propagation."
+DESCRIPTION="Numerical derivatives for analytic functions with arbitrary precision."
 HOMEPAGE="https://github.com/HDembinski/jacobi"
 
 LICENSE="MIT"
