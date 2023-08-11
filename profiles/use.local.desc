@@ -62,6 +62,7 @@ sci-physics/photos:hepmc - Build with hepmc 2
 sci-physics/photos:pythia - Build with pythia
 sci-physics/photos:tauola - Build with tauola
 sci-physics/pythia:fastjet - Build jets using the sci-physics/fastjet package
+sci-physics/pythia:hepmc - Adds support for High Energy Physics Monte Carlo Generators sci-physics/hepmc
 sci-physics/pythia:hepmc2 - Adds support for High Energy Physics Monte Carlo Generators 2 sci-physics/hepmc
 sci-physics/pythia:hepmc3 - Adds support for High Energy Physics Monte Carlo Generators 3 sci-physics/hepmc
 sci-physics/pythia:lhapdf - Support the use of external PDF sets via sci-physics/lhapdf

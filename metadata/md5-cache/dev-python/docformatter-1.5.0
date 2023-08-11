@@ -1,4 +1,4 @@
-BDEPEND=>=dev-python/charset_normalizer-2.0.0 >=dev-python/tomli-2.0.0 >=dev-python/untokenize-0.1.1 python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 ) >=dev-python/gpep517-13[python_targets_python3_10(-)?,python_targets_python3_11(-)?] >=dev-python/poetry-core-1.6.1[python_targets_python3_10(-)?,python_targets_python3_11(-)?]
+BDEPEND=>=dev-python/charset-normalizer-2.0.0 >=dev-python/tomli-2.0.0 >=dev-python/untokenize-0.1.1 python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 ) >=dev-python/gpep517-13[python_targets_python3_10(-)?,python_targets_python3_11(-)?] >=dev-python/poetry-core-1.6.1[python_targets_python3_10(-)?,python_targets_python3_11(-)?]
 DEFINED_PHASES=compile configure install prepare test
 DESCRIPTION=Formats docstrings to follow PEP 257.
 EAPI=8
@@ -7,9 +7,9 @@ INHERIT=distutils-r1 pypi
 IUSE=python_targets_python3_10 python_targets_python3_11
 KEYWORDS=~amd64
 LICENSE=MIT
-RDEPEND=>=dev-python/charset_normalizer-2.0.0 >=dev-python/tomli-2.0.0 >=dev-python/untokenize-0.1.1 python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 )
+RDEPEND=>=dev-python/charset-normalizer-2.0.0 >=dev-python/tomli-2.0.0 >=dev-python/untokenize-0.1.1 python_targets_python3_10? ( dev-lang/python:3.10 ) python_targets_python3_11? ( dev-lang/python:3.11 )
 REQUIRED_USE=|| ( python_targets_python3_10 python_targets_python3_11 )
 SLOT=0
 SRC_URI=https://files.pythonhosted.org/packages/source/d/docformatter/docformatter-1.5.0.tar.gz
 _eclasses_=toolchain-funcs	0c8a0b0d318eb5d5180d114bd3f6592b	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	ad475baa777c9978fa035216c8264a10	out-of-source-utils	1a9007554652a6e627edbccb3c25a439	multibuild	30dbf3c5a31db09a19f31ad0a68f2405	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	f3010c780f65d1bb5aea15a9af1adc9c	python-utils-r1	1f435bc389faf790af695df46b8dcb73	python-r1	b3f874304c1bda6ffc3450ebb4ae5169	distutils-r1	b7cd5736a595ec0df9b164d5aec6f228	pypi	2eecb475512bc76e5ea9192a681b9e6b
-_md5_=ed6bca2d2bbfeb9b042db62d55b3e528
+_md5_=485b171a3bee1322bd571dbe0dd457b3
