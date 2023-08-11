@@ -10,8 +10,8 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
- multi-dimensional integration and sampling
-     </longdescription>
+ 	Multi-dimensional integration and sampling.
+	</longdescription>
 	<upstream>
 		<remote-id type="pypi">iflow</remote-id>
 		<remote-id type="gitlab">i-flow/i-flow</remote-id>
