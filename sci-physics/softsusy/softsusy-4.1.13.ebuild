@@ -1,11 +1,8 @@
 # Copyright 2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
-
 EAPI=8
 
 inherit fortran-2 autotools
-# flag-o-matic 
-
 
 DESCRIPTION="Calculates supersymmetric particle spectra "
 HOMEPAGE="

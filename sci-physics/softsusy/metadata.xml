@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<maintainer type="project">
+		<email>sci-physics@gentoo.org</email>
+		<name>Gentoo Physics Project</name>
+	</maintainer>
+
+	<longdescription lang="en">
+	TAUOLA is a program that simulates the decays of polarized tau leptons, which are elementary particles that belong to the lepton family. Tau leptons are heavier than electrons and muons, and they can decay into various final states, such as hadrons, leptons, and neutrinos. TAUOLA can generate Monte Carlo events for tau lepton decays, taking into account the polarization, spin correlations, and radiative corrections. TAUOLA can also model anomalous and lepton flavor violating decays, which are beyond the standard model of particle physics. 
+	</longdescription>
+	<upstream>
+		<remote-id type="github">BAllanach/softsusy</remote-id>
+	</upstream>
+</pkgmetadata>
