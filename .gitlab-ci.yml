@@ -338,6 +338,10 @@ default:
         VERSION: [9999, 4027]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [checkmate]
+        VERSION: [2.0.7]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 .config:
   before_script:
