@@ -16,12 +16,11 @@ if [[ ${PV} == 9999 ]]; then
 else
     SRC_URI="https://checkmate.hepforge.org/downloads?f=CheckMATE-${PV}.tar.gz -> checkmate-2.0.7.tar.gz"
 	S="${WORKDIR}/${MY_P}"
-	# Alternatively https://github.com/delphes/delphes/archive/refs/tags/3.5.0.tar.gz
 	KEYWORDS="~amd64"
 fi
 
 LICENSE="GPL-2"
-SLOT="2"
+SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
