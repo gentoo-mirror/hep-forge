@@ -1,4 +1,8 @@
+# Copyright 2023 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
 EAPI=8
+
+PYTHON_COMPAT=( python3_11 )
 
 inherit autotools python-single-r1
 
@@ -29,7 +33,7 @@ RDEPEND="
     sci-physics/fastjet
 	sci-physics/delphes
     sci-physics/root
-    sci-physics/madgraph5
+    sci-physics/madgraph5[${PYTHON_SINGLE_USEDEP}]
     sci-physics/hepmc:2
     <sci-physics/pythia-8.3
 "

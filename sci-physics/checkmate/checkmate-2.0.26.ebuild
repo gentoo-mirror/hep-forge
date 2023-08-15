@@ -1,5 +1,7 @@
+# Copyright 2023 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
 EAPI=8
-
+PYTHON_COMPAT=( python3_11 )
 inherit autotools python-single-r1
 
 MY_P=CheckMATE-2.0.
@@ -29,7 +31,7 @@ RDEPEND="
     sci-physics/fastjet
 	>=sci-physics/delphes-3.5
     sci-physics/root
-    >=sci-physics/madgraph5-2.7
+    >=sci-physics/madgraph5-2.7[${PYTHON_SINGLE_USEDEP}]
     sci-physics/hepmc:2
     <sci-physics/pythia-8.3
 "
