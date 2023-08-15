@@ -39,8 +39,8 @@ DEPEND="${RDEPEND}"
 BDEPEND=""
 
 PATCHES=(
-    "${FILESDIR}"/${PN}-external.patch
-    "${FILESDIR}"/${PN}-delphes-hepmc-reader.patch
+    "${FILESDIR}"/${PN}-2.0.7-external.patch
+    "${FILESDIR}"/${PN}-2.0.7-delphes-hepmc-reader.patch
 )
 
 src_prepare() {
