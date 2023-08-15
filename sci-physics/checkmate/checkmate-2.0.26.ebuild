@@ -5,7 +5,7 @@ PYTHON_COMPAT=( python3_11 )
 inherit autotools python-single-r1
 
 MY_P=CheckMATE-2.0.
-DESCRIPTION="Checkmate"
+DESCRIPTION="Check Models At Terascale Energies"
 HOMEPAGE="https://checkmate.hepforge.org/"
 
 if [[ ${PV} == 9999 ]]; then
@@ -27,6 +27,7 @@ RDEPEND="
 		${PYTHON_DEPS}
 	)
     dev-python/future
+    dev-python/scipy
     sci-physics/root:=[${PYTHON_SINGLE_USEDEP}]
     sci-physics/fastjet
 	>=sci-physics/delphes-3.5
