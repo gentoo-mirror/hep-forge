@@ -43,7 +43,7 @@ sci-physics/collier 1.2.5 1.2.7 1.2.7-r1: A Complex One-Loop LIbrary with Extend
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2 0.15.3: DecayLanguage: describe, manipulate and convert particle decays
-sci-physics/delphes 3.5.0 9999: Delphes performs a fast multipurpose detector response simulation.
+sci-physics/delphes 3.3.3 3.5.0 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/evtgen 02.02.00: 
 sci-physics/fastjet 3.0.6 3.0.6-r3 3.4.0-r2 3.4.1: A software package for jet finding in pp and e+e- collisions
 sci-physics/fastjet-contrib 1.049-r4 1.051: 3rd party extensions of FastJet.
