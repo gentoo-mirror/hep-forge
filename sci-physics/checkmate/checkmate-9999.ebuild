@@ -25,9 +25,7 @@ SLOT="2"
 KEYWORDS="~amd64"
 
 RDEPEND="
-    python? (
-		${PYTHON_DEPS}
-	)
+	${PYTHON_DEPS}
     dev-python/future
     sci-physics/root:=[${PYTHON_SINGLE_USEDEP}]
     sci-physics/fastjet
