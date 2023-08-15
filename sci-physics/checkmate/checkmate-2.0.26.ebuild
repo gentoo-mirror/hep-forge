@@ -4,7 +4,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_11 )
 inherit autotools python-single-r1
 
-MY_P=CheckMATE-2.0.
+MY_P=CheckMATE-2.0.26
 DESCRIPTION="Check Models At Terascale Energies"
 HOMEPAGE="https://checkmate.hepforge.org/"
 
@@ -56,13 +56,23 @@ src_configure() {
 }
 
 src_install() {
-    default
+    #default
     ## install all python files from tools/python
     #insinto /usr/lib/python3.11/site-packages
     #doins -r tools/python/*
     # do opt install
-    dodir /opt/CheckMATE2
-    insinto /opt/CheckMATE2
-    doins -r *
     dosym ../../opt/${MY_PF}/bin/CheckMATE /usr/bin/CheckMATE
+    dodir /opt/${MY_PF}
+    insinto /opt/${MY_PF}
+    doins -r *
+	# Fix for missing empty directories, check keepdir install function explanation
+	for f in $(find . -type d -empty); do
+		keepdir /opt/${MY_PF}/$f
+	done
+	# Copy executable, etc. permissions
+	for f in $(find * ! -type l); do
+		fperms --reference="$f" /opt/${MY_PF}/$f
+	done
+	fperms -R a=u /opt/${MY_PF}
+	fperms a=u /opt/${MY_PF}
 }
