@@ -1,23 +1,35 @@
 EAPI=8
 
-inherit autotools
+inherit autotools python-single-r1
 
-MY_P=CheckMATEbeta-2.0.
+MY_P=CheckMATE-2.0.
 DESCRIPTION="Checkmate"
-SRC_URI="https://checkmate.hepforge.org/downloads?f=CheckMATEbeta-${PV}.tar.gz -> checkmate-2.0.7.tar.gz"
 HOMEPAGE="https://checkmate.hepforge.org/"
-S=${WORKDIR}/${MY_P}
 
-LICENSE="GPL-3+"
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/CheckMATE2/checkmate2/"
+else
+    SRC_URI="https://checkmate.hepforge.org/downloads?f=CheckMATE-${PV}.tar.gz -> checkmate-2.0.7.tar.gz"
+	S="${WORKDIR}/${MY_P}"
+	# Alternatively https://github.com/delphes/delphes/archive/refs/tags/3.5.0.tar.gz
+	KEYWORDS="~amd64"
+fi
+
+LICENSE="GPL-2"
 SLOT="2"
 KEYWORDS="~amd64"
 
 RDEPEND="
-    dev-lang/python:2.7
+    python? (
+		${PYTHON_DEPS}
+	)
+    dev-python/future
+    sci-physics/root:=[${PYTHON_SINGLE_USEDEP}]
     sci-physics/fastjet
-	sci-physics/delphes
+	>=sci-physics/delphes-3.5
     sci-physics/root
-    sci-physics/madgraph5
+    >=sci-physics/madgraph5-2.7
     sci-physics/hepmc:2
     <sci-physics/pythia-8.3
 "
@@ -31,12 +43,11 @@ PATCHES=(
 
 src_prepare() {
     default
-    sed -i -e 's/'
     eautoreconf
 }
 
 src_configure() {
-    econf --with-python=`which python2` \
+    econf \
     --with-pythia=${ESYSROOT}/usr/$(get_libdir)/ \
     --with-hepmc=${ESYSROOT}/usr/$(get_libdir)/ \
     --with-madgraph=${ESYSROOT}/opt/MadGraph5/ \
