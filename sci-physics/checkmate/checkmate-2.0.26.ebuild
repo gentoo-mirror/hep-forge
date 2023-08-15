@@ -54,3 +54,15 @@ src_configure() {
     --with-madgraph=${ESYSROOT}/opt/MadGraph5/ \
     --with-delphes=${ESYSROOT}/usr/$(get_libdir)/
 }
+
+src_install() {
+    default
+    ## install all python files from tools/python
+    #insinto /usr/lib/python3.11/site-packages
+    #doins -r tools/python/*
+    # do opt install
+    dodir /opt/CheckMATE2
+    insinto /opt/CheckMATE2
+    doins -r *
+    dosym ../../opt/${MY_PF}/bin/CheckMATE /usr/bin/CheckMATE
+}
