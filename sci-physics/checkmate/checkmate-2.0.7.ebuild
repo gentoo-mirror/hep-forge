@@ -37,7 +37,7 @@ src_prepare() {
 }
 
 src_configure() {
-    ./configure --with-python=`which python2` \
+    econf --with-python=`which python2` \
     --with-pythia=${ESYSROOT}/usr/$(get_libdir)/ \
     --with-hepmc=${ESYSROOT}/usr/$(get_libdir)/ \
     --with-madgraph=${ESYSROOT}/opt/MadGraph5/ \
