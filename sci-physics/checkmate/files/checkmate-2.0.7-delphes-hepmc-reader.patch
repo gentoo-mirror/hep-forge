@@ -21,3 +21,24 @@
  
  #ifdef HAVE_PYTHIA
  #include "PythiaHandler.h"
+@@ -140,7 +140,7 @@
+     TStopwatch* procStopWatch;
+ 
+     // only defined in hepmc read mode
+-    DelphesHepMCReader*  dHepmcReader;
++    DelphesHepMC3Reader*  dHepmcReader;
+ 
+     // only defined in stdhep read mode
+     DelphesSTDHEPReader* dStdhepReader;
+
+--- a/tools/fritz/src/delpheshandler/DelphesHandler.cc  2023-08-15 16:58:34.399745442 +0200
++++ b/tools/fritz/src/delpheshandler/DelphesHandler.cc	2023-08-15 16:58:44.433044556 +0200
+@@ -194,7 +194,7 @@
+     x >> firstLine;
+     if(firstLine == "HepMC::Version") {
+         Global::print(name, "Input File determined to be HepMC.");
+-        dHepmcReader = new DelphesHepMCReader();
++        dHepmcReader = new DelphesHepMC3Reader();
+         mode = HepMCMode;
+     }
+     else if(firstLine.find("LesHouchesEvents version") != std::string::npos){

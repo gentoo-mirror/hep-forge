@@ -29,6 +29,11 @@ PATCHES=(
     "${FILESDIR}"/${PN}-delphes-hepmc-reader.patch
 )
 
+src_prepare() {
+    default
+    sed -i -e 's/DelphesHepMCReader/DelphesHepMC3Reader/g' 
+}
+
 src_configure() {
     ./configure --with-python=`which python2` \
     --with-pythia=${ESYSROOT}/usr/$(get_libdir)/ \
