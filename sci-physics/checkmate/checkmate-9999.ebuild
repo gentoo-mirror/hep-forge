@@ -7,7 +7,7 @@ PYTHON_COMPAT=( python3_11 )
 inherit autotools python-single-r1
 
 MY_PF="CheckMATE2"
-MY_P=CheckMATE-2.0.26
+MY_P="CheckMATE-2.0.26"
 DESCRIPTION="Check Models At Terascale Energies"
 HOMEPAGE="https://checkmate.hepforge.org/"
 
@@ -26,15 +26,15 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	${PYTHON_DEPS}
-    dev-python/future
-    sci-physics/root:=[${PYTHON_SINGLE_USEDEP}]
-    sci-physics/fastjet
+	dev-python/future
+	sci-physics/root:=[${PYTHON_SINGLE_USEDEP}]
+	sci-physics/fastjet
 	sci-physics/delphes
-    sci-physics/root
-    sci-physics/pyhf
-    sci-physics/madgraph5[${PYTHON_SINGLE_USEDEP}]
-    sci-physics/hepmc:2
-    <sci-physics/pythia-8.3
+	sci-physics/root
+	sci-physics/pyhf
+	sci-physics/madgraph5[${PYTHON_SINGLE_USEDEP}]
+	sci-physics/hepmc:2
+	<sci-physics/pythia-8.3
 "
 DEPEND="${RDEPEND}"
 BDEPEND=""
@@ -45,35 +45,35 @@ PATCHES=(
 )
 
 src_prepare() {
-    default
-    eautoreconf
+	default
+	eautoreconf
 }
 
 src_configure() {
-    econf  \
-    --with-pythia=${ESYSROOT}/usr/$(get_libdir)/ \
-    --with-hepmc=${ESYSROOT}/usr/$(get_libdir)/ \
-    --with-madgraph=${ESYSROOT}/opt/MadGraph5/ \
-    --with-delphes=${ESYSROOT}/usr/$(get_libdir)/
+	econf  \
+	--with-pythia=${ESYSROOT}/usr/$(get_libdir)/ \
+	--with-hepmc=${ESYSROOT}/usr/$(get_libdir)/ \
+	--with-madgraph=${ESYSROOT}/opt/MadGraph5/ \
+	--with-delphes=${ESYSROOT}/usr/$(get_libdir)/
 }
 
 src_install() {
-    #default
-    ## install all python files from tools/python
-    #insinto /usr/lib/python3.11/site-packages
-    #doins -r tools/python/*
-    # do opt install
-    dosym ../../opt/${MY_PF}/bin/CheckMATE /usr/bin/CheckMATE
-    dodir /opt/${MY_PF}
-    insinto /opt/${MY_PF}
-    doins -r *
+	default
+	## install all python files from tools/python
+	#insinto /usr/lib/python3.11/site-packages
+	#doins -r tools/python/*
+	# do opt install
+	dosym ../../opt/${MY_PF}/bin/CheckMATE /usr/bin/CheckMATE
+	dodir /opt/${MY_PF}
+	insinto /opt/${MY_PF}
+	doins -r *
 	# Fix for missing empty directories, check keepdir install function explanation
 	for f in $(find . -type d -empty); do
 		keepdir /opt/${MY_PF}/$f
 	done
 	# Copy executable, etc. permissions
 	for f in $(find * ! -type l); do
-		fperms --reference="$f" /opt/${MY_PF}/$f
+		fperms --reference="$f" ${ED}/opt/${MY_PF}/$f
 	done
 	fperms -R a=u /opt/${MY_PF}
 	fperms a=u /opt/${MY_PF}
