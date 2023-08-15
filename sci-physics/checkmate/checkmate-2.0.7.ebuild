@@ -31,7 +31,6 @@ PATCHES=(
 
 src_prepare() {
     default
-    #sed -i -e 's/DelphesHepMCReader/DelphesHepMC3Reader/g' 
     sed -i -e 's/'
     eautoreconf
 }
