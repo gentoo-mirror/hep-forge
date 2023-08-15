@@ -30,6 +30,7 @@ RDEPEND="
     sci-physics/fastjet
 	>=sci-physics/delphes-3.5
     sci-physics/root
+    sci-physics/pyhf
     >=sci-physics/madgraph5-2.7[${PYTHON_SINGLE_USEDEP}]
     sci-physics/hepmc:2
     <sci-physics/pythia-8.3

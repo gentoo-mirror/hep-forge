@@ -31,6 +31,7 @@ RDEPEND="
     sci-physics/fastjet
 	sci-physics/delphes
     sci-physics/root
+    sci-physics/pyhf
     sci-physics/madgraph5[${PYTHON_SINGLE_USEDEP}]
     sci-physics/hepmc:2
     <sci-physics/pythia-8.3
