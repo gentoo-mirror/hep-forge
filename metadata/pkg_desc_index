@@ -38,6 +38,7 @@ sci-physics/apfel 3.0.6 3.0.6-r1: A PDF Evolution Library
 sci-physics/apfelxx 4.7.0: Object oriented rewriting of the APFEL evolution code
 sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input PDFs
 sci-physics/cernlib 2006-r8: CERN program library for High Energy Physics
+sci-physics/checkmate 2.0.26 9999: Check Models At Terascale Energies
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
 sci-physics/collier 1.2.5 1.2.7 1.2.7-r1: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
