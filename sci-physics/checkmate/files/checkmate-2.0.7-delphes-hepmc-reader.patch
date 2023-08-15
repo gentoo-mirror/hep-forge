@@ -5,7 +5,7 @@
  #include "classes/DelphesClasses.h"
  #include "classes/DelphesFactory.h"
 -#include "classes/DelphesHepMCReader.h"
-+#include "classes/DelphesHepMC3Reader.h"
++#include "classes/DelphesHepMC2Reader.h"
  #include "classes/DelphesSTDHEPReader.h"
  #include "classes/DelphesLHEFReader.h"
  
@@ -26,7 +26,7 @@
  
      // only defined in hepmc read mode
 -    DelphesHepMCReader*  dHepmcReader;
-+    DelphesHepMC3Reader*  dHepmcReader;
++    DelphesHepMC2Reader*  dHepmcReader;
  
      // only defined in stdhep read mode
      DelphesSTDHEPReader* dStdhepReader;
@@ -38,7 +38,7 @@
      if(firstLine == "HepMC::Version") {
          Global::print(name, "Input File determined to be HepMC.");
 -        dHepmcReader = new DelphesHepMCReader();
-+        dHepmcReader = new DelphesHepMC3Reader();
++        dHepmcReader = new DelphesHepMC2Reader();
          mode = HepMCMode;
      }
      else if(firstLine.find("LesHouchesEvents version") != std::string::npos){
