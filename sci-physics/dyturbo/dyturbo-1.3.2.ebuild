@@ -5,7 +5,7 @@ EAPI=8
 
 inherit autotools
 
-DESCRIPTION="Fast predictions for Drell-Yan processes including qt-resummation "
+DESCRIPTION="Fast predictions for Drell-Yan processes including qt-resummation"
 HOMEPAGE="https://dyturbo.hepforge.org/"
 
 SRC_URI="https://dyturbo.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz" # weird hepforge download names
