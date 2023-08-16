@@ -54,7 +54,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [delphes]
-        VERSION: [9999, 3.5.0]
+        VERSION: [9999, 3.5.0-r1]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [pyslha]
