@@ -350,6 +350,11 @@ default:
         VERSION: [9999, 2.0.26]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [dyturbo]
+        VERSION: [1.3.2]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+
 
 .config:
   before_script:

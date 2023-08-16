@@ -15,7 +15,7 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/CheckMATE2/checkmate2/"
 else
-    SRC_URI="https://checkmate.hepforge.org/downloads?f=CheckMATE-${PV}.tar.gz -> checkmate-2.0.7.tar.gz"
+    SRC_URI="https://checkmate.hepforge.org/downloads?f=CheckMATE-${PV}.tar.gz -> ${P}.tar.gz"
 	S="${WORKDIR}/${MY_P}"
 	KEYWORDS="~amd64"
 fi
