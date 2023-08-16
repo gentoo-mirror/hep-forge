@@ -63,7 +63,7 @@ sci-physics/jaxodraw 2.0.1-r3: Java program for drawing Feynman diagrams
 sci-physics/lhapdf 6.2.3-r1 6.3.0-r3 6.4.0 6.5.2 6.5.3 6.5.3-r1 6.5.4 9999: Les Houches Parton Density Function unified library
 sci-physics/looptools 2.10 2.15 2.15-r1 2.16: Tools for evaluation of scalar and tensor one-loop integrals
 sci-physics/madanalysis5 1.10.4: A package for event file analysis and recasting of LHC results
-sci-physics/madgraph5 3.4.2-r4 3.4.2-r5 3.5.0 3.5.0-r1: MadGraph5_aMC@NLO
+sci-physics/madgraph5 3.4.2-r4 3.4.2-r5 3.5.0 3.5.0-r1 3.5.1: MadGraph5_aMC@NLO
 sci-physics/mcfm 10.2.1 10.2.1-r1 10.2.1-r2 10.2.1-r3 9999: Monte Carlo for FeMtobarn processes
 sci-physics/ninja 1.1.0 1.1.0-r1: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731 3.6_p20200731-r2: Library of one-loop scalar functions
