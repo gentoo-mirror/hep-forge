@@ -338,6 +338,14 @@ default:
         VERSION: [9999, 4027]
         CATEGORY: ["sci-physics"]
         <<: *images
+
+.matrix8: &matrix8
+  parallel:
+    matrix:
+      - PKG: [evtgen]
+        VERSION: [02.02.00]
+        CATEGORY: ["sci-physics"]
+        <<: *images
       - PKG: [checkmate]
         VERSION: [9999, 2.0.26]
         CATEGORY: ["sci-physics"]
@@ -619,4 +627,25 @@ test7:
 qa7:
   extends: .qa
   <<: *matrix7
+
+
+check8:
+  extends: .check
+  <<: *matrix8
+
+warn8:
+  extends: .warn
+  <<: *matrix8
+
+build8:
+  extends: .build
+  <<: *matrix8
+
+test8:
+  extends: .test
+  <<: *matrix8
+
+qa8:
+  extends: .qa
+  <<: *matrix8
 
