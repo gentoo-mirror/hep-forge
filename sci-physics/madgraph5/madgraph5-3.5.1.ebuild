@@ -80,7 +80,7 @@ src_install() {
 	cd "${S}"
 	# Copy executable, etc. permissions
 	for f in $(find * ! -type l); do
-		fperms --reference="${S}/$f" /opt/${MY_PF}/$f
+		fperms --reference="$f" /opt/${MY_PF}/$f
 	done
 	fperms -R a=u /opt/${MY_PF}
 	fperms a=u /opt/${MY_PF}
