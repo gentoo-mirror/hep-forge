@@ -45,6 +45,7 @@ sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measure
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2 0.15.3: DecayLanguage: describe, manipulate and convert particle decays
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
+sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
 sci-physics/evtgen 02.02.00: 
 sci-physics/fastjet 3.0.6 3.0.6-r3 3.4.0-r2 3.4.1: A software package for jet finding in pp and e+e- collisions
 sci-physics/fastjet-contrib 1.049-r4 1.051: 3rd party extensions of FastJet.
@@ -54,6 +55,7 @@ sci-physics/feynhiggs 2.18.1: Calculation of the masses, mixings and much more o
 sci-physics/flavio 2.4.0 2.5.0: flavour phenomenology in the Standard model and beyond
 sci-physics/formcalc 9.9 9.10: FormCalc can be used for automatic Feynman diagram computation.
 sci-physics/golem95 1.3.3: performs the reduction to a certain set of basis integrals numerically
+sci-physics/hell 3.0 3.1: A small-x resummation code
 sci-physics/hepi 0.2.8 9999: Python interface for gluing together several HEP programs
 sci-physics/hepmc 2.06.09-r2 2.06.11 3.2.5 3.2.5-r1 3.2.5-r2 3.2.5-r3 3.2.5_p20230225 3.2.5_p20230225-r1 3.2.5_p20230225-r2 3.2.6 9999: Event Record for Monte Carlo Generators
 sci-physics/hepunits 2.3.1 2.3.1-r1 2.3.2 9999: units and constants in the HEP system of units
