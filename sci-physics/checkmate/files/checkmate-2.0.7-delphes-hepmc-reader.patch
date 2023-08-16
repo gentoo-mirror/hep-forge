@@ -1,0 +1,24 @@
+--- a/tools/fritz/include/delpheshandler/DelphesHandler.h	2017-03-24 16:44:59.000000000 +0100
++++ b/tools/fritz/include/delpheshandler/DelphesHandler.h	2023-08-15 16:44:41.069278142 +0200
+@@ -21,16 +21,16 @@
+ #include "modules/Delphes.h"
+ #include "classes/DelphesClasses.h"
+ #include "classes/DelphesFactory.h"
+-#include "classes/DelphesHepMC2Reader.h"
++#include "classes/DelphesHepMC2Reader.h"
+ #include "classes/DelphesSTDHEPReader.h"
+ #include "classes/DelphesLHEFReader.h"
+ 
+ 
+ #include "CMExRootTreeBranch.h"
+ #include "CMExRootTreeWriter.h"
+-#include "external/ExRootAnalysis/ExRootTreeBranch.h"
+-#include "external/ExRootAnalysis/ExRootTreeWriter.h"
+-#include "external/ExRootAnalysis/ExRootTreeReader.h"
++#include "ExRootAnalysis/ExRootTreeBranch.h"
++#include "ExRootAnalysis/ExRootTreeWriter.h"
++#include "ExRootAnalysis/ExRootTreeReader.h"
+ 
+ #ifdef HAVE_PYTHIA
+ #include "PythiaHandler.h"
+

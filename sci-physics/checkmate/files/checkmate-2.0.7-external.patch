@@ -1,0 +1,19 @@
+--- a/tools/analysis/include/base/AnalysisBase.h	2023-08-15 16:40:26.013492881 +0200
++++ b/tools/analysis/include/base/AnalysisBase.h	2023-08-15 16:40:10.846878626 +0200
+@@ -21,11 +21,11 @@
+ #include <TMatrixDEigen.h>
+ 
+ #include "classes/DelphesClasses.h"
+-#include "external/ExRootAnalysis/ExRootTreeReader.h"
+-#include "external/ExRootAnalysis/ExRootResult.h"
++#include "ExRootAnalysis/ExRootTreeReader.h"
++#include "ExRootAnalysis/ExRootResult.h"
+ 
+-#include "external/fastjet/JetDefinition.hh"
+-#include "external/fastjet/ClusterSequence.hh"
++#include "fastjet/JetDefinition.hh"
++#include "fastjet/ClusterSequence.hh"
+ 
+ #include "ETMiss.h"
+ #include "FinalStateObject.h"
+
