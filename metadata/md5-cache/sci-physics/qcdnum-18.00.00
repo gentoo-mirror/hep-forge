@@ -1,15 +1,12 @@
 BDEPEND=virtual/fortran sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71-r5 >=sys-devel/libtool-2.4.7
-DEFINED_PHASES=configure
-DEPEND=root? ( sci-physics/root )
-DESCRIPTION=Fast predictions for Drell-Yan processes including qt-resummation
+DEFINED_PHASES=configure install prepare
+DESCRIPTION=Fast QCD Evolution and Convolution
 EAPI=8
-HOMEPAGE=https://dyturbo.hepforge.org/
+HOMEPAGE=https://www.nikhef.nl/~h24/qcdnum/QcdnumDownload.html
 INHERIT=autotools
-IUSE=root
 KEYWORDS=~amd64
 LICENSE=GPL-2
-RDEPEND=root? ( sci-physics/root )
 SLOT=0
-SRC_URI=https://dyturbo.hepforge.org/downloads?f=dyturbo-1.3.2.tar.gz -> dyturbo-1.3.2.tar.gz
+SRC_URI=https://www.nikhef.nl/~h24/qcdnum-files/download/qcdnum180000.tar.gz -> qcdnum-18.00.00.tar.gz
 _eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	0c8a0b0d318eb5d5180d114bd3f6592b	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	6ae9a4347149b19a112caa1182d03bde
-_md5_=8135608a7101e0322d5851a435b7456e
+_md5_=e8dd7ff417786eac789608a535f0a642
