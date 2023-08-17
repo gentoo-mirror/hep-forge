@@ -10,9 +10,9 @@ inherit cmake
 DESCRIPTION="Resummation for electroweak BSM particles."
 HOMEPAGE="https://resummino.hepforge.org/"
 SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip -> ${P}.zip}"
+S="${WORKDIR}/${P}"
 
 LICENSE="EPL-2.0"
-RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
 
@@ -28,3 +28,11 @@ BDEPEND="
 	app-arch/unzip
 	virtual/fortran
 "
+
+src_configure {
+	local mycmakeargs=(
+		-DBUILD_LHAPDF=OFF
+		-DBUILD_LOOPTOOLS=OFF
+	)
+	cmake_src_configure 
+}
