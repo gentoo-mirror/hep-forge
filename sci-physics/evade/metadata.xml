@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+    <maintainer type="project">
+        <email>sci-physics@gentoo.org</email>
+        <name>Gentoo Physics Project</name>
+    </maintainer>
+    <longdescription lang="en">
+    A c++-11 library to efficiently obtain constraints from vacuum stability in BSM models with many scalar fields. The documentation for the library is available at jonaswittbrodt.gitlab.io/EVADE.
+    EVADE was developed by Jonas Wittbrodt in collaboration with Georg Weiglein and Wolfgang G. Hollik. If you use EVADE for a publication please always cite 1812.04644 and 1905.10234 and give reference to this website. 1812.04644 contains a detailed explanation of the method used by EVADE to judge the stability of the EW vacuum.
+    </longdescription>
+	<upstream>
+		<remote-id type="gitlab">jonaswittbrodt/EVADE</remote-id>
+	</upstream>
+</pkgmetadata>
