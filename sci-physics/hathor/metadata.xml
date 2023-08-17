@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+    <maintainer type="project">
+        <email>sci-physics@gentoo.org</email>
+        <name>Gentoo Physics Project</name>
+    </maintainer>
+    <longdescription lang="en">
+    Hathor calculates the total cross section for top-quark pair production in hadronic collisions.
+    The program takes into account recent theoretical developments such as approximate
+    next-to-next-to-leading order perturbative QCD corrections and it allows for studies of
+    the theoretical uncertainty by separate variations of the factorization and renormalization
+    scales. In addition it offers the possibility to obtain the cross section as a function of the
+    running top-quark mass. A GUI to simplify the usage is included as well.
+    </longdescription>
+</pkgmetadata>
