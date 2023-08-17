@@ -34,3 +34,8 @@ src_prepare() {
 src_configure() {
 	econf
 }
+
+src_install() {
+	default
+	dobin bin/qcdnum-config
+}
