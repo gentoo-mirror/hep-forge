@@ -30,7 +30,6 @@ BDEPEND="
 "
 
 src_prepare() {
-	default
 	cmake_src_prepare
 }
 
