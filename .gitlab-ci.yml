@@ -30,7 +30,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [resummino]
-        VERSION: [3.1.2, 3.1.1]
+        VERSION: [3.1.2]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [oneloop]
@@ -360,6 +360,34 @@ default:
         <<: *images
       - PKG: [dyturbo]
         VERSION: [1.3.2]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [hathor]
+        VERSION: ["2.0"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [xfitter]
+        VERSION: [2.2.0]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [qcdnum]
+        VERSION: ["18.00.00"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [hell]
+        VERSION: ["3.1", "3.0"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [apfelgrid]
+        VERSION: [1.0.5]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [fastnlo]
+        VERSION: ["2.5"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [pineappl]
+        VERSION: [0.6.1]
         CATEGORY: ["sci-physics"]
         <<: *images
 

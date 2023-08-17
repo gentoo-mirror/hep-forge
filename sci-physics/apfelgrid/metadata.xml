@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<maintainer type="project">
+		<email>sci-physics@gentoo.org</email>
+		<name>Gentoo Physics Project</name>
+	</maintainer>
+	<longdescription lang="en">
+	The APFELgrid plugin is a tool designed to accelerate the computation of physical observables at hadron colliders, by means of combining the interpolated weight-grids provided by the APPLgrid project with the evolution of parton densities provided by APFEL. The tool is aimed at PDF fitting groups, as it allows for the extremely rapid recalculation of cross-sections when varying the input PDF.
+
+	APFELgrid generates FastKernel (or FK) tables which reduce the computation of NLO pQCD predictions to a particuarly compact form in terms of PDFs at a single initial scale.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">nhartland/APFELgrid</remote-id> 
+		<remote-id type="github">zenaiev/APFELgrid</remote-id> 
+	</upstream>
+</pkgmetadata>
