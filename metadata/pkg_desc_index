@@ -53,6 +53,7 @@ sci-physics/feynarts 3.11: FeynArts renders Feynman diagrams and generates their
 sci-physics/feyncalc 9.3.1 9999: FeynCalc is a Mathematica package for computing Feynman diagrams.
 sci-physics/feynhiggs 2.18.1: Calculation of the masses, mixings and much more of the Higgs bosons in the MSSM
 sci-physics/flavio 2.4.0 2.5.0: flavour phenomenology in the Standard model and beyond
+sci-physics/fonll 1.3.3: FONLL Heavy Quark Production
 sci-physics/formcalc 9.9 9.10: FormCalc can be used for automatic Feynman diagram computation.
 sci-physics/golem95 1.3.3: performs the reduction to a certain set of basis integrals numerically
 sci-physics/hell 3.0 3.1: A small-x resummation code
