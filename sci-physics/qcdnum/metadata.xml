@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+    <maintainer type="project">
+        <email>sci-physics@gentoo.org</email>
+        <name>Gentoo Physics Project</name>
+    </maintainer>
+    <longdescription lang="en">
+The qcdnum program numerically solves the evolution equations for parton den-
+sities and fragmentation functions in perturbative QCD. Un-polarised parton den-
+sities can be evolved up to next-to-next-to-leading order in powers of the strong
+coupling constant, while polarised densities or fragmentation functions can be
+evolved up to next-to-leading order. In addition to these evolution routines, a
+large set of tools is provided to solve n-fold coupled QCD evolution equations and
+to compute convolution integrals in the zero-mass or generalised mass schemes.
+Based on this toolbox and included in the software distribution are two add-on
+packages to calculate zero-mass structure functions in un-polarised deep inelas-
+tic scattering, and heavy flavour contributions to these structure functions in the
+fixed flavour number scheme.
+    </longdescription>
+</pkgmetadata>
