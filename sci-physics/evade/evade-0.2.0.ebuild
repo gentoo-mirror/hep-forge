@@ -13,6 +13,7 @@ HOMEPAGE="
     https://gitlab.com/jonaswittbrodt/EVADE/-/tree/master?ref_type=heads
 "
 SRC_URI="https://gitlab.com/jonaswittbrodt/EVADE/-/archive/c94158c18b2362788cf9d6915496d24b7d887fb4/EVADE-c94158c18b2362788cf9d6915496d24b7d887fb4.tar.gz -> evade-${PV}.tar.gz"
+S="${WORKDIR}/EVADE-c94158c18b2362788cf9d6915496d24b7d887fb4"
 
 LICENSE="MIT"
 RESTRICT=""
