@@ -9,7 +9,7 @@ inherit cmake
 
 DESCRIPTION="Resummation for electroweak BSM particles."
 HOMEPAGE="https://resummino.hepforge.org/"
-SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip"
+SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip -> ${P}.zip}"
 
 LICENSE="EPL-2.0"
 RESTRICT=""
