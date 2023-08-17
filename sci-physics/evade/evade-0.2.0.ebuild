@@ -22,6 +22,8 @@ KEYWORDS="~amd64"
 
 IUSE=""
 DEPEND="
+    sci-mathematics/bertini
+    sci-mathematics/hom4ps
 	sci-physics/slhalib
     dev-libs/libconfig[cxx]
     dev-cpp/eigen
@@ -33,6 +35,9 @@ BDEPEND="
 "
 
 src_configure() {
+    local mycmakeargs=(
+		-DHOM4PS2_EXECUTABLE=1 -DBERTINI_EXECUTABLE=1
+	)
     cmake_src_configure
 }
 
