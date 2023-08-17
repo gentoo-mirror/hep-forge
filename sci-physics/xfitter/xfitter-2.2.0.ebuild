@@ -9,7 +9,7 @@ inherit cmake
 
 DESCRIPTION="PDF fitting tool"
 HOMEPAGE="https://www.xfitter.org/xFitter/xFitter"
-SRC_URI="https://www.xfitter.org/xFitter/xFitter/DownloadPage?action=AttachFile&do=get&target=xfitter-${PV}.tgz -> ${P}.zip}"
+SRC_URI="https://www.xfitter.org/xFitter/xFitter/DownloadPage?action=AttachFile&do=get&target=xfitter-${PV}.tgz -> ${P}.zip"
 
 LICENSE="GPL-3+"
 RESTRICT=""
