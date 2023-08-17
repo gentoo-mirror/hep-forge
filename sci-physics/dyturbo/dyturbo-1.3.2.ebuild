@@ -26,5 +26,5 @@ BDEPEND="
 "
 
 src_configure() {
-	econf  $(use_enable root)
+	econf $(use_enable root)
 }
