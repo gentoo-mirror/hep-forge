@@ -375,7 +375,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [fastnlo]
-        VERSION: [2.5]
+        VERSION: ["2.5"]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [pineappl]
