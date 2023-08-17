@@ -24,7 +24,7 @@ BDEPEND="
     virtual/fortran
 "
 
-src_build() {
+src_compile() {
     emake -C lib LHAPDF=${EPREFIX}/usr V=1 CFLAGS="${CFLAGS} -Wall -fPIC" FFLAGS="${FFLAGS} -ffixed-line-length-132 -fPIC -std=legacy"
 }
 
