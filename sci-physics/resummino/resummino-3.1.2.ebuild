@@ -29,10 +29,20 @@ BDEPEND="
 	virtual/fortran
 "
 
+src_prepare() {
+	default
+	cmake_src_prepare
+}
+
 src_configure {
 	local mycmakeargs=(
 		-DBUILD_LHAPDF=OFF
 		-DBUILD_LOOPTOOLS=OFF
 	)
 	cmake_src_configure 
+}
+
+src_install() {
+	cmake_src_install
+	dodoc README.md
 }
