@@ -16,7 +16,7 @@ RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="lhapdf applgrid apfel apfelxx ceres hathor +root +qcdnum pineappl" # TODO: ceres
+IUSE="lhapdf applgrid apfel apfelxx ceres hathor pineappl +root +qcdnum"
 
 DEPEND="
     dev-libs/libyaml
@@ -24,14 +24,15 @@ DEPEND="
 	~sci-physics/dyturbo-1.3.2
 	~sci-physics/hoppet-1.2.0
 	root? ( sci-physics/root )
-	apfelgrid? ( ~sci-physics/apfelxx-4.0.0 )
+	apfel? ( sci-physics/apfel )
+	apfelxx? ( ~sci-physics/apfelxx-4.0.0 )
 	qcdnum? ( ~sci-physics/qcdnum-18.00.00 )
 	hathor? ( ~sci-physics/hather-2.0 )
 	applgrid? ( ~sci-physics/apfelgrid-1.0.5 )
 	pineappl? ( ~sci-physics/pineappl_capi-0.6.1 )
+	ceres? ( sci-libs/ceres-solver )
 "
-#TODO:
-#	ceres? ( ~sci-physics/ceres-0.0.0 )
+
 RDEPEND="${DEPEND}"
 BDEPEND="
     virtual/lapack
