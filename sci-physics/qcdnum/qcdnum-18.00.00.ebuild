@@ -38,4 +38,5 @@ src_configure() {
 src_install() {
 	default
 	dobin bin/qcdnum-config
+	doheader qcdnum/inc/*.inc
 }
