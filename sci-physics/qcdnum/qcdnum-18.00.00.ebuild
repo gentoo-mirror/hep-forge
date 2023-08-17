@@ -24,3 +24,7 @@ DEPEND="${RDEPEND}"
 BDEPEND="
     virtual/fortran
 "
+
+src_configure() {
+    econf
+}
