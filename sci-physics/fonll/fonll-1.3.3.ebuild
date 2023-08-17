@@ -26,7 +26,7 @@ BDEPEND="
 	virtual/fortran
 "
 src_compile() {
-    emake -f main/Makefile VPATH=main:hdmassive:hdresummed:phmassive:phresummed:common fonll
+    FFLAGS="${FFLAGS} -fPIC -std=legacy" CFLAGS="${CFLAGS} -fPIC -std=legacy" emake -f main/Makefile VPATH=main:hdmassive:hdresummed:phmassive:phresummed:common fonll
 }
 
 src_install() {
