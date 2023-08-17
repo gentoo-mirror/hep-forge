@@ -10,7 +10,7 @@ inherit autotools
 DESCRIPTION="Fast QCD Evolution and Convolution"
 HOMEPAGE="https://www.nikhef.nl/~h24/qcdnum/QcdnumDownload.html"
 
-SRC_URI="https://www.nikhef.nl/~h24/qcdnum-files/download/qcdnum180000.tar.gz -> ${P}.tar.gz" # weird hepforge download names
+SRC_URI="https://www.nikhef.nl/~h24/qcdnum-files/download/qcdnum${PV//.}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/qcdnum-18-00-00"
 KEYWORDS="~amd64"
 
@@ -22,15 +22,15 @@ IUSE=""
 RDEPEND=""
 DEPEND="${RDEPEND}"
 BDEPEND="
-    virtual/fortran
+	virtual/fortran
 "
 
 src_prepare() {
-    default
-    sed -i "$ a AM_FFLAGS = -Iinc" **/Makefile.am || die
-    eautoreconf
+	default
+	sed -i "$ a AM_FFLAGS = -Iinc" **/Makefile.am || die
+	eautoreconf
 }
 
 src_configure() {
-    econf
+	econf
 }
