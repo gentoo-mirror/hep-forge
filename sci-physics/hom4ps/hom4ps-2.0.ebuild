@@ -21,12 +21,12 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 src_compile() {
-    # pass
-    echo "pass"
+	# pass
+	echo "pass"
 }
 
 src_install() {
-    dobin bin/flwcrv
-    dobin bin/polyread
-    dobin bin/geneval
+	dobin bin/flwcrv
+	dobin bin/polyread
+	dobin bin/geneval
 }
