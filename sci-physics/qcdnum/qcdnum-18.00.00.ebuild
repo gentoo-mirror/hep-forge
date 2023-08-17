@@ -25,6 +25,12 @@ BDEPEND="
     virtual/fortran
 "
 
+src_prepare() {
+    default
+    sed -i "$ a AM_FFLAGS = -Iinc" **/Makefile.am || die
+    eautoreconf
+}
+
 src_configure() {
     econf
 }
