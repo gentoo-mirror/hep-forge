@@ -61,6 +61,10 @@ default:
         VERSION: [3.2.6]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [evade]
+        VERSION: [0.2.0]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 .matrix2: &matrix2
   parallel:
