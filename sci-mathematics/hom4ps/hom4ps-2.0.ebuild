@@ -27,6 +27,6 @@ src_compile() {
 
 src_install() {
 	dobin bin/flwcrv
-	dobin bin/polyread
+	#dobin bin/polyread
 	dobin bin/geneval
 }
