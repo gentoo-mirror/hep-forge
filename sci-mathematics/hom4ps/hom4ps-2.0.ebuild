@@ -26,6 +26,7 @@ src_compile() {
 }
 
 src_install() {
+	dobin hom4ps2
 	dobin bin/flwcrv
 	dobin bin/sym2num
 	#dobin bin/polyread
