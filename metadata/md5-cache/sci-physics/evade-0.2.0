@@ -1,0 +1,14 @@
+BDEPEND=virtual/fortran sys-devel/make >=dev-util/cmake-3.20.5
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=>=sci-mathematics/bertini-1.6 sci-mathematics/hom4ps sci-physics/slhalib dev-libs/libconfig[cxx] dev-cpp/eigen app-doc/doxygen
+DESCRIPTION=Obtain constraints from vacuum stability in BSM models with many scalar fields
+EAPI=8
+HOMEPAGE=https://jonaswittbrodt.gitlab.io/EVADE/ https://gitlab.com/jonaswittbrodt/EVADE/-/tree/master?ref_type=heads
+INHERIT=cmake
+KEYWORDS=~amd64
+LICENSE=MIT
+RDEPEND=>=sci-mathematics/bertini-1.6 sci-mathematics/hom4ps sci-physics/slhalib dev-libs/libconfig[cxx] dev-cpp/eigen app-doc/doxygen
+SLOT=0
+SRC_URI=https://gitlab.com/jonaswittbrodt/EVADE/-/archive/c94158c18b2362788cf9d6915496d24b7d887fb4/EVADE-c94158c18b2362788cf9d6915496d24b7d887fb4.tar.gz -> evade-0.2.0.tar.gz
+_eclasses_=toolchain-funcs	0c8a0b0d318eb5d5180d114bd3f6592b	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	ad475baa777c9978fa035216c8264a10	multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ninja-utils	f3010c780f65d1bb5aea15a9af1adc9c	xdg-utils	baea6080dd821f5562d715887954c9d3	cmake	aa1d1fa7be37663d48162ac963b22692
+_md5_=1f1bd131db4e76c313650e0e8266b0d2

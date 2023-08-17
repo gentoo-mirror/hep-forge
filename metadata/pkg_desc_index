@@ -33,6 +33,7 @@ sci-libs/sklearn2pmml 0.92.0 0.92.1 0.93.0: Python library for converting Scikit
 sci-libs/tensorflow-probability 0.19.0: Probabilistic reasoning and statistical analysis in TensorFlow
 sci-libs/vegas 5.4: Adaptive multidimensional Monte Carlo integration.
 sci-mathematics/cgal 5.2-r2 5.4.1: C++ library for geometric algorithms and data structures
+sci-mathematics/hom4ps 2.0: HOMotopy method for solving Polynomial Systems
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
 sci-physics/apfel 3.0.6 3.0.6-r1: A PDF Evolution Library
 sci-physics/apfelxx 4.7.0: Object oriented rewriting of the APFEL evolution code
@@ -40,12 +41,13 @@ sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input P
 sci-physics/cernlib 2006-r8: CERN program library for High Energy Physics
 sci-physics/checkmate 2.0.26 9999: Check Models At Terascale Energies
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
-sci-physics/collier 1.2.5 1.2.7 1.2.7-r1: A Complex One-Loop LIbrary with Extended Regularizations
+sci-physics/collier 1.2.5 1.2.7 1.2.7-r1 1.2.7-r2: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2 0.15.3: DecayLanguage: describe, manipulate and convert particle decays
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
+sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
 sci-physics/evtgen 02.02.00: 
 sci-physics/fastjet 3.0.6 3.0.6-r3 3.4.0-r2 3.4.1: A software package for jet finding in pp and e+e- collisions
 sci-physics/fastjet-contrib 1.049-r4 1.051: 3rd party extensions of FastJet.
