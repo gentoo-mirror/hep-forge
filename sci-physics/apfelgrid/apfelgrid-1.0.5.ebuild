@@ -14,6 +14,7 @@ HOMEPAGE="
 	https://github.com/zenaiev/APFELgrid
 "
 SRC_URI="https://github.com/zenaiev/APFELgrid/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/APFELgrid-${PV}"
 
 LICENSE="MIT"
 RESTRICT=""
@@ -21,11 +22,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-REQUIRED_USE="
+REQUIRED_USE=""
+DEPEND="
 	sci-physics/lhapdf
 	sci-physics/apfelxx
 	sci-physics/applgrid
 "
-DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
