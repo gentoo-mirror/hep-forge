@@ -1,0 +1,12 @@
+diff -Naru FONLL-1.3.3.orig/main/Makefile FONLL-1.3.3/main/Makefile
+--- a/main/Makefile	2023-08-17 15:54:52.853864310 +0200
++++ b/main/Makefile	2023-08-17 15:55:25.093772587 +0200
+@@ -2,7 +2,7 @@
+ #FC= g77 -Wall -fno-automatic -ffortran-bounds-check
+ # Make sure that, with gfortran, -O is used together together with -fno-automatic 
+ # (-O gives about 30% improvement in time, but is broken without -fno-automatic
+-FC= gfortran -Wall -fno-automatic
++FC= gfortran -Wall -fno-automatic $(FFLAGS)
+ #FF=/usr/bin/g95 -Wall -fno-automatic
+ #FF=/usr/local/ifort/bin/ia32/ifort -save
+ #DEBUG=-ggdb

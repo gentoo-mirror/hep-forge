@@ -25,10 +25,15 @@ RDEPEND="${DEPEND}"
 BDEPEND="
 	virtual/fortran
 "
+
+PATCHES=(
+    ${FILESDIR}/fonll-1.3.3-legacy.patch
+)
+
 src_compile() {
-    FFLAGS="${FFLAGS} -fPIC -std=legacy" CFLAGS="${CFLAGS} -fPIC -std=legacy" emake -f main/Makefile VPATH=main:hdmassive:hdresummed:phmassive:phresummed:common fonll
+    FFLAGS="${FFLAGS} -fPIC -std=legacy" emake -f main/Makefile VPATH=main:hdmassive:hdresummed:phmassive:phresummed:common fonll
 }
 
 src_install() {
-    dobin main/fonll
+    dobin fonll
 }
