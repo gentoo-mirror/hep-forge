@@ -23,7 +23,7 @@ KEYWORDS="~amd64"
 IUSE=""
 DEPEND="
 	>=sci-mathematics/bertini-1.6
-	sci-mathematics/hom4ps
+	sci-mathematics/hom4ps-bin
 	sci-physics/slhalib
 	dev-libs/libconfig[cxx]
 	dev-cpp/eigen
@@ -43,7 +43,7 @@ src_configure() {
 	echo "install(TARGETS EVADE_CDN2HDM  EVADE_MSSM  EVADE_MSSM_B  EVADE_MuNuSSM  EVADE_MuNuSSM_B  EVADE_N2HDM  EVADE_NMSSM  EVADE_TRSM DESTINATION ${EPREFIX}/usr/bin)" >> CMakeLists.txt
 	echo "install(DIRECTORY include/EVADE DESTINATION ${EPREFIX}/usr/include)" >> CMakeLists.txt
 	local mycmakeargs=(
-		-DHOM4PS2_EXECUTABLE=hom4ps2 -DBERTINI_EXECUTABLE=bertini
+		-DHOM4PS2_EXECUTABLE=${EPREFIX}/usr/bin -DBERTINI_EXECUTABLE=bertini
 	)
 	cmake_src_configure
 }

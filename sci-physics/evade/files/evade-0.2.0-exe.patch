@@ -1,11 +1,12 @@
 --- a/src/lib/SolverPolicies/Hom4ps2.cpp	2023-08-18 12:14:17.021654887 +0200
 +++ b/src/lib/SolverPolicies/Hom4ps2.cpp	2023-08-18 12:33:00.800470828 +0200
-@@ -16,7 +16,7 @@
-     : folder_{path + "/HOM4PS2_"},
-       command_{"cd " + folder_.Path() + ";" + "echo " +
-                std::to_string(static_cast<int>(homtype)) + " | " +
--               "./hom4ps2 evade.sym >/dev/null"} {
-+               std::string(HOM4PS2_EXECUTABLE) + " evade.sym >/dev/null"} {
-   folder_.MakeSubfolder("bin");
+@@ -21,8 +21,8 @@
    std::string linkpath(HOM4PS2_EXECUTABLE);
    folder_.MakeSymlink(linkpath, "hom4ps2"),
+       linkpath.erase(linkpath.rfind("hom4ps2"), std::string::npos);
+-  folder_.MakeSymlink(linkpath + "bin/flwcrv", "bin/flwcrv");
+-  folder_.MakeSymlink(linkpath + "bin/sym2num", "bin/sym2num");
++  folder_.MakeSymlink(linkpath + "flwcrv", "bin/flwcrv");
++  folder_.MakeSymlink(linkpath + "sym2num", "bin/sym2num");
+   folder_.SetCleanup({"evade.sym", "data.roots", "bin/input.num"});
+ }
