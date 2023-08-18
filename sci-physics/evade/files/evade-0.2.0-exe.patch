@@ -5,7 +5,7 @@
        command_{"cd " + folder_.Path() + ";" + "echo " +
                 std::to_string(static_cast<int>(homtype)) + " | " +
 -               "./hom4ps2 evade.sym >/dev/null"} {
-+               std::string(HOM4PS2_EXECUTABLE)" + evade.sym >/dev/null"} {
++               std::string(HOM4PS2_EXECUTABLE) + " evade.sym >/dev/null"} {
    folder_.MakeSubfolder("bin");
    std::string linkpath(HOM4PS2_EXECUTABLE);
    folder_.MakeSymlink(linkpath, "hom4ps2"),
