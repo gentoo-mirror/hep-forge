@@ -33,7 +33,7 @@ src_prepare() {
 	cmake_src_prepare
 }
 
-src_configure {
+src_configure() {
 	local mycmakeargs=(
 		-DBUILD_LHAPDF=OFF
 		-DBUILD_LOOPTOOLS=OFF
