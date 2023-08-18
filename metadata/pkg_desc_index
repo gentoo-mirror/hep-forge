@@ -33,7 +33,7 @@ sci-libs/sklearn2pmml 0.92.0 0.92.1 0.93.0: Python library for converting Scikit
 sci-libs/tensorflow-probability 0.19.0: Probabilistic reasoning and statistical analysis in TensorFlow
 sci-libs/vegas 5.4: Adaptive multidimensional Monte Carlo integration.
 sci-mathematics/cgal 5.2-r2 5.4.1: C++ library for geometric algorithms and data structures
-sci-mathematics/hom4ps 2.0: HOMotopy method for solving Polynomial Systems
+sci-mathematics/hom4ps-bin 2.0: HOMotopy method for solving Polynomial Systems
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
 sci-physics/apfel 3.0.6 3.0.6-r1: A PDF Evolution Library
 sci-physics/apfelgrid 1.0.5: Ultra-fast theory predictions for collider observables
