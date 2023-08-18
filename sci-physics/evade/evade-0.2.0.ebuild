@@ -33,13 +33,17 @@ BDEPEND="
 	virtual/fortran
 "
 
+PATCHES=(
+    "${FILESDIR}"/${PN}-0.2.0-exe.patch
+)
+
 src_configure() {
     # Append install of bins to CMakeLists.txt
     echo "install(TARGETS EVADE DESTINATION ${EPREFIX}/usr/$(get_libdir))" >> CMakeLists.txt
     echo "install(TARGETS EVADE_CDN2HDM  EVADE_MSSM  EVADE_MSSM_B  EVADE_MuNuSSM  EVADE_MuNuSSM_B  EVADE_N2HDM  EVADE_NMSSM  EVADE_TRSM DESTINATION ${EPREFIX}/usr/bin)" >> CMakeLists.txt
     echo "install(DIRECTORY include/EVADE DESTINATION ${EPREFIX}/usr/include)" >> CMakeLists.txt
     local mycmakeargs=(
-		-DHOM4PS2_EXECUTABLE=1 -DBERTINI_EXECUTABLE=1
+		-DHOM4PS2_EXECUTABLE=hom4ps2 -DBERTINI_EXECUTABLE=bertini
 	)
     cmake_src_configure
 }
