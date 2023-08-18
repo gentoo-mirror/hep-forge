@@ -27,7 +27,6 @@ DEPEND="
 	sci-physics/slhalib
     dev-libs/libconfig[cxx]
     dev-cpp/eigen
-    app-doc/doxygen
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
