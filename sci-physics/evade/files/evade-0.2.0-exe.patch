@@ -1,5 +1,5 @@
---- a/src/lib/SolverPoliciesHom4ps2.cpp	2023-08-18 12:14:17.021654887 +0200
-+++ b/src/lib/SolverPoliciesHom4ps2.cpp	2023-08-18 12:33:00.800470828 +0200
+--- a/src/lib/SolverPolicies/Hom4ps2.cpp	2023-08-18 12:14:17.021654887 +0200
++++ b/src/lib/SolverPolicies/Hom4ps2.cpp	2023-08-18 12:33:00.800470828 +0200
 @@ -16,7 +16,7 @@
      : folder_{path + "/HOM4PS2_"},
        command_{"cd " + folder_.Path() + ";" + "echo " +
