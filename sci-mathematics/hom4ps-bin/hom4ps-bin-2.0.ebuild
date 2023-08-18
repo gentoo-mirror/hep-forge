@@ -20,6 +20,10 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND=""
 
+PATCHES=(
+	"${FILESDIR}"/${PN}-2.0-path.patch
+)
+
 src_compile() {
 	# pass
 	echo "pass"

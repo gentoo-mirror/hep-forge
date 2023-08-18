@@ -1,0 +1,10 @@
+--- a/hom4ps2	2010-01-13 11:46:06.000000000 +0100
++++ b/hom4ps2	2023-08-18 15:12:34.522493097 +0200
+@@ -1,4 +1,5 @@
+-./bin/sym2num < $1 > ./bin/input.num
+-
+-./bin/flwcrv 
++#!/bin/bash
++mkdir bin
++sym2num < $1 > ./bin/input.num
++flwcrv 
