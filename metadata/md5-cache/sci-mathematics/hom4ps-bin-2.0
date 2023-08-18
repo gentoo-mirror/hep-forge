@@ -6,4 +6,4 @@ KEYWORDS=~amd64
 LICENSE=MIT
 SLOT=2
 SRC_URI=http://www.math.nsysu.edu.tw/~leetsung/works/HOM4PS_soft_files/HOM4PS2_64-bit.tar.gz -> hom4ps-bin-2.0.tar.gz
-_md5_=17670204b5aea829f271976779a53aaf
+_md5_=3a28c66622a520079e6b8808fc1afa79
