@@ -9,8 +9,8 @@ inherit cmake
 
 DESCRIPTION="Obtain constraints from vacuum stability in BSM models with many scalar fields"
 HOMEPAGE="
-    https://jonaswittbrodt.gitlab.io/EVADE/
-    https://gitlab.com/jonaswittbrodt/EVADE/-/tree/master?ref_type=heads
+	https://jonaswittbrodt.gitlab.io/EVADE/
+	https://gitlab.com/jonaswittbrodt/EVADE/-/tree/master?ref_type=heads
 "
 SRC_URI="https://gitlab.com/jonaswittbrodt/EVADE/-/archive/c94158c18b2362788cf9d6915496d24b7d887fb4/EVADE-c94158c18b2362788cf9d6915496d24b7d887fb4.tar.gz -> evade-${PV}.tar.gz"
 S="${WORKDIR}/EVADE-c94158c18b2362788cf9d6915496d24b7d887fb4"
@@ -22,35 +22,39 @@ KEYWORDS="~amd64"
 
 IUSE=""
 DEPEND="
-    >=sci-mathematics/bertini-1.6
-    sci-mathematics/hom4ps
+	>=sci-mathematics/bertini-1.6
+	sci-mathematics/hom4ps
 	sci-physics/slhalib
-    dev-libs/libconfig[cxx]
-    dev-cpp/eigen
+	dev-libs/libconfig[cxx]
+	dev-cpp/eigen
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
 	virtual/fortran
 "
 
+PATCHES=(
+	"${FILESDIR}"/${PN}-0.2.0-exe.patch
+)
+
 src_configure() {
-    # Append install of bins to CMakeLists.txt
-    echo "install(TARGETS EVADE DESTINATION ${EPREFIX}/usr/$(get_libdir))" >> CMakeLists.txt
-    echo "install(TARGETS EVADE_CDN2HDM  EVADE_MSSM  EVADE_MSSM_B  EVADE_MuNuSSM  EVADE_MuNuSSM_B  EVADE_N2HDM  EVADE_NMSSM  EVADE_TRSM DESTINATION ${EPREFIX}/usr/bin)" >> CMakeLists.txt
-    echo "install(DIRECTORY include/EVADE DESTINATION ${EPREFIX}/usr/include)" >> CMakeLists.txt
-    local mycmakeargs=(
-		-DHOM4PS2_EXECUTABLE=1 -DBERTINI_EXECUTABLE=1
+	# Append install of bins to CMakeLists.txt
+	echo "install(TARGETS EVADE DESTINATION ${EPREFIX}/usr/$(get_libdir))" >> CMakeLists.txt
+	echo "install(TARGETS EVADE_CDN2HDM  EVADE_MSSM  EVADE_MSSM_B  EVADE_MuNuSSM  EVADE_MuNuSSM_B  EVADE_N2HDM  EVADE_NMSSM  EVADE_TRSM DESTINATION ${EPREFIX}/usr/bin)" >> CMakeLists.txt
+	echo "install(DIRECTORY include/EVADE DESTINATION ${EPREFIX}/usr/include)" >> CMakeLists.txt
+	local mycmakeargs=(
+		-DHOM4PS2_EXECUTABLE=hom4ps2 -DBERTINI_EXECUTABLE=bertini
 	)
-    cmake_src_configure
+	cmake_src_configure
 }
 
 src_compile() {
-    cmake_src_compile
+	cmake_src_compile
 }
 
 src_install() {
-    cmake_src_install
-    #dobin EVADE_CDN2HDM  EVADE_MSSM  EVADE_MSSM_B  EVADE_MuNuSSM  EVADE_MuNuSSM_B  EVADE_N2HDM  EVADE_NMSSM  EVADE_TRSM
-    #dolib.so lib/libEVADE.so
-    #doheader -r include/*
+	cmake_src_install
+	#dobin EVADE_CDN2HDM  EVADE_MSSM  EVADE_MSSM_B  EVADE_MuNuSSM  EVADE_MuNuSSM_B  EVADE_N2HDM  EVADE_NMSSM  EVADE_TRSM
+	#dolib.so lib/libEVADE.so
+	#doheader -r include/*
 }
