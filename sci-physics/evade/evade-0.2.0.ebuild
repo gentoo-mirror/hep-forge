@@ -23,7 +23,7 @@ KEYWORDS="~amd64"
 IUSE=""
 DEPEND="
 	>=sci-mathematics/bertini-1.6
-	sci-mathematics/hom4ps
+	sci-mathematics/hom4ps-bin
 	sci-physics/slhalib
 	dev-libs/libconfig[cxx]
 	dev-cpp/eigen
