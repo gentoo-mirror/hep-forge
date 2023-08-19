@@ -58,7 +58,7 @@ src_compile() {
 
 	cd "${S}"/wrappers/python || die
 	distutils-r1_src_compile
-	find "${ED}" -name '*.egg' -delete || die
+	find "${S}" -name '*.egg' -delete || die
 }
 
 src_test() {
