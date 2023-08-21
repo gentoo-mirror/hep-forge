@@ -89,7 +89,7 @@ sci-physics/powheg-box-v2-hvq 4027 9999: POWHEG BOX V2 hvq process
 sci-physics/powheg-box-v2-trijet 4027 9999: POWHEG BOX V2 trijet process
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyhepmc 2.10.0 2.11.0: A Pythonic wrapper for the HepMC3 C++ library.
-sci-physics/pyhf 0.7.0 0.7.0-r1 0.7.1: pure-python fitting/limit-setting/interval estimation HistFactory-style
+sci-physics/pyhf 0.7.0 0.7.0-r1 0.7.1 0.7.3: pure-python fitting/limit-setting/interval estimation HistFactory-style
 sci-physics/pylha 0.4: Deal with SLHA files
 sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houches Accord data
 sci-physics/pythia 6.4.28-r2 8.2.45 8.2.45-r1 8.2.45-r2 8.3.06 8.3.07 8.3.07-r1 8.3.07-r2 8.3.07-r4 8.3.09 9999: Lund Monte Carlo high-energy physics event generator
