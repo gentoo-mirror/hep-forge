@@ -18,7 +18,7 @@ KEYWORDS="~amd64"
 RDEPEND="
 	>=dev-python/matplotlib-3.4[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.16.0[${PYTHON_USEDEP}]
-	dev-python/mplhep-data[${PYTHON_USEDEP}]
+	sci-physics/mplhep-data[${PYTHON_USEDEP}]
 	>=dev-python/uhi-0.2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
