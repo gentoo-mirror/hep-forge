@@ -8,8 +8,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	sci-physics/awkward
-	sci-physics/boost-histogram
+	dev-python/awkward
+	dev-python/boost-histogram
 	sci-physics/decaylanguage
 	sci-physics/hepstats
 	sci-physics/hepunits
@@ -22,5 +22,5 @@ RDEPEND="
 	sci-physics/pylhe
 	sci-physics/resample
 	sci-physics/uproot
-	sci-physics/vector
+	dev-python/vector
 "
