@@ -13,8 +13,8 @@ RDEPEND="
 	sci-physics/decaylanguage
 	sci-physics/hepstats
 	sci-physics/hepunits
-	sci-physics/hist
-	sci-physics/histoprint
+	dev-python/hist
+	dev-python/histoprint
     dev-python/iminuit
     dev-python/matplotlib
 	dev-python/numpy

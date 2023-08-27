@@ -417,7 +417,11 @@ default:
         <<: *images
       - PKG: [hist]
         VERSION: [2.7.1]
-        CATEGORY: ['sci-physics']
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [vector]
+        VERSION: [1.1.0]
+        CATEGORY: ['dev-python']
         <<: *images
 
 .config:
