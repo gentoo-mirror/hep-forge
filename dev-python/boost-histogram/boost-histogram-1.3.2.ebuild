@@ -4,7 +4,7 @@ PYTHON_COMPAT=( python3_{9..11} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
-DESCRIPTION="Python bindings for the C++14 Boost::Histogram library "
+DESCRIPTION="Python bindings for the C++14 Boost::Histogram library"
 HOMEPAGE="https://github.com/scikit-hep/boost-histogram"
 
 LICENSE="BSD"
