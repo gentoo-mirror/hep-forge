@@ -403,6 +403,14 @@ default:
         VERSION: [2.3.3]
         CATEGORY: ['dev-python']
         <<: *images
+      - PKG: [uhi]
+        VERSION: [0.3.3]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [hepstats]
+        VERSION: [0.7.0]
+        CATEGORY: ['dev-python']
+        <<: *images
 
 .config:
   before_script:
