@@ -423,6 +423,10 @@ default:
         VERSION: [1.1.0]
         CATEGORY: ['dev-python']
         <<: *images
+      - PKG: [uproot]
+        VERSION: [5.0.11]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .config:
   before_script:
