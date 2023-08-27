@@ -14,7 +14,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/numpy-1.18.0[${PYTHON_USEDEP}]
-	=dev-python/awkward_cpp-22[${PYTHON_USEDEP}]
+	=dev-python/awkward-cpp-22[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
     $(python_gen_cond_dep '
 		dev-python/importlib_resources[${PYTHON_USEDEP}]
