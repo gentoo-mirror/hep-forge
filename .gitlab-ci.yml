@@ -415,6 +415,10 @@ default:
         VERSION: [0.3.28]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [hist]
+        VERSION: [2.7.1]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .config:
   before_script:
