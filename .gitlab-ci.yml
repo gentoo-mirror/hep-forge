@@ -392,6 +392,14 @@ default:
         <<: *images
 
 
+.matrix9: &matrix9
+  parallel:
+    matrix:
+      - PKG: [awkward-cpp]
+        VERSION: [22]
+        CATEGORY: ['dev-python']
+        <<: *images
+
 .config:
   before_script:
     - emerge --sync || emaint -r ${REPO_NAME} sync
