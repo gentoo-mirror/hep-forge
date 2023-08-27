@@ -399,6 +399,10 @@ default:
         VERSION: [22]
         CATEGORY: ['dev-python']
         <<: *images
+      - PKG: [awkward]
+        VERSION: [2.3.3]
+        CATEGORY: ['dev-python']
+        <<: *images
 
 .config:
   before_script:
@@ -697,4 +701,27 @@ test8:
 qa8:
   extends: .qa
   <<: *matrix8
+
+
+
+
+check9:
+  extends: .check
+  <<: *matrix9
+
+warn9:
+  extends: .warn
+  <<: *matrix9
+
+build9:
+  extends: .build
+  <<: *matrix9
+
+test9:
+  extends: .test
+  <<: *matrix9
+
+qa9:
+  extends: .qa
+  <<: *matrix9
 
