@@ -392,6 +392,42 @@ default:
         <<: *images
 
 
+.matrix9: &matrix9
+  parallel:
+    matrix:
+      - PKG: [awkward-cpp]
+        VERSION: [22]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [awkward]
+        VERSION: [2.3.3]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [uhi]
+        VERSION: [0.3.3]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [hepstats]
+        VERSION: [0.7.0]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [mplhep]
+        VERSION: [0.3.28]
+        CATEGORY: ['sci-physics']
+        <<: *images
+      - PKG: [hist]
+        VERSION: [2.7.1]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [vector]
+        VERSION: [1.1.0]
+        CATEGORY: ['dev-python']
+        <<: *images
+      - PKG: [uproot]
+        VERSION: [5.0.11]
+        CATEGORY: ['sci-physics']
+        <<: *images
+
 .config:
   before_script:
     - emerge --sync || emaint -r ${REPO_NAME} sync
@@ -689,4 +725,27 @@ test8:
 qa8:
   extends: .qa
   <<: *matrix8
+
+
+
+
+check9:
+  extends: .check
+  <<: *matrix9
+
+warn9:
+  extends: .warn
+  <<: *matrix9
+
+build9:
+  extends: .build
+  <<: *matrix9
+
+test9:
+  extends: .test
+  <<: *matrix9
+
+qa9:
+  extends: .qa
+  <<: *matrix9
 
