@@ -10,10 +10,10 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-	Python package for converting Scikit-Learn pipelines to PMML.
+    hepstats is a library for statistical inference aiming to cover the needs High Energy Physics. It is part of the Scikit-HEP project.
 	</longdescription>
 	<upstream>
-		<remote-id type="pypi">sklearn2pmml</remote-id>
-		<remote-id type="github">jpmml/sklearn2pmml</remote-id>
+		<remote-id type="pypi">hepstats</remote-id>
+		<remote-id type="github">scikit-hep/hepstats</remote-id>
 	</upstream>
 </pkgmetadata>
