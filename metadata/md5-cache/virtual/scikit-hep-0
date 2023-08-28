@@ -1,0 +1,7 @@
+DEFINED_PHASES=-
+DESCRIPTION=Metapackage of Scikit-HEP project data analysis packages for Particle Physics.
+EAPI=8
+KEYWORDS=~amd64
+RDEPEND=dev-python/awkward dev-python/boost-histogram sci-physics/decaylanguage sci-physics/hepstats sci-physics/hepunits dev-python/hist dev-python/histoprint dev-python/iminuit dev-python/matplotlib dev-python/numpy sci-physics/particle sci-physics/pylhe sci-physics/resample sci-physics/uproot dev-python/vector
+SLOT=0
+_md5_=f5540babb97f1f329572edb0cd479452
