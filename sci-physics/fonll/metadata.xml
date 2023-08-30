@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+    <doc lang="arxiv">https://arxiv.org/hep-ph/980340</doc>
+    <doc lang="arxiv">https://arxiv.org/hep-ph/0102134</doc>
+	<longdescription lang="en">
+    Program to calculate heavy quark transverse momentum and rapidity distributions in hadron-hadron and photon-hadron collisions, matching Fixed Order next-to-leading order terms and Next-to-Leading-Log large-p_T resummation.
+	</longdescription>
+</pkgmetadata>
