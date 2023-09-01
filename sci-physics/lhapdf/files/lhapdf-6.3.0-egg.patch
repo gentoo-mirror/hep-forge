@@ -5,7 +5,7 @@
  ## Always force setup.py, it's not good at guessing what needs to rebuild
  all-local: fix-out-of-source
 -	$(PYEXT_ENV) $(PYTHON) setup.py install --install-lib=build/ --force
-+	$(PYEXT_ENV) $(PYTHON) setup.py install --single-version-externally-managed --root=/ --install-lib=build/ --force
++	$(PYEXT_ENV) $(PYTHON) setup.py install --single-version-externally-managed --root=/ --install-lib=$(S)/build/ --force
  
  install-exec-local:
 -	$(PYEXT_ENV) $(PYTHON) setup.py install --prefix=$(DESTDIR)$(prefix) --force
