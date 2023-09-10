@@ -94,7 +94,7 @@ sci-physics/pineappl-capi 0.6.0: PineAPPL is not an extension of APPLgrid
 sci-physics/powheg-box-v2-W 4027 9999: POWHEG BOX V2 W process
 sci-physics/powheg-box-v2-Z 4027 9999: POWHEG BOX V2 Z process
 sci-physics/powheg-box-v2-Zj 4027 9999: POWHEG BOX V2 Zj process
-sci-physics/powheg-box-v2-dijet 4027 9999: POWHEG BOX V2 dijet process
+sci-physics/powheg-box-v2-dijet 4027 4027-r1 9999: POWHEG BOX V2 dijet process
 sci-physics/powheg-box-v2-directphoton 4027 9999: POWHEG BOX V2 direct photon process
 sci-physics/powheg-box-v2-hvq 4027 9999: POWHEG BOX V2 hvq process
 sci-physics/powheg-box-v2-trijet 4027 9999: POWHEG BOX V2 trijet process
