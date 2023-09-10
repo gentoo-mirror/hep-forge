@@ -14,6 +14,7 @@ IUSE=""
 KEYWORDS="~amd64"
 
 RDEPEND="
+	virtual/fortran
 	sci-physics/lhapdf
 	sci-physics/fastjet
 "
