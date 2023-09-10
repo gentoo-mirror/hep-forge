@@ -15,8 +15,8 @@ RDEPEND="
 	sci-physics/hepunits
 	dev-python/hist
 	dev-python/histoprint
-    dev-python/iminuit
-    dev-python/matplotlib
+	dev-python/iminuit
+	dev-python/matplotlib
 	dev-python/numpy
 	sci-physics/particle
 	sci-physics/pylhe
