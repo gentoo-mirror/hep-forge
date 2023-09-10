@@ -8,7 +8,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=dev-python/awkward-2.3.* <dev-python/awkward-2.4
+	>=dev-python/awkward-2.3.0 <dev-python/awkward-2.4
 	>=dev-python/boost-histogram-1.3.0 <dev-python/boost-histogram-1.4
 	>=sci-physics/decaylanguage-0.16.0 <sci-physics/decaylanguage-0.17
 	>=sci-physics/hepstats-0.7.0 <sci-physics/hepstats-0.8
