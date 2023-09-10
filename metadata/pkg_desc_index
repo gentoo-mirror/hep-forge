@@ -136,4 +136,4 @@ sys-cluster/modules 4.6.0-r1: Dynamic modification of a user's environment via m
 virtual/feyntools 0: FeynTools is a collection of FeynArts, FormCalc and LoopTools.
 virtual/heptools 0: HEPTools is a collection of LHAPDF, HEPMC and PYTHIA.
 virtual/powheg-box-v2 4027 9999: NLO calculations in shower Monte Carlo programs according to the POWHEG method
-virtual/scikit-hep 0: Metapackage of Scikit-HEP project data analysis packages for Particle Physics.
+virtual/scikit-hep 0 2023.08.01: Metapackage of Scikit-HEP project data analysis packages for Particle Physics.
