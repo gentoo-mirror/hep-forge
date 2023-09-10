@@ -13,6 +13,6 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/numpy-1.21[${PYTHON_USEDEP}]
-	>=dev-python/scipy-1.110${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.11[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
