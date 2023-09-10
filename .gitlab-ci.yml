@@ -427,6 +427,10 @@ default:
         VERSION: [5.0.11]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [scikit-hep]
+        VERSION: [0, 2023.08.01]
+        CATEGORY: ['virtual']
+        <<: *images
 
 .config:
   before_script:
