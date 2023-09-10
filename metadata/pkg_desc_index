@@ -3,12 +3,12 @@ dev-python/archspec 0.1.4 0.2.0: labels for various aspects of a system architec
 dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
 dev-python/awkward 2.3.3: Manipulate JSON-like data with NumPy-like idioms.
 dev-python/awkward-cpp 22: awkward-cpp
-dev-python/boost-histogram 1.3.2: Python bindings for the C++14 Boost::Histogram library
+dev-python/boost-histogram 1.3.0 1.3.2: Python bindings for the C++14 Boost::Histogram library
 dev-python/bounded-pool-executor 0.0.3: Bounded Process and Thread Pool Executor
 dev-python/dm-tree 0.1.8: tree is a library for working with nested data structures.
 dev-python/docformatter 1.5.0: Formats docstrings to follow PEP 257.
 dev-python/flatdict 4.0.0 4.0.1: Python module for interacting with nested dicts
-dev-python/hist 2.7.1: Histogramming for analysis powered by boost-histogram
+dev-python/hist 2.7.0 2.7.1: Histogramming for analysis powered by boost-histogram
 dev-python/histoprint 2.4.0: Pretty print histograms to the console
 dev-python/hunter 3.6.0: Hunter is a flexible code tracing toolkit
 dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbitrary precision.
@@ -53,7 +53,7 @@ sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
 sci-physics/collier 1.2.5 1.2.7 1.2.7-r1 1.2.7-r2: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
-sci-physics/decaylanguage 0.15.2 0.15.3: DecayLanguage: describe, manipulate and convert particle decays
+sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0: DecayLanguage: describe, manipulate and convert particle decays
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
 sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
@@ -73,7 +73,7 @@ sci-physics/hell 3.0 3.1: A small-x resummation code
 sci-physics/hepi 0.2.8 9999: Python interface for gluing together several HEP programs
 sci-physics/hepmc 2.06.09-r2 2.06.11 3.2.5 3.2.5-r1 3.2.5-r2 3.2.5-r3 3.2.5_p20230225 3.2.5_p20230225-r1 3.2.5_p20230225-r2 3.2.6 9999: Event Record for Monte Carlo Generators
 sci-physics/hepstats 0.7.0: Statistics tools and utilities.
-sci-physics/hepunits 2.3.1 2.3.1-r1 2.3.2 9999: units and constants in the HEP system of units
+sci-physics/hepunits 2.3.0 2.3.1 2.3.1-r1 2.3.2 9999: units and constants in the HEP system of units
 sci-physics/herwig 6.5.21-r2 7.2.3 7.2.3-r1: Herwig is a multi-purpose particle physics event generator.
 sci-physics/hoppet 1.2.0: Higher Order Perturbative Parton Evolution Toolkit
 sci-physics/jaxodraw 2.0.1-r3: Java program for drawing Feynman diagrams
@@ -123,7 +123,7 @@ sci-physics/spheno 3.3.8-r2 4.0.5: SPheno stands for S(upersymmetric) Pheno(meno
 sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 1.0.0 9999: TOPDRAWER renders top files.
-sci-physics/uproot 5.0.11: ROOT I/O in pure Python and Numpy.
+sci-physics/uproot 5.0.0 5.0.11: ROOT I/O in pure Python and Numpy.
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
 sci-physics/xfitter 2.2.0: PDF fitting tool
 sci-physics/yoda 1.9.7-r3 1.9.8 9999: Yet more Objects for (High Energy Physics) Data Analysis
