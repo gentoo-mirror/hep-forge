@@ -34,7 +34,7 @@ src_unpack() {
 }
 
 src_compile() {
-	FFLAGS="${FFLAGS} -I/usr/include -I$(lhapdf-config --incdir)" emake pwhg_main
+	FFLAGS="${FFLAGS} -I${EPREFIX}/usr/include -I$(lhapdf-config --incdir)" emake pwhg_main
 	mv pwhg_main pwhg_main_${MY_PN}
 }
 
