@@ -20,7 +20,7 @@ RDEPEND="
 	dev-python/numpy
 	sci-physics/particle
 	sci-physics/pylhe
-	sci-physics/resample
+	dev-python/resample
 	sci-physics/uproot
 	dev-python/vector
 "
