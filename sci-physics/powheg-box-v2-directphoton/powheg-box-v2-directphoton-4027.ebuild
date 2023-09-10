@@ -14,7 +14,6 @@ IUSE=""
 KEYWORDS="~amd64"
 
 RDEPEND="
-	virtual/fortran
 	sci-physics/looptools
 	sci-physics/lhapdf
 "
