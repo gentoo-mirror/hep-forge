@@ -13,6 +13,7 @@ LICENSE="GPL-3+"
 IUSE="doc examples"
 
 RDEPEND="
+	virtual/fortran
 	sci-physics/looptools
 	sci-physics/lhapdf
 "
