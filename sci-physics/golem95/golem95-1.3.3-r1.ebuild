@@ -29,7 +29,7 @@ src_prepare() {
 	# if uses looptools
 	if use looptools; then
 		# add -looptools to pkgconfig
-		sed -i '/Libs:/s/$/-looptools/' golem95.pc.in || die
+		sed -i '/Libs:/s/$/ -looptools/' golem95.pc.in || die
 	fi
 	eautoreconf
 }
