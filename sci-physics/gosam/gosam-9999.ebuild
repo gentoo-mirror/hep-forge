@@ -45,5 +45,5 @@ src_compile() {
 }
 
 src_install() {
-   "${EPYTHON}" setup.py install --prefix="${D}/usr"
+   "${EPYTHON}" setup.py install --single-version-externally-managed --root=/ --prefix="${D}/usr"
 }
