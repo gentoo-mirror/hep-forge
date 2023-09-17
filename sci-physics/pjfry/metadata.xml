@@ -11,6 +11,8 @@
 	</maintainer>
 
 	<longdescription lang="en">
-	Ninja is a public C++ library which implements the Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
+	PJFry 1.0.0 - one loop tensor integral form-factors library
+	The algorithms are based on the results of http://arxiv.org/abs/1009.4436
+	Please cite arXiv:1009.4436 [hep-ph] if you use PJFry in scientific publications.
 	</longdescription>
 </pkgmetadata>
