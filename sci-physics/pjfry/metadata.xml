@@ -15,4 +15,7 @@
 	The algorithms are based on the results of http://arxiv.org/abs/1009.4436
 	Please cite arXiv:1009.4436 [hep-ph] if you use PJFry in scientific publications.
 	</longdescription>
+	<use>
+		<flag name="oneloop">Use oneloop</flag>
+		<flag name="qcdloop">Use qcdloop</flag>
 </pkgmetadata>
