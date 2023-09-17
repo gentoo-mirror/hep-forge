@@ -12,6 +12,4 @@
   <longdescription>
   FF is a library to evaluate one-loop integrals needed for radiative corrections to scattering processes in particle physics. The idea of such a library is based on FormF by M. Veltman. Unfortunately this only runs in CDC and 68000 assembler, and uses very high precision (more than 100 digits) to overcome the numerical instabilities that plague these integrals. FF uses alternative algorithms which run in double precision Fortran 77. It is available by anonymous ftp. 
   </longdescription>
-
-
 </pkgmetadata>
