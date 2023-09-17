@@ -9,8 +9,8 @@ inherit autotools fortran-2 python-single-r1
 DESCRIPTION="Fast predictions for Drell-Yan processes including qt-resummation"
 HOMEPAGE="https://dyturbo.hepforge.org/"
 
-SRC_URI="https://gosam.hepforge.org/gosam-2.0-latest.tar.gz" -> ${P}.tar.gz" # weird hepforge download names
-#S="${WORKDIR}/${P}"
+SRC_URI="https://gosam.hepforge.org/gosam-2.0-latest.tar.gz -> ${P}.tar.gz" # weird hepforge download names
+S="${WORKDIR}/${PN}"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-3"
