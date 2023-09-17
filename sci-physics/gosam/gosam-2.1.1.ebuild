@@ -5,13 +5,17 @@ EAPI=8
 PYTHON_COMPAT=( python3_{9..11} )
 DISTUTILS_USE_PEP517=standalone
 DISTUTILS_SINGLE_IMPL=1
-inherit fortran-2 distutils-r1
+inherit fortran-2 distutils-r1 git-r3
 
 DESCRIPTION="Fast predictions for Drell-Yan processes including qt-resummation"
 HOMEPAGE="https://dyturbo.hepforge.org/"
 
-SRC_URI="https://gosam.hepforge.org/gosam-2.0-latest.tar.gz -> ${P}.tar.gz" # weird hepforge download names
-S="${WORKDIR}/${PN}"
+#SRC_URI="https://github.com/gudrunhe/gosam/releases/download/2.1.1/gosam-2.1.1-4b98559.tar.gz -> ${P}.tar.gz"
+EGIT_REPO_URI="https://github.com/gudrunhe/gosam" 
+if [[ ${PV} != 9999 ]]; then
+    EGIT_COMMIT="${PV}"
+fi
+S="${WORKDIR}/${P}"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-3"
@@ -41,5 +45,5 @@ src_compile() {
 }
 
 src_install() {
-    epython setup.py install --prefix="${D}/"
+   "${EPYTHON}" setup.py install --prefix="${D}/usr"
 }
