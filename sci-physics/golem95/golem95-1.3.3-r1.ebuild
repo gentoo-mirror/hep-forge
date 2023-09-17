@@ -26,6 +26,11 @@ BDEPEND="
 
 src_prepare() {
 	default
+	# if uses looptools
+	if use looptools; then
+		# add -looptools to pkgconfig
+		sed -i '/Libs:/s/$/-looptools/' golem95.pc.in || die
+	fi
 	eautoreconf
 }
 
@@ -34,8 +39,6 @@ src_configure() {
 	# Fix that qcdloop and oneloop are already installed
 	sed -i 's/lib_LTLIBRARIES.*/lib_LTLIBRARIES = libgolem.la/g' Makefile.am || die
 	econf --with-avh_olo="${ESYSROOT}"/usr/$(get_libdir)/libavh_olo.so --with-avh_olo_precision=double --with-precision=double $(use_with looptools looptools "${ESYSROOT}"/usr) FCFLAGS="${FCFLAGS} -std=legacy -fPIC -I${ESYSROOT}/usr/include"
-	# fix old vs new oneloop parameters
-	#sed -i 's/avh_olo_kinds/avh_olo_dp_kinds/g' samurai/madds.f90 || die
 }
 
 src_compile() {
