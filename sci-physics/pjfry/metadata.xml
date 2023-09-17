@@ -18,4 +18,5 @@
 	<use>
 		<flag name="oneloop">Use oneloop</flag>
 		<flag name="qcdloop">Use qcdloop</flag>
+	</use>
 </pkgmetadata>
