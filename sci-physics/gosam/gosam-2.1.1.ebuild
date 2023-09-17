@@ -2,7 +2,7 @@
 # Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 EAPI=8
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_11 )
 DISTUTILS_USE_PEP517=standalone
 DISTUTILS_SINGLE_IMPL=1
 inherit fortran-2 distutils-r1 git-r3
@@ -46,4 +46,6 @@ src_compile() {
 
 src_install() {
    "${EPYTHON}" setup.py install --prefix="${D}/usr"
+   # fix install dir
+   sed -i -e "s#DATA_DIR\s*=.*#DATA_DIR = '${EPREFIX}/usr/share/golem'#g" "${D}/usr/lib/python3.11/site-packages/golem/installation.py"
 }
