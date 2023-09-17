@@ -57,7 +57,7 @@ sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0: DecayLanguage: describe, manipul
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
 sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
-sci-physics/evtgen 02.02.00: 
+sci-physics/evtgen 01.07.00 02.02.00 02.02.01: 
 sci-physics/fastjet 3.0.6 3.0.6-r3 3.4.0-r2 3.4.1: A software package for jet finding in pp and e+e- collisions
 sci-physics/fastjet-contrib 1.049-r4 1.051: 3rd party extensions of FastJet.
 sci-physics/fastnlo 2.5: fast pQCD calculations for hadron-induced processes
@@ -76,7 +76,7 @@ sci-physics/hepi 0.2.8 9999: Python interface for gluing together several HEP pr
 sci-physics/hepmc 2.06.09-r2 2.06.11 3.2.5 3.2.5-r1 3.2.5-r2 3.2.5-r3 3.2.5_p20230225 3.2.5_p20230225-r1 3.2.5_p20230225-r2 3.2.6 9999: Event Record for Monte Carlo Generators
 sci-physics/hepstats 0.7.0: Statistics tools and utilities.
 sci-physics/hepunits 2.3.0 2.3.1 2.3.1-r1 2.3.2 9999: units and constants in the HEP system of units
-sci-physics/herwig 6.5.21-r2 7.2.3 7.2.3-r1: Herwig is a multi-purpose particle physics event generator.
+sci-physics/herwig 6.5.21-r2 7.2.3 7.2.3-r2: Herwig is a multi-purpose particle physics event generator.
 sci-physics/hoppet 1.2.0: Higher Order Perturbative Parton Evolution Toolkit
 sci-physics/jaxodraw 2.0.1-r3: Java program for drawing Feynman diagrams
 sci-physics/lhapdf 6.2.3-r1 6.3.0-r3 6.3.0-r4 6.3.0-r5 6.4.0 6.5.2 6.5.3 6.5.3-r1 6.5.4 9999: Les Houches Parton Density Function unified library
