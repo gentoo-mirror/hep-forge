@@ -8,7 +8,11 @@ MY_PN="Herwig"
 MY_PF=${MY_PN}-${PV}
 
 DESCRIPTION="Herwig is a multi-purpose particle physics event generator."
-SRC_URI="https://herwig.hepforge.org/downloads?f=${MY_PF}.tar.bz2"
+SRC_URI="
+	https://herwig.hepforge.org/downloads?f=${MY_PF}.tar.bz2
+	https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14lo.tar.gz
+	https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14nlo.tar.gz
+	"
 HOMEPAGE="https://herwig.hepforge.org/"
 
 S=${WORKDIR}/${MY_PF}
@@ -56,7 +60,7 @@ src_install() {
 	#lhapdf update || die
 	#lhapdf install CT14lo || die
 	#lhapdf install CT14nlo || die
-	default
+	LHAPDF_DATA_PATH="${WORKDIR}" default
 }
 
 #--prefix=$INSTALL_LOC --with-thepeg=$INSTALL_LOC \

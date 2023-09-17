@@ -7,7 +7,7 @@ inherit autotools
 
 DESCRIPTION="Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals."
 HOMEPAGE="https://ninja.hepforge.org/"
-SRC_URI="http://www.hepforge.org/archive/ninja/${P}.tar.gz"
+SRC_URI="https://ninja.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-3+"

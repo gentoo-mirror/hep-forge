@@ -7,7 +7,7 @@ inherit autotools
 
 DESCRIPTION="Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level."
 HOMEPAGE="https://samurai.hepforge.org/"
-SRC_URI="http://www.hepforge.org/archive/samurai/${P}.tar.gz"
+SRC_URI="https://samurai.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-3+"
