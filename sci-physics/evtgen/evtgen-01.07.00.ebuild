@@ -1,14 +1,12 @@
 EAPI=8
 
-CMAKE_MAKEFILE_GENERATOR="emake"
-
-inherit cmake
+inherit fortran-2
 
 MY_PN="EvtGen"
 MY_P=${MY_PN}-${PV}
 
 DESCRIPTION=""
-SRC_URI="https://evtgen.hepforge.org/downloads?f=${MY_P}.tar.gz"
+SRC_URI="https://evtgen.hepforge.org/downloads?f=${MY_P}.tar.gz -> ${P}.tar.gz"
 HOMEPAGE="https://evtgen.hepforge.org/"
 
 S="${WORKDIR}/${MY_PN}/R$(ver_rs 1-2 '-')"
@@ -19,10 +17,9 @@ IUSE="pythia photos tauola"
 
 RDEPEND="
 	sci-physics/hepmc:2=
-	sci-physics/hepmc:3=
-	pythia? ( >=sci-physics/pythia-8.2.01 )
-	photos? ( >=sci-physics/photos-3.64 )
-	tauola? ( >=sci-physics/tauola-1.1.8 )
+	pythia? ( sci-physics/pythia )
+	photos? ( sci-physics/photos )
+	tauola? ( sci-physics/tauola )
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
@@ -30,21 +27,15 @@ BDEPEND="
 "
 
 src_configure() {
-	local mycmakeargs=(
-		-DEVTGEN_HEPMC3=ON
-		-DEVTGEN_PYTHIA=$(usex pythia ON OFF)
-		-DEVTGEN_PHOTOS=$(usex photos ON OFF)
-		-DEVTGEN_TAUOLA=$(usex tauola ON OFF)
-	)
-	cmake_src_configure
+	./configure --prefix=${D}/usr #--hepmcdir=${EPREFIX}/usr --pythiadir=${EPREFIX}/usr --photosdir=${EPREFIX}/usr --tauoladir=${EPREFIX}/usr
 }
 
 src_compile() {
-	#export MAKEOPTS=-j1
-	cmake_src_compile
+	# force single threaded build
+	MAKEOPTS="$MAKEOPTS -j1" emake
 }
 
 src_install() {
-	cmake_src_install
+	emake install
 }
 
