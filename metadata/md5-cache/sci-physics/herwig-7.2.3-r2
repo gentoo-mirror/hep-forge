@@ -1,6 +1,6 @@
 BDEPEND=virtual/fortran sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71-r5 >=sys-devel/libtool-2.4.7
 DEFINED_PHASES=configure install prepare setup
-DEPEND=>=dev-libs/boost-1.62 >=sci-libs/gsl-2.2.1 >=sci-physics/lhapdf-6.1.6[python(+),python_single_target_python3_10(-)?,python_single_target_python3_11(-)?] >=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc,rivet] =sci-physics/evtgen-01.07.00[pythia] pythia? ( >=sci-physics/pythia-8.0.0 ) python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 )
+DEPEND=>=dev-libs/boost-1.62 >=sci-libs/gsl-2.2.1 >=sci-physics/lhapdf-6.1.6[python(+),python_single_target_python3_10(-)?,python_single_target_python3_11(-)?] >=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc,rivet] sci-physics/evtgen[pythia] pythia? ( >=sci-physics/pythia-8.0.0 ) python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 )
 DESCRIPTION=Herwig is a multi-purpose particle physics event generator.
 EAPI=8
 HOMEPAGE=https://herwig.hepforge.org/
@@ -8,9 +8,9 @@ INHERIT=python-single-r1 autotools
 IUSE=pythia python_single_target_python3_10 python_single_target_python3_11
 KEYWORDS=~amd64
 LICENSE=GPL-3+
-RDEPEND=>=dev-libs/boost-1.62 >=sci-libs/gsl-2.2.1 >=sci-physics/lhapdf-6.1.6[python(+),python_single_target_python3_10(-)?,python_single_target_python3_11(-)?] >=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc,rivet] =sci-physics/evtgen-01.07.00[pythia] pythia? ( >=sci-physics/pythia-8.0.0 ) python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 )
+RDEPEND=>=dev-libs/boost-1.62 >=sci-libs/gsl-2.2.1 >=sci-physics/lhapdf-6.1.6[python(+),python_single_target_python3_10(-)?,python_single_target_python3_11(-)?] >=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc,rivet] sci-physics/evtgen[pythia] pythia? ( >=sci-physics/pythia-8.0.0 ) python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 )
 REQUIRED_USE=^^ ( python_single_target_python3_10 python_single_target_python3_11 )
 SLOT=7
 SRC_URI=https://herwig.hepforge.org/downloads?f=Herwig-7.2.3.tar.bz2 https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14lo.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14nlo.tar.gz
 _eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0	python-utils-r1	12aa0037eb004139215ff04894d52b28	python-single-r1	75118e916668a74c660a13b0ecb22562	gnuconfig	b6b3e92f8b8c996400074b5f61a59256	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	6ae9a4347149b19a112caa1182d03bde
-_md5_=9fcdb1dfc7d873fd20811e37fb24717e
+_md5_=026c2cc92deb976bcf26234078c8329f

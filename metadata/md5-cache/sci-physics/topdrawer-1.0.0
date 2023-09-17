@@ -11,4 +11,4 @@ RESTRICT=bindist mirror
 SLOT=0
 SRC_URI=https://gitlab.com/APN-Pucky/topdrawer3/-/archive/1.0.0/topdrawer-1.0.0.tar.gz
 _eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991
-_md5_=cacc67f27deebf671fbec3f6acd8f61c
+_md5_=953ae266b843d570abdac17bccee36ad

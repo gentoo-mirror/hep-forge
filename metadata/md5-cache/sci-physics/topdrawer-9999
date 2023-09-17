@@ -9,4 +9,4 @@ PROPERTIES=live
 RESTRICT=bindist mirror
 SLOT=0
 _eclasses_=git-r3	2358a7b20091609e24bd3a83b3ac5991
-_md5_=2466eadbd81f626e13865b1a72ce8387
+_md5_=5326c6e9386fde602f113bc14254c0be
