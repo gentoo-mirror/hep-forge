@@ -10,7 +10,7 @@ inherit fortran-2 distutils-r1
 DESCRIPTION="Fast predictions for Drell-Yan processes including qt-resummation"
 HOMEPAGE="https://dyturbo.hepforge.org/"
 
-SRC_URI="https://gosam.hepforge.org/gosam-2.0-latest.tar.gz -> ${P}.tar.gz" # weird hepforge download names
+SRC_URI="https://github.com/gudrunhe/gosam/archive/refs/tags/2.1.1.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/${PN}"
 KEYWORDS="~amd64"
 
@@ -41,5 +41,5 @@ src_compile() {
 }
 
 src_install() {
-    epython setup.py install --prefix="${D}/"
+   "${EPYTHON}" setup.py install --prefix="${D}/"
 }

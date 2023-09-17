@@ -10,8 +10,15 @@
     <name>Gentoo Physics Project</name>
   </maintainer>
   <longdescription>
-  The program golem95 is a package for the numerical evaluation of integrals and tensor form factors entering the calculation of one-loop amplitudes with up to six external legs, written in Fortran 95.
-  A package for evaluation of scalar and tensor one-loop integrals 
+  GoSam is a general one-loop evaluator for matrix elements.
+The program produces Fortran 90 code from a given process
+description by evaluating Feynman diagrams and translating
+the associated one-loop diagrams into code suitable for the
+evaluation with Ninja, Golem95 and/or Samurai.
   </longdescription>
+
+  <upstream>
+    <remote-id type="github">gudrunhe/gosam</remote-id>
+  </upstream>
 
 </pkgmetadata>
