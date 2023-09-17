@@ -61,6 +61,8 @@ sci-physics/openloops:extra - Build libs with extra
 sci-physics/photos:hepmc - Build with hepmc 2
 sci-physics/photos:pythia - Build with pythia
 sci-physics/photos:tauola - Build with tauola
+sci-physics/pjfry:oneloop - Use oneloop
+sci-physics/pjfry:qcdloop - Use qcdloop
 sci-physics/pythia:fastjet - Build jets using the sci-physics/fastjet package
 sci-physics/pythia:hepmc - Adds support for High Energy Physics Monte Carlo Generators sci-physics/hepmc
 sci-physics/pythia:hepmc2 - Adds support for High Energy Physics Monte Carlo Generators 2 sci-physics/hepmc

@@ -1,0 +1,16 @@
+BDEPEND=virtual/fortran sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71-r5 >=sys-devel/libtool-2.4.7
+DEFINED_PHASES=compile configure install prepare
+DEPEND=oneloop? ( sci-physics/oneloop ) qcdloop? ( >=sci-physics/qcdloop-2.0.0 )
+DESCRIPTION=library for one-loop tensor integrals
+EAPI=8
+HOMEPAGE=https://github.com/Vayu/PJFry/
+INHERIT=autotools
+IUSE=oneloop +qcdloop
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=oneloop? ( sci-physics/oneloop ) qcdloop? ( >=sci-physics/qcdloop-2.0.0 )
+REQUIRED_USE=|| ( oneloop qcdloop )
+SLOT=0
+SRC_URI=https://github.com/Vayu/PJFry/archive/refs/tags/v1.0.0-beta.10.tar.gz -> pjfry-1.0.0.tar.gz
+_eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	6ae9a4347149b19a112caa1182d03bde
+_md5_=a516c77e4554ca5f7d06e12759485854

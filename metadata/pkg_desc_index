@@ -93,6 +93,7 @@ sci-physics/particle 0.23.0 9999: PDG particle data and identification codes
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64-r1: Monte Carlo for bremsstrahlung in the decay of particles and resonances
 sci-physics/pineappl-capi 0.6.0: PineAPPL is not an extension of APPLgrid
+sci-physics/pjfry 1.0.0: library for one-loop tensor integrals
 sci-physics/powheg-box-v2-W 4027 9999: POWHEG BOX V2 W process
 sci-physics/powheg-box-v2-Z 4027 9999: POWHEG BOX V2 Z process
 sci-physics/powheg-box-v2-Zj 4027 9999: POWHEG BOX V2 Zj process
