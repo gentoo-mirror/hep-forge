@@ -14,7 +14,4 @@
   A package for evaluation of scalar and tensor one-loop integrals 
   </longdescription>
 
-	<use>
-		<flag name="looptools">use looptools</flag>
-	</use>
 </pkgmetadata>

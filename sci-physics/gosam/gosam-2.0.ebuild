@@ -4,7 +4,7 @@
 EAPI=8
 PYTHON_COMPAT=( python3_{9..11} )
 DISTUTILS_USE_PEP517=setuptools
-inherit autotools fortran-2 python-single-r1
+inherit fortran-2 python-single-r1
 
 DESCRIPTION="Fast predictions for Drell-Yan processes including qt-resummation"
 HOMEPAGE="https://dyturbo.hepforge.org/"
@@ -18,7 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+
 RDEPEND="
+    ${PYTHON_DEPS}
     >=sci-mathematics/form-4.0.0
     sci-physics/qgraf
     sci-physics/ninja
