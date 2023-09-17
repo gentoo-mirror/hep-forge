@@ -10,11 +10,8 @@
     <name>Gentoo Physics Project</name>
   </maintainer>
   <longdescription>
-  The program golem95 is a package for the numerical evaluation of integrals and tensor form factors entering the calculation of one-loop amplitudes with up to six external legs, written in Fortran 95.
-  A package for evaluation of scalar and tensor one-loop integrals 
+  FF is a library to evaluate one-loop integrals needed for radiative corrections to scattering processes in particle physics. The idea of such a library is based on FormF by M. Veltman. Unfortunately this only runs in CDC and 68000 assembler, and uses very high precision (more than 100 digits) to overcome the numerical instabilities that plague these integrals. FF uses alternative algorithms which run in double precision Fortran 77. It is available by anonymous ftp. 
   </longdescription>
 
-	<use>
-		<flag name="looptools">use looptools</flag>
-	</use>
+
 </pkgmetadata>
