@@ -34,7 +34,7 @@ src_configure() {
 
 src_compile() {
 	# single thread force needed since fortan mods depend on each other
-	export MAKEOPTS=-j1
+	export MAKEOPTS="$MAKEOPTS -j1"
 	default
 }
 

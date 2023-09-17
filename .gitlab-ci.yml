@@ -431,6 +431,10 @@ default:
         VERSION: [0, 2023.08.01]
         CATEGORY: ['virtual']
         <<: *images
+      - PKG: [gosam]
+        VERSION: [9999, 2.1.1]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .config:
   before_script:
