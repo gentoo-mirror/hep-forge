@@ -9,7 +9,7 @@ DESCRIPTION="A library for evaluating one-loop integrals"
 HOMEPAGE="https://www.nikhef.nl//~t68/ff/"
 
 SRC_URI="http://www.nikhef.nl/~t68/ff/ff.tar.gz -> ${P}.tar.gz" # weird hepforge download names
-#S="${WORKDIR}/${P}"
+S="${WORKDIR}/${PN}"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
@@ -22,9 +22,10 @@ DEPEND="${RDEPEND}"
 BDEPEND=""
 
 src_compile() {
-    emake
+    emake FFLAGS="-std=legacy ${FFLAGS}"
 }
 
 src_install() {
-    emake DESTDIR="${D}" install
+    mkdir -p "${D}/usr/$(get_libdir)"
+    emake DEST="${D}/usr/$(get_libdir)" install
 }
