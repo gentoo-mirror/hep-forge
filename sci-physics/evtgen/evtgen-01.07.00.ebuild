@@ -37,6 +37,7 @@ src_configure() {
 }
 
 src_compile() {
+	export MAKEOPTS="$MAKEOPTS -j1"
 	emake
 }
 
