@@ -78,16 +78,6 @@ diff -r a4c4f60ba4f7 src/EvtGenModels/EvtCBTo3piMPP.cpp
 diff -r a4c4f60ba4f7 configure
 --- a/configure Thu May 11 12:16:17 2017 +0100
 +++ b/configure Thu May 11 12:47:43 2017 +0100
-@@ -158,3 +158,3 @@
- #
--CXX=g++
-+CXX="%s"
- CXXFLAGS_OPT="-O2 -Wall"
-@@ -163,3 +163,3 @@
- CFLAGS_DBG=-g
--FC=gfortran
-+FC="%s"
- FFLAGS_OPT="-O2 -Wuninitialized"
 @@ -179,116 +179,18 @@
  #
  # Find platform.
