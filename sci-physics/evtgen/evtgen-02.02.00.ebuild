@@ -20,7 +20,7 @@ IUSE="pythia photos tauola"
 RDEPEND="
 	sci-physics/hepmc:2=
 	sci-physics/hepmc:3=
-	pythia? ( >=sci-physics/pythia-8.2.01 )
+	pythia? ( >=sci-physics/pythia-8.3.0 )
 	photos? ( >=sci-physics/photos-3.64 )
 	tauola? ( >=sci-physics/tauola-1.1.8 )
 "
