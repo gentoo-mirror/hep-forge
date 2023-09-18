@@ -57,7 +57,7 @@ sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0: DecayLanguage: describe, manipul
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
 sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
-sci-physics/evtgen 02.02.00 02.02.01: 
+sci-physics/evtgen 01.07.00 02.02.00 02.02.01: 
 sci-physics/fastjet 3.0.6 3.0.6-r3 3.4.0-r2 3.4.1: A software package for jet finding in pp and e+e- collisions
 sci-physics/fastjet-contrib 1.049-r4 1.051: 3rd party extensions of FastJet.
 sci-physics/fastnlo 2.5: fast pQCD calculations for hadron-induced processes

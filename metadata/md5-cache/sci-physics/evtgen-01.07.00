@@ -1,0 +1,12 @@
+BDEPEND=virtual/fortran
+DEFINED_PHASES=compile configure install
+DEPEND=sci-physics/hepmc:2= sci-physics/hepmc:3= pythia? ( <sci-physics/pythia-8.3 ) photos? ( >=sci-physics/photos-3.64 ) tauola? ( >=sci-physics/tauola-1.1.8 )
+EAPI=8
+HOMEPAGE=https://evtgen.hepforge.org/
+IUSE=pythia photos tauola
+KEYWORDS=~amd64
+LICENSE=GPL-3+
+RDEPEND=sci-physics/hepmc:2= sci-physics/hepmc:3= pythia? ( <sci-physics/pythia-8.3 ) photos? ( >=sci-physics/photos-3.64 ) tauola? ( >=sci-physics/tauola-1.1.8 )
+SLOT=0
+SRC_URI=https://evtgen.hepforge.org/downloads?f=EvtGen-01.07.00.tar.gz -> evtgen-01.07.00.tar.gz
+_md5_=09fe9e9c332ddc4bcfdf05999c381d55
