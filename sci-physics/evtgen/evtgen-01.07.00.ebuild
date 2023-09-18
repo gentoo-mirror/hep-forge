@@ -24,12 +24,11 @@ BDEPEND="
 	virtual/fortran
 "
 
-PATCHES=(
-	"$(usex herwig ${FILESDIR}/${PN}-01.07.00-herwig.patch)"
-)
-
 src_prepare() {
 	default
+	if use herwig; then
+		eapply "${FILESDIR}/${PN}-01.07.00-herwig.patch"
+	fi
 	sed -i -e 's/FLIBS=.*/FLIBS="-lgfortran"/g' configure
 	sed -i -e "s#{PREFIX}/lib#{PREFIX}/$(get_libdir)#g" Makefile
 }
