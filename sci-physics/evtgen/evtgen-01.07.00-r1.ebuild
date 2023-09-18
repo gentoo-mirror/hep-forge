@@ -28,11 +28,12 @@ BDEPEND="
 src_prepare() {
 	default
 	sed -i -e 's/FLIBS=.*/FLIBS="-lgfortran"/g' configure
+	sed -i -e "s#{PREFIX}/lib#{PREFIX}/$(get_libdir)#g" Makefile
 }
 
 src_configure() {
 	
-	./configure --hepmcdir=${EPREFIX}/usr --pythiadir=${EPREFIX}/usr --prefix=${D}
+	./configure --hepmcdir=${EPREFIX}/usr --pythiadir=${EPREFIX}/usr --prefix=${D}/usr
 }
 
 src_compile() {
