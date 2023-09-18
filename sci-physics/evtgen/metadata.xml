@@ -18,5 +18,6 @@
 		<flag name="pythia">Build with pythia</flag>
 		<flag name="photos">Build with photos</flag>
 		<flag name="tauola">Build with tauola</flag>
+		<flag name="herwig">Patches from herwig bootstrap</flag>
 	</use>
 </pkgmetadata>

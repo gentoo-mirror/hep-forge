@@ -29,7 +29,7 @@ RDEPEND="
 	>=sci-libs/gsl-2.2.1
 	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
 	>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc,rivet]
-	<sci-physics/evtgen-02.00.00[pythia]
+	<sci-physics/evtgen-02.00.00[pythia,herwig]
 	pythia? ( >=sci-physics/pythia-8.0.0 <sci-physcis/pythia-8.3 )
 	${PYTHON_DEPS}
 "

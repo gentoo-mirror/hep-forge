@@ -11,11 +11,10 @@ S="${WORKDIR}/${MY_PN}/R$(ver_rs 1-2 '-')"
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="pythia photos tauola"
+IUSE="pythia photos tauola herwig"
 
 RDEPEND="
 	sci-physics/hepmc:2=
-	sci-physics/hepmc:3=
 	pythia? ( <sci-physics/pythia-8.3 )
 	photos? ( >=sci-physics/photos-3.64 )
 	tauola? ( >=sci-physics/tauola-1.1.8 )
@@ -25,6 +24,10 @@ BDEPEND="
 	virtual/fortran
 "
 
+PATCHES=(
+	"$(usex herwig ${FILESDIR}/${PN}-01.07.00-herwig.patch)"
+)
+
 src_prepare() {
 	default
 	sed -i -e 's/FLIBS=.*/FLIBS="-lgfortran"/g' configure
@@ -32,8 +35,7 @@ src_prepare() {
 }
 
 src_configure() {
-	
-	./configure --hepmcdir=${EPREFIX}/usr --pythiadir=${EPREFIX}/usr --prefix=${D}/usr
+	./configure  --prefix=${D}/usr --hepmcdir=${EPREFIX}/usr $(usex pythia --pythiadir=${EPREFIX}/usr) $(usex photos --photosdir=${EPREFIX}/usr) $(usex tauola --tauoladir=${EPREFIX}/usr)
 }
 
 src_compile() {
