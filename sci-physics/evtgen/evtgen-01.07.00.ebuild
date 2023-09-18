@@ -30,7 +30,7 @@ src_configure() {
 }
 
 src_compile() {
-	MAKEOPS="$MAKEOPT -j1" emake
+	emake
 }
 
 src_install() {
