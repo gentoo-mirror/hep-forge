@@ -9,4 +9,4 @@ LICENSE=GPL-3+
 RDEPEND=sci-physics/hepmc:2= sci-physics/hepmc:3= pythia? ( <sci-physics/pythia-8.3 ) photos? ( >=sci-physics/photos-3.64 ) tauola? ( >=sci-physics/tauola-1.1.8 )
 SLOT=0
 SRC_URI=https://evtgen.hepforge.org/downloads?f=EvtGen-01.07.00.tar.gz -> evtgen-01.07.00.tar.gz
-_md5_=c350d613bd775dfea41dd2c1b7b6f505
+_md5_=ac2d0f725ba02d8ab34779d1e2ab8a08
