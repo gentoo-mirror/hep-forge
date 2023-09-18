@@ -110,7 +110,7 @@ src_configure() {
 		--cxx="$(tc-getCXX)" \
 		--enable-shared \
 		--prefix="${EPREFIX}/usr" \
-		--prefix-lib="$(get_libdir)" \
+		--prefix-lib="${EPREFIX}/usr/$(get_libdir)" \
 		--prefix-share="${EPYTHIADIR}" \
 		$(usex fastjet "--with-fastjet3" "") \
 		$(usex zlib "--with-gzip" "") \
@@ -125,7 +125,7 @@ src_configure() {
 
 	# fix pythia config script
 	sed -i \
-		-e 's|pythia8/examples/Makefile.inc|pythia8/Makefile.inc|' \
+		-e 's|Pythia8/examples/Makefile.inc|Pythia8/Makefile.inc|' \
 		-e 's|LINE%=|LINE%%=|' \
 		bin/pythia8-config || die
 }
@@ -161,7 +161,7 @@ src_install() {
 	dolib.so lib/libpythia8.so
 	use lhapdf && dolib.so lib/libpythia8lhapdf6.so
 	insinto "${PYTHIADIR}"
-	doins -r share/Pythia8/xmldoc examples/Makefile.inc
+	doins -r share/Pythia8/xmldoc share/Pythia8/pdfdata examples/Makefile.inc
 
 	newenvd - 99pythia8 <<- _EOF_
 		PYTHIA8DATA=${EPYTHIADIR}/xmldoc
