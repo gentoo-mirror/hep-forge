@@ -124,7 +124,7 @@ sci-physics/smodels 2.2.1 2.3.0: A tool for interpreting simplified-model result
 sci-physics/softsusy 4.1.13: Calculates supersymmetric particle spectra
 sci-physics/spheno 3.3.8-r2 4.0.5: SPheno stands for S(upersymmetric) Pheno(menology)
 sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
-sci-physics/thepeg 2.2.3-r1: Toolkit for High Energy Physics Event Generation
+sci-physics/thepeg 2.2.3-r1 2.2.3-r2: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 1.0.0 9999: TOPDRAWER renders top files.
 sci-physics/uproot 5.0.0 5.0.11: ROOT I/O in pure Python and Numpy.
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
