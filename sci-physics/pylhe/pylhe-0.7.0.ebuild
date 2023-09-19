@@ -13,7 +13,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
     >=dev-python/graphviz-0.12.0[${PYTHON_USEDEP}]
-    >=sci-physics/paricle-0.16[${PYTHON_USEDEP}]
+    >=sci-physics/particle-0.16[${PYTHON_USEDEP}]
     >=dev-python/awkward-1.2.0[${PYTHON_USEDEP}]
     >=dev-python/vector-0.8.1[${PYTHON_USEDEP}]
 "
