@@ -157,6 +157,10 @@ default:
         VERSION: [7.2.3, 6.5.21-r2]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [thepeg]
+        VERSION: [2.2.3-r2]
+        CATEGORY: ["sci-physics"]
+        <<: *images
       - PKG: [pyhepmc]
         VERSION: ["2.11.0",2.10.0]
         CATEGORY: ["sci-physics"]
