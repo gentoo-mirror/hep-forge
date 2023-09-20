@@ -21,4 +21,5 @@
 	<upstream>
 		<remote-id type="gitlab">hepcedar/lhapdf</remote-id>
 	</upstream>
+	
 </pkgmetadata>
