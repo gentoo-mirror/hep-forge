@@ -7,9 +7,9 @@ LHA_VER="6.2.1"
 # Alternatively to fetching them here already the user can install them by lhapdf install, but some codes need them during test stage
 # Also since it belongs to LHAPDF it is better to fetch them here
 SRC_URI="
-        nnpdf31_nnlo_as_0118_luxqed? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF31_nnlo_as_0118_luxqed.tar.gz )
-        pdf4lhc15_nlo_asvar? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/PDF4LHC15_nlo_asvar.tar.gz )
-        ct14qed_proton? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14qed_proton.tar.gz )
+		nnpdf31_nnlo_as_0118_luxqed? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF31_nnlo_as_0118_luxqed.tar.gz )
+		pdf4lhc15_nlo_asvar? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/PDF4LHC15_nlo_asvar.tar.gz )
+		ct14qed_proton? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14qed_proton.tar.gz )
 		ct14lo? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14lo.tar.gz )
 		ct14nlo? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14nlo.tar.gz )
 		ct10? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT10.tar.gz )
