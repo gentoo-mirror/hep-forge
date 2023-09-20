@@ -33,7 +33,8 @@ src_configure() {
 }
 
 src_compile() {
-    emake FFLAGS="${FFLAGS} -std=legacy"
+    export MAKEOPTS="$MAKEOPTS -j1"
+    emake --disable-autoflags FFLAGS="${FFLAGS} -std=legacy"
 }
 
 src_install() {
