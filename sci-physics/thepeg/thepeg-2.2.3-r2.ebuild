@@ -28,7 +28,7 @@ SRC_URI="https://www.hepforge.org/archive/thepeg/${MY_P}.tar.bz2
 LICENSE="GPL-2"
 SLOT="0/30"
 KEYWORDS="~amd64"
-IUSE="emacs fastjet +hepmc3 hepmc2 java lhapdf static-libs test zlib rivet"
+IUSE="emacs fastjet +hepmc3 hepmc2 lhapdf static-libs test zlib rivet"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="?? ( hepmc3 hepmc2 )"
 
@@ -75,8 +75,8 @@ src_configure() {
 	econf \
 		$(use_enable static-libs static) \
 		$(use_with fastjet fastjet "${EROOT}"/usr) \
-		$(use_with hepmc2 hepmc2 "${EROOT}"/usr) \
-		$(use_with hepmc3 hepmc3 "${EROOT}"/usr) \
+		$(use_with hepmc2 hepmc "${EROOT}"/usr) \
+		$(use_with hepmc3 hepmc "${EROOT}"/usr) \
 		$(use_with hepmc2 hepmcversion 2) \
 		$(use_with hepmc3 hepmcversion 3) \
 		$(use_with java javagui) \
