@@ -54,7 +54,6 @@ src_configure() {
 		--with-evtgen="${EPREFIX}"/usr \
 		--with-fastjet="${EPREFIX}"/usr \
 		--with-thepeg="${EPREFIX}"/usr \
-		--with-gsl="${EPREFIX}"/usr \
 		--with-boost="${EPREFIX}"/usr \
 		$(use_with gosam gosam "${EPREFIX}"/usr) \
 		$(use_with madgraph madgraph "${EPREFIX}"/opt/MadGraph5/ ) \
