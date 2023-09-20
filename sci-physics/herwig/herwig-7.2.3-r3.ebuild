@@ -9,7 +9,7 @@ MY_PF=${MY_PN}-${PV}
 
 DESCRIPTION="Herwig is a multi-purpose particle physics event generator."
 SRC_URI="
-	https://herwig.hepforge.org/downloads?f=${MY_PF}.tar.bz2
+	https://herwig.hepforge.org/downloads?f=${MY_PF}.tar.bz2 -> ${P}.tar.bz2
 	https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14lo.tar.gz
 	https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14nlo.tar.gz
 	"
