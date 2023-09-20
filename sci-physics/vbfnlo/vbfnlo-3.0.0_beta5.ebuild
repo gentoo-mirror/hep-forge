@@ -31,7 +31,8 @@ BDEPEND="
 
 src_prepare() {
     default
-    rm -rf doc
+    sed -i -e 's#.*doc/Makefile.*##' configure.ac
+    sed -i -e 's#doc##' Makefile.am
     eautoreconf
 }
 
