@@ -31,6 +31,7 @@ BDEPEND="
 
 src_prepare() {
     default
+    rm -rf doc
     eautoreconf
 }
 
