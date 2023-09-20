@@ -9,7 +9,7 @@ DESCRIPTION="A parton level Monte Carlo for processes wit electroweak bosons"
 HOMEPAGE="https://www.itp.kit.edu/vbfnlo/wiki/doku.php"
 
 SRC_URI="https://www.itp.kit.edu/vbfnlo/wiki/lib/exe/fetch.php?media=download:${P}.tgz" # weird hepforge download names
-#S="${WORKDIR}/vbfnlo-3.0.0beta5"
+S="${WORKDIR}/VBFNLO-2.7.1"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
