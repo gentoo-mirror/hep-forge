@@ -439,6 +439,10 @@ default:
         VERSION: [9999, 2.1.1]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [vbfnlo]
+        VERSION: [3.0.0_beta5]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .config:
   before_script:
