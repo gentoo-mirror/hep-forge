@@ -19,7 +19,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="7"
 KEYWORDS="~amd64"
-IUSE="pythia" # pythia vbfnlo openloops njet gosam madgraph
+IUSE="pythia openloops gosam madgraph" # vbfnlo njet
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
 "
@@ -31,6 +31,9 @@ RDEPEND="
 	>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc2,-hepmc3,rivet]
 	<sci-physics/evtgen-02.00.00[pythia,herwig]
 	pythia? ( <sci-physics/pythia-8.3:8= )
+	madgraph? ( sci-physics/madgraph5 )
+	openloops? ( sci-physics/openloops )
+	gosam? ( sci-physics/gosam )
 	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
@@ -48,11 +51,16 @@ src_prepare() {
 # Minimal installation for now
 src_configure() {
 	econf \
-		--with-evtgen="${EROOT}"/usr \
-		--with-fastjet="${EROOT}"/usr \
-		--with-thepeg="${EROOT}"/usr \
-		$(use_with pythia pythia "${EROOT}"/usr)
-
+		--with-evtgen="${EPREFIX}"/usr \
+		--with-fastjet="${EPREFIX}"/usr \
+		--with-thepeg="${EPREFIX}"/usr \
+		--with-gsl="${EPREFIX}"/usr \
+		--with-boost="${EPREFIX}"/usr \
+		$(use_with gosam gosam "${EPREFIX}"/usr) \
+		$(use_with madgraph madgraph "${EPREFIX}"/opt/MadGraph5/ ) \
+		$(use_with openloops openloops "${EPREFIX}"/opt/OpenLoops2/ ) \
+		$(use_with pythia pythia "${EPREFIX}"/usr)
+	#  'madgraph','njet','openloops','gosam','vbfnlo',
 }
 
 src_install() {
@@ -60,7 +68,20 @@ src_install() {
 	#lhapdf update || die
 	#lhapdf install CT14lo || die
 	#lhapdf install CT14nlo || die
+    echo "13200 CT14lo 1" >> "${WORKDIR}/pdfsets.index"
+	echo "13100 CT14nlo 1" >> "${WORKDIR}/pdfsets.index"
 	LHAPDF_DATA_PATH="${WORKDIR}" default
+	insinto /usr/share/LHAPDF
+	# check if already installed
+	if [ ! -f "${EPREFIX}/usr/share/LHAPDF/pdfsets.index" ]; then
+		doins pdfsets.index
+	fi
+	if [ ! -d "${EPREFIX}/usr/share/LHAPDF/CT14lo" ]; then
+		doins -r CT14lo
+	fi
+	if [ ! -d "${EPREFIX}/usr/share/LHAPDF/CT14nlo" ]; then
+		doins -r CT14nlo
+	fi
 }
 
 #--prefix=$INSTALL_LOC --with-thepeg=$INSTALL_LOC \

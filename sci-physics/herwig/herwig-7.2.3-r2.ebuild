@@ -41,6 +41,7 @@ BDEPEND="
 src_prepare() {
 	default
 	eautoreconf
+
 }
 
 
