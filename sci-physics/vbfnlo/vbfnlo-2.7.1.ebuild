@@ -35,7 +35,7 @@ src_prepare() {
 }
 
 src_configure() {
-	econf \
+	econf FCFLAGS="-std=legacy" \
         --enable-processes=all \
         $(use_enable mpi) \
         $(use_enable kk) \
