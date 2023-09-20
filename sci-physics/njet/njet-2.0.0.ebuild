@@ -33,7 +33,7 @@ src_configure() {
 }
 
 src_compile() {
-    emake
+    emake FFLAGS="${FFLAGS} -std=legacy"
 }
 
 src_install() {
