@@ -26,7 +26,7 @@ MY_PF=LHAPDF-${MY_PV}
 
 DESCRIPTION="Les Houches Parton Density Function unified library"
 HOMEPAGE="https://lhapdf.hepforge.org/"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 S="${WORKDIR}"
 
 LICENSE="GPL-2"
