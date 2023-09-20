@@ -29,7 +29,7 @@ PATCHES=(
 )
 
 src_configure() {
-	econf --disable-autoflags FFLAGS="${FFLAGS} -std=legacy"
+	econf --disable-autoflags FFLAGS="${FFLAGS} -std=legacy" --with-qd=${EROOT}/usr
 }
 
 src_compile() {
