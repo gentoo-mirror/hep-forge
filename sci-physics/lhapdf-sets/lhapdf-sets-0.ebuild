@@ -35,20 +35,13 @@ IUSE="mrst2004qed ct10 mrst2007lomod ct14lo ct14nlo cteq66 cteq6l1 nnpdf23_nlo_a
 RDEPEND="sci-physics/lhapdf"
 DEPEND="${RDEPEND}"
 
+src_unpack() {
+	# unpack in destination only to avoid copy
+	return
+}
 
 src_install() {
-	#default
-	# install pdfsets into /usr/share/LHAPDF
-	insinto /usr/share/LHAPDF
-    use nnpdf31_nnlo_as_0118_luxqed && doins -r NNPDF31_nnlo_as_0118_luxqed
-    use pdf4lhc15_nlo_asvar && doins -r PDF4LHC15_nlo_asvar
-    use ct14qed_proton && doins -r CT14qed_proton
-	use mrst2004qed && doins -r MRST2004qed
-	use ct10 && doins -r CT10
-	use mrst2007lomod && doins -r MRST2007lomod
-	use ct14lo && doins -r CT14lo
-	use ct14nlo && doins -r CT14nlo
-	use cteq66 && doins -r cteq66
-	use nnpdf23_nlo_as_0119_qed_mc && doins -r NNPDF23_nlo_as_0119_qed_mc
-	use nnpdf23_nnlo_as_0119_qed_mc && doins -r NNPDF23_nnlo_as_0119_qed_mc
+	dodir /usr/share/LHAPDF/
+	cd "${ED}/usr/share/LHAPDF/" || die
+	unpack ${A}
 }
