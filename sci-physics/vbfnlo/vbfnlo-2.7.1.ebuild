@@ -8,8 +8,8 @@ inherit autotools
 DESCRIPTION="A parton level Monte Carlo for processes wit electroweak bosons"
 HOMEPAGE="https://www.itp.kit.edu/vbfnlo/wiki/doku.php"
 
-SRC_URI="https://github.com/vbfnlo/vbfnlo/archive/refs/tags/v3.0.0beta5.tar.gz -> ${P}.tar.gz" # weird hepforge download names
-S="${WORKDIR}/vbfnlo-3.0.0beta5"
+SRC_URI="https://www.itp.kit.edu/vbfnlo/wiki/lib/exe/fetch.php?media=download:${P}.tgz" # weird hepforge download names
+#S="${WORKDIR}/vbfnlo-3.0.0beta5"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
