@@ -444,7 +444,7 @@ default:
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [njet]
-        VERSION: [3.1.4, 2.0.0]
+        VERSION: [3.1.2, 2.0.0]
         CATEGORY: ['sci-physics']
         <<: *images
 
