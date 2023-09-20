@@ -9,7 +9,7 @@ DESCRIPTION="A One-Loop Matrix Element Library for Higgs Boson Production via El
 HOMEPAGE="https://hjets.hepforge.org/"
 
 SRC_URI="https://hjets.hepforge.org/downloads/?f=HJets-${PV}.tar.gz -> ${P}.tar.gz" # weird hepforge download names
-#S="${WORKDIR}/${P}"
+S="${WORKDIR}/HJets-${PV}"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
