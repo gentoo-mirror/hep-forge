@@ -89,7 +89,7 @@ sci-physics/mplhep 0.3.28: Extended histogram plots on top of matplotlib and HEP
 sci-physics/mplhep-data 0.0.3: Sub-package to hold data (fonts) for mplhep.
 sci-physics/ninja 1.1.0 1.1.0-r1: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731 3.6_p20200731-r2: Library of one-loop scalar functions
-sci-physics/openloops 2.1.2 2.1.2-r1 2.1.2-r2 2.1.2-r3: Evaluation of tree and one-loop matrix elements for any Standard Model.
+sci-physics/openloops 2.1.2 2.1.2-r1 2.1.2-r2 2.1.2-r3 2.1.2-r4: Evaluation of tree and one-loop matrix elements for any Standard Model.
 sci-physics/particle 0.23.0 9999: PDG particle data and identification codes
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64-r1: Monte Carlo for bremsstrahlung in the decay of particles and resonances
