@@ -29,12 +29,11 @@ PATCHES=(
 )
 
 src_configure() {
-	econf
+	econf --disable-autoflags FFLAGS="${FFLAGS} -std=legacy"
 }
 
 src_compile() {
-    export MAKEOPTS="$MAKEOPTS -j1"
-    emake --disable-autoflags FFLAGS="${FFLAGS} -std=legacy"
+    emake 
 }
 
 src_install() {
