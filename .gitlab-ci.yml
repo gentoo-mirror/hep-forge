@@ -443,6 +443,14 @@ default:
         VERSION: ['1.3']
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [vbfnlo]
+        VERSION: [3.0.0_beta5, 2.7.1]
+        CATEGORY: ['sci-physics']
+        <<: *images
+      - PKG: [njet]
+        VERSION: [3.1.2, 2.0.0]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .config:
   before_script:

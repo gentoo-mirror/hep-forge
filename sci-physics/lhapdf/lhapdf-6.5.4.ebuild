@@ -24,7 +24,7 @@ if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://gitlab.com/hepcedar/lhapdf"
 else
-	SRC_URI="https://www.hepforge.org/downloads/lhapdf/${MY_PF}.tar.gz"
+	SRC_URI="https://www.hepforge.org/downloads/lhapdf/${MY_PF}.tar.gz -> ${P}.tar.gz"
 	S="${WORKDIR}/${MY_PF}"
 	KEYWORDS="~amd64"
 fi
