@@ -1,0 +1,16 @@
+DEFINED_PHASES=configure install prepare pretend test
+DEPEND=test? ( lhapdf? ( sci-physics/lhapdf-sets[nnpdf31_nnlo_as_0118_luxqed,pdf4lhc15_nlo_asvar,ct14qed_proton,nnpdf23_nlo_as_0119_qed_mc,nnpdf23_nnlo_as_0119_qed_mc] ) ) fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib ) test? ( root? ( sci-physics/root:= ) )
+DESCRIPTION=Lund Monte Carlo high-energy physics event generator
+EAPI=8
+HOMEPAGE=https://pythia.org/
+INHERIT=toolchain-funcs
+IUSE=doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=test? ( lhapdf? ( sci-physics/lhapdf-sets[nnpdf31_nnlo_as_0118_luxqed,pdf4lhc15_nlo_asvar,ct14qed_proton,nnpdf23_nlo_as_0119_qed_mc,nnpdf23_nnlo_as_0119_qed_mc] ) ) fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib )
+REQUIRED_USE=?? ( hepmc3 hepmc2 )
+RESTRICT=!test? ( test )
+SLOT=8
+SRC_URI=https://pythia.org/download/pythia83/pythia8309.tgz
+_eclasses_=toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0
+_md5_=a9fa853d9034af479c84ee37fe4391dc
