@@ -19,7 +19,7 @@ S=${WORKDIR}/${MY_PF}
 LICENSE="GPL-3+"
 SLOT="7"
 KEYWORDS="~amd64"
-IUSE="pythia openloops gosam madgraph" # vbfnlo njet hjets
+IUSE="pythia openloops gosam madgraph" # vbfnlo njet
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
 "

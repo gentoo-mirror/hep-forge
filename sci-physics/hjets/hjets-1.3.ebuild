@@ -16,7 +16,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND=""
+RDEPEND="sci-physics/herwig"
 DEPEND="${RDEPEND}"
 BDEPEND="
     virtual/fortran
