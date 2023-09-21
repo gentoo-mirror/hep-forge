@@ -27,9 +27,9 @@ DEPEND="
 	apfel? ( sci-physics/apfel )
 	apfelxx? ( ~sci-physics/apfelxx-4.0.0 )
 	qcdnum? ( ~sci-physics/qcdnum-18.00.00 )
-	hathor? ( ~sci-physics/hather-2.0 )
+	hathor? ( ~sci-physics/hathor-2.0 )
 	applgrid? ( ~sci-physics/apfelgrid-1.0.5 )
-	pineappl? ( ~sci-physics/pineappl_capi-0.6.1 )
+	pineappl? ( ~sci-physics/pineappl-capi-0.6.1 )
 	ceres? ( sci-libs/ceres-solver )
 "
 
