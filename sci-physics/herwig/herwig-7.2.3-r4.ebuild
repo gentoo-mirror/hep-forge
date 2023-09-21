@@ -8,11 +8,7 @@ MY_PN="Herwig"
 MY_PF=${MY_PN}-${PV}
 
 DESCRIPTION="Herwig is a multi-purpose particle physics event generator."
-SRC_URI="
-	https://herwig.hepforge.org/downloads?f=${MY_PF}.tar.bz2 -> ${P}.tar.bz2
-	https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14lo.tar.gz
-	https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14nlo.tar.gz
-	"
+SRC_URI="https://herwig.hepforge.org/downloads?f=${MY_PF}.tar.bz2 -> ${P}.tar.bz2"
 HOMEPAGE="https://herwig.hepforge.org/"
 
 S=${WORKDIR}/${MY_PF}
@@ -27,7 +23,7 @@ REQUIRED_USE="
 RDEPEND="
 	>=dev-libs/boost-1.62
 	>=sci-libs/gsl-2.6
-	sci-physics/lhapdf-sets[ct14lo,ct14nlo]
+	sci-physics/lhapdf-sets[LHAPDF_SETS_ct14lo,LHAPDF_SETS_ct14nlo]
 	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
 	|| ( 
 		>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc2,-hepmc3,rivet] 
