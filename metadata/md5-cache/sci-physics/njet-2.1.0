@@ -9,4 +9,4 @@ LICENSE=GPL-2
 RDEPEND=sci-physics/qcdloop sci-libs/qd
 SLOT=0
 SRC_URI=https://bitbucket.org/njet/njet/downloads/njet-2.1.0.tar.gz
-_md5_=4573372af60c88b2a5133618df1dcb7b
+_md5_=4e5ddbec5488c05ed4de1f20171fd6a1
