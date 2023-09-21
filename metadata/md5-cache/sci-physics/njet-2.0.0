@@ -1,14 +1,12 @@
-BDEPEND=virtual/fortran sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71-r5 >=sys-devel/libtool-2.4.7
+BDEPEND=virtual/fortran
 DEFINED_PHASES=compile configure install
 DEPEND=sci-physics/qcdloop sci-libs/qd
 DESCRIPTION=NJet is a library for multi-parton matrix elements up to two loops in massless QCD
 EAPI=8
 HOMEPAGE=https://bitbucket.org/njet/njet
-INHERIT=autotools
 KEYWORDS=~amd64
 LICENSE=GPL-2
 RDEPEND=sci-physics/qcdloop sci-libs/qd
 SLOT=0
-SRC_URI=https://bitbucket.org/njet/njet/downloads/njet-2.0.0.tar.gz -> njet-2.0.0.tar.gz
-_eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	862d337d98edb576796827be2c6b11ca	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	6ae9a4347149b19a112caa1182d03bde
-_md5_=7153224cc4c1f2b4b65960f5a1e5f1df
+SRC_URI=https://bitbucket.org/njet/njet/downloads/njet-2.0.0.tar.gz
+_md5_=4573372af60c88b2a5133618df1dcb7b
