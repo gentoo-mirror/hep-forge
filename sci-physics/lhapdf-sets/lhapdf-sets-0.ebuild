@@ -46,7 +46,9 @@ KEYWORDS="~amd64 ~x86"
 S="${WORKDIR}"
 
 LICENSE="GPL-2"
+SLOT="0"
 IUSE="${IUSE_LHAPDF_SETS}"
+SLOT="0"
 RDEPEND="sci-physics/lhapdf"
 DEPEND="${RDEPEND}"
 
