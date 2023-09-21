@@ -19,12 +19,11 @@ IUSE="pythia openloops gosam madgraph vbfnlo njet"
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
 "
-LHAPDF_SETS="ct14lo ct14nlo"
 
 RDEPEND="
 	>=dev-libs/boost-1.62
 	>=sci-libs/gsl-2.6
-	sci-physics/lhapdf-sets
+	sci-physics/lhapdf-sets[ct14lo,ct14nlo]
 	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
 	|| (
 		>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc2,-hepmc3,rivet]
