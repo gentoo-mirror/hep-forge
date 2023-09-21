@@ -23,7 +23,7 @@ REQUIRED_USE="
 RDEPEND="
 	>=dev-libs/boost-1.62
 	>=sci-libs/gsl-2.6
-	sci-physics/lhapdf-sets[LHAPDF_SETS_ct14lo,LHAPDF_SETS_ct14nlo]
+	sci-physics/lhapdf-sets[lhapdf_sets_ct14lo,lhapdf_sets_ct14nlo]
 	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
 	|| ( 
 		>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc2,-hepmc3,rivet] 
