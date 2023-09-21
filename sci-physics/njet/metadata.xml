@@ -12,4 +12,7 @@
     <longdescription lang="en">
     NJet is a library for multi-parton matrix elements up to two loops in massless QCD. NJet is based on the generalized unitarity program NGluon and uses QCDLoop/FF for scalar integrals and libqd for extended precision arithmetic. The two-loop finite remainders use PentagonFunctions++ for the integrals and Eigen for algebra.
     </longdescription>
+    <upstream>
+        <remote-id type="bitbucket">njet/njet</remote-id>
+    </upstream>
 </pkgmetadata>
