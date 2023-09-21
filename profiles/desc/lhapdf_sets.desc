@@ -1,0 +1,17 @@
+# Copyright 2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+# This file contains descriptions of LHAPDF_SETS USE_EXPAND flags.
+
+lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed - NNPDF31_nnlo_as_0118_luxqed LHAPDF grid
+lhapdf_sets_pdf4lhc15_nlo_asvar - PDF4LHC15_nlo_asvar LHAPDF grid
+lhapdf_sets_ct14qed_proton - CT14qed_proton LHAPDF grid
+lhapdf_sets_ct14lo - CT14lo LHAPDF grid
+lhapdf_sets_ct14nlo - CT14nlo LHAPDF grid
+lhapdf_sets_ct10 - CT10 LHAPDF grid
+lhapdf_sets_mrst2007lomod - MRST2007lomod LHAPDF grid
+lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc - NNPDF23_nlo_as_0119_qed_mc LHAPDF grid
+lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc - NNPDF23_nnlo_as_0119_qed_mc LHAPDF grid
+lhapdf_sets_cteq66 - CTEQ66 LHAPDF grid
+lhapdf_sets_cteq6l1 - CTEQ6L1 LHAPDF grid
+lhapdf_sets_mrst2004qed - MRST2004qed LHAPDF grid

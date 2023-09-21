@@ -22,7 +22,7 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	test? ( lhapdf? ( sci-physics/lhapdf-sets[nnpdf31_nnlo_as_0118_luxqed,pdf4lhc15_nlo_asvar,ct14qed_proton,nnpdf23_nlo_as_0119_qed_mc,nnpdf23_nnlo_as_0119_qed_mc] ) )
+	test? ( lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed,lhapdf_sets_pdf4lhc15_nlo_asvar,lhapdf_sets_ct14qed_proton,lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc,lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc] ) )
 	fastjet? ( sci-physics/fastjet )
 	hepmc3? ( sci-physics/hepmc:3= )
 	hepmc2? ( sci-physics/hepmc:2= )
