@@ -13,4 +13,15 @@
     Proton parton distribution functions (PDFs) are essential for precision physics at the LHC and other hadron colliders. The determination of the PDFs is a complex endeavor involving several physics process. The main process is the lepton proton deep-inelastic scattering (DIS), with data collected by the HERA ep collider covering a large kinematic phase space needed to extract PDFs. Further processes (fixed target DIS, ppbar collisions etc.) provide additional constraining powers for flavour separation. In particular, the precise measurements obtained or to come from LHC will continue to improve the knowledge of the PDF.
     The xFitter project is an open source QCD fit framework ready to extract PDFs and assess the impact of new data. The framework includes modules allowing for a various theoretical and methodological options, capable to fit a large number of relevant data sets from HERA, Tevatron and LHC. This framework is already used in many analyses at the LHC. 
     </longdescription>
+    <use>
+		<flag name="apfel">Adds support for <pkg>sci-physics/apfel</pkg></flag>
+		<flag name="apfelxx">Adds support for <pkg>sci-physics/apfelxx</pkg></flag>
+		<flag name="applgrid">Adds support for <pkg>sci-physics/applgrid</pkg></flag>
+		<flag name="ceres">Adds support for <pkg>sci-libs/ceres-solver</pkg></flag>
+		<flag name="hathor">Adds support for <pkg>sci-physics/hathor</pkg></flag>
+		<flag name="lhapdf">Adds support for <pkg>sci-physics/lhapdf</pkg></flag>
+		<flag name="pineappl">Adds support for <pkg>sci-physics/pineappl-capi</pkg></flag>
+		<flag name="qcdnum">Adds support for <pkg>sci-physics/qcdnum</pkg></flag>
+		<flag name="root">Adds support for <pkg>sci-physics/root</pkg></flag>
+	</use>
 </pkgmetadata>
