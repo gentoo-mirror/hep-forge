@@ -15,5 +15,10 @@
 	</longdescription>
 	<use>
 		<flag name="pythia">Build with pythia support </flag>
+		<flag name="openloops">Build with openloops support </flag>
+		<flag name="gosam">Build with gosam support </flag>
+		<flag name="madgraph">Build with madgraph support </flag>
+		<flag name="vbfnlo">Build with vbfnlo support </flag>
+		<flag name="njet">Build with njet support </flag>
 	</use>
 </pkgmetadata>
