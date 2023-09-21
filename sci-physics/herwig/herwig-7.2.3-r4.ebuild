@@ -29,7 +29,10 @@ RDEPEND="
 	>=sci-libs/gsl-2.6
 	sci-physics/lhapdf-sets[ct14lo,ct14nlo]
 	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
-	|| ( >=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc2,-hepmc3,rivet] >=sci-physics/thepeg-2.1.0[lhapdf,fastjet,-hepmc2,hepmc3,rivet] )
+	|| ( 
+		>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc2,-hepmc3,rivet] 
+		>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,-hepmc2,hepmc3,rivet] 
+	)
 	<sci-physics/evtgen-02.00.00[pythia,herwig]
 	pythia? ( <sci-physics/pythia-8.3:8= )
 	madgraph? ( sci-physics/madgraph5 )
