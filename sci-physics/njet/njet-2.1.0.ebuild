@@ -5,7 +5,7 @@ EAPI=8
 DESCRIPTION="NJet is a library for multi-parton matrix elements up to two loops in massless QCD"
 HOMEPAGE="https://bitbucket.org/njet/njet"
 
-SRC_URI="https://bitbucket.org/njet/njet/downloads/${P}.tar.gz -> ${P}.tar.gz" # weird hepforge download names
+SRC_URI="https://bitbucket.org/njet/njet/downloads/${P}.tar.gz"
 #S="${WORKDIR}/${P}"
 KEYWORDS="~amd64"
 
