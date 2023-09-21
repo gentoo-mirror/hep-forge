@@ -22,10 +22,6 @@ BDEPEND="
     virtual/fortran
 "
 
-PATCHES=(
-    "${FILESDIR}"/${PN}-2.0.0-herwig.patch
-)
-
 src_configure() {
 	econf --disable-autoflags FFLAGS="${FFLAGS} -std=legacy" --with-qd="${EPREFIX}/usr"
 }
