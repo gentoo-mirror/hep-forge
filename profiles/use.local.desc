@@ -29,7 +29,12 @@ sci-physics/hepmc:example - Build with example codes
 sci-physics/hepmc:gev - Build with GeV instead of default MeV for momentum units
 sci-physics/hepmc:python - Build with PYTHON enabled
 sci-physics/hepmc:root - Build with ROOTIO enabled
+sci-physics/herwig:gosam - Build with gosam support
+sci-physics/herwig:madgraph - Build with madgraph support
+sci-physics/herwig:njet - Build with njet support
+sci-physics/herwig:openloops - Build with openloops support
 sci-physics/herwig:pythia - Build with pythia support
+sci-physics/herwig:vbfnlo - Build with vbfnlo support
 sci-physics/madgraph5:collier - USE system collier
 sci-physics/madgraph5:fastjet - USE system FASTJET
 sci-physics/madgraph5:golem95 - USE system golem95
@@ -88,8 +93,19 @@ sci-physics/tauola:hepmc3 - hepmc version 3
 sci-physics/tauola:pythia - build with pythia connection
 sci-physics/thepeg:fastjet - Adds support for sci-physics/fastjet
 sci-physics/thepeg:hepmc - Adds support for High Energy Physics Monte Carlo Generators sci-physics/hepmc
+sci-physics/thepeg:hepmc2 - Adds support for High Energy Physics Monte Carlo Generators 2sci-physics/hepmc
+sci-physics/thepeg:hepmc3 - Adds support for High Energy Physics Monte Carlo Generators 3sci-physics/hepmc
 sci-physics/thepeg:lhapdf - Adds support for sci-physics/lhapdf
 sci-physics/thepeg:rivet - Adds support for sci-physics/rivet
+sci-physics/xfitter:apfel - Adds support for sci-physics/apfel
+sci-physics/xfitter:apfelxx - Adds support for sci-physics/apfelxx
+sci-physics/xfitter:applgrid - Adds support for sci-physics/applgrid
+sci-physics/xfitter:ceres - Adds support for sci-libs/ceres-solver
+sci-physics/xfitter:hathor - Adds support for sci-physics/hathor
+sci-physics/xfitter:lhapdf - Adds support for sci-physics/lhapdf
+sci-physics/xfitter:pineappl - Adds support for sci-physics/pineappl-capi
+sci-physics/xfitter:qcdnum - Adds support for sci-physics/qcdnum
+sci-physics/xfitter:root - Adds support for sci-physics/root
 sci-physics/yoda:root - Adds support for sci-physics/root
 sci-physics/yoda:zlib - Build with zlib
 sys-cluster/lmod:auto-swap - enable auto swapping of compiler
