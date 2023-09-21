@@ -2,8 +2,6 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=8
 
-inherit autotools
-
 DESCRIPTION="NJet is a library for multi-parton matrix elements up to two loops in massless QCD"
 HOMEPAGE="https://bitbucket.org/njet/njet"
 
@@ -29,7 +27,7 @@ PATCHES=(
 )
 
 src_configure() {
-	econf --disable-autoflags FFLAGS="${FFLAGS} -std=legacy" --with-qd=${EROOT}/usr
+	econf --disable-autoflags FFLAGS="${FFLAGS} -std=legacy" --with-qd="${EROOT}/usr"
 }
 
 src_compile() {
