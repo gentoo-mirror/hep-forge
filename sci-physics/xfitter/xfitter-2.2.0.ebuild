@@ -4,8 +4,7 @@
 EAPI=8
 
 CMAKE_MAKEFILE_GENERATOR="emake"
-PYTHON_COMPAT=( python3_{10..11} )
-inherit cmake python-single-r1 
+inherit cmake
 
 DESCRIPTION="PDF fitting tool"
 HOMEPAGE="https://www.xfitter.org/xFitter/xFitter"
@@ -23,7 +22,7 @@ DEPEND="
 	~sci-physics/lhapdf-6.5.4
 	~sci-physics/dyturbo-1.3.2
 	~sci-physics/hoppet-1.2.0
-	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
+	root? ( sci-physics/root:= )
 	apfel? ( sci-physics/apfel )
 	apfelxx? ( ~sci-physics/apfelxx-4.0.0 )
 	qcdnum? ( ~sci-physics/qcdnum-18.00.00 )
