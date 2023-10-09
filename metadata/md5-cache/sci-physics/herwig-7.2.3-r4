@@ -12,5 +12,5 @@ RDEPEND=>=dev-libs/boost-1.62 >=sci-libs/gsl-2.6 sci-physics/lhapdf-sets[lhapdf_
 REQUIRED_USE=^^ ( python_single_target_python3_10 python_single_target_python3_11 )
 SLOT=7
 SRC_URI=https://herwig.hepforge.org/downloads?f=Herwig-7.2.3.tar.bz2 -> herwig-7.2.3.tar.bz2
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	python-utils-r1	12aa0037eb004139215ff04894d52b28	python-single-r1	75118e916668a74c660a13b0ecb22562	gnuconfig	b6b3e92f8b8c996400074b5f61a59256	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	6ae9a4347149b19a112caa1182d03bde
+_eclasses_=multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	python-utils-r1	12aa0037eb004139215ff04894d52b28	python-single-r1	75118e916668a74c660a13b0ecb22562	gnuconfig	b6b3e92f8b8c996400074b5f61a59256	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	6ae9a4347149b19a112caa1182d03bde
 _md5_=4a33d14005ae6afc480331307159b2dd
