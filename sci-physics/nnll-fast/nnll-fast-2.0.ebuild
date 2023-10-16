@@ -27,7 +27,7 @@ src_prepare() {
     default
     echo "#/bin/bash" > nnll-fast-${PV}
     echo "cd ${EPREFIX}/usr/share/nnll-fast-${PV}/bin" >> nnll-fast-${PV}
-    echo "./a.out \"$$@\"" >> nnll-fast-${PV}
+    echo './a.out \"$@\"' >> nnll-fast-${PV}
     chmod +x nnll-fast-${PV}
 }
 
