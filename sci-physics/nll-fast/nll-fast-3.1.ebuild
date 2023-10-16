@@ -30,7 +30,7 @@ src_prepare() {
 
 src_compile() {
     tc-export FC
-	${FC} nllfast*.f -o nll-fast-${PV}
+	${FC} ${FFLAGS} nllfast*.f -o nll-fast-${PV}
 }
 
 src_install() {
