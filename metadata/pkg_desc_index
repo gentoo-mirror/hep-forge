@@ -90,6 +90,8 @@ sci-physics/mplhep 0.3.28: Extended histogram plots on top of matplotlib and HEP
 sci-physics/mplhep-data 0.0.3: Sub-package to hold data (fonts) for mplhep.
 sci-physics/ninja 1.1.0 1.1.0-r1: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 sci-physics/njet 2.0.0 2.1.0 3.1.2: NJet is a library for multi-parton matrix elements up to two loops in massless QCD
+sci-physics/nll-fast 3.1: Resummation for squarks and gluinos
+sci-physics/nnll-fast 2.0: Resummation for squarks and gluinos
 sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731 3.6_p20200731-r2: Library of one-loop scalar functions
 sci-physics/openloops 2.1.2 2.1.2-r1 2.1.2-r2 2.1.2-r3 2.1.2-r4: Evaluation of tree and one-loop matrix elements for any Standard Model.
 sci-physics/particle 0.23.0 9999: PDG particle data and identification codes
