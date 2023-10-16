@@ -25,9 +25,9 @@ BDEPEND="
 
 src_prepare() {
     default
-    echo "#/bin/bash" > nnll-fast-${PV}
-    echo "cd ${EPREFIX}/usr/share/nll-fast-${PV}" >> nll-fast-${PV}
-    echo "./a.out" > nll-fast-${PV}
+    echo "#/bin/bash" > nll-fast-${PV}
+    echo "cd ${EPREFIX}/usr/share/nll-fast-${PV}/bin" >> nll-fast-${PV}
+    echo './a.out "$@"' >> nll-fast-${PV}
     chmod +x nll-fast-${PV}
 }
 
@@ -38,8 +38,8 @@ src_compile() {
 
 src_install() {
     dobin nll-fast-${PV}
-    insinto /usr/share/nll-fast-${PV}
+    insinto /usr/share/nll-fast-${PV}/bin
     doins *.grid
-    into /usr/share/nnll-fast-${PV}
+    into /usr/share/nll-fast-${PV}
     dobin a.out
 }
