@@ -25,16 +25,21 @@ BDEPEND="
 
 src_prepare() {
     default
-    sed -i -e "s#\"\(.*\.grid\)\"#\"${EPREFIX}/usr/share/nll-fast-${PV}\n     1 /\1\"#g" nllfast*.f
+    echo "#/bin/bash" > nnll-fast-${PV}
+    echo "cd ${EPREFIX}/usr/share/nll-fast-${PV}" >> nll-fast-${PV}
+    echo "./a.out" > nll-fast-${PV}
+    chmod +x nll-fast-${PV}
 }
 
 src_compile() {
     tc-export FC
-	${FC} ${FFLAGS} nllfast*.f -o nll-fast-${PV}
+	${FC} ${FFLAGS} nllfast*.f 
 }
 
 src_install() {
+    dobin nll-fast-${PV}
     insinto /usr/share/nll-fast-${PV}
     doins *.grid
-    dobin nll-fast-${PV}
+    into /usr/share/nnll-fast-${PV}
+    dobin a.out
 }
