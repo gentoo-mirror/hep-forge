@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+    <maintainer type="project">
+        <email>sci-physics@gentoo.org</email>
+        <name>Gentoo Physics Project</name>
+    </maintainer>
+    <longdescription lang="en">
+    NLL-fast is a computer program which computes the squark and gluino hadroproduction cross sections including next-to-leading order (NLO) supersymmetric QCD corrections and the resummation of soft gluon emission at next-to-leading-logarithmic (NLL) accuracy. NLL-fast also provides an estimate of the theoretical uncertainty due to scale variation and the parton distribution functions. The program reads in grid files with NLO and NLO+NLL results, the scale uncertainty and the pdf and alphas error and uses a fast interpolation routine to provide predictions for any value of squark and gluino masses in the mass ranges specified below. The results for the LHC collision energy of 13 TeV can be obtained with the latest 3.1 version, whereas earlier 2.1 (1.2) versions deliver cross sections for 8 (7) TeV. Results are obtained with the MSTW2008NLO (MSTW2008LO for the LO results), the CTEQ6.6M (CTEQ6L1) pdfs, and for version 3.1 also with the NNPDF3.0NLO (NNPDF3.0LO) set. Results for selected processes of squark and gluino production for 14, 33, and 100 TeV collision energy are also available in NLL-fast, see below. 
+    </longdescription>
+</pkgmetadata>
