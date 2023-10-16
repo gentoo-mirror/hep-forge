@@ -9,8 +9,9 @@ inherit cmake
 
 DESCRIPTION="Resummation for electroweak BSM particles."
 HOMEPAGE="https://resummino.hepforge.org/"
-SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip -> ${P}.zip}"
-S="${WORKDIR}/${P}"
+SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip -> ${P}.zip"
+
+#S="${WORKDIR}/${P}"
 
 LICENSE="EPL-2.0"
 SLOT="0"
@@ -38,7 +39,7 @@ src_configure() {
 		-DBUILD_LHAPDF=OFF
 		-DBUILD_LOOPTOOLS=OFF
 	)
-	cmake_src_configure 
+	cmake_src_configure
 }
 
 src_install() {
