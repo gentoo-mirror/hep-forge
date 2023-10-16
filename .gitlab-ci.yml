@@ -477,6 +477,7 @@ default:
       changes:
         - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
         - "$CATEGORY/$PKG/metadata.xml"
+        - "$CATEGORY/$PKG/Manifest"
         - "$CATEGORY/$PKG/files/*"
         - "$CATEGORY/$PKG/.build"
         - ".build"
