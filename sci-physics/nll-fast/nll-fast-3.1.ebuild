@@ -13,7 +13,7 @@ S="${WORKDIR}/"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="3/1"
 KEYWORDS="~amd64"
 IUSE=""
 
@@ -25,7 +25,7 @@ BDEPEND="
 
 src_prepare() {
     default
-    sed -i -e "s#\"\(.*\.grid\)\"#\"${EPREFIX}/usr/share/nll-fast-${PV}/'\n     !//'\1\"#g" nllfast*.f
+    sed -i -e "s#\"\(.*\.grid\)\"#'${EPREFIX}/usr/share/nll-fast-${PV}/'\n     !//'\1'#g" nllfast*.f
 }
 
 src_compile() {

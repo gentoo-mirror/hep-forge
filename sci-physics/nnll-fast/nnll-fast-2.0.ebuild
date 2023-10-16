@@ -13,7 +13,7 @@ S="${WORKDIR}/nnllfast-${PV}"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="2/0"
 KEYWORDS="~amd64"
 IUSE=""
 
