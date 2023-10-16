@@ -9,4 +9,4 @@ LICENSE=GPL-2
 SLOT=0
 SRC_URI=https://www.uni-muenster.de/Physik.TP/~akule_01/nnllfast/lib/exe/fetch.php?media=nnllfast-2.0.tar.bz2 -> nnll-fast-2.0.tar.bz2
 _eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0
-_md5_=d9e5af4da39e86d522c53d2fb679d699
+_md5_=515a8bfc40c7688a41c430fa0b7f83c9
