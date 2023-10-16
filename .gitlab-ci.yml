@@ -33,6 +33,14 @@ default:
         VERSION: [3.1.2]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [nll-fast]
+        VERSION: ["3.1"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [nnll-fast]
+        VERSION: ["2.0"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
       - PKG: [oneloop]
         VERSION: [2020.07.31, "3.6"]
         CATEGORY: ["sci-physics"]
