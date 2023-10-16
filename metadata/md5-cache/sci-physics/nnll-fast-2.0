@@ -6,7 +6,7 @@ HOMEPAGE=https://www.uni-muenster.de/Physik.TP/~akule_01/nnllfast/doku.php?id=st
 INHERIT=toolchain-funcs
 KEYWORDS=~amd64
 LICENSE=GPL-2
-SLOT=0
+SLOT=2/0
 SRC_URI=https://www.uni-muenster.de/Physik.TP/~akule_01/nnllfast/lib/exe/fetch.php?media=nnllfast-2.0.tar.bz2 -> nnll-fast-2.0.tar.bz2
 _eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0
-_md5_=b2c8353cde3bb938fa8f5823ed87db61
+_md5_=84449b78999459ae78c941f315d8c0f6
