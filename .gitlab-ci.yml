@@ -34,11 +34,11 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [nll-fast]
-        VERSION: [3.1]
+        VERSION: ["3.1"]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [nnll-fast]
-        VERSION: [2.0]
+        VERSION: ["2.0"]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [oneloop]
