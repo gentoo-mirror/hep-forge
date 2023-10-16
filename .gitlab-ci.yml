@@ -174,7 +174,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [hepi]
-        VERSION: [0.2.8]
+        VERSION: [0.2.10, 0.2.8]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [handyg]
