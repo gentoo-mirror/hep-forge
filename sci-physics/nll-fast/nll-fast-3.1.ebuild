@@ -9,7 +9,7 @@ DESCRIPTION="Resummation for squarks and gluinos"
 HOMEPAGE="https://www.uni-muenster.de/Physik.TP/~akule_01/nnllfast/doku.php?id=nllfast"
 
 SRC_URI="https://www.uni-muenster.de/Physik.TP/~akule_01/nnllfast/lib/exe/fetch.php?media=nllfast-3.1-13tev.tar.bz2 -> ${P}.tar.bz2"
-#S="${WORKDIR}/${P}"
+S="${WORKDIR}/"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
@@ -24,7 +24,8 @@ BDEPEND="
 "
 
 src_prepare() {
-    sed -i -e "s#\"(.*\.grid)\"#\"${EPREFIX}/usr/share/nll-fast-${PV}/\1\"#g" nllfast*.f
+    default
+    sed -i -e "s#\"\(.*\.grid\)\"#\"${EPREFIX}/usr/share/nll-fast-${PV}\n     1 /\1\"#g" nllfast*.f
 }
 
 src_compile() {
@@ -35,4 +36,5 @@ src_compile() {
 src_install() {
     insinto /usr/share/nll-fast-${PV}
     doins *.grid
+    dobin nll-fast-${PV}
 }
