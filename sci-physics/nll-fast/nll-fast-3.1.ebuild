@@ -13,7 +13,7 @@ S="${WORKDIR}/"
 KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
-SLOT="0"
+SLOT="3/1"
 KEYWORDS="~amd64"
 IUSE=""
 
@@ -25,21 +25,16 @@ BDEPEND="
 
 src_prepare() {
     default
-    echo "#/bin/bash" > nll-fast-${PV}
-    echo "cd ${EPREFIX}/usr/share/nll-fast-${PV}/bin" >> nll-fast-${PV}
-    echo './a.out "$@"' >> nll-fast-${PV}
-    chmod +x nll-fast-${PV}
+    sed -i -e "s#\"\(.*\.grid\)\"#'${EPREFIX}/usr/share/nll-fast-${PV}/'\n     !//'\1'#g" nllfast*.f
 }
 
 src_compile() {
     tc-export FC
-	${FC} ${FFLAGS} nllfast*.f 
+	${FC} ${FFLAGS} nllfast*.f  -o nll-fast-${PV}
 }
 
 src_install() {
     dobin nll-fast-${PV}
-    insinto /usr/share/nll-fast-${PV}/bin
+    insinto /usr/share/nll-fast-${PV}
     doins *.grid
-    into /usr/share/nll-fast-${PV}
-    dobin a.out
 }
