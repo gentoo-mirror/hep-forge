@@ -8,7 +8,7 @@ inherit toolchain-funcs
 DESCRIPTION="Resummation for squarks and gluinos"
 HOMEPAGE="https://www.uni-muenster.de/Physik.TP/~akule_01/nnllfast/doku.php?id=nllfast"
 
-SRC_URI="https://www.uni-muenster.de/Physik.TP/~akule_01/nnllfast/lib/exe/fetch.php?media=nllfast-3.1-13tev.tar.bz2 -> ${P}.tar.bz2"
+SRC_URI="https://www.uni-muenster.de/Physik.TP/~akule_01/nnllfast/lib/exe/fetch.php?media=nllfast-${PV}-13tev.tar.bz2 -> ${P}.tar.bz2"
 S="${WORKDIR}/"
 KEYWORDS="~amd64"
 
