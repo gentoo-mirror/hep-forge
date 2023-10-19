@@ -13,8 +13,6 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/attrs-19.2[${PYTHON_USEDEP}]
-	>=sci-physics/hepunits-2.0.0[${PYTHON_USEDEP}]
-	dev-python/deprecated[${PYTHON_USEDEP}]
 	>=dev-python/graphviz-0.12.0[${PYTHON_USEDEP}]
 	>=dev-python/lark-1.0.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.12[${PYTHON_USEDEP}]
