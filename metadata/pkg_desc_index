@@ -1,10 +1,13 @@
 dev-python/Unum 4.2.1: units in python
 dev-python/archspec 0.1.4 0.2.0: labels for various aspects of a system architecture like CPU, etc.
 dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
-dev-python/awkward 2.3.3: Manipulate JSON-like data with NumPy-like idioms.
-dev-python/awkward-cpp 22: awkward-cpp
+dev-python/awkward 2.3.3 2.4.6: Manipulate JSON-like data with NumPy-like idioms.
+dev-python/awkward-cpp 22 24: awkward-cpp
 dev-python/boost-histogram 1.3.0 1.3.2: Python bindings for the C++14 Boost::Histogram library
 dev-python/bounded-pool-executor 0.0.3: Bounded Process and Thread Pool Executor
+dev-python/correctionlib 2.3.3: A generic correction library
+dev-python/dask-awkward 2023.10.0: Native Dask collection for awkward arrays, and the library to use it.
+dev-python/dask-histogram 2023.10.0: Histograms with task scheduling.
 dev-python/dm-tree 0.1.8: tree is a library for working with nested data structures.
 dev-python/docformatter 1.5.0: Formats docstrings to follow PEP 257.
 dev-python/flatdict 4.0.0 4.0.1: Python module for interacting with nested dicts
@@ -13,9 +16,11 @@ dev-python/histoprint 2.4.0: Pretty print histograms to the console
 dev-python/hunter 3.6.0: Hunter is a flexible code tracing toolkit
 dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbitrary precision.
 dev-python/klepto 0.2.3: persistent caching to memory, disk, or database
+dev-python/llvmlite 0.39.1 0.40.1: Python wrapper around the llvm C++ library
 dev-python/manhole 1.8.0-r1: Debugging manhole for python application
 dev-python/multiprocess 0.70.14: better multiprocessing and multithreading in python
 dev-python/mystic 0.4.0: Highly-constrained non-convex optimization and uncertainty quantification
+dev-python/numba 0.56.4 0.57.1 0.58.0: NumPy aware dynamic Python compiler using LLVM
 dev-python/pathos 0.3.0: parallel graph management and execution in heterogeneous computing
 dev-python/pox 0.3.2: utilities for filesystem exploration and automated builds
 dev-python/ppft 1.7.6.6: distributed and parallel python
@@ -25,6 +30,7 @@ dev-python/pyina 0.2.7: MPI parallel map and cluster scheduling
 dev-python/resample 1.6.0: Randomization-based inference in Python
 dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
 dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics formats
+dev-python/toml 0.10.2: Python lib for TOML
 dev-python/uhi 0.3.3: Universal Histogram Interface
 dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
 dev-python/vector 1.1.0: Vector classes and utilities
@@ -50,10 +56,11 @@ sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input P
 sci-physics/cernlib 2006-r8: CERN program library for High Energy Physics
 sci-physics/checkmate 2.0.26 9999: Check Models At Terascale Energies
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
+sci-physics/coffea 0.7.22 9999: Basic tools and wrappers for enabling not-too-alien syntax when running columnar Collider HEP analysis.
 sci-physics/collier 1.2.5 1.2.7 1.2.7-r1 1.2.7-r2: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
-sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0: DecayLanguage: describe, manipulate and convert particle decays
+sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0 0.17.0: DecayLanguage: describe, manipulate and convert particle decays
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
 sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
@@ -131,7 +138,7 @@ sci-physics/spheno 3.3.8-r2 4.0.5: SPheno stands for S(upersymmetric) Pheno(meno
 sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1 2.2.3-r2: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 1.0.0 9999: TOPDRAWER renders top files.
-sci-physics/uproot 5.0.0 5.0.11: ROOT I/O in pure Python and Numpy.
+sci-physics/uproot 5.0.0 5.0.11 5.1.1: ROOT I/O in pure Python and Numpy.
 sci-physics/vbfnlo 2.7.1 3.0.0_beta5: A parton level Monte Carlo for processes wit electroweak bosons
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
 sci-physics/xfitter 2.2.0: PDF fitting tool
@@ -145,4 +152,4 @@ sys-cluster/modules 4.6.0-r1: Dynamic modification of a user's environment via m
 virtual/feyntools 0: FeynTools is a collection of FeynArts, FormCalc and LoopTools.
 virtual/heptools 0: HEPTools is a collection of LHAPDF, HEPMC and PYTHIA.
 virtual/powheg-box-v2 4027 9999: NLO calculations in shower Monte Carlo programs according to the POWHEG method
-virtual/scikit-hep 0 2023.08.01: Metapackage of Scikit-HEP project data analysis packages for Particle Physics.
+virtual/scikit-hep 2023.08.01: Metapackage of Scikit-HEP project data analysis packages for Particle Physics.
