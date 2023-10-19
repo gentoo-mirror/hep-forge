@@ -31,7 +31,7 @@ dev-python/resample 1.6.0: Randomization-based inference in Python
 dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
 dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics formats
 dev-python/toml 0.10.2: Python lib for TOML
-dev-python/uhi 0.3.3: Universal Histogram Interface
+dev-python/uhi 0.3.3 0.4.0: Universal Histogram Interface
 dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
 dev-python/vector 1.1.0: Vector classes and utilities
 dev-python/xsdata 22.11: Library and command line tool for producing version strings
