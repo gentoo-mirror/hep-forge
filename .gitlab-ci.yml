@@ -407,6 +407,10 @@ default:
 .matrix9: &matrix9
   parallel:
     matrix:
+      - PKG: [numba]
+        VERSION: [0.58.0, 0.57.1]
+        CATEGORY: ['dev-python']
+        <<: *images
       - PKG: [awkward-cpp]
         VERSION: [24,22]
         CATEGORY: ['dev-python']

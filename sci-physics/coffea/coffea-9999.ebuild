@@ -12,6 +12,7 @@ HOMEPAGE="
 
 LICENSE="BSD"
 SLOT="0"
+
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/CoffeaTeam/coffea/"
@@ -44,4 +45,5 @@ RDEPEND="
 	>=dev-python/hist-2.0.0[${PYTHON_USEDEP}]
 	dev-python/cachetools[${PYTHON_USEDEP}]
 "
+
 BDEPEND="${RDEPEND}"
