@@ -10,7 +10,7 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-    Awkward Array is a library for nested, variable-sized data, including arbitrary-length lists, records, mixed types, and missing data, using NumPy-like idioms.
+	awkward-cpp provides precompiled routines for the awkward package. It is not useful on its own, only as a dependency for awkward .
 	</longdescription>
 	<upstream>
 		<remote-id type="pypi">awkward</remote-id>
