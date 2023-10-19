@@ -460,7 +460,7 @@ default:
         CATEGORY: ['sci-physics']
         <<: *images
       - PKG: [coffea]
-        VERSION: [0.7.22]
+        VERSION: [9999, 0.7.22]
         CATEGORY: ['sci-physics']
         <<: *images
 

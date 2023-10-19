@@ -2,10 +2,13 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{9..11} )
 DISTUTILS_USE_PEP517=hatchling
-inherit distutils-r1
+inherit distutils-r1 
 
 DESCRIPTION="Basic tools and wrappers for enabling not-too-alien syntax when running columnar Collider HEP analysis."
-HOMEPAGE="https://github.com/CoffeaTeam/coffea"
+HOMEPAGE="
+	https://github.com/CoffeaTeam/coffea
+	https://coffeateam.github.io/coffea/
+"
 
 LICENSE="BSD"
 SLOT="0"
