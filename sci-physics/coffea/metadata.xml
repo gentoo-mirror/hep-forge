@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+	coffea is a prototype package for pulling together all the typical needs of a high-energy collider physics (HEP) experiment analysis using the scientific python ecosystem. It makes use of uproot and awkward-array to provide an array-based syntax for manipulating HEP event data in an efficient and numpythonic way. There are sub-packages that implement histogramming, plotting, and look-up table functionalities that are needed to convey scientific insight, apply transformations to data, and correct for discrepancies in Monte Carlo simulations compared to data.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">coffea</remote-id>
+		<remote-id type="github">CoffeaTEam/coffea</remote-id>
+	</upstream>
+</pkgmetadata>
