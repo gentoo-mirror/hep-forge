@@ -459,6 +459,10 @@ default:
         VERSION: [3.1.2, 2.1.0, 2.0.0]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [coffea]
+        VERSION: [0.7.22]
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 .config:
   before_script:
