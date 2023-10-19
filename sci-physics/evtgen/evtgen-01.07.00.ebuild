@@ -38,7 +38,7 @@ src_configure() {
 }
 
 src_compile() {
-	export MAKEOPTS="$MAKEOPTS -j1"
+	export MAKEOPTS="$MAKEOPTS -j1" # parallel build fails
 	emake
 }
 
