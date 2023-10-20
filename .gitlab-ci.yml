@@ -472,6 +472,7 @@ default:
 .config:
   before_script:
     - emerge --sync || emaint -r ${REPO_NAME} sync
+    - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
     - ACCEPT_KEYWORDS="~amd64" emerge -q '>=app-portage/pkg-testing-tools-0.1.2'
