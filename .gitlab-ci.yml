@@ -508,6 +508,7 @@ global-pkgcheck:
   before_script:
     - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
+    - echo '*/*::science ~amd64' > /etc/portage/package.accept_keywords/science
     - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
     - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
     - echo "sync-type = git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
