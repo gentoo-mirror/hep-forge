@@ -22,7 +22,7 @@ IUSE="+pythia6 +pythia8 dpmjet"
 RDEPEND="
     pythia6? ( sci-physics/pythia:6 )
     pythia8? ( sci-physics/pythia:8 )
-    dpmjet? ( sci-physics/dpmjet )
+    dpmjet? ( sci-physics/dpmjet-III )
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
