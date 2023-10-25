@@ -402,6 +402,14 @@ default:
         VERSION: [0.6.1]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [spey]
+        VERSION: [0.1.2]
+        CATEGORY: ["sci-physics"]
+        <<: *images
+      - PKG: [spey-pyhf]
+        VERSION: [0.1.1]
+        CATEGORY: ["sci-physics"]
+        <<: *images
 
 
 .matrix9: &matrix9
