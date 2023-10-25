@@ -2,7 +2,7 @@
 # Copyright 2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 EAPI=8
-
+CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
 DESCRIPTION="Photon pomoeron Monte Carlo generator"
@@ -24,3 +24,20 @@ DEPEND="${RDEPEND}"
 BDEPEND="
     virtual/fortran
 "
+
+src_prepare() {
+    sed -i 's/-Werror//g' CMakeLists.txt
+	cmake_src_prepare
+}
+
+src_configure() {
+	local mycmakeargs=(
+	)
+	cmake_src_configure
+}
+
+src_install() {
+    # get build dir
+
+    dobin ${BUILD_DIR}/starlight
+}
