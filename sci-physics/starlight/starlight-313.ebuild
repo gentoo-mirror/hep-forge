@@ -10,7 +10,7 @@ HOMEPAGE="
 	https://starlight.hepforge.org/
 "
 
-SRC_URI="https://starlight.hepforge.org/downloads/?f=${PN}-r${PV}.tar -> ${P}.tar" # weird hepforge download names
+SRC_URI="https://starlight.hepforge.org/downloads/?f=${PN}_r${PV}.tar -> ${P}.tar" # weird hepforge download names
 S="${WORKDIR}/"
 KEYWORDS="~amd64"
 
