@@ -12,7 +12,7 @@ SRC_URI="https://github.com/DPMJET/DPMJET/archive/refs/tags/v${PV}.tar.gz -> ${P
 #S="${WORKDIR}/${P}"
 KEYWORDS="~amd64"
 
-LICENSE="BSD-3"
+LICENSE="BSD"
 SLOT="3"
 KEYWORDS="~amd64"
 IUSE=""
