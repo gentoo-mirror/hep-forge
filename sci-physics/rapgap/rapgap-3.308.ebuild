@@ -36,6 +36,6 @@ src_prepare() {
 
 src_configure() {
 	econf \
-		--with-hepmc=${ESYSROOT}/usr/$(get_libdir)/ \
-		--with-lhapdf6=${ESYSROOT}/usr/$(get_libdir)/
+		--with-hepmc="${ESYSROOT}/usr/$(get_libdir)/" \
+		--with-lhapdf6="${ESYSROOT}/usr/$(get_libdir)/"
 }
