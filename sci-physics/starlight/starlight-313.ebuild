@@ -17,10 +17,9 @@ KEYWORDS="~amd64"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+pythia6 +pythia8 dpmjet"
+IUSE="+pythia8 dpmjet"
 
 RDEPEND="
-    pythia6? ( sci-physics/pythia:6 )
     pythia8? ( sci-physics/pythia:8 )
     dpmjet? ( sci-physics/dpmjet-III )
 "
@@ -36,7 +35,6 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-        -DENABLE_PYTHIA6=$(usex pythia6 ON OFF)
         -DENABLE_PYTHIA8=$(usex pythia8 ON OFF)
         -DENABLE_DPMJET=$(usex dpmjet ON OFF)
 	)
