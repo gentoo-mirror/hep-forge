@@ -39,3 +39,8 @@ src_configure() {
 		--with-hepmc="${ESYSROOT}/usr/$(get_libdir)/" \
 		--with-lhapdf6="${ESYSROOT}/usr/$(get_libdir)/"
 }
+
+src_compile() {
+	export MAKEOPTS=-j1 || die
+	default
+}
