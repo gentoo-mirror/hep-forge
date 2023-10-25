@@ -14,12 +14,16 @@ SRC_URI="https://starlight.hepforge.org/downloads/?f=${PN}_r${PV}.tar -> ${P}.ta
 S="${WORKDIR}/"
 KEYWORDS="~amd64"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="+pythia6 +pythia8 dpmjet"
 
-RDEPEND=""
+RDEPEND="
+    pythia6? ( sci-physics/pythia:6 )
+    pythia8? ( sci-physics/pythia:8 )
+    dpmjet? ( sci-physics/dpmjet )
+"
 DEPEND="${RDEPEND}"
 BDEPEND="
     virtual/fortran
@@ -32,6 +36,9 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
+        -DENABLE_PYTHIA6=$(usex pythia6 ON OFF)
+        -DENABLE_PYTHIA8=$(usex pythia8 ON OFF)
+        -DENABLE_DPMJET=$(usex dpmjet ON OFF)
 	)
 	cmake_src_configure
 }
@@ -39,5 +46,5 @@ src_configure() {
 src_install() {
     # get build dir
 
-    dobin ${BUILD_DIR}/starlight
+    dobin "${BUILD_DIR}"/starlight
 }
