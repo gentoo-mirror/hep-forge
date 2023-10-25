@@ -467,6 +467,10 @@ default:
         VERSION: [3.1.2, 2.1.0, 2.0.0]
         CATEGORY: ['sci-physics']
         <<: *images
+      - PKG: [starlight]
+        VERSION: ['313']
+        CATEGORY: ['sci-physics']
+        <<: *images
 
 
 .config:
