@@ -35,7 +35,7 @@ src_prepare() {
 
 src_configure() {
 	local mycmakeargs=(
-        -DENABLE_PYTHIA8=$(usex pythia8 ON OFF)
+        -DENABLE_PYTHIA=$(usex pythia8 ON OFF)
         -DENABLE_DPMJET=$(usex dpmjet ON OFF)
 	)
 	cmake_src_configure
