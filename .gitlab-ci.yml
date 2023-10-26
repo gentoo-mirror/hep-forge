@@ -113,6 +113,10 @@ default:
         VERSION: ["1.3.3"]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [correctionlib]
+        VERSION: ["2.4.0", "2.3.3"]
+        CATEGORY: ["dev-python"]
+        <<: *images
 
 .matrix2_1: &matrix2_1
   parallel:
@@ -231,6 +235,10 @@ default:
         <<: *images
       - PKG: [jacobi]
         VERSION: ["0.8.1"]
+        CATEGORY: ["dev-python"]
+        <<: *images
+      - PKG: [xgboost]
+        VERSION: ["2.0.1","1.6.2"]
         CATEGORY: ["dev-python"]
         <<: *images
 
