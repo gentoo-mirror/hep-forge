@@ -374,6 +374,10 @@ default:
         VERSION: [1.3.2]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - PKG: [rapgap]
+        VERSION: ["3.308"]
+        CATEGORY: ["sci-physics"]
+        <<: *images
       - PKG: [hathor]
         VERSION: ["2.0"]
         CATEGORY: ["sci-physics"]
