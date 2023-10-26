@@ -237,6 +237,10 @@ default:
         VERSION: ["0.8.1"]
         CATEGORY: ["dev-python"]
         <<: *images
+      - PKG: [xgboost]
+        VERSION: ["2.0.1","1.6.2"]
+        CATEGORY: ["dev-python"]
+        <<: *images
 
 .matrix5: &matrix5
   parallel:
