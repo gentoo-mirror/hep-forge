@@ -26,12 +26,13 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
-    virtual/fortran
+	virtual/fortran
 "
 
 src_prepare() {
 	default
 	eautoreconf
+	sed -i 's/CALL ARTEST(0)//' ariadne412/atest.f
 }
 
 src_configure() {
