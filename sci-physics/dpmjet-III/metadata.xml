@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+    <maintainer type="project">
+        <email>sci-physics@gentoo.org</email>
+        <name>Gentoo Physics Project</name>
+    </maintainer>
+    <longdescription lang="en">
+    DPMJET-III is a Monte Carlo event generator for hadron, photon and nuclear collisions with a several decade-long history. DPMJET is an integral part of FLUKA, a fully integrated particle physics MonteCarlo simulation package, acting as event generator for nucleus-nucleus collisions above 5 GeV/nucleon and for hadronic collisions at high energies. DPMJET-III embeds the PHOJET event generator, which is used for simulations of hadron-hadron, photon-hadron and photon-photon collisions. This and future versions of PHOJET will be distributed as part of this DPMJET package. Both codes are interfaced to Pythia 6 for hadronization.
+    </longdescription>
+</pkgmetadata>

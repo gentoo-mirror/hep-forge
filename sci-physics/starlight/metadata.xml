@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+    <maintainer type="project">
+        <email>sci-physics@gentoo.org</email>
+        <name>Gentoo Physics Project</name>
+    </maintainer>
+    <longdescription lang="en">
+    STARlight is a Monte Carlo that simulates two-photon and photon-Pomeron interactions between relativistic nuclei and protons. It produces a variety of final states. For two-photons, it simulates lepton pairs and a variety of mesons. A list of available channels may be found here. For photonuclear interactions, it models coherent and incoherent vector mesons production. A list of available channels may be found here. 
+    </longdescription>
+    <use>
+        <flag name="dpmjet">Adds support for DPMJET <pkg>sci-physics/dpmjet-III</pkg></flag>
+        <flag name="pythia8">Adds support for PYTHIA 8 <pkg>sci-physics/pythia</pkg></flag>
+    </use>
+</pkgmetadata>
