@@ -88,6 +88,8 @@ sci-physics/sherpa:lhapdf - Build with LHAPDF
 sci-physics/sherpa:pythia - Build with Pythia
 sci-physics/sherpa:rivet - Build with Rivet
 sci-physics/sherpa:root - Build with Root
+sci-physics/starlight:dpmjet - Adds support for DPMJET sci-physics/dpmjet-III
+sci-physics/starlight:pythia8 - Adds support for PYTHIA 8 sci-physics/pythia
 sci-physics/tauola:hepmc - hepmc version 2
 sci-physics/tauola:hepmc3 - hepmc version 3
 sci-physics/tauola:pythia - build with pythia connection

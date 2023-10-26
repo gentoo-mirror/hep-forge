@@ -63,6 +63,7 @@ sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measure
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0 0.17.0: DecayLanguage: describe, manipulate and convert particle decays
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
+sci-physics/dpmjet-III 19.3.6: Home of the DPMJET event generator
 sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
 sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
 sci-physics/evtgen 01.07.00 02.02.00 02.02.01: 
@@ -124,6 +125,7 @@ sci-physics/pythia 6.4.28-r2 8.2.45-r4 8.3.06 8.3.07-r4 8.3.09 8.3.09-r1 9999: L
 sci-physics/qcdloop 2.0.5 2.0.9 2.0.9-r1: An object-oriented one-loop scalar Feynman integrals framework
 sci-physics/qcdnum 18.00.00: Fast QCD Evolution and Convolution
 sci-physics/qgraf 3.4.2 3.5.2 3.6.5 3.6.6: qgraf generates Feynman diagrams for various types of QFT models
+sci-physics/rapgap 3.308: Hadron level Monte Carlo generator for ep and selected processes in pp scattering
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
 sci-physics/resummino 3.1.2: Resummation for electroweak BSM particles.
@@ -138,6 +140,7 @@ sci-physics/softsusy 4.1.13: Calculates supersymmetric particle spectra
 sci-physics/spey 0.1.2: Smooth inference for reinterpretation studies
 sci-physics/spey-pyhf 0.1.1: pyhf plugin for spey interface
 sci-physics/spheno 3.3.8-r2 4.0.5: SPheno stands for S(upersymmetric) Pheno(menology)
+sci-physics/starlight 313: Photon pomoeron Monte Carlo generator
 sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thepeg 2.2.3-r1 2.2.3-r2: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 1.0.0 9999: TOPDRAWER renders top files.
