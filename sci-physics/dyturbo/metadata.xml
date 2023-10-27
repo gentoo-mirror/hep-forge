@@ -12,4 +12,7 @@
     <longdescription lang="en">
     DYTurbo is a program for the calculation of the QCD transverse-momentum resummation of Drell–Yan cross sections up to approximate netx-to-next-to-next-to-next-to-leading (N4LLa) logarithmic accuracy, including the full kinematical dependence of the decaying lepton pair with the corresponding spin correlations and the finite-width effects. 
     </longdescription>
+    <use>
+        <flag name="root">Adds support for Root <pkg>sci-physics/root</pkg></flag>
+    </use>
 </pkgmetadata>

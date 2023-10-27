@@ -37,9 +37,9 @@ src_prepare() {
 	eapply "${FILESDIR}"/${P}-nogfortran.patch
 	# set some default paths
 	sed -i \
-		-e "s:/usr/local:${EROOT}/usr:g" \
+		-e "s:/usr/local:${ESYSROOT}/usr:g" \
 		-e "s:prefix)/lib/\$(DEB_HOST_MULTIARCH):prefix)/$(get_libdir):" \
-		-e "s:\$(prefix)/etc:${EROOT}/etc:" \
+		-e "s:\$(prefix)/etc:${ESYSROOT}/etc:" \
 		-e 's:$(prefix)/man:$(prefix)/share/man:' \
 		debian/add-ons/cernlib.mk || die "sed failed"
 

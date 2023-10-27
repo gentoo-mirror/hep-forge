@@ -6,7 +6,7 @@ inherit distutils-r1
 
 DESCRIPTION="Probabilistic reasoning and statistical analysis in TensorFlow"
 HOMEPAGE="https://github.com/tensorflow/probability"
-SRC_URI="https://github.com/tensorflow/probability/archive/refs/tags/v${PV}.zip"
+SRC_URI="https://github.com/tensorflow/probability/archive/refs/tags/v${PV}.zip -> ${P}.zip"
 
 LICENSE="MIT"
 SLOT="0"
@@ -21,4 +21,7 @@ RDEPEND="
 	>=dev-python/gast-0.3.2[${PYTHON_USEDEP}]
 	dev-python/dm-tree[${PYTHON_USEDEP}]
 "
-BDEPEND="${RDEPEND}"
+BDEPEND="
+	app-arch/unzip
+	${RDEPEND}
+"

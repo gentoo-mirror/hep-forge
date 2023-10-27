@@ -6,7 +6,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Statistics tools and utilities."
 HOMEPAGE="
-    scikit-hep.org/hepstats/
+    https://scikit-hep.org/hepstats/
     https://github.com/scikit-hep/hepstats
 "
 #SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"

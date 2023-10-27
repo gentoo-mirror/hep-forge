@@ -15,7 +15,7 @@ IUSE="pythia photos tauola herwig"
 
 RDEPEND="
 	sci-physics/hepmc:2=
-	pythia? ( <sci-physics/pythia-8.3 )
+	pythia? ( <sci-physics/pythia-8.3:8 )
 	photos? ( >=sci-physics/photos-3.64 )
 	tauola? ( >=sci-physics/tauola-1.1.8 )
 "
@@ -34,7 +34,8 @@ src_prepare() {
 }
 
 src_configure() {
-	./configure  --prefix=${D}/usr --hepmcdir=${EPREFIX}/usr $(usex pythia --pythiadir=${EPREFIX}/usr) $(usex photos --photosdir=${EPREFIX}/usr) $(usex tauola --tauoladir=${EPREFIX}/usr)
+	# custom configure script
+	./configure  --prefix="${D}"/usr --hepmcdir="${EPREFIX}"/usr $(usex pythia --pythiadir="${EPREFIX}"/usr) $(usex photos --photosdir="${EPREFIX}"/usr) $(usex tauola --tauoladir="${EPREFIX}"/usr)
 }
 
 src_compile() {

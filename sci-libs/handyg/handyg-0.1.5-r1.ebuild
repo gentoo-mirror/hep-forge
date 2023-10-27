@@ -8,7 +8,7 @@ MY_P=${PN}-v${PV}
 
 DESCRIPTION="Rapid numerical evaluation of generalised polylogarithms"
 HOMEPAGE="https://gitlab.com/mule-tools/handyg"
-SRC_URI="https://gitlab.com/mule-tools/${PN}/-/archive/v${PV}/${MY_P}.tar.gz"
+SRC_URI="https://gitlab.com/mule-tools/${PN}/-/archive/v${PV}/${MY_P}.tar.bz2"
 S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-3+"
@@ -22,7 +22,7 @@ BDEPEND="
 "
 
 PATCHES=(
-    "${FILESDIR}"/${P}-so.patch
+	"${FILESDIR}"/${P}-so.patch
 )
 
 src_configure() {

@@ -3,8 +3,6 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=8
 
-inherit autotools
-
 MY_P=fastnlo_toolkit-2.5.0-2826
 DESCRIPTION="fast pQCD calculations for hadron-induced processes"
 HOMEPAGE="https://fastnlpo.hepforge.org/"

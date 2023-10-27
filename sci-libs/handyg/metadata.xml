@@ -12,4 +12,7 @@
 	<longdescription lang="en">
 		A Fortran implementation for rapid numerical evaluation of generalised polylogarithms.
 	</longdescription>
+	<upstream>
+		<remote-id type="gitlab">mule-tools/handyg</remote-id>
+	</upstream>
 </pkgmetadata>
