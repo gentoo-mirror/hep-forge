@@ -16,6 +16,7 @@ sci-mathematics/cgal:shared - Build shared library
 sci-physics/applgrid:root - use root
 sci-physics/collier:static - Build static library
 sci-physics/cuttools:dummy - Add dummy module for OpenLoops
+sci-physics/dyturbo:root - Adds support for Root sci-physics/root
 sci-physics/evtgen:herwig - Patches from herwig bootstrap
 sci-physics/evtgen:photos - Build with photos
 sci-physics/evtgen:pythia - Build with pythia
@@ -50,7 +51,7 @@ sci-physics/madgraph5:rivet - USE system rivet
 sci-physics/madgraph5:samurai - USE system samurai
 sci-physics/madgraph5:td - USE system topdrawer
 sci-physics/madgraph5:thepeg - USE system thepeg
-sci-physics/ninja:static - Build static library
+sci-physics/ninja:static-libs - Build static library
 sci-physics/oneloop:arprec - use sci-libs/arprec
 sci-physics/oneloop:cppintf - enable cppintf
 sci-physics/oneloop:ddcpp - double use sci-libs/qd

@@ -1,15 +1,13 @@
-BDEPEND=virtual/fortran sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=sys-devel/automake-1.16.5:1.16 ) >=sys-devel/autoconf-2.71-r5 >=sys-devel/libtool-2.4.7
+BDEPEND=virtual/fortran
 DEFINED_PHASES=configure
 DEPEND=root? ( sci-physics/root )
 DESCRIPTION=A small-x resummation code
 EAPI=8
 HOMEPAGE=https://www.roma1.infn.it/~bonvini/hell/
-INHERIT=autotools
 IUSE=root
 KEYWORDS=~amd64
 LICENSE=GPL-2
 RDEPEND=root? ( sci-physics/root )
 SLOT=0
 SRC_URI=https://www.roma1.infn.it/~bonvini/hell/downloads/HELLx.v3.0.tgz -> hell-3.0.tgz
-_eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	6ae9a4347149b19a112caa1182d03bde
-_md5_=7cc5eb7fa9cfe5a88932d82f3f18c804
+_md5_=a10fb17cd157c2327357a39cf328b6f1
