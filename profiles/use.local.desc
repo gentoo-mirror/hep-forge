@@ -24,6 +24,7 @@ sci-physics/fastjet:cgal - Use sci-mathematics/cgal instead of bundled algorithm
 sci-physics/fastjet:plugins - Build all standard and C++ plugins
 sci-physics/feyncalc:FCtraditionalFormOutput - Use TraditionalForm typesetting.
 sci-physics/golem95:looptools - use looptools
+sci-physics/hell:root - Adds support for ROOT sci-physics/root
 sci-physics/hepmc:cm - Build with cm instead of default mm for length units
 sci-physics/hepmc:example - Build with example codes
 sci-physics/hepmc:gev - Build with GeV instead of default MeV for momentum units
