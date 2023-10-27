@@ -286,7 +286,7 @@ default:
         CATEGORY: ["sci-libs"]
         <<: *images
       - PKG: [polylogarithm]
-        VERSION: [6.14.0]
+        VERSION: [6.15.0, 6.14.0]
         CATEGORY: ["sci-libs"]
         <<: *images
       - PKG: [sherpa]

@@ -30,7 +30,7 @@ BDEPEND="
 "
 
 PATCHES=(
-    ${FILESDIR}/fonll-1.3.3-legacy.patch
+	"${FILESDIR}"/fonll-1.3.3-legacy.patch
 )
 
 src_compile() {

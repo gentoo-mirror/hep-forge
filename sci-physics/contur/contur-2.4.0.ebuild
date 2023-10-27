@@ -9,7 +9,7 @@ inherit distutils-r1
 
 DESCRIPTION="Exploring the sensitivity of unfolded collider measurements to BSM models."
 HOMEPAGE="https://gitlab.com/hepcedar/contur/"
-SRC_URI="https://gitlab.com/hepcedar/contur/-/archive/${P}/${PN}-${P}.tar.gz"
+SRC_URI="https://gitlab.com/hepcedar/contur/-/archive/${P}/${PN}-${P}.tar.bz2"
 S="${WORKDIR}"/${PN}-${P}
 
 LICENSE="GPL-3"

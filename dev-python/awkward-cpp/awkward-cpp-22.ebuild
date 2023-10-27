@@ -7,7 +7,7 @@ PYPI_NO_NORMALIZE=1
 
 inherit pypi distutils-r1
 
-DESCRIPTION="awkward-cpp"
+DESCRIPTION="awkward-cpp bindings for Python"
 HOMEPAGE="https://github.com/scikit-hep/awkward/"
 #SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 

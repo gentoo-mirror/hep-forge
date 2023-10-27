@@ -16,11 +16,9 @@ if [[ ${PV} != 9999 ]]; then
     EGIT_COMMIT="${PV}"
 fi
 S="${WORKDIR}/${P}"
-KEYWORDS="~amd64"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
 IUSE=""
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
