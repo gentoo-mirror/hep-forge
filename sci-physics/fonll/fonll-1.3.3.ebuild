@@ -6,8 +6,11 @@ EAPI=8
 MY_P=FONLL-${PV}
 DESCRIPTION="FONLL Heavy Quark Production"
 HOMEPAGE="
-    http://cacciari.web.cern.ch/cacciari/fonll/
-    http://www.lpthe.jussieu.fr/~cacciari/fonll/fonllform.html
+	http://cacciari.web.cern.ch/cacciari/fonll/
+	http://www.lpthe.jussieu.fr/~cacciari/fonll/fonllform.html
+
+	https://arxiv.org/hep-ph/980340
+	https://arxiv.org/hep-ph/0102134
 "
 SRC_URI="http://cacciari.web.cern.ch/cacciari/fonll/FONLL-1.3.3.tgz -> ${P}.tar.gz"
 S="${WORKDIR}/${MY_P}"
@@ -31,9 +34,9 @@ PATCHES=(
 )
 
 src_compile() {
-    FFLAGS="${FFLAGS} -fPIC -std=legacy" emake -f main/Makefile VPATH=main:hdmassive:hdresummed:phmassive:phresummed:common fonll
+	FFLAGS="${FFLAGS} -fPIC -std=legacy" emake -f main/Makefile VPATH=main:hdmassive:hdresummed:phmassive:phresummed:common fonll
 }
 
 src_install() {
-    dobin fonll
+	dobin fonll
 }
