@@ -16,11 +16,9 @@ IUSE="
     +lhapdf 
     +looptools 
     +hepmc
-
     hdf5
     openloops 
     recola2 
-
     qgraf 
     form
     pythia8 
@@ -65,6 +63,7 @@ src_configure() {
         $(use_enable fastjet) \
         $(use_enable openloops) \
         $(use_enable gosam) \
+        $(use_enable hdf5) \
         $(use_with form) \
         $(use_with qgraf) \
         $(use_with ninja) \
