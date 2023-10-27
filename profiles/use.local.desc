@@ -101,6 +101,20 @@ sci-physics/thepeg:hepmc2 - Adds support for High Energy Physics Monte Carlo Gen
 sci-physics/thepeg:hepmc3 - Adds support for High Energy Physics Monte Carlo Generators 3sci-physics/hepmc
 sci-physics/thepeg:lhapdf - Adds support for sci-physics/lhapdf
 sci-physics/thepeg:rivet - Adds support for sci-physics/rivet
+sci-physics/whizard:fastjet - Use fastjet for jet clustering sci-physics/fastjet
+sci-physics/whizard:form - Use form for loop calculations sci-mathematics/form
+sci-physics/whizard:gosam - Use gosam for loop calculations sci-physics/gosam
+sci-physics/whizard:hepmc - Use HepMC for event output sci-physics/hepmc
+sci-physics/whizard:hoppet - Use hoppet for resummation sci-physics/hoppet
+sci-physics/whizard:lhapdf - Use LHAPDF for PDFs sci-physics/lhapdf
+sci-physics/whizard:looptools - Use looptools for loop calculations sci-physics/looptools
+sci-physics/whizard:ninja - Use ninja for loop calculations sci-physics/ninja
+sci-physics/whizard:omega - Toggle use of O'Mega matrix element generator
+sci-physics/whizard:openloops - Use openloops for loop calculations sci-physics/openloops
+sci-physics/whizard:pythia8 - Use Pythia8 for hadronization sci-physics/pythia
+sci-physics/whizard:qgraf - Use qgraf for loop calculations sci-physics/qgraf
+sci-physics/whizard:recola2 - Use recola2 for loop calculations sci-physics/recola2
+sci-physics/whizard:samurai - Use samurai for loop calculations sci-physics/samurai
 sci-physics/xfitter:apfel - Adds support for sci-physics/apfel
 sci-physics/xfitter:apfelxx - Adds support for sci-physics/apfelxx
 sci-physics/xfitter:applgrid - Adds support for sci-physics/applgrid
