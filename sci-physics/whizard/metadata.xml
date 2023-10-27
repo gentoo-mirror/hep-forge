@@ -31,5 +31,7 @@ WHIZARD supports the Standard Model and a huge number of BSM models. Model exten
         <flag name="samurai"> Use samurai for loop calculations <pkg>sci-physics/samurai</pkg></flag>
         <flag name="fastjet"> Use fastjet for jet clustering <pkg>sci-physics/fastjet</pkg></flag>
         <flag name="qgraf"> Use qgraf for loop calculations <pkg>sci-physics/qgraf</pkg></flag>
+        <flag name="gosam"> Use gosam for loop calculations <pkg>sci-physics/gosam</pkg></flag>
+        <flag name="recola2"> Use recola2 for loop calculations <pkg>sci-physics/recola2</pkg></flag>
     </use>
 </pkgmetadata>
