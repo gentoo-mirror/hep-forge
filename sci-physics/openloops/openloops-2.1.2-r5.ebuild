@@ -43,7 +43,7 @@ src_prepare() {
 }
 
 src_compile() {
-	escons
+	escons --cache-disable
 }
 
 src_install() {
