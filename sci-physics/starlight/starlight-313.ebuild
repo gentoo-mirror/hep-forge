@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="-pythia8 dpmjet"
+IUSE="pythia8 +dpmjet"
 
 RDEPEND="
     pythia8? ( sci-physics/pythia:8 )
