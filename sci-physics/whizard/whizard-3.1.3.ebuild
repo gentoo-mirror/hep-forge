@@ -15,11 +15,15 @@ KEYWORDS="~amd64"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+lhapdf +looptools +hepmc hdf5 openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO lcio python
+IUSE="+omega +lhapdf +looptools +hepmc hdf5 openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO lcio python
 
 
 RDEPEND="
-	lhapdf? ( sci-physics/lhapdf )
+	dev-ml/ocamlbuild
+	lhapdf? ( 
+		sci-physics/lhapdf 
+		sci-physics/lhapdf-sets[lhapdf_sets_ct10,lhapdf_sets_cteq6l1]
+	)
 	looptools? ( sci-physics/looptools )
 	hepmc? ( || ( sci-physics/hepmc:2 sci-physics/hepmc:3 ) )
 
@@ -44,6 +48,8 @@ BDEPEND="
 
 src_configure() {
 	econf \
+		--disable-default-UFO-dir \
+		$(use_enable omega) \
         $(use_enable lhapdf) \
         $(use_enable looptools) \
         $(use_enable hepmc) \
@@ -59,4 +65,8 @@ src_configure() {
         $(use_with samurai) \
 #TODO        $(use_enable python) \ 
 
+}
+
+pkg_postinst() {
+	optfeature "visualisation latex" dev-texlive/texlive-metapost
 }
