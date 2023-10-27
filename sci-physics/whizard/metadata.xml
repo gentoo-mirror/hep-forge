@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<maintainer type="project">
+		<email>sci-physics@gentoo.org</email>
+		<name>Gentoo Physics Project</name>
+	</maintainer>
+	<longdescription lang="en">
+     WHIZARD is a program system designed for the efficient calculation of multi-particle scattering cross sections and simulated event samples.
+
+WHIZARD can evaluate NLO QCD corrections in the SM for arbitary lepton and hadron colliders. Tree-level matrix elements are generated automatically for arbitrary partonic processes by using the Optimized Matrix Element Generator O'Mega. Matrix elements obtained by alternative methods (e.g., including loop corrections) may be interfaced as well. The program is able to calculate numerically stable signal and background cross sections and generate unweighted event samples with reasonable efficiency for processes with up to eight final-state particles; more particles are possible. For more particles, there is the option to generate processes as decay cascades including complete spin correlations. Different options for QCD parton showers are available.
+
+Polarization is treated exactly for both the initial and final states. Final-state quark or lepton flavors can be summed over automatically where needed. For hadron collider physics, an interface to the standard LHAPDF is provided. For Linear Collider physics, beamstrahlung (CIRCE) and ISR spectra are included for electrons and photons. The events can be written to file in standard formats, including ASCII, StdHEP, the Les Houches event format (LHEF), HepMC, or LCIO. These event files can then be hadronized.
+
+WHIZARD supports the Standard Model and a huge number of BSM models. Model extensions or completely different models can be added. WHIZARD fully supports external models from UFO files. There are also legacy interfaces to FeynRules and SARAH. 
+	</longdescription>
+</pkgmetadata>
