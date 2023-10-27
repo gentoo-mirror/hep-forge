@@ -17,10 +17,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+lhapdf +looptools +hepmc hdf5 openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO lcio python
 
+
 RDEPEND="
 	lhapdf? ( sci-physics/lhapdf )
 	looptools? ( sci-physics/looptools )
-	hepmc? ( sci-physics/hepmc )
+	hepmc? ( || ( sci-physics/hepmc:2 sci-physics/hepmc:3 ) )
 
 	hdf5? ( sci-libs/hdf5 )
 	recola2? ( sci-physics/recola2 )
