@@ -18,4 +18,18 @@ Polarization is treated exactly for both the initial and final states. Final-sta
 
 WHIZARD supports the Standard Model and a huge number of BSM models. Model extensions or completely different models can be added. WHIZARD fully supports external models from UFO files. There are also legacy interfaces to FeynRules and SARAH. 
 	</longdescription>
+    <use>
+        <flag name="lhapdf"> Use LHAPDF for PDFs <pkg>sci-physics/lhapdf<pkg></flag>
+        <flag name="hepmc"> Use HepMC for event output <pkg>sci-physics/hepmc<pkg></flag>
+        <flag name="pythia8"> Use Pythia8 for hadronization <pkg>sci-physics/pythia<pkg></flag>
+        <flag name="form"> Use form for loop calculations <pkg>sci-mathematics/form<pkg></flag>
+        <flag name="hoppet"> Use hoppet for resummation <pkg>sci-physics/hoppet<pkg></flag>
+        <flag name="looptools"> Use looptools for loop calculations <pkg>sci-physics/looptools<pkg></flag>
+        <flag name="openloops"> Use openloops for loop calculations <pkg>sci-physics/openloops<pkg></flag>
+        <flag name="ninja"> Use ninja for loop calculations <pkg>sci-physics/ninja<pkg></flag>
+        <flag name="hdf5"> Use hdf5 for event output <pkg>sci-libs/hdf5<pkg></flag>
+        <flag name="samurai"> Use samurai for loop calculations <pkg>sci-physics/samurai<pkg></flag>
+        <flag name="fastjet"> Use fastjet for jet clustering <pkg>sci-physics/fastjet<pkg></flag>
+        <flag name="qgraf"> Use qgraf for loop calculations <pkg>sci-physics/qgraf<pkg></flag>
+    </use>
 </pkgmetadata>
