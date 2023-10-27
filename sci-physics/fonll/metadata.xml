@@ -12,8 +12,4 @@
 	<longdescription lang="en">
     Program to calculate heavy quark transverse momentum and rapidity distributions in hadron-hadron and photon-hadron collisions, matching Fixed Order next-to-leading order terms and Next-to-Leading-Log large-p_T resummation.
 	</longdescription>
-	<upstream>
-    	<doc lang="arxiv">https://arxiv.org/hep-ph/980340</doc>
-    	<doc lang="arxiv">https://arxiv.org/hep-ph/0102134</doc>
-	</upstream>
 </pkgmetadata>
