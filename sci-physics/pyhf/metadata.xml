@@ -13,15 +13,6 @@
 	The HistFactory p.d.f. template [CERN-OPEN-2012-016] is per-se independent of its implementation in ROOT and sometimes, it’s useful to be able to run statistical analysis outside of ROOT, RooFit, RooStats framework.
 	</longdescription>
 	<upstream>
-		<doc lang="doi">https://doi.org/10.5281/zenodo.1169739</doc>
-		<doc lang="zenodo">https://zenodo.org/record/8256635</doc>
-
-		<doc lang="doi">https://doi.org/10.21105/joss.02823</doc>
-
-		<doc lang="inspirehep">https://inspirehep.net/literature/2598491</doc>
-		<doc lang="arxiv">https://arxiv.org/abs/2211.15838</doc>
-		<doc lang="doi">https://doi.org/10.22323/1.414.0245</doc>
-
 		<remote-id type="pypi">particle</remote-id>
 		<remote-id type="github">scikit-hep/particle</remote-id>
 	</upstream>
