@@ -15,7 +15,7 @@ KEYWORDS="~amd64"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+omega +lhapdf +looptools +hepmc hdf5 openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO lcio python
+IUSE="+omega +lhapdf +looptools +hepmc openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO lcio python
 
 
 RDEPEND="
@@ -27,7 +27,6 @@ RDEPEND="
 	looptools? ( sci-physics/looptools )
 	hepmc? ( || ( sci-physics/hepmc:2 sci-physics/hepmc:3 ) )
 
-	hdf5? ( sci-libs/hdf5 )
 	recola2? ( sci-physics/recola2 )
 	openloops? ( sci-physics/openloops )
 
@@ -58,7 +57,6 @@ src_configure() {
         $(use_enable fastjet) \
         $(use_enable openloops) \
         $(use_enable gosam) \
-        $(use_enable hdf5) \
         $(use_with form) \
         $(use_with qgraf) \
         $(use_with ninja) \
