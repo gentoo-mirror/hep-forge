@@ -6,7 +6,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Efficiently computes derivatives of numpy code."
 HOMEPAGE="
-    https://github.com/HIPS/autograd
+	https://github.com/HIPS/autograd
 "
 
 LICENSE="MIT"
