@@ -3,7 +3,10 @@
 EAPI=8
 
 DESCRIPTION="The WHIZARD Event Generator "
-HOMEPAGE="https://whizard.hepforge.org/"
+HOMEPAGE="
+	https://whizard.hepforge.org/
+	https://gitlab.tp.nt.uni-siegen.de/whizard/public
+"
 
 SRC_URI="https://whizard.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz" # weird hepforge download names
 #S="${WORKDIR}/${P}"
