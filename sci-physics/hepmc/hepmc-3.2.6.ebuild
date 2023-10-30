@@ -18,13 +18,13 @@ if [[ ${PV} == 9999 ]]; then
 else
 	SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
 	S="${WORKDIR}/${MYP}"
-	KEYWORDS="~amd64"
+	KEYWORDS="~amd64 ~x86 ~arm64 ~arm"
 fi
 
 LICENSE="GPL-3+"
 SLOT="3"
 IUSE="doc test examples python root"
-RESTRICT="!test? ( test )"
+RESTRICT="!test? ( test ) "
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
