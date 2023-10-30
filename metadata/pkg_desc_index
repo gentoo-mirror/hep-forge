@@ -134,6 +134,7 @@ sci-physics/rivet 3.1.7-r6 3.1.8 9999: Rivet toolkit (Robust Independent Validat
 sci-physics/rundec 0.5: running and decoupling of the strong coupling constant and quark masses
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 sci-physics/sherpa 2.2.12 2.2.15: Simulation of High-Energy Reactions of PArticles
+sci-physics/siscone 3.0.5: Hadron Seedless Infrared-Safe Cone jet algorithm
 sci-physics/slhalib 2.2: a library for SUSY Les Houches Accord I/O
 sci-physics/smelli 2.3.2 2.4.0: running and matching beyond the Standard Model
 sci-physics/smodels 2.2.1 2.3.0: A tool for interpreting simplified-model results from the LHC.
