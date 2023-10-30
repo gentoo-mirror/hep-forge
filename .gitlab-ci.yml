@@ -56,6 +56,7 @@ default:
       - PKG: [yoda]
         VERSION: [9999, 1.9.8, 1.9.7]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [hepmc]
         VERSION: [9999, 3.2.6, 3.2.5, 2.06.11, 2.06.09-r2]
@@ -81,6 +82,7 @@ default:
       - PKG: [pythia]
         VERSION: [9999, 8.3.09, 8.3.07, 8.2.45, 6.4.28]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [rivet]
         VERSION: ["3.1.8", 9999, 3.1.7]
@@ -89,10 +91,12 @@ default:
       - PKG: [fastjet]
         VERSION: ["3.4.1",3.4.0]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [fastjet-contrib]
         VERSION: ["1.051", "1.049"]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [qgraf]
         VERSION: ["3.6.6",3.6.5, 3.5.2, 3.4.2]
