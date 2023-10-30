@@ -56,9 +56,11 @@ default:
       - PKG: [yoda]
         VERSION: [9999, 1.9.8, 1.9.7]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [hepmc]
         VERSION: [9999, 3.2.6, 3.2.5, 2.06.11, 2.06.09-r2]
+        ARCH: [amd64, arm64, arm]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [delphes]
@@ -80,6 +82,7 @@ default:
       - PKG: [pythia]
         VERSION: [9999, 8.3.09, 8.3.07, 8.2.45, 6.4.28]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [rivet]
         VERSION: ["3.1.8", 9999, 3.1.7]
@@ -88,10 +91,12 @@ default:
       - PKG: [fastjet]
         VERSION: ["3.4.1",3.4.0]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [fastjet-contrib]
         VERSION: ["1.051", "1.049"]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [qgraf]
         VERSION: ["3.6.6",3.6.5, 3.5.2, 3.4.2]
@@ -104,6 +109,7 @@ default:
       - PKG: [looptools]
         VERSION: ["2.16", "2.15"]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [slhalib]
         VERSION: ["2.2"]
@@ -123,6 +129,7 @@ default:
     matrix:
       - PKG: [lhapdf]
         VERSION: [9999, 6.5.4, 6.5.3, 6.5.2, 6.4.0, 6.3.0]
+        ARCH: [amd64, arm64, arm]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [ninja]
@@ -498,17 +505,19 @@ default:
 
 
 .config:
+  tags:
+    - $ARCH
   before_script:
     - emerge --sync || emaint -r ${REPO_NAME} sync
     - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
     - ACCEPT_KEYWORDS="~amd64" emerge -q '>=app-portage/pkg-testing-tools-0.1.2'
-    - echo 'dev-util/hermes ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
-    - echo 'dev-python/uncertainties ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
-    - echo 'dev-python/toposort ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
-    - echo 'sci-physics/root ~amd64' >> /etc/portage/package.accept_keywords/zz-autoaccept
-    - echo "*/*::${REPO_NAME} ~amd64" > /etc/portage/package.accept_keywords/${REPO_NAME}
+    - echo 'dev-util/hermes ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
+    - echo 'dev-python/uncertainties ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
+    - echo 'dev-python/toposort ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
+    - echo 'sci-physics/root ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
+    - echo "*/*::${REPO_NAME} ~*" > /etc/portage/package.accept_keywords/${REPO_NAME}
     - echo '>=media-libs/libafterimage-1.20-r6 png gif tiff jpeg' >> /etc/portage/package.use/root
     - echo "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME} **" >> /etc/portage/package.accept_keywords/${REPO_NAME}
   rules:
