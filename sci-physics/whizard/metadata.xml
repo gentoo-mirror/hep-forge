@@ -20,6 +20,7 @@ WHIZARD supports the Standard Model and a huge number of BSM models. Model exten
 	</longdescription>
     <use>
         <flag name="lhapdf"> Use LHAPDF for PDFs <pkg>sci-physics/lhapdf</pkg></flag>
+        <flag name="lcio"> Use LCIO for PDFs <pkg>sci-physics/lcio</pkg></flag>
         <flag name="hepmc"> Use HepMC for event output <pkg>sci-physics/hepmc</pkg></flag>
         <flag name="pythia8"> Use Pythia8 for hadronization <pkg>sci-physics/pythia</pkg></flag>
         <flag name="form"> Use form for loop calculations <pkg>sci-mathematics/form</pkg></flag>

@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+omega +lhapdf +looptools +hepmc openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO python
+IUSE="+omega +lhapdf +looptools +hepmc lcio openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO python
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
