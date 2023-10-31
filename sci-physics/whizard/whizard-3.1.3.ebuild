@@ -2,11 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 EAPI=8
 
-DESCRIPTION="The WHIZARD Event Generator "
+DESCRIPTION="The WHIZARD Event Generator"
 HOMEPAGE="
 	https://whizard.hepforge.org/
 	https://gitlab.tp.nt.uni-siegen.de/whizard/public
 "
+
 
 SRC_URI="https://whizard.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz" # weird hepforge download names
 #S="${WORKDIR}/${P}"
@@ -15,8 +16,8 @@ KEYWORDS="~amd64"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+omega +lhapdf +looptools +hepmc openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO lcio python
-
+IUSE="+omega +lhapdf +looptools +hepmc openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja" # TODO python
+REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
 	dev-ml/ocamlbuild
@@ -30,6 +31,7 @@ RDEPEND="
 	recola2? ( sci-physics/recola2 )
 	openloops? ( sci-physics/openloops )
 
+	lcio? ( sci-physics/lcio )
 
 	qgraf? ( sci-physics/qgraf )
 	form? ( sci-mathematics/form )
@@ -39,6 +41,7 @@ RDEPEND="
 	gosam? ( sci-physics/gosam )
 	samurai? ( sci-physics/samurai )
 	ninja? ( sci-physics/ninja )
+	${PYTHON_DEPS}
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
@@ -57,6 +60,7 @@ src_configure() {
         $(use_enable fastjet) \
         $(use_enable openloops) \
         $(use_enable gosam) \
+        $(use_enable lcio) \
         $(use_with form) \
         $(use_with qgraf) \
         $(use_with ninja) \
