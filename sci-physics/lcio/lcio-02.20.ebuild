@@ -5,13 +5,16 @@ EAPI=8
 PYTHON_COMPAT=( python3_{10..11} )
 CMAKE_MAKEFILE_GENERATOR="emake"
 
+MY_PV=$(ver_rs 1- '-')
+MY_P="LCIO-${MY_PV}"
+
 inherit python-single-r1 cmake
 
 DESCRIPTION="Linear Collider I/O "
 HOMEPAGE="https://github.com/iLCSoft/LCIO"
-SRC_URI="https://github.com/iLCSoft/LCIO/archive/refs/tags/v$(ver_rs 1- '-').tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/iLCSoft/LCIO/archive/refs/tags/v${MY_PV}.tar.gz -> ${P}.tar.gz"
 
-#S="${WORKDIR}/${P}"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="BSD"
 SLOT="0"
@@ -19,7 +22,7 @@ KEYWORDS="~amd64"
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
-IUSE=""
+IUSE="root"
 DEPEND="
 	sci-physics/root:=[${PYTHON_SINGLE_USEDEP}]
 	${PYTHON_DEPS}
