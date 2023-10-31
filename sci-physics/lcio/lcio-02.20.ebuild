@@ -9,11 +9,11 @@ inherit python-single-r1 cmake
 
 DESCRIPTION="Linear Collider I/O "
 HOMEPAGE="https://github.com/iLCSoft/LCIO"
-SRC_URI="https://github.com/iLCSoft/LCIO/archive/refs/tags/v$(ver_rs '-').tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/iLCSoft/LCIO/archive/refs/tags/v$(ver_rs 1- '-').tar.gz -> ${P}.tar.gz"
 
 #S="${WORKDIR}/${P}"
 
-LICENSE="BSD-3"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64"
 
