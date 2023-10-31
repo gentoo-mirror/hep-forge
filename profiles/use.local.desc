@@ -106,6 +106,7 @@ sci-physics/whizard:form - Use form for loop calculations sci-mathematics/form
 sci-physics/whizard:gosam - Use gosam for loop calculations sci-physics/gosam
 sci-physics/whizard:hepmc - Use HepMC for event output sci-physics/hepmc
 sci-physics/whizard:hoppet - Use hoppet for resummation sci-physics/hoppet
+sci-physics/whizard:lcio - Use LCIO for PDFs sci-physics/lcio
 sci-physics/whizard:lhapdf - Use LHAPDF for PDFs sci-physics/lhapdf
 sci-physics/whizard:looptools - Use looptools for loop calculations sci-physics/looptools
 sci-physics/whizard:ninja - Use ninja for loop calculations sci-physics/ninja
