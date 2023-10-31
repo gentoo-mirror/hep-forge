@@ -8,6 +8,7 @@ HOMEPAGE="
 	https://gitlab.tp.nt.uni-siegen.de/whizard/public
 "
 
+inherit optfeature
 
 SRC_URI="https://whizard.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz" # weird hepforge download names
 #S="${WORKDIR}/${P}"
