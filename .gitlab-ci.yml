@@ -538,6 +538,8 @@ default:
 local-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
   stage: checkall
+  tags:
+    - amd64
   before_script: 
     - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
@@ -547,10 +549,12 @@ local-pkgcheck:
 global-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
   stage: checkall
+  tags:
+    - amd64
   before_script:
     - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
-    - echo '*/*::science ~amd64' > /etc/portage/package.accept_keywords/science
+    - echo '*/*::science ~*' > /etc/portage/package.accept_keywords/science
     - echo "[${REPO_NAME}]">> /etc/portage/repos.conf/${REPO_NAME}.conf
     - echo "location = /var/db/repos/${REPO_NAME}" >> /etc/portage/repos.conf/${REPO_NAME}.conf
     - echo "sync-type = git" >> /etc/portage/repos.conf/${REPO_NAME}.conf
@@ -563,6 +567,8 @@ global-pkgcheck:
 .check:
   image: apnpucky/gentoo-ebuild-ci
   extends: .config
+  tags:
+    - amd64
   stage: checksingle
   before_script: 
     - emerge app-eselect/eselect-repository
@@ -573,6 +579,8 @@ global-pkgcheck:
 .warn:
   image: apnpucky/gentoo-ebuild-ci
   extends: .config
+  tags:
+    - amd64
   stage: checksingle
   before_script:
     - emerge app-eselect/eselect-repository
