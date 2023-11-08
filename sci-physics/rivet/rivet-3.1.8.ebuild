@@ -20,7 +20,7 @@ S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3+"
 SLOT="3"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm ~arm64"
 IUSE="+hepmc3 hepmc2 +zlib"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
