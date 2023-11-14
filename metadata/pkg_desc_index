@@ -1,3 +1,4 @@
+dev-lang/cfortran 4.4-r4 20110621 20210827: Header file allowing to call Fortran routines from C and C++
 dev-python/Unum 4.2.1: units in python
 dev-python/archspec 0.1.4 0.2.0: labels for various aspects of a system architecture like CPU, etc.
 dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
@@ -37,6 +38,8 @@ dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
 dev-python/vector 1.1.0: Vector classes and utilities
 dev-python/xgboost 1.6.2 2.0.1: XGBoost Python Package
 dev-python/xsdata 22.11: Library and command line tool for producing version strings
+net-libs/davix 0.8.4 0.8.5: High-performance file management over WebDAV/HTTP
+net-libs/gsoap 2.8.114-r1 2.8.130 2.8.130-r1: A cross-platform open source C and C++ SDK for SOAP/XML Web services
 sci-libs/cuba 3.3 4.2 4.2.2: The Cuba library for multidimensional numerical integration
 sci-libs/einspline 0.9.2: C library for creating and evaluating B-splines
 sci-libs/gvar 11.11.2 11.11.3: Gaussian random variables.
@@ -50,6 +53,8 @@ sci-libs/tensorflow-probability 0.19.0: Probabilistic reasoning and statistical 
 sci-libs/vegas 5.4: Adaptive multidimensional Monte Carlo integration.
 sci-mathematics/cgal 5.2-r2 5.4.1: C++ library for geometric algorithms and data structures
 sci-mathematics/hom4ps-bin 2.0: HOMotopy method for solving Polynomial Systems
+sci-mathematics/rngstreams 1.0.1: Multiple independent streams of pseudo-random numbers
+sci-mathematics/unuran 1.8.1 1.9.0: Universal Non-Uniform Random number generator
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
 sci-physics/apfel 3.0.6 3.0.6-r1: A PDF Evolution Library
 sci-physics/apfelgrid 1.0.5: Ultra-fast theory predictions for collider observables

@@ -4,6 +4,7 @@
 
 dev-python/xsdata:cli - cli tools
 dev-python/xsdata:lxml - use lxml
+net-libs/davix:tools - Install additional tools
 sci-libs/einspline:altivec - Build with altivec
 sci-libs/einspline:blips - Build with blips
 sci-libs/einspline:cuda - Build with cuda
@@ -13,6 +14,8 @@ sci-libs/einspline:sse - Build with sse
 sci-mathematics/cgal:mpfi - Enable support for multiple recision interval arithmetic via sci-libs/mpfi
 sci-mathematics/cgal:ntl - Enable support for dev-libs/ntl
 sci-mathematics/cgal:shared - Build shared library
+sci-mathematics/unuran:prng - Use sci-mathematics/prng library
+sci-mathematics/unuran:rngstreams - Use sci-mathematics/rngstreams library
 sci-physics/applgrid:root - use root
 sci-physics/collier:static - Build static library
 sci-physics/cuttools:dummy - Add dummy module for OpenLoops
