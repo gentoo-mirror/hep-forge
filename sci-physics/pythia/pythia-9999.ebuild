@@ -30,7 +30,7 @@ else
 	S="${WORKDIR}/${MY_P}"
 fi
 
-SLOT="8"
+SLOT="8/3"
 LICENSE="GPL-2"
 IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
