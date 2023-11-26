@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..11} )
 inherit fortran-2 cmake python-single-r1
 
 MYPN=HepMC3
@@ -29,12 +29,12 @@ RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
-    python? ( 
-        ${PYTHON_DEPS} 
-        $(python_gen_cond_dep '
-            dev-python/numpy[${PYTHON_USEDEP}]
-	    ') 
-    )
+	python? (
+		${PYTHON_DEPS}
+		$(python_gen_cond_dep '
+			dev-python/numpy[${PYTHON_USEDEP}]
+		')
+	)
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
