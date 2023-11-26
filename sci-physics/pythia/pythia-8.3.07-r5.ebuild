@@ -22,7 +22,7 @@ SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
 		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
 	) )"
 
-SLOT="8"
+SLOT="8/3"
 LICENSE="GPL-2"
 KEYWORDS="~amd64"
 IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib"
@@ -61,7 +61,7 @@ src_prepare() {
 	EPYTHIADIR="${EPREFIX}${PYTHIADIR}"
 
 	default
-	# set datadir for xmldoc in include file
+	# set datadir for xmldor in include file
 	sed -i \
 		-e "s|../share/Pythia8/xmldoc|${EPYTHIADIR}/xmldoc|" \
 		include/Pythia8/Pythia.h || die
@@ -125,7 +125,7 @@ src_configure() {
 
 	# fix pythia config script
 	sed -i \
-		-e 's|pythia8/examples/Makefile.inc|pythia8/Makefile.inc|' \
+		-e 's|Pythia8/examples/Makefile.inc|Pythia8/Makefile.inc|' \
 		-e 's|LINE%=|LINE%%=|' \
 		bin/pythia8-config || die
 }
@@ -161,7 +161,7 @@ src_install() {
 	dolib.so lib/libpythia8.so
 	use lhapdf && dolib.so lib/libpythia8lhapdf6.so
 	insinto "${PYTHIADIR}"
-	doins -r share/Pythia8/xmldoc examples share/Pythia8/pdfdata
+	doins -r share/Pythia8/xmldoc share/Pythia8/pdfdata examples/Makefile.inc
 
 	newenvd - 99pythia8 <<- _EOF_
 		PYTHIA8DATA=${EPYTHIADIR}/xmldoc

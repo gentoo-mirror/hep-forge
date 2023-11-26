@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,31 +7,22 @@ inherit toolchain-funcs
 
 MV=$(ver_cut 1-2)
 MY_P="${PN}${PV//./}"
-LHA_VER="6.2.1"
 
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
 HOMEPAGE="https://pythia.org/"
-SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
-	test? ( lhapdf? (
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/CT10.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2007lomod.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nlo_as_0119_qed_mc.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/NNPDF23_nnlo_as_0119_qed_mc.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq66.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/cteq6l1.tar.gz
-		https://www.hepforge.org/archive/lhapdf/pdfsets/v6.backup/${LHA_VER}/unvalidated/MRST2004qed.tar.gz
-	) )"
+SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz"
 
-SLOT="8"
+SLOT="8/3"
 LICENSE="GPL-2"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86 ¨~arm ~arm64"
 IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="
-	^^ ( hepmc3 hepmc2 )
+	?? ( hepmc3 hepmc2 )
 "
 
 RDEPEND="
+	test? ( lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed,lhapdf_sets_pdf4lhc15_nlo_asvar,lhapdf_sets_ct14qed_proton,lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc,lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc] ) )
 	fastjet? ( sci-physics/fastjet )
 	hepmc3? ( sci-physics/hepmc:3= )
 	hepmc2? ( sci-physics/hepmc:2= )
@@ -109,7 +100,7 @@ src_configure() {
 		--arch=Linux \
 		--cxx="$(tc-getCXX)" \
 		--prefix="${EPREFIX}/usr" \
-		--prefix-lib="$(get_libdir)" \
+		--prefix-lib="${EPREFIX}/usr/$(get_libdir)" \
 		--prefix-share="${EPYTHIADIR}" \
 		$(usex fastjet "--with-fastjet3" "") \
 		$(usex zlib "--with-gzip" "") \
