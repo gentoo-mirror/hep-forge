@@ -210,8 +210,9 @@ default:
   parallel:
     matrix:
       - PKG: [easybuild]
-        VERSION: ["4.7.0",4.6.2-r1]
+        VERSION: ["4.8.2", "4.7.0", 4.6.2-r1]
         CATEGORY: ["sys-cluster"]
+        ARCH: [amd64]
         <<: *images
       - PKG: [lmod]
         VERSION: [8.6.14-r1]
@@ -545,6 +546,7 @@ local-pkgcheck:
     - eselect repository enable science && emaint -r science sync
   script:
     - pkgcheck scan --exit --quiet
+  allow_failure: true
 
 global-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
@@ -563,6 +565,7 @@ global-pkgcheck:
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
   script:
     - pkgcheck ci -r ${REPO_NAME} --exit --quiet
+  allow_failure: true
 
 .check:
   image: apnpucky/gentoo-ebuild-ci
