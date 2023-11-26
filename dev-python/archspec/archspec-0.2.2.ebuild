@@ -11,9 +11,5 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="
-	>=dev-python/six-1.16.0[${PYTHON_USEDEP}]
-	<=dev-python/six-2.0.0[${PYTHON_USEDEP}]
-	>=dev-python/click-7.1.2[${PYTHON_USEDEP}]
-"
+RDEPEND=""
 BDEPEND="${RDEPEND}"

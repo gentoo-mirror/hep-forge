@@ -239,22 +239,27 @@ default:
         VERSION: ["22.11"]
         CATEGORY: ["dev-python"]
         <<: *images
+
+.matrix4_1: &matrix4_1
+  parallel:
+    matrix:
       - PKG: [archspec]
-        VERSION: ["0.2.0","0.1.4"]
+        VERSION: ["0.2.2","0.1.4"]
         CATEGORY: ["dev-python"]
+        ARCH: [amd64]
         <<: *images
       - PKG: [jacobi]
         VERSION: ["0.8.1"]
-        CATEGORY: ["dev-python"]
-        <<: *images
-      - PKG: [xgboost]
-        VERSION: ["2.0.1","1.6.2"]
         CATEGORY: ["dev-python"]
         <<: *images
 
 .matrix5: &matrix5
   parallel:
     matrix:
+      - PKG: [xgboost]
+        VERSION: ["2.0.1","1.6.2"]
+        CATEGORY: ["dev-python"]
+        <<: *images
       - PKG: [sklearn2pmml]
         VERSION: ["0.93.0","0.92.1","0.92.0"]
         CATEGORY: ["sci-libs"]
@@ -751,6 +756,26 @@ test4:
 qa4:
   extends: .qa
   <<: *matrix4
+
+check4_1:
+  extends: .check
+  <<: *matrix4_1
+
+warn4_1:
+  extends: .warn
+  <<: *matrix4_1
+
+build4_1:
+  extends: .build
+  <<: *matrix4_1
+
+test4_1:
+  extends: .test
+  <<: *matrix4_1
+
+qa4_1:
+  extends: .qa
+  <<: *matrix4_1
 
 check5:
   extends: .check
