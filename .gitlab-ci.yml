@@ -211,8 +211,9 @@ default:
   parallel:
     matrix:
       - PKG: [easybuild]
-        VERSION: ["4.7.0",4.6.2-r1]
+        VERSION: ["4.8.2", "4.7.0", 4.6.2-r1]
         CATEGORY: ["sys-cluster"]
+        ARCH: [amd64]
         <<: *images
       - PKG: [lmod]
         VERSION: [8.6.14-r1]
