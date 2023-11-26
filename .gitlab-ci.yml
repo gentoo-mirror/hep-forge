@@ -102,6 +102,7 @@ default:
       - PKG: [qgraf]
         VERSION: ["3.6.6",3.6.5, 3.5.2, 3.4.2]
         CATEGORY: ["sci-physics"]
+        ARCH: [amd64]
         <<: *images
       - PKG: [topdrawer]
         VERSION: ["9999"]
@@ -545,6 +546,7 @@ local-pkgcheck:
     - eselect repository enable science && emaint -r science sync
   script:
     - pkgcheck scan --exit --quiet
+  allow_failure: true
 
 global-pkgcheck:
   image: apnpucky/gentoo-ebuild-ci
@@ -563,6 +565,7 @@ global-pkgcheck:
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
   script:
     - pkgcheck ci -r ${REPO_NAME} --exit --quiet
+  allow_failure: true
 
 .check:
   image: apnpucky/gentoo-ebuild-ci

@@ -18,7 +18,6 @@ IUSE="doc examples"
 
 DEPEND="virtual/fortran"
 RDEPEND="${DEPEND}"
-BDEPEND=""
 
 src_compile() {
 	$(tc-getFC) ${P}.f08 -o ${PN} ${FFLAGS} ${LDFLAGS}
