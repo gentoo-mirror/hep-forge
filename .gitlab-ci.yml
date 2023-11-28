@@ -524,11 +524,13 @@ default:
   tags:
     - $ARCH
   before_script:
+    - mkdir /var/db/repos/apn && printf "[apn]\nlocation = /var/db/repos/apn\nsync-type = git\nsync-uri = https://gitlab.com/APN-Pucky/gentoo-apn.git" >> /etc/portage/repos.conf/apn.conf && emaint -r apn sync
+    - echo '*/*::apn * ~*' > /etc/portage/package.accept_keywords/apn
     - emerge --sync || emaint -r ${REPO_NAME} sync
     - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
-    - ACCEPT_KEYWORDS="~*" emerge -q '>=app-portage/pkg-testing-tools-0.1.2'
+    - ACCEPT_KEYWORDS="~*" emerge -q '>=app-portage/pkg-testing-tools-0.2.0'
     - echo 'dev-util/hermes ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/uncertainties ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/toposort ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
