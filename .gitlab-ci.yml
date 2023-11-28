@@ -617,6 +617,7 @@ global-pkgcheck:
 
 .test:
   stage: test
+  needs: []
   extends: .config
   script:
     - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
