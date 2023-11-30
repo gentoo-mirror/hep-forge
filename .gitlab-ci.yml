@@ -59,8 +59,8 @@ default:
         ARCH: [amd64, arm64, arm]
         <<: *images
       - PKG: [hepmc]
-        VERSION: [9999, "3.2.7", 3.2.6, 3.2.5, 2.06.11]
-        ARCH: [amd64]
+        VERSION: [9999, "3.2.7", 3.2.6, 2.06.11]
+        ARCH: [amd64, arm]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [delphes]
