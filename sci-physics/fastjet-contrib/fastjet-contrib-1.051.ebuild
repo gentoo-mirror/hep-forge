@@ -15,7 +15,7 @@ S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
 DEPEND=">=sci-physics/fastjet-3.4.0"
 RDEPEND="${DEPEND}"

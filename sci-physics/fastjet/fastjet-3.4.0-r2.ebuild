@@ -20,7 +20,7 @@ SRC_URI="https://fastjet.fr/repo/${P}.tar.gz"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux ~arm64 ~riscv"
 IUSE="cgal examples python +plugins"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
