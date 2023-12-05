@@ -14,7 +14,7 @@ S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~arm ~arm64"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux ~arm ~arm64 ~riscv"
 IUSE="cm doc examples gev test"
 RESTRICT="!test? ( test )"
 
