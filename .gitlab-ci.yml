@@ -525,7 +525,7 @@ default:
         <<: *images
 
 
-.config:
+.configgeneral:
   tags:
     - $ARCH
   before_script:
@@ -545,6 +545,7 @@ default:
     - echo "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME} **" >> /etc/portage/package.accept_keywords/${REPO_NAME}
 
 .configall:
+  extends: .configgeneral
   rules:
     - changes:
         - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
@@ -555,6 +556,7 @@ default:
         - ".build"
 
 .config:
+  extends: .configgeneral
   rules:
     - if: $ARCH == "amd64"
       changes:
