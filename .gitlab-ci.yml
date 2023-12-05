@@ -93,15 +93,15 @@ default:
 .matrix2_0: &matrix2_0
   parallel:
     matrix:
-      - PKG: [fastjet]
-        VERSION: ["3.4.1",3.4.0]
-        CATEGORY: ["sci-physics"]
-        ARCH: [amd64, arm]
-        <<: *images
-      - PKG: [fastjet-contrib]
+      - ARCH: [amd64, arm, arm64, riscv]
         VERSION: ["1.052", "1.051", "1.049"]
+        PKG: [fastjet-contrib]
         CATEGORY: ["sci-physics"]
-        ARCH: [amd64, arm]
+        <<: *images
+      - ARCH: [amd64, arm, arm64, riscv]
+        VERSION: ["1.052", "1.051", "1.049"]
+        PKG: [fastjet-contrib]
+        CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [qgraf]
         VERSION: ["3.6.6",3.6.5, 3.5.2, 3.4.2]
@@ -924,4 +924,3 @@ test9:
 qa9:
   extends: .qa
   <<: *matrix9
-
