@@ -1,0 +1,38 @@
+.images: &images
+  IMAGE:
+    [
+      apnpucky/gentoo-hep-forge:latest,
+      apnpucky/gentoo-hep-forge-unstable:latest,
+    ]
+
+.matrix: &matrix
+  parallel:
+    matrix:
+      - CATEGORY: ["sci-physics"]
+        PKG: [fastjet]
+        VERSION: ["3.4.1",3.4.0]
+        ARCH: [amd64, arm, arm64, riscv]
+        <<: *images
+
+
+include: '/.gitlab-ci-child.yml'
+
+check:
+  extends: .check
+  <<: *matrix
+
+warn:
+  extends: .warn
+  <<: *matrix
+
+build:
+  extends: .build
+  <<: *matrix
+
+test2_1:
+  extends: .test
+  <<: *matrix
+
+qa:
+  extends: .qa
+  <<: *matrix
