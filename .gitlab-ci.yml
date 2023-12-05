@@ -112,11 +112,12 @@ default:
         VERSION: ["9999"]
         CATEGORY: ["sci-physics"]
         <<: *images
-      - PKG: [looptools]
+      - ARCH: [amd64, arm64, arm, riscv]
         VERSION: ["2.16", "2.15"]
+        PKG: [looptools]
         CATEGORY: ["sci-physics"]
-        ARCH: [amd64, arm]
         <<: *images
+
       - PKG: [slhalib]
         VERSION: ["2.2"]
         CATEGORY: ["sci-physics"]
