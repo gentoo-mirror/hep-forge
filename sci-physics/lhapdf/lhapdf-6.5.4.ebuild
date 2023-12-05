@@ -26,7 +26,7 @@ if [[ ${PV} == 9999 ]]; then
 else
 	SRC_URI="https://www.hepforge.org/downloads/lhapdf/${MY_PF}.tar.gz -> ${P}.tar.gz"
 	S="${WORKDIR}/${MY_PF}"
-	KEYWORDS="~amd64 ~arm64 ~arm"
+	KEYWORDS="~amd64 ~arm64 ~arm ~riscv"
 fi
 
 LICENSE="GPL-2"

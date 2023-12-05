@@ -133,11 +133,12 @@ default:
 .matrix2_1: &matrix2_1
   parallel:
     matrix:
-      - PKG: [lhapdf]
+      - ARCH: [amd64, arm, arm64, riscv]
         VERSION: [9999, 6.5.4, 6.3.0]
-        ARCH: [amd64, arm]
+        PKG: [lhapdf]
         CATEGORY: ["sci-physics"]
         <<: *images
+
       - PKG: [ninja]
         VERSION: [1.1.0]
         CATEGORY: ["sci-physics"]
@@ -924,4 +925,3 @@ test9:
 qa9:
   extends: .qa
   <<: *matrix9
-
