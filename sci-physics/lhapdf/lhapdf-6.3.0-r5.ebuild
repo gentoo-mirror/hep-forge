@@ -26,7 +26,7 @@ S="${WORKDIR}/${MY_PF}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="amd64 ~x86 ~arm ~arm64 ~riscv"
 IUSE="examples"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
