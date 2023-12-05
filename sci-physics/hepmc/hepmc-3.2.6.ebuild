@@ -18,7 +18,7 @@ if [[ ${PV} == 9999 ]]; then
 else
 	SRC_URI="https://hepmc.web.cern.ch/hepmc/releases/${MYP}.tar.gz"
 	S="${WORKDIR}/${MYP}"
-	KEYWORDS="~amd64 ~x86 ~arm64 ~arm"
+	KEYWORDS="~amd64 ~x86 ~arm64 ~armu ~riscv"
 fi
 
 LICENSE="GPL-3+"
