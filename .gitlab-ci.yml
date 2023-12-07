@@ -94,12 +94,12 @@ default:
   parallel:
     matrix:
       - ARCH: [amd64, arm, arm64, riscv]
-        VERSION: ["1.052", "1.051", "1.049"]
-        PKG: [fastjet-contrib]
+        VERSION: ["3.4.2", "3.4.1",3.4.0]
+        PKG: [fastjet]
         CATEGORY: ["sci-physics"]
         <<: *images
       - ARCH: [amd64, arm, arm64, riscv]
-        VERSION: ["1.052", "1.051", "1.049"]
+        VERSION: ["1.053", "1.052", "1.051", "1.049"]
         PKG: [fastjet-contrib]
         CATEGORY: ["sci-physics"]
         <<: *images
