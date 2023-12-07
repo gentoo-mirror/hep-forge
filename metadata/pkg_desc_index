@@ -73,8 +73,8 @@ sci-physics/dpmjet-III 19.3.6: Home of the DPMJET event generator
 sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
 sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
 sci-physics/evtgen 01.07.00 02.02.00 02.02.01: 
-sci-physics/fastjet 3.4.0-r2 3.4.1: A software package for jet finding in pp and e+e- collisions
-sci-physics/fastjet-contrib 1.049-r5 1.051 1.052: 3rd party extensions of FastJet.
+sci-physics/fastjet 3.4.0-r2 3.4.1 3.4.2: A software package for jet finding in pp and e+e- collisions
+sci-physics/fastjet-contrib 1.049-r5 1.051 1.052 1.053: 3rd party extensions of FastJet.
 sci-physics/fastnlo 2.5: fast pQCD calculations for hadron-induced processes
 sci-physics/feynarts 3.11: FeynArts renders Feynman diagrams and generates their topologies.
 sci-physics/feyncalc 9.3.1 9999: FeynCalc is a Mathematica package for computing Feynman diagrams.
