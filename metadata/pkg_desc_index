@@ -136,7 +136,7 @@ sci-physics/rapgap 3.308: Hadron level Monte Carlo generator for ep and selected
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
 sci-physics/resummino 3.1.2: Resummation for electroweak BSM particles.
-sci-physics/rivet 3.1.7-r6 3.1.8 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
+sci-physics/rivet 3.1.7-r6 3.1.8 3.1.9 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
 sci-physics/rundec 0.5: running and decoupling of the strong coupling constant and quark masses
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 sci-physics/sherpa 2.2.12 2.2.15: Simulation of High-Energy Reactions of PArticles
