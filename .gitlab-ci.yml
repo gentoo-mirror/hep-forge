@@ -79,15 +79,15 @@ default:
 .matrix2: &matrix2
   parallel:
     matrix:
-      - PKG: [pythia]
+      - ARCH: [amd64]
         VERSION: [9999, 8.3.09-r3, 8.3.07-r5, 8.2.45-r5, 6.4.28]
+        PKG: [pythia]
         CATEGORY: ["sci-physics"]
-        ARCH: [amd64]
         <<: *images
-      - PKG: [rivet]
-        VERSION: [9999, "3.1.8",  3.1.7]
+      - ARCH: [amd64, arm, arm64, riscv]
+        VERSION: [9999, "3.1.9", "3.1.8",  3.1.7]
+        PKG: [rivet]
         CATEGORY: ["sci-physics"]
-        ARCH: [amd64, arm]
         <<: *images
 
 .matrix2_0: &matrix2_0
@@ -169,7 +169,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [cgal]
-        VERSION: [5.6, 5.5.2]
+        VERSION: ["5.6", 5.5.2]
         ARCH: [amd64, arm, arm64, riscv]
         CATEGORY: ["sci-mathematics"]
         <<: *images
