@@ -169,7 +169,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [cgal]
-        VERSION: [5.6, 5.5.2]
+        VERSION: ["5.6", 5.5.2]
         ARCH: [amd64, arm, arm64, riscv]
         CATEGORY: ["sci-mathematics"]
         <<: *images
