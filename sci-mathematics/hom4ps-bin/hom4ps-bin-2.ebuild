@@ -21,7 +21,7 @@ RDEPEND="${DEPEND}"
 BDEPEND=""
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-2.0-path.patch
+	"${FILESDIR}"/${PN}-2-path.patch
 )
 
 src_compile() {
