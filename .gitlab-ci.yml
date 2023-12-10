@@ -470,7 +470,7 @@ default:
         CATEGORY: ['dev-python']
         <<: *images
       - PKG: [awkward]
-        VERSION: [2.4.6,2.3.3]
+        VERSION: ["2.5.0",2.4.6,2.3.3]
         CATEGORY: ['dev-python']
         <<: *images
       - PKG: [coffea]
