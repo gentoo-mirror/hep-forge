@@ -289,7 +289,7 @@ default:
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [apfel]
-        VERSION: [3.0.6]
+        VERSION: ["3.1.1",3.0.6]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [apfelxx]
