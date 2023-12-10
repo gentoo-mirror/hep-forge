@@ -152,8 +152,9 @@ default:
         VERSION: [1.3.3]
         CATEGORY: ["sci-physics"]
         <<: *images
-      - PKG: [collier]
+      - ARCH: [amd64, arm, arm64, riscv]
         VERSION: ["1.2.8",1.2.7, 1.2.5]
+        PKG: [collier]
         CATEGORY: ["sci-physics"]
         <<: *images
       - PKG: [contur]
