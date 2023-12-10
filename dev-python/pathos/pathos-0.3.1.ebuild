@@ -9,7 +9,7 @@ HOMEPAGE="https://github.com/uqfoundation/pathos"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
 RDEPEND="
 	>=dev-python/dill-0.3.6[${PYTHON_USEDEP}]
