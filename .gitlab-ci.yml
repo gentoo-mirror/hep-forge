@@ -239,8 +239,9 @@ default:
         VERSION: [0.3.1]
         CATEGORY: ["dev-python"]
         <<: *images
-      - PKG: [pathos]
+      - ARCH: [amd64, arm, arm64, riscv]
         VERSION: ["0.3.1",0.3.0]
+        PKG: [pathos]
         CATEGORY: ["dev-python"]
         <<: *images
       - PKG: [smpl]
