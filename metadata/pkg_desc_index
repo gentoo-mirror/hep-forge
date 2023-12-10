@@ -17,18 +17,18 @@ dev-python/hist 2.7.0 2.7.1: Histogramming for analysis powered by boost-histogr
 dev-python/histoprint 2.4.0: Pretty print histograms to the console
 dev-python/hunter 3.6.0: Hunter is a flexible code tracing toolkit
 dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbitrary precision.
-dev-python/klepto 0.2.3: persistent caching to memory, disk, or database
-dev-python/llvmlite 0.39.1 0.40.1: Python wrapper around the llvm C++ library
+dev-python/klepto 0.2.3 0.2.4: persistent caching to memory, disk, or database
+dev-python/llvmlite 0.39.1 0.40.1 0.41.1: Python wrapper around the llvm C++ library
 dev-python/manhole 1.8.0-r1: Debugging manhole for python application
-dev-python/multiprocess 0.70.14: better multiprocessing and multithreading in python
-dev-python/mystic 0.4.0: Highly-constrained non-convex optimization and uncertainty quantification
+dev-python/multiprocess 0.70.14 0.70.15: better multiprocessing and multithreading in python
+dev-python/mystic 0.4.0 0.4.1: Highly-constrained non-convex optimization and uncertainty quantification
 dev-python/numba 0.56.4 0.57.1 0.58.0: NumPy aware dynamic Python compiler using LLVM
 dev-python/pathos 0.3.0: parallel graph management and execution in heterogeneous computing
-dev-python/pox 0.3.2: utilities for filesystem exploration and automated builds
-dev-python/ppft 1.7.6.6: distributed and parallel python
+dev-python/pox 0.3.2 0.3.3: utilities for filesystem exploration and automated builds
+dev-python/ppft 1.7.6.6 1.7.6.7: distributed and parallel python
 dev-python/pqdm 0.2.0: Parallel TQDM
 dev-python/pygaljs 1.0.2-r1: Python package providing assets from https://github.com/Kozea/pygal.js
-dev-python/pyina 0.2.7: MPI parallel map and cluster scheduling
+dev-python/pyina 0.2.7 0.2.8: MPI parallel map and cluster scheduling
 dev-python/resample 1.6.0: Randomization-based inference in Python
 dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
 dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics formats
@@ -39,7 +39,7 @@ dev-python/vector 1.1.0: Vector classes and utilities
 dev-python/xgboost 1.6.2 2.0.1: XGBoost Python Package
 dev-python/xsdata 22.11: Library and command line tool for producing version strings
 net-libs/davix 0.8.4 0.8.5: High-performance file management over WebDAV/HTTP
-net-libs/gsoap 2.8.114-r1 2.8.130 2.8.130-r1: A cross-platform open source C and C++ SDK for SOAP/XML Web services
+net-libs/gsoap 2.8.114-r1 2.8.130 2.8.130-r1 2.8.131: A cross-platform open source C and C++ SDK for SOAP/XML Web services
 sci-libs/cuba 3.3 4.2 4.2.2: The Cuba library for multidimensional numerical integration
 sci-libs/einspline 0.9.2: C library for creating and evaluating B-splines
 sci-libs/gvar 11.11.2 11.11.3: Gaussian random variables.
