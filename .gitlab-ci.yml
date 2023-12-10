@@ -495,7 +495,7 @@ default:
         CATEGORY: ['dev-python']
         <<: *images
       - PKG: [vector]
-        VERSION: [1.1.0]
+        VERSION: ["1.1.1",1.1.0]
         CATEGORY: ['dev-python']
         <<: *images
       - PKG: [uproot]
