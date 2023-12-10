@@ -240,7 +240,7 @@ default:
         CATEGORY: ["dev-python"]
         <<: *images
       - PKG: [pathos]
-        VERSION: [0.3.0]
+        VERSION: ["0.3.1",0.3.0]
         CATEGORY: ["dev-python"]
         <<: *images
       - PKG: [smpl]
