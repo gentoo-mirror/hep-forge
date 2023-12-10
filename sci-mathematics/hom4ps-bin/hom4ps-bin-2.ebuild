@@ -7,7 +7,7 @@ CMAKE_MAKEFILE_GENERATOR="emake"
 
 DESCRIPTION="HOMotopy method for solving Polynomial Systems"
 HOMEPAGE="http://www.math.nsysu.edu.tw/~leetsung/works/HOM4PS_soft_files/HOM4PS_Linux.htm"
-SRC_URI="http://www.math.nsysu.edu.tw/~leetsung/works/HOM4PS_soft_files/HOM4PS2_64-bit.tar.gz -> ${P}.tar.gz"
+SRC_URI="http://www.math.nsysu.edu.tw/~leetsung/works/HOM4PS_soft_files/HOM4PS${PV}_64-bit.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/HOM4PS2"
 
 LICENSE="MIT"
