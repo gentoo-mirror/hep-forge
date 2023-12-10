@@ -17,7 +17,7 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="GPL-3"
 RESTRICT=""
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
 IUSE="static-libs"
 DEPEND=""
