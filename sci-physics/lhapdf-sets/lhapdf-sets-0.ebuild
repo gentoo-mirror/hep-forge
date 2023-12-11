@@ -48,7 +48,7 @@ MY_PF=LHAPDF-${MY_PV}
 
 DESCRIPTION="LHAPDF data grids"
 HOMEPAGE="https://lhapdf.hepforge.org/"
-KEYWORDS="~amd64 ~x86 ~arm ~arm64 ~riscv"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv ~x86"
 S="${WORKDIR}"
 
 LICENSE="public-domain"
