@@ -26,7 +26,7 @@ BDEPEND="
 	virtual/fortran
 "
 PATCHES=(
-    "${FILESDIR}/${P}-mod.patch"
+    "${FILESDIR}/${PN}-1.2.7-mod.patch"
 )
 
 src_configure() {
