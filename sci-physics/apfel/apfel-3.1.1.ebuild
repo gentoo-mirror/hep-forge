@@ -27,6 +27,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
+	python? ( dev-lang/swig )
 	virtual/fortran
 "
 
