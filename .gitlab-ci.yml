@@ -539,8 +539,7 @@ default:
     - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
-    - echo 'app-portage/pkg-testing-tools **' >> /etc/portage/package.accept_keywords/zz-autoaccept
-    - emerge -q '>=app-portage/pkg-testing-tools-0.2.1'
+    - ACCEPT_KEYWORDS="~*" emerge -q '>=app-portage/pkg-testing-tools-0.2.1'
     - echo 'dev-util/hermes ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/uncertainties ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/toposort ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
@@ -647,30 +646,7 @@ global-pkgcheck:
   extends: .configall
   script:
     - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
-    - if grep -Fq "python-single-r1" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild;
-      then
-      inherit() { sleep 0; } &&
-      source $CATEGORY/$PKG/$PKG-$VERSION*.ebuild &&
-      for PY in ${PYTHON_COMPAT[@]}; do
-      echo "Testing single python $PY" &&
-      PYTHON_SINGLE_TARGET="$PY" pkg-testing-tool --append-emerge "--autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y" --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( python_single_target_python3_11 python_single_target_python3_10 ) python_single_target_$PY -root" -p "~$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$PY.json 2>&1 | tee -a test_$CATEGORY_$PKG-$VERSION-$PY.log ;
-      done;
-      else
-      if grep -Fq "lua-single" $CATEGORY/$PKG/$PKG-$VERSION*.ebuild;
-      then
-      inherit() { sleep 0; } &&
-      source $CATEGORY/$PKG/$PKG-$VERSION*.ebuild &&
-      for LUA in ${LUA_COMPAT[@]}; do
-      if [ "$LUA" != "lua5-2" ]; then
-      echo "Testing single lua $LUA" &&
-      LUA_SINGLE_TARGET="$LUA" pkg-testing-tool --append-emerge "--autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y" --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --test-feature-scope always --append-required-use "^^ ( lua_single_target_lua5-1 lua_single_target_lua5-3 lua_single_target_lua5-4 ) lua_single_target_$LUA -root" -p "~$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION-$LUA.json 2>&1 | tee -a test_$CATEGORY_$PKG-$VERSION-$LUA.log ;
-      fi
-      done;
-      else
-      echo "Non single test" &&
-      pkg-testing-tool --append-emerge "--autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y" --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --append-required-use "!root" --test-feature-scope always -p "~$CATEGORY/$PKG-$VERSION::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION.json 2>&1 | tee "test_$CATEGORY_$PKG-$VERSION.log";
-      fi
-      fi
+    - pkg-testing-tool --append-emerge "--autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y" --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --append-required-use "!root" --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_$CATEGORY_$PKG-$VERSION.json 2>&1 | tee "test_$CATEGORY_$PKG-$VERSION.log";
   artifacts:
     when: always
     paths:
