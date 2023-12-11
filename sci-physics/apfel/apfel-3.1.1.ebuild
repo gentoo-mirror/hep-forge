@@ -20,6 +20,7 @@ RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RDEPEND="
 	python? ( ${PYTHON_DEPS} )
+	test? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf23_nlo_as_0118,lhapdf_sets_nnpdf31_nnlo_as_0118] )
 	
 	lhapdf? ( $(python_gen_cond_dep '
 		sci-physics/lhapdf[${PYTHON_USEDEP}] 
