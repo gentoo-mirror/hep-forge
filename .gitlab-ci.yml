@@ -539,7 +539,8 @@ default:
     - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
-    - ACCEPT_KEYWORDS="~*" emerge -q '>=app-portage/pkg-testing-tools-0.2.1'
+    - echo 'app-portage/pkg-testing-tools **' >> /etc/portage/package.accept_keywords/zz-autoaccept
+    - emerge -q '>=app-portage/pkg-testing-tools-0.2.1'
     - echo 'dev-util/hermes ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/uncertainties ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/toposort ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
