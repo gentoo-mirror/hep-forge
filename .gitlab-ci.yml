@@ -529,6 +529,7 @@ default:
 
 
 .configgeneral:
+  interruptible: true
   tags:
     - $ARCH
   before_script:
