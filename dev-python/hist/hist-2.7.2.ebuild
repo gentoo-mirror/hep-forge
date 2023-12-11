@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/scikit-hep/hist"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
 RDEPEND="
 	>=dev-python/boost-histogram-1.3.1[${PYTHON_USEDEP}]

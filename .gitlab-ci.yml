@@ -490,8 +490,9 @@ default:
         VERSION: [0.3.28]
         CATEGORY: ['sci-physics']
         <<: *images
-      - PKG: [hist]
+      - ARCH: [amd64, arm, arm64,riscv]
         VERSION: ["2.7.2",2.7.1]
+        PKG: [hist]
         CATEGORY: ['dev-python']
         <<: *images
       - PKG: [vector]
