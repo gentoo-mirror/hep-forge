@@ -19,7 +19,7 @@ IUSE="lhapdf python test"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RDEPEND="
-	${PYTHON_DEPS}
+	python? ( ${PYTHON_DEPS} )
 	
 	lhapdf? ( $(python_gen_cond_dep '
 		sci-physics/lhapdf[${PYTHON_USEDEP}] 
