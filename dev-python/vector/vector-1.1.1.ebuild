@@ -1,6 +1,6 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1 pypi
 
@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/scikit-hep/vector"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
 RDEPEND="
 	>=dev-python/numpy-1.13.3[${PYTHON_USEDEP}]

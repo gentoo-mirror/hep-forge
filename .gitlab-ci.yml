@@ -494,7 +494,8 @@ default:
         VERSION: [2.7.1]
         CATEGORY: ['dev-python']
         <<: *images
-      - PKG: [vector]
+      - ARCH: [amd64, arm , arm64, riscv]
+        PKG: [vector]
         VERSION: ["1.1.1",1.1.0]
         CATEGORY: ['dev-python']
         <<: *images
