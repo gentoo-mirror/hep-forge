@@ -8,5 +8,5 @@ LICENSE=all-rights-reserved
 PROPERTIES=live
 RESTRICT=bindist mirror
 SLOT=0
-_eclasses_=git-r3	5133e393e8717a3a093660f990801dc1
+_eclasses_=git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
 _md5_=5326c6e9386fde602f113bc14254c0be
