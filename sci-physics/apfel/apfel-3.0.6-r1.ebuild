@@ -14,7 +14,7 @@ SRC_URI="https://github.com/scarrazza/apfel/archive/refs/tags/${PV}.tar.gz -> ${
 
 SLOT="0"
 LICENSE="GPL-3+"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 IUSE=""
 
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
