@@ -484,8 +484,9 @@ default:
         VERSION: [9999, 0.7.22]
         CATEGORY: ['sci-physics']
         <<: *images
-      - PKG: [uhi]
+      - ARCH: [amd64, arm, arm64 , riscv]
         VERSION: [0.4.0, 0.3.3]
+        PKG: [uhi]
         CATEGORY: ['dev-python']
         <<: *images
       - PKG: [hepstats]
