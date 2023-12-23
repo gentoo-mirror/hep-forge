@@ -161,6 +161,11 @@ default:
         VERSION: [2.4.0]
         CATEGORY: ["sci-physics"]
         <<: *images
+      - ARCH: [amd64, arm, arm64, riscv]
+        VERSION: [1.11.0, 1.9.0]
+        PKG: [unuran]
+        CATEGORY: ["sci-mathematics"]
+        <<: *images
 
 .matrix3: &matrix3
   parallel:
