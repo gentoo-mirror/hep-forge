@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DOCS_BUILDER="doxygen"
 DOCS_DEPEND="
 	dev-texlive/texlive-bibtexextra
@@ -12,7 +12,7 @@ DOCS_DEPEND="
 	dev-texlive/texlive-latex
 	dev-texlive/texlive-latexextra
 "
-inherit python-single-r1 docs
+inherit python-single-r1 docs autotools
 
 MY_PV=$(ver_cut 1-3)
 MY_PF=LHAPDF-${MY_PV}
@@ -31,17 +31,33 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="examples"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+IUSE="examples +python"
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 RDEPEND="${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
+BDEPEND="
+	$(python_gen_cond_dep '
+	     >=dev-python/cython-0.19[${PYTHON_USEDEP}]
+	')
+"
+
+pkg_setup() {
+    use python && python-single-r1_pkg_setup
+}
+
+src_prepare() {
+	default
+	# Let cython reproduce this for more recent python versions
+	rm wrappers/python/lhapdf.cpp || die
+	eautoreconf
+}
 
 src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
 	econf \
 		--disable-static \
-		--enable-python
+		$(use_enable python)
 }
 
 src_compile() {
@@ -57,7 +73,7 @@ src_install() {
 	use doc && dodoc -r doc/doxygen/.
 	use examples && dodoc examples/*.cc
 
-	python_optimize
+	use python && python_optimize
 
 	find "${ED}" -name '*.la' -delete || die
 }
