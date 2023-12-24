@@ -20,7 +20,7 @@ IUSE=""
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RDEPEND="
 	${PYTHON_DEPS}
-	sci-physics/lhapdf
+	sci-physics/lhapdf[${PYTHON_SINGLE_USEDEP}]
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
