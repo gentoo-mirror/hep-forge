@@ -4,7 +4,7 @@
 EAPI=8
 
 # python3_11 missing in sci-physics/root
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit bash-completion-r1 autotools python-single-r1 optfeature
 
@@ -17,7 +17,7 @@ if [[ ${PV} == 9999 ]]; then
 else
 	SRC_URI="https://yoda.hepforge.org/downloads?f=${P^^}.tar.bz2 -> ${P^^}.tar.bz2"
 	S="${WORKDIR}/${P^^}"
-	KEYWORDS="~amd64 ~arm ~arm64"
+	KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 fi
 
 LICENSE="GPL-3"
@@ -33,8 +33,6 @@ RDEPEND="
 	zlib? ( sys-libs/zlib )
 "
 DEPEND="${RDEPEND}"
-
-PATCHES=()
 
 pkg_setup() {
     use python && python-single-r1_pkg_setup

@@ -36,6 +36,10 @@ DEPEND="${RDEPEND}"
 
 PATCHES=()
 
+pkg_setup() {
+    use python && python-single-r1_pkg_setup
+}
+
 src_prepare() {
 	default
 	# reconf due to python3_10 patch
@@ -57,7 +61,7 @@ src_install() {
 	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}
 	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
 
-	python_optimize
+	use python && python_optimize
 	find "${ED}" -name '*.la' -delete || die
 }
 

@@ -53,10 +53,10 @@ default:
         VERSION: ["10.2.1"]
         CATEGORY: ["sci-physics"]
         <<: *images
-      - PKG: [yoda]
-        VERSION: [9999, 1.9.8, 1.9.7]
+      - ARCH: [amd64, arm64, arm, riscv]
+        VERSION: [9999, 2.0.0, 1.9.9, 1.9.8, 1.9.7]
+        PKG: [yoda]
         CATEGORY: ["sci-physics"]
-        ARCH: [amd64, arm64, arm, riscv]
         <<: *images
       - ARCH: [amd64, arm64, arm, riscv]
         VERSION: [9999, "3.2.7", 3.2.6, 3.2.5, 2.06.11]
