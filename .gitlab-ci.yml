@@ -640,7 +640,7 @@ global-pkgcheck:
   needs: []
   extends: .configall
   script:
-    - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y 2>&1 | tee "build_$CATEGORY_$PKG-$VERSION.log";
+    - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y 2>&1 | tee "build_${CATEGORY}_${PKG}-${VERSION}_${ARCH}.log";
   artifacts:
     when: always
     paths:
@@ -654,7 +654,7 @@ global-pkgcheck:
   script:
     - printf '\nPYTHON_SINGLE_TARGET=""\nLUA_SINGLE_TARGET=""' >> /etc/portage/make.conf 
     - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
-    - pkg-testing-tool --append-emerge "--autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y" --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --append-required-use "!root" --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_${CATEGORY}_${PKG}-${VERSION}_${ARCH}.json 2>&1 | tee "test_${CATEGORY}_${PKG}-$V{ERSION}_${ARCH}.log";
+    - pkg-testing-tool --append-emerge "--autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y" --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --append-required-use "!root" --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_${CATEGORY}_${PKG}-${VERSION}_${ARCH}.json 2>&1 | tee "test_${CATEGORY}_${PKG}-${VERSION}_${ARCH}.log";
   artifacts:
     when: always
     paths:
