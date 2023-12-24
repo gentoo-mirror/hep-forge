@@ -4,7 +4,7 @@
 EAPI=8
 
 # python3_11 missing in sci-physics/root
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit bash-completion-r1 autotools python-single-r1 optfeature
 
@@ -23,7 +23,7 @@ fi
 LICENSE="GPL-3"
 SLOT="0/${PV}"
 IUSE="root +python +zlib"
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
+REQUIRED_USE="${PYTHON_REQUIRED_USE} root? ( python )"
 
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
@@ -32,8 +32,18 @@ RDEPEND="
 	)
 	zlib? ( sys-libs/zlib )
 "
-
+BDEPEND="
+    python? (
+	    $(python_gen_cond_dep '
+	         >=dev-python/cython-0.19[${PYTHON_USEDEP}]
+	    ')
+	)
+"
 DEPEND="${RDEPEND}"
+
+pkg_setup() {
+    use python && python-single-r1_pkg_setup
+}
 
 src_prepare() {
 	default
@@ -56,7 +66,7 @@ src_install() {
 	newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}
 	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
 
-	python_optimize
+	use python && python_optimize
 	find "${ED}" -name '*.la' -delete || die
 }
 
