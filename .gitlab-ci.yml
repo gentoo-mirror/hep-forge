@@ -546,7 +546,6 @@ default:
     - emerge app-eselect/eselect-repository
     - eselect repository enable science && emaint -r science sync
     - pushd /var/db/repos/${REPO_NAME} && git remote set-branches origin '*' && git fetch -v --depth=1 && git pull --unshallow && git checkout ${CI_COMMIT_SHA} && popd
-    - printf '\nPYTHON_SINGLE_TARGET=""\nLUA_SINGLE_TARGET=""' >> /etc/portage/make.conf 
     - ACCEPT_KEYWORDS="* ~*" emerge -q '>=app-portage/pkg-testing-tools-0.2.1'
     - echo 'dev-util/hermes ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
     - echo 'dev-python/uncertainties ~*' >> /etc/portage/package.accept_keywords/zz-autoaccept
@@ -653,6 +652,7 @@ global-pkgcheck:
   needs: []
   extends: .configall
   script:
+    - printf '\nPYTHON_SINGLE_TARGET=""\nLUA_SINGLE_TARGET=""' >> /etc/portage/make.conf 
     - if [[ -n $PROBABILITY ]] && [[ $(( RANDOM % 101 )) -gt $PROBABILITY ]] ; then exit 137 ; fi
     - pkg-testing-tool --append-emerge "--autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y" --max-use-combinations 32 --ccache --extra-env-file 'test.conf' --append-required-use "!root" --test-feature-scope always -p "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --report test_${CATEGORY}_${PKG}-${VERSION}_${ARCH}.json 2>&1 | tee "test_${CATEGORY}_${PKG}-$V{ERSION}_${ARCH}.log";
   artifacts:
