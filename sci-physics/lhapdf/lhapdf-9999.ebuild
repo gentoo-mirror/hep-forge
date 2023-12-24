@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DOCS_BUILDER="doxygen"
 DOCS_DEPEND="
 	dev-texlive/texlive-bibtexextra
@@ -31,11 +31,20 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="examples"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+IUSE="examples +python"
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
+BDEPEND="
+	$(python_gen_cond_dep '
+	     >=dev-python/cython-0.19[${PYTHON_USEDEP}]
+	')
+"
 RDEPEND="${PYTHON_DEPS}"
 DEPEND="${RDEPEND}"
+
+pkg_setup() {
+    use python && python-single-r1_pkg_setup
+}
 
 src_prepare() {
 	default
@@ -47,7 +56,7 @@ src_configure() {
 	CONFIG_SHELL="${EPREFIX}/bin/bash" \
 	econf \
 		--disable-static \
-		--enable-python
+		$(use_enable python)
 }
 
 src_compile() {
@@ -63,7 +72,7 @@ src_install() {
 	use doc && dodoc -r doc/doxygen/.
 	use examples && dodoc examples/*.cc
 
-	python_optimize
+	use python && python_optimize
 
 	find "${ED}" -name '*.la' -delete || die
 }
