@@ -9,8 +9,8 @@ IUSE=cgal examples python +plugins doc python_single_target_python3_10 python_si
 KEYWORDS=~amd64 ~arm ~x86 ~amd64-linux ~x86-linux ~riscv ~arm64
 LICENSE=GPL-2+
 RDEPEND=cgal? ( >=sci-mathematics/cgal-5.4:=[shared(+)] ) plugins? ( sci-physics/siscone:= ) python? ( python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 ) ) plugins? ( virtual/fortran )
-REQUIRED_USE=^^ ( python_single_target_python3_10 python_single_target_python3_11 )
+REQUIRED_USE=python? ( ^^ ( python_single_target_python3_10 python_single_target_python3_11 ) )
 SLOT=0
 SRC_URI=https://fastjet.fr/repo/fastjet-3.4.1.tar.gz
 _eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	eed10cf5e5a06916e654d31f5a1925cc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	6ae9a4347149b19a112caa1182d03bde	docs	74475974eae5130ba3e19b31b8ae46b8	flag-o-matic	78cf3cc2d5572fddf5e5e10c70f7c81a	fortran-2	40c4450f1c4ecb2ee694d96e1958d4ea	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	python-utils-r1	474cb53a7d1b62721a91809a1d702661	python-single-r1	75118e916668a74c660a13b0ecb22562
-_md5_=949766ab9bd1bcc494839ec2d4936ce9
+_md5_=99a44ca3c3e4abcd3ef0b461be85e0de
