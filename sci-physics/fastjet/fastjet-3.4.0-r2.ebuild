@@ -22,7 +22,7 @@ LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux ~arm64 ~riscv"
 IUSE="cgal examples python +plugins"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 # cgal is header-only in version 5.4 and up. We need to use the
 # special --enable-cgal-header-only argument to use these versions.
@@ -38,6 +38,10 @@ PATCHES=(
 	"${FILESDIR}"/${P}-system-siscone.patch
 	"${FILESDIR}"/${P}-gfortran.patch
 )
+
+pkg_setup() {
+    use python && python-single-r1_pkg_setup
+}
 
 src_prepare() {
 	default
@@ -66,6 +70,7 @@ src_compile() {
 
 src_install() {
 	default
+	use python && python_optimize
 	if use examples; then
 		emake -C example maintainer-clean
 		find example -iname 'makefile*' -delete || die
