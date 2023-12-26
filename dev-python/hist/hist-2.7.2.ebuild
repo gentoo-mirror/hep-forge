@@ -18,3 +18,5 @@ RDEPEND="
 	>=dev-python/numpy-1.14.5[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
+
+export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
