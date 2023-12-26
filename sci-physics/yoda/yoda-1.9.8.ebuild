@@ -21,7 +21,7 @@ else
 fi
 
 LICENSE="GPL-3"
-SLOT="1"
+SLOT="0/${PV}"
 IUSE="root +python +zlib"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 
