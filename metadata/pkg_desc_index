@@ -35,7 +35,7 @@ dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics
 dev-python/toml 0.10.2: Python lib for TOML
 dev-python/uhi 0.3.3 0.4.0: Universal Histogram Interface
 dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
-dev-python/vector 1.1.0: Vector classes and utilities
+dev-python/vector 1.1.0 1.1.1: Vector classes and utilities
 dev-python/xgboost 1.6.2 2.0.1: XGBoost Python Package
 dev-python/xsdata 22.11: Library and command line tool for producing version strings
 net-libs/davix 0.8.4 0.8.5: High-performance file management over WebDAV/HTTP
