@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{9..12} )
 
 inherit python-single-r1 flag-o-matic autotools optfeature
 
@@ -22,7 +22,7 @@ if [[ ${PV} == 9999 ]]; then
 else
     SRC_URI="https://www.hepforge.org/archive/rivet/${MY_PF}.tar.gz"
     S=${WORKDIR}/${MY_PF}
-    KEYWORDS="~amd64 ~arm ~arm64"
+    KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 fi
 
 LICENSE="GPL-3+"
@@ -34,7 +34,8 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	>=sci-physics/yoda-1.9.5[python(-),${PYTHON_SINGLE_USEDEP}]
+    >=sci-physics/yoda-1.9.5[python(-),${PYTHON_SINGLE_USEDEP}]
+	<sci-physics/yoda-2[python(-),${PYTHON_SINGLE_USEDEP}]
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )

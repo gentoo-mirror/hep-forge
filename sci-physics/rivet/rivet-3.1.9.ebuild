@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 
 inherit python-single-r1 flag-o-matic autotools optfeature
 
@@ -20,7 +20,7 @@ S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3+"
 SLOT="3"
-KEYWORDS="~amd64 ~arm ~arm64"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 IUSE="+hepmc3 hepmc2 +zlib"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
@@ -29,6 +29,7 @@ REQUIRED_USE="
 
 RDEPEND="
 	>=sci-physics/yoda-1.9.8[python(-),${PYTHON_SINGLE_USEDEP}]
+    <sci-physics/yoda-2[python(-),${PYTHON_SINGLE_USEDEP}]
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
