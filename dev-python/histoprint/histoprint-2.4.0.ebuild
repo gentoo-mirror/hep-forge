@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/scikit-hep/histoprint"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
 RDEPEND="
 	dev-python/numpy[${PYTHON_USEDEP}]
