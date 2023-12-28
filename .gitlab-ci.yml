@@ -1,5 +1,9 @@
 stages:
   - checksingle
+  - build_amd64
+  - test_amd64
+  - build_arches
+  - test_arches
   - build
   - test
   - qa
@@ -641,7 +645,6 @@ global-pkgcheck:
 
 .build:
   stage: build
-  needs: []
   extends: .configall
   script:
     - USE="-root" emerge "=$CATEGORY/$PKG-$VERSION*::${REPO_NAME}" --autounmask=y --autounmask-write --autounmask-continue --autounmask-use=y 2>&1 | tee "build_${CATEGORY}_${PKG}-${VERSION}_${ARCH}.log";
@@ -651,9 +654,34 @@ global-pkgcheck:
       - "build_*.log"
     expire_in: 1 week
 
+.build_amd64:
+  extends: .build
+  stage: build_amd64
+  needs: []
+  rules:
+    - if: $ARCH == "amd64"
+      changes:
+        - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
+        - "$CATEGORY/$PKG/metadata.xml"
+        - "$CATEGORY/$PKG/Manifest"
+        - "$CATEGORY/$PKG/files/*"
+        - "$CATEGORY/$PKG/.build"
+        - ".build"
+
+.build_arches: 
+  extends: .build
+  stage: build_arches
+  rules:
+    - if: $ARCH != "amd64"
+      changes:
+        - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
+        - "$CATEGORY/$PKG/metadata.xml"
+        - "$CATEGORY/$PKG/Manifest"
+        - "$CATEGORY/$PKG/files/*"
+        - "$CATEGORY/$PKG/.build"
+        - ".build"
 .test:
   stage: test
-  needs: []
   extends: .configall
   script:
     - printf '\nPYTHON_SINGLE_TARGET=""\nLUA_SINGLE_TARGET=""' >> /etc/portage/make.conf 
@@ -667,6 +695,33 @@ global-pkgcheck:
     expire_in: 1 week
   allow_failure:
     exit_codes: 137
+
+.test_amd64:
+  extends: .build
+  stage: test_amd64
+  needs: []
+  rules:
+    - if: $ARCH == "amd64"
+      changes:
+        - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
+        - "$CATEGORY/$PKG/metadata.xml"
+        - "$CATEGORY/$PKG/Manifest"
+        - "$CATEGORY/$PKG/files/*"
+        - "$CATEGORY/$PKG/.build"
+        - ".build"
+
+.test_arches: 
+  extends: .test
+  stage: test_arches
+  rules:
+    - if: $ARCH != "amd64"
+      changes:
+        - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
+        - "$CATEGORY/$PKG/metadata.xml"
+        - "$CATEGORY/$PKG/Manifest"
+        - "$CATEGORY/$PKG/files/*"
+        - "$CATEGORY/$PKG/.build"
+        - ".build"
 
 .qa:
   stage: qa
@@ -684,12 +739,20 @@ warn1:
   extends: .warn
   <<: *matrix1
 
-build1:
-  extends: .build
+build1_amd64:
+  extends: .build_amd64
   <<: *matrix1
 
-test1:
-  extends: .test
+test1_amd64:
+  extends: .test_amd64
+  <<: *matrix1
+
+build1_arches:
+  extends: .build_arches
+  <<: *matrix1
+
+test1_arches:
+  extends: .test_arches
   <<: *matrix1
 
 qa1:
@@ -704,12 +767,20 @@ warn2:
   extends: .warn
   <<: *matrix2
 
-build2:
-  extends: .build
+build2_amd64:
+  extends: .build_amd64
   <<: *matrix2
 
-test2:
-  extends: .test
+test2_amd64:
+  extends: .test_amd64
+  <<: *matrix2
+
+build2_arches:
+  extends: .build_arches
+  <<: *matrix2
+
+test2_arches:
+  extends: .test_arches
   <<: *matrix2
 
 qa2:
@@ -724,12 +795,20 @@ warn2_0:
   extends: .warn
   <<: *matrix2_0
 
-build2_0:
-  extends: .build
+build2_0_amd64:
+  extends: .build_amd64
   <<: *matrix2_0
 
-test2_0:
-  extends: .test
+test2_0_amd64:
+  extends: .test_amd64
+  <<: *matrix2_0
+
+build2_0_arches:
+  extends: .build_arches
+  <<: *matrix2_0
+
+test2_0_arches:
+  extends: .test_arches
   <<: *matrix2_0
 
 qa2_0:
@@ -744,12 +823,21 @@ warn2_1:
   extends: .warn
   <<: *matrix2_1
 
-build2_1:
-  extends: .build
+build2_1_amd64:
+  extends: .build_amd64
   <<: *matrix2_1
 
-test2_1:
-  extends: .test
+test2_1_amd64:
+  extends: .test_amd64
+  <<: *matrix2_1
+
+
+build2_1_arches:
+  extends: .build_arches
+  <<: *matrix2_1
+
+test2_1_arches:
+  extends: .test_arches
   <<: *matrix2_1
 
 qa2_1:
@@ -764,12 +852,21 @@ warn3:
   extends: .warn
   <<: *matrix3
 
-build3:
-  extends: .build
+build3_amd64:
+  extends: .build_amd64
   <<: *matrix3
 
-test3:
-  extends: .test
+test3_amd64:
+  extends: .test_amd64
+  <<: *matrix3
+
+
+build3_arches:
+  extends: .build_arches
+  <<: *matrix3
+
+test3_arches:
+  extends: .test_arches
   <<: *matrix3
 
 qa3:
@@ -784,12 +881,20 @@ warn4:
   extends: .warn
   <<: *matrix4
 
-build4:
-  extends: .build
+build4_amd64:
+  extends: .build_amd64
   <<: *matrix4
 
-test4:
-  extends: .test
+test4_amd64:
+  extends: .test_amd64
+  <<: *matrix4
+
+build4_arches:
+  extends: .build_arches
+  <<: *matrix4
+
+test4_arches:
+  extends: .test_arches
   <<: *matrix4
 
 qa4:
@@ -804,12 +909,20 @@ warn4_1:
   extends: .warn
   <<: *matrix4_1
 
-build4_1:
-  extends: .build
+build4_1_amd64:
+  extends: .build_amd64
   <<: *matrix4_1
 
-test4_1:
-  extends: .test
+test4_1_amd64:
+  extends: .test_amd64
+  <<: *matrix4_1
+
+build4_1_arches:
+  extends: .build_arches
+  <<: *matrix4_1
+
+test4_1_arches:
+  extends: .test_arches
   <<: *matrix4_1
 
 qa4_1:
@@ -824,12 +937,20 @@ warn5:
   extends: .warn
   <<: *matrix5
 
-build5:
-  extends: .build
+build5_amd64:
+  extends: .build_amd64
   <<: *matrix5
 
-test5:
-  extends: .test
+test5_amd64:
+  extends: .test_amd64
+  <<: *matrix5
+
+build5_arches:
+  extends: .build_arches
+  <<: *matrix5
+
+test5_arches:
+  extends: .test_arches
   <<: *matrix5
 
 qa5:
@@ -844,12 +965,20 @@ warn6:
   extends: .warn
   <<: *matrix6
 
-build6:
-  extends: .build
+build6_amd64:
+  extends: .build_amd64
   <<: *matrix6
 
-test6:
-  extends: .test
+test6_amd64:
+  extends: .test_amd64
+  <<: *matrix6
+
+build6_arches:
+  extends: .build_arches
+  <<: *matrix6
+
+test6_arches:
+  extends: .test_arches
   <<: *matrix6
 
 qa6:
@@ -864,12 +993,20 @@ warn7:
   extends: .warn
   <<: *matrix7
 
-build7:
-  extends: .build
+build7_amd64:
+  extends: .build_amd64
   <<: *matrix7
 
-test7:
-  extends: .test
+test7_amd64:
+  extends: .test_amd64
+  <<: *matrix7
+
+build7_arches:
+  extends: .build_arches
+  <<: *matrix7
+
+test7_arches:
+  extends: .test_arches
   <<: *matrix7
 
 qa7:
@@ -885,12 +1022,20 @@ warn8:
   extends: .warn
   <<: *matrix8
 
-build8:
-  extends: .build
+build8_amd64:
+  extends: .build_amd64
   <<: *matrix8
 
-test8:
-  extends: .test
+test8_amd64:
+  extends: .test_amd64
+  <<: *matrix8
+
+build8_arches:
+  extends: .build_arches
+  <<: *matrix8
+
+test8_arches:
+  extends: .test_arches
   <<: *matrix8
 
 qa8:
@@ -908,12 +1053,20 @@ warn9:
   extends: .warn
   <<: *matrix9
 
-build9:
-  extends: .build
+build9_amd64:
+  extends: .build_amd64
   <<: *matrix9
 
-test9:
-  extends: .test
+test9_amd64:
+  extends: .test_amd64
+  <<: *matrix9
+
+build9_arches:
+  extends: .build_arches
+  <<: *matrix9
+
+test9_arches:
+  extends: .test_arches
   <<: *matrix9
 
 qa9:
