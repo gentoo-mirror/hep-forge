@@ -23,7 +23,7 @@ default:
   IMAGE:
     [
       apnpucky/gentoo-hep-forge:latest,
-      apnpucky/gentoo-hep-forge-unstable:latest,
+#      apnpucky/gentoo-hep-forge-unstable:latest,
     ]
 
 .matrix1: &matrix1
