@@ -1,3 +1,4 @@
 *.swp
 metadata/md5-cache
 .gitlab-ci.yml.original
+tmp.gitlab-ci.yml

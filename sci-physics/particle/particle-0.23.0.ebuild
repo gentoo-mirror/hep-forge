@@ -15,7 +15,7 @@ if [[ ${PV} == 9999 ]]; then
 	EGIT_REPO_URI="https://github.com/scikit-hep/particle"
 else
 	inherit pypi
-	KEYWORDS="~amd64"
+	KEYWORDS="~amd64 ~arm64 ~arm ~riscv"
 fi
 
 RDEPEND="
