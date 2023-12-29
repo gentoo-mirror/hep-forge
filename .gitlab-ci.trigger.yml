@@ -1,0 +1,68 @@
+stages:
+  - filter_amd64
+  - filter_rest
+
+#workflow:
+#  rules:
+#    - if: $CI_PIPELINE_SOURCE == "merge_request_event" || ($CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH=="master") || $TEST_ALL == "1" || $PROBABILITY
+
+variables:
+  REPO_NAME: "hep-forge"
+
+default:
+  image: apnpucky/gentoo-hep-forge:latest
+
+.images: &images
+  IMAGE:
+    [
+      apnpucky/gentoo-hep-forge:latest,
+#      apnpucky/gentoo-hep-forge-unstable:latest,
+    ]
+
+#.filter:
+#  stage: filter
+#  script:
+#    - echo "Filtering $CATEGORY/$PKG/$PKG-$VERSION"
+#  rules:
+#    - changes:
+#        - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
+#        - "$CATEGORY/$PKG/metadata.xml"
+#        - "$CATEGORY/$PKG/Manifest"
+#        - "$CATEGORY/$PKG/files/*"
+#        - "$CATEGORY/$PKG/.build"
+#        - ".build"
+
+
+.filter_amd64:
+  stage: filter_amd64
+  trigger:
+    include: base.gitlab-ci.yml
+    forward:
+      pipeline_variables: true
+    strategy: depend
+  rules:
+    - if: $ARCH == "amd64"
+      changes:
+        - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
+        - "$CATEGORY/$PKG/metadata.xml"
+        - "$CATEGORY/$PKG/Manifest"
+        - "$CATEGORY/$PKG/files/*"
+        - "$CATEGORY/$PKG/.build"
+        - ".build"
+
+.filter_rest:
+  stage: filter_rest
+  trigger:
+    include: base.gitlab-ci.yml
+    forward:
+      pipeline_variables: true
+    strategy: depend
+  rules:
+    - if: $ARCH != "amd64"
+      changes:
+        - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
+        - "$CATEGORY/$PKG/metadata.xml"
+        - "$CATEGORY/$PKG/Manifest"
+        - "$CATEGORY/$PKG/files/*"
+        - "$CATEGORY/$PKG/.build"
+        - ".build"
