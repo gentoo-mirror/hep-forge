@@ -1,0 +1,11 @@
+--- a/Makefile	2023-12-28 15:07:24.901123440 +0100
++++ b/Makefile	2023-12-28 15:07:45.401025035 +0100
+@@ -49,7 +49,7 @@
+ 	$(obj)/interpolation.o $(obj)/hyp_2F1.o $(obj)/complex_functions.o \
+ 	$(obj)/special_functions.o
+ 
+-examples: examples/test_hell examples/create_deltaP_tables examples/create_deltaU_tables examples/create_deltaC_tables examples/create_deltaCmass_tables examples/create_deltaChiggs_tables examples/create_deltaCQQbarSQ_tables examples/create_deltaCQQbarPairTripleDiff_tables examples/create_deltaCQQbarPairDoubleDiff_tables examples/create_deltaCQQbarPairDoubleDiff_tablesAux examples/create_deltaCQQbarPair_alphascheck examples/create_deltaCDY_tables examples/plot_deltaU
++examples: examples/test_hell examples/create_deltaP_tables examples/create_deltaU_tables examples/create_deltaC_tables examples/create_deltaCmass_tables examples/create_deltaChiggs_tables examples/create_deltaCQQbarSQ_tables examples/create_deltaCQQbarPairTripleDiff_tables # examples/create_deltaCQQbarPairDoubleDiff_tables examples/create_deltaCQQbarPairDoubleDiff_tablesAux examples/create_deltaCQQbarPair_alphascheck examples/create_deltaCDY_tables examples/plot_deltaU
+ 
+ all: examples
+ lib: lib$(PKG).a
