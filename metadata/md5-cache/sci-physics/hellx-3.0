@@ -1,0 +1,11 @@
+BDEPEND=virtual/fortran
+DEFINED_PHASES=compile install
+DESCRIPTION=A small-x resummation code
+EAPI=8
+HOMEPAGE=https://www.roma1.infn.it/~bonvini/hell/
+IUSE=examples
+KEYWORDS=~amd64 ~arm64 ~arm ~riscv
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=https://www.roma1.infn.it/~bonvini/hell/downloads/HELLx.v3.0.tgz -> hellx-3.0.tgz https://www.roma1.infn.it/~bonvini/hell/downloads/HELLx-data.v3.tgz
+_md5_=7224149fe75cd95ed48011d954aa59aa
