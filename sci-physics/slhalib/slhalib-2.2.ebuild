@@ -14,7 +14,7 @@ SRC_URI="http://www.feynarts.de/slha/${MY_P}.tar.gz"
 LICENSE="LGPL-3"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~arm ~riscv"
 IUSE="doc"
 
 #PATCHES=( "${FILESDIR}"/${P}-makefile.patch )
