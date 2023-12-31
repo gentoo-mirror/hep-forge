@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+    <maintainer type="project">
+        <email>sci-physics@gentoo.org</email>
+        <name>Gentoo Physics Project</name>
+    </maintainer>
+    <longdescription lang="en">
+    HELL is a code which resums the dominant small-x logarithms in DGLAP splitting functions (at LL and NLL) and in coefficient functions (at relative LL only, which is absolute NLL in DIS).
+    </longdescription>
+	<use>
+        <flag name="root">Adds support for ROOT <pkg>sci-physics/root</pkg></flag>
+    </use>
+</pkgmetadata>
