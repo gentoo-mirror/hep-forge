@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Expander/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${
 LICENSE="MIT"
 RESTRICT=""
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~arm ~riscv"
 
 IUSE=""
 DEPEND=""
@@ -23,7 +23,7 @@ BDEPEND="
 	virtual/fortran
 "
 PATCHES=(
-    "${FILESDIR}"/${P}-install.patch
+    "${FILESDIR}"/${PN}-6.14.0-install.patch
 )
 
 src_configure() {
