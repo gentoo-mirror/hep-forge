@@ -153,7 +153,7 @@ default:
   extends: .config
   script:
     - ls *.log
-    - (! grep -A10 -B10 "QA Notice" test_$CATEGORY_$PKG-$VERSION*.log)
+    - (! grep -A10 -B10 "QA Notice" test_${CATEGORY}_${PKG}-${VERSION}*.log)
   allow_failure: true
 
 check:
