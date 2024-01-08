@@ -49,7 +49,7 @@ def get_ebs_with_arch():
                     if "arm64" in line:
                         rebs.append(eb + ["arm64"])
                         hit = True
-                    if "arm" in line:
+                    if "arm " in line or "arm\"" in line:
                         rebs.append(eb + ["arm"])
                         hit = True
                     if "riscv" in line:
