@@ -13,12 +13,13 @@ HOMEPAGE="
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~arm ~riscv"
 
 RDEPEND="
 	>=dev-python/matplotlib-3.4[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.16.0[${PYTHON_USEDEP}]
 	sci-physics/mplhep-data[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 	>=dev-python/uhi-0.2.0[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
