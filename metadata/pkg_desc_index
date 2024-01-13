@@ -103,7 +103,7 @@ sci-physics/looptools 2.10 2.15 2.15-r1 2.16-r1: Tools for evaluation of scalar 
 sci-physics/madanalysis5 1.10.4: A package for event file analysis and recasting of LHC results
 sci-physics/madgraph5 3.4.2-r4 3.4.2-r5 3.5.0 3.5.0-r1 3.5.1-r1: MadGraph5_aMC@NLO
 sci-physics/mcfm 10.2.1 10.2.1-r1 10.2.1-r2 10.2.1-r3 10.2.1-r4 9999: Monte Carlo for FeMtobarn processes
-sci-physics/mplhep 0.3.28: Extended histogram plots on top of matplotlib and HEP compatible styling similar to current collaboration requirements (ROOT).
+sci-physics/mplhep 0.3.28 0.3.31: Extended histogram plots on top of matplotlib and HEP compatible styling similar to current collaboration requirements (ROOT).
 sci-physics/mplhep-data 0.0.3: Sub-package to hold data (fonts) for mplhep.
 sci-physics/ninja 1.1.0 1.1.0-r1: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 sci-physics/njet 2.0.0 2.1.0 3.1.2: NJet is a library for multi-parton matrix elements up to two loops in massless QCD
