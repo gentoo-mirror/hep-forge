@@ -60,7 +60,7 @@ PATCHES=(
 
 src_prepare() {
 	find -name 'Makefile.am' -exec \
-		sed -i -e '1ipkgdatadir=$(datadir)/thepeg' {} \; || die
+		sed -i -e '1ipkgdatadir=$(datadir)/ThePEG' {} \; || die
 	# trick to force c++ linking
 	sed -i \
 		-e '1inodist_EXTRA_libThePEG_la_SOURCES = dummy.cxx' \
