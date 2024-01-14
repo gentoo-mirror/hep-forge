@@ -63,6 +63,7 @@ sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input P
 sci-physics/cernlib 2006-r9: CERN program library for High Energy Physics
 sci-physics/checkmate 2.0.26 9999: Check Models At Terascale Energies
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
+sci-physics/cocoa 0.1.1: A nearly-hermetic calorimeter simulated with Geant4 and interfaced to the Pythia8 event generator.
 sci-physics/coffea 0.7.22 9999: Basic tools and wrappers for enabling not-too-alien syntax when running columnar Collider HEP analysis.
 sci-physics/collier 1.2.5 1.2.7 1.2.7-r1 1.2.7-r2 1.2.8: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
