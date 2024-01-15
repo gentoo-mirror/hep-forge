@@ -10,11 +10,10 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-	Sub-package to hold data (fonts) for the package mplhep.
-	Fonts distributed in this package have open licenses and can be redistributed. 
+	A common package to provide example files (e.g. ROOT) for testing and developing packages against. The sample of files is representative of typical files found "in the wild".
 	</longdescription>
 	<upstream>
-		<remote-id type="pypi">mplhep-data</remote-id>
-		<remote-id type="github">scikit-hep/mplhep_data</remote-id>
+		<remote-id type="pypi">scikit-hep-testdata</remote-id>
+		<remote-id type="github">scikit-hep/scikit-hep-testdata</remote-id>
 	</upstream>
 </pkgmetadata>

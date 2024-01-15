@@ -27,6 +27,8 @@ default:
   tags:
     - $ARCH
   before_script:
+    - mkdir -p /etc/portage/profile/
+    - echo "-python_targets_python3_12" >> /etc/portage/profile/use.mask
     - mkdir /var/db/repos/apn && printf "[apn]\nlocation = /var/db/repos/apn\nsync-type = git\nsync-uri = https://gitlab.com/APN-Pucky/gentoo-apn.git" >> /etc/portage/repos.conf/apn.conf && emaint -r apn sync
     - echo '*/*::apn * ~*' > /etc/portage/package.accept_keywords/apn
     - emerge --sync || emaint -r ${REPO_NAME} sync

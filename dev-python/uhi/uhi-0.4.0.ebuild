@@ -1,13 +1,12 @@
 EAPI=8
 
-export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_USE_PEP517=hatchling
+export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 inherit distutils-r1 pypi
 
 DESCRIPTION="Universal Histogram Interface"
 HOMEPAGE="https://github.com/scikit-hep/uhi"
-#SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -15,5 +14,14 @@ KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
 RDEPEND="
     >=dev-python/numpy-1.13.3[${PYTHON_USEDEP}]
+    test? (
+        dev-python/pytest[${PYTHON_USEDEP}]
+        dev-python/boost-histogram[${PYTHON_USEDEP}]
+    )
 "
-BDEPEND="${RDEPEND}"
+BDEPEND="
+    ${RDEPEND}
+    dev-python/hatch-vcs[${PYTHON_USEDEP}]
+"
+
+distutils_enable_tests pytest

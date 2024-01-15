@@ -1,6 +1,6 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
@@ -15,3 +15,12 @@ RDEPEND="
 	>=dev-python/numpy-1.10[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
+
+distutils_enable_tests pytest
+
+python_test() {
+	local EPYTEST_IGNORE=(
+		tests/bench.py
+	)
+	epytest
+}
