@@ -1,10 +1,10 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_11 )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
-DESCRIPTION="Extended histogram plots on top of matplotlib and HEP compatible styling similar to current collaboration requirements (ROOT)."
+DESCRIPTION="Histogram plots using matplotlib and HEP compatible styling ROOT."
 HOMEPAGE="
 	https://mplhep.readthedocs.io
 	https://github.com/scikit-hep/mplhep
@@ -25,7 +25,7 @@ RDEPEND="
 		>=dev-python/papermill-1.0[${PYTHON_USEDEP}]
 		>=dev-python/scrapbook-0.3[${PYTHON_USEDEP}]
 
-    	>=dev-python/scipy-1.1.0[${PYTHON_USEDEP}]
+		>=dev-python/scipy-1.1.0[${PYTHON_USEDEP}]
 		>=dev-python/pytest-6.0[${PYTHON_USEDEP}]
 		dev-python/pytest-mpl[${PYTHON_USEDEP}]
 		dev-python/pytest-mock[${PYTHON_USEDEP}]
