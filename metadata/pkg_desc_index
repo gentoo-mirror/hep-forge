@@ -3,8 +3,8 @@ dev-python/Unum 4.2.1: units in python
 dev-python/archspec 0.1.4 0.2.0-r1 0.2.2: labels for various aspects of a system architecture like CPU, etc.
 dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
 dev-python/autograd 1.6.2: Efficiently computes derivatives of numpy code.
-dev-python/awkward 2.3.3 2.4.6: Manipulate JSON-like data with NumPy-like idioms.
-dev-python/awkward-cpp 22 24: awkward-cpp bindings for Python
+dev-python/awkward 2.3.3 2.4.6 2.5.2: Manipulate JSON-like data with NumPy-like idioms.
+dev-python/awkward-cpp 22 24 28: awkward-cpp bindings for Python
 dev-python/boost-histogram 1.3.0 1.3.2 1.4.0: Python bindings for the C++14 Boost::Histogram library
 dev-python/bounded-pool-executor 0.0.3: Bounded Process and Thread Pool Executor
 dev-python/correctionlib 2.3.3 2.4.0: A generic correction library
@@ -17,12 +17,14 @@ dev-python/hist 2.7.0 2.7.1 2.7.2: Histogramming for analysis powered by boost-h
 dev-python/histoprint 2.4.0: Pretty print histograms to the console
 dev-python/hunter 3.6.0 3.6.1: Hunter is a flexible code tracing toolkit
 dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbitrary precision.
+dev-python/jax 0.4.23: Differentiate, compile, and transform Numpy code.
 dev-python/klepto 0.2.3 0.2.4: persistent caching to memory, disk, or database
 dev-python/llvmlite 0.39.1 0.40.1 0.41.1: Python wrapper around the llvm C++ library
 dev-python/manhole 1.8.0-r1: Debugging manhole for python application
 dev-python/multiprocess 0.70.14 0.70.15: better multiprocessing and multithreading in python
 dev-python/mystic 0.4.0 0.4.1: Highly-constrained non-convex optimization and uncertainty quantification
 dev-python/numba 0.56.4 0.57.1 0.58.0: NumPy aware dynamic Python compiler using LLVM
+dev-python/papermill 2.5.0: A common package to provide example files for testing and developing packages against.
 dev-python/pathos 0.3.0 0.3.1: parallel graph management and execution in heterogeneous computing
 dev-python/pox 0.3.2 0.3.3: utilities for filesystem exploration and automated builds
 dev-python/ppft 1.7.6.6 1.7.6.7: distributed and parallel python
@@ -30,6 +32,7 @@ dev-python/pqdm 0.2.0: Parallel TQDM
 dev-python/pygaljs 1.0.2-r1: Python package providing assets from https://github.com/Kozea/pygal.js
 dev-python/pyina 0.2.7 0.2.8: MPI parallel map and cluster scheduling
 dev-python/resample 1.6.0: Randomization-based inference in Python
+dev-python/scrapbook 0.5.0: A library for recording and reading data in notebooks.
 dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
 dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics formats
 dev-python/toml 0.10.2: Python lib for TOML
@@ -105,7 +108,7 @@ sci-physics/madanalysis5 1.10.4: A package for event file analysis and recasting
 sci-physics/madgraph5 3.4.2-r4 3.4.2-r5 3.5.0 3.5.0-r1 3.5.1-r1: MadGraph5_aMC@NLO
 sci-physics/mcfm 10.2.1 10.2.1-r1 10.2.1-r2 10.2.1-r3 10.2.1-r4 9999: Monte Carlo for FeMtobarn processes
 sci-physics/mplhep 0.3.31: Extended histogram plots on top of matplotlib and HEP compatible styling similar to current collaboration requirements (ROOT).
-sci-physics/mplhep-data 0.0.3: Sub-package to hold data (fonts) for mplhep.
+sci-physics/mplhep-data 0.0.3: Data/font package for mplhep.
 sci-physics/ninja 1.1.0 1.1.0-r1: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
 sci-physics/njet 2.0.0 2.1.0 3.1.2: NJet is a library for multi-parton matrix elements up to two loops in massless QCD
 sci-physics/nll-fast 3.1: Resummation for squarks and gluinos
@@ -141,6 +144,7 @@ sci-physics/resummino 3.1.2: Resummation for electroweak BSM particles.
 sci-physics/rivet 3.1.7-r6 3.1.8 3.1.9 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
 sci-physics/rundec 0.5: running and decoupling of the strong coupling constant and quark masses
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
+sci-physics/scikit-hep-testdata 0.4.36: A common package to provide example files for testing and developing packages against.
 sci-physics/sherpa 2.2.12 2.2.15: Simulation of High-Energy Reactions of PArticles
 sci-physics/siscone 3.0.5: Hadron Seedless Infrared-Safe Cone jet algorithm
 sci-physics/slhalib 2.2: a library for SUSY Les Houches Accord I/O
@@ -155,7 +159,7 @@ sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thep8i 2.0.3: Lund hadronisation for Herwig. Part of earlier ThePEG codes.
 sci-physics/thepeg 2.2.3-r1 2.2.3-r3: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 1.0.0 9999: TOPDRAWER renders top files.
-sci-physics/uproot 5.0.0 5.0.11 5.1.1 5.1.2: ROOT I/O in pure Python and Numpy.
+sci-physics/uproot 5.0.0 5.0.11 5.1.1 5.1.2 5.2.1: ROOT I/O in pure Python and Numpy.
 sci-physics/vbfnlo 2.7.1 3.0.0_beta5: A parton level Monte Carlo for processes wit electroweak bosons
 sci-physics/whizard 3.1.3: The WHIZARD Event Generator
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
