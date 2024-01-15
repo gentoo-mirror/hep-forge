@@ -16,9 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
-	>=dev-python/numpy-1.18.0
+	>=dev-python/numpy-1.18.0[${PYTHON_USEDEP}]
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
-	>=dev-python/scikit-build-core-0.2.0
+	>=dev-python/scikit-build-core-0.2.0[${PYTHON_USEDEP}]
 "

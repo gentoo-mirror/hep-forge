@@ -1,12 +1,12 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_USE_PEP517=hatchling
+export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 inherit distutils-r1 pypi
 
 DESCRIPTION="Histogramming for analysis powered by boost-histogram "
 HOMEPAGE="https://github.com/scikit-hep/hist"
-#SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -17,6 +17,7 @@ RDEPEND="
 	>=dev-python/histoprint-2.2.0[${PYTHON_USEDEP}]
 	>=dev-python/numpy-1.14.5[${PYTHON_USEDEP}]
 "
-BDEPEND="${RDEPEND}"
-
-export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
+BDEPEND="
+	${RDEPEND}
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+"

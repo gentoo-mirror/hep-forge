@@ -1,6 +1,6 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_11 )
 DISTUTILS_USE_PEP517=hatchling
 inherit distutils-r1 pypi
 
@@ -14,13 +14,13 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	>=dev-python/numpy-1.18.0[${PYTHON_USEDEP}]
-	=dev-python/awkward-cpp-22[${PYTHON_USEDEP}]
+	~dev-python/awkward-cpp-22[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
     $(python_gen_cond_dep '
 		dev-python/importlib_resources[${PYTHON_USEDEP}]
 	' 3.8)
     $(python_gen_cond_dep '
-		>=dev-python/typing_extensions-4.1.0[${PYTHON_USEDEP}]
+		>=dev-python/typing-extensions-4.1.0[${PYTHON_USEDEP}]
 	' python3_{8..10})
 "
 BDEPEND="${RDEPEND}"

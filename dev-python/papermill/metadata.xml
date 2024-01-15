@@ -10,11 +10,10 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-	Sub-package to hold data (fonts) for the package mplhep.
-	Fonts distributed in this package have open licenses and can be redistributed. 
+	papermill is a tool for parameterizing, executing, and analyzing Jupyter Notebooks.
 	</longdescription>
 	<upstream>
-		<remote-id type="pypi">mplhep-data</remote-id>
-		<remote-id type="github">scikit-hep/mplhep_data</remote-id>
+		<remote-id type="pypi">papermill</remote-id>
+		<remote-id type="github">nteract/papermill</remote-id>
 	</upstream>
 </pkgmetadata>
