@@ -13,15 +13,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
 RDEPEND="
-    >=dev-python/numpy-1.13.3[${PYTHON_USEDEP}]
-    test? (
-        dev-python/pytest[${PYTHON_USEDEP}]
-        dev-python/boost-histogram[${PYTHON_USEDEP}]
-    )
+	>=dev-python/numpy-1.13.3[${PYTHON_USEDEP}]
+	test? (
+		dev-python/pytest[${PYTHON_USEDEP}]
+		dev-python/boost-histogram[${PYTHON_USEDEP}]
+	)
 "
 BDEPEND="
-    ${RDEPEND}
-    dev-python/hatch-vcs[${PYTHON_USEDEP}]
+	${RDEPEND}
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
 "
 
 distutils_enable_tests pytest
