@@ -1,18 +1,17 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_11 )
+PYTHON_COMPAT=( python3_{11..12} )
 DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 pypi
 
-DESCRIPTION="Sub-package to hold data (fonts) for mplhep."
+DESCRIPTION="Data/font package for mplhep."
 HOMEPAGE="
-    https://github.com/scikit-hep/mplhep_data
+	https://mplhep.readthedocs.io
+	https://github.com/scikit-hep/mplhep_data
 "
-#SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~riscv"
 
-RDEPEND=""
-BDEPEND="${RDEPEND}"
+distutils_enable_tests pytest
