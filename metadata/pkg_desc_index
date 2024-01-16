@@ -165,10 +165,10 @@ sci-physics/whizard 3.1.3: The WHIZARD Event Generator
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
 sci-physics/xfitter 2.2.0: PDF fitting tool
 sci-physics/yoda 1.9.7-r3 1.9.8 1.9.9-r1 2.0.0 9999: Yet more Objects for (High Energy Physics) Data Analysis
-sys-cluster/easybuild 4.6.2-r1 4.7.0 4.7.2 4.8.2: EasyBuild is a software build and installation framework.
-sys-cluster/easybuild-easyblocks 4.6.2 4.7.0 4.7.2 4.8.2: Provides a collection of easyblocks for EasyBuild.
-sys-cluster/easybuild-easyconfigs 4.6.2 4.7.0 4.7.2 4.8.2: Provides a collection of well-tested easyconfig files for EasyBuild.
-sys-cluster/easybuild-framework 4.6.2 4.7.0 4.7.2 4.8.2: The easybuild-framework package is the core of EasyBuild.
+sys-cluster/easybuild 4.8.2 4.9.0 9999: EasyBuild is a software build and installation framework.
+sys-cluster/easybuild-easyblocks 4.8.2 4.9.0 9999: Provides a collection of easyblocks for EasyBuild.
+sys-cluster/easybuild-easyconfigs 4.8.2 4.9.0 9999: Provides a collection of well-tested easyconfig files for EasyBuild.
+sys-cluster/easybuild-framework 4.8.2 4.9.0 9999: The easybuild-framework package is the core of EasyBuild.
 sys-cluster/lmod 8.6.14-r1: Environment Module System based on Lua
 sys-cluster/modules 4.6.0-r1: Dynamic modification of a user's environment via modulefiles
 virtual/feyntools 0: FeynTools is a collection of FeynArts, FormCalc and LoopTools.
