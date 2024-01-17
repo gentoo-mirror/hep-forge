@@ -61,7 +61,7 @@ sci-mathematics/unuran 1.8.1 1.9.0 1.11.0: Universal Non-Uniform Random number g
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
 sci-physics/apfel 3.0.6-r1 3.1.1: A PDF Evolution Library
 sci-physics/apfelgrid 1.0.5: Ultra-fast theory predictions for collider observables
-sci-physics/apfelxx 4.0.0 4.7.0: Object oriented rewriting of the APFEL evolution code
+sci-physics/apfelxx 4.7.0 4.8.0: Object oriented rewriting of the APFEL evolution code
 sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input PDFs
 sci-physics/cernlib 2006-r9: CERN program library for High Energy Physics
 sci-physics/checkmate 2.0.26 9999: Check Models At Terascale Energies
