@@ -35,7 +35,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
-    use python && python-single-r1_pkg_setup
+	use python && python-single-r1_pkg_setup
 }
 
 src_prepare() {
