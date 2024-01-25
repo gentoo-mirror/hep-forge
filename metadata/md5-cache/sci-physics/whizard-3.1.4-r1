@@ -1,0 +1,15 @@
+BDEPEND=virtual/fortran
+DEFINED_PHASES=compile configure postinst
+DEPEND=dev-ml/ocamlbuild lhapdf? ( sci-physics/lhapdf sci-physics/lhapdf-sets[lhapdf_sets_ct10,lhapdf_sets_cteq6l1] ) looptools? ( sci-physics/looptools ) hepmc? ( || ( sci-physics/hepmc:2 sci-physics/hepmc:3 ) ) recola2? ( sci-physics/recola2 ) openloops? ( sci-physics/openloops ) lcio? ( sci-physics/lcio ) qgraf? ( sci-physics/qgraf ) form? ( sci-mathematics/form ) pythia8? ( sci-physics/pythia:8 ) hoppet? ( sci-physics/hoppet ) fastjet? ( sci-physics/fastjet ) gosam? ( sci-physics/gosam ) samurai? ( sci-physics/samurai ) ninja? ( sci-physics/ninja ) mpi? ( sys-cluster/openmpi )
+DESCRIPTION=The WHIZARD Event Generator
+EAPI=8
+HOMEPAGE=https://whizard.hepforge.org/ https://gitlab.tp.nt.uni-siegen.de/whizard/public
+INHERIT=optfeature
+IUSE=+omega +lhapdf +looptools +hepmc lcio openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja mpi +openmp
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=dev-ml/ocamlbuild lhapdf? ( sci-physics/lhapdf sci-physics/lhapdf-sets[lhapdf_sets_ct10,lhapdf_sets_cteq6l1] ) looptools? ( sci-physics/looptools ) hepmc? ( || ( sci-physics/hepmc:2 sci-physics/hepmc:3 ) ) recola2? ( sci-physics/recola2 ) openloops? ( sci-physics/openloops ) lcio? ( sci-physics/lcio ) qgraf? ( sci-physics/qgraf ) form? ( sci-mathematics/form ) pythia8? ( sci-physics/pythia:8 ) hoppet? ( sci-physics/hoppet ) fastjet? ( sci-physics/fastjet ) gosam? ( sci-physics/gosam ) samurai? ( sci-physics/samurai ) ninja? ( sci-physics/ninja ) mpi? ( sys-cluster/openmpi )
+SLOT=0
+SRC_URI=https://whizard.hepforge.org/downloads?f=whizard-3.1.4.tar.gz -> whizard-3.1.4.tar.gz
+_eclasses_=optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54
+_md5_=557efdcb6b6f73f5ae147362859dbfb5
