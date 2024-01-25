@@ -10,12 +10,13 @@ HOMEPAGE="http://powhegbox.mib.infn.it/"
 
 SLOT="0"
 LICENSE="GPL-3+"
-IUSE=""
+IUSE="doc examples"
 KEYWORDS="~amd64"
 
 RDEPEND="
 	sci-physics/lhapdf
 	sci-physics/fastjet
+	sys-libs/zlib
 "
 
 PATCHES=(
@@ -38,10 +39,20 @@ src_unpack() {
 }
 
 src_compile() {
-	emake pwhg_main
+	emake pwhg_main WITHZLIB=yes
 	mv pwhg_main pwhg_main_${MY_PN}
 }
 
 src_install() {
 	dobin pwhg_main_${MY_PN}
+
+	if use doc; then
+		dodoc -r Docs/*
+	fi
+
+	if use examples; then
+		docinto examples
+		dodoc -r testrun-lhc-8TeV
+		docompress -x /usr/share/doc/${PF}/examples
+	fi
 }

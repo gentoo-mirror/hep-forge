@@ -15,6 +15,7 @@ IUSE="doc examples"
 RDEPEND="
 	sci-physics/lhapdf
 	sci-physics/fastjet
+	sys-libs/zlib
 "
 
 PATCHES=(
@@ -37,7 +38,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake pwhg_main
+	emake pwhg_main WITHZLIB=yes
 	mv pwhg_main pwhg_main_${MY_PN}
 }
 
