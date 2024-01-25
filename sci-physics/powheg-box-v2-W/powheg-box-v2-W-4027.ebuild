@@ -10,11 +10,12 @@ HOMEPAGE="http://powhegbox.mib.infn.it/"
 
 SLOT="0"
 LICENSE="GPL-3+"
-IUSE=""
+IUSE="doc examples +zlib"
 KEYWORDS="~amd64"
 
 RDEPEND="
 	sci-physics/lhapdf
+	zlib? ( sys-libs/zlib )
 "
 
 if [[ ${PV} == 9999 ]]; then
@@ -33,10 +34,22 @@ src_unpack() {
 }
 
 src_compile() {
-	emake pwhg_main
+	emake pwhg_main WITHZLIB=$(usex zlib yes no)
 	mv pwhg_main pwhg_main_${MY_PN}
 }
 
 src_install() {
 	dobin pwhg_main_${MY_PN}
+
+
+	if use doc; then
+		dodoc -r Docs/*
+	fi
+
+	if use examples; then
+		docinto examples
+		dodoc -r testrun-wm-lhc-8TeV
+		dodoc -r testrun-merged
+		docompress -x /usr/share/doc/${PF}/examples
+	fi
 }
