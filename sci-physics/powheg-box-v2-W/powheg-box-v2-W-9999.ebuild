@@ -10,10 +10,11 @@ HOMEPAGE="http://powhegbox.mib.infn.it/"
 
 SLOT="0"
 LICENSE="GPL-3+"
-IUSE="doc examples"
+IUSE="doc examples +zlib"
 
 RDEPEND="
 	sci-physics/lhapdf
+	zlib? ( sys-libs/zlib )
 "
 
 if [[ ${PV} == 9999 ]]; then
@@ -32,7 +33,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake pwhg_main
+	emake pwhg_main WITHZLIB=$(usex zlib yes no)
 	mv pwhg_main pwhg_main_${MY_PN}
 }
 
