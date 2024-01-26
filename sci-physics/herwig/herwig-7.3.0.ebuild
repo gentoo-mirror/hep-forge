@@ -23,13 +23,11 @@ REQUIRED_USE="
 RDEPEND="
 	>=dev-libs/boost-1.62
 	>=sci-libs/gsl-2.6
+	sci-physics/fastjet
 	sci-physics/lhapdf-sets[lhapdf_sets_ct14lo,lhapdf_sets_ct14nlo]
 	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
-	|| (
-		>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,hepmc2,-hepmc3,rivet]
-		>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,-hepmc2,hepmc3,rivet]
-	)
-	<sci-physics/evtgen-02.00.00[pythia,herwig]
+	>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,-hepmc2?,hepmc3,rivet]
+	>=sci-physics/evtgen-02.02.00[pythia]
 	pythia? ( <sci-physics/pythia-8.3:8= )
 	madgraph? ( sci-physics/madgraph5 )
 	openloops? ( sci-physics/openloops )
@@ -60,7 +58,7 @@ src_configure() {
 		$(use_with gosam gosam "${EPREFIX}"/usr) \
 		$(use_with madgraph madgraph "${EPREFIX}"/opt/MadGraph5/ ) \
 		$(use_with openloops openloops "${EPREFIX}"/opt/OpenLoops2/ ) \
-		$(use_with pythia pythia "${EPREFIX}"/usr) \ 
+		$(use_with pythia pythia "${EPREFIX}"/usr) \
 		$(use_with vbfnlo vbfnlo "${EPREFIX}"/usr) \
 		$(use_with njet njet "${EPREFIX}"/usr)
 }
