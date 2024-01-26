@@ -61,7 +61,7 @@ src_configure() {
 		$(use_with gosam gosam "${EPREFIX}"/usr) \
 		$(use_with madgraph madgraph "${EPREFIX}"/opt/MadGraph5/ ) \
 		$(use_with openloops openloops "${EPREFIX}"/opt/OpenLoops2/ ) \
-		$(use_with pythia pythia "${EPREFIX}"/usr) \ 
+		$(use_with pythia pythia "${EPREFIX}"/usr) \
 		$(use_with vbfnlo vbfnlo "${EPREFIX}"/usr) \
 		$(use_with njet njet "${EPREFIX}"/usr)
 }
