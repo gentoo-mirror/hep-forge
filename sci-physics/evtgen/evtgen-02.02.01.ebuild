@@ -32,7 +32,9 @@ BDEPEND="
 src_configure() {
 	local mycmakeargs=(
 		-DEVTGEN_HEPMC3=ON
+		-DHEPMC3_ROOT_DIR=${ESYSROOT}/usr
 		-DEVTGEN_PYTHIA=$(usex pythia ON OFF)
+		$(usex pythia -DPYTHIA8_ROOT_DIR=${ESYSROOT}/usr)
 		-DEVTGEN_PHOTOS=$(usex photos ON OFF)
 		-DEVTGEN_TAUOLA=$(usex tauola ON OFF)
 	)
