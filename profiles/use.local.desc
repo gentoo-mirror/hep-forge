@@ -41,6 +41,12 @@ sci-physics/herwig:njet - Build with njet support
 sci-physics/herwig:openloops - Build with openloops support
 sci-physics/herwig:pythia - Build with pythia support
 sci-physics/herwig:vbfnlo - Build with vbfnlo support
+sci-physics/jetscape:clvisc - Enable support for clvisc
+sci-physics/jetscape:freestream - Enable support for freestream
+sci-physics/jetscape:ipglasma - Enable support for ipglasma
+sci-physics/jetscape:iss - Enable support for iss
+sci-physics/jetscape:music - Enable support for music
+sci-physics/jetscape:smash - Enable support for smash
 sci-physics/madgraph5:collier - USE system collier
 sci-physics/madgraph5:fastjet - USE system FASTJET
 sci-physics/madgraph5:golem95 - USE system golem95
