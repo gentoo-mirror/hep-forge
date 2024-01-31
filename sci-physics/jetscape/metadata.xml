@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<maintainer type="project">
+		<email>sci-physics@gentoo.org</email>
+		<name>Gentoo Physics Project</name>
+	</maintainer>
+	<longdescription lang="en">
+JETSCAPE, a modular, task-based framework for simulating all aspects of heavy-ion collisions.
+
+The JETSCAPE simulation framework is an overarching computational envelope for developing complete event generators for heavy-ion collisions. It allows for modular incorporation of a wide variety of existing and future software that simulates different aspects of a heavy-ion collision. For a full introduction to JETSCAPE, please see The JETSCAPE framework.
+	</longdescription>
+	<upstream>
+		 <remote-id type="github">JETSCAPE/JETSCAPE</remote-id>
+	</upstream>
+    <use>
+      <flag name="clvisc">Enable support for clvisc</flag>
+      <flag name="freestream">Enable support for freestream</flag>
+      <flag name="ipglasma">Enable support for ipglasma</flag>
+      <flag name="iss">Enable support for iss</flag>
+      <flag name="music">Enable support for music</flag>
+      <flag name="smash">Enable support for smash</flag>
+    </use>
+</pkgmetadata>
