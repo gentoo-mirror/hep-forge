@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -11,27 +11,18 @@ MY_P="${PN}${PV//./}"
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
 HOMEPAGE="https://pythia.org/"
 
-# just data
-SRC_URI="test? ( lhapdf? (
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF31_nnlo_as_0118_luxqed.tar.gz
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/PDF4LHC15_nlo_asvar.tar.gz
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14qed_proton.tar.gz
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nlo_as_0119_qed.tar.gz
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nnlo_as_0119_qed.tar.gz
-		) )"
-
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://gitlab.com/Pythia8/releases"
 else
-	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
-	$SRC_URI"
+	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz"
 	KEYWORDS="~amd64 ~x86 ~arm ~arm64"
 	S="${WORKDIR}/${MY_P}"
 fi
 
 SLOT="8/3"
 LICENSE="GPL-2"
+KEYWORDS="~amd64 ~x86 ~arm ~arm64"
 IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="
@@ -39,6 +30,7 @@ REQUIRED_USE="
 "
 
 RDEPEND="
+	test? ( lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed,lhapdf_sets_pdf4lhc15_nlo_asvar,lhapdf_sets_ct14qed_proton,lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc,lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc] ) )
 	fastjet? ( sci-physics/fastjet )
 	hepmc3? ( sci-physics/hepmc:3= )
 	hepmc2? ( sci-physics/hepmc:2= )
@@ -77,9 +69,8 @@ src_prepare() {
 		-e "s|-O2|${CXXFLAGS}|g" \
 		-e "s|Cint|Core|g" \
 		configure || die
-	sed -i 's|$(CXX) $^ -o $@ $(CXX_COMMON) $(CXX_SHARED)|$(CXX) $(LDFLAGS) $^ -o $@ $(CXX_COMMON) $(CXX_SHARED)|g' \
-		Makefile || die
 	sed -i 's|$(CXX)|$(CXX) $(LDFLAGS)|' examples/Makefile || die
+	sed -i 's|$(CXX)|$(CXX) $(LDFLAGS)|' Makefile || die
 	# we use lhapdf6 instead of lhapdf5
 	# some PDFs changed, use something similar
 	sed -i \
@@ -179,13 +170,12 @@ src_install() {
 	fi
 	if use examples; then
 		# reuse system Makefile.inc
-		rm examples/Makefile.inc || die
+		#rm examples/Makefile.inc || die
 		sed -i "s|include Makefile.inc|include ${EPYTHIADIR}|" \
 			examples/Makefile || die
 
-		insinto /usr/share/${PN}
+		insinto "${PYTHIADIR}"
 		doins -r examples
-		docompress -x /usr/share/doc/${PF}/examples
 	fi
 
 	# cleanup
