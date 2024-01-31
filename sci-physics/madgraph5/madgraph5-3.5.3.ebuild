@@ -20,7 +20,7 @@ LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
 # TODO add pineapple, herwig, syscalc, pjfry
-IUSE="+lhapdf +fastjet +pythia ninja samurai collier +pineappl golem95 +thepeg +rivet +herwig +hepmc +madanalysis5 td"
+IUSE=" +hepmc +lhapdf +fastjet pythia ninja samurai collier pineappl golem95 thepeg rivet herwig madanalysis5 td"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
