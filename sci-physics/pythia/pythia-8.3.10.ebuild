@@ -10,7 +10,15 @@ MY_P="${PN}${PV//./}"
 
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
 HOMEPAGE="https://pythia.org/"
-SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz"
+
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://gitlab.com/Pythia8/releases"
+else
+	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz"
+	KEYWORDS="~amd64 ~x86 ~arm ~arm64"
+	S="${WORKDIR}/${MY_P}"
+fi
 
 SLOT="8/3"
 LICENSE="GPL-2"
@@ -37,8 +45,6 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}"/${PN}8209-root-noninteractive.patch
 )
-
-S="${WORKDIR}/${MY_P}"
 
 pkg_pretend() {
 	if use root && ! use test; then
@@ -164,13 +170,12 @@ src_install() {
 	fi
 	if use examples; then
 		# reuse system Makefile.inc
-		rm examples/Makefile.inc || die
+		#rm examples/Makefile.inc || die
 		sed -i "s|include Makefile.inc|include ${EPYTHIADIR}|" \
 			examples/Makefile || die
 
-		insinto /usr/share/${PN}
+		insinto "${PYTHIADIR}"
 		doins -r examples
-		docompress -x /usr/share/doc/${PF}/examples
 	fi
 
 	# cleanup
