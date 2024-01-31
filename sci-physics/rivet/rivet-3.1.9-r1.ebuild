@@ -29,7 +29,7 @@ REQUIRED_USE="
 
 RDEPEND="
 	>=sci-physics/yoda-1.9.8[python(-),${PYTHON_SINGLE_USEDEP}]
-    <sci-physics/yoda-2[python(-),${PYTHON_SINGLE_USEDEP}]
+	<sci-physics/yoda-2[python(-),${PYTHON_SINGLE_USEDEP}]
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
@@ -56,6 +56,7 @@ src_prepare() {
 }
 
 src_configure() {
+	replace-cpu-flags znver1 x86-64
 	econf \
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
 		$(usex hepmc2 "--with-hepmc=${ESYSROOT}/usr" "") \
@@ -71,5 +72,5 @@ src_install() {
 }
 
 pkg_postinstall() {
-	optfeature "plotting support" 	virtual/latex-base	media-gfx/imagemagick	app-text/ghostscript-gpl
+	optfeature "plotting support" virtual/latex-base media-gfx/imagemagick app-text/ghostscript-gpl
 }
