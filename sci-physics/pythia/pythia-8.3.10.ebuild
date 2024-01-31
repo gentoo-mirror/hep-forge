@@ -63,9 +63,8 @@ src_prepare() {
 		-e "s|-O2|${CXXFLAGS}|g" \
 		-e "s|Cint|Core|g" \
 		configure || die
-	sed -i 's|$(CXX) $^ -o $@ $(CXX_COMMON) $(CXX_SHARED)|$(CXX) $(LDFLAGS) $^ -o $@ $(CXX_COMMON) $(CXX_SHARED)|g' \
-		Makefile || die
 	sed -i 's|$(CXX)|$(CXX) $(LDFLAGS)|' examples/Makefile || die
+	sed -i 's|$(CXX)|$(CXX) $(LDFLAGS)|' Makefile || die
 	# we use lhapdf6 instead of lhapdf5
 	# some PDFs changed, use something similar
 	sed -i \

@@ -16,7 +16,7 @@ KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="+omega +lhapdf +looptools +hepmc lcio openloops recola2 qgraf form pythia8 hoppet fastjet gosam samurai ninja mpi +openmp" # TODO python
+IUSE="+omega +lhapdf +looptools +hepmc lcio openloops recola qgraf form pythia8 hoppet fastjet gosam samurai ninja mpi +openmp" # TODO python
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
@@ -28,7 +28,7 @@ RDEPEND="
 	looptools? ( sci-physics/looptools )
 	hepmc? ( || ( sci-physics/hepmc:2 sci-physics/hepmc:3 ) )
 
-	recola2? ( sci-physics/recola2 )
+	recola? ( sci-physics/recola2 )
 	openloops? ( sci-physics/openloops )
 
 	lcio? ( sci-physics/lcio )
@@ -52,6 +52,10 @@ BDEPEND="
 src_configure() {
 	econf \
 		--disable-default-UFO-dir \
+		$(usex mpi FC=mpifort) \
+		$(usex mpi CC=mpicc) \
+		$(usex mpi CXX=mpic++) \
+		$(usex mpi --with-mpi-lib=openmpi) \
 		$(use_enable mpi fc-mpi) \
 		$(use_enable openmp) \
 		$(use_enable openmp fc-openmp) \
@@ -75,7 +79,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake $(usex mpi FC=mpifort) $(usex mpi CC=mpicc) $(usex mpi CXX=mpic++)
+	emake
 }
 
 pkg_postinst() {

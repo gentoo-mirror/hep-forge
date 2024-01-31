@@ -10,18 +10,11 @@ MY_P="${PN}${PV//./}"
 
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
 HOMEPAGE="https://pythia.org/"
-SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
-	test? ( lhapdf? (
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF31_nnlo_as_0118_luxqed.tar.gz
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/PDF4LHC15_nlo_asvar.tar.gz
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14qed_proton.tar.gz
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nlo_as_0119_qed.tar.gz
-		https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nnlo_as_0119_qed.tar.gz
-	) )"
+SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz"
 
-SLOT="8"
+SLOT="8/3"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ¨~arm ~arm64"
 IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="
@@ -29,6 +22,7 @@ REQUIRED_USE="
 "
 
 RDEPEND="
+	test? ( lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed,lhapdf_sets_pdf4lhc15_nlo_asvar,lhapdf_sets_ct14qed_proton,lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc,lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc] ) )
 	fastjet? ( sci-physics/fastjet )
 	hepmc3? ( sci-physics/hepmc:3= )
 	hepmc2? ( sci-physics/hepmc:2= )
@@ -171,13 +165,12 @@ src_install() {
 	fi
 	if use examples; then
 		# reuse system Makefile.inc
-		rm examples/Makefile.inc || die
+		#rm examples/Makefile.inc || die
 		sed -i "s|include Makefile.inc|include ${EPYTHIADIR}|" \
 			examples/Makefile || die
 
-		insinto /usr/share/${PN}
+		insinto "${PYTHIADIR}"
 		doins -r examples
-		docompress -x /usr/share/doc/${PF}/examples
 	fi
 
 	# cleanup

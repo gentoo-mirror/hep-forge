@@ -1,0 +1,17 @@
+--- a/src/BH_typedefs.h       2023-07-08 10:10:36.054947236 +0200
++++ b/src/BH_typedefs.h       2023-07-08 11:42:02.077397596 +0200
+@@ -5,10 +5,14 @@
+ #define BH_TYPEDEFS_H_
+ 
+ #include <complex>
++#include <vector>
+ #include "qd/qd_real.h"
+ 
++using std::vector;
++
+ namespace BH {
+ 
++using std::vector;
+ 
+ //! double precision real
+ typedef double R;

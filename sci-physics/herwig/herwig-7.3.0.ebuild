@@ -26,7 +26,7 @@ RDEPEND="
 	sci-physics/fastjet
 	sci-physics/lhapdf-sets[lhapdf_sets_ct14lo,lhapdf_sets_ct14nlo]
 	>=sci-physics/lhapdf-6.1.6[python(+),${PYTHON_SINGLE_USEDEP}]
-	>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,-hepmc2?,hepmc3,rivet]
+	>=sci-physics/thepeg-2.1.0[lhapdf,fastjet,-hepmc2(-),hepmc3,rivet]
 	>=sci-physics/evtgen-02.02.00[pythia]
 	pythia? ( <sci-physics/pythia-8.3:8= )
 	madgraph? ( sci-physics/madgraph5 )

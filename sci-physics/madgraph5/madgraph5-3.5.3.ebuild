@@ -32,15 +32,15 @@ RDEPEND="
 	')
 	lhapdf? ( sci-physics/lhapdf[${PYTHON_SINGLE_USEDEP}] )
 	fastjet? ( sci-physics/fastjet[${PYTHON_SINGLE_USEDEP}] )
-	pythia? ( sci-physics/pythia )
+	pythia? ( sci-physics/pythia:8=[hepmc2,examples] )
 	hepmc? ( sci-physics/hepmc:2 sci-physics/hepmc:3 )
 	collier? ( sci-physics/collier[static-libs] )
 	td? ( sci-physics/topdrawer )
-	thepeg? ( 
-		|| ( 
-			sci-physics/thepeg[hepmc2,fastjet?,lhapdf?] 
-			sci-physics/thepeg[hepmc3,fastjet?,lhapdf?] 
-		) 
+	thepeg? (
+		|| (
+			sci-physics/thepeg[hepmc2,fastjet?,lhapdf?]
+			sci-physics/thepeg[hepmc3,fastjet?,lhapdf?]
+		)
 	)
 	ninja? ( sci-physics/ninja[static-libs] )
 	samurai? ( dev-util/samurai )
@@ -58,8 +58,8 @@ src_unpack() {
 src_configure() {
 	use lhapdf && echo "lhapdf_py3 = lhapdf-config" >> input/mg5_configuration.txt
 	use fastjet && echo "fastjet = fastjet-config" >> input/mg5_configuration.txt
-	use pythia && echo "pythia8_path = ${EPREFIX}/" >> input/mg5_configuration.txt
-	use hepmc && echo "hepmc_path = ${EPREFIX}/" >> input/mg5_configuration.txt
+	use pythia && echo "pythia8_path = ${EPREFIX}/usr" >> input/mg5_configuration.txt
+	use hepmc && echo "hepmc_path = ${EPREFIX}/usr" >> input/mg5_configuration.txt
 	use collier && echo "collier = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
 	use ninja && echo "ninja = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
 	use samurai && echo "samurai = ${EPREFIX}/usr/$(get_libdir)" >> input/mg5_configuration.txt
