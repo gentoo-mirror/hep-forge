@@ -1,17 +1,17 @@
 BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install prepare pretend test unpack
-DEPEND=fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib ) test? ( root? ( sci-physics/root:= ) )
+DEPEND=test? ( lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed,lhapdf_sets_pdf4lhc15_nlo_asvar,lhapdf_sets_ct14qed_proton,lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc,lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc] ) ) fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib ) test? ( root? ( sci-physics/root:= ) )
 DESCRIPTION=Lund Monte Carlo high-energy physics event generator
 EAPI=8
 HOMEPAGE=https://pythia.org/
 INHERIT=toolchain-funcs git-r3
 IUSE=doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib
+KEYWORDS=~amd64 ~x86 ~arm ~arm64
 LICENSE=GPL-2
 PROPERTIES=live
-RDEPEND=fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib )
+RDEPEND=test? ( lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed,lhapdf_sets_pdf4lhc15_nlo_asvar,lhapdf_sets_ct14qed_proton,lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc,lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc] ) ) fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib )
 REQUIRED_USE=?? ( hepmc3 hepmc2 )
 RESTRICT=!test? ( test )
 SLOT=8/3
-SRC_URI=test? ( lhapdf? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF31_nnlo_as_0118_luxqed.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/PDF4LHC15_nlo_asvar.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT14qed_proton.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nlo_as_0119_qed.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nnlo_as_0119_qed.tar.gz ) )
 _eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
-_md5_=b2de70e1cada1f583c092c449dd2ed40
+_md5_=d31f137ba248d9116d3ed11f5e203df5
