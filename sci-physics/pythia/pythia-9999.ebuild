@@ -22,7 +22,6 @@ fi
 
 SLOT="8/3"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~x86 ~arm ~arm64"
 IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="
