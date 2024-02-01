@@ -3,14 +3,18 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..11} )
-DISTUTILS_USE_PEP517=hatchling
-inherit distutils-r1 pypi
+PYTHON_COMPAT=( python3_{10..12} )
+inherit python-single-r1 cmake
 
 DESCRIPTION="XGBoost Python Package"
 HOMEPAGE="
 	https://xgboost.readthedocs.io
 	https://github.com/dmlc/xgboost/
+"
+SRC="https://github.com/dmlc/xgboost/releases/download/v${PV}/${P}.tar.gz"
+
+REQUIRED_USE="
+	${PYTHON_REQUIRED_USE}
 "
 
 LICENSE="Apache-2.0"
@@ -18,6 +22,9 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
-	dev-python/numpy[${PYTHON_USEDEP}]
-	dev-python/scipy[${PYTHON_USEDEP}]
+	$(python_gen_cond_dep '
+		dev-python/numpy[${PYTHON_USEDEP}]
+		dev-python/scipy[${PYTHON_USEDEP}]
+	')
+	${PYTHON_DEPS}
 "
