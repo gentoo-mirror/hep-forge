@@ -3,9 +3,14 @@
 SYSTEM 'http://www.gentoo.org/dtd/metadata.dtd'>
 <pkgmetadata>
 	<maintainer type="person">
+		<name>Alexander Puck Neuwirth</name>
+		<email>alexander@neuwirth-informatik.de</email>
+	</maintainer>
+	<maintainer type="person">
 		<email>heroxbd@gentoo.org</email>
 	</maintainer>
 	<upstream>
+		<remote-id type="github">xdmlc/gboost</remote-id>
 		<remote-id type="pypi">xgboost</remote-id>
 	</upstream>
 </pkgmetadata>
