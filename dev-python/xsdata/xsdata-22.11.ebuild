@@ -4,7 +4,7 @@
 EAPI=8
 
 DISTUTILS_USE_PEP517=setuptools
-PYTHON_COMPAT=( python3_{9..10} )
+PYTHON_COMPAT=( python3_{10..12} )
 inherit distutils-r1
 
 REPO=tefra
@@ -29,16 +29,15 @@ SLOT="0"
 
 RDEPEND="
 	lxml? ( >=dev-python/lxml-4.4.1 )
-    cli? (
-        >=dev-python/click-5
-        >=dev-python/click-default-group-1.2
-        >=dev-python/jinja-2.10
-        >=dev-python/toposort-1.5
-        dev-python/docformatter
-    )
-    soap? ( dev-python/requests )
+	cli? (
+		>=dev-python/click-5
+		>=dev-python/click-default-group-1.2
+		>=dev-python/jinja-2.10
+		>=dev-python/toposort-1.5
+		dev-python/docformatter
+	)
+	soap? ( dev-python/requests )
 "
 BDEPEND="${RDEPEND}"
 
-#TODO enable test
-#distutils_enable_tests pytest
+distutils_enable_tests pytest
