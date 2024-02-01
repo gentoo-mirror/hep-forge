@@ -11,7 +11,7 @@ HOMEPAGE="
 	https://xgboost.readthedocs.io
 	https://github.com/dmlc/xgboost/
 "
-SRC="https://github.com/dmlc/xgboost/releases/download/v${PV}/${P}.tar.gz"
+SRC_URL="https://github.com/dmlc/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
