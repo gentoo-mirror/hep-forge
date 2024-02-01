@@ -3,12 +3,20 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..11} )
-DISTUTILS_USE_PEP517=setuptools
+PYTHON_COMPAT=( python3_{10..12} )
+DISTUTILS_USE_PEP517="standalone"
 inherit distutils-r1 pypi
 
+
 DESCRIPTION="XGBoost Python Package"
-HOMEPAGE="https://xgboost.readthedocs.io"
+HOMEPAGE="
+	https://xgboost.readthedocs.io
+	https://github.com/dmlc/xgboost/
+"
+
+REQUIRED_USE="
+	${PYTHON_REQUIRED_USE}
+"
 
 LICENSE="Apache-2.0"
 SLOT="0"
