@@ -11,14 +11,8 @@ SRC_URI="http://www.math.nsysu.edu.tw/~leetsung/works/HOM4PS_soft_files/HOM4PS${
 S="${WORKDIR}/HOM4PS2"
 
 LICENSE="MIT"
-RESTRICT=""
 SLOT="2"
 KEYWORDS="~amd64"
-
-IUSE=""
-DEPEND=""
-RDEPEND="${DEPEND}"
-BDEPEND=""
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-2-path.patch
