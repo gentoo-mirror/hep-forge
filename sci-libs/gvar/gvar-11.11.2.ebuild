@@ -9,7 +9,7 @@ HOMEPAGE="https://github.com/gplepage/gvar"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~arm ~riscv"
 
 RDEPEND="
 	>=dev-python/cython-0.17[${PYTHON_USEDEP}]
