@@ -11,8 +11,7 @@ index cea52c2..13ef38c 100644
 +include(GNUInstallDirs)
 +install(TARGETS polylog polylog_c polylog_cpp polylog_fortran
 +  PUBLIC_HEADER
-+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/polylog
-+)
++  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/polylog )
 \ No newline at end of file
 diff --git a/src/c/CMakeLists.txt b/src/c/CMakeLists.txt
 index c72cc73..3480859 100644

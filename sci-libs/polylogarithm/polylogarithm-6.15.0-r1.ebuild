@@ -25,10 +25,3 @@ BDEPEND="
 PATCHES=(
     "${FILESDIR}"/${PN}-6.15.0-gnuinstall.patch
 )
-
-src_configure() {
-	local mycmakeargs=(
-		-DCMAKE_INSTALL_INCLUDEDIR="${EPREFIX}"/usr/include/${PN}/
-	)
-	cmake_src_configure
-}
