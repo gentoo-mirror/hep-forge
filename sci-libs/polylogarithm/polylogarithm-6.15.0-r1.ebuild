@@ -25,7 +25,3 @@ BDEPEND="
 PATCHES=(
     "${FILESDIR}"/${PN}-6.15.0-gnuinstall.patch
 )
-
-src_configure() {
-	cmake_src_configure
-}
