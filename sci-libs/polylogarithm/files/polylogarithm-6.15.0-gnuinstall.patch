@@ -1,0 +1,51 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index cea52c2..13ef38c 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -16,3 +16,9 @@ target_link_libraries(polylog
+     polylog_cpp
+     polylog_fortran
+ )
++FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
++set_target_properties(polylog PROPERTIES PUBLIC_HEADER ${HEADERS})
++include(GNUInstallDirs)
++install(TARGETS polylog polylog_c polylog_cpp polylog_fortran
++  PUBLIC_HEADER
++  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/polylog
++)
+\ No newline at end of file
+diff --git a/src/c/CMakeLists.txt b/src/c/CMakeLists.txt
+index c72cc73..3480859 100644
+--- a/src/c/CMakeLists.txt
++++ b/src/c/CMakeLists.txt
+@@ -13,3 +13,5 @@ add_library(polylog_c
+ )
+ 
+ target_include_directories(polylog_c PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
++FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp)
++set_target_properties(polylog_c PROPERTIES PUBLIC_HEADER "${HEADERS}")
+\ No newline at end of file
+diff --git a/src/cpp/CMakeLists.txt b/src/cpp/CMakeLists.txt
+index 5e46f80..e999c13 100644
+--- a/src/cpp/CMakeLists.txt
++++ b/src/cpp/CMakeLists.txt
+@@ -19,3 +19,5 @@ add_library(polylog_cpp
+   zeta.cpp
+   )
+ target_include_directories(polylog_cpp PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
++FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp)
++set_target_properties(polylog_cpp PROPERTIES PUBLIC_HEADER "${HEADERS}")
+\ No newline at end of file
+diff --git a/src/fortran/CMakeLists.txt b/src/fortran/CMakeLists.txt
+index 2db55c0..5ce5ebc 100644
+--- a/src/fortran/CMakeLists.txt
++++ b/src/fortran/CMakeLists.txt
+@@ -14,6 +14,8 @@ if(CMAKE_Fortran_COMPILER)
+     Li6.f90
+     )
+   target_include_directories(polylog_fortran PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
++  FILE(GLOB HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.h ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp)
++  set_target_properties(polylog_fortran PROPERTIES PUBLIC_HEADER "${HEADERS}")
+ else()
+   add_library(polylog_fortran INTERFACE)
+ endif()
