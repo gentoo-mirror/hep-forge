@@ -27,6 +27,7 @@ DEPEND="
 	sci-physics/lhapdf
 	dev-db/sqlite:3=
 	sci-physics/hepmc:3=
+	dev-libs/libzip
 	blackhat? ( sci-physics/blackhat )
 	rivet? ( sci-physics/rivet )
 	gosam? ( sci-physics/gosam )
@@ -82,6 +83,7 @@ src_configure() {
 		-DSHERPA_ENABLE_MPI=$(usex mpi ON OFF)
 		$(usex mpi -DCMAKE_C_COMPILER=mpicc) $(usex mpi -DCMAKE_CXX_COMPILER=mpic++) $(usex mpi -DCMAKE_Fortran_COMPILER=mpif90)
 		-DSHERPA_ENABLE_OPENLOOPS=$(usex openloops ON OFF)
+		-DOPENLOOPS_PREFIX=$(usex openloops "${ESYSROOT}/opt/OpenLoops2")
 		-DSHERPA_ENABLE_PYTHIA6=$(usex pythia6 ON OFF)
 		-DSHERPA_ENABLE_PYTHIA8=$(usex pythia8 ON OFF)
 		-DSHERPA_ENABLE_RECOLA=$(usex recola ON OFF)
