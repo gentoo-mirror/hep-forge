@@ -55,7 +55,7 @@ src_configure() {
 		$(use_enable root) \
 		$(use_enable python pyext) \
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
-		$(use_enable python CYTHON="${ESYSROOT}/usr/bin/cython")
+		$(usex python CYTHON="${ESYSROOT}/usr/bin/cython")
 }
 
 src_test() {

@@ -88,7 +88,7 @@ src_configure() {
 		--with-yoda=$PREFIX_YODA \
 		--with-fastjet=$PREFIX_FJ \
 		$(use_enable python pyext) \
-		$(use_enable python CYTHON="${ESYSROOT}/usr/bin/cython")
+		$(usex python CYTHON="${ESYSROOT}/usr/bin/cython")
 }
 
 src_install() {
