@@ -27,15 +27,17 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
-	python? (
-		$(python_gen_cond_dep '
-			>=dev-python/cython-0.19[${PYTHON_USEDEP}]
-		')
-		${PYTHON_DEPS}
-	)
+	python? ( ${PYTHON_DEPS} )
 	zlib? ( sys-libs/zlib )
 "
 DEPEND="${RDEPEND}"
+BDEPEND="
+	python? ( 
+		$(python_gen_cond_dep '
+			>=dev-python/cython-0.29.24[${PYTHON_USEDEP}]
+		')
+	)
+"
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
@@ -53,7 +55,7 @@ src_configure() {
 		$(use_enable root) \
 		$(use_enable python pyext) \
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
-		CYTHON="${ESYSROOT}/usr/bin/cython"
+		$(use_enable python CYTHON="${ESYSROOT}/usr/bin/cython")
 }
 
 src_test() {
