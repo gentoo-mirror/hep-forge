@@ -28,6 +28,9 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
 	python? (
+		$(python_gen_cond_dep '
+			>=dev-python/cython-0.19[${PYTHON_USEDEP}]
+		')
 		${PYTHON_DEPS}
 	)
 	zlib? ( sys-libs/zlib )
