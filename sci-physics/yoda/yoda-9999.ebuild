@@ -55,7 +55,12 @@ src_prepare() {
 }
 
 src_configure() {
-	econf --disable-static $(use_enable root) $(use_enable python pyext) $(use_with zlib zlib "${ESYSROOT}/usr")
+	# we need to use the prefix cython here
+	econf --disable-static \
+		$(use_enable root) \
+		$(use_enable python pyext) \
+		$(use_with zlib zlib "${ESYSROOT}/usr") \
+		CYTHON="${ESYSROOT}/usr/bin/cython"
 }
 
 src_test() {
