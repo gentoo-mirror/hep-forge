@@ -17,13 +17,13 @@ if [[ ${PV} == 9999 ]]; then
 else
 	SRC_URI="https://yoda.hepforge.org/downloads?f=${P^^}.tar.bz2 -> ${P^^}.tar.bz2"
 	S="${WORKDIR}/${P^^}"
-	KEYWORDS="~amd64 ~arm ~arm64"
+	KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 fi
 
 LICENSE="GPL-3"
 SLOT="0/${PV}"
 IUSE="root +python +zlib"
-REQUIRED_USE="${PYTHON_REQUIRED_USE} root? ( python )"
+REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} ) root? ( python )"
 
 RDEPEND="
 	root? ( sci-physics/root:=[${PYTHON_SINGLE_USEDEP}] )
@@ -35,17 +35,10 @@ RDEPEND="
 	)
 	zlib? ( sys-libs/zlib )
 "
-BDEPEND="
-    python? (
-	    $(python_gen_cond_dep '
-	         >=dev-python/cython-0.19[${PYTHON_USEDEP}]
-	    ')
-	)
-"
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
-    use python && python-single-r1_pkg_setup
+	use python && python-single-r1_pkg_setup
 }
 
 src_prepare() {
