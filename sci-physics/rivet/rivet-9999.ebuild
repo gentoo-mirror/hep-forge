@@ -27,15 +27,21 @@ fi
 
 LICENSE="GPL-3+"
 SLOT="3"
-IUSE="+hepmc3 hepmc2 +zlib"
+IUSE="+hepmc3 hepmc2 +zlib +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
-	${PYTHON_REQUIRED_USE}
+	python? ( ${PYTHON_REQUIRED_USE} )
 "
 
 RDEPEND="
-    >=sci-physics/yoda-1.9.5[python(-),${PYTHON_SINGLE_USEDEP}]
-	<sci-physics/yoda-2[python(-),${PYTHON_SINGLE_USEDEP}]
+    python? (
+		>=sci-physics/yoda-1.9.8[${PYTHON_SINGLE_USEDEP}]
+		<sci-physics/yoda-2[${PYTHON_SINGLE_USEDEP}]
+	)
+	!python? (
+		>=sci-physics/yoda-1.9.8
+		<sci-physics/yoda-2
+	)
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
@@ -44,17 +50,25 @@ RDEPEND="
 	sci-libs/gsl
 	zlib? ( sys-libs/zlib )
 
-	${PYTHON_DEPS}
+	python? ( ${PYTHON_DEPS} )
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/fortran
-	>=dev-python/cython-0.29.24
+	python? ( 
+		$(python_gen_cond_dep '
+			>=dev-python/cython-0.29.24[${PYTHON_USEDEP}]
+		')
+	)
 "
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
 )
+
+pkg_setup() {
+	use python && python-single-r1_pkg_setup
+}
 
 src_prepare() {
 	default
@@ -72,12 +86,14 @@ src_configure() {
 		$(usex hepmc2 "--with-hepmc=${SYSROOT}/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=${SYSROOT}/usr" "") \
 		--with-yoda=$PREFIX_YODA \
-		--with-fastjet=$PREFIX_FJ
+		--with-fastjet=$PREFIX_FJ \
+		$(use_enable python pyext) \
+		$(use_enable python CYTHON="${ESYSROOT}/usr/bin/cython")
 }
 
 src_install() {
 	default
-	python_optimize
+	use python && python_optimize
 	find "${ED}" -name '*.la' -delete || die
 }
 

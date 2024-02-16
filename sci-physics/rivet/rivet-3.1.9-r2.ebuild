@@ -54,12 +54,15 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/fortran
-	>=dev-python/cython-0.29.24
+	python? (
+		>=dev-python/cython-0.29.24
+	)
 "
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
 )
+
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
 }
@@ -77,7 +80,8 @@ src_configure() {
 		$(usex hepmc3 "--with-hepmc3=${ESYSROOT}/usr" "") \
 		--with-yoda="${ESYSROOT}/usr" \
 		--with-fastjet="${ESYSROOT}/usr" \
-		$(use_enable python pyext)
+		$(use_enable python pyext) \
+		$(use_enable python CYTHON="${ESYSROOT}/usr/bin/cython")
 }
 
 src_install() {
