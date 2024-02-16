@@ -1,6 +1,6 @@
-BDEPEND=python? ( python_single_target_python3_11? ( >=dev-python/cython-0.19[python_targets_python3_11(-)] ) python_single_target_python3_12? ( >=dev-python/cython-0.19[python_targets_python3_12(-)] ) ) sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=dev-build/automake-1.16.5:1.16 ) || ( >=dev-build/autoconf-2.72-r1:2.72 >=dev-build/autoconf-2.71-r6:2.71 ) >=dev-build/libtool-2.4.7 >=dev-vcs/git-1.8.2.1[curl]
+BDEPEND=python? ( python_single_target_python3_11? ( >=dev-python/cython-0.29.24[python_targets_python3_11(-)] ) python_single_target_python3_12? ( >=dev-python/cython-0.29.24[python_targets_python3_12(-)] ) ) sys-devel/gnuconfig >=app-portage/elt-patches-20170815 || ( >=dev-build/automake-1.16.5:1.16 ) || ( >=dev-build/autoconf-2.72-r1:2.72 >=dev-build/autoconf-2.71-r6:2.71 ) >=dev-build/libtool-2.4.7 >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install postinst prepare setup test unpack
-DEPEND=root? ( sci-physics/root:=[python_single_target_python3_11(-)?,python_single_target_python3_12(-)?] ) python? ( python_single_target_python3_11? ( >=dev-python/cython-0.19[python_targets_python3_11(-)] ) python_single_target_python3_12? ( >=dev-python/cython-0.19[python_targets_python3_12(-)] ) python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) ) zlib? ( sys-libs/zlib )
+DEPEND=root? ( sci-physics/root:=[python_single_target_python3_11(-)?,python_single_target_python3_12(-)?] ) python? ( python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) ) zlib? ( sys-libs/zlib )
 DESCRIPTION=Yet more Objects for (High Energy Physics) Data Analysis
 EAPI=8
 HOMEPAGE=https://yoda.hepforge.org/
@@ -8,8 +8,8 @@ INHERIT=bash-completion-r1 autotools python-single-r1 optfeature git-r3
 IUSE=root +python +zlib python_single_target_python3_11 python_single_target_python3_12
 LICENSE=GPL-3
 PROPERTIES=live
-RDEPEND=root? ( sci-physics/root:=[python_single_target_python3_11(-)?,python_single_target_python3_12(-)?] ) python? ( python_single_target_python3_11? ( >=dev-python/cython-0.19[python_targets_python3_11(-)] ) python_single_target_python3_12? ( >=dev-python/cython-0.19[python_targets_python3_12(-)] ) python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) ) zlib? ( sys-libs/zlib )
+RDEPEND=root? ( sci-physics/root:=[python_single_target_python3_11(-)?,python_single_target_python3_12(-)?] ) python? ( python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) ) zlib? ( sys-libs/zlib )
 REQUIRED_USE=^^ ( python_single_target_python3_11 python_single_target_python3_12 ) root? ( python )
 SLOT=0/9999
 _eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	gnuconfig	b6b3e92f8b8c996400074b5f61a59256	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	e4cf390b19033d5ca443765bc8537b81	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	python-utils-r1	042f4cc53680245bf99a84669b94155a	python-single-r1	75118e916668a74c660a13b0ecb22562	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54	git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
-_md5_=cf2a8ed23c3b859ed064afafe17d7061
+_md5_=a03ab820ffd922ebfaa13cff006377cc
