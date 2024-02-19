@@ -3,8 +3,6 @@
 
 EAPI=8
 
-inherit git-r3
-
 DESCRIPTION="TOPDRAWER renders top files."
 HOMEPAGE="https://gitlab.com/APN-Pucky/topdrawer3"
 SRC_URI="https://gitlab.com/APN-Pucky/topdrawer3/-/archive/${PV}/${P}.tar.gz"
