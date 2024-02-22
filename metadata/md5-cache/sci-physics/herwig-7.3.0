@@ -5,7 +5,7 @@ DESCRIPTION=Herwig is a multi-purpose particle physics event generator.
 EAPI=8
 HOMEPAGE=https://herwig.hepforge.org/
 INHERIT=python-single-r1 autotools
-IUSE=pythia openloops gosam madgraph vbfnlo njet python_single_target_python3_10 python_single_target_python3_11
+IUSE=+pythia openloops gosam madgraph vbfnlo njet python_single_target_python3_10 python_single_target_python3_11
 KEYWORDS=~amd64
 LICENSE=GPL-3+
 RDEPEND=>=dev-libs/boost-1.62 >=sci-libs/gsl-2.6 sci-physics/fastjet sci-physics/lhapdf-sets[lhapdf_sets_ct14lo,lhapdf_sets_ct14nlo] >=sci-physics/lhapdf-6.1.6[python(+),python_single_target_python3_10(-)?,python_single_target_python3_11(-)?] >=sci-physics/thepeg-2.1.0[lhapdf,fastjet,-hepmc2(-),hepmc3,rivet] >=sci-physics/evtgen-02.02.00[pythia] pythia? ( <=sci-physics/pythia-8.3.09:8= ) madgraph? ( sci-physics/madgraph5 ) openloops? ( sci-physics/openloops ) gosam? ( sci-physics/gosam ) vbfnlo? ( sci-physics/vbfnlo ) njet? ( sci-physics/njet ) python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 )
@@ -13,4 +13,4 @@ REQUIRED_USE=^^ ( python_single_target_python3_10 python_single_target_python3_1
 SLOT=7
 SRC_URI=https://herwig.hepforge.org/downloads?f=Herwig-7.3.0.tar.bz2 -> herwig-7.3.0.tar.bz2
 _eclasses_=multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	python-utils-r1	042f4cc53680245bf99a84669b94155a	python-single-r1	75118e916668a74c660a13b0ecb22562	gnuconfig	b6b3e92f8b8c996400074b5f61a59256	libtool	9d3a9a889a6fa62ae794f817c156491b	autotools	e4cf390b19033d5ca443765bc8537b81
-_md5_=eb5f458344353d53b15aded507f73267
+_md5_=b5716d9ccfd605157d16d2c38a30241e
