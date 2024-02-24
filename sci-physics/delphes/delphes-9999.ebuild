@@ -28,7 +28,7 @@ LICENSE="GPL-3+"
 SLOT="0"
 DEPEND="
 	sci-physics/root:=[opengl]
-	sci-physics/pythia:=
+	sci-physics/pythia:8=
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
