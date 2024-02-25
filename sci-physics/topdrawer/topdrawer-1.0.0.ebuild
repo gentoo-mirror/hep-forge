@@ -5,7 +5,8 @@ EAPI=8
 
 DESCRIPTION="TOPDRAWER renders top files."
 HOMEPAGE="https://gitlab.com/APN-Pucky/topdrawer3"
-SRC_URI="https://gitlab.com/APN-Pucky/topdrawer3/-/archive/${PV}/${P}.tar.gz"
+SRC_URI="https://gitlab.com/APN-Pucky/topdrawer3/-/archive/${PV}/${P}.tar.bz2"
+S="${WORKDIR}/${PN}3-${PV}"
 
 LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
