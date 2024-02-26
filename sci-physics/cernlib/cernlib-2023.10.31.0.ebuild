@@ -1,15 +1,15 @@
 EAPI=8
 
+CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
-CMAKE_MAKEFILE_GENERATOR="emake"
 
 SRC_URI="https://cernlib.web.cern.ch/download/2023_source/tar/${P}-free.tar.gz"
 S="${WORKDIR}/${P}-free"
 
-LICENSE="CERN"
+LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="GPL-3"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	x11-libs/motif:0
