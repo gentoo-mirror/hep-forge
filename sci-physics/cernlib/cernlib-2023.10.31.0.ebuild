@@ -30,4 +30,5 @@ src_install() {
 	# do not install cfortran.h, it conflicts with ROOT
 	# rm $pkgdir/usr/include/cfortran.h  ## TODO: conflicts with ROOT
 	rm "${ED}"/usr/include/cfortran.h || die
+	rm "${ED}"/usr/include/cfortran/cfortran.h || die
 }
