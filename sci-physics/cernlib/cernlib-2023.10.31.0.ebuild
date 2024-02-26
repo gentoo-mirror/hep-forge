@@ -24,3 +24,10 @@ DEPEND="
 	x11-misc/makedepend
 	virtual/pkgconfig
 "
+
+src_install() {
+	cmake_src_install
+	# do not install cfortran.h, it conflicts with ROOT
+	# rm $pkgdir/usr/include/cfortran.h  ## TODO: conflicts with ROOT
+	rm "${ED}"/usr/include/cfortran.h || die
+}
