@@ -5,9 +5,9 @@ EAPI=8
 SRC_URI="https://cernlib.web.cern.ch/download/2006_source/tar/2006_src.tar.gz"
 S="${WORKDIR}/2006/src"
 
-LICENSE="CERN"
+LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="GPL-2 LGPL-2 BS"
+KEYWORDS="~amd64"
 
 RDEPEND="
 	x11-libs/motif:0
