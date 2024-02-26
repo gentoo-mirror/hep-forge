@@ -13,8 +13,9 @@ DEB_P=${DEB_PN}_${DEB_PV}
 DESCRIPTION="CERN program library for High Energy Physics"
 HOMEPAGE="https://cernlib.web.cern.ch/cernlib/"
 SRC_URI="
-	mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}.orig.tar.gz
-	mirror://debian/pool/main/${DEB_PN:0:1}/${DEB_PN}/${DEB_P}-${DEB_PR}.debian.tar.xz"
+	http://deb.debian.org/debian/pool/main/c/cernlib/cernlib_20061220+dfsg3.orig.tar.gz
+	http://deb.debian.org/debian/pool/main/c/cernlib/cernlib_20061220+dfsg3-4.4.debian.tar.xz
+"
 
 SLOT="0"
 LICENSE="GPL-2 LGPL-2 BSD"
