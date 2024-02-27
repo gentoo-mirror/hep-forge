@@ -18,6 +18,7 @@ RDEPEND="
 	dev-lang/cfortran
 	x11-libs/xbae
 	net-libs/libnsl
+	virtual/libcrypt:=
 "
 DEPEND="
 	${RDEPEND}
@@ -29,7 +30,6 @@ DEPEND="
 src_install() {
 	cmake_src_install
 	# do not install cfortran.h, it conflicts with ROOT
-	# rm cfortran.h  ## TODO: conflicts with ROOT
 	rm "${ED}"/usr/include/cfortran.h || die
 	rm "${ED}"/usr/include/cfortran/cfortran.h || die
 }
