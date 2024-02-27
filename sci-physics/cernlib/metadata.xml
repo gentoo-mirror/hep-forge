@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
+  <maintainer type="person">
+    <email>alexander@neuwirth-informatik.de</email>
+    <name>Alexander Puck Neuwirth</name>
+  </maintainer>
   <maintainer type="project">
     <email>sci-physics@gentoo.org</email>
     <name>Gentoo Physics Project</name>
@@ -13,5 +17,5 @@
   the needs of a physics research laboratory that is general
   mathematics, data analysis, detectors simulation, data-handling
   etc... applicable to a wide range of problems.
-</longdescription>
+  </longdescription>
 </pkgmetadata>

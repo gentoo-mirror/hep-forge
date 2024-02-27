@@ -3,7 +3,8 @@ EAPI=8
 CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
 
-
+DESCRIPTION="CERNLIB - CERN's library for data analysis"
+HOMEPAGE="https://cernlib.web.cern.ch/cernlib/"
 SRC_URI="https://cernlib.web.cern.ch/download/2023_source/tar/${P}-free.tar.gz"
 S="${WORKDIR}/${P}-free"
 
@@ -28,7 +29,7 @@ DEPEND="
 src_install() {
 	cmake_src_install
 	# do not install cfortran.h, it conflicts with ROOT
-	# rm $pkgdir/usr/include/cfortran.h  ## TODO: conflicts with ROOT
+	# rm cfortran.h  ## TODO: conflicts with ROOT
 	rm "${ED}"/usr/include/cfortran.h || die
 	rm "${ED}"/usr/include/cfortran/cfortran.h || die
 }
