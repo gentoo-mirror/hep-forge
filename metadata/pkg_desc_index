@@ -64,7 +64,7 @@ sci-physics/apfelgrid 1.0.5: Ultra-fast theory predictions for collider observab
 sci-physics/apfelxx 4.7.0 4.8.0: Object oriented rewriting of the APFEL evolution code
 sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input PDFs
 sci-physics/blackhat 0.9.9: Library for the evaluation of QCD one-loop matrix elements
-sci-physics/cernlib 2006-r9 2006-r10 2023.10.31.0: 
+sci-physics/cernlib 2023.10.31.0: CERNLIB - CERN's library for data analysis
 sci-physics/checkmate 2.0.26 9999: Check Models At Terascale Energies
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
 sci-physics/cocoa 0.1.1: A nearly-hermetic calorimeter simulated with Geant4 and interfaced to the Pythia8 event generator.
