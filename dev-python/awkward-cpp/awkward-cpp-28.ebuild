@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/scikit-hep/awkward/"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
+KEYWORDS="~amd64"
 
 DEPEND="
 	>=dev-python/numpy-1.18.0[${PYTHON_USEDEP}]
