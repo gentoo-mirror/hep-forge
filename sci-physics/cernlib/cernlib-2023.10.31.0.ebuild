@@ -18,6 +18,7 @@ RDEPEND="
 	dev-lang/cfortran
 	x11-libs/xbae
 	net-libs/libnsl
+	virtual/libcrypt:=
 "
 DEPEND="
 	${RDEPEND}
