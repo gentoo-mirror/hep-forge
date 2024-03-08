@@ -12,5 +12,5 @@ RDEPEND=qpkind? ( sci-libs/qd ) qpkind16? ( sci-libs/qd ) arprec? ( sci-libs/arp
 REQUIRED_USE=?? ( dpkind dpkind16 ddcpp ) ?? ( qpkind qpkind16 qdcpp ) ?? ( arprec mpfun90 ) || ( dpkind dpkind16 ddcpp qpkind qpkind16 qdcpp )
 SLOT=0
 SRC_URI=http://helac-phegas.web.cern.ch/helac-phegas/tar-files/OneLOop-3.6.tgz
-_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	python-utils-r1	042f4cc53680245bf99a84669b94155a	python-any-r1	f5169813d1619761b459800587005fd2
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	python-utils-r1	8904b60325f22500b0c3ad4b68a42448	python-any-r1	f5169813d1619761b459800587005fd2
 _md5_=2e6b672c4aed2119cc5c5700747721cb
