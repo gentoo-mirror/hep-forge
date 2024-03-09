@@ -1,6 +1,5 @@
 EAPI=8
 
-
 DISTUTILS_EXT=1
 PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_USE_PEP517=setuptools
@@ -19,8 +18,3 @@ RDEPEND="
 	dev-python/scipy[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
-
-python_prepare_all() {
-	sed -i 's/USE_CYTHON = False/USE_CYTHON = True/' setup.py || die
-	distutils-r1_python_prepare_all
-}
