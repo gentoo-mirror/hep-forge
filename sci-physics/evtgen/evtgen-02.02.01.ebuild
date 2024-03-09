@@ -20,9 +20,9 @@ IUSE="pythia photos tauola"
 RDEPEND="
 	sci-physics/hepmc:2=
 	sci-physics/hepmc:3=
-	pythia? ( >=sci-physics/pythia-8.3.0 )
-	photos? ( >=sci-physics/photos-3.64 )
-	tauola? ( >=sci-physics/tauola-1.1.8 )
+	pythia? ( >=sci-physics/pythia-8.3.0:= )
+	photos? ( >=sci-physics/photos-3.64:= )
+	tauola? ( >=sci-physics/tauola-1.1.8:= )
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
@@ -32,9 +32,9 @@ BDEPEND="
 src_configure() {
 	local mycmakeargs=(
 		-DEVTGEN_HEPMC3=ON
-		-DHEPMC3_ROOT_DIR=${ESYSROOT}/usr
+		-DHEPMC3_ROOT_DIR="${ESYSROOT}/usr"
 		-DEVTGEN_PYTHIA=$(usex pythia ON OFF)
-		$(usex pythia -DPYTHIA8_ROOT_DIR=${ESYSROOT}/usr)
+		$(usex pythia -DPYTHIA8_ROOT_DIR="${ESYSROOT}/usr")
 		-DEVTGEN_PHOTOS=$(usex photos ON OFF)
 		-DEVTGEN_TAUOLA=$(usex tauola ON OFF)
 	)
