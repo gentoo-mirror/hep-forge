@@ -1,5 +1,4 @@
 dev-python/Unum 4.2.1: units in python
-dev-python/archspec 0.1.4 0.2.0-r1 0.2.2: labels for various aspects of a system architecture like CPU, etc.
 dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
 dev-python/autograd 1.6.2: Efficiently computes derivatives of numpy code.
 dev-python/awkward 2.5.2: Manipulate JSON-like data with NumPy-like idioms.
@@ -36,7 +35,6 @@ dev-python/scrapbook 0.5.0: A library for recording and reading data in notebook
 dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
 dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics formats
 dev-python/toml 0.10.2: Python lib for TOML
-dev-python/uhi 0.4.0: Universal Histogram Interface
 dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
 dev-python/vector 1.1.0 1.1.1: Vector classes and utilities
 dev-python/xgboost 1.6.2 2.0.3: XGBoost Python Package
@@ -136,7 +134,7 @@ sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houche
 sci-physics/pythia 6.4.28-r2 8.2.45-r5 8.3.06-r1 8.3.07-r5 8.3.09-r3 8.3.09-r4 8.3.10 9999: Lund Monte Carlo high-energy physics event generator
 sci-physics/qcdloop 2.0.5 2.0.9 2.0.9-r1: An object-oriented one-loop scalar Feynman integrals framework
 sci-physics/qcdnum 18.00.00: Fast QCD Evolution and Convolution
-sci-physics/qgraf 3.4.2 3.5.2 3.6.5 3.6.6: qgraf generates Feynman diagrams for various types of QFT models
+sci-physics/qgraf 3.6.5 3.6.6: qgraf generates Feynman diagrams for various types of QFT models
 sci-physics/rapgap 3.308: Hadron level Monte Carlo generator for ep and selected processes in pp scattering
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
