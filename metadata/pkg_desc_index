@@ -145,7 +145,6 @@ sci-physics/smodels 2.2.1 2.3.0: A tool for interpreting simplified-model result
 sci-physics/softsusy 4.1.13: Calculates supersymmetric particle spectra
 sci-physics/spey 0.1.2 0.1.8: Smooth inference for reinterpretation studies
 sci-physics/spey-pyhf 0.1.1: pyhf plugin for spey interface
-sci-physics/spheno 3.3.8-r2 4.0.5: SPheno stands for S(upersymmetric) Pheno(menology)
 sci-physics/starlight 313: Photon pomoeron Monte Carlo generator
 sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
 sci-physics/thep8i 2.0.3: Lund hadronisation for Herwig. Part of earlier ThePEG codes.
