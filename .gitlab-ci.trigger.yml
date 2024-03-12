@@ -19,19 +19,6 @@ default:
 #      apnpucky/gentoo-hep-forge-unstable:latest,
     ]
 
-#.filter:
-#  stage: filter
-#  script:
-#    - echo "Filtering $CATEGORY/$PKG/$PKG-$VERSION"
-#  rules:
-#    - changes:
-#        - "$CATEGORY/$PKG/$PKG-$VERSION*.ebuild"
-#        - "$CATEGORY/$PKG/metadata.xml"
-#        - "$CATEGORY/$PKG/Manifest"
-#        - "$CATEGORY/$PKG/files/*"
-#        - "$CATEGORY/$PKG/.build"
-#        - ".build"
-
 
 .filter_amd64:
   stage: filter_amd64
