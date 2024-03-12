@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit toolchain-funcs
+inherit toolchain-funcs fortran-2
 
 MY_PN=SPheno
 MY_P=${MY_PN}-${PV}
@@ -17,9 +17,6 @@ LICENSE="all-rights-reserved"
 RESTRICT="bindist mirror"
 SLOT="0"
 KEYWORDS="~amd64"
-
-DEPEND="virtual/fortran"
-RDEPEND="${DEPEND}"
 
 PATCHES=( "${FILESDIR}"/${P}-gfortran.patch )
 
