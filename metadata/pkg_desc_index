@@ -134,7 +134,6 @@ sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houche
 sci-physics/pythia 6.4.28-r2 8.2.45-r5 8.3.06-r1 8.3.07-r5 8.3.09-r3 8.3.09-r4 8.3.10 9999: Lund Monte Carlo high-energy physics event generator
 sci-physics/qcdloop 2.0.5 2.0.9 2.0.9-r1: An object-oriented one-loop scalar Feynman integrals framework
 sci-physics/qcdnum 18.00.00: Fast QCD Evolution and Convolution
-sci-physics/qgraf 3.6.5 3.6.6: qgraf generates Feynman diagrams for various types of QFT models
 sci-physics/rapgap 3.308: Hadron level Monte Carlo generator for ep and selected processes in pp scattering
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
