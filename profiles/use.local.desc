@@ -17,7 +17,6 @@ sci-mathematics/cgal:shared - Build shared library
 sci-mathematics/unuran:prng - Use sci-mathematics/prng library
 sci-mathematics/unuran:rngstreams - Use sci-mathematics/rngstreams library
 sci-physics/applgrid:root - use root
-sci-physics/collier:static - Build static library
 sci-physics/cuttools:dummy - Add dummy module for OpenLoops
 sci-physics/dyturbo:root - Adds support for Root sci-physics/root
 sci-physics/evtgen:herwig - Patches from herwig bootstrap

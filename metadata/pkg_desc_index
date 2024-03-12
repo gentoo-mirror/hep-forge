@@ -59,7 +59,6 @@ sci-mathematics/unuran 1.8.1 1.9.0 1.11.0: Universal Non-Uniform Random number g
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
 sci-physics/apfel 3.0.6-r1 3.1.1: A PDF Evolution Library
 sci-physics/apfelgrid 1.0.5: Ultra-fast theory predictions for collider observables
-sci-physics/apfelxx 4.7.0 4.8.0: Object oriented rewriting of the APFEL evolution code
 sci-physics/applgrid 1.6.32: Quickly reproduce NLO calculations with any input PDFs
 sci-physics/blackhat 0.9.9: Library for the evaluation of QCD one-loop matrix elements
 sci-physics/cernlib 2023.10.31.0: CERNLIB - CERN's library for data analysis
@@ -67,7 +66,6 @@ sci-physics/checkmate 2.0.26 9999: Check Models At Terascale Energies
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
 sci-physics/cocoa 0.1.1: A nearly-hermetic calorimeter simulated with Geant4 and interfaced to the Pythia8 event generator.
 sci-physics/coffea 0.7.22 9999: Basic tools and wrappers for enabling not-too-alien syntax when running columnar Collider HEP analysis.
-sci-physics/collier 1.2.5 1.2.7 1.2.7-r1 1.2.7-r2 1.2.8: A Complex One-Loop LIbrary with Extended Regularizations
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0 0.17.0: DecayLanguage: describe, manipulate and convert particle decays
@@ -94,10 +92,8 @@ sci-physics/hellx 3.0: A small-x resummation code
 sci-physics/hepi 0.2.8 0.2.10 9999: Python interface for gluing together several HEP programs
 sci-physics/hepmc 2.06.09-r2 2.06.11 3.2.5 3.2.5-r4 3.2.5_p20230225 3.2.5_p20230225-r3 3.2.6 3.2.6-r1 3.2.7 9999: Event Record for Monte Carlo Generators
 sci-physics/hepstats 0.7.0: Statistics tools and utilities.
-sci-physics/hepunits 2.3.0 2.3.1 2.3.1-r1 2.3.2 9999: units and constants in the HEP system of units
 sci-physics/herwig 6.5.21-r2 7.2.3-r5 7.3.0: Herwig is a multi-purpose particle physics event generator.
 sci-physics/hjets 1.3: A One-Loop Matrix Element Library for Higgs Boson Production via Electroweak Couplings
-sci-physics/hoppet 1.2.0: Higher Order Perturbative Parton Evolution Toolkit
 sci-physics/jaxodraw 2.0.1-r3: Java program for drawing Feynman diagrams
 sci-physics/jetscape 3.6: JETSCAPE a framework for simulating all aspects of heavy-ion collisions.
 sci-physics/lcio 02.20: Linear Collider I/O
@@ -115,7 +111,6 @@ sci-physics/nll-fast 3.1: Resummation for squarks and gluinos
 sci-physics/nnll-fast 1.1 2.0: Resummation for squarks and gluinos
 sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731-r3: Library of one-loop scalar functions
 sci-physics/openloops 2.1.2 2.1.2-r1 2.1.2-r2 2.1.2-r3 2.1.2-r5: Evaluation of tree and one-loop matrix elements for any Standard Model.
-sci-physics/particle 0.23.0 9999: PDG particle data and identification codes
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64-r1: Monte Carlo for bremsstrahlung in the decay of particles and resonances
 sci-physics/pineappl-capi 0.6.1: PineAPPL is not an extension of APPLgrid
