@@ -1,6 +1,6 @@
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_USE_PEP517=hatchling
 export SETUPTOOLS_SCM_PRETEND_VERSION=${PV}
 inherit distutils-r1 pypi
@@ -16,12 +16,6 @@ RDEPEND="
 	>=dev-python/numpy-1.18.0[${PYTHON_USEDEP}]
 	~dev-python/awkward-cpp-28[${PYTHON_USEDEP}]
 	dev-python/packaging[${PYTHON_USEDEP}]
-	$(python_gen_cond_dep '
-		dev-python/importlib_resources[${PYTHON_USEDEP}]
-	' 3.8)
-	$(python_gen_cond_dep '
-		>=dev-python/typing-extensions-4.1.0[${PYTHON_USEDEP}]
-	' python3_{8..10})
 "
 BDEPEND="
 	${RDEPEND}
