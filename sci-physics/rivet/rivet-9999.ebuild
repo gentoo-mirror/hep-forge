@@ -96,7 +96,7 @@ src_install() {
 	use python && python_optimize
 	find "${ED}" -name '*.la' -delete || die
 	if use python ; then
-		newbashcomp "${ED}"/etc/bash_completion-d/${PN}-completion ${PN}
+		newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}
 		bashcomp_alias ${PN} ${PN}-config \
 			${PN}-build \
 			${PN}-buildplugin \
