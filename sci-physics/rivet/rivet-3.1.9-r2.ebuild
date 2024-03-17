@@ -5,7 +5,7 @@ EAPI=8
 
 PYTHON_COMPAT=( python3_{10..12} )
 
-inherit python-single-r1 flag-o-matic autotools optfeature
+inherit python-single-r1 flag-o-matic autotools optfeature bash-completion-r1
 
 MY_PN="Rivet"
 MY_PF=${MY_PN}-${PV}
@@ -88,6 +88,17 @@ src_install() {
 	default
 	use python && python_optimize
 	find "${ED}" -name '*.la' -delete || die
+	if use python ; then
+		newbashcomp "${ED}"/etc/bash_completion-d/${PN}-completion ${PN}
+		bashcomp_alias ${PN} ${PN}-config \
+			${PN}-build \
+			${PN}-buildplugin \
+			${PN}-cmphistos \
+			make-plots \
+			${PN}-mkhtml \
+			${PN}-mkhtml-mpl
+		rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
+	fi
 }
 
 pkg_postinstall() {

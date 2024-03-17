@@ -95,6 +95,17 @@ src_install() {
 	default
 	use python && python_optimize
 	find "${ED}" -name '*.la' -delete || die
+	if use python ; then
+		newbashcomp "${ED}"/etc/bash_completion-d/${PN}-completion ${PN}
+		bashcomp_alias ${PN} ${PN}-config \
+			${PN}-build \
+			${PN}-buildplugin \
+			${PN}-cmphistos \
+			make-plots \
+			${PN}-mkhtml \
+			${PN}-mkhtml-mpl
+		rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
+	fi
 }
 
 pkg_postinstall() {
