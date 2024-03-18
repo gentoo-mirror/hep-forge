@@ -23,8 +23,6 @@ sci-physics/evtgen:herwig - Patches from herwig bootstrap
 sci-physics/evtgen:photos - Build with photos
 sci-physics/evtgen:pythia - Build with pythia
 sci-physics/evtgen:tauola - Build with tauola
-sci-physics/fastjet:cgal - Use sci-mathematics/cgal instead of bundled algorithms
-sci-physics/fastjet:plugins - Build all standard and C++ plugins
 sci-physics/golem95:looptools - use looptools
 sci-physics/hell:root - Adds support for ROOT sci-physics/root
 sci-physics/hellx:root - Adds support for ROOT sci-physics/root
