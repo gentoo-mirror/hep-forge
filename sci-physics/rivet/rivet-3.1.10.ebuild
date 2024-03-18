@@ -36,7 +36,7 @@ RDEPEND="
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
-	hepmc3? ( <sci-physics/hepmc-3.2.7:3=[-cm(-),gev(+)] )
+	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 
 	sci-libs/gsl
 	zlib? ( sys-libs/zlib )
@@ -56,6 +56,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/fortran
+	app-shells/bash
 	python? (
 		$(python_gen_cond_dep '
 			>=dev-python/cython-0.29.24[${PYTHON_USEDEP}]
@@ -66,7 +67,6 @@ BDEPEND="
 PATCHES=(
 	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
 	"${FILESDIR}"/${PN}-3.1.9-pythontests.patch
-	"${FILESDIR}"/${PN}-3.1.9-configure.patch
 )
 
 pkg_setup() {
@@ -82,8 +82,7 @@ src_configure() {
 	# Eigen complains about alignment (see https://gitlab.com/libeigen/eigen/-/issues/2523).
 	# does this affect more cpus?
 	replace-cpu-flags znver1 x86-64
-	sed -i 's#/bin/sh#/bin/bash#g' ./configure || die
-	econf \
+	CONFIG_SHELL=${ESYSROOT}/bin/bash econf \
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
 		$(usex hepmc2 "--with-hepmc=${ESYSROOT}/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=${ESYSROOT}/usr" "") \

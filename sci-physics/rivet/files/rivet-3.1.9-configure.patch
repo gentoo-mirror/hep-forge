@@ -1,0 +1,64 @@
+From 9f5e108e99bafd37aa4ab732f9ab6b7c7575f92f Mon Sep 17 00:00:00 2001
+From: Christian Gutschow <chris.g@cern.ch>
+Date: Fri, 15 Mar 2024 22:19:11 +0000
+Subject: [PATCH] Merge branch 'release-4-0-x' into 'release-4-0-x'
+
+---
+ configure.ac | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 0a37a1458f..dd777ff8b2 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -351,7 +351,7 @@ AM_CONDITIONAL(WITH_ASCIIDOC, [test x$ASCIIDOC != x])
+ AC_ARG_ENABLE(pyext, [AS_HELP_STRING([--disable-pyext],[don't build Python module (default=build)])],
+   [], [enable_pyext=yes])
+ ## Basic Python checks
+-if test x$enable_pyext == xyes; then
++if test x$enable_pyext = xyes; then
+   AM_PATH_PYTHON
+   AX_PYTHON_DEVEL([>= '2.7.3'])
+   PYTHON_FULL_VERSION=`$PYTHON -c 'from __future__ import print_function; import platform; print(platform.python_version())'`
+@@ -372,11 +372,11 @@ if test x$enable_pyext == xyes; then
+     enable_pyext=no
+   fi
+ fi
+-AM_CONDITIONAL(ENABLE_PYEXT, [test x$enable_pyext == xyes])
++AM_CONDITIONAL(ENABLE_PYEXT, [test x$enable_pyext = xyes])
+ 
+ 
+ ## Cython checks
+-if test x$enable_pyext == xyes; then
++if test x$enable_pyext = xyes; then
+   AM_CHECK_CYTHON([0.24.0], [:], [:])
+   if test x$CYTHON_FOUND = xyes; then
+     AC_PATH_PROGS(CYTHON, [$CYTHON cython-$PYTHON_VERSION cython$PYTHON_VERSION cython-$PYTHON_MAJOR_VERSION cython$PYTHON_MAJOR_VERSION cython])
+@@ -433,13 +433,13 @@ AX_CHECK_ZLIB
+ 
+ ## Debug flag (default=-DNDEBUG, enabled=-g)
+ AC_ARG_ENABLE([debug], [AS_HELP_STRING([--enable-debug],[build with debugging symbols  @<:@default=no@:>@])], [], [enable_debug=no])
+-if test x$enable_debug == xyes; then
++if test x$enable_debug = xyes; then
+   AM_CXXFLAGS="$AM_CXXFLAGS -g"
+ fi
+ 
+ ## Extra warnings flag (default=none)
+ AC_ARG_ENABLE([extra-warnings], [AS_HELP_STRING([--enable-extra-warnings],[build with extra compiler warnings (recommended for developers)  @<:@default=no@:>@])], [], [enable_extra_warnings=no])
+-if test x$enable_extra_warnings == xyes; then
++if test x$enable_extra_warnings = xyes; then
+   AC_MSG_NOTICE([Enabling extra compiler warnings])
+   dnl AC_CEDAR_CHECKCXXFLAG([-Wextra -Wno-unused-variable], [AM_CXXFLAGS="$AM_CXXFLAGS -Wextra -Wno-unused-variable"])
+   AC_CEDAR_CHECKCXXFLAG([-Wextra], [AM_CXXFLAGS="$AM_CXXFLAGS -Wextra"])
+@@ -467,7 +467,7 @@ AC_CONFIG_FILES(rivetenv.sh rivetenv.csh rivet.pc)
+ 
+ AC_OUTPUT
+ 
+-if test x$enable_pyrivet == xyes; then
++if test x$enable_pyrivet = xyes; then
+    cat <<EOF
+ 
+ ************************************************************
+-- 
+GitLab
+
