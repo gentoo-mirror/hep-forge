@@ -1,4 +1,5 @@
 dev-python/Unum 4.2.1: units in python
+dev-python/algopy 0.5.7: AlgoPy is a Research Prototype for Algorithmic Differentation in Python
 dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
 dev-python/autograd 1.6.2: Efficiently computes derivatives of numpy code.
 dev-python/awkward 2.5.2: Manipulate JSON-like data with NumPy-like idioms.
@@ -15,7 +16,6 @@ dev-python/flatdict 4.0.0 4.0.1: Python module for interacting with nested dicts
 dev-python/hist 2.7.0 2.7.1 2.7.2: Histogramming for analysis powered by boost-histogram
 dev-python/histoprint 2.4.0: Pretty print histograms to the console
 dev-python/hunter 3.6.0 3.6.1: Hunter is a flexible code tracing toolkit
-dev-python/jacobi 0.8.1: Numerical derivatives for analytic functions with arbitrary precision.
 dev-python/jax 0.4.23: Differentiate, compile, and transform Numpy code.
 dev-python/klepto 0.2.3 0.2.4: persistent caching to memory, disk, or database
 dev-python/llvmlite 0.39.1 0.40.1 0.41.1: Python wrapper around the llvm C++ library
@@ -23,6 +23,7 @@ dev-python/manhole 1.8.0-r1: Debugging manhole for python application
 dev-python/multiprocess 0.70.14 0.70.15: better multiprocessing and multithreading in python
 dev-python/mystic 0.4.0 0.4.1: Highly-constrained non-convex optimization and uncertainty quantification
 dev-python/numba 0.56.4 0.57.1 0.58.0: NumPy aware dynamic Python compiler using LLVM
+dev-python/numdifftools 0.9.41: Solve automatic numerical differentiation problems in one or more variables.
 dev-python/papermill 2.5.0: A common package to provide example files for testing and developing packages against.
 dev-python/pathos 0.3.0 0.3.1: parallel graph management and execution in heterogeneous computing
 dev-python/pox 0.3.2 0.3.3: utilities for filesystem exploration and automated builds
@@ -30,6 +31,7 @@ dev-python/ppft 1.7.6.6 1.7.6.7: distributed and parallel python
 dev-python/pqdm 0.2.0: Parallel TQDM
 dev-python/pygaljs 1.0.2-r1: Python package providing assets from https://github.com/Kozea/pygal.js
 dev-python/pyina 0.2.7 0.2.8: MPI parallel map and cluster scheduling
+dev-python/python-rapidjson 1.16: Python wrapper around rapidjson
 dev-python/resample 1.6.0: Randomization-based inference in Python
 dev-python/scrapbook 0.5.0: A library for recording and reading data in notebooks.
 dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
