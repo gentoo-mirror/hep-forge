@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>sci@gentoo.org</email>
+		<name>Gentoo Science Project</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>alexander@neuwirth-informatik.de</email>
+		<name>Alexander Puck Neuwirth</name>
+	</maintainer>
+	<longdescription lang="en">
+	AlgoPy allows you to differentiate functions implemented as computer programs by using Algorithmic Differentiation (AD) techniques in the forward and reverse mode.
+	The forward mode propagates univariate Taylor polynomials of arbitrary order. Hence it is also possible to use AlgoPy to evaluate higher-order derivative tensors.
+	Speciality of AlgoPy is the possibility to differentiate functions that contain matrix functions as +,-,*,/, dot, solve, qr, eigh, cholesky.
+	</longdescription>
+	<upstream>
+		<remote-id type="pypi">algopy</remote-id>
+		<remote-id type="github">b45ch1/algopy</remote-id>
+	</upstream>
+</pkgmetadata>
