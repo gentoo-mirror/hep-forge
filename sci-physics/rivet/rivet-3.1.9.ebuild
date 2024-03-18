@@ -20,7 +20,7 @@ S=${WORKDIR}/${MY_PF}
 
 LICENSE="GPL-3+"
 SLOT="3"
-KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
+KEYWORDS="~amd64"
 IUSE="+hepmc3 hepmc2 +zlib +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
@@ -61,6 +61,7 @@ BDEPEND="
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
+	"${FILESDIR}"/${PN}-3.1.9-pythontests.patch
 )
 
 pkg_setup() {
