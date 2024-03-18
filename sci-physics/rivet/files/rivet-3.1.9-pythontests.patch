@@ -1,0 +1,34 @@
+From d0b35c7048a3ee4dfa4a78d734e320b8ce69df14 Mon Sep 17 00:00:00 2001
+From: Alexander Puck Neuwirth <alexander@neuwirth-informatik.de>
+Date: Mon, 18 Mar 2024 20:35:33 +0000
+Subject: [PATCH] Exclude python test when w/o pyext
+
+---
+ test/Makefile.am | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/test/Makefile.am b/test/Makefile.am
+index b629cc048a..0441efcd63 100644
+--- a/test/Makefile.am
++++ b/test/Makefile.am
+@@ -35,12 +35,14 @@ TESTS_ENVIRONMENT = \
+   RIVET_TESTS_SRC=$(srcdir)
+ 
+ TESTS = \
+-testMath testMatVec testCmp testAPI.sh testNaN.sh testBeams \
+-testImport.sh
++testMath testMatVec testCmp testAPI.sh testNaN.sh testBeams 
+ 
+-if ENABLE_ANALYSES
++if ENABLE_PYEXT
++TESTS += testImport.sh
+ 
++if ENABLE_ANALYSES
+ TESTS += testCmdLine.sh
++endif
+ 
+ endif
+ 
+-- 
+GitLab
+
