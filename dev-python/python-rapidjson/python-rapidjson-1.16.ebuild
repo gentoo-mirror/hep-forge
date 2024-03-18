@@ -7,7 +7,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Python wrapper around rapidjson "
 HOMEPAGE="
-	https://github.com/${PN}/${PN}
+	https://github.com/python-rapidjson/python-rapidjson
 "
 
 LICENSE="BSD"
