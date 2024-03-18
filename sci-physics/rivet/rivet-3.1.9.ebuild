@@ -15,12 +15,17 @@ HOMEPAGE="
 	https://rivet.hepforge.org/
 	https://gitlab.com/hepcedar/rivet
 "
-SRC_URI="https://www.hepforge.org/archive/rivet/${MY_PF}.tar.gz"
-S=${WORKDIR}/${MY_PF}
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://gitlab.com/hepcedar/rivet"
+else
+	SRC_URI="https://www.hepforge.org/archive/rivet/${MY_PF}.tar.gz -> ${P}.tar.gz"
+	S=${WORKDIR}/${MY_PF}
+	KEYWORDS="~amd64"
+fi
 
 LICENSE="GPL-3+"
 SLOT="3"
-KEYWORDS="~amd64"
 IUSE="+hepmc3 hepmc2 +zlib +python"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
@@ -28,14 +33,6 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	python? (
-		>=sci-physics/yoda-1.9.8[${PYTHON_SINGLE_USEDEP}]
-		<sci-physics/yoda-2[${PYTHON_SINGLE_USEDEP}]
-	)
-	!python? (
-		>=sci-physics/yoda-1.9.8
-		<sci-physics/yoda-2
-	)
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
@@ -44,18 +41,25 @@ RDEPEND="
 	sci-libs/gsl
 	zlib? ( sys-libs/zlib )
 	python? (
+		${PYTHON_DEPS}
 		$(python_gen_cond_dep '
-			>=dev-python/cython-0.19[${PYTHON_USEDEP}]
 			dev-python/matplotlib[${PYTHON_USEDEP}]
 		')
-		${PYTHON_DEPS}
+		>=sci-physics/yoda-1.9.8[${PYTHON_SINGLE_USEDEP}]
+		<sci-physics/yoda-2[${PYTHON_SINGLE_USEDEP}]
+	)
+	!python? (
+		>=sci-physics/yoda-1.9.8
+		<sci-physics/yoda-2
 	)
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
 	virtual/fortran
 	python? (
-		>=dev-python/cython-0.29.24
+		$(python_gen_cond_dep '
+			>=dev-python/cython-0.29.24[${PYTHON_USEDEP}]
+		')
 	)
 "
 
@@ -74,6 +78,8 @@ src_prepare() {
 }
 
 src_configure() {
+	# Eigen complains about alignment (see https://gitlab.com/libeigen/eigen/-/issues/2523).
+	# does this affect more cpus?
 	replace-cpu-flags znver1 x86-64
 	econf \
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
