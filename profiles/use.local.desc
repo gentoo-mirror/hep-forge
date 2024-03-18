@@ -23,11 +23,6 @@ sci-physics/evtgen:tauola - Build with tauola
 sci-physics/golem95:looptools - use looptools
 sci-physics/hell:root - Adds support for ROOT sci-physics/root
 sci-physics/hellx:root - Adds support for ROOT sci-physics/root
-sci-physics/hepmc:cm - Build with cm instead of default mm for length units
-sci-physics/hepmc:example - Build with example codes
-sci-physics/hepmc:gev - Build with GeV instead of default MeV for momentum units
-sci-physics/hepmc:python - Build with PYTHON enabled
-sci-physics/hepmc:root - Build with ROOTIO enabled
 sci-physics/herwig:gosam - Build with gosam support
 sci-physics/herwig:madgraph - Build with madgraph support
 sci-physics/herwig:njet - Build with njet support
@@ -81,7 +76,6 @@ sci-physics/pythia:hepmc3 - Adds support for High Energy Physics Monte Carlo Gen
 sci-physics/pythia:lhapdf - Support the use of external PDF sets via sci-physics/lhapdf
 sci-physics/pythia:root - Use sci-physics/root trees and histograms (in examples only)
 sci-physics/recola2:SM - Use SM model
-sci-physics/rivet:analyses - Build with standard analyses
 sci-physics/rivet:hepmc2 - Build with HepMC2
 sci-physics/rivet:hepmc3 - Build with HepMC3
 sci-physics/rivet:zlib - Build with zlib
@@ -128,5 +122,3 @@ sci-physics/xfitter:lhapdf - Adds support for sci-physics/lhapdf
 sci-physics/xfitter:pineappl - Adds support for sci-physics/pineappl-capi
 sci-physics/xfitter:qcdnum - Adds support for sci-physics/qcdnum
 sci-physics/xfitter:root - Adds support for sci-physics/root
-sci-physics/yoda:root - Adds support for sci-physics/root
-sci-physics/yoda:zlib - Build with zlib
