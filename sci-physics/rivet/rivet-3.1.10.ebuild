@@ -82,6 +82,7 @@ src_configure() {
 	# Eigen complains about alignment (see https://gitlab.com/libeigen/eigen/-/issues/2523).
 	# does this affect more cpus?
 	replace-cpu-flags znver1 x86-64
+	# not posix compatible, only bash
 	CONFIG_SHELL=${ESYSROOT}/bin/bash econf \
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
 		$(usex hepmc2 "--with-hepmc=${ESYSROOT}/usr" "") \
