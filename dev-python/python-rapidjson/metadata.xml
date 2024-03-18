@@ -10,12 +10,10 @@
 		<name>Alexander Puck Neuwirth</name>
 	</maintainer>
 	<longdescription lang="en">
-	Robustly compute the generalised Jacobi matrix for an arbitrary real analytic mapping ℝⁿ → ℝⁱ¹ × ... × ℝⁱⁿ
-	Returns error estimates for derivatives
-	Perform statistical error propagation based on numerically computed jacobian
+		RapidJSON is an extremely fast C++ JSON parser and serialization library: this module wraps it into a Python 3 extension, exposing its serialization/deserialization (to/from either bytes, str or file-like instances) and JSON Schema validation capabilities.
 	</longdescription>
 	<upstream>
-		<remote-id type="pypi">jacobi</remote-id>
-		<remote-id type="github">HDembinski/jacobi</remote-id>
+		<remote-id type="pypi">python-rapidjson</remote-id>
+		<remote-id type="github">python-rapidjson/python-rapidjson</remote-id>
 	</upstream>
 </pkgmetadata>
