@@ -120,6 +120,7 @@ sci-physics/powheg-box-v2-directphoton 4027 9999: POWHEG BOX V2 direct photon pr
 sci-physics/powheg-box-v2-hvq 4027 9999: POWHEG BOX V2 hvq process
 sci-physics/powheg-box-v2-trijet 4027 9999: POWHEG BOX V2 trijet process
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
+sci-physics/pyerrors 2.10.0: Error propagation and statistical analysis for Markov chain Monte Carlos
 sci-physics/pylha 0.4: Deal with SLHA files
 sci-physics/pylhe 0.7.0 0.8.0: Lightweight Python interface to read Les Houches Event (LHE) files
 sci-physics/pyslha 3.2.6: Parsing, manipulating, and visualising SUSY Les Houches Accord data
