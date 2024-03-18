@@ -4,7 +4,6 @@ dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and dec
 dev-python/autograd 1.6.2: Efficiently computes derivatives of numpy code.
 dev-python/awkward 2.5.2: Manipulate JSON-like data with NumPy-like idioms.
 dev-python/awkward-cpp 28: awkward-cpp bindings for Python
-dev-python/boost-histogram 1.4.0: Python bindings for the C++14 Boost::Histogram library
 dev-python/bounded-pool-executor 0.0.3: Bounded Process and Thread Pool Executor
 dev-python/cffconvert 2.0.0: Command line program to validate and convert CITATION.cff files.
 dev-python/correctionlib 2.3.3 2.4.0: A generic correction library
@@ -38,7 +37,6 @@ dev-python/smpl 1.0.2 9999: Simplified plotting and fitting in python.
 dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics formats
 dev-python/toml 0.10.2: Python lib for TOML
 dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
-dev-python/vector 1.1.0 1.1.1: Vector classes and utilities
 dev-python/xgboost 1.6.2 2.0.3: XGBoost Python Package
 dev-python/xsdata 22.11: Library and command line tool for producing version strings
 net-libs/davix 0.8.4 0.8.5: High-performance file management over WebDAV/HTTP
@@ -54,7 +52,6 @@ sci-libs/sklearn-pandas 2.2.0: Pandas integration with sklearn
 sci-libs/sklearn2pmml 0.92.0 0.92.1 0.93.0: Python library for converting Scikit-Learn pipelines to PMML
 sci-libs/tensorflow-probability 0.19.0: Probabilistic reasoning and statistical analysis in TensorFlow
 sci-libs/vegas 6.0.1: Adaptive multidimensional Monte Carlo integration.
-sci-mathematics/cgal 5.2-r2 5.4.1 5.5.2 5.6: C++ library for geometric algorithms and data structures
 sci-mathematics/hom4ps-bin 2: HOMotopy method for solving Polynomial Systems
 sci-mathematics/rngstreams 1.0.1: Multiple independent streams of pseudo-random numbers
 sci-mathematics/unuran 1.8.1 1.9.0 1.11.0: Universal Non-Uniform Random number generator

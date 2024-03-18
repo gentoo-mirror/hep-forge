@@ -11,9 +11,6 @@ sci-libs/einspline:cuda - Build with cuda
 sci-libs/einspline:double - Build with double
 sci-libs/einspline:fortran - Build with fortran
 sci-libs/einspline:sse - Build with sse
-sci-mathematics/cgal:mpfi - Enable support for multiple recision interval arithmetic via sci-libs/mpfi
-sci-mathematics/cgal:ntl - Enable support for dev-libs/ntl
-sci-mathematics/cgal:shared - Build shared library
 sci-mathematics/unuran:prng - Use sci-mathematics/prng library
 sci-mathematics/unuran:rngstreams - Use sci-mathematics/rngstreams library
 sci-physics/applgrid:root - use root
