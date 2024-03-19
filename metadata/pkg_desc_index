@@ -2,8 +2,6 @@ dev-python/Unum 4.2.1: units in python
 dev-python/algopy 0.5.7: AlgoPy is a Research Prototype for Algorithmic Differentation in Python
 dev-python/aspectlib 2.0.0: An aspect-oriented programming, monkey-patch and decorators library
 dev-python/autograd 1.6.2: Efficiently computes derivatives of numpy code.
-dev-python/awkward 2.5.2: Manipulate JSON-like data with NumPy-like idioms.
-dev-python/awkward-cpp 28: awkward-cpp bindings for Python
 dev-python/bounded-pool-executor 0.0.3: Bounded Process and Thread Pool Executor
 dev-python/cffconvert 2.0.0: Command line program to validate and convert CITATION.cff files.
 dev-python/correctionlib 2.3.3 2.4.0: A generic correction library
@@ -127,7 +125,7 @@ sci-physics/rapgap 3.308: Hadron level Monte Carlo generator for ep and selected
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
 sci-physics/resummino 3.1.2: Resummation for electroweak BSM particles.
-sci-physics/rivet 3.1.7-r6 3.1.8 3.1.9 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
+sci-physics/rivet 3.1.7-r6 3.1.8 3.1.9 3.1.10 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
 sci-physics/rundec 0.5: running and decoupling of the strong coupling constant and quark masses
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 sci-physics/scikit-hep-testdata 0.4.36: A common package to provide example files for testing and developing packages against.
