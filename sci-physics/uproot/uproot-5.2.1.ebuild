@@ -20,4 +20,4 @@ RDEPEND="
 		>=dev-python/typing-extensions-4.1.0[${PYTHON_USEDEP}]
 	' 3.8)
 "
-BDEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}"
