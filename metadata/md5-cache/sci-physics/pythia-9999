@@ -12,5 +12,5 @@ RDEPEND=test? ( lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_01
 REQUIRED_USE=?? ( hepmc3 hepmc2 )
 RESTRICT=!test? ( test )
 SLOT=8/3
-_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	git-r3	fbb2889c81f3a05910c1524db69425c1
 _md5_=3f4e0075f523dbabadb05c5fef188cc9
