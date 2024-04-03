@@ -8,7 +8,7 @@ MY_PN=ColorMath
 DESCRIPTION="ColorMath is a Mathematica package for performing color sums in SU(Nc)"
 HOMEPAGE="http://home.thep.lu.se/~malin/ColorMath.html"
 SRC_URI="http://home.thep.lu.se/~malin/ColorMath/ColorMath${PV}.m"
-S="${WORKDIR}"
+S=${WORKDIR}
 
 LICENSE="all-rights-reserved"
 SLOT="0"
@@ -20,5 +20,5 @@ RDEPEND="${DEPEND}"
 src_install() {
 	MMADIR=/usr/share/Mathematica/Applications
 	insinto "${MMADIR}/${MY_PN}"
-	doins "ColorMath${PV}.m"
+	doins "${DISTDIR}/ColorMath${PV}.m"
 }
