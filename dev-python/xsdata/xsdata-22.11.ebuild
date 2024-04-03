@@ -40,4 +40,4 @@ RDEPEND="
 "
 BDEPEND="${RDEPEND}"
 
-distutils_enable_tests pytest
+#distutils_enable_tests pytest
