@@ -63,6 +63,7 @@ sci-physics/checkmate 2.0.26 9999: Check Models At Terascale Energies
 sci-physics/ckmutil 0.3.2: deal with CKM and PMNS matrices
 sci-physics/cocoa 0.1.1: A nearly-hermetic calorimeter simulated with Geant4 and interfaced to the Pythia8 event generator.
 sci-physics/coffea 0.7.22 9999: Basic tools and wrappers for enabling not-too-alien syntax when running columnar Collider HEP analysis.
+sci-physics/colormath 1.0: ColorMath is a Mathematica package for performing color sums in SU(Nc)
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
 sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0 0.17.0: DecayLanguage: describe, manipulate and convert particle decays

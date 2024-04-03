@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DEPEND=sci-mathematics/mathematica
+DESCRIPTION=ColorMath is a Mathematica package for performing color sums in SU(Nc)
+EAPI=8
+HOMEPAGE=http://home.thep.lu.se/~malin/ColorMath.html
+KEYWORDS=~amd64
+LICENSE=all-rights-reserved
+RDEPEND=sci-mathematics/mathematica
+SLOT=0
+SRC_URI=http://home.thep.lu.se/~malin/ColorMath/ColorMath1.0.m
+_md5_=dd1e69caba811a05fc127be82263ee4d
