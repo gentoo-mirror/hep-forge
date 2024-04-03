@@ -8,4 +8,4 @@ LICENSE=all-rights-reserved
 RDEPEND=sci-mathematics/mathematica
 SLOT=0
 SRC_URI=http://home.thep.lu.se/~malin/ColorMath/ColorMath1.0.m
-_md5_=dd1e69caba811a05fc127be82263ee4d
+_md5_=3b7d59e3677ed850e4ee6c9214dcdb80
