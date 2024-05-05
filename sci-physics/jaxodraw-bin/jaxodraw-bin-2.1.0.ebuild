@@ -34,7 +34,6 @@ DEPEND="
 
 RDEPEND=">=virtual/jre-1.6"
 
-
 src_install() {
 	java-pkg_newjar ${MY_P}.jar
 
