@@ -20,6 +20,7 @@ SRC_URI="
 	https://${MY_PN}.sourceforge.net/download/pkgs/${MY_P}-src.tar.gz
 	latex? ( https://downloads.sourceforge.net/${MY_PN}/axodraw4j_2008_11_19.tar.gz )
 "
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -33,7 +34,6 @@ DEPEND="
 
 RDEPEND=">=virtual/jre-1.6"
 
-S="${WORKDIR}/${MY_P}"
 
 src_install() {
 	java-pkg_newjar ${MY_P}.jar
@@ -49,7 +49,6 @@ src_install() {
 	java-pkg_dolauncher "${MY_P}"
 
 	if use latex; then
-		dodir /usr/share/texmf-dist/tex/latex/misc/
 		insinto /usr/share/texmf-dist/tex/latex/misc/
 		doins "${S}/../axodraw4j.sty"
 	fi
