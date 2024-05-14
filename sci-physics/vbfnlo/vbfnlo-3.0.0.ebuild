@@ -22,7 +22,7 @@ S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="root looptools hepmc2 +lhapdf quad mpi kk"
+IUSE="root looptools hepmc2 +lhapdf quad mpi kk gsl feynhiggs"
 
 RDEPEND="
 	sci-libs/gsl
@@ -30,6 +30,8 @@ RDEPEND="
 	hepmc2? ( sci-physics/hepmc:2= )
 	root? ( sci-physics/root )
 	lhapdf? ( sci-physics/lhapdf )
+	feynhiggs? ( sci-physics/feynhiggs )
+	gsl? ( sci-libs/gsl )
 "
 DEPEND="${RDEPEND}"
 
@@ -47,7 +49,9 @@ src_configure() {
 		$(use_enable kk) \
 		$(use_enable quad) \
 		$(use_with looptools) \
+		$(use_with feynhiggs) \
 		$(use_with hepmc2 hepmc) \
+		$(use_with gsl) \
 		$(use_with root) \
 		$(use_with lhapdf)
 }
