@@ -98,6 +98,14 @@ sci-physics/thepeg:hepmc2 - Adds support for High Energy Physics Monte Carlo Gen
 sci-physics/thepeg:hepmc3 - Adds support for High Energy Physics Monte Carlo Generators 3sci-physics/hepmc
 sci-physics/thepeg:lhapdf - Adds support for sci-physics/lhapdf
 sci-physics/thepeg:rivet - Adds support for sci-physics/rivet
+sci-physics/vbfnlo:feynhiggs - Build with feynhiggs support
+sci-physics/vbfnlo:hepmc2 - Build with hepmc version 2 support
+sci-physics/vbfnlo:kk - Enable Kaluza-Klein resonances
+sci-physics/vbfnlo:lhapdf - Build with lhapdf support
+sci-physics/vbfnlo:looptools - Build with looptools support
+sci-physics/vbfnlo:mpi - Build with mpi support
+sci-physics/vbfnlo:quad - Enable quad precision
+sci-physics/vbfnlo:root - Build with root support
 sci-physics/whizard:fastjet - Use fastjet for jet clustering sci-physics/fastjet
 sci-physics/whizard:form - Use form for loop calculations sci-mathematics/form
 sci-physics/whizard:gosam - Use gosam for loop calculations sci-physics/gosam
