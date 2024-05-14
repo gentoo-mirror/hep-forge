@@ -17,8 +17,8 @@ HOMEPAGE="
 "
 
 SRC_URI="https://ific.uv.es/vbfnlo/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
-KEYWORDS="~amd64"
 S="${WORKDIR}/${MY_P}"
+KEYWORDS="~amd64"
 
 LICENSE="GPL-2"
 SLOT="0"
