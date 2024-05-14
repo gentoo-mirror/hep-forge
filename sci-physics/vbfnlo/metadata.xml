@@ -18,8 +18,8 @@
         <flag name="root">Build with root support</flag>
         <flag name="looptools">Build with looptools support</flag>
         <flag name="feynhiggs">Build with feynhiggs support</flag>
-        <flag name="kk">Build with kk support</flag>
-        <flag name="quad">Build with quad support</flag>
+        <flag name="kk">Enable Kaluza-Klein resonances</flag>
+        <flag name="quad">Enable quad precision</flag>
         <flag name="mpi">Build with mpi support</flag>
     </use>
 
