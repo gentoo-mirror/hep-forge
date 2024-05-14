@@ -12,6 +12,17 @@
     <longdescription lang="en">
     VBFNLO is a fully flexible parton level Monte Carlo program for the simulation of vector boson fusion, double and triple vector boson production in hadronic collisions at next to leading order in the strong coupling constant. VBFNLO includes Higgs and vector boson decays with full spin correlations and all off-shell effects. In addition, VBFNLO implements CP-even and CP-odd Higgs boson via gluon fusion, associated with two jets, at the leading order one loop level with the full top-quark and bottom-quark mass dependence in a generic two Higgs doublet model.
     </longdescription>
+	<use>
+        <flag name="hepmc2">Build with hepmc version 2 support</flag>
+        <flag name="lhapdf">Build with lhapdf support</flag>
+        <flag name="root">Build with root support</flag>
+        <flag name="looptools">Build with looptools support</flag>
+        <flag name="feynhiggs">Build with feynhiggs support</flag>
+        <flag name="kk">Enable Kaluza-Klein resonances</flag>
+        <flag name="quad">Enable quad precision</flag>
+        <flag name="mpi">Build with mpi support</flag>
+    </use>
+
 	<upstream>
 		<remote-id type="github">vbfnlo/vbfnlo</remote-id>
 	</upstream>
