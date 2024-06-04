@@ -5,13 +5,13 @@ EAPI=8
 
 inherit autotools fortran-2
 
-DESCRIPTION="Integrand Reduction via Laurent Expansion for the computation of one-loop integrals."
+DESCRIPTION="Integrand Reduction via Laurent Expansion for one-loop integrals."
 HOMEPAGE="
 	https://github.com/peraro/ninja
 	https://ninja.hepforge.org/
 "
 SRC_URI="
-	https://github.com/peraro/ninja/releases/download/v${PV}/${PN}-latest.tar.gz -> ${P}.tar.gz.gh
+	https://github.com/peraro/ninja/releases/download/v${PV}/${PN}-latest.tar.gz -> ${P}.tar.gz
 "
 
 LICENSE="GPL-3+"
