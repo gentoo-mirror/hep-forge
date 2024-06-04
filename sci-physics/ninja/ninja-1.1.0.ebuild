@@ -3,24 +3,22 @@
 
 EAPI=8
 
-inherit autotools
+inherit autotools fortran-2
 
 DESCRIPTION="Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals."
 HOMEPAGE="https://ninja.hepforge.org/"
-SRC_URI="http://www.hepforge.org/archive/ninja/${P}.tar.gz"
+SRC_URI="https://ninja.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-3+"
 KEYWORDS="~amd64"
+IUSE="static-libs"
 
 RDEPEND="
 	sci-physics/oneloop
 	sci-physics/looptools
 "
 DEPEND="${RDEPEND}"
-BDEPEND="
-	virtual/fortran
-"
 
 src_prepare() {
 	default
@@ -28,7 +26,9 @@ src_prepare() {
 }
 
 src_configure() {
-	default
+	# Replace #!/bin/sh with #!/bin/bash
+	sed -i -e 's:#!/bin/sh:#!/bin/bash:' configure || die	
+	econf $(use_enable static-libs static)
 }
 
 src_compile() {
