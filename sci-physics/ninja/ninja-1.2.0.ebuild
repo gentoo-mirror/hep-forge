@@ -5,7 +5,7 @@ EAPI=8
 
 inherit autotools fortran-2
 
-DESCRIPTION="Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals."
+DESCRIPTION="Integrand Reduction via Laurent Expansion for the computation of one-loop integrals."
 HOMEPAGE="
 	https://github.com/peraro/ninja
 	https://ninja.hepforge.org/
@@ -14,8 +14,8 @@ SRC_URI="
 	https://github.com/peraro/ninja/releases/download/v${PV}/${PN}-latest.tar.gz -> ${P}.tar.gz.gh
 "
 
-SLOT="0"
 LICENSE="GPL-3+"
+SLOT="0"
 KEYWORDS="~amd64"
 IUSE="static-libs quad gosam"
 
@@ -33,7 +33,7 @@ src_prepare() {
 
 src_configure() {
 	# Replace #!/bin/sh with #!/bin/bash
-	sed -i -e 's:#!/bin/sh:#!/bin/bash:' configure || die	
+	sed -i -e 's:#!/bin/sh:#!/bin/bash:' configure || die
 	econf \
 		$(use_enable static-libs static) \
 		$(use_enable quad quadninja) \

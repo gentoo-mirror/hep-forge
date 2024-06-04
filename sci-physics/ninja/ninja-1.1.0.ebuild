@@ -5,12 +5,12 @@ EAPI=8
 
 inherit autotools fortran-2
 
-DESCRIPTION="Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals."
+DESCRIPTION="Integrand Reduction via Laurent Expansion for the computation of one-loop integrals."
 HOMEPAGE="https://ninja.hepforge.org/"
 SRC_URI="https://ninja.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz"
 
-SLOT="0"
 LICENSE="GPL-3+"
+SLOT="0"
 KEYWORDS="~amd64"
 IUSE="static-libs"
 
