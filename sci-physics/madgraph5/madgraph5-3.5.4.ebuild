@@ -11,17 +11,21 @@ MY_PNN="MadGraph5"
 MY_PV=$(ver_rs 1-3 '_')
 MY_PN="MG5_aMC_v"
 MY_PF=${MY_PN}${MY_PV}
+MS_PV="29"
 
 DESCRIPTION="MadGraph5_aMC@NLO"
 HOMEPAGE="https://launchpad.net/mg5amcnlo"
-SRC_URI="https://launchpad.net/mg5amcnlo/$(ver_cut 1).0/$(ver_cut 1-2).x/+download/${MY_PN}${PV}.tar.gz -> ${MY_PNN}-${PV}.tar.gz"
+SRC_URI="
+	https://launchpad.net/mg5amcnlo/$(ver_cut 1).0/$(ver_cut 1-2).x/+download/${MY_PN}${PV}.tar.gz -> ${MY_PNN}-${PV}.tar.gz
+	madstr? ( http://madgraph.phys.ucl.ac.be//Downloads/MadSTR/MadSTR_V${MS_PV}.tar.gz )
+	"
 S="${WORKDIR}/${MY_PF}"
 
 LICENSE="UoI-NCSA"
 SLOT="3"
 KEYWORDS="~amd64"
 # TODO add pineapple, herwig, syscalc, pjfrym, pineappl
-IUSE="+hepmc2 +lhapdf +fastjet pythia collier thepeg" # td madanalysis5 ninja samurai golem95
+IUSE="+hepmc2 +lhapdf +fastjet pythia collier thepeg iregi cuttools madstr" # td madanalysis5 ninja samurai golem95
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 RDEPEND="
@@ -52,6 +56,8 @@ PATCHES=( "${FILESDIR}"/cuttools.patch )
 src_unpack() {
 	# Perserve permissions
 	tar xvzf "${DISTDIR}/${MY_PNN}-${PV}.tar.gz" -C "${WORKDIR}" || die
+	cp "${DISTDIR}/MadSTR_V${MS_PV}.tar.gz" "${WORKDIR}/${MY_PF}/MadSTR.tgz" || die
+	#tar xvzf "${DISTDIR}/MadSTR_V${MS_PV}.tar.gz" -C "${WORKDIR}/${MY_PF}/PLUGIN/" || die
 }
 
 src_configure() {
@@ -75,7 +81,10 @@ src_configure() {
 src_compile() {
 	# MadGraph needs to generate `Template/LO/Source/make_opts` which is done
 	# automatically at startup.  This needs to be done during setup (or with root access)
-	echo "exit" > tmpfile || die
+	cat <<-EOF > tmpfile || die
+	$(usex madstr "install MadSTR" "")
+	exit
+	EOF
 	bin/mg5_aMC ./tmpfile || die
 	rm tmpfile || die
 }
