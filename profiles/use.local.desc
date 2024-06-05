@@ -36,9 +36,12 @@ sci-physics/jetscape:iss - Enable support for iss
 sci-physics/jetscape:music - Enable support for music
 sci-physics/jetscape:smash - Enable support for smash
 sci-physics/madgraph5:collier - USE system collier
+sci-physics/madgraph5:cuttools - USE system cuttools
 sci-physics/madgraph5:fastjet - USE system FASTJET
 sci-physics/madgraph5:hepmc2 - USE system hepmc version 2
+sci-physics/madgraph5:iregi - USE system iregi
 sci-physics/madgraph5:lhapdf - USE system LHAPDF
+sci-physics/madgraph5:madstr - install madstr
 sci-physics/madgraph5:pythia - USE system PYTHIA
 sci-physics/madgraph5:thepeg - USE system thepeg
 sci-physics/ninja:static-libs - Build static library
