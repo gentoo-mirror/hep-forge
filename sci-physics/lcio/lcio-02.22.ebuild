@@ -2,13 +2,13 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 CMAKE_MAKEFILE_GENERATOR="emake"
 
 MY_PV=$(ver_rs 1- '-')
 MY_P="LCIO-${MY_PV}"
 
-inherit python-single-r1 cmake
+inherit fortran-2 python-single-r1 cmake
 
 DESCRIPTION="Linear Collider I/O "
 HOMEPAGE="https://github.com/iLCSoft/LCIO"
@@ -28,9 +28,6 @@ DEPEND="
 	${PYTHON_DEPS}
 "
 RDEPEND="${DEPEND}"
-BDEPEND="
-	virtual/fortran
-"
 
 src_prepare() {
 	cmake_src_prepare
