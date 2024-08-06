@@ -11,5 +11,5 @@ LICENSE=GPL-3+
 PROPERTIES=live
 RDEPEND=sci-physics/lhapdf zlib? ( sys-libs/zlib ) virtual/fortran
 SLOT=0
-_eclasses_=estack	c61c368a76fdf3a82fdf8dbaebea3804	subversion	44c6a1cae0381c100a526e3b348622cd	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	fortran-2	40c4450f1c4ecb2ee694d96e1958d4ea
+_eclasses_=estack	c61c368a76fdf3a82fdf8dbaebea3804	subversion	44c6a1cae0381c100a526e3b348622cd	toolchain-funcs	e7e7331166166e7a516d19e264b098c2	multilib	c19072c3cd7ac5cb21de013f7e9832e0	fortran-2	40c4450f1c4ecb2ee694d96e1958d4ea
 _md5_=c197aa0d58bab5a3b99ec68ad1ca5da6
