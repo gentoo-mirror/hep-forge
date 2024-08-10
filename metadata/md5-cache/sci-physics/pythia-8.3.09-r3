@@ -12,5 +12,5 @@ REQUIRED_USE=?? ( hepmc3 hepmc2 )
 RESTRICT=!test? ( test )
 SLOT=8/3
 SRC_URI=https://pythia.org/download/pythia83/pythia8309.tgz
-_eclasses_=toolchain-funcs	e7e7331166166e7a516d19e264b098c2	multilib	c19072c3cd7ac5cb21de013f7e9832e0
+_eclasses_=toolchain-funcs	0c713337f7872f1a002cecaaea9bef73	multilib	c19072c3cd7ac5cb21de013f7e9832e0
 _md5_=b63a5ebace4afcd5a8b8cf41ab8e838d
