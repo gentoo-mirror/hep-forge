@@ -10,5 +10,5 @@ LICENSE=GPL-2
 RDEPEND=>=virtual/jre-1.6 >=dev-java/java-config-2.2.0-r3 source? ( app-arch/zip )
 SLOT=0
 SRC_URI=https://jaxodraw.sourceforge.net/download/pkgs/jaxodraw-2.1-0-bin.tar.gz https://jaxodraw.sourceforge.net/download/pkgs/jaxodraw-2.1-0-src.tar.gz latex? ( https://downloads.sourceforge.net/jaxodraw/axodraw4j_2008_11_19.tar.gz )
-_eclasses_=java-utils-2	868752320f3c0e66b5fa5dc3602d7486	java-pkg-2	9076f1296e19e8cc3f51e613f5fddbf5	multilib	c19072c3cd7ac5cb21de013f7e9832e0	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd	java-ant-2	557119cbec0fe45cc593997173a34181	desktop	021728fdc1b03b36357dbc89489e0f0d
+_eclasses_=java-utils-2	868752320f3c0e66b5fa5dc3602d7486	java-pkg-2	9076f1296e19e8cc3f51e613f5fddbf5	multilib	c19072c3cd7ac5cb21de013f7e9832e0	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd	java-ant-2	ad653f6ce057f94c49254ace4f0f8335	desktop	021728fdc1b03b36357dbc89489e0f0d
 _md5_=28d97729dd43621950772be643ab6fb7
