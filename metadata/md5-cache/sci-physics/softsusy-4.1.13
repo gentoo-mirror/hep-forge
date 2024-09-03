@@ -10,5 +10,5 @@ LICENSE=GPL-3+
 RDEPEND=virtual/fortran
 SLOT=0
 SRC_URI=https://softsusy.hepforge.org/downloads/softsusy-4.1.13.tar.gz
-_eclasses_=toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd	multilib	c19072c3cd7ac5cb21de013f7e9832e0	fortran-2	40c4450f1c4ecb2ee694d96e1958d4ea	gnuconfig	a397adda6984a4c423e28ac274c1ba98	libtool	5f49a16f67f81bdf873e3d1f10b10001	autotools	d12ccbad07b44642a75ac97a3334d8e0
+_eclasses_=gnuconfig	a397adda6984a4c423e28ac274c1ba98	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	5f49a16f67f81bdf873e3d1f10b10001	autotools	d12ccbad07b44642a75ac97a3334d8e0	fortran-2	40c4450f1c4ecb2ee694d96e1958d4ea
 _md5_=8240f8c60f806e5b49f515cdb9fe9661
