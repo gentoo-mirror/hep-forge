@@ -11,5 +11,5 @@ LICENSE=GPL-3+
 RDEPEND=sci-physics/collier sci-physics/qcdloop sci-physics/oneloop[dpkind,qpkind16,-qpkind,-cppintf,kind_types] sci-physics/cuttools
 SLOT=0
 SRC_URI=https://openloops.hepforge.org/downloads?f=OpenLoops-2.1.2.tar.gz -> OpenLoops-2.1.2.tar.gz
-_eclasses_=multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd	multilib	c19072c3cd7ac5cb21de013f7e9832e0	python-utils-r1	6881b056477c23167d9a6b33e146374e	python-single-r1	f7abe75c203a988aa9b5c460b6c7d0f1	scons-utils	b3544637c85286a19000d59461d3a7a5
+_eclasses_=multiprocessing	e644caa6eb7ce7e5ab0864383ac13ad9	toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	multilib	7e1347c006a76bb812f3a9f663b79991	python-utils-r1	6881b056477c23167d9a6b33e146374e	python-single-r1	f7abe75c203a988aa9b5c460b6c7d0f1	scons-utils	b3544637c85286a19000d59461d3a7a5
 _md5_=4f2f13958e35563b17597f35cf14a132
