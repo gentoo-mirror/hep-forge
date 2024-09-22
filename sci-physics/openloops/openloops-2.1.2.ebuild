@@ -31,9 +31,32 @@ BDEPEND=""
 src_prepare() {
 	default
 	mv openloops.cfg.tmpl openloops.cfg
-	sed -i "s|#gfortran_f_flags.*|gfortran_f_flags = -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools|" openloops.cfg || die
+	if use extra ; then
+		sed -i "s|#compile_extra.*|compile_extra = 1|" openloops.cfg || die
+	fi
+	echo "link_libraries = $(usev collier) $(usev cuttools)" >> openloops.cfg || die
 	sed -i 's/#compile_libraries.*/compile_libraries = rambo trred/' openloops.cfg || die
 	sed -i "s|scons -Q|scons -Q -C /opt/${MY_P}/|g" openloops || die
+
+	echo "ccflags = ${CFLAGS}" >> openloops.cfg || die
+	echo "cxxflags = ${CXXFLAGS}" >> openloops.cfg || die
+	echo "f_flags = ${FFLAGS} -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools -lcollier" >> openloops.cfg || die
+	echo "link_flags = ${LDFLAGS} -I${ESYSROOT}/usr/include/ -I${ESYSROOT}/usr/include/cuttools -lcollier" >> openloops.cfg || die
+
+	echo "cc = $(tc-getCC)" >> openloops.cfg || die
+	echo "cxx = $(tc-getCXX)" >> openloops.cfg || die
+	echo "fortran_compiler = $(tc-getFC)" >> openloops.cfg || die
+
+	echo "process_src_dir = /opt/${MY_P}/process_src/" >> openloops.cfg || die
+	echo "process_obj_dir = /opt/${MY_P}/process_obj/" >> openloops.cfg || die
+	echo "process_lib_dir = /opt/${MY_P}/proclib/" >> openloops.cfg || die
+	echo "release = $PV" >> openloops.cfg || die
+	echo "import_env = @all" >> openloops.cfg || die
+	# fix rename for py3.12
+	sed -i 's/SafeConfigParser/ConfigParser/g' pyol/tools/OLBaseConfig.py || die
+	# wipe local scons
+	rm -r scons-local || die
+	rm scons || die
 }
 
 src_compile() {
@@ -44,9 +67,10 @@ src_install() {
 	dobin openloops
 	cd include
 	doheader openloops.h
-	cd ../lib
-	dolib.so libolcommon.so libopenloops.so librambo.so libtrred.so
-	cd ../lib_src/olcommon/mod
+	cd ../lib || die
+	# Also install so.version links
+	dolib.so libolcommon.so* libopenloops.so* librambo.so* libtrred.so*
+	cd ../lib_src/olcommon/mod || die
 	doheader *.mod
 	cd ../../openloops/mod
 	doheader *.mod

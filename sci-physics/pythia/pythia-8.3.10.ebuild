@@ -30,17 +30,20 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	test? ( lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed,lhapdf_sets_pdf4lhc15_nlo_asvar,lhapdf_sets_ct14qed_proton,lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc,lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc] ) )
 	fastjet? ( sci-physics/fastjet )
 	hepmc3? ( sci-physics/hepmc:3= )
 	hepmc2? ( sci-physics/hepmc:2= )
 	lhapdf? ( sci-physics/lhapdf:= )
-	zlib? ( sys-libs/zlib )"
+	zlib? ( sys-libs/zlib )
+"
 # ROOT is used only when building related tests
-DEPEND="${RDEPEND}
+DEPEND="${RDEPEND}"
+BDEPEND="
 	test? (
+		lhapdf? ( sci-physics/lhapdf-sets[lhapdf_sets_nnpdf31_nnlo_as_0118_luxqed,lhapdf_sets_pdf4lhc15_nlo_asvar,lhapdf_sets_ct14qed_proton,lhapdf_sets_nnpdf23_nlo_as_0119_qed_mc,lhapdf_sets_nnpdf23_nnlo_as_0119_qed_mc] )
 		root? ( sci-physics/root:= )
-	)"
+	)
+"
 
 PATCHES=(
 	"${FILESDIR}"/${PN}8209-root-noninteractive.patch

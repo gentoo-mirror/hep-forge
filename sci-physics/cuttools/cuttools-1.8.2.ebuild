@@ -15,7 +15,7 @@ RESTRICT=""
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE=""
+IUSE="+dummy"
 DEPEND="
 	sci-physics/qcdloop
 	sci-physics/oneloop[dpkind,qpkind16,-qpkind,-tlevel]
@@ -27,6 +27,8 @@ BDEPEND="
 src_prepare() {
 	default
 	sed -i 's/^ALL =.*$/ALL = $(CTS)/' src/makefile ||  die
+	use dummy && cp ${FILESDIR}/mpnumdummy.f90 src/cts/mpnumdummy.f90
+	use dummy && sed -i 's/CTS =/CTS = mpnumdummy.o/' src/makefile
 }
 
 src_compile() {

@@ -17,7 +17,7 @@ SRC_URI="
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="static-libs quad gosam"
+IUSE="static-libs gosam" # quad
 
 RDEPEND="
 	sci-physics/oneloop
@@ -35,8 +35,8 @@ src_configure() {
 	# Replace #!/bin/sh with #!/bin/bash
 	sed -i -e 's:#!/bin/sh:#!/bin/bash:' configure || die
 	econf \
+		--disable-quadninja \
 		$(use_enable static-libs static) \
-		$(use_enable quad quadninja) \
 		$(use_enable gosam)
 }
 
