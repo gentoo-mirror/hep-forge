@@ -75,6 +75,7 @@ sci-physics/pythia:root - Use sci-physics/root trees and histograms (in examples
 sci-physics/recola2:SM - Use SM model
 sci-physics/rivet:hepmc2 - Build with HepMC2
 sci-physics/rivet:hepmc3 - Build with HepMC3
+sci-physics/rivet:highfive - Build with hdf5 and highfive
 sci-physics/rivet:zlib - Build with zlib
 sci-physics/samurai:looptools - use looptools
 sci-physics/samurai:qcdloop - use qcdloop
