@@ -26,7 +26,7 @@ fi
 
 LICENSE="GPL-3+"
 SLOT="3"
-IUSE="+hepmc3 hepmc2 +zlib +python"
+IUSE="+hepmc3 hepmc2 +zlib +python +highfive"
 REQUIRED_USE="
 	^^ ( hepmc3 hepmc2 )
 	python? ( ${PYTHON_REQUIRED_USE} )
@@ -37,6 +37,10 @@ RDEPEND="
 	>=sci-physics/fastjet-contrib-1.048
 	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
+	highfive? (
+		sci-libs/HighFive
+		sci-libs/hdf5[cxx]
+	)
 
 	sci-libs/gsl
 	zlib? ( sys-libs/zlib )
@@ -85,6 +89,7 @@ src_configure() {
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
 		$(usex hepmc2 "--with-hepmc=${ESYSROOT}/usr" "") \
 		$(usex hepmc3 "--with-hepmc3=${ESYSROOT}/usr" "") \
+		$(usex highfive "--with-highfive=${ESYSROOT}/usr" "") \
 		--with-yoda="${ESYSROOT}/usr" \
 		--with-fastjet="${ESYSROOT}/usr" \
 		$(use_enable python pyext) \
@@ -109,5 +114,6 @@ src_install() {
 }
 
 pkg_postinstall() {
-	optfeature "plotting support" virtual/latex-base media-gfx/imagemagick app-text/ghostscript-gpl
+	optfeature "latex plotting support" virtual/latex-base media-gfx/imagemagick app-text/ghostscript-gpl
+	optfeature "python plotting support" dev-python/matplotlib
 }

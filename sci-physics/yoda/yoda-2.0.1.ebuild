@@ -88,14 +88,14 @@ src_install() {
 			${PN}envelope \
 			${PN}cnv \
 			${PN}2root
+		rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
+		python_optimize
 	fi
 
-	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
-
-	use python && python_optimize
 	find "${ED}" -name '*.la' -delete || die
 }
 
 pkg_postinst() {
-	optfeature "plotting support" virtual/latex-base dev-python/matplotlib
+	optfeature "latex plotting support" virtual/latex-base
+	optfeature "python plotting support" dev-python/matplotlib
 }
