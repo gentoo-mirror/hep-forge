@@ -99,13 +99,13 @@ src_install() {
 	find "${ED}" -name '*.la' -delete || die
 	if use python ; then
 		newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}
-		bashcomp_alias ${PN} ${PN}-config \
+		bashcomp_alias ${PN} \
+			${PN}-config \
 			${PN}-build \
-			${PN}-buildplugin \
 			${PN}-cmphistos \
 			make-plots \
-			${PN}-mkhtml \
-			${PN}-mkhtml-mpl
+			${PN}-mkhtml-tex \
+			${PN}-mkhtml
 		rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
 	fi
 }
