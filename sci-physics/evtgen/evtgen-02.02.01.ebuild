@@ -7,9 +7,9 @@ inherit cmake
 MY_PN="EvtGen"
 MY_P=${MY_PN}-${PV}
 
-DESCRIPTION=""
-SRC_URI="https://evtgen.hepforge.org/downloads?f=${MY_P}.tar.gz"
+DESCRIPTION="EvtGen is a Monte Carlo event generator that simulates the decays"
 HOMEPAGE="https://evtgen.hepforge.org/"
+SRC_URI="https://evtgen.hepforge.org/downloads?f=${MY_P}.tar.gz"
 
 S="${WORKDIR}/${MY_PN}/R$(ver_rs 1-2 '-')"
 LICENSE="GPL-3+"
@@ -40,13 +40,3 @@ src_configure() {
 	)
 	cmake_src_configure
 }
-
-src_compile() {
-	#export MAKEOPTS=-j1
-	cmake_src_compile
-}
-
-src_install() {
-	cmake_src_install
-}
-

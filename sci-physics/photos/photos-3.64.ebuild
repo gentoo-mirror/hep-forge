@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit autotools
+inherit fortran-2 autotools
 
 MY_PN="PHOTOS"
 MY_P=${MY_PN}.${PV}
@@ -13,7 +13,7 @@ HOMEPAGE="
 	https://gitlab.cern.ch/photospp/photospp
 	http://photospp.web.cern.ch/photospp/
 "
-SRC_URI="http://photospp.web.cern.ch/photospp/resources/${MY_P}/${MY_P}.tar.gz"
+SRC_URI="https://photospp.web.cern.ch/resources/${MY_P}/${MY_P}.tar.gz"
 S=${WORKDIR}/${MY_PN}
 
 LICENSE="MIT"
@@ -47,6 +47,12 @@ src_configure() {
 		$(use_with hepmc hepmc "${EPREFIX}/usr") \
 		$(use_with pythia pythia8 "${EPREFIX}/usr") \
 		$(use_with tauola tauola "${EPREFIX}/usr")
+	# weird autoconf + Makefile
+	cat << EOF >> make.inc || die
+LDFLAGS += ${LDFLAGS}
+CFLAGS += ${CFLAGS}
+FFLAGS += ${FFLAGS}
+EOF
 }
 
 src_compile() {

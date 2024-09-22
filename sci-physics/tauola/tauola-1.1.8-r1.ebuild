@@ -3,45 +3,54 @@
 
 EAPI=8
 
+inherit fortran-2
+
 MY_PN="TAUOLA"
 MY_P=${MY_PN}.${PV}
 
 DESCRIPTION="Tau decay Monte Carlo generator"
-HOMEPAGE="http://tauolapp.web.cern.ch/tauolapp/"
-SRC_URI="http://tauolapp.web.cern.ch/tauolapp/resources/${MY_P}/${MY_P}-LHC.tar.gz"
+HOMEPAGE="http://tauolapp.web.cern.ch/"
+SRC_URI="https://tauolapp.web.cern.ch/resources/${MY_P}/${MY_P}.tar.gz"
 S=${WORKDIR}/${MY_PN}
 
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc examples pythia hepmc +hepmc3"
-REQUIRED_USE=" || ( hepmc hepmc3 )"
+IUSE="+hepmc3 +lhapdf doc examples hepmc pythia tau-spinner"
+REQUIRED_USE=" || ( hepmc hepmc3 ) tau-spinner? ( lhapdf )"
 
 RDEPEND="
 	hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
 	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
 	pythia? ( sci-physics/pythia:8= )
-	sci-physics/lhapdf
+	lhapdf? ( sci-physics/lhapdf )
 "
 DEPEND="${RDEPEND}
 	doc? (
-		app-doc/doxygen[dot]
+		app-text/doxygen[dot]
 		app-text/ghostscript-gpl
 		app-text/texlive
 	)
 "
 
-#PATCHES=(
-#	"${FILESDIR}"/${PN}-1.1.3-tau-spinner-makefile.patch
-#)
+PATCHES=(
+	"${FILESDIR}"/${PN}-1.1.8-tau-spinner-makefile-install.patch
+)
 
 src_configure() {
 	econf \
-		--without-mc-tester \
-		--with-lhapdf \
+		$(use_with lhapdf) \
+		$(use_with tau-spinner) \
 		$(use_with pythia pythia8 "${EPREFIX}/usr") \
 		$(use_with hepmc hepmc "${EPREFIX}/usr") \
-		$(use_with hepmc3 hepmc3 "${EPREFIX}/usr")
+		$(use_with hepmc3 hepmc3 "${EPREFIX}/usr") \
+		--without-mc-tester
+	# weird autoconf + Makefile
+	cat << EOF >> make.inc || die
+LDFLAGS += ${LDFLAGS}
+CFLAGS += ${CFLAGS}
+FFLAGS += ${FFLAGS}
+EOF
 }
 
 src_compile() {

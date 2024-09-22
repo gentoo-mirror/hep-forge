@@ -6,17 +6,23 @@ EAPI=8
 inherit autotools fortran-2
 
 DESCRIPTION="Integrand Reduction via Laurent Expansion for one-loop integrals."
-HOMEPAGE="https://ninja.hepforge.org/"
-SRC_URI="https://ninja.hepforge.org/downloads?f=${P}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="
+	https://github.com/peraro/ninja
+	https://ninja.hepforge.org/
+"
+SRC_URI="
+	https://github.com/peraro/ninja/releases/download/v${PV}/${PN}-latest.tar.gz -> ${P}.tar.gz
+"
 
 LICENSE="GPL-3+"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="static-libs"
+IUSE="static-libs gosam" # quad
 
 RDEPEND="
 	sci-physics/oneloop
 	sci-physics/looptools
+	gosam? ( sci-physics/gosam )
 "
 DEPEND="${RDEPEND}"
 
@@ -28,7 +34,10 @@ src_prepare() {
 src_configure() {
 	# Replace #!/bin/sh with #!/bin/bash
 	sed -i -e 's:#!/bin/sh:#!/bin/bash:' configure || die
-	econf $(use_enable static-libs static)
+	econf \
+		--disable-quadninja \
+		$(use_enable static-libs static) \
+		$(use_enable gosam)
 }
 
 src_compile() {
