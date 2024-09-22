@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..12} )
+PYTHON_COMPAT=( python3_{11..12} )
 
 inherit python-single-r1 flag-o-matic autotools optfeature bash-completion-r1
 
@@ -25,7 +25,7 @@ else
 fi
 
 LICENSE="GPL-3+"
-SLOT="3"
+SLOT="4"
 IUSE="+zlib +python +highfive"
 REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
@@ -83,7 +83,7 @@ src_configure() {
 	# not posix compatible, only bash
 	CONFIG_SHELL=${ESYSROOT}/bin/bash econf \
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
-		--with-hepmc3=${ESYSROOT}/usr \
+		--with-hepmc3="${ESYSROOT}/usr" \
 		$(usex highfive "--with-highfive=${ESYSROOT}/usr" "") \
 		--with-yoda="${ESYSROOT}/usr" \
 		--with-fastjet="${ESYSROOT}/usr" \
