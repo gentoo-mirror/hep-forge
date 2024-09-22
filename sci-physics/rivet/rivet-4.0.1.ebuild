@@ -26,17 +26,19 @@ fi
 
 LICENSE="GPL-3+"
 SLOT="3"
-IUSE="+hepmc3 hepmc2 +zlib +python"
+IUSE="+zlib +python +highfive"
 REQUIRED_USE="
-	^^ ( hepmc3 hepmc2 )
 	python? ( ${PYTHON_REQUIRED_USE} )
 "
 
 RDEPEND="
 	>=sci-physics/fastjet-3.4.0[plugins]
 	>=sci-physics/fastjet-contrib-1.048
-	hepmc2? ( sci-physics/hepmc:2=[-cm(-),gev(+)] )
-	hepmc3? ( sci-physics/hepmc:3=[-cm(-),gev(+)] )
+	>=sci-physics/hepmc-3.1.1:3=[-cm(-),gev(+)]
+	highfive? (
+		sci-libs/HighFive
+		sci-libs/hdf5[cxx]
+	)
 
 	sci-libs/gsl
 	zlib? ( sys-libs/zlib )
@@ -61,11 +63,11 @@ BDEPEND="
 	)
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
-	"${FILESDIR}"/${PN}-3.1.9-pythontests.patch
-	"${FILESDIR}"/${PN}-3.1.10-ref_cin.patch # https://gitlab.com/hepcedar/rivet/-/merge_requests/844
-)
+#PATCHES=(
+#	"${FILESDIR}"/${PN}-3.1.6-binreloc.patch
+#	"${FILESDIR}"/${PN}-3.1.9-pythontests.patch
+#	"${FILESDIR}"/${PN}-3.1.10-ref_cin.patch # https://gitlab.com/hepcedar/rivet/-/merge_requests/844
+#)
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
@@ -83,8 +85,8 @@ src_configure() {
 	# not posix compatible, only bash
 	CONFIG_SHELL=${ESYSROOT}/bin/bash econf \
 		$(use_with zlib zlib "${ESYSROOT}/usr") \
-		$(usex hepmc2 "--with-hepmc=${ESYSROOT}/usr" "") \
-		$(usex hepmc3 "--with-hepmc3=${ESYSROOT}/usr" "") \
+		--with-hepmc3=${ESYSROOT}/usr \
+		$(usex highfive "--with-highfive=${ESYSROOT}/usr" "") \
 		--with-yoda="${ESYSROOT}/usr" \
 		--with-fastjet="${ESYSROOT}/usr" \
 		$(use_enable python pyext) \
@@ -109,5 +111,6 @@ src_install() {
 }
 
 pkg_postinstall() {
-	optfeature "plotting support" virtual/latex-base media-gfx/imagemagick app-text/ghostscript-gpl
+	optfeature "latex plotting support" virtual/latex-base media-gfx/imagemagick app-text/ghostscript-gpl
+	optfeature "python plotting support" dev-python/matplotlib
 }
