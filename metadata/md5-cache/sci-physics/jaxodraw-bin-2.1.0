@@ -11,4 +11,4 @@ RDEPEND=>=virtual/jre-1.6 >=dev-java/java-config-2.2.0-r3 source? ( app-arch/zip
 SLOT=0
 SRC_URI=https://jaxodraw.sourceforge.net/download/pkgs/jaxodraw-2.1-0-bin.tar.gz https://jaxodraw.sourceforge.net/download/pkgs/jaxodraw-2.1-0-src.tar.gz latex? ( https://downloads.sourceforge.net/jaxodraw/axodraw4j_2008_11_19.tar.gz )
 _eclasses_=java-utils-2	505f237da61d30569dcc6d5df8c51262	java-pkg-2	72587187cd548a5dcdb6a13453a3614d	multilib	7e1347c006a76bb812f3a9f663b79991	toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	java-ant-2	ad653f6ce057f94c49254ace4f0f8335	desktop	56973babb9c5f19cab0eeb53ece644c6
-_md5_=28d97729dd43621950772be643ab6fb7
+_md5_=5baf59e6bedf935d667d28c7119ddf31

@@ -38,12 +38,14 @@ sci-physics/jetscape:smash - Enable support for smash
 sci-physics/madgraph5:collier - USE system collier
 sci-physics/madgraph5:cuttools - USE system cuttools
 sci-physics/madgraph5:fastjet - USE system FASTJET
-sci-physics/madgraph5:hepmc2 - USE system hepmc version 2
+sci-physics/madgraph5:hepmc - USE system hepmc
 sci-physics/madgraph5:iregi - USE system iregi
 sci-physics/madgraph5:lhapdf - USE system LHAPDF
 sci-physics/madgraph5:madstr - install madstr
 sci-physics/madgraph5:pythia - USE system PYTHIA
 sci-physics/madgraph5:thepeg - USE system thepeg
+sci-physics/ninja:gosam - Build gosam interface
+sci-physics/ninja:quad - Build quadninja library
 sci-physics/ninja:static-libs - Build static library
 sci-physics/oneloop:arprec - use sci-libs/arprec
 sci-physics/oneloop:cppintf - enable cppintf
@@ -84,9 +86,11 @@ sci-physics/sherpa:rivet - Build with Rivet
 sci-physics/sherpa:root - Build with Root
 sci-physics/starlight:dpmjet - Adds support for DPMJET sci-physics/dpmjet-III
 sci-physics/starlight:pythia8 - Adds support for PYTHIA 8 sci-physics/pythia
-sci-physics/tauola:hepmc - hepmc version 2
-sci-physics/tauola:hepmc3 - hepmc version 3
-sci-physics/tauola:pythia - build with pythia connection
+sci-physics/tauola:hepmc - Compile with sci-physics/hepmc version 2 interface
+sci-physics/tauola:hepmc3 - Compile with sci-physics/hepmc version 3 interface
+sci-physics/tauola:lhapdf - Compile with sci-physics/lhapdf connection
+sci-physics/tauola:pythia - Compile with sci-physics/pythia connection
+sci-physics/tauola:tau-spinner - Compile with TauSpinner library
 sci-physics/thepeg:fastjet - Adds support for sci-physics/fastjet
 sci-physics/thepeg:hepmc - Adds support for High Energy Physics Monte Carlo Generators sci-physics/hepmc
 sci-physics/thepeg:hepmc2 - Adds support for High Energy Physics Monte Carlo Generators 2sci-physics/hepmc
@@ -125,3 +129,4 @@ sci-physics/xfitter:lhapdf - Adds support for sci-physics/lhapdf
 sci-physics/xfitter:pineappl - Adds support for sci-physics/pineappl-capi
 sci-physics/xfitter:qcdnum - Adds support for sci-physics/qcdnum
 sci-physics/xfitter:root - Adds support for sci-physics/root
+sci-physics/yoda:root - Adds support for sci-physics/root

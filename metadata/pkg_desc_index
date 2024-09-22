@@ -65,13 +65,13 @@ sci-physics/cocoa 0.1.1: A nearly-hermetic calorimeter simulated with Geant4 and
 sci-physics/coffea 0.7.22 9999: Basic tools and wrappers for enabling not-too-alien syntax when running columnar Collider HEP analysis.
 sci-physics/colormath 1.0: ColorMath is a Mathematica package for performing color sums in SU(Nc)
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
-sci-physics/cuttools 1.8.2 1.8.2-r1: Computing 1-loop amplitudes at the integrand level
+sci-physics/cuttools 1.8.2: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0 0.17.0: DecayLanguage: describe, manipulate and convert particle decays
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/dpmjet-III 19.3.6: Home of the DPMJET event generator
 sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt-resummation
 sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
-sci-physics/evtgen 01.07.00 02.02.00 02.02.01: 
+sci-physics/evtgen 01.07.00 02.02.00 02.02.01: EvtGen is a Monte Carlo event generator that simulates the decays
 sci-physics/fastnlo 2.5: fast pQCD calculations for hadron-induced processes
 sci-physics/feynhiggs 2.18.1: Calculation of the masses, mixings and much more of the Higgs bosons in the MSSM
 sci-physics/feynrules 2.1: A Mathematica package to calculate Feynman rules.
@@ -94,18 +94,18 @@ sci-physics/lhapdf 6.2.3-r1 6.3.0-r3 6.3.0-r4 6.3.0-r5 6.4.0 6.5.2 6.5.3 6.5.3-r
 sci-physics/lhapdf-sets 0: LHAPDF data grids
 sci-physics/looptools 2.10 2.15 2.15-r1 2.16-r1: Tools for evaluation of scalar and tensor one-loop integrals
 sci-physics/madanalysis5 1.10.4: A package for event file analysis and recasting of LHC results
-sci-physics/madgraph5 2.9.19 3.5.4: MadGraph5_aMC@NLO
+sci-physics/madgraph5 2.9.19 3.5.3 3.5.4: MadGraph5_aMC@NLO
 sci-physics/mcfm 10.2.1 10.2.1-r1 10.2.1-r2 10.2.1-r3 10.2.1-r4 9999: Monte Carlo for FeMtobarn processes
 sci-physics/mplhep 0.3.31: Histogram plots using matplotlib and HEP compatible styling ROOT.
 sci-physics/mplhep-data 0.0.3: Data/font package for mplhep.
-sci-physics/ninja 1.1.0 1.1.0-r1: Integrand Reduction via Laurent Expansion method for the computation of one-loop integrals.
+sci-physics/ninja 1.1.0 1.2.0: Integrand Reduction via Laurent Expansion for one-loop integrals.
 sci-physics/njet 2.0.0 2.1.0 3.1.2: NJet is a library for multi-parton matrix elements up to two loops in massless QCD
 sci-physics/nll-fast 3.1: Resummation for squarks and gluinos
 sci-physics/nnll-fast 1.1 2.0: Resummation for squarks and gluinos
 sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731-r3: Library of one-loop scalar functions
-sci-physics/openloops 2.1.2 2.1.2-r1 2.1.2-r2 2.1.2-r3 2.1.2-r5: Evaluation of tree and one-loop matrix elements for any Standard Model.
+sci-physics/openloops 2.1.2: Evaluation of tree and one-loop matrix elements for any Standard Model.
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
-sci-physics/photos 3.64-r1: Monte Carlo for bremsstrahlung in the decay of particles and resonances
+sci-physics/photos 3.64: Monte Carlo for bremsstrahlung in the decay of particles and resonances
 sci-physics/pineappl-capi 0.6.1: PineAPPL is not an extension of APPLgrid
 sci-physics/pjfry 1.0.0: library for one-loop tensor integrals
 sci-physics/powheg-box-v2-W 4027 9999: POWHEG BOX V2 W process
@@ -127,7 +127,7 @@ sci-physics/rapgap 3.308: Hadron level Monte Carlo generator for ep and selected
 sci-physics/recola2 2.2.4: Recursive Computation of 1-Loop Amplitudes.
 sci-physics/recola2-SM 2.2.3: RECOLA2 Standard Model
 sci-physics/resummino 3.1.2: Resummation for electroweak BSM particles.
-sci-physics/rivet 3.1.7-r6 3.1.8 3.1.9 3.1.10 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
+sci-physics/rivet 3.1.7-r6 3.1.8 3.1.9 3.1.10 4.0.1 9999: Rivet toolkit (Robust Independent Validation of Experiment and Theory)
 sci-physics/rundec 0.5: running and decoupling of the strong coupling constant and quark masses
 sci-physics/samurai 2.1.1: Scattering AMplitudes from Unitarity-based Reduction Algorithm at the Integrand level.
 sci-physics/scikit-hep-testdata 0.4.36: A common package to provide example files for testing and developing packages against.
@@ -140,7 +140,7 @@ sci-physics/softsusy 4.1.13: Calculates supersymmetric particle spectra
 sci-physics/spey 0.1.2 0.1.8: Smooth inference for reinterpretation studies
 sci-physics/spey-pyhf 0.1.1: pyhf plugin for spey interface
 sci-physics/starlight 313: Photon pomoeron Monte Carlo generator
-sci-physics/tauola 1.1.8-r1 1.1.8-r2: Tau decay Monte Carlo generator
+sci-physics/tauola 1.1.8-r1: Tau decay Monte Carlo generator
 sci-physics/thep8i 2.0.3: Lund hadronisation for Herwig. Part of earlier ThePEG codes.
 sci-physics/thepeg 2.2.3-r1 2.2.3-r3 2.3.0: Toolkit for High Energy Physics Event Generation
 sci-physics/topdrawer 1.0.0 9999: TOPDRAWER renders top files.
@@ -149,6 +149,7 @@ sci-physics/vbfnlo 2.7.1 3.0.0_beta5 3.0.0: A parton level Monte Carlo for proce
 sci-physics/whizard 3.1.3 3.1.4 3.1.4-r1: The WHIZARD Event Generator
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
 sci-physics/xfitter 2.2.0: PDF fitting tool
+sci-physics/yoda 2.0.1: Yet more Objects for (High Energy Physics) Data Analysis
 virtual/feyntools 0: FeynTools is a collection of FeynArts, FormCalc and LoopTools.
 virtual/heptools 0: HEPTools is a collection of LHAPDF, HEPMC and PYTHIA.
 virtual/powheg-box-v2 4027 9999: NLO calculations in shower Monte Carlo programs according to the POWHEG method
