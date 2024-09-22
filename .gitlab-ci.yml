@@ -9,7 +9,7 @@ workflow:
 
 
 default:
-  image: apnpucky/gentoo-hep-forge:latest
+  image: apnpucky/gentoo-hep-forge:202312271541-latest
 
 template:
   stage: template
