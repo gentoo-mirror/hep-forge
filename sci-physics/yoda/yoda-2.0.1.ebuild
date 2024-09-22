@@ -77,24 +77,17 @@ src_install() {
 	emake install DESTDIR="${ED}"
 
 	if use python ; then
-		newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}
-		bashcomp_alias ${PN} ${PN}-config
-		bashcomp_alias ${PN} ${PN}stack \
-			aida2flat \
-			${PN}diff \
-			${PN}cnv \
-			${PN}hist \
-			${PN}-config \
-			${PN}2flat \
-			${PN}scale \
-			${PN}2root \
-			${PN}cmp \
-			${PN}merge \
-			${PN}plot \
-			aida2${PN} \
+		newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}-config
+		bashcomp_alias ${PN}-config \
 			${PN}ls \
+			${PN}diff \
+			${PN}merge \
+			${PN}stack \
+			${PN}scale \
+			${PN}plot \
 			${PN}envelope \
-			${PN}2aida
+			${PN}cnv \
+			${PN}2root
 	fi
 
 	rm "${ED}"/etc/bash_completion.d/${PN}-completion || die
