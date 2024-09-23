@@ -39,7 +39,7 @@ dev-python/xgboost 1.6.2 2.0.3: XGBoost Python Package
 dev-python/xsdata 22.11: Library and command line tool for producing version strings
 net-libs/davix 0.8.4 0.8.5: High-performance file management over WebDAV/HTTP
 net-libs/gsoap 2.8.114-r1 2.8.130 2.8.130-r1 2.8.131: A cross-platform open source C and C++ SDK for SOAP/XML Web services
-sci-libs/cuba 3.3 4.2 4.2.2: The Cuba library for multidimensional numerical integration
+sci-libs/cuba 4.2 4.2.2: The Cuba library for multidimensional numerical integration
 sci-libs/einspline 0.9.2: C library for creating and evaluating B-splines
 sci-libs/gvar 13.0.2: Gaussian random variables.
 sci-libs/handyg 0.1.5 0.1.5-r1: Rapid numerical evaluation of generalised polylogarithms
