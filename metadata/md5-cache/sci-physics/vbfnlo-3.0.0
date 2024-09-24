@@ -11,5 +11,5 @@ LICENSE=GPL-2
 RDEPEND=sci-libs/gsl looptools? ( sci-physics/looptools ) hepmc2? ( sci-physics/hepmc:2= ) root? ( sci-physics/root ) lhapdf? ( sci-physics/lhapdf ) feynhiggs? ( sci-physics/feynhiggs ) gsl? ( sci-libs/gsl ) virtual/fortran
 SLOT=0
 SRC_URI=https://ific.uv.es/vbfnlo/archive/vbfnlo-3.0.tar.gz -> vbfnlo-3.0.0.tar.gz
-_eclasses_=toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	multilib	7e1347c006a76bb812f3a9f663b79991	fortran-2	39cd09e82b679e683a5109f9d0da9fe1	gnuconfig	f8b9cc21e72de8cbedde6ca5108d208b	libtool	f9e6905c12590c1cac06d85371a0819a	autotools	61927ff6474f1d141b4ea4a5b9870424
+_eclasses_=toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	multilib	7e1347c006a76bb812f3a9f663b79991	fortran-2	39cd09e82b679e683a5109f9d0da9fe1	gnuconfig	f8b9cc21e72de8cbedde6ca5108d208b	libtool	f9e6905c12590c1cac06d85371a0819a	autotools	88360f474e629ee45f99b739f02b7d2d
 _md5_=45d17fa5a8d0d45a3fe942280a2748ab
