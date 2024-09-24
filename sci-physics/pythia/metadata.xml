@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <maintainer type="person" proxied="yes">
-    <email>alexander@neuwirth-informatik.de</email>
-    <name>Alexander Puck Neuwirth</name>
-  </maintainer>
   <maintainer type="project">
     <email>sci-physics@gentoo.org</email>
     <name>Gentoo Physics Project</name>
@@ -27,6 +23,8 @@
     <flag name="hepmc3">Adds support for High Energy Physics Monte Carlo Generators 3 <pkg>sci-physics/hepmc</pkg></flag>
     <flag name="lhapdf">Support the use of external PDF sets via <pkg>sci-physics/lhapdf</pkg></flag>
     <flag name="root">Use <pkg>sci-physics/root</pkg> trees and histograms (in examples only)</flag>
+    <flag name="highfive">Support hdf and higfive</flag>
+    <flag name="mpich">Support mpich</flag>
   </use>
   <upstream>
     <remote-id type="gitlab">Pythia8/releases</remote-id>
