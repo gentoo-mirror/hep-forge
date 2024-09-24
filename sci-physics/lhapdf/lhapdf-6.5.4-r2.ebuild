@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -37,10 +37,16 @@ REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 RDEPEND="python? ( ${PYTHON_DEPS} )"
 DEPEND="${RDEPEND}"
 BDEPEND="
-	$(python_gen_cond_dep '
-	     >=dev-python/cython-0.19[${PYTHON_USEDEP}]
-	')
+	python? (
+		$(python_gen_cond_dep '
+			>=dev-python/cython-0.19[${PYTHON_USEDEP}]
+		')
+	)
 "
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-6.5.4-include-cstdint.patch
+)
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
@@ -54,7 +60,7 @@ src_prepare() {
 }
 
 src_configure() {
-	CONFIG_SHELL="${EPREFIX}/bin/bash" \
+	local -x CONFIG_SHELL="${EPREFIX}/bin/bash"
 	econf \
 		--disable-static \
 		$(use_enable python)
