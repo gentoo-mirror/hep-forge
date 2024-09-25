@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}"
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.049-soname.patch
 	"${FILESDIR}"/${PN}-1.049-ar.patch
-	"${FILESDIR}"/${PN}-1.049-musl.patch
+#	"${FILESDIR}"/${PN}-1.049-musl.patch
 )
 
 src_configure() {

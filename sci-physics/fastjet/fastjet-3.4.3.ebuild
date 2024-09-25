@@ -51,6 +51,8 @@ src_prepare() {
 src_configure() {
 	use cgal && \
 		has_version 'sci-mathematics/cgal[gmp]' && append-libs -lgmp
+	# only bash compatible
+	sed -i 's#/bin/sh#/bin/bash#g' ./configure || die
 	econf \
 		$(use_enable cgal cgal-header-only) \
 		$(use_enable plugins allplugins) \
