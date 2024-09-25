@@ -37,6 +37,7 @@ BDEPEND="app-shells/bash"
 PATCHES=(
 	"${FILESDIR}"/${PN}-3.4.0-system-siscone.patch
 	"${FILESDIR}"/${PN}-3.4.0-gfortran.patch
+	"${FILESDIR}"/${PN}-3.4.3-configure.patch
 )
 
 pkg_setup() {
@@ -52,7 +53,7 @@ src_configure() {
 	use cgal && \
 		has_version 'sci-mathematics/cgal[gmp]' && append-libs -lgmp
 	# only bash compatible
-	sed -i 's#/bin/sh#/bin/bash#g' ./configure || die
+	#sed -i 's#/bin/sh#/bin/bash#g' ./configure || die
 	econf \
 		$(use_enable cgal cgal-header-only) \
 		$(use_enable plugins allplugins) \

@@ -1,0 +1,24 @@
+From 2ede8e69d4c3fe76a4253ec5f05883547c0ac1aa Mon Sep 17 00:00:00 2001
+From: Alexander Puck Neuwirth <alexander@neuwirth-informatik.de>
+Date: Wed, 25 Sep 2024 13:00:18 +0000
+Subject: [PATCH] Update configure.ac
+
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 40e37d03..4c39babf 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -11,7 +11,7 @@ dnl make sure that the installation path does not contain a blank space
+ dnl (not supported by libtool, and even if it were, certainly a source
+ dnl of endless headaches)
+ AC_MSG_CHECKING([whether the installation path contains a space])
+-if test "x$prefix" != "x${prefix// /}"; then
++if [ "x$prefix" != "x$(echo "$prefix" | tr -d ' ')" ]; then
+     AC_MSG_RESULT([])
+     AC_MSG_ERROR([The installation path cannot contain spaces. Please choose a valid --prefix argument without spaces.])
+ else
+-- 
+GitLab
