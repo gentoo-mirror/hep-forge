@@ -1,6 +1,6 @@
 BDEPEND=test? ( root? ( sci-physics/root:= ) ) >=dev-vcs/git-1.8.2.1[curl]
 DEFINED_PHASES=configure install prepare pretend setup test unpack
-DEPEND=fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib ) highfive? ( sci-libs/HighFive sci-libs/hdf5[cxx] ) rivet? ( sci-physics/rivet:3= ) mpich? ( sys-cluster/mpich ) python? ( python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) )
+DEPEND=fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib ) highfive? ( sci-libs/HighFive sci-libs/hdf5[cxx] ) rivet? ( sci-physics/rivet:* ) mpich? ( sys-cluster/mpich ) python? ( python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) )
 DESCRIPTION=Lund Monte Carlo high-energy physics event generator
 EAPI=8
 HOMEPAGE=https://pythia.org/
@@ -8,10 +8,10 @@ INHERIT=toolchain-funcs python-single-r1 git-r3
 IUSE=doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib python highfive mpich rivet python_single_target_python3_11 python_single_target_python3_12
 LICENSE=GPL-2
 PROPERTIES=live
-RDEPEND=fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib ) highfive? ( sci-libs/HighFive sci-libs/hdf5[cxx] ) rivet? ( sci-physics/rivet:3= ) mpich? ( sys-cluster/mpich ) python? ( python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) )
+RDEPEND=fastjet? ( sci-physics/fastjet ) hepmc3? ( sci-physics/hepmc:3= ) hepmc2? ( sci-physics/hepmc:2= ) lhapdf? ( sci-physics/lhapdf:= ) zlib? ( sys-libs/zlib ) highfive? ( sci-libs/HighFive sci-libs/hdf5[cxx] ) rivet? ( sci-physics/rivet:* ) mpich? ( sys-cluster/mpich ) python? ( python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) )
 REQUIRED_USE=?? ( hepmc3 hepmc2 ) python? ( ^^ ( python_single_target_python3_11 python_single_target_python3_12 ) )
 RESTRICT=!test? ( test )
 SLOT=8
 SRC_URI=test? ( lhapdf? ( https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT10.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/MRST2007lomod.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nlo_as_0119_qed_mc.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nnlo_as_0119_qed_mc.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/cteq66.tar.gz https://lhapdfsets.web.cern.ch/lhapdfsets/current/cteq6l1.tar.gz https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/6.2.1/MRST2004qed.tar.gz ) )
 _eclasses_=toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	multilib	7e1347c006a76bb812f3a9f663b79991	multiprocessing	e644caa6eb7ce7e5ab0864383ac13ad9	python-utils-r1	6881b056477c23167d9a6b33e146374e	python-single-r1	f7abe75c203a988aa9b5c460b6c7d0f1	git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=436ea7c20a10a57e3b6e4cdcc4349729
+_md5_=bf4760d5e454df3683344c1d79b6ac90
