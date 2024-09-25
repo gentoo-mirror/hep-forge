@@ -25,6 +25,7 @@
     <flag name="root">Use <pkg>sci-physics/root</pkg> trees and histograms (in examples only)</flag>
     <flag name="highfive">Support hdf and higfive</flag>
     <flag name="mpich">Support mpich</flag>
+    <flag name="rivet">Support <pkg>sci-physics/rivet</pkg></flag>
   </use>
   <upstream>
     <remote-id type="gitlab">Pythia8/releases</remote-id>
