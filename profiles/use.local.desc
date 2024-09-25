@@ -82,12 +82,16 @@ sci-physics/rivet:highfive - Build with hdf5 and highfive
 sci-physics/rivet:zlib - Build with zlib
 sci-physics/samurai:looptools - use looptools
 sci-physics/samurai:qcdloop - use qcdloop
+sci-physics/sherpa:analysis - analysis support
 sci-physics/sherpa:fastjet - Build with FastJet
 sci-physics/sherpa:hepmc2 - Build with HepMC2
-sci-physics/sherpa:lhapdf - Build with LHAPDF
-sci-physics/sherpa:pythia - Build with Pythia
+sci-physics/sherpa:lhole - lhole support
+sci-physics/sherpa:openloops - Openloops support
+sci-physics/sherpa:pythia6 - Build with Pythia6
+sci-physics/sherpa:pythia8 - Build with Pythia8
 sci-physics/sherpa:rivet - Build with Rivet
 sci-physics/sherpa:root - Build with Root
+sci-physics/sherpa:ufo - UFO python interface
 sci-physics/starlight:dpmjet - Adds support for DPMJET sci-physics/dpmjet-III
 sci-physics/starlight:pythia8 - Adds support for PYTHIA 8 sci-physics/pythia
 sci-physics/tauola:hepmc - Compile with sci-physics/hepmc version 2 interface
