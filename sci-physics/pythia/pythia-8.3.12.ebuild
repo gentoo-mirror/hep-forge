@@ -12,8 +12,7 @@ LHA_VER="6.2.1"
 
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
 HOMEPAGE="https://pythia.org/"
-SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
-	test? ( lhapdf? (
+SRC_URI="test? ( lhapdf? (
 		https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT10.tar.gz
 		https://lhapdfsets.web.cern.ch/lhapdfsets/current/MRST2007lomod.tar.gz
 		https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nlo_as_0119_qed_mc.tar.gz
@@ -23,12 +22,19 @@ SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
 		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2004qed.tar.gz
 	) )
 "
-S="${WORKDIR}/${MY_P}"
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://gitlab.com/Pythia8/releases"
+else
+	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
+	$SRC_URI"
+	KEYWORDS="~amd64 ~x86"
+	S="${WORKDIR}/${MY_P}"
+fi
 
 LICENSE="GPL-2"
 SLOT="8"
-KEYWORDS="~amd64 ~x86"
-IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib python highfive mpich"
+IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib python highfive mpich rivet" # evtgen mg5mes rivet powheg
 RESTRICT="!test? ( test )"
 REQUIRED_USE="
 	?? ( hepmc3 hepmc2 )
@@ -45,6 +51,9 @@ RDEPEND="
 		sci-libs/HighFive
 		sci-libs/hdf5[cxx]
 	)
+	rivet? (
+		sci-physics/rivet:3=
+	)
 	mpich? ( sys-cluster/mpich )
 	python? ( ${PYTHON_DEPS} )
 	"
@@ -56,14 +65,9 @@ BDEPEND="
 	)
 "
 
-#PATCHES=(
-#	"${FILESDIR}"/${PN}8209-root-noninteractive.patch
-#)
-
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
 }
-
 
 pkg_pretend() {
 	if use root && ! use test; then
@@ -130,6 +134,7 @@ src_configure() {
 		$(use_with highfive) \
 		$(usex highfive --with-hdf5 "") \
 		$(use_with python) \
+		$(use_with rivet) \
 		$(use_with mpich) \
 		$(use_with hepmc2) \
 		$(usex lhapdf "--with-lhapdf6
