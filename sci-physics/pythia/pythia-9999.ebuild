@@ -52,7 +52,7 @@ RDEPEND="
 		sci-libs/hdf5[cxx]
 	)
 	rivet? (
-		sci-physics/rivet:3=
+		sci-physics/rivet:*
 	)
 	mpich? ( sys-cluster/mpich )
 	python? ( ${PYTHON_DEPS} )
