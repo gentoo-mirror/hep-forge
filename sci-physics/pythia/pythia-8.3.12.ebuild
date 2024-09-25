@@ -28,7 +28,7 @@ if [[ ${PV} == 9999 ]]; then
 else
 	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
 	$SRC_URI"
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64"
 	S="${WORKDIR}/${MY_P}"
 fi
 
@@ -52,7 +52,7 @@ RDEPEND="
 		sci-libs/hdf5[cxx]
 	)
 	rivet? (
-		sci-physics/rivet:3=
+		sci-physics/rivet:*
 	)
 	mpich? ( sys-cluster/mpich )
 	python? ( ${PYTHON_DEPS} )

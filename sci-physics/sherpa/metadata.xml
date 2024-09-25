@@ -14,10 +14,14 @@
 	<use>
 		<flag name="hepmc2">Build with HepMC2</flag>
 		<flag name="fastjet">Build with FastJet</flag>
-		<flag name="lhapdf">Build with LHAPDF</flag>
-		<flag name="pythia">Build with Pythia</flag>
+		<flag name="pythia6">Build with Pythia6</flag>
+		<flag name="pythia8">Build with Pythia8</flag>
 		<flag name="rivet">Build with Rivet</flag>
 		<flag name="root">Build with Root</flag>
+		<flag name="ufo">UFO python interface</flag>
+		<flag name="lhole">lhole support</flag>
+		<flag name="analysis">analysis support</flag>
+		<flag name="openloops">Openloops support</flag>
 	</use>
 
 </pkgmetadata>

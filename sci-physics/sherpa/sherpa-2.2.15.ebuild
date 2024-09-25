@@ -19,19 +19,23 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~riscv"
 
-IUSE="+fastjet +pythia hepmc2 root gzip mpi"
+IUSE="+fastjet +pythia +rivet +ufo delphes hepmc2 root gzip mpi openloops recola lhole cernlib analysis +blackhat" # hztool madloop blackhat pgs mcfm
 
 DEPEND="
 	sci-physics/lhapdf
 	dev-db/sqlite:3=
 	sci-physics/hepmc:3=
-	sci-physics/rivet
-	pythia?  ( sci-physics/pythia )
+	rivet? ( sci-physics/rivet )
 	hepmc2?  ( sci-physics/hepmc:2= )
 	fastjet? ( sci-physics/fastjet )
 	root? ( sci-physics/root )
 	gzip? ( app-arch/gzip )
 	mpi? ( virtual/mpi )
+	delphes? ( sci-physics/delphes )
+	recola? ( sci-physics/recola )
+	openloops? ( sci-physics/openloops )
+	cernlib? ( sci-physics/cernlib )
+	blackhat? ( sci-physics/blackhat )
 "
 RDEPEND="${DEPEND}"
 
@@ -45,33 +49,26 @@ src_configure() {
 		--with-sqlite3="${ESYSROOT}"/usr \
 		--enable-lhapdf="${ESYSROOT}"/usr \
 		--enable-hepmc3="${ESYSROOT}"/usr \
-		--enable-rivet="${ESYSROOT}"/usr \
+		$(use_enable rivet rivet "${ESYSROOT}"/usr) \
+		$(usex mpi FC=mpifort) $(usex mpi CC=mpicc) $(usex mpi CXX=mpic++) \
 		$(use_enable hepmc2 hepmc2 "${ESYSROOT}"/usr) \
 		$(use_enable fastjet fastjet "${ESYSROOT}"/usr) \
-		$(use_enable pythia pythia "${ESYSROOT}"/usr) \
+		$(use_enable analysis) \
+		$(use_enable pythia) \
+		$(use_enable lhole) \
+		$(use_enable ufo) \
+		$(use_enable blackhat blackhat "${ESYSROOT}"/usr) \
+		$(use_enable cernlib cernlib "${ESYSROOT}"/usr) \
+		$(use_enable recola recola "${ESYSROOT}"/usr) \
+		$(use_enable openloops openloops "${ESYSROOT}"/usr) \
+		$(use_enable delphes delphes "${ESYSROOT}"/usr) \
 		$(use_enable root root "${ESYSROOT}"/usr) \
 		$(use_enable gzip gzip "${ESYSROOT}"/usr) \
 		$(use_enable mpi mpi "${ESYSROOT}"/usr) \
-#enable_analysis
-#enable_root
-#enable_hepmc2
-#enable_hepmc3root
-#enable_hepmc3
-#enable_rivet
-#enable_fastjet
 #enable_blackhat
-#enable_openloops
-#enable_recola
 #enable_madloop
-#enable_mcfm
-#enable_lhole
-#enable_lhapdf
 #enable_hztool
-#enable_cernlib
 #enable_pgs
-#enable_delphes
-#enable_gzip
-#enable_pythia
 #enable_hepevtsize
 #enable_binreloc
 }
