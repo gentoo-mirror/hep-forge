@@ -1,14 +1,14 @@
-BDEPEND=app-arch/unzip virtual/fortran dev-build/make >=dev-build/cmake-3.20.5
-DEFINED_PHASES=compile configure install prepare test
-DEPEND=sci-physics/lhapdf >=sci-physics/looptools-2.15-r1 >=sci-libs/gsl-2.0 dev-libs/boost:0=
+BDEPEND=app-arch/unzip dev-build/make >=dev-build/cmake-3.20.5 virtual/fortran
+DEFINED_PHASES=compile configure install prepare setup test
+DEPEND=sci-physics/lhapdf >=sci-physics/looptools-2.15-r1 >=sci-libs/gsl-2.0 dev-libs/boost:0= virtual/fortran
 DESCRIPTION=Resummation for electroweak BSM particles.
 EAPI=8
 HOMEPAGE=https://resummino.hepforge.org/
-INHERIT=cmake
+INHERIT=cmake fortran-2
 KEYWORDS=~amd64
 LICENSE=EPL-2.0
-RDEPEND=sci-physics/lhapdf >=sci-physics/looptools-2.15-r1 >=sci-libs/gsl-2.0 dev-libs/boost:0=
+RDEPEND=sci-physics/lhapdf >=sci-physics/looptools-2.15-r1 >=sci-libs/gsl-2.0 dev-libs/boost:0= virtual/fortran
 SLOT=0
 SRC_URI=https://resummino.hepforge.org/downloads/?f=resummino-3.1.2.zip -> resummino-3.1.2.zip
-_eclasses_=toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	multilib	7e1347c006a76bb812f3a9f663b79991	flag-o-matic	fa33e3696fe4689dda7e9affe92e2c94	multiprocessing	e644caa6eb7ce7e5ab0864383ac13ad9	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	5465aed08f1dfc2a75f14cbea4272961	cmake	10a50dfaf728b802fcfd37f8d0da9056
-_md5_=286a912341b90b8bb0fc158c40fec6a9
+_eclasses_=toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	multilib	7e1347c006a76bb812f3a9f663b79991	flag-o-matic	fa33e3696fe4689dda7e9affe92e2c94	multiprocessing	e644caa6eb7ce7e5ab0864383ac13ad9	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	5465aed08f1dfc2a75f14cbea4272961	cmake	10a50dfaf728b802fcfd37f8d0da9056	fortran-2	39cd09e82b679e683a5109f9d0da9fe1
+_md5_=0e1378916d9b20d38d6ff593667a8bc3
