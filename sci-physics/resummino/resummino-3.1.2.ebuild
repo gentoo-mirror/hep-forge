@@ -5,19 +5,16 @@ EAPI=8
 
 CMAKE_MAKEFILE_GENERATOR="emake"
 
-inherit cmake
+inherit cmake fortran-2
 
 DESCRIPTION="Resummation for electroweak BSM particles."
 HOMEPAGE="https://resummino.hepforge.org/"
 SRC_URI="https://resummino.hepforge.org/downloads/?f=${P}.zip -> ${P}.zip"
 
-#S="${WORKDIR}/${P}"
-
 LICENSE="EPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE=""
 DEPEND="
 	sci-physics/lhapdf
 	>=sci-physics/looptools-2.15-r1
@@ -27,7 +24,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND="
 	app-arch/unzip
-	virtual/fortran
 "
 
 src_prepare() {
