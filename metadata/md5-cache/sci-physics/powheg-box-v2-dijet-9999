@@ -10,5 +10,5 @@ LICENSE=GPL-3+
 PROPERTIES=live
 RDEPEND=sci-physics/lhapdf sci-physics/fastjet zlib? ( sys-libs/zlib ) virtual/fortran
 SLOT=0
-_eclasses_=estack	c61c368a76fdf3a82fdf8dbaebea3804	subversion	44c6a1cae0381c100a526e3b348622cd	toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	multilib	7e1347c006a76bb812f3a9f663b79991	fortran-2	39cd09e82b679e683a5109f9d0da9fe1
+_eclasses_=estack	c61c368a76fdf3a82fdf8dbaebea3804	subversion	44c6a1cae0381c100a526e3b348622cd	toolchain-funcs	d3d42b22a610ce81c267b644bcec9b87	multilib	b2a329026f2e404e9e371097dda47f96	fortran-2	54fcb693257134adae26819685891ecc
 _md5_=4dc54990d6339d9e21f0f3385cb24b6e
