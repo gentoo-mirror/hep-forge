@@ -3,8 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..13} )
-inherit toolchain-funcs python-single-r1
+inherit toolchain-funcs
 
 MV=$(ver_cut 1-2)
 MY_P="${PN}${PV//./}"
@@ -12,7 +11,8 @@ LHA_VER="6.2.1"
 
 DESCRIPTION="Lund Monte Carlo high-energy physics event generator"
 HOMEPAGE="https://pythia.org/"
-SRC_URI="test? ( lhapdf? (
+SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
+	test? ( lhapdf? (
 		https://lhapdfsets.web.cern.ch/lhapdfsets/current/CT10.tar.gz
 		https://lhapdfsets.web.cern.ch/lhapdfsets/current/MRST2007lomod.tar.gz
 		https://lhapdfsets.web.cern.ch/lhapdfsets/current/NNPDF23_nlo_as_0119_qed_mc.tar.gz
@@ -22,23 +22,15 @@ SRC_URI="test? ( lhapdf? (
 		https://www.hepforge.org/downloads/lhapdf/pdfsets/v6.backup/${LHA_VER}/MRST2004qed.tar.gz
 	) )
 "
-if [[ ${PV} == 9999 ]]; then
-	inherit git-r3
-	EGIT_REPO_URI="https://gitlab.com/Pythia8/releases"
-else
-	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
-	$SRC_URI"
-	KEYWORDS="~amd64"
-	S="${WORKDIR}/${MY_P}"
-fi
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="GPL-2"
 SLOT="8"
-IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib python highfive mpich rivet" # evtgen mg5mes rivet powheg
+KEYWORDS="~amd64 ~x86"
+IUSE="doc examples fastjet +hepmc3 hepmc2 lhapdf root test zlib"
 RESTRICT="!test? ( test )"
 REQUIRED_USE="
 	?? ( hepmc3 hepmc2 )
-	python? ( ${PYTHON_REQUIRED_USE} )
 "
 
 RDEPEND="
@@ -46,17 +38,7 @@ RDEPEND="
 	hepmc3? ( sci-physics/hepmc:3= )
 	hepmc2? ( sci-physics/hepmc:2= )
 	lhapdf? ( sci-physics/lhapdf:= )
-	zlib? ( sys-libs/zlib )
-	highfive? (
-		sci-libs/HighFive
-		sci-libs/hdf5[cxx]
-	)
-	rivet? (
-		sci-physics/rivet:*
-	)
-	mpich? ( sys-cluster/mpich )
-	python? ( ${PYTHON_DEPS} )
-	"
+	zlib? ( sys-libs/zlib )"
 DEPEND="${RDEPEND}"
 # ROOT is used only when building related tests
 BDEPEND="
@@ -65,9 +47,9 @@ BDEPEND="
 	)
 "
 
-pkg_setup() {
-	use python && python-single-r1_pkg_setup
-}
+PATCHES=(
+	"${FILESDIR}"/${PN}8209-root-noninteractive.patch
+)
 
 pkg_pretend() {
 	if use root && ! use test; then
@@ -108,7 +90,7 @@ src_prepare() {
 		-e "s|1e-8|3e-1|g" \
 		-e "s|nlo_as_0119_qed|nlo_as_0119_qed_mc|g" \
 		-e "s|xmldoc|share/Pythia8/xmldoc|g" \
-		examples/main203.cc || die
+		examples/main54.cc || die
 	# ask cflags from root
 	sed -i "s|root-config|root-config --cflags|g" examples/Makefile || die
 
@@ -131,11 +113,6 @@ src_configure() {
 		$(usex fastjet "--with-fastjet3" "") \
 		$(usex zlib "--with-gzip" "") \
 		$(use_with hepmc3) \
-		$(use_with highfive) \
-		$(usex highfive --with-hdf5 "") \
-		$(use_with python) \
-		$(use_with rivet) \
-		$(use_with mpich) \
 		$(use_with hepmc2) \
 		$(usex lhapdf "--with-lhapdf6
 			--with-lhapdf6-plugin=LHAPDF6.h
@@ -156,14 +133,13 @@ src_configure() {
 src_test() {
 	cd examples || die
 
-	local tests="$(echo main{{101..103},{121..127}})"
-	use hepmc3 && tests+=" $(echo main{131..135})"
-	use hepmc3 && use mpich && use highfive && tests+=" $(echo main136)"
-	use lhapdf && tests+=" $(echo main{201..204})"
-	use fastjet && tests+=" $(echo main{211..216})"
-	use root && tests+=" main143"
-	use hepmc3 && use lhapdf && tests+=" $(echo main{133,162})"
-	use fastjet && use hepmc3 && use lhapdf && tests+=" $(echo main161)"
+	local tests="$(echo main{{01..32},37,38,61,62,73,80}.out)"
+	use hepmc3 && tests+=" $(echo main{41,42,85,86}.out)"
+	use hepmc3 && use lhapdf && tests+=" $(echo main{43,{87..89}}.out)"
+	use lhapdf && tests+=" $(echo main{51..54}.out)"
+	use fastjet && tests+=" $(echo main{71,72}.out)"
+	use fastjet && use hepmc3 && use lhapdf && tests+=" $(echo main{81..84}).out"
+	use root && tests+=" main91.out"
 	# Disabled tests:
 	# 33	needs PowHEG
 	# 46	needs ProMC
@@ -192,7 +168,6 @@ src_install() {
 	_EOF_
 
 	dodoc AUTHORS GUIDELINES README
-
 	if use doc; then
 		dodoc -r share/Pythia8/pdfdoc/.
 		dodoc -r share/Pythia8/htmldoc/.
@@ -206,11 +181,6 @@ src_install() {
 		insinto /usr/share/${PN}
 		doins -r examples
 		docompress -x /usr/share/doc/${PF}/examples
-	fi
-	if use python; then
-		local site_dir=$(python_get_sitedir)
-		insinto "${site_dir#${EPREFIX}}"
-		doins lib/pythia8.so
 	fi
 
 	# cleanup
