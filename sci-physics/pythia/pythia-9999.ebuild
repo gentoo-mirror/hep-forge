@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{11..12} )
+PYTHON_COMPAT=( python3_{11..13} )
 inherit toolchain-funcs python-single-r1
 
 MV=$(ver_cut 1-2)
@@ -28,7 +28,7 @@ if [[ ${PV} == 9999 ]]; then
 else
 	SRC_URI="https://pythia.org/download/${PN}${MV//./}/${MY_P}.tgz
 	$SRC_URI"
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64"
 	S="${WORKDIR}/${MY_P}"
 fi
 
