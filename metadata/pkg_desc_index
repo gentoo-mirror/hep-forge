@@ -110,13 +110,13 @@ sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64: Monte Carlo for bremsstrahlung in the decay of particles and resonances
 sci-physics/pineappl-capi 0.6.1: PineAPPL is not an extension of APPLgrid
 sci-physics/pjfry 1.0.0: library for one-loop tensor integrals
-sci-physics/powheg-box-v2-W 4027 9999: POWHEG BOX V2 W process
-sci-physics/powheg-box-v2-Z 4027 9999: POWHEG BOX V2 Z process
-sci-physics/powheg-box-v2-Zj 4027 9999: POWHEG BOX V2 Zj process
-sci-physics/powheg-box-v2-dijet 4027 9999: POWHEG BOX V2 dijet process
-sci-physics/powheg-box-v2-directphoton 4027 9999: POWHEG BOX V2 direct photon process
-sci-physics/powheg-box-v2-hvq 4027 9999: POWHEG BOX V2 hvq process
-sci-physics/powheg-box-v2-trijet 4027 9999: POWHEG BOX V2 trijet process
+sci-physics/powheg-box-v2-W 4027 4086 9999: POWHEG BOX V2 W process
+sci-physics/powheg-box-v2-Z 4027 4086 9999: POWHEG BOX V2 Z process
+sci-physics/powheg-box-v2-Zj 4027 4086 9999: POWHEG BOX V2 Zj process
+sci-physics/powheg-box-v2-dijet 4027 4086 9999: POWHEG BOX V2 dijet process
+sci-physics/powheg-box-v2-directphoton 4027 4086 9999: POWHEG BOX V2 direct photon process
+sci-physics/powheg-box-v2-hvq 4027 4086 9999: POWHEG BOX V2 hvq process
+sci-physics/powheg-box-v2-trijet 4027 4086 9999: POWHEG BOX V2 trijet process
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyerrors 2.10.0: Error propagation and statistical analysis for Markov chain Monte Carlos
 sci-physics/pylha 0.4: Deal with SLHA files
@@ -154,5 +154,5 @@ sci-physics/xfitter 2.2.0: PDF fitting tool
 sci-physics/yoda 2.0.1 9999: Yet more Objects for (High Energy Physics) Data Analysis
 virtual/feyntools 0: FeynTools is a collection of FeynArts, FormCalc and LoopTools.
 virtual/heptools 0: HEPTools is a collection of LHAPDF, HEPMC and PYTHIA.
-virtual/powheg-box-v2 4027 9999: NLO calculations in shower Monte Carlo programs according to the POWHEG method
+virtual/powheg-box-v2 4027 4086 9999: NLO calculations in shower Monte Carlo programs according to the POWHEG method
 virtual/scikit-hep 2023.08.01: Metapackage of Scikit-HEP project data analysis packages for Particle Physics.
