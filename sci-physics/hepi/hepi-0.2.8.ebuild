@@ -26,27 +26,27 @@ LICENSE="MIT"
 SLOT="0"
 
 RDEPEND="
-    sci-physics/lhapdf[python(+)]
-    dev-python/uncertainties
-    dev-python/numpy
-    dev-python/matplotlib
-    >=dev-python/scipy-1.7.0
-    dev-python/sympy
-    dev-python/pqdm
-    >=dev-python/smpl-0.0.152
-    >=dev-python/pandas-1.0.0
-    sci-physics/particle
-    sci-physics/pyslha
+	sci-physics/lhapdf[python(+)]
+	dev-python/uncertainties
+	dev-python/numpy
+	dev-python/matplotlib
+	>=dev-python/scipy-1.7.0
+	dev-python/sympy
+	dev-python/pqdm
+	>=dev-python/smpl-0.0.152
+	>=dev-python/pandas-1.0.0
+	sci-physics/particle
+	sci-physics/pyslha
 "
 BDEPEND="${RDEPEND}"
 # TODO needs test deps
 #distutils_enable_tests pytest
 
 pkg_postinst() {
-        optfeature "resummino support" sci-physics/resummino
-        optfeature "madgraph support" sci-physics/madgraph
-        optfeature "spheno support" sci-physics/spheno
-		# TODO
-        #optfeature "nllfast support" sci-physics/nllfast
-        #optfeature "prospino2 support" sci-physics/prospino2
+	optfeature "resummino support" sci-physics/resummino
+	optfeature "madgraph support" sci-physics/madgraph
+	optfeature "spheno support" sci-physics/spheno
+	# TODO
+	#optfeature "nllfast support" sci-physics/nllfast
+	#optfeature "prospino2 support" sci-physics/prospino2
 }
