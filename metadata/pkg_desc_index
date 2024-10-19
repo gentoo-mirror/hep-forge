@@ -21,7 +21,7 @@ dev-python/multiprocess 0.70.14 0.70.15: better multiprocessing and multithreadi
 dev-python/mystic 0.4.0 0.4.1: Highly-constrained non-convex optimization and uncertainty quantification
 dev-python/numba 0.56.4 0.57.1 0.58.0: NumPy aware dynamic Python compiler using LLVM
 dev-python/numdifftools 0.9.41: Solve automatic numerical differentiation problems in one or more variables.
-dev-python/papermill 2.5.0: A common package to provide example files for testing and developing packages against.
+dev-python/papermill 2.5.0 2.6.0: A common package to provide example files for testing and developing packages against.
 dev-python/pathos 0.3.0 0.3.1: parallel graph management and execution in heterogeneous computing
 dev-python/pox 0.3.2 0.3.3: utilities for filesystem exploration and automated builds
 dev-python/ppft 1.7.6.6 1.7.6.7: distributed and parallel python
@@ -151,7 +151,6 @@ sci-physics/vbfnlo 2.7.1 3.0.0_beta5 3.0.0: A parton level Monte Carlo for proce
 sci-physics/whizard 3.1.4: The WHIZARD Event Generator
 sci-physics/wilson 2.3.2: running and matching beyond the Standard Model
 sci-physics/xfitter 2.2.0: PDF fitting tool
-sci-physics/yoda 2.0.1 9999: Yet more Objects for (High Energy Physics) Data Analysis
 virtual/feyntools 0: FeynTools is a collection of FeynArts, FormCalc and LoopTools.
 virtual/heptools 0: HEPTools is a collection of LHAPDF, HEPMC and PYTHIA.
 virtual/powheg-box-v2 4027 4086 9999: NLO calculations in shower Monte Carlo programs according to the POWHEG method
