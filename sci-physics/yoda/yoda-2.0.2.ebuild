@@ -68,7 +68,7 @@ src_test() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}"
+	default
 
 	if use python ; then
 		newbashcomp "${ED}"/etc/bash_completion.d/${PN}-completion ${PN}-config
