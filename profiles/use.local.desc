@@ -14,7 +14,6 @@ sci-libs/einspline:sse - Build with sse
 sci-mathematics/unuran:prng - Use sci-mathematics/prng library
 sci-mathematics/unuran:rngstreams - Use sci-mathematics/rngstreams library
 sci-physics/applgrid:root - use root
-sci-physics/cuttools:dummy - Add dummy module for OpenLoops
 sci-physics/dyturbo:root - Adds support for Root sci-physics/root
 sci-physics/evtgen:herwig - Patches from herwig bootstrap
 sci-physics/evtgen:photos - Build with photos
@@ -49,20 +48,6 @@ sci-physics/madgraph5:thepeg - USE system thepeg
 sci-physics/ninja:gosam - Build gosam interface
 sci-physics/ninja:quad - Build quadninja library
 sci-physics/ninja:static-libs - Build static library
-sci-physics/oneloop:arprec - use sci-libs/arprec
-sci-physics/oneloop:cppintf - enable cppintf
-sci-physics/oneloop:ddcpp - double use sci-libs/qd
-sci-physics/oneloop:dpkind - double precision
-sci-physics/oneloop:dpkind16 - double16 precision
-sci-physics/oneloop:kind_types - use KINDMOD = kind_types
-sci-physics/oneloop:mpfun90 - use sci-libs/mpfun90
-sci-physics/oneloop:qdcpp - quad use sci-libs/qd
-sci-physics/oneloop:qpkind - quad precision
-sci-physics/oneloop:qpkind16 - quad16 precision
-sci-physics/oneloop:tlevel - enable tlevel
-sci-physics/openloops:collier - Build with collier
-sci-physics/openloops:cuttools - Build with cuttools
-sci-physics/openloops:extra - Build libs with extra
 sci-physics/photos:hepmc - Build with hepmc 2
 sci-physics/photos:pythia - Build with pythia
 sci-physics/photos:tauola - Build with tauola

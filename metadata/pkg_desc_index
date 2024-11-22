@@ -65,7 +65,6 @@ sci-physics/cocoa 0.1.1: A nearly-hermetic calorimeter simulated with Geant4 and
 sci-physics/coffea 0.7.22 9999: Basic tools and wrappers for enabling not-too-alien syntax when running columnar Collider HEP analysis.
 sci-physics/colormath 1.0: ColorMath is a Mathematica package for performing color sums in SU(Nc)
 sci-physics/contur 2.4.0: Exploring the sensitivity of unfolded collider measurements to BSM models.
-sci-physics/cuttools 1.8.2: Computing 1-loop amplitudes at the integrand level
 sci-physics/decaylanguage 0.15.2 0.15.3 0.16.0 0.17.0: DecayLanguage: describe, manipulate and convert particle decays
 sci-physics/delphes 3.5.0-r1 9999: Delphes performs a fast multipurpose detector response simulation.
 sci-physics/dpmjet-III 19.3.6: Home of the DPMJET event generator
@@ -102,8 +101,6 @@ sci-physics/ninja 1.1.0 1.2.0: Integrand Reduction via Laurent Expansion for one
 sci-physics/njet 2.0.0 2.1.0 3.1.2: NJet is a library for multi-parton matrix elements up to two loops in massless QCD
 sci-physics/nll-fast 3.1: Resummation for squarks and gluinos
 sci-physics/nnll-fast 1.1 2.0: Resummation for squarks and gluinos
-sci-physics/oneloop 3.6 3.6-r2 3.6_p20200731-r3: Library of one-loop scalar functions
-sci-physics/openloops 2.1.2: Evaluation of tree and one-loop matrix elements for any Standard Model.
 sci-physics/parton 0.2.1: parton distributions and parton luminosities
 sci-physics/photos 3.64: Monte Carlo for bremsstrahlung in the decay of particles and resonances
 sci-physics/pineappl-capi 0.6.1: PineAPPL is not an extension of APPLgrid
