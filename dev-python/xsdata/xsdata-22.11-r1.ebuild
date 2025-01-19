@@ -9,7 +9,7 @@ inherit distutils-r1
 
 REPO=tefra
 
-DESCRIPTION="Library and command line tool for producing version strings"
+DESCRIPTION="Library and command line tool for producing version strings."
 HOMEPAGE="
 	https://github.com/${REPO}/${PN}
 	https://pypi.org/project/${PN}/
@@ -32,7 +32,7 @@ RDEPEND="
 	cli? (
 		>=dev-python/click-5
 		>=dev-python/click-default-group-1.2
-		>=dev-python/jinja-2.10
+		>=dev-python/jinja2-2.10
 		>=dev-python/toposort-1.5
 		dev-python/docformatter
 	)
