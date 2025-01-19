@@ -11,21 +11,20 @@ REPO=tefra
 
 DESCRIPTION="Library and command line tool for producing version strings."
 HOMEPAGE="
-	https://github.com/${REPO}/${PN}
-	https://pypi.org/project/${PN}/
+	https://github.com/tefra/xsdata
+	https://pypi.org/project/xsdata/
 "
-if [[ ${PV} == 9999 ]]; then 		
-	inherit git-r3 		
-	EGIT_REPO_URI="https://github.com/${REPO}/${PN}" 
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/${REPO}/${PN}"
 else
 	inherit pypi
 	KEYWORDS="~amd64"
 fi
 
-IUSE="cli lxml soap"
-
 LICENSE="MIT"
 SLOT="0"
+IUSE="cli lxml soap"
 
 RDEPEND="
 	lxml? ( >=dev-python/lxml-4.4.1 )

@@ -1,0 +1,10 @@
+--- a/setup.py	2025-01-19 13:32:48.039730199 +0100
++++ b/setup.py	2025-01-19 13:33:00.929711641 +0100
+@@ -24,7 +24,6 @@
+       description      = 'Feynman diagrams with python-matplotlib.',
+       author           = 'Gabriel Antonius',
+       author_email     = 'gabriel.antonius@gmail.com',
+-      license          = 'GPL',
+       keywords         = 'Feynman diagrams',
+       url              = 'http://gkantonius.github.io/feynman',
+       install_requires = install_requires,
