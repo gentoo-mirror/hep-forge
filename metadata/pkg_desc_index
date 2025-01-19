@@ -40,7 +40,7 @@ dev-python/tex2pix 0.3.1: Lightweight renderer of LaTeX to a variety of graphics
 dev-python/toml 0.10.2: Python lib for TOML
 dev-python/untokenize 0.1.1: untokenize transforms tokens into source code.
 dev-python/xgboost 1.6.2 2.0.3: XGBoost Python Package
-dev-python/xsdata 22.11-r1: Library and command line tool for producing version strings.
+dev-python/xsdata 22.11-r1 24.9: Library and command line tool for producing version strings.
 net-libs/davix 0.8.4 0.8.5: High-performance file management over WebDAV/HTTP
 net-libs/gsoap 2.8.114-r1 2.8.130 2.8.130-r1 2.8.131: A cross-platform open source C and C++ SDK for SOAP/XML Web services
 sci-libs/cuba 4.2 4.2.2: The Cuba library for multidimensional numerical integration
@@ -80,7 +80,7 @@ sci-physics/fastjet-contrib 1.049-r2 1.053 1.055: 3rd party extensions of FastJe
 sci-physics/fastnlo 2.5: fast pQCD calculations for hadron-induced processes
 sci-physics/feynhiggs 2.18.1: Calculation of the masses, mixings and much more of the Higgs bosons in the MSSM
 sci-physics/feynman 2.1.0: Feynman diagrams in matplotlib.
-sci-physics/feynml 0.2.26: Feynman diagram markup language.
+sci-physics/feynml 0.2.26 9999: Feynman diagram markup language.
 sci-physics/feynrules 2.1: A Mathematica package to calculate Feynman rules.
 sci-physics/ff 2.0: A library for evaluating one-loop integrals
 sci-physics/flavio 2.4.0 2.5.0: flavour phenomenology in the Standard model and beyond
@@ -120,7 +120,7 @@ sci-physics/powheg-box-v2-hvq 4027 4086 9999: POWHEG BOX V2 hvq process
 sci-physics/powheg-box-v2-trijet 4027 4086 9999: POWHEG BOX V2 trijet process
 sci-physics/professor 2.3.3: A tuning tool for Monte Carlo event generators
 sci-physics/pyerrors 2.10.0: Error propagation and statistical analysis for Markov chain Monte Carlos
-sci-physics/pyfeyn2 2.4.2: Feynman diagrams in Python.
+sci-physics/pyfeyn2 2.4.2 9999: Feynman diagrams in Python.
 sci-physics/pylha 0.4: Deal with SLHA files
 sci-physics/pylhe 0.7.0 0.8.0: Lightweight Python interface to read Les Houches Event (LHE) files
 sci-physics/pyqgraf 0.0.15: PyQgraf is a Python wrapper for Qgraf, a Feynman diagram generator.
