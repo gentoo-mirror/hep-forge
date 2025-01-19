@@ -1,0 +1,10 @@
+--- a/pyproject.toml	2025-01-19 13:15:28.881175445 +0100
++++ b/pyproject.toml	2025-01-19 13:15:37.131165672 +0100
+@@ -29,7 +29,6 @@
+           'License :: OSI Approved :: MIT License',
+       ]
+ packages = [{include = "docformatter", from = "src"}]
+-include = ["LICENSE"]
+ 
+ [tool.poetry.dependencies]
+ python = "^3.7"
