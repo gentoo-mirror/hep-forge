@@ -6,8 +6,8 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="Feynman diagrams in Python."
 HOMEPAGE="
-    https://github.com/APN-Pucky/pyfeyn2
-    https://pypi.org/project/pyfeyn2/
+	https://github.com/APN-Pucky/pyfeyn2
+	https://pypi.org/project/pyfeyn2/
 "
 
 LICENSE="GPL-3"
@@ -40,13 +40,13 @@ RDEPEND="
 	dev-python/smpl_io[${PYTHON_USEDEP}]
 	dev-python/smpl_doc[${PYTHON_USEDEP}]
 	dev-python/smpl_util[${PYTHON_USEDEP}]
-    dev-tex/latexmk
-    app-text/ghostscript-gpl
+	dev-tex/latexmk
+	app-text/ghostscript-gpl
 "
 
 src_prepare() {
-    default
-	# Don't use dynamic versioning 	
+	default
+	# Don't use dynamic versioning
 	sed -i "s/version.*=.*\"0\.0\.0\"/version = \"${PV}\"/" pyproject.toml 	|| die
 	sed -i "s/requires.*=.*/requires = [\"poetry-core>=1.0.0\"]/" pyproject.toml 	|| die
 	sed -i 's/poetry_dynamic_versioning.backend/poetry.core.masonry.api/g' pyproject.toml || die
