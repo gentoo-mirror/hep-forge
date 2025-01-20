@@ -79,7 +79,7 @@ sci-physics/fastjet 3.4.0-r1 3.4.2 3.4.3: A software package for jet finding in 
 sci-physics/fastjet-contrib 1.049-r2 1.053 1.055: 3rd party extensions of FastJet.
 sci-physics/fastnlo 2.5: fast pQCD calculations for hadron-induced processes
 sci-physics/feynhiggs 2.18.1: Calculation of the masses, mixings and much more of the Higgs bosons in the MSSM
-sci-physics/feynman 2.1.0: Feynman diagrams in matplotlib.
+sci-physics/feynman 2.1.0 9999: Feynman diagrams in matplotlib.
 sci-physics/feynml 0.2.26 9999: Feynman diagram markup language.
 sci-physics/feynmodel 0.0.10: Models for constructing Feynman diagrams.
 sci-physics/feynrules 2.1: A Mathematica package to calculate Feynman rules.
