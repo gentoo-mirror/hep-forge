@@ -23,7 +23,6 @@ SLOT="0"
 RDEPEND="
 	sci-physics/feynml[${PYTHON_USEDEP}]
 	sci-physics/feynman[${PYTHON_USEDEP}]
-	dev-python/xsdata[${PYTHON_USEDEP}]
 	dev-python/pylatex[${PYTHON_USEDEP}]
 	dev-tex/dot2tex[${PYTHON_USEDEP}]
 	dev-python/matplotlib[${PYTHON_USEDEP}]
@@ -39,7 +38,7 @@ RDEPEND="
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	dev-python/deprecation[${PYTHON_USEDEP}]
 	dev-python/cssselect[${PYTHON_USEDEP}]
-	dev-python/iminuit[${PYTHON_USEDEP}]
+	>=dev-python/iminuit-2.30[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
 	dev-python/termcolor[${PYTHON_USEDEP}]
 	dev-python/asciidraw[${PYTHON_USEDEP}]
@@ -50,5 +49,10 @@ RDEPEND="
 	app-text/ghostscript-gpl
 "
 BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]"
+
+EPYTEST_DESELECT=(
+    # deselect internet render 
+	'tests/test_renders.py::test_renders_2_to_2_gluons[MermaidRender]'
+)
 
 distutils_enable_tests pytest
