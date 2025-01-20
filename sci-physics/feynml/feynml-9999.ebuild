@@ -25,7 +25,7 @@ RDEPEND="
 	sci-physics/pyqgraf[${PYTHON_USEDEP}]
 	sci-physics/pyhepmc[${PYTHON_USEDEP}]
 	sci-physics/pylhe[${PYTHON_USEDEP}]
-	dev-python/xsdata[cli,lxml,soap,${PYTHON_USEDEP}]
+	>=dev-python/xsdata-24.9[cli,lxml,soap,${PYTHON_USEDEP}]
 	dev-python/cssutils[${PYTHON_USEDEP}]
 	dev-python/cssselect[${PYTHON_USEDEP}]
 	dev-python/deprecated[${PYTHON_USEDEP}]
@@ -34,6 +34,11 @@ RDEPEND="
 	dev-python/smpl_doc[${PYTHON_USEDEP}]
 	dev-python/smpl_util[${PYTHON_USEDEP}]
 "
-BDEPEND="dev-python/hatch-vcs[${PYTHON_USEDEP}]"
+BDEPEND="
+	dev-python/hatch-vcs[${PYTHON_USEDEP}]
+	test? (
+		sci-physics/feynmodel[${PYTHON_USEDEP}]
+	)
+"
 
 distutils_enable_tests pytest

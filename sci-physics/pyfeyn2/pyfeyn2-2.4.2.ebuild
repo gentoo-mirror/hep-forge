@@ -33,7 +33,7 @@ RDEPEND="
 	dev-python/deprecated[${PYTHON_USEDEP}]
 	dev-python/deprecation[${PYTHON_USEDEP}]
 	dev-python/cssselect[${PYTHON_USEDEP}]
-	dev-python/iminuit[${PYTHON_USEDEP}]
+	>=dev-python/iminuit-2.30[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
 	dev-python/termcolor[${PYTHON_USEDEP}]
 	dev-python/asciidraw[${PYTHON_USEDEP}]
