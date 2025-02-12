@@ -10,7 +10,6 @@ inherit fortran-2 distutils-r1 git-r3
 DESCRIPTION="An Automated One-Loop Matrix Element Generator"
 HOMEPAGE="
     https://github.com/gudrunhe/gosam
-	https://gosam.hepforge.org/
 "
 
 #SRC_URI="https://github.com/gudrunhe/gosam/releases/download/2.1.1/gosam-2.1.1-4b98559.tar.gz -> ${P}.tar.gz"
