@@ -22,7 +22,6 @@ IUSE="static-libs gosam" # quad
 RDEPEND="
 	sci-physics/oneloop
 	sci-physics/looptools
-	gosam? ( sci-physics/gosam )
 "
 DEPEND="${RDEPEND}"
 
@@ -35,9 +34,11 @@ src_configure() {
 	# Replace #!/bin/sh with #!/bin/bash
 	sed -i -e 's:#!/bin/sh:#!/bin/bash:' configure || die
 	econf \
-		--disable-quadninja \
+		--with-looptools \
+		--with-avholo \
 		$(use_enable static-libs static) \
-		$(use_enable gosam)
+		$(use_enable gosam) \
+		#$(use_enable quad quadninja) \ # not working yet
 }
 
 src_compile() {
