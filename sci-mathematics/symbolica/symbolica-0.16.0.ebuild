@@ -176,3 +176,11 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="bindist mirror"
+
+src_prepare() {
+	default
+	cd "${WORKDIR}" || die
+	eapply "${FILESDIR}/${P}-gmp-abi.patch"
+	cd "${S}" || die
+}
+
