@@ -7,7 +7,6 @@ dev-python/bounded-pool-executor 0.0.3: Bounded Process and Thread Pool Executor
 dev-python/cffconvert 2.0.0: Command line program to validate and convert CITATION.cff files.
 dev-python/correctionlib 2.3.3 2.4.0: A generic correction library
 dev-python/dask-awkward 2023.10.0 2023.12.0: Native Dask collection for awkward arrays, and the library to use it.
-dev-python/dask-histogram 2023.10.0: Histograms with task scheduling.
 dev-python/dm-tree 0.1.8: tree is a library for working with nested data structures.
 dev-python/docformatter 1.5.0 1.7.5: Formats docstrings to follow PEP 257.
 dev-python/flatdict 4.0.0 4.0.1: Python module for interacting with nested dicts
@@ -56,6 +55,7 @@ sci-libs/tensorflow-probability 0.19.0: Probabilistic reasoning and statistical 
 sci-libs/vegas 6.0.1: Adaptive multidimensional Monte Carlo integration.
 sci-mathematics/hom4ps-bin 2: HOMotopy method for solving Polynomial Systems
 sci-mathematics/rngstreams 1.0.1: Multiple independent streams of pseudo-random numbers
+sci-mathematics/symbolica 0.16.0: A blazing fast computer algebra system.
 sci-mathematics/unuran 1.8.1 1.9.0 1.11.0: Universal Non-Uniform Random number generator
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
 sci-physics/apfel 3.0.6-r1 3.1.1: A PDF Evolution Library
@@ -75,7 +75,6 @@ sci-physics/dyturbo 1.3.2: Fast predictions for Drell-Yan processes including qt
 sci-physics/evade 0.2.0: Obtain constraints from vacuum stability in BSM models with many scalar fields
 sci-physics/evtgen 01.07.00 02.02.00 02.02.01: EvtGen is a Monte Carlo event generator that simulates the decays
 sci-physics/fastjet 3.4.0-r1 3.4.2 3.4.3: A software package for jet finding in pp and e+e- collisions
-sci-physics/fastjet-contrib 1.049-r2 1.053 1.055: 3rd party extensions of FastJet.
 sci-physics/fastnlo 2.5: fast pQCD calculations for hadron-induced processes
 sci-physics/feynhiggs 2.18.1: Calculation of the masses, mixings and much more of the Higgs bosons in the MSSM
 sci-physics/feynman 2.1.0 9999: Feynman diagrams in matplotlib.
@@ -95,7 +94,6 @@ sci-physics/herwig 6.5.21-r2 7.2.3-r5 7.3.0: Herwig is a multi-purpose particle 
 sci-physics/hjets 1.3: A One-Loop Matrix Element Library for Higgs Boson Production via Electroweak Couplings
 sci-physics/jetscape 3.6: JETSCAPE a framework for simulating all aspects of heavy-ion collisions.
 sci-physics/lcio 02.20 02.22: Linear Collider I/O
-sci-physics/lhapdf-sets 0: LHAPDF data grids
 sci-physics/looptools 2.16-r2: Tools for evaluation of scalar and tensor one-loop integrals
 sci-physics/madanalysis5 1.10.4: A package for event file analysis and recasting of LHC results
 sci-physics/madgraph5 2.9.19 3.5.3 3.5.4: MadGraph5_aMC@NLO
