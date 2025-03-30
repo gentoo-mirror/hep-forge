@@ -161,8 +161,11 @@ CRATES="
 
 inherit cargo
 
-DESCRIPTION="A blazing fast computer algebra system"
-HOMEPAGE=""
+DESCRIPTION="A blazing fast computer algebra system."
+HOMEPAGE="
+	https://github.com/benruijl/symbolica
+	https://symbolica.io/
+"
 SRC_URI="
 	${CARGO_CRATE_URIS}
 "
