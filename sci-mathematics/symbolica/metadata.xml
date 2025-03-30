@@ -8,4 +8,7 @@
 	<longdescription lang="en">
 		Symbolica is a blazing fast computer algebra system for Python and Rust, born of a need to push the boundaries of computations in science and enterprise. 
 	</longdescription>
+	<upstream>
+		<remote-id type="github">benruijl/symbolica</remote-id>
+	</upstream>
 </pkgmetadata>

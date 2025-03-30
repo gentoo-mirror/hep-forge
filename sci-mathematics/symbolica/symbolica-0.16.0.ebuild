@@ -186,4 +186,3 @@ src_prepare() {
 	eapply "${FILESDIR}/${P}-gmp-abi.patch"
 	cd "${S}" || die
 }
-
