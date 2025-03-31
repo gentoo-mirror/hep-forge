@@ -56,6 +56,7 @@ sci-libs/vegas 6.0.1: Adaptive multidimensional Monte Carlo integration.
 sci-mathematics/hom4ps-bin 2: HOMotopy method for solving Polynomial Systems
 sci-mathematics/rngstreams 1.0.1: Multiple independent streams of pseudo-random numbers
 sci-mathematics/symbolica 0.16.0: A blazing fast computer algebra system.
+sci-mathematics/symbolica-community 0.1.0: A blazing fast computer algebra system with community enhancements
 sci-mathematics/unuran 1.8.1 1.9.0 1.11.0: Universal Non-Uniform Random number generator
 sci-physics/aliroot 9999: ALICE simullation and reconstruction framework
 sci-physics/apfel 3.0.6-r1 3.1.1: A PDF Evolution Library
