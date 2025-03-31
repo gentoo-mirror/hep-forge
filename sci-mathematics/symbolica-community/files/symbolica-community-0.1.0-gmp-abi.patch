@@ -1,0 +1,18 @@
+--- a/cargo_home/gentoo/gmp-mpfr-sys-1.6.4/gmp-6.3.0-c/configure	2025-03-30 14:15:06.733752567 +0200
++++ b/cargo_home/gentoo/gmp-mpfr-sys-1.6.4/gmp-6.3.0-c/configure	2025-03-30 14:15:22.793734325 +0200
+@@ -5767,6 +5767,15 @@
+ CFLAGS_or_unset=${CFLAGS-'(unset)'}
+ CPPFLAGS_or_unset=${CPPFLAGS-'(unset)'}
+ 
++case ${ABI} in
++    32|x86)       GMPABI=32;;
++    64|amd64|n64) GMPABI=64;;
++    [onx]32)      GMPABI=${ABI};;
++esac
++
++# Overwrite ABI with the resolved GMPABI value
++ABI=$GMPABI
++
+ cat >&5 <<EOF
+ User:
+ ABI=$ABI
