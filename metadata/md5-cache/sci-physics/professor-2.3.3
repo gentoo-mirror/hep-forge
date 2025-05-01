@@ -1,17 +1,17 @@
-BDEPEND=python_single_target_python3_10? ( dev-python/cython[python_targets_python3_10(-)] ) python_single_target_python3_11? ( dev-python/cython[python_targets_python3_11(-)] )
+BDEPEND=python_single_target_python3_11? ( dev-python/cython[python_targets_python3_11(-)] )
 DEFINED_PHASES=compile install prepare setup
-DEPEND=sci-physics/yoda[python(-),python_single_target_python3_10(-)?,python_single_target_python3_11(-)?] python_single_target_python3_10? ( dev-python/numpy[python_targets_python3_10(-)] dev-python/matplotlib[python_targets_python3_10(-)] dev-python/sympy[python_targets_python3_10(-)] dev-python/iminuit[python_targets_python3_10(-)] ) python_single_target_python3_11? ( dev-python/numpy[python_targets_python3_11(-)] dev-python/matplotlib[python_targets_python3_11(-)] dev-python/sympy[python_targets_python3_11(-)] dev-python/iminuit[python_targets_python3_11(-)] ) dev-cpp/eigen:3 sci-physics/root:=[python_single_target_python3_10(-)?,python_single_target_python3_11(-)?]
+DEPEND=sci-physics/yoda[python(-),python_single_target_python3_11(-)?] python_single_target_python3_11? ( dev-python/numpy[python_targets_python3_11(-)] dev-python/matplotlib[python_targets_python3_11(-)] dev-python/sympy[python_targets_python3_11(-)] dev-python/iminuit[python_targets_python3_11(-)] ) dev-cpp/eigen:3 sci-physics/root:=[python_single_target_python3_11(-)?]
 DESCRIPTION=A tuning tool for Monte Carlo event generators
 EAPI=8
 HOMEPAGE=https://professor.hepforge.org/ https://gitlab.com/hepcedar/professor
 INHERIT=python-single-r1
-IUSE=python_single_target_python3_10 python_single_target_python3_11
+IUSE=+python_single_target_python3_11
 KEYWORDS=~amd64
 LICENSE=all-rights-reserved
-RDEPEND=python_single_target_python3_10? ( dev-lang/python:3.10 ) python_single_target_python3_11? ( dev-lang/python:3.11 ) sci-physics/yoda[python(-),python_single_target_python3_10(-)?,python_single_target_python3_11(-)?] python_single_target_python3_10? ( dev-python/numpy[python_targets_python3_10(-)] dev-python/matplotlib[python_targets_python3_10(-)] dev-python/sympy[python_targets_python3_10(-)] dev-python/iminuit[python_targets_python3_10(-)] ) python_single_target_python3_11? ( dev-python/numpy[python_targets_python3_11(-)] dev-python/matplotlib[python_targets_python3_11(-)] dev-python/sympy[python_targets_python3_11(-)] dev-python/iminuit[python_targets_python3_11(-)] ) dev-cpp/eigen:3 sci-physics/root:=[python_single_target_python3_10(-)?,python_single_target_python3_11(-)?]
-REQUIRED_USE=^^ ( python_single_target_python3_10 python_single_target_python3_11 )
+RDEPEND=python_single_target_python3_11? ( dev-lang/python:3.11 ) sci-physics/yoda[python(-),python_single_target_python3_11(-)?] python_single_target_python3_11? ( dev-python/numpy[python_targets_python3_11(-)] dev-python/matplotlib[python_targets_python3_11(-)] dev-python/sympy[python_targets_python3_11(-)] dev-python/iminuit[python_targets_python3_11(-)] ) dev-cpp/eigen:3 sci-physics/root:=[python_single_target_python3_11(-)?]
+REQUIRED_USE=^^ ( python_single_target_python3_11 )
 RESTRICT=bindist mirror
 SLOT=0
 SRC_URI=https://professor.hepforge.org/downloads/?f=Professor-2.3.3.tar.gz
-_eclasses_=multiprocessing	1e32df7deee68372153dca65f4a7c21f	toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	python-utils-r1	974462533ec80cd68e5f366ad8a86002	python-single-r1	47d8ac9be330c9366112b78fd4f8ce57
+_eclasses_=multiprocessing	1e32df7deee68372153dca65f4a7c21f	toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	python-utils-r1	b6ad054ea5bb201ed2fec9cac7a8d12b	python-single-r1	47d8ac9be330c9366112b78fd4f8ce57
 _md5_=0e07f25c391f75dc8715fd4e3fb4212a
