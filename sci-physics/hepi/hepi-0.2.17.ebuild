@@ -27,16 +27,16 @@ SLOT="0"
 
 RDEPEND="
 	sci-physics/lhapdf[python(+)]
-	dev-python/uncertainties
-	dev-python/numpy
-	dev-python/matplotlib
-	>=dev-python/scipy-1.7.0
-	dev-python/sympy
-	dev-python/pqdm
-	>=dev-python/smpl-0.0.152
-	>=dev-python/pandas-1.0.0
-	sci-physics/particle
-	sci-physics/pyslha
+	dev-python/uncertainties[${PYTHON_USEDEP}]
+	dev-python/numpy[${PYTHON_USEDEP}]
+	dev-python/matplotlib[${PYTHON_USEDEP}]
+	>=dev-python/scipy-1.7.0[${PYTHON_USEDEP}]
+	dev-python/sympy[${PYTHON_USEDEP}]
+	dev-python/pqdm[${PYTHON_USEDEP}]
+	>=dev-python/smpl-0.0.152[${PYTHON_USEDEP}]
+	>=dev-python/pandas-1.0.0[${PYTHON_USEDEP}]
+	sci-physics/particle[${PYTHON_USEDEP}]
+	sci-physics/pyslha[${PYTHON_USEDEP}]
 "
 BDEPEND="${RDEPEND}"
 
