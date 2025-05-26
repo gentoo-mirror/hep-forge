@@ -29,7 +29,7 @@ dev-python/pygaljs 1.0.2-r1: Python package providing assets from https://github
 dev-python/pyina 0.2.8: MPI parallel map and cluster scheduling
 dev-python/resample 1.6.0: Randomization-based inference in Python
 dev-python/scrapbook 0.5.0: A library for recording and reading data in notebooks.
-dev-python/smpl 1.0.2 1.4.0 9999: Simplified plotting and fitting in python.
+dev-python/smpl 1.5.0 9999: Simplified plotting and fitting in python.
 dev-python/smpl_doc 1.1.3: SiMPLe magic documentatoin.
 dev-python/smpl_io 1.2.0: SiMPLe magic input and output.
 dev-python/smpl_util 1.0.10: SiMPLe magic utility functions.
