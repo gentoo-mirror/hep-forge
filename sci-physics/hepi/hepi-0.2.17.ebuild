@@ -14,9 +14,9 @@ HOMEPAGE="
 	https://github.com/${REPO}/${PN}
 	https://pypi.org/project/${PN}/
 "
-if [[ ${PV} == 9999 ]]; then 		
-	inherit git-r3 		
-	EGIT_REPO_URI="https://github.com/${REPO}/${PN}" 
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/${REPO}/${PN}"
 else
 	inherit pypi
 	KEYWORDS="~amd64"
