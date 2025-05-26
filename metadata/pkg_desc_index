@@ -85,7 +85,7 @@ sci-physics/gosam 2.1.1 2.1.2 9999: An Automated One-Loop Matrix Element Generat
 sci-physics/hathor 2.0: HAdronic Top and Heavy quarks crOss section calculatoR
 sci-physics/hell 3.0 3.1: A small-x resummation code
 sci-physics/hellx 3.0: A small-x resummation code
-sci-physics/hepi 0.2.10 0.2.17 9999: Python interface for gluing together several HEP programs
+sci-physics/hepi 0.3.0 9999: Python interface for gluing together several HEP programs
 sci-physics/herwig 6.5.21-r2 7.2.3-r5 7.3.0: Herwig is a multi-purpose particle physics event generator.
 sci-physics/hjets 1.3: A One-Loop Matrix Element Library for Higgs Boson Production via Electroweak Couplings
 sci-physics/jetscape 3.6: JETSCAPE a framework for simulating all aspects of heavy-ion collisions.
