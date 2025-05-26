@@ -50,4 +50,3 @@ src_prepare() {
 }
 
 distutils_enable_tests pytest
-
