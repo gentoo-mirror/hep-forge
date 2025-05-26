@@ -12,9 +12,9 @@ HOMEPAGE="
 	https://github.com/APN-Pucky/smplr
 	https://pypi.org/project/smpl/
 "
-if [[ ${PV} == 9999 ]]; then 		
-	inherit git-r3 		
-	EGIT_REPO_URI="https://github.com/APN-Pucky/smplr" 
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/APN-Pucky/smplr"
 else
 	inherit pypi
 	KEYWORDS="~amd64"
