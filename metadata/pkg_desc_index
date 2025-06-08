@@ -16,7 +16,6 @@ dev-python/llvmlite 0.39.1 0.40.1 0.41.1: Python wrapper around the llvm C++ lib
 dev-python/manhole 1.8.0-r1: Debugging manhole for python application
 dev-python/multiprocess 0.70.14 0.70.15: better multiprocessing and multithreading in python
 dev-python/mystic 0.4.0 0.4.1: Highly-constrained non-convex optimization and uncertainty quantification
-dev-python/numba 0.56.4 0.57.1 0.58.0: NumPy aware dynamic Python compiler using LLVM
 dev-python/numdifftools 0.9.41: Solve automatic numerical differentiation problems in one or more variables.
 dev-python/papermill 2.5.0 2.6.0: A common package to provide example files for testing and developing packages against.
 dev-python/pathos 0.3.0 0.3.1: parallel graph management and execution in heterogeneous computing
