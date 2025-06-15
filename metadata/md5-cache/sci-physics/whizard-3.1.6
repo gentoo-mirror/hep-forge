@@ -1,0 +1,16 @@
+BDEPEND=virtual/fortran
+DEFINED_PHASES=configure postinst setup
+DEPEND=dev-ml/ocamlbuild lhapdf? ( sci-physics/lhapdf sci-physics/lhapdf-sets[lhapdf_sets_ct10,lhapdf_sets_cteq6l1] ) looptools? ( sci-physics/looptools ) hepmc? ( || ( sci-physics/hepmc:2 sci-physics/hepmc:3 ) ) recola? ( sci-physics/recola2 ) openloops? ( sci-physics/openloops ) qgraf? ( sci-physics/qgraf ) form? ( sci-mathematics/form ) pythia8? ( sci-physics/pythia:8 ) hoppet? ( sci-physics/hoppet ) fastjet? ( sci-physics/fastjet ) samurai? ( sci-physics/samurai ) ninja? ( sci-physics/ninja ) mpi? ( virtual/mpi[fortran,cxx] ) python? ( python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) ) gosam? ( sci-physics/gosam ) lcio? ( sci-physics/lcio[python_single_target_python3_11(-)?,python_single_target_python3_12(-)?] ) virtual/fortran
+DESCRIPTION=The WHIZARD Event Generator
+EAPI=8
+HOMEPAGE=https://whizard.hepforge.org/ https://gitlab.tp.nt.uni-siegen.de/whizard/public
+INHERIT=fortran-2 optfeature python-single-r1
+IUSE=+omega +lhapdf +looptools +hepmc openloops recola qgraf form pythia8 hoppet fastjet samurai ninja mpi +openmp python gosam lcio python_single_target_python3_11 python_single_target_python3_12
+KEYWORDS=~amd64
+LICENSE=GPL-2
+RDEPEND=dev-ml/ocamlbuild lhapdf? ( sci-physics/lhapdf sci-physics/lhapdf-sets[lhapdf_sets_ct10,lhapdf_sets_cteq6l1] ) looptools? ( sci-physics/looptools ) hepmc? ( || ( sci-physics/hepmc:2 sci-physics/hepmc:3 ) ) recola? ( sci-physics/recola2 ) openloops? ( sci-physics/openloops ) qgraf? ( sci-physics/qgraf ) form? ( sci-mathematics/form ) pythia8? ( sci-physics/pythia:8 ) hoppet? ( sci-physics/hoppet ) fastjet? ( sci-physics/fastjet ) samurai? ( sci-physics/samurai ) ninja? ( sci-physics/ninja ) mpi? ( virtual/mpi[fortran,cxx] ) python? ( python_single_target_python3_11? ( dev-lang/python:3.11 ) python_single_target_python3_12? ( dev-lang/python:3.12 ) ) gosam? ( sci-physics/gosam ) lcio? ( sci-physics/lcio[python_single_target_python3_11(-)?,python_single_target_python3_12(-)?] ) virtual/fortran
+REQUIRED_USE=python? ( ^^ ( python_single_target_python3_11 python_single_target_python3_12 ) ) lcio? ( python )
+SLOT=0
+SRC_URI=https://whizard.hepforge.org/downloads?f=whizard-3.1.6.tar.gz -> whizard-3.1.6.tar.gz
+_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	fortran-2	54fcb693257134adae26819685891ecc	optfeature	538bce96e5589935b57e178e8635f301	multiprocessing	1e32df7deee68372153dca65f4a7c21f	python-utils-r1	b043191f3a82642545249acea7318e03	python-single-r1	47d8ac9be330c9366112b78fd4f8ce57
+_md5_=261271f042e39a6e8b5598212d6374ef

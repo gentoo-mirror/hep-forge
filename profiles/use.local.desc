@@ -15,10 +15,6 @@ sci-mathematics/unuran:prng - Use sci-mathematics/prng library
 sci-mathematics/unuran:rngstreams - Use sci-mathematics/rngstreams library
 sci-physics/applgrid:root - use root
 sci-physics/dyturbo:root - Adds support for Root sci-physics/root
-sci-physics/evtgen:herwig - Patches from herwig bootstrap
-sci-physics/evtgen:photos - Build with photos
-sci-physics/evtgen:pythia - Build with pythia
-sci-physics/evtgen:tauola - Build with tauola
 sci-physics/golem95:looptools - use looptools
 sci-physics/hell:root - Adds support for ROOT sci-physics/root
 sci-physics/hellx:root - Adds support for ROOT sci-physics/root
@@ -100,7 +96,7 @@ sci-physics/whizard:omega - Toggle use of O'Mega matrix element generator
 sci-physics/whizard:openloops - Use openloops for loop calculations sci-physics/openloops
 sci-physics/whizard:pythia8 - Use Pythia8 for hadronization sci-physics/pythia
 sci-physics/whizard:qgraf - Use qgraf for loop calculations sci-physics/qgraf
-sci-physics/whizard:recola2 - Use recola2 for loop calculations sci-physics/recola2
+sci-physics/whizard:recola - Use recola2 for loop calculations sci-physics/recola2
 sci-physics/whizard:samurai - Use samurai for loop calculations sci-physics/samurai
 sci-physics/xfitter:apfel - Adds support for sci-physics/apfel
 sci-physics/xfitter:apfelxx - Adds support for sci-physics/apfelxx
