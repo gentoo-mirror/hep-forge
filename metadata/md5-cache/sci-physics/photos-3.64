@@ -11,5 +11,5 @@ LICENSE=MIT
 RDEPEND=hepmc? ( sci-physics/hepmc:2=[-cm(-),gev(+)] ) sci-physics/hepmc:3=[-cm(-),gev(+)] pythia? ( sci-physics/pythia:8= ) tauola? ( sci-physics/tauola[hepmc?,hepmc3,pythia?] ) virtual/fortran
 SLOT=0
 SRC_URI=https://photospp.web.cern.ch/resources/PHOTOS.3.64/PHOTOS.3.64.tar.gz
-_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	fortran-2	54fcb693257134adae26819685891ecc	gnuconfig	ddeb9f8caff1b5f71a09c75b7534df79	libtool	c81bd096be5f4c82f4e8f156ef112402	autotools	955b29ccd82c1df4755e5f37748d2fa6
+_eclasses_=toolchain-funcs	a6df79c1e9bc84369dbf3d44206ac772	fortran-2	54fcb693257134adae26819685891ecc	gnuconfig	ddeb9f8caff1b5f71a09c75b7534df79	libtool	c81bd096be5f4c82f4e8f156ef112402	autotools	955b29ccd82c1df4755e5f37748d2fa6
 _md5_=4939262e733e6361da84392c0cb88eec

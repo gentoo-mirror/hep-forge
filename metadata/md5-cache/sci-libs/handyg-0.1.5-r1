@@ -8,5 +8,5 @@ KEYWORDS=~amd64 ~arm64 ~riscv
 LICENSE=GPL-3+
 SLOT=0
 SRC_URI=https://gitlab.com/mule-tools/handyg/-/archive/v0.1.5/handyg-v0.1.5.tar.bz2
-_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169
+_eclasses_=toolchain-funcs	a6df79c1e9bc84369dbf3d44206ac772
 _md5_=f21d2148d46c54a28acd4b364ee0e1b1
